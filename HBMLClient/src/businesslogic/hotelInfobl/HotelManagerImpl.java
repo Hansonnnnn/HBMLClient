@@ -3,7 +3,7 @@ package businesslogic.hotelInfobl;
 import java.rmi.RemoteException;
 
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
-import dao.HotelDao;
+import dao.hotel.HotelDao;
 import po.HotelPO;
 import rmi.ClientRunner;
 import vo.HotelVO;

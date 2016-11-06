@@ -1,4 +1,4 @@
-package dao;
+package dao.hotel;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -7,7 +7,7 @@ import po.HotelPO;
 
 public interface HotelDao extends Remote{
 	
-public HotelPO[] getHotelList(String hotel_region)throws RemoteException;	
+	public HotelPO[] getHotelList(String hotel_region)throws RemoteException;	
 	
 	public HotelPO getHotelInfo(String hotel_ID)throws RemoteException;
 	
