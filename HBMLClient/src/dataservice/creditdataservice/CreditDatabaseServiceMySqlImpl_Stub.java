@@ -1,6 +1,6 @@
 package dataservice.creditdataservice;
 
-import PO.CreditPO;
+import po.CreditPO;
 
 public class CreditDatabaseServiceMySqlImpl_Stub implements CreditDataService{
 	public CreditDatabaseServiceMySqlImpl_Stub(){}

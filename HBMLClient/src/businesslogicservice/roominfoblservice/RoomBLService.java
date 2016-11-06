@@ -1,6 +1,6 @@
 package businesslogicservice.roominfoblservice;
 
-import VO.RoomInfoVO;
+import vo.RoomInfoVO;
 
 public interface RoomBLService {
 	public RoomInfoVO[] getRoomList(String hotel_ID);

@@ -1,8 +1,8 @@
 package businesslogicservice.orderblservice;
 
-import PO.OrderPO;
-import VO.AppealVO;
-import VO.OrderVO;
+import po.OrderPO;
+import vo.AppealVO;
+import vo.OrderVO;
 
 public interface OrderBLService {
 	/**

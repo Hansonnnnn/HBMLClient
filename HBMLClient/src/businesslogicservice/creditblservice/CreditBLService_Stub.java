@@ -1,7 +1,7 @@
 package businesslogicservice.creditblservice;
 
-import PO.CreditPO;
-import VO.CreditVO;
+import po.CreditPO;
+import vo.CreditVO;
 
 public class CreditBLService_Stub implements CreditBLService{
 	private String user_id;

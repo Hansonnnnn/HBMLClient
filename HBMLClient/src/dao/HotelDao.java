@@ -3,7 +3,7 @@ package dao;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-import PO.HotelPO;
+import po.HotelPO;
 
 public interface HotelDao extends Remote{
 	

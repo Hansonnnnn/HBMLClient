@@ -1,9 +1,9 @@
 package businesslogic.roomInfobl;
 
-import PO.RoomInfoPO;
-import VO.RoomInfoVO;
 import businesslogicservice.roominfoblservice.RoomBLService;
 import dataservice.roominfodataservice.RoomInfoDataService;
+import po.RoomInfoPO;
+import vo.RoomInfoVO;
 
 public class RoomInfoController implements RoomBLService {
 	RoomInfoDataService roomInfoDataService = new RoomInfoDataServiceImpl_Stub();

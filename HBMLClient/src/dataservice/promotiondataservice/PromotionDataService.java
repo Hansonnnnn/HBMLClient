@@ -1,11 +1,8 @@
 package dataservice.promotiondataservice;
 
-/**
- * Created by alex on 16-10-16.
- */
-import PO.CreditPO;
-import PO.HotelPromotionPO;
-import PO.WebPromotionPO;
+import po.CreditPO;
+import po.HotelPromotionPO;
+import po.WebPromotionPO;
 public interface PromotionDataService {
     public void insert(HotelPromotionPO hotelPromotionPO);
     public void insert(WebPromotionPO webPromotionPO);

@@ -1,7 +1,8 @@
 package presentation.view.hotelinfoui;
 
 import java.util.ArrayList;
-import VO.HotelVO;
+
+import vo.HotelVO;
 
 public class HotelInfoViewControlerService_Stub implements HotelInfoViewControlerService{
 	String users_type;

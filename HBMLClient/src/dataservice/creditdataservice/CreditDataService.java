@@ -1,6 +1,6 @@
 package dataservice.creditdataservice;
 
-import PO.CreditPO;
+import po.CreditPO;
 
 public interface CreditDataService {
 	public void insert(CreditPO order);

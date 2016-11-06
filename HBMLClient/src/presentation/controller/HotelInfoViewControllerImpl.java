@@ -1,11 +1,11 @@
 package presentation.controller;
 
-import VO.HotelVO;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
 import businesslogicservice.hotelinfoblservice.HotelTransferService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import presentation.view.hotelinfoui.HotelInfoViewControlerService;
+import vo.HotelVO;
 
 public class HotelInfoViewControllerImpl implements HotelInfoViewControlerService {
 

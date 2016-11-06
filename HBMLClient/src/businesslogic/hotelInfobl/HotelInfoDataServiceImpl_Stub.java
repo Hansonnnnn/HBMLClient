@@ -1,7 +1,7 @@
 package businesslogic.hotelInfobl;
 
-import PO.HotelPO;
 import dataservice.hotelinfodataservice.HotelInfoDataService;
+import po.HotelPO;
 
 public class HotelInfoDataServiceImpl_Stub implements HotelInfoDataService{
 	public HotelInfoDataServiceImpl_Stub() {

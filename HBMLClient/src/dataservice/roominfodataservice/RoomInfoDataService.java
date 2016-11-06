@@ -1,6 +1,6 @@
 package dataservice.roominfodataservice;
 
-import PO.RoomInfoPO;
+import po.RoomInfoPO;
 
 public interface RoomInfoDataService {
 	public RoomInfoPO[] getRoomList(String hotel_ID);

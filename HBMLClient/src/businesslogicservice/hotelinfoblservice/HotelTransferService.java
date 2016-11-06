@@ -1,7 +1,7 @@
 package businesslogicservice.hotelinfoblservice;
 
-import PO.HotelPO;
-import VO.HotelVO;
+import po.HotelPO;
+import vo.HotelVO;
 
 public interface HotelTransferService {
 	//将data层拿回的po变成vo

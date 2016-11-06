@@ -2,7 +2,7 @@ package presentation.view.hotelinfoui;
 
 import javax.swing.JPanel;
 
-import VO.HotelVO;
+import vo.HotelVO;
 
 public class HotelManagerView extends JPanel{
 	

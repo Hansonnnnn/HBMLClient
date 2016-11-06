@@ -1,7 +1,7 @@
 package businesslogic.roomInfobl;
 
-import PO.RoomInfoPO;
 import dataservice.roominfodataservice.RoomInfoDataService;
+import po.RoomInfoPO;
 
 public class RoomInfoDataServiceImpl_Stub implements RoomInfoDataService{
 

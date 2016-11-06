@@ -1,7 +1,7 @@
 package businesslogic.hotelInfobl;
 
-import PO.HotelPO;
 import dao.HotelDao;
+import po.HotelPO;
 
 public class HotelDaoImpl_stub implements HotelDao{
 	@Override

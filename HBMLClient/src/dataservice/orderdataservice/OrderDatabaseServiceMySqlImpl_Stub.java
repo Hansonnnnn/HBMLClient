@@ -1,7 +1,6 @@
 package dataservice.orderdataservice;
 
-import PO.OrderPO;
-import PO.OrderPO;
+import po.OrderPO;
 
 public class OrderDatabaseServiceMySqlImpl_Stub implements OrderDataService{
 	public OrderDatabaseServiceMySqlImpl_Stub(){}

@@ -1,6 +1,6 @@
 package dataservice.hotelinfodataservice;
 
-import PO.HotelPO;
+import po.HotelPO;
 
 public interface HotelInfoDataService {
 	public HotelPO[] getHotelList(String hotel_region);	

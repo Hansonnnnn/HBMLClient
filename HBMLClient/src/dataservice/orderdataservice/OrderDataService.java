@@ -1,6 +1,6 @@
 package dataservice.orderdataservice;
 
-import PO.OrderPO;
+import po.OrderPO;
 
 public interface OrderDataService {
 	public void insert(OrderPO order);

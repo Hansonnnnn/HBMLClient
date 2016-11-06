@@ -1,6 +1,6 @@
 package businesslogicservice.hotelinfoblservice;
 
-import VO.HotelVO;
+import vo.HotelVO;
 
 public interface HotelBLService {
 	public HotelVO[] getHotelList(String hotel_region);
@@ -8,5 +8,4 @@ public interface HotelBLService {
 	public boolean addHotel(HotelVO vo);
 	public boolean modifyHotel(HotelVO vo);
 	public boolean deleteHotel(String hotel_ID);
-
 }

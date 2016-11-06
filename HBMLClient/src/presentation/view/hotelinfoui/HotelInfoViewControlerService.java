@@ -1,6 +1,6 @@
 package presentation.view.hotelinfoui;
 
-import VO.HotelVO;
+import vo.HotelVO;
 
 public interface HotelInfoViewControlerService {
 	

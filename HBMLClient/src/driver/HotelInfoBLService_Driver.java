@@ -1,10 +1,10 @@
 package driver;
 
-import VO.HotelVO;
 import businesslogicservice.hotelinfoblservice.HotelTransferService;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
+import vo.HotelVO;
 
 public class HotelInfoBLService_Driver {
 	public void drive(HotelTransferService hotelTransferService,HotelManagerService hotelStaffService,HotelCustomerService hotelUserService,HotelWebManagerService hotelWebManagerService) {

@@ -2,12 +2,11 @@ package businesslogicservice.orderblservice;
 
 import java.util.Date;
 
-import PO.HotelPO;
-import PO.OrderPO;
+import po.HotelPO;
+import po.OrderPO;
 
 public interface CustomerService {
 	public String getPersonalInfo();
-//	void setPersonalInfo(PersonalInfo personInfo)
 	public void setPersonalInfo(String personInfo);
 	public String getID();
 	public void setID(String ID);
@@ -20,7 +19,7 @@ public interface CustomerService {
 	public Enum getState();
 	public void setState(Enum orderState);
 	public void setNumberOfGuest();
-	public Boolean getHasChildOrNot();
+	public boolean getHasChildOrNot();
 	public void setHasChildOrNot();
 	public String getContactInfo();
 	public void setContactInfo(String contactInfo);

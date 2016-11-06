@@ -1,6 +1,6 @@
 package businesslogicservice.hotelinfoblservice;
 
-import VO.HotelVO;
+import vo.HotelVO;
 
 public interface HotelCustomerService {
 	

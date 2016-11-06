@@ -1,9 +1,9 @@
 package businesslogicservice.userblservice;
 
-import VO.StaffVO;
-import VO.CustomerVO;
-import VO.WebManagerVO;
-import VO.WebMarketerVO;
+import vo.CustomerVO;
+import vo.StaffVO;
+import vo.WebManagerVO;
+import vo.WebMarketerVO;
 
 /**
  * Created by alex on 16-10-16.

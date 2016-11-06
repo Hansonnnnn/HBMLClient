@@ -2,11 +2,11 @@ package businesslogic.hotelInfobl;
 
 import java.rmi.RemoteException;
 
-import PO.HotelPO;
-import VO.HotelVO;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import dao.HotelDao;
+import po.HotelPO;
 import rmi.ClientRunner;
+import vo.HotelVO;
 
 public class HotelCustomerImpl implements HotelCustomerService{
 

@@ -1,10 +1,7 @@
 package dataservice.promotiondataservice;
 
-/**
- * Created by alex on 16-10-16.
- */
-import PO.HotelPromotionPO;
-import PO.WebPromotionPO;
+import po.HotelPromotionPO;
+import po.WebPromotionPO;
 
 public class PromotionDataServiceMySqlImpl_Stub implements PromotionDataService{
 

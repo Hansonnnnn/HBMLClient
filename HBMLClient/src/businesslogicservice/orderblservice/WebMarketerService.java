@@ -1,6 +1,6 @@
 package businesslogicservice.orderblservice;
 
-import VO.AppealVO;
+import vo.AppealVO;
 
 public interface WebMarketerService {
 	public void checkAppealReason(AppealVO appeal);

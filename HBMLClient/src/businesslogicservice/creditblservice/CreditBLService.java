@@ -1,7 +1,7 @@
 package businesslogicservice.creditblservice;
 
-import PO.CreditPO;
-import VO.CreditVO;
+import po.CreditPO;
+import vo.CreditVO;
 
 public interface CreditBLService {
 	public void showCredit();

@@ -1,9 +1,9 @@
 package businesslogic.creditbl;
 
-import PO.CreditPO;
-import VO.CreditVO;
 import businesslogicservice.creditblservice.CreditBLService;
 import dataservice.creditdataservice.CreditDatabaseServiceMySqlImpl_Stub;
+import po.CreditPO;
+import vo.CreditVO;
 
 public class CreditController implements CreditBLService{
 	CreditDatabaseServiceMySqlImpl_Stub creditDataService = new CreditDatabaseServiceMySqlImpl_Stub();  
