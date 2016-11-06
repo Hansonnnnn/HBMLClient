@@ -8,12 +8,18 @@ import po.OrderPO;
 
 public class CustomerServiceImpl implements CustomerService
 {
+	Order currentOrder;
+	
+	public CustomerServiceImpl(Order order)
+	{
+		this.currentOrder = order;
+	}
 	/**
 	 * 
 	 */
 	String getPersonalInfo()
 	{
-		return "Xie";
+		return currentOrder.getPersonalInfo();
 	}
 
 //	void setPersonalInfo(PersonalInfo personInfo)
