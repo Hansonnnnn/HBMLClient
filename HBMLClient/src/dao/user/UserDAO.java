@@ -1,4 +1,4 @@
-package dao;
+package dao.user;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import message.ResultMessage;
