@@ -10,4 +10,6 @@ public interface CreditBLService {
 	public boolean resumeCredit(CreditVO credit);
 	public CreditVO getCreditInfo();
 //	public CreditPO getCreditPO();
+	public int getCreditValue(String id);
+	public int setCreditValue(String id);
 }
