@@ -2,7 +2,7 @@ package rmi;
 
 import java.rmi.Remote;
 
-import dao.HotelDao;
+import dao.hotel.HotelDao;
 
 public class RemoteHelper {
 	private Remote remote;

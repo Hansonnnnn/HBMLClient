@@ -9,16 +9,16 @@ import po.PersonalInfoPO;
 import vo.OrderVO;
 
 public class Order {
-		OrderPO orderpo;
-		PersonalInfoPO personalInfo;
-		String id;
-		Date createDate;
-		Date cancelDate;
-		HotelPO hotelInfo;
-		CreditRecordPO creditRecord;
-		String state;
-		Date checkDate;
-		Date checkoutDate;
+		private OrderPO orderpo;
+		private PersonalInfoPO personalInfo;
+		private String id;
+		private Date createDate;
+		private Date cancelDate;
+		private HotelPO hotelInfo;
+		private CreditRecordPO creditRecord;
+		private String state;
+		private Date checkDate;
+		private Date checkoutDate;
 		int number;
 		boolean hasChild;
 		String contactInfo;

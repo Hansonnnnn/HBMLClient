@@ -5,6 +5,7 @@ import java.util.Date;
 import businesslogicservice.orderblservice.CustomerService;
 import po.HotelPO;
 import po.OrderPO;
+import vo.HotelVO;
 
 public class CustomerServiceImpl implements CustomerService
 {
@@ -14,136 +15,119 @@ public class CustomerServiceImpl implements CustomerService
 	{
 		this.currentOrder = order;
 	}
+	
+	
 	/**
 	 * 
 	 */
-	String getPersonalInfo()
+	public String getID()
 	{
-		return currentOrder.getPersonalInfo();
+		return currentOrder.getId();
+	}
+	
+	/**
+	 * 
+	 */
+	public void setID(String ID)
+	{
+		currentOrder.setId(ID);
+	}
+	
+	/**
+	 * 
+	 */
+	public Date getCreateDate()
+	{
+		return currentOrder.getCreateDate();
+	}
+	
+	/**
+	 * 
+	 */
+	public void setCreateDate(Date date)
+	{
+		currentOrder.setCreateDate(date);
+	}
+	
+	/**
+	 * 
+	 */
+	public Date getCancelDate()
+	{
+		return currentOrder.getCancelDate();
+	}
+	
+	/**
+	 * 
+	 */
+	public void setCancelDate(Date date)
+	{
+		currentOrder.setCancelDate(date);
 	}
 
-//	void setPersonalInfo(PersonalInfo personInfo)
-	/**
-	 * 
-	 */
-	void setPersonalInfo(String personInfo)
-	{
-		
-	}
-	
-	/**
-	 * 
-	 */
-	String getID();
-	
-	/**
-	 * 
-	 */
-	void setID(String ID);
-	
-	/**
-	 * 
-	 */
-	Date getCreateDate();
-	
-	/**
-	 * 
-	 */
-	void setCreateDate(Date date);
-	
-	/**
-	 * 
-	 */
-	Date getCancelDate();
-	
-	/**
-	 * 
-	 */
-	void setCancelDate(Date date);
-	
-	/**
-	 * 
-	 */
-	HotelInfo getHotelInfo();
-	
 	/**
 	 * 
 	 * @param hotelInfo
 	 * @return
 	 */
-	Void setHotelInfo(HotelInfo hotelInfo);
+	public void setHotelInfo(HotelVO hotelInfo)
+	{
+//		currentOrder.setHotelInfo(hotelInfo);
+	}
 	
-	/**
-	 * 
-	 */
-	Enum getState();
-	Void setState(Enum orderState);
-	Void setNumberOfGuest();
-	Boolean getHasChildOrNot();
-	Void setHasChildOrNot();
-	String getContactInfo();
-	Void setContactInfo(String contactInfo);
-	String getCreditChangeExplanation();
-	Void setCreditChangeExplanation(String explanation);
-	Date getExexuteDeadline();
-	Void setExecuteDeadline(Date date);
-	Int getPrice();//----->应该只出现在order里面
-	Int calculatePrice();
-	Void setPrice();
-	void updateOrderPO(OrderPO po);
-	@Override
-	public HotelPO getHotelInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setState(String orderState)
+	{
+		currentOrder.setState(orderState);
 	}
-	@Override
-	public void setHotelInfo(HotelPO hotelInfo) {
-		// TODO Auto-generated method stub
+	
+	public void setNumberOfGuest()
+	{
 		
 	}
-	@Override
-	public void setState(Enum orderState) {
-		// TODO Auto-generated method stub
+	
+	public void setHasChildOrNot()
+	{
 		
 	}
-	@Override
-	public void setNumberOfGuest() {
-		// TODO Auto-generated method stub
+	
+	public void setContactInfo(String contactInfo)
+	{
 		
 	}
-	@Override
-	public void setHasChildOrNot() {
-		// TODO Auto-generated method stub
+	
+	public void setCreditChangeExplanation(String explanation)
+	{
 		
 	}
-	@Override
-	public void setContactInfo(String contactInfo) {
-		// TODO Auto-generated method stub
+	
+	public void setExecuteDeadline(Date date)
+	{
 		
 	}
-	@Override
-	public void setCreditChangeExplanation(String explanation) {
-		// TODO Auto-generated method stub
+	public int getPrice()//----->应该只出现在order里面
+	{
+		return calculatePrice();
+	}
+	
+	public int calculatePrice()
+	{
+//		PromotionService promotion = PromotionServiceImpl.getInstance();
+		return currentOrder.getPrice();
+	}
+	
+	public void setPrice()
+	{
 		
 	}
-	@Override
-	public void setExecuteDeadline(Date date) {
-		// TODO Auto-generated method stub
+	public void updateOrderPO(OrderPO po)
+	{
 		
 	}
-	@Override
-	public int getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public int calculatePrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public void setPrice() {
-		// TODO Auto-generated method stub
-		
-	}
+//
+//
+//	@Override
+//	public void setHotelInfo(HotelPO hotelInfo) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }

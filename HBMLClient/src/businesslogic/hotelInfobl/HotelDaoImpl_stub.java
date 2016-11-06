@@ -1,6 +1,6 @@
 package businesslogic.hotelInfobl;
 
-import dao.HotelDao;
+import dao.hotel.HotelDao;
 import po.HotelPO;
 
 public class HotelDaoImpl_stub implements HotelDao{
