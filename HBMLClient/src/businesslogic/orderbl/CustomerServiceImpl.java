@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService
 	 */
 	String getPersonalInfo()
 	{
-		
+		return "Xie";
 	}
 
 //	void setPersonalInfo(PersonalInfo personInfo)
