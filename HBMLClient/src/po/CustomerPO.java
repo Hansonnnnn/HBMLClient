@@ -21,6 +21,10 @@ public class CustomerPO implements Serializable{
 		memberInfo=mI;
 	}
 
+	public CustomerPO(){
+
+	}
+
 	public CustomerPO(String i){
 		id=i;
 	}
