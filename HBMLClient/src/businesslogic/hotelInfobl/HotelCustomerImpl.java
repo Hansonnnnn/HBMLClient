@@ -1,26 +1,28 @@
 package businesslogic.hotelInfobl;
 
 import java.rmi.RemoteException;
+import java.util.HashMap;
+import java.util.Map;
 
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import dao.hotel.HotelDao;
-import po.HotelPO;
 import rmi.ClientRunner;
 import vo.HotelVO;
 
 public class HotelCustomerImpl implements HotelCustomerService{
 
-	private HotelPO[] hotelList;
+	private Map<String, HotelVO> hotelList;
 	
 	private HotelDao hotelDao;
 	
 	public HotelCustomerImpl() throws RemoteException {
 		hotelDao = ClientRunner.remoteHelper.getHotelDao();
-		hotelList = hotelDao.getHotelList();
+		hotelList = new HashMap<String, HotelVO>();
+		
 	}
 	
 	
-	public HotelVO[] showHotelList(String hotel_region) {
+	public Map<String, HotelVO> showHotelList(String hotel_region) {
 		// TODO Auto-generated method stub
 		hotelDao = new HotelDaoImpl_stub();
 		try {

@@ -14,18 +14,18 @@ public class HotelInfoViewControllerImpl implements HotelInfoViewControlerServic
 	HotelCustomerService hotelUserImpl;	
 	HotelWebManagerService hotelWebManagerImpl;
 	
-	public HotelInfoViewControllerImpl(HotelManagerService hotelStaffImp,HotelTransferService hotelTransferImpll) {
-		this.hotelTransferImpl = hotelTransferImpll;
+	public HotelInfoViewControllerImpl(HotelManagerService hotelStaffImp) {
+
 		this.hotelStaffImpl = hotelStaffImp;
 	}
 	
-	public HotelInfoViewControllerImpl(HotelCustomerService hotelUserImp,HotelTransferService hotelTransferImpll) {
-		this.hotelTransferImpl = hotelTransferImpll;
+	public HotelInfoViewControllerImpl(HotelCustomerService hotelUserImp) {
+
 		this.hotelUserImpl = hotelUserImp;
 	}
 	
-	public HotelInfoViewControllerImpl(HotelWebManagerService hotelWebManagerImpl,HotelTransferService hotelTransferImpl) {
-		this.hotelTransferImpl = hotelTransferImpl;
+	public HotelInfoViewControllerImpl(HotelWebManagerService hotelWebManagerImpl) {
+	
 		this.hotelWebManagerImpl = hotelWebManagerImpl;
 	}
 	

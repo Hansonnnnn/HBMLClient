@@ -1,6 +1,8 @@
 package businesslogic.hotelInfobl;
 
 import java.rmi.RemoteException;
+import java.util.HashMap;
+import java.util.Map;
 
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import dao.hotel.HotelDao;
@@ -10,18 +12,13 @@ import vo.HotelVO;
 
 public class HotelWebManagerImpl implements HotelWebManagerService{
 	
-	private HotelPO[] hotelList;
+	private Map<String, HotelVO> hotelList;
 	
 	private HotelDao hotelDao;
 	
 	public HotelWebManagerImpl() {
 		hotelDao = ClientRunner.remoteHelper.getHotelDao();
-		try {
-			hotelList = hotelDao.getHotelList();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		hotelList =new HashMap<String,HotelVO>();
 	}
 	public HotelVO showHotelInfo(String hotel_ID) {
 		// TODO Auto-generated method stub
