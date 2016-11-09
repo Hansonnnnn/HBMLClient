@@ -1,5 +1,7 @@
 package presentation.controller;
 
+import java.util.Map;
+
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
 import businesslogicservice.hotelinfoblservice.HotelTransferService;
@@ -30,7 +32,7 @@ public class HotelInfoViewControllerImpl implements HotelInfoViewControlerServic
 	}
 	
 	@Override
-	public HotelVO[] showHotelList(String hotel_region) {
+	public Map<String,HotelVO> showHotelList(String hotel_region) {
 
 		return null;
 	}
