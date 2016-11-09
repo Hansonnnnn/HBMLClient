@@ -17,6 +17,9 @@ public class WebMarketerPO implements Serializable{
 	public WebMarketerPO(String i){
 		id=i;
 	}
+	public WebMarketerPO(){
+
+	}
 	public String getName() {
 		return name;
 	}

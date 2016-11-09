@@ -20,6 +20,10 @@ public class StaffPO implements Serializable{
 		contactInfo=cI;
 	}
 
+	public StaffPO(){
+
+	}
+
 	public StaffPO(String i){
 		id=i;
 	}

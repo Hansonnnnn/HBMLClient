@@ -14,6 +14,9 @@ public class WebManagerPO {
 	public WebManagerPO(String i){
 		id=i;
 	}
+	public WebManagerPO(){
+
+	}
 	public String getName() {
 		return name;
 	}
