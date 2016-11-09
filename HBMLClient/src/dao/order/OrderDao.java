@@ -1,5 +1,6 @@
 package dao.order;
 
+import message.ResultMessage;
 import po.OrderPO;
 
 public interface OrderDao {

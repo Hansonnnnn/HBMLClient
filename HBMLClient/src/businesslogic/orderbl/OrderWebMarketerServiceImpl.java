@@ -1,9 +1,9 @@
 package businesslogic.orderbl;
 
-import businesslogicservice.orderblservice.WebMarketerService;
+import businesslogicservice.orderblservice.OrderWebMarketerService;
 import vo.AppealVO;
 
-public class WebMarketerServiceImpl implements WebMarketerService
+public class OrderWebMarketerServiceImpl implements OrderWebMarketerService
 {
 
 	@Override

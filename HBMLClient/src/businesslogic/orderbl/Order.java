@@ -50,6 +50,11 @@ public class Order {
 			price = orderpo.getPrice();
 		}
 		
+		public Order()
+		{
+			
+		}
+		
 		public Order(OrderVO ordervo)
 		{
 			
