@@ -4,9 +4,9 @@ import vo.HotelVO;
 
 public class HotelInfoView {
 	
-	private HotelManagerView staff;
-	private CustomerView user;
-	private WebManagerView webManager;
+	private HotelManagerOfHotelView staff;
+	private CustomerOfHotelView user;
+	private WebManagerOfHotelView webManager;
 	
 	HotelInfoViewControlerService controler;
 

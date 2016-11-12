@@ -1,6 +1,7 @@
 package presentation.view.hotelinfoui;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import vo.HotelVO;
 
@@ -8,7 +9,7 @@ public class HotelInfoViewControlerService_Stub implements HotelInfoViewControle
 	String users_type;
 	String users_ID;
 	HotelVO hotelVO;
-	ArrayList<HotelVO> hotelList = new ArrayList<HotelVO>();
+	Map<String,HotelVO> hotelList = new HashMap<>();
 	HotelVO hotelVOs[] = null;
 	
 	public HotelInfoViewControlerService_Stub(String type, String ID) {
@@ -20,15 +21,13 @@ public class HotelInfoViewControlerService_Stub implements HotelInfoViewControle
 	
 	//controller具体实现中，会根据type的不同，实现不同类中的getHotelList方法（多态）；
 	@Override
-	public HotelVO[] showHotelList(String hotel_region) {
+	public Map<String,HotelVO> showHotelList(String hotel_region) {
 		// TODO Auto-generated method stub
 		if (hotel_region.equals("0001")) {
-			hotelList.add(new HotelVO());
-			hotelList.add(new HotelVO());
-			hotelVOs = new HotelVO[hotelList.size()];
-			hotelVOs =	hotelList.toArray(hotelVOs);
+			hotelList.put(hotel_region, new HotelVO());
+		
 			System.out.println("getHotelList success!");
-			return hotelVOs;
+			return hotelList;
 		}
 		return null;
 	}

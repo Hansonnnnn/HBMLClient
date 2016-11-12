@@ -1,5 +1,7 @@
 package presentation.controller;
 
+import java.util.Map;
+
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
 import businesslogicservice.hotelinfoblservice.HotelTransferService;
@@ -14,23 +16,23 @@ public class HotelInfoViewControllerImpl implements HotelInfoViewControlerServic
 	HotelCustomerService hotelUserImpl;	
 	HotelWebManagerService hotelWebManagerImpl;
 	
-	public HotelInfoViewControllerImpl(HotelManagerService hotelStaffImp,HotelTransferService hotelTransferImpll) {
-		this.hotelTransferImpl = hotelTransferImpll;
+	public HotelInfoViewControllerImpl(HotelManagerService hotelStaffImp) {
+
 		this.hotelStaffImpl = hotelStaffImp;
 	}
 	
-	public HotelInfoViewControllerImpl(HotelCustomerService hotelUserImp,HotelTransferService hotelTransferImpll) {
-		this.hotelTransferImpl = hotelTransferImpll;
+	public HotelInfoViewControllerImpl(HotelCustomerService hotelUserImp) {
+
 		this.hotelUserImpl = hotelUserImp;
 	}
 	
-	public HotelInfoViewControllerImpl(HotelWebManagerService hotelWebManagerImpl,HotelTransferService hotelTransferImpl) {
-		this.hotelTransferImpl = hotelTransferImpl;
+	public HotelInfoViewControllerImpl(HotelWebManagerService hotelWebManagerImpl) {
+	
 		this.hotelWebManagerImpl = hotelWebManagerImpl;
 	}
 	
 	@Override
-	public HotelVO[] showHotelList(String hotel_region) {
+	public Map<String,HotelVO> showHotelList(String hotel_region) {
 
 		return null;
 	}
