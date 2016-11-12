@@ -17,6 +17,5 @@ public class HotelInfoBLService_Driver {
 		hotelWebManagerService.modifyHotel(new HotelVO());
 		hotelWebManagerService.showHotelInfo("0001");
 		hotelWebManagerService.showHotelList("0001");
-		
 	}
 }

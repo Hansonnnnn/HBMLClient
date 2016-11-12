@@ -34,17 +34,22 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 	@Override
 	public boolean cancelOrder() {
 		// TODO Auto-generated method stub
+		System.out.println("撤销订单成功，转到更新订单方法来更新修改的订单");
+		Order orderNeededToUpdate = new Order();
+		updateOrderPO(orderNeededToUpdate);
 		return false;
 	}
 
 	@Override
 	public void evaluateOrder() {
+		System.out.println("评价订单成功");
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void appealForAbnormalOrder() {
+		System.out.println("异常订单申诉成功");
 		// TODO Auto-generated method stub
 		
 	}
@@ -52,7 +57,7 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 	@Override
 	public void saveAppeal() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("网站营销人员保存申诉成功");
 	}
 
 	@Override
@@ -61,16 +66,19 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 		return null;
 	}
 
-	@Override
-	public void showOrderList(OrderVO[] orderList) {
-		// TODO Auto-generated method stub
-		
-	}
+
+
 
 	@Override
 	public boolean updateOrderPO(Order orderNeededToUpdate) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public OrderVO showOrderInfo(String orderID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

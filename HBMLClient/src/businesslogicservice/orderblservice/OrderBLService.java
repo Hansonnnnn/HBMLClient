@@ -19,7 +19,8 @@ public interface OrderBLService {
 	 * 特殊的：待编辑订单列表（只有客户有）
 	 * @param orderList
 	 */
-	public void showOrderList(OrderVO[] orderList);
+//	public void showOrderList(OrderVO[] orderList);
+	public OrderVO showOrderInfo(String orderID);
 	
 	/**
 	 * 凡是对订单对象有操作的Impl，只要改变订单的数据或状态，就要对OrderPO进行更新
