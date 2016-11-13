@@ -11,6 +11,7 @@ import vo.OrderVO;
 public class Order {
 		private OrderPO orderpo;
 		private PersonalInfoPO personalInfo;
+		private String user_id;
 		private String id;
 		private Date createDate;
 		private Date cancelDate;
@@ -24,7 +25,7 @@ public class Order {
 		String contactInfo;
 		String creditExplanation;
 		Date executeDeadline;
-		int price;
+		double price;
 		
 		/**
 		 * 创建Order对象时传入OrderPO

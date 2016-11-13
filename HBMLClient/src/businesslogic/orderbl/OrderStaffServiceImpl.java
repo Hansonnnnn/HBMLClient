@@ -15,11 +15,6 @@ public class OrderStaffServiceImpl implements OrderStaffService, OrderBLService
 		return null;
 	}
 
-	@Override
-	public void showOrderList(OrderVO[] orderList) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public boolean updateOrderPO(Order orderNeededToUpdate) {
@@ -31,6 +26,12 @@ public class OrderStaffServiceImpl implements OrderStaffService, OrderBLService
 	public boolean executeOrder() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public OrderVO showOrderInfo(String orderID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

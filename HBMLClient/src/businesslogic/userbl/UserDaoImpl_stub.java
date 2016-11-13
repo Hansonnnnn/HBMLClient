@@ -2,6 +2,7 @@ package businesslogic.userbl;
 
 import dao.user.UserDao;
 import message.ResultMessage;
+import po.UserPO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class UserDaoImpl_stub implements UserDao{
     @Override
     public ArrayList<Object> getUserList() throws RemoteException {
         ArrayList<Object> userlist=new ArrayList<>();
-        userlist.add(new CustomerPO());
+        userlist.add(new UserPO());
         userlist.add(new CustomerPO());
         userlist.add(new CustomerPO());
         userlist.add(new CustomerPO());

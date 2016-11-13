@@ -3,6 +3,7 @@ package businesslogic.userbl;
 import businesslogicservice.userblservice.UserCustomerService;
 import dao.user.UserDao;
 import message.ResultMessage;
+import po.UserPO;
 import rmi.ClientRunner;
 import vo.CustomerVO;
 
@@ -33,7 +34,7 @@ public class UserCustomerServiceImpl implements UserCustomerService{
         userDao=new UserDaoImpl_stub();
         try {
             UserTransferImpl trans=new UserTransferImpl();
-            CustomerPO po=trans.toCustomerPO(vo);
+            UserPO po=trans.toCustomerPO(vo);
             userDao.update(po);
         } catch (RemoteException e) {
             // TODO Auto-generated catch block

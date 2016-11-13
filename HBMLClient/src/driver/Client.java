@@ -1,18 +1,16 @@
 package driver;
 
 import businesslogic.hotelInfobl.HotelManagerImpl;
-import businesslogic.hotelInfobl.HotelTransferImpl;
 
 import java.rmi.RemoteException;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.HotelWebManagerImpl;
-import businesslogic.userbl.*;
+import businesslogic.utility.TransferImpl;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
-import businesslogicservice.hotelinfoblservice.HotelTransferService;
+import businesslogicservice.TransferService;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
-import businesslogicservice.userblservice.*;
 import rmi.ClientRunner;
 
 /**
@@ -25,7 +23,7 @@ public class Client {
 	{
 		ClientRunner cr = new ClientRunner();
 		
-		HotelTransferService hotelTransferImpl = new HotelTransferImpl();
+		TransferService hotelTransferImpl = new TransferImpl();
 		HotelManagerService hotelStaffImpl = null;
 		HotelCustomerService hotelUserImpl = null;
 		try {
@@ -37,15 +35,8 @@ public class Client {
 		}	
 		HotelWebManagerService hotelWebManagerImpl = new HotelWebManagerImpl();
 		HotelInfoBLService_Driver hotelInfoBLService_Driver = new HotelInfoBLService_Driver();
-		hotelInfoBLService_Driver.drive(hotelTransferImpl,hotelStaffImpl, hotelUserImpl,hotelWebManagerImpl);
-
-
-		UserTransferService userTransferImpl=new UserTransferImpl();
-		UserCustomerService userCustomerImpl=new UserCustomerServiceImpl();
-		UserStaffService userStaffImpl=new UserStaffServiceImpl();
-		UserWebMarketerService userWebMarketerImpl=new UserWebMarkerServiceImpl();
-		UserWebManagerService userWebManagerImpl=new UserWebManagerServiceImpl();
-		UserInfoBLService_Driver userInfoBLService_driver=new UserInfoBLService_Driver();
-		userInfoBLService_driver.drive(userTransferImpl,userCustomerImpl,userStaffImpl,userWebMarketerImpl,userWebManagerImpl);
+		hotelInfoBLService_Driver.drive(hotelStaffImpl, hotelUserImpl,hotelWebManagerImpl);
+		
+	
 	}
 }
