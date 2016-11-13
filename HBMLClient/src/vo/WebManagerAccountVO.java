@@ -6,9 +6,9 @@ import java.util.List;
 public class WebManagerAccountVO implements Serializable{
 	String account;
 	String password;
-	List<WebManagerVO> webManagerList;
+	List<UserVO> webManagerList;
 	
-	public WebManagerAccountVO(String a,String p,List<WebManagerVO> wM
+	public WebManagerAccountVO(String a,String p,List<UserVO> wM
 			){
 		account=a;
 		password=p;
@@ -31,11 +31,11 @@ public class WebManagerAccountVO implements Serializable{
 		this.password = password;
 	}
 
-	public List<WebManagerVO> getWebManagerList() {
+	public List<UserVO> getWebManagerList() {
 		return webManagerList;
 	}
 
-	public void setWebManagerList(List<WebManagerVO> webManagerList) {
+	public void setWebManagerList(List<UserVO> webManagerList) {
 		this.webManagerList = webManagerList;
 	}
 }
