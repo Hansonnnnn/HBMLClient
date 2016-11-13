@@ -38,19 +38,19 @@ public class HotelList {
 		return hotelList;
 	}
 	  
-	public ResultMessage addHotel(Hotel hotel) {
+	public ResultMessage addHotel() {
 		
 		
-		return hotel.addHotel(hotel);
+		return hotel.addHotel(hotel.createHotelPO());
 	}
 	
 	public ResultMessage deleteHotel() {
 		
-		return hotel.deleteHotel();
+		return hotel.deleteHotel("0001");
 	}
 	
 	public ResultMessage modifyHotel() {
 		
-		return hotel.modifyHotel();
+		return hotel.modifyHotel(hotel.createHotelPO());
 	}
 }

@@ -72,7 +72,7 @@ public class HotelWebManagerImpl implements HotelWebManagerService{
 
 
 	@Override
-	public HotelVO[] showHotelList(String hotel_region) {
+	public Map<String, HotelVO> showHotelList(String hotel_region) {
 		hotelDao = new HotelDaoImpl_stub();
 		try {
 			hotelDao.getHotelList("0001");

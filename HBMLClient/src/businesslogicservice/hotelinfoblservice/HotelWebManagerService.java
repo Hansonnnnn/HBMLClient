@@ -1,10 +1,12 @@
 package businesslogicservice.hotelinfoblservice;
 
+import java.util.Map;
+
 import vo.HotelVO;
 
 public interface HotelWebManagerService {
 
-	public HotelVO[] showHotelList(String hotel_region);
+	public Map<String, HotelVO> showHotelList(String hotel_region);
 	
 	public HotelVO showHotelInfo(String hotel_ID);
 	
