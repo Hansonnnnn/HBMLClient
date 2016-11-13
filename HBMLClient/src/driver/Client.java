@@ -1,14 +1,14 @@
 package driver;
 
 import businesslogic.hotelInfobl.HotelManagerImpl;
-import businesslogic.hotelInfobl.HotelTransferImpl;
 
 import java.rmi.RemoteException;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.HotelWebManagerImpl;
+import businesslogic.utility.TransferImpl;
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
-import businesslogicservice.hotelinfoblservice.HotelTransferService;
+import businesslogicservice.TransferService;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import rmi.ClientRunner;
@@ -23,7 +23,7 @@ public class Client {
 	{
 		ClientRunner cr = new ClientRunner();
 		
-		HotelTransferService hotelTransferImpl = new HotelTransferImpl();
+		TransferService hotelTransferImpl = new TransferImpl();
 		HotelManagerService hotelStaffImpl = null;
 		HotelCustomerService hotelUserImpl = null;
 		try {
