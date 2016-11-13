@@ -1,7 +1,6 @@
 package businesslogicservice.userblservice;
 
 import message.ResultMessage;
-import vo.CustomerVO;
 
 import java.util.ArrayList;
 

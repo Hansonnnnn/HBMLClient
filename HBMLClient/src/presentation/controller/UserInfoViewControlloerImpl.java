@@ -3,7 +3,6 @@ package presentation.controller;
 import businesslogicservice.userblservice.*;
 import message.ResultMessage;
 import presentation.view.userinfoui.UserInfoViewControllerService;
-import vo.CustomerVO;
 
 import java.util.ArrayList;
 

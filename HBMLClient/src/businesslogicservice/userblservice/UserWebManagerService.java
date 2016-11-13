@@ -1,8 +1,6 @@
 package businesslogicservice.userblservice;
 
 import message.ResultMessage;
-import vo.StaffVO;
-import vo.WebMarketerVO;
 
 import java.util.ArrayList;
 

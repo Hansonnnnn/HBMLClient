@@ -4,7 +4,6 @@ import businesslogicservice.userblservice.UserWebManagerService;
 import dao.user.UserDao;
 import message.ResultMessage;
 import rmi.ClientRunner;
-import vo.CustomerVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;

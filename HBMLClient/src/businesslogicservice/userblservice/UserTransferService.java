@@ -1,20 +1,17 @@
 package businesslogicservice.userblservice;
 
-import vo.CustomerVO;
-import vo.StaffVO;
-import vo.WebManagerVO;
-import vo.WebMarketerVO;
+import po.UserPO;
 
 /**
  * Created by alex on 16-11-9.
  */
 public interface UserTransferService {
     public CustomerVO findCustomer(String id);
-    public CustomerPO toCustomerPO(CustomerVO vo);
+    public UserPO toCustomerPO(CustomerVO vo);
     public StaffVO findStaff(String id);
-    public StaffPO toStaffPO(StaffVO vo);
+    public UserPO toStaffPO(StaffVO vo);
     public WebMarketerVO findWebMarketer(String id);
-    public WebMarketerPO toWebMarketerPO(WebMarketerVO vo);
+    public UserPO toWebMarketerPO(WebMarketerVO vo);
     public WebManagerVO findWebManager(String id);
-    public WebManagerPO toWebManagerPO(WebManagerVO vo);
+    public UserPO toWebManagerPO(WebManagerVO vo);
 }

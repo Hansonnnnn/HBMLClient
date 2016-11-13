@@ -3,8 +3,6 @@ package vo;
 import java.io.Serializable;
 import java.util.List;
 
-import vo.StaffVO;
-
 public class StaffAccountVO implements Serializable{
 	String name;
 	String password;

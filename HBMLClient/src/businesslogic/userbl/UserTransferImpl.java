@@ -2,11 +2,8 @@ package businesslogic.userbl;
 
 import businesslogicservice.userblservice.UserTransferService;
 import dao.user.UserDao;
+import po.UserPO;
 import rmi.ClientRunner;
-import vo.CustomerVO;
-import vo.StaffVO;
-import vo.WebManagerVO;
-import vo.WebMarketerVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -44,8 +41,8 @@ public class UserTransferImpl implements UserTransferService {
     }
 
     @Override
-    public CustomerPO toCustomerPO(CustomerVO vo) {
-        return new CustomerPO();
+    public UserPO toCustomerPO(CustomerVO vo) {
+        return new UserPO(vo.getId());
     }
 
     @Override
@@ -62,8 +59,8 @@ public class UserTransferImpl implements UserTransferService {
     }
 
     @Override
-    public StaffPO toStaffPO(StaffVO vo) {
-        return new StaffPO();
+    public UserPO toStaffPO(StaffVO vo) {
+        return new UserPO(vo.getId());
     }
 
     @Override
@@ -80,8 +77,8 @@ public class UserTransferImpl implements UserTransferService {
     }
 
     @Override
-    public WebMarketerPO toWebMarketerPO(WebMarketerVO vo) {
-        return new WebMarketerPO();
+    public UserPO toWebMarketerPO(WebMarketerVO vo) {
+        return new UserPO(vo.getId());
     }
 
     @Override
@@ -98,7 +95,7 @@ public class UserTransferImpl implements UserTransferService {
     }
 
     @Override
-    public WebManagerPO toWebManagerPO(WebManagerVO vo) {
-        return new WebManagerPO();
+    public UserPO toWebManagerPO(WebManagerVO vo) {
+        return new UserPO(vo.getId());
     }
 }

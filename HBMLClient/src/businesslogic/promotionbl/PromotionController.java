@@ -1,8 +1,6 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionBLService;
-import vo.HotelPromotionVO;
-import vo.WebPromotionVO;
 
 /**
  * Created by alex on 16-10-16.

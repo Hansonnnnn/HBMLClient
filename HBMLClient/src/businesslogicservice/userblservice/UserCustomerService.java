@@ -1,7 +1,6 @@
 package businesslogicservice.userblservice;
 
 import message.ResultMessage;
-import vo.CustomerVO;
 
 /**
  * Created by alex on 16-11-9.

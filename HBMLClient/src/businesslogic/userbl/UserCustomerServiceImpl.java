@@ -5,7 +5,6 @@ import dao.user.UserDao;
 import message.ResultMessage;
 import po.UserPO;
 import rmi.ClientRunner;
-import vo.CustomerVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;

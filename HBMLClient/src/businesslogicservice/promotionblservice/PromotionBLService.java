@@ -1,8 +1,5 @@
 package businesslogicservice.promotionblservice;
 
-import vo.HotelPromotionVO;
-import vo.WebPromotionVO;
-
 public interface PromotionBLService {
     public void showPromotion();
     public void showPromotionList();
