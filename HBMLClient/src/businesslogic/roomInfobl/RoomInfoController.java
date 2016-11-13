@@ -6,7 +6,7 @@ import po.RoomInfoPO;
 import vo.RoomInfoVO;
 
 public class RoomInfoController implements RoomBLService {
-	RoomInfoDataService roomInfoDataService = new RoomInfoDataServiceImpl_Stub();
+	RoomInfoDataService roomInfoDataService = new RoomDaoImpl_stub();
 	
 	String hotel_ID = "";
 	String Room_ID = "";

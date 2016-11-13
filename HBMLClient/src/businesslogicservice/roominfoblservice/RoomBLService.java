@@ -1,7 +1,7 @@
 package businesslogicservice.roominfoblservice;
 
 import vo.RoomInfoVO;
-
+//遗留代码。STUB使用，后期删除
 public interface RoomBLService {
 	public RoomInfoVO[] getRoomList(String hotel_ID);
 	public RoomInfoVO getRoomInfo(String roomType);
