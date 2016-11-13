@@ -24,5 +24,8 @@ public class RemoteHelper {
 		return (RoomDao)remote;
 	}
 
-	public UserDao getUserDao(){return (UserDao)remote;}
+	public UserDao getUserDao(){
+		
+		return (UserDao)remote;
+	}
 }

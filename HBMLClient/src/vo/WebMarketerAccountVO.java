@@ -3,15 +3,13 @@ package vo;
 import java.io.Serializable;
 import java.util.List;
 
-import vo.WebMarketerVO;
-
 public class WebMarketerAccountVO implements Serializable{
 	String name;
 	String password;
-	List<WebMarketerVO> webMarketerList;
+	List<UserVO> webMarketerList;
 	
 	
-	public WebMarketerAccountVO(String a,String p,List<WebMarketerVO> wM
+	public WebMarketerAccountVO(String a,String p,List<UserVO> wM
 			){
 		name=a;
 		password=p;
@@ -39,12 +37,12 @@ public class WebMarketerAccountVO implements Serializable{
 	}
 
 
-	public List<WebMarketerVO> getWebMarketerList() {
+	public List<UserVO> getWebMarketerList() {
 		return webMarketerList;
 	}
 
 
-	public void setWebMarketerList(List<WebMarketerVO> webMarketerList) {
+	public void setWebMarketerList(List<UserVO> webMarketerList) {
 		this.webMarketerList = webMarketerList;
 	}
 }

@@ -3,14 +3,12 @@ package vo;
 import java.io.Serializable;
 import java.util.List;
 
-import vo.StaffVO;
-
 public class StaffAccountVO implements Serializable{
 	String name;
 	String password;
-	List<StaffVO> staffList;
+	List<UserVO> staffList;
 	
-	public StaffAccountVO(String n,String p,List<StaffVO> sL){
+	public StaffAccountVO(String n,String p,List<UserVO> sL){
 		name=n;
 		password=p;
 		staffList=sL;
@@ -32,11 +30,11 @@ public class StaffAccountVO implements Serializable{
 		this.password = password;
 	}
 
-	public List<StaffVO> getStaffList() {
+	public List<UserVO> getStaffList() {
 		return staffList;
 	}
 
-	public void setStaffList(List<StaffVO> staffList) {
+	public void setStaffList(List<UserVO> staffList) {
 		this.staffList = staffList;
 	}
 	

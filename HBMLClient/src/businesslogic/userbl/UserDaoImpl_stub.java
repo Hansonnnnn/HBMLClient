@@ -12,17 +12,17 @@ import java.util.ArrayList;
  */
 public class UserDaoImpl_stub implements UserDao{
     @Override
-    public ArrayList<Object> getUserList() throws RemoteException {
-        ArrayList<Object> userlist=new ArrayList<>();
-        userlist.add(new UserPO());
-        userlist.add(new CustomerPO());
-        userlist.add(new CustomerPO());
-        userlist.add(new CustomerPO());
+    public ArrayList<UserPO> getUserList() throws RemoteException {
+        ArrayList<UserPO> userlist=new ArrayList<UserPO>();
+        userlist.add(new UserPO("0000000000"));
+        userlist.add(new UserPO("0000000001"));
+        userlist.add(new UserPO("0000000002"));
+        userlist.add(new UserPO("0000000003"));
         return userlist;
     }
 
     @Override
-    public ResultMessage add(Object po) throws RemoteException {
+    public ResultMessage add(UserPO po) throws RemoteException {
         //Conundrums here: how to identify a po as an object?
         //in this method, we have to know what kind of po is so that we can call different methods
         //temporary solution::
@@ -35,32 +35,32 @@ public class UserDaoImpl_stub implements UserDao{
     }
 
     @Override
-    public Object find(String id) throws RemoteException {
-        if(id.equals("0000")){
+    public UserPO find(String id) throws RemoteException {
+        if(id.equals("0000000000")){
             System.out.println("a customer found");
-            return new CustomerPO();
-        }else if(id.equals("0001")){
+            return new UserPO("9900000000");
+        }else if(id.equals("0200000000")){
             System.out.println("a staff found");
-            return new StaffPO();
-        }else if(id.equals("0002")){
+            return new UserPO("0200000000");
+        }else if(id.equals("0100000000")){
             System.out.println("a web marketer found");
-            return new WebMarketerPO();
-        }else if(id.equals("0003")){
+            return new UserPO("0100000000");
+        }else if(id.equals("0000000000")){
             System.out.println("a web manager found");
-            return new WebManagerPO();
+            return new UserPO("0000000000");
         }
         System.out.println("find unsuccessfully");
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
-    public ResultMessage delete(Object po) throws RemoteException {
+    public ResultMessage delete(UserPO po) throws RemoteException {
         System.out.println("delete successfully");
         return ResultMessage.success;
     }
 
     @Override
-    public ResultMessage update(Object po) throws RemoteException {
+    public ResultMessage update(UserPO po) throws RemoteException {
         System.out.println("update successfully");
         return ResultMessage.success;
     }
@@ -68,13 +68,13 @@ public class UserDaoImpl_stub implements UserDao{
     @Override
     public ResultMessage login(String id, String pwd) throws RemoteException {
         if(id.equals(pwd)) {
-            if(id.equals("0000")){
+            if(id.equals("9900000000")){
                 System.out.println("a customer logged in");
-            }else if(id.equals("0001")){
+            }else if(id.equals("0200000000")){
                 System.out.println("a staff logged in");
-            }else if(id.equals("0002")){
+            }else if(id.equals("0100000000")){
                 System.out.println("a web marketer logged in");
-            }else if(id.equals("0003")){
+            }else if(id.equals("0000000000")){
                 System.out.println("a web manager logged in");
             }
             return ResultMessage.success;
@@ -86,7 +86,7 @@ public class UserDaoImpl_stub implements UserDao{
     }
 
     @Override
-    public ResultMessage signup(Object po) throws RemoteException {
+    public ResultMessage signup(UserPO po) throws RemoteException {
         //the processes of checking and DB operation are ignored
         System.out.println("signup successfully");
         return ResultMessage.success;
