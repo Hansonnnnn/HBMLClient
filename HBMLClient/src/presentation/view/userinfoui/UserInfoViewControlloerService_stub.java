@@ -1,11 +1,6 @@
 package presentation.view.userinfoui;
 
 import message.ResultMessage;
-import presentation.controller.UserInfoViewControlloerImpl;
-import vo.CustomerVO;
-import vo.StaffVO;
-import vo.WebManagerVO;
-import vo.WebMarketerVO;
 
 import java.util.ArrayList;
 

@@ -2,9 +2,13 @@ package businesslogic.utility;
 
 import businesslogicservice.TransferService;
 import po.HotelPO;
+import po.PromotionPO;
 import po.RoomInfoPO;
+import po.UserPO;
 import vo.HotelVO;
+import vo.PromotionVO;
 import vo.RoomInfoVO;
+import vo.UserVO;
 
 public class TransferImpl implements TransferService{
 	HotelPO newPo = null;
@@ -33,7 +37,25 @@ public class TransferImpl implements TransferService{
 		return null;
 	}
 
+	@Override
+	public UserVO poToVo(UserPO po) {
+		return new UserVO(po.getId());
+	}
 
+	@Override
+	public UserPO voToPo(UserVO vo) {
+		return new UserPO(vo.getId());
+	}
+
+	@Override
+	public PromotionVO poToVo(PromotionPO po) {
+		return new PromotionVO(po.getId());
+	}
+
+	@Override
+	public PromotionPO voToPo(PromotionVO vo) {
+		return new PromotionPO(vo.getId());
+	}
 
 
 }

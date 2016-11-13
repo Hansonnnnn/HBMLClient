@@ -1,10 +1,6 @@
 package driver;
 
 import businesslogicservice.userblservice.*;
-import vo.CustomerVO;
-import vo.StaffVO;
-import vo.WebManagerVO;
-import vo.WebMarketerVO;
 
 /**
  * Created by alex on 16-11-9.

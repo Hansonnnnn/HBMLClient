@@ -1,11 +1,12 @@
 package businesslogic.userbl;
 
+import businesslogic.utility.TransferImpl;
 import businesslogicservice.userblservice.UserCustomerService;
 import dao.user.UserDao;
 import message.ResultMessage;
 import po.UserPO;
 import rmi.ClientRunner;
-import vo.CustomerVO;
+import vo.UserVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  * Created by alex on 16-11-9.
  */
 public class UserCustomerServiceImpl implements UserCustomerService{
-    private ArrayList<Object> customerInfo;
+    private ArrayList<UserPO> customerInfo;
 
     private UserDao userDao;
 
@@ -30,11 +31,11 @@ public class UserCustomerServiceImpl implements UserCustomerService{
 
 
     @Override
-    public ResultMessage modifyUserInfo(CustomerVO vo) {
+    public ResultMessage modifyUserInfo(UserVO vo) {
         userDao=new UserDaoImpl_stub();
         try {
-            UserTransferImpl trans=new UserTransferImpl();
-            UserPO po=trans.toCustomerPO(vo);
+            TransferImpl transfer=new TransferImpl();
+            UserPO po=transfer.voToPo(vo);
             userDao.update(po);
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
@@ -44,10 +45,11 @@ public class UserCustomerServiceImpl implements UserCustomerService{
     }
 
     @Override
-    public CustomerVO showUserInfo() {
+    public UserVO showUserInfo() {
         userDao=new UserDaoImpl_stub();
         try {
-            CustomerVO vo=(CustomerVO) userDao.getUserList().get(0);
+            TransferImpl transfer=new TransferImpl();
+            UserVO vo=transfer.poToVo(userDao.getUserList().get(0));
             return(vo);
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
@@ -75,10 +77,11 @@ public class UserCustomerServiceImpl implements UserCustomerService{
     }
 
     @Override
-    public ResultMessage signup(CustomerVO vo) {
+    public ResultMessage signup(UserVO vo) {
         userDao=new UserDaoImpl_stub();
         try {
-            userDao.signup(vo);
+            TransferImpl transfer=new TransferImpl();
+            userDao.signup(transfer.voToPo(vo));
             return ResultMessage.success;
         } catch (RemoteException e) {
             // TODO Auto-generated catch block

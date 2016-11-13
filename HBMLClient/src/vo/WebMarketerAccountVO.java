@@ -3,8 +3,6 @@ package vo;
 import java.io.Serializable;
 import java.util.List;
 
-import vo.WebMarketerVO;
-
 public class WebMarketerAccountVO implements Serializable{
 	String name;
 	String password;
