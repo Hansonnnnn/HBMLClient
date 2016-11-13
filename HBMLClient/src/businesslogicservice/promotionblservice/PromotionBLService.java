@@ -10,4 +10,5 @@ public interface PromotionBLService {
     public boolean modify(WebPromotionVO webPromotionVO);
     public HotelPromotionVO getHotelPromotionVO();
     public WebPromotionVO getWebPromotionVO();
+    
 }
