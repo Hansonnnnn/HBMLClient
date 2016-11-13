@@ -4,11 +4,12 @@ import java.rmi.Remote;
 
 import dao.hotel.HotelDao;
 import dao.roominfo.RoomDao;
+import dao.user.UserDao;
+
 
 public class RemoteHelper {
 	private Remote remote;
 
-	
 	public void setRemote(Remote remote){
 		this.remote = remote;
 	}
@@ -23,4 +24,5 @@ public class RemoteHelper {
 		return (RoomDao)remote;
 	}
 
+	public UserDao getUserDao(){return (UserDao)remote;}
 }
