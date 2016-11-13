@@ -1,9 +1,5 @@
 package businesslogic.userbl;
 
-import po.CustomerPO;
-import po.StaffPO;
-import po.WebManagerPO;
-import po.WebMarketerPO;
 import dao.user.UserDao;
 import message.ResultMessage;
 

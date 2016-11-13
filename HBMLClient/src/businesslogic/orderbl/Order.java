@@ -33,7 +33,7 @@ public class Order {
 		public Order(OrderPO orderpo)
 		{
 			this.orderpo = orderpo;
-			personalInfo = orderpo.getPersonalInfo();
+//			personalInfo = orderpo.getPersonalInfo();
 			id = orderpo.getId();
 			createDate = orderpo.getCreateDate();
 			cancelDate = orderpo.getCancelDate();
@@ -48,6 +48,11 @@ public class Order {
 			creditExplanation = orderpo.getCreditExplanation();
 			executeDeadline = orderpo.getExecuteDeadline();
 			price = orderpo.getPrice();
+		}
+		
+		public Order()
+		{
+			
 		}
 		
 		public Order(OrderVO ordervo)

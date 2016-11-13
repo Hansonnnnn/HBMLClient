@@ -4,12 +4,12 @@ import javax.swing.JPanel;
 
 import vo.HotelVO;
 
-public class WebManagerView extends JPanel{
+public class WebManagerOfHotelView extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	HotelInfoViewControlerService controler;
 
-	public WebManagerView(HotelInfoViewControlerService controler) {
+	public WebManagerOfHotelView(HotelInfoViewControlerService controler) {
 		this.controler = controler;
 	}
 	public void getHotelList() {

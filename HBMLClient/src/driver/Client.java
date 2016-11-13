@@ -26,10 +26,11 @@ public class Client {
 		ClientRunner cr = new ClientRunner();
 		
 		HotelTransferService hotelTransferImpl = new HotelTransferImpl();
-		HotelManagerService hotelStaffImpl = new HotelManagerImpl(0001);
+		HotelManagerService hotelStaffImpl = null;
 		HotelCustomerService hotelUserImpl = null;
 		try {
 			hotelUserImpl = new HotelCustomerImpl();
+			hotelStaffImpl = new HotelManagerImpl(0001);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

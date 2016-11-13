@@ -1,10 +1,12 @@
 package presentation.view.hotelinfoui;
 
+import java.util.Map;
+
 import vo.HotelVO;
 
 public interface HotelInfoViewControlerService {
 	
-	public HotelVO[] showHotelList(String hotel_region);
+	public Map<String, HotelVO> showHotelList(String hotel_region);
 	
 	public HotelVO showHotelInfo(String hotel_ID);
 	

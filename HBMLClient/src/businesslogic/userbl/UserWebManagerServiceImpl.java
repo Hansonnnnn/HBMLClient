@@ -3,12 +3,8 @@ package businesslogic.userbl;
 import businesslogicservice.userblservice.UserWebManagerService;
 import dao.user.UserDao;
 import message.ResultMessage;
-import po.CustomerPO;
-import po.StaffPO;
 import rmi.ClientRunner;
 import vo.CustomerVO;
-import vo.StaffVO;
-import vo.WebMarketerVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;

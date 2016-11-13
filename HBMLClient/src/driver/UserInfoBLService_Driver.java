@@ -1,7 +1,6 @@
 package driver;
 
 import businesslogicservice.userblservice.*;
-import po.CustomerPO;
 import vo.CustomerVO;
 import vo.StaffVO;
 import vo.WebManagerVO;

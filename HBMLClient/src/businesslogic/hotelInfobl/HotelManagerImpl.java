@@ -1,6 +1,8 @@
 package businesslogic.hotelInfobl;
 
 import java.rmi.RemoteException;
+import java.util.HashMap;
+import java.util.Map;
 
 import businesslogicservice.hotelinfoblservice.HotelManagerService;
 import dao.hotel.HotelDao;
@@ -13,19 +15,14 @@ public class HotelManagerImpl implements HotelManagerService{
 	
 	private int hotel_ID;
 	
-	private HotelPO[] hotelList;
+	private Map<String, HotelVO> hotelList;
 	
 	private HotelDao hotelDao;
 	
-	public HotelManagerImpl(int hotel_ID) {
+	public HotelManagerImpl(int hotel_ID) throws RemoteException {
 		this.hotel_ID = hotel_ID;
 		hotelDao = ClientRunner.remoteHelper.getHotelDao();
-		try {
-			hotelList = hotelDao.getHotelList();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		hotelList = new HashMap<>();
 	}
 	public boolean modifyHotel(HotelVO vo) {
 		// TODO Auto-generated method stub

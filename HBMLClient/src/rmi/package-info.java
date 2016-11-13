@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author xiezhenyu
+ * @author wangfan
  *
  */
 package rmi;

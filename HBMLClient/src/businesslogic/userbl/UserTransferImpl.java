@@ -2,10 +2,6 @@ package businesslogic.userbl;
 
 import businesslogicservice.userblservice.UserTransferService;
 import dao.user.UserDao;
-import po.CustomerPO;
-import po.StaffPO;
-import po.WebManagerPO;
-import po.WebMarketerPO;
 import rmi.ClientRunner;
 import vo.CustomerVO;
 import vo.StaffVO;

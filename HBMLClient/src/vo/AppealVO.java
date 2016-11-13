@@ -13,6 +13,10 @@ public class AppealVO implements Serializable{
 	String state;
 	OrderVO order;
 	
+	public AppealVO()
+	{
+		
+	}
 	public AppealVO(String explaination)
 	{
 		this.explanation = explaination;

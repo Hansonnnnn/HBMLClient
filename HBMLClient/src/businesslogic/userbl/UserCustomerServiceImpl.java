@@ -3,7 +3,6 @@ package businesslogic.userbl;
 import businesslogicservice.userblservice.UserCustomerService;
 import dao.user.UserDao;
 import message.ResultMessage;
-import po.CustomerPO;
 import rmi.ClientRunner;
 import vo.CustomerVO;
 
