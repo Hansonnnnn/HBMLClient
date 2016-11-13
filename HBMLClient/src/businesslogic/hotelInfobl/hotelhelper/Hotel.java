@@ -44,17 +44,21 @@ public class Hotel {
 		return hotelTransferService.poToVo(hotelPO);
 	}
 
-	public ResultMessage addHotel() {
+	public HotelPO createHotelPO() {
+		
+		return new HotelPO();
+	}
+	public ResultMessage addHotel(HotelPO po) {
 		
 		return ResultMessage.success;
 	}
 	
-	public ResultMessage deleteHotel() {
+	public ResultMessage deleteHotel(String hotel_ID) {
 		
 		return ResultMessage.success;
 	}
 
-	public ResultMessage modifyHotel() {
+	public ResultMessage modifyHotel(HotelPO po) {
 	
 		return ResultMessage.success;
 	}

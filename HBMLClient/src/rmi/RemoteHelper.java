@@ -3,6 +3,7 @@ package rmi;
 import java.rmi.Remote;
 
 import dao.hotel.HotelDao;
+import dao.roominfo.RoomDao;
 
 public class RemoteHelper {
 	private Remote remote;
@@ -16,5 +17,10 @@ public class RemoteHelper {
 		return (HotelDao)remote;
 	}
 	//别的Dao加在这里，与此类似
+
+	public RoomDao getRoomDao() {
+		
+		return (RoomDao)remote;
+	}
 
 }

@@ -4,6 +4,7 @@ import java.util.Map;
 
 import dao.roominfo.RoomDao;
 import message.ResultMessage;
+import message.RoomStateMessage;
 import po.RoomInfoPO;
 //遗留代码，STUB
 public class RoomDaoImpl_stub implements RoomDao{
@@ -44,7 +45,7 @@ public class RoomDaoImpl_stub implements RoomDao{
 	}
 
 	@Override
-	public ResultMessage modifyRoomState(String room_ID, String room_state) {
+	public ResultMessage modifyRoomState(String room_ID,RoomStateMessage room_state) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)modifyRoomState success!");
 		return  ResultMessage.failure;

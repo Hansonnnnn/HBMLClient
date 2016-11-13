@@ -41,16 +41,16 @@ public class HotelList {
 	public ResultMessage addHotel() {
 		
 		
-		return hotel.addHotel();
+		return hotel.addHotel(hotel.createHotelPO());
 	}
 	
 	public ResultMessage deleteHotel() {
 		
-		return hotel.deleteHotel();
+		return hotel.deleteHotel("0001");
 	}
 	
 	public ResultMessage modifyHotel() {
 		
-		return hotel.modifyHotel();
+		return hotel.modifyHotel(hotel.createHotelPO());
 	}
 }
