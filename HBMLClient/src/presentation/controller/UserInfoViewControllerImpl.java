@@ -9,28 +9,28 @@ import java.util.ArrayList;
 /**
  * Created by alex on 16-11-10.
  */
-public class UserInfoViewControlloerImpl implements UserInfoViewControllerService{
+public class UserInfoViewControllerImpl implements UserInfoViewControllerService{
     UserCustomerService customerServiceImpl;
     UserStaffService userStaffServiceImpl;
     UserWebMarketerService userWebMarketerServiceImpl;
     UserWebManagerService userWebManagerServiceImpl;
     UserTransferService userTransferServiceImpl;
-    public UserInfoViewControlloerImpl(UserCustomerService userCustomerService, UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserCustomerService userCustomerService, UserTransferService userTransferService){
         this.customerServiceImpl=userCustomerService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControlloerImpl(UserStaffService userStaffService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserStaffService userStaffService,UserTransferService userTransferService){
         this.userStaffServiceImpl=userStaffService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControlloerImpl(UserWebMarketerService userWebMarketerService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserWebMarketerService userWebMarketerService,UserTransferService userTransferService){
         this.userWebMarketerServiceImpl=userWebMarketerService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControlloerImpl(UserWebManagerService userWebManagerService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserWebManagerService userWebManagerService,UserTransferService userTransferService){
         this.userWebManagerServiceImpl=userWebManagerService;
         this.userTransferServiceImpl=userTransferService;
     }
