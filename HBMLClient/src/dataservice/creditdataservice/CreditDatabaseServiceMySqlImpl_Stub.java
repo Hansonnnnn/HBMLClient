@@ -22,5 +22,30 @@ public class CreditDatabaseServiceMySqlImpl_Stub implements CreditDataService{
 		CreditPO credit = new CreditPO(100, null);
 		return credit;
 	}
+	@Override
+	public int getCreditValue(String id) {
+		System.out.println("Get Succeed!\n");
+		return 0;
+	}
+	@Override
+	public int setCreidtValue(String id, int value) {
+		System.out.println("Set Succeed!\n");
+		return 0;
+	}
+	@Override
+	public String getChangeType(String id) {
+		System.out.println("Get ChangeType Succeed!\n");
+		return null;
+	}
+	@Override
+	public String getReasonType(String id) {
+		System.out.println("Get ReasonType Succeed!\n");
+		return null;
+	}
+	@Override
+	public String getAccount(String id) {
+		System.out.println("Get Account Succeed!\n");
+		return null;
+	}
 	
 }

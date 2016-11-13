@@ -66,4 +66,25 @@ public class CreditBLService_Stub implements CreditBLService{
 //	{
 //		return new CreditPO(100, null);
 //	}
+	@Override
+	//获取信用值的实现
+	public int getCreditValue(String id) {
+		if(id=="0000"){
+			System.out.println("获取信用值成功 " + creditValue);
+			return this.creditValue;
+		}
+		System.out.println("获取失败: "+creditValue);
+		return 0;
+	}
+	@Override
+	//设置信用值的实现
+	public int setCreditValue(String id,int value) {
+		if(id=="0000"){
+			this.creditValue=value;
+			System.out.println("设置成功: "+creditValue);
+			return this.creditValue;
+		}
+		System.out.println("设置失败");
+		return 0;
+	}
 }

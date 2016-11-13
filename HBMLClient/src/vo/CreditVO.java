@@ -5,7 +5,7 @@ import java.io.Serializable;
 import vo.CreditRecordVO;
 
 public class CreditVO implements Serializable{
-	long value;
+	int value;
 	CreditRecordVO creditRecord;
 	
 	
@@ -15,12 +15,12 @@ public class CreditVO implements Serializable{
 	}
 
 
-	public long getValue() {
+	public int getValue() {
 		return value;
 	}
 
 
-	public void setValue(long value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
 

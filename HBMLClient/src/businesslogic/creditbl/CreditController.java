@@ -53,4 +53,17 @@ public class CreditController implements CreditBLService{
 //	{
 //		return new CreditPO(100, null);
 //	}
+	@Override
+	public int getCreditValue(String id) {
+		CreditPO credit=creditDataService.find(id);
+		System.out.println("Return CreditValue Succeed!");
+		return credit.getValue();
+	}
+	@Override
+	public int setCreditValue(String id, int value) {
+		CreditPO credit=creditDataService.find(id);
+		credit.setValue(value);
+		System.out.println("Set CreditValue Succeed!");
+		return credit.getValue();
+	}
 }
