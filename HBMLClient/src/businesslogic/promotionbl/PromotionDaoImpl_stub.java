@@ -2,7 +2,7 @@ package businesslogic.promotionbl;
 
 import java.util.ArrayList;
 
-import dao.PromotionDao;
+import dao.promotion.PromotionDao;
 import message.ResultMessage;
 import po.HotelPromotionPO;
 import po.WebPromotionPO;

@@ -6,7 +6,7 @@ import businesslogicservice.userblservice.*;
  * Created by alex on 16-11-9.
  */
 public class UserInfoBLService_Driver {
-    public void drive(UserTransferService userTransferService, UserCustomerService userCustomerService
+    public void drive(TransferService userTransferService, UserCustomerService userCustomerService
             , UserStaffService userStaffService, UserWebMarketerService userWebMarketerService, UserWebManagerService userWebManagerService){
         userTransferService.findCustomer("0000");
         userTransferService.findStaff("0001");

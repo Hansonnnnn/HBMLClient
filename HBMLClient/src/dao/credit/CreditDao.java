@@ -1,4 +1,4 @@
-package dao;
+package dao.credit;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

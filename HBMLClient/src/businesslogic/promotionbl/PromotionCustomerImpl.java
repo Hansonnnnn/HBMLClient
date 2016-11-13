@@ -3,7 +3,7 @@ package businesslogic.promotionbl;
 import java.util.ArrayList;
 
 import businesslogicservice.promotionblservice.PromotionCustemerService;
-import dao.PromotionDao;
+import dao.promotion.PromotionDao;
 import vo.HotelPromotionVO;
 import vo.WebPromotionVO;
 

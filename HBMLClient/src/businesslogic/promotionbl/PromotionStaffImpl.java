@@ -1,7 +1,7 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionStaffService;
-import dao.PromotionDao;
+import dao.promotion.PromotionDao;
 import message.ResultMessage;
 import po.HotelPromotionPO;
 

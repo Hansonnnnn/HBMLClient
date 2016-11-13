@@ -6,11 +6,11 @@ import message.ResultMessage;
 import message.RoomStateMessage;
 import vo.RoomInfoVO;
 
-public class HotelManagerofRoomView {
+public class HotelManagerOfRoomView {
 	
 	RoomInfoViewControllerService controller;
 	
-	public HotelManagerofRoomView(RoomInfoViewControllerService controller) {
+	public HotelManagerOfRoomView(RoomInfoViewControllerService controller) {
 		this.controller = controller;
 	}
 	

@@ -2,8 +2,10 @@ package rmi;
 
 import java.rmi.Remote;
 
+import dao.credit.CreditDao;
 import dao.hotel.HotelDao;
 import dao.order.OrderDao;
+import dao.promotion.PromotionDao;
 import dao.roominfo.RoomDao;
 import dao.user.UserDao;
 
@@ -33,5 +35,15 @@ public class RemoteHelper {
 	public OrderDao getOrderDao() {
 		
 		return (OrderDao)remote;
+	}
+	
+	public PromotionDao getPromotionDao() {
+		
+		return (PromotionDao)remote;
+	}
+	
+	public CreditDao getCreditDao() {
+	
+	return (CreditDao)remote;
 	}
 }
