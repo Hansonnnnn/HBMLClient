@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
-import businesslogicservice.roominfoblservice.RoomHotelManagerService;
+import businesslogicservice.roominfoblservice.RoomInfoHotelManagerService;
 import dao.roominfo.RoomDao;
 import message.ResultMessage;
 import message.RoomStateMessage;
@@ -13,13 +13,13 @@ import rmi.ClientRunner;
 import vo.HotelVO;
 import vo.RoomInfoVO;
 
-public class RoomHotelManagerImpl implements RoomHotelManagerService {
+public class RoomInfoHotelManagerImpl implements RoomInfoHotelManagerService {
 
 	private Map<String, RoomInfoVO> roomList ;
 	
 	private RoomDao roomDao;
 	
-	public RoomHotelManagerImpl() {
+	public RoomInfoHotelManagerImpl() {
 		roomDao = ClientRunner.remoteHelper.getRoomDao();
 		roomList =new HashMap<String,RoomInfoVO>();
 		//测试使用。后期删除
