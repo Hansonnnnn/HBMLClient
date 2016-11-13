@@ -3,11 +3,6 @@ package businesslogicservice.promotionblservice;
 import vo.HotelPromotionVO;
 import vo.WebPromotionVO;
 
-import java.util.Date;
-
-import po.HotelPromotionPO;
-import po.WebPromotionPO;
-
 /**
  * Created by alex on 16-10-16.
  */

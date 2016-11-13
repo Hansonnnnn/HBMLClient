@@ -7,10 +7,10 @@ public class PersonalInfoPO implements Serializable{
 	String name;
 	String contactInfo;
 	Image portrait;
-	public PersonalInfoPO(String n,String cI,Image p){
-		name=n;
-		contactInfo=cI;
-		portrait=p;
+	public PersonalInfoPO(String name,String contact,Image image){
+		this.name=name;
+		this.contactInfo=contact;
+		this.portrait=image;
 	}
 	public String getName() {
 		return name;
