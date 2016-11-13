@@ -1,7 +1,7 @@
 package businesslogicservice.userblservice;
 
 import message.ResultMessage;
-import vo.UserVO;
+import vo.CustomerVO;
 
 import java.util.ArrayList;
 
@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * Created by alex on 16-11-9.
  */
 public interface UserStaffService {
-    public UserVO showUserInfo();
-    public ArrayList<UserVO> showUserInfoList();
+    public CustomerVO showUserInfo();
+    public ArrayList<CustomerVO> showUserInfoList();
     public ResultMessage login(String id, String pwd);
     public ResultMessage logout();
 }

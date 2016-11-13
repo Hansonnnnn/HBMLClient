@@ -1,8 +1,10 @@
 package presentation.view.orderui;
 
+import vo.OrderVO;
+
 public interface OrderViewControllerService {
 	
-		public void showOrderInfo();
+		public OrderVO showOrderInfo(String orderID);
 	
 		public void showOrderList();
 		

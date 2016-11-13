@@ -1,6 +1,6 @@
 package businesslogicservice.creditblservice;
 
-import po.CreditPO;
+
 import vo.CreditVO;
 
 public interface CreditBLService {
@@ -11,5 +11,5 @@ public interface CreditBLService {
 	public CreditVO getCreditInfo();
 //	public CreditPO getCreditPO();
 	public int getCreditValue(String id);
-	public int setCreditValue(String id);
+	public int setCreditValue(String id,int value);
 }

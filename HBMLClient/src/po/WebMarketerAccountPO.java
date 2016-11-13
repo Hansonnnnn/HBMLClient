@@ -6,10 +6,10 @@ import java.util.List;
 public class WebMarketerAccountPO implements Serializable{
 	String name;
 	String password;
-	List<UserPO> webMarketerList;
+	List<WebMarketerPO> webMarketerList;
 	
 	
-	public WebMarketerAccountPO(String a,String p,List<UserPO> wM
+	public WebMarketerAccountPO(String a,String p,List<WebMarketerPO> wM
 			){
 		name=a;
 		password=p;
@@ -37,12 +37,12 @@ public class WebMarketerAccountPO implements Serializable{
 	}
 
 
-	public List<UserPO> getWebMarketerList() {
+	public List<WebMarketerPO> getWebMarketerList() {
 		return webMarketerList;
 	}
 
 
-	public void setWebMarketerList(List<UserPO> webMarketerList) {
+	public void setWebMarketerList(List<WebMarketerPO> webMarketerList) {
 		this.webMarketerList = webMarketerList;
 	}
 	
