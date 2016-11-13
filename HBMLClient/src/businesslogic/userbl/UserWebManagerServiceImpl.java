@@ -1,9 +1,12 @@
 package businesslogic.userbl;
 
+import businesslogic.utility.TransferImpl;
 import businesslogicservice.userblservice.UserWebManagerService;
 import dao.user.UserDao;
 import message.ResultMessage;
+import po.UserPO;
 import rmi.ClientRunner;
+import vo.UserVO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ import java.util.ArrayList;
  * Created by alex on 16-11-9.
  */
 public class UserWebManagerServiceImpl implements UserWebManagerService{
-    private ArrayList<Object> userInfo;
+    private ArrayList<UserPO> userInfo;
 
     private UserDao userDao;
 
@@ -26,12 +29,11 @@ public class UserWebManagerServiceImpl implements UserWebManagerService{
     }
 
     @Override
-    public ResultMessage addUser(Object vo) {
+    public ResultMessage addUser(UserVO vo) {
         userDao=new UserDaoImpl_stub();
         try {
-            UserTransferImpl trans=new UserTransferImpl();
-            //have to judge whether the vo is CustomerVO
-            CustomerPO po=trans.toCustomerPO((CustomerVO) vo);
+            TransferImpl transfer=new TransferImpl();
+            UserPO po=transfer.voToPo(vo);
             userDao.add(po);
             return ResultMessage.success;
         } catch (RemoteException e) {
@@ -43,12 +45,11 @@ public class UserWebManagerServiceImpl implements UserWebManagerService{
 
 
     @Override
-    public ResultMessage deleteUser(Object vo) {
+    public ResultMessage deleteUser(UserVO vo) {
         userDao=new UserDaoImpl_stub();
         try {
-            UserTransferImpl trans=new UserTransferImpl();
-            //have to judge whether the vo is CustomerVO
-            CustomerPO po=trans.toCustomerPO((CustomerVO) vo);
+            TransferImpl transfer=new TransferImpl();
+            UserPO po=transfer.voToPo(vo);
             userDao.delete(po);
             return ResultMessage.success;
         } catch (RemoteException e) {
@@ -59,24 +60,24 @@ public class UserWebManagerServiceImpl implements UserWebManagerService{
     }
 
     @Override
-    public Object findUser(String id) {
+    public UserVO findUser(String id) {
         userDao=new UserDaoImpl_stub();
         try {
-            return userDao.find(id);
+            TransferImpl transfer=new TransferImpl();
+            return transfer.poToVo(userDao.find(id));
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
-    public ResultMessage modifyUserInfo(Object vo) {
+    public ResultMessage modifyUserInfo(UserVO vo) {
         userDao=new UserDaoImpl_stub();
         try {
-            UserTransferImpl trans=new UserTransferImpl();
-            //have to judge whether the vo is CustomerVO
-            CustomerPO po=trans.toCustomerPO((CustomerVO) vo);
+            TransferImpl transfer=new TransferImpl();
+            UserPO po=transfer.voToPo(vo);
             userDao.update(po);
             return ResultMessage.success;
         } catch (RemoteException e) {
@@ -87,24 +88,31 @@ public class UserWebManagerServiceImpl implements UserWebManagerService{
     }
 
     @Override
-    public Object showUserInfo() {
+    public UserVO showUserInfo() {
         userDao=new UserDaoImpl_stub();
         try {
-            ArrayList<Object> userList=userDao.getUserList();
-            return userList.get(0);
+            TransferImpl transfer=new TransferImpl();
+            ArrayList<UserPO> userList=userDao.getUserList();
+            return transfer.poToVo(userList.get(0));
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
-    public ArrayList<Object> showUserInfoList() {
+    public ArrayList<UserVO> showUserInfoList() {
+        int i;
         userDao=new UserDaoImpl_stub();
         try {
-            ArrayList<Object> userList=userDao.getUserList();
-            return userList;
+            TransferImpl transfer=new TransferImpl();
+            ArrayList<UserPO> userList=userDao.getUserList();
+            ArrayList<UserVO> userListVOver=new ArrayList<UserVO>();
+            for(i=0;i<userList.size();i++){
+                userListVOver.add(transfer.poToVo(userList.get(i)));
+            }
+            return userListVOver;
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
