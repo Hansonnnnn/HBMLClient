@@ -44,7 +44,6 @@ public class Hotel {
 		return hotelTransferService.poToVo(hotelPO);
 	}
 
-	public ResultMessage addHotel(Hotel hotel) {
 	public HotelPO createHotelPO() {
 		
 		return new HotelPO();
