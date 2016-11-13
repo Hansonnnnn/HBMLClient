@@ -1,10 +1,11 @@
 package businesslogicservice.promotionblservice;
 
 
+import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
-import po.WebPromotionPO;
+import po.PromotionPO;
 
 public interface PromotionWebMarketerService {
-	public ResultMessage addWebPromotion(WebPromotionPO po);
-	public ResultMessage modifyWebPromotion(WebPromotionPO po);
+	public ResultMessage addPromotion(PromotionPO po);
+	public ResultMessage modifyPromotion(PromotionPO po);
 }

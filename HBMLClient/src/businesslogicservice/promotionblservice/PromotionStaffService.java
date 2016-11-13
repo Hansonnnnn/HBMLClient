@@ -1,9 +1,9 @@
 package businesslogicservice.promotionblservice;
 
 import message.ResultMessage;
-import po.HotelPromotionPO;
+import po.PromotionPO;
 
 public interface PromotionStaffService {
-	public ResultMessage addHotelPromotion(HotelPromotionPO po);
-	public ResultMessage modifyHotelPromotion(HotelPromotionPO po);
+	public ResultMessage addPromotion(PromotionPO po);
+	public ResultMessage modifyPromotion(PromotionPO po);
 }

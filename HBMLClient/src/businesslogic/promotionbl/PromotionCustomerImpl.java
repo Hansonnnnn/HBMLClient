@@ -4,17 +4,16 @@ import java.util.ArrayList;
 
 import businesslogicservice.promotionblservice.PromotionCustemerService;
 import dao.promotion.PromotionDao;
-import vo.HotelPromotionVO;
-import vo.WebPromotionVO;
+import vo.PromotionVO;
 
 public class PromotionCustomerImpl implements PromotionCustemerService{
 	
 	private PromotionDao promotionDao;
 	
-	WebPromotionVO webPromotionVO;
+	PromotionVO webPromotionVO;
 	
 	@Override
-	public WebPromotionVO showWebPromotion() {
+	public PromotionVO showPromotion() {
 		// TODO 自动生成的方法存根
 		promotionDao=new PromotionDaoImpl_stub();
 		try {
@@ -27,38 +26,11 @@ public class PromotionCustomerImpl implements PromotionCustemerService{
 	}
 
 	@Override
-	public ArrayList<WebPromotionVO> showWebPromotionList() {
+	public ArrayList<PromotionVO> showPromotionList() {
 		// TODO 自动生成的方法存根
 		promotionDao=new PromotionDaoImpl_stub();
 		try {
 			promotionDao.showWebPromotionList();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@Override
-	public HotelPromotionVO showHotelPromotion() {
-		// TODO 自动生成的方法存根
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.showHotelPromotion();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-	
-		return null;
-	}
-
-	@Override
-	public ArrayList<HotelPromotionVO> showHotelPromotionList() {
-		// TODO 自动生成的方法存根
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.showHotelPromotionList();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

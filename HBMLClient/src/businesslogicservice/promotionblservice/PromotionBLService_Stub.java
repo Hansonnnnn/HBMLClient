@@ -2,8 +2,8 @@ package businesslogicservice.promotionblservice;
 
 import java.util.Date;
 
-import po.HotelPromotionPO;
-import po.WebPromotionPO;
+import po.PromotionPO;
+import vo.PromotionVO;
 
 /**
  * Created by alex on 16-10-16.
@@ -22,8 +22,10 @@ public class PromotionBLService_Stub implements PromotionBLService {
 
     @Override
     public void showPromotion() {
+         /*
         if(this.user_type==0){
-            HotelPromotionVO hotelPromotionVO=new HotelPromotionVO("double 11","by TMALL",1);
+
+            PromotionVO hotelPromotionVO=new PromotionVO("double 11","by TMALL",1);
             System.out.println();
             System.out.println(hotelPromotionVO.getName());
             System.out.println(hotelPromotionVO.getContent());
@@ -39,10 +41,12 @@ public class PromotionBLService_Stub implements PromotionBLService {
             System.out.println(webPromotionVO.getName());
             System.out.println();
         }
+        */
     }
 
     @Override
     public void showPromotionList() {
+        /*
         int i;
         if(this.user_type==0){
             HotelPromotionVO[] hotelPromotionVOs=new HotelPromotionVO[10];
@@ -59,17 +63,12 @@ public class PromotionBLService_Stub implements PromotionBLService {
                 System.out.println(webPromotionVOs[i].getContent());
             }
         }
+        */
     }
 
     @Override
-    public boolean addPromotion(HotelPromotionVO hotelPromotionVO) {
+    public boolean addPromotion(PromotionVO hotelPromotionVO) {
         System.out.println("hotel promotion successfully added");
-        return false;
-    }
-
-    @Override
-    public boolean addPromotion(WebPromotionVO webPromotionVO) {
-        System.out.println("web promotion successfully added");
         return false;
     }
 
@@ -80,24 +79,16 @@ public class PromotionBLService_Stub implements PromotionBLService {
     }
 
     @Override
-    public boolean modify(HotelPromotionVO hotelPromotionVO) {
+    public boolean modify(PromotionVO PromotionVO) {
         System.out.println("hotel promotion successfully modified");
         return false;
     }
 
-    @Override
-    public boolean modify(WebPromotionVO webPromotionVO) {
-        System.out.println("web promotion successfully modified");
-        return false;
-    }
 
     @Override
-    public HotelPromotionVO getHotelPromotionVO() {
-        return new HotelPromotionVO("double 11","by TMALL",1);
+    public PromotionVO getPromotionVO() {
+        return new PromotionVO("");
     }
 
-    @Override
-    public WebPromotionVO getWebPromotionVO() {
-        return new WebPromotionVO("activity","double 11","by TMALL");
-    }
+
 }

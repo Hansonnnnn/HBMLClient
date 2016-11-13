@@ -3,17 +3,17 @@ package businesslogic.promotionbl;
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import dao.promotion.PromotionDao;
 import message.ResultMessage;
-import po.WebPromotionPO;
+import po.PromotionPO;
 
 public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 	
 	private PromotionDao promotionDao;
 	
 	@Override
-	public ResultMessage addWebPromotion(WebPromotionPO po) {
+	public ResultMessage addPromotion(PromotionPO po) {
 		promotionDao=new PromotionDaoImpl_stub();
 		try {
-			promotionDao.addWebPromotion(po);
+			promotionDao.addPromotion(po);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -23,11 +23,11 @@ public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 	}
 
 	@Override
-	public ResultMessage modifyWebPromotion(WebPromotionPO po) {
+	public ResultMessage modifyPromotion(PromotionPO po) {
 		// TODO 自动生成的方法存根
 		promotionDao=new PromotionDaoImpl_stub();
 		try {
-			promotionDao.modifyWebPromotion(po);
+			promotionDao.modifyPromotion(po);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
