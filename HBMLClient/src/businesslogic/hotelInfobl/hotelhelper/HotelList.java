@@ -38,10 +38,10 @@ public class HotelList {
 		return hotelList;
 	}
 	  
-	public ResultMessage addHotel() {
+	public ResultMessage addHotel(Hotel hotel) {
 		
 		
-		return hotel.addHotel();
+		return hotel.addHotel(hotel);
 	}
 	
 	public ResultMessage deleteHotel() {

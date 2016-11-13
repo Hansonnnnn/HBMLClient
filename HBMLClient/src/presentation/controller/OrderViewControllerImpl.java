@@ -1,11 +1,12 @@
 package presentation.controller;
 
-import businesslogicservice.orderblservice.OrderCustomerService;
 import businesslogicservice.orderblservice.OrderBLService;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import businesslogicservice.orderblservice.OrderStaffService;
 import businesslogicservice.orderblservice.OrderWebMarketerService;
 import presentation.view.orderui.CustomerOfOrderView;
 import presentation.view.orderui.OrderViewControllerService;
+import vo.OrderVO;
 
 public class OrderViewControllerImpl implements OrderViewControllerService
 {
@@ -16,19 +17,34 @@ public class OrderViewControllerImpl implements OrderViewControllerService
 		private OrderStaffService staffservice;
 		private OrderWebMarketerService webmarketerservice;
 		
+		public OrderViewControllerImpl(OrderCustomerService customerservice)
+		{
+			this.customerservice = customerservice;
+		}
+		
+		public OrderViewControllerImpl(OrderStaffService staffservice)
+		{
+			this.staffservice = staffservice;
+		}
+		
+		public OrderViewControllerImpl(OrderWebMarketerService webmarketerservice)
+		{
+			this.webmarketerservice = webmarketerservice;
+		}
 		/**
 		 * 显示订单信息
 		 */
-		public void showOrderInfo()
+		public OrderVO showOrderInfo(String orderID)
 		{
-			
+			OrderVO order = orderblservice.showOrderInfo(orderID);
+			return order;
 		}
 		/**
 		 * 显示订单列表
 		 */
 		public void showOrderList()
 		{
-			
+			orderblservice.showOrderList("1");
 		}
 		
 		/**
@@ -36,7 +52,7 @@ public class OrderViewControllerImpl implements OrderViewControllerService
 		 */
 		public void makeOrder()
 		{
-			
+			customerservice.makeOrder();
 		}
 		
 		/**
@@ -44,7 +60,7 @@ public class OrderViewControllerImpl implements OrderViewControllerService
 		 */
 		public void cancelOrder()
 		{
-			
+			customerservice.cancelOrder();
 		}
 		
 		/**
@@ -52,7 +68,7 @@ public class OrderViewControllerImpl implements OrderViewControllerService
 		 */
 		public void executeOrder()
 		{
-			
+			staffservice.executeOrder();
 		}
 		
 		/**

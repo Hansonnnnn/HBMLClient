@@ -3,7 +3,7 @@ package po;
 import java.io.Serializable;
 
 public class CreditPO implements Serializable{
-	long value;
+	int value;
 	CreditRecordPO creditRecord;
 	
 	public CreditPO(int v)
@@ -17,13 +17,13 @@ public class CreditPO implements Serializable{
 	}
 
 
-	public long getValue()
+	public int getValue()
 	{
 		return value;
 	}
 
 
-	public void setValue(long value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
 
