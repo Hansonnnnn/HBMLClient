@@ -5,8 +5,8 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import businesslogic.hotelInfobl.HotelDaoImpl_stub;
-import businesslogic.hotelInfobl.HotelTransferImpl;
-import businesslogicservice.hotelinfoblservice.HotelTransferService;
+import businesslogic.utility.TransferImpl;
+import businesslogicservice.TransferService;
 import dao.hotel.HotelDao;
 import message.ResultMessage;
 import po.CommentInfoPO;
@@ -18,7 +18,7 @@ import vo.HotelVO;
 
 public class Hotel {
 	HotelDao hotelDao = new HotelDaoImpl_stub();
-	HotelTransferService hotelTransferService = new HotelTransferImpl();
+	TransferService hotelTransferService = new TransferImpl();
 	String name;
 	String id;
 	int star;

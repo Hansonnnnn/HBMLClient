@@ -1,12 +1,15 @@
 package businesslogic.roomInfobl;
 
-import dataservice.roominfodataservice.RoomInfoDataService;
-import po.RoomInfoPO;
+import java.util.Map;
 
-public class RoomInfoDataServiceImpl_Stub implements RoomInfoDataService{
+import dao.roominfo.RoomDao;
+import message.ResultMessage;
+import po.RoomInfoPO;
+//遗留代码，STUB
+public class RoomDaoImpl_stub implements RoomDao{
 
 	@Override
-	public RoomInfoPO[] getRoomList(String hotel_ID) {
+	public Map<String, RoomInfoPO> getRoomList(String hotel_ID) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)getRoomList success!");
 		return null;
@@ -20,31 +23,31 @@ public class RoomInfoDataServiceImpl_Stub implements RoomInfoDataService{
 	}
 
 	@Override
-	public boolean addRoom(RoomInfoPO po) {
+	public ResultMessage addRoom(RoomInfoPO po) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)addRoom success!");
-		return false;
+		return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean modifyRoom(RoomInfoPO po) {
+	public ResultMessage modifyRoom(RoomInfoPO po) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)modifyRoom success!");
-		return false;
+		return  ResultMessage.failure;
 	}
 
 	@Override
-	public boolean deleteRoom(String room_ID) {
+	public ResultMessage deleteRoom(String room_ID) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)deleteRoom success!");
-		return false;
+		return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean modifyRoomState(String room_ID, String room_state) {
+	public ResultMessage modifyRoomState(String room_ID, String room_state) {
 		// TODO Auto-generated method stub
 		System.out.println("(DATA)modifyRoomState success!");
-		return false;
+		return  ResultMessage.failure;
 	}
 
 }

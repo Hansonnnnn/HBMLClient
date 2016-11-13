@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelDaoImpl_stub;
-import businesslogic.hotelInfobl.HotelTransferImpl;
-import businesslogicservice.hotelinfoblservice.HotelTransferService;
+import businesslogic.utility.TransferImpl;
+import businesslogicservice.TransferService;
 import dao.hotel.HotelDao;
 import message.ResultMessage;
 import po.HotelPO;
@@ -17,7 +17,7 @@ public class HotelList {
 	Hotel hotel ;
 	Map<String, HotelVO> hotelList;
 	HotelDao hotelDao = new HotelDaoImpl_stub();
-	HotelTransferService hotelTransferService = new HotelTransferImpl();
+	TransferService hotelTransferService = new TransferImpl();
 	public HotelList() {
 		hotel = new Hotel();
 		hotelList = new HashMap<String, HotelVO>();
