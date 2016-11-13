@@ -12,5 +12,8 @@ public class MockObject_Order extends Order
 			this.userid = userID;
 		}
 		
-		public String 
+		public String getUserID()
+		{
+			return userid;
+		}
 }
