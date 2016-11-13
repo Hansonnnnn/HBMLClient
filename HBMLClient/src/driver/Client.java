@@ -35,7 +35,7 @@ public class Client {
 		}	
 		HotelWebManagerService hotelWebManagerImpl = new HotelWebManagerImpl();
 		HotelInfoBLService_Driver hotelInfoBLService_Driver = new HotelInfoBLService_Driver();
-		hotelInfoBLService_Driver.drive(hotelTransferImpl,hotelStaffImpl, hotelUserImpl,hotelWebManagerImpl);
+		hotelInfoBLService_Driver.drive(hotelStaffImpl, hotelUserImpl,hotelWebManagerImpl);
 		
 	
 	}
