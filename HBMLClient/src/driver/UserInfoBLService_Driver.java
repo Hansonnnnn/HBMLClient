@@ -1,6 +1,8 @@
 package driver;
 
+import businesslogicservice.TransferService;
 import businesslogicservice.userblservice.*;
+import vo.UserVO;
 
 /**
  * Created by alex on 16-11-9.
@@ -8,40 +10,31 @@ import businesslogicservice.userblservice.*;
 public class UserInfoBLService_Driver {
     public void drive(TransferService userTransferService, UserCustomerService userCustomerService
             , UserStaffService userStaffService, UserWebMarketerService userWebMarketerService, UserWebManagerService userWebManagerService){
-        userTransferService.findCustomer("0000");
-        userTransferService.findStaff("0001");
-        userTransferService.findWebMarketer("0002");
-        userTransferService.findWebManager("0003");
-        userTransferService.toCustomerPO(new CustomerVO("0000"));
-        userTransferService.toStaffPO(new StaffVO("0001"));
-        userTransferService.toWebMarketerPO(new WebMarketerVO("0002"));
-        userTransferService.toWebManagerPO(new WebManagerVO("0003"));
-
-        userCustomerService.login("0000","0000");
+        userCustomerService.login("9900000000","9900000000");
         userCustomerService.logout();
-        userCustomerService.modifyUserInfo(new CustomerVO("10000"));
+        userCustomerService.modifyUserInfo(new UserVO("9900000000"));
         userCustomerService.showUserInfo();
-        userCustomerService.signup(new CustomerVO("11111"));
+        userCustomerService.signup(new UserVO("9900000001"));
 
-        userStaffService.login("0001","0001");
+        userStaffService.login("0200000001","0200000001");
         userStaffService.logout();
         userStaffService.showUserInfo();
         userStaffService.showUserInfoList();
 
-        userWebMarketerService.login("0002","0002");
+        userWebMarketerService.login("0100000001","0100000001");
         userWebMarketerService.logout();
 
-        userWebManagerService.login("0003","0003");
+        userWebManagerService.login("0000000000","0000000000");
         userWebManagerService.logout();
         userWebManagerService.showUserInfo();
         userWebManagerService.showUserInfoList();
-        userWebManagerService.addUser(new StaffVO("00022"));
-        userWebManagerService.addUser(new WebMarketerVO("123123"));
-        userWebManagerService.deleteUser(new CustomerVO("123"));
-        userWebManagerService.findUser("0000");
-        userWebManagerService.findUser("0001");
-        userWebManagerService.findUser("0002");
-        userWebManagerService.findUser("0003");
-        userWebManagerService.modifyUserInfo(new StaffVO("123123"));
+        userWebManagerService.addUser(new UserVO("0200000002"));
+        userWebManagerService.addUser(new UserVO("0200000002"));
+        userWebManagerService.deleteUser(new UserVO("12300000000"));
+        userWebManagerService.findUser("0000000000");
+        userWebManagerService.findUser("0100000000");
+        userWebManagerService.findUser("0200000000");
+        userWebManagerService.findUser("0300000000");
+        userWebManagerService.modifyUserInfo(new UserVO("1231230000"));
     }
 }
