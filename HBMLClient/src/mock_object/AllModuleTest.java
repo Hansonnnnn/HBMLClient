@@ -3,7 +3,6 @@ package mock_object;
 import static org.junit.Assert.assertEquals;
 
 import java.rmi.RemoteException;
-
 import org.junit.Test;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
