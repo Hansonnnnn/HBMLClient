@@ -1,8 +1,10 @@
 package presentation.controller;
 
+import businesslogicservice.TransferService;
 import businesslogicservice.userblservice.*;
 import message.ResultMessage;
 import presentation.view.userinfoui.UserInfoViewControllerService;
+import vo.UserVO;
 
 import java.util.ArrayList;
 
@@ -14,54 +16,54 @@ public class UserInfoViewControllerImpl implements UserInfoViewControllerService
     UserStaffService userStaffServiceImpl;
     UserWebMarketerService userWebMarketerServiceImpl;
     UserWebManagerService userWebManagerServiceImpl;
-    UserTransferService userTransferServiceImpl;
-    public UserInfoViewControllerImpl(UserCustomerService userCustomerService, UserTransferService userTransferService){
+    TransferService userTransferServiceImpl;
+    public UserInfoViewControllerImpl(UserCustomerService userCustomerService, TransferService userTransferService){
         this.customerServiceImpl=userCustomerService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControllerImpl(UserStaffService userStaffService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserStaffService userStaffService,TransferService userTransferService){
         this.userStaffServiceImpl=userStaffService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControllerImpl(UserWebMarketerService userWebMarketerService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserWebMarketerService userWebMarketerService,TransferService userTransferService){
         this.userWebMarketerServiceImpl=userWebMarketerService;
         this.userTransferServiceImpl=userTransferService;
     }
 
-    public UserInfoViewControllerImpl(UserWebManagerService userWebManagerService,UserTransferService userTransferService){
+    public UserInfoViewControllerImpl(UserWebManagerService userWebManagerService,TransferService userTransferService){
         this.userWebManagerServiceImpl=userWebManagerService;
         this.userTransferServiceImpl=userTransferService;
     }
 
     @Override
-    public ResultMessage addUserInfo(Object vo) {
+    public ResultMessage addUserInfo(UserVO vo) {
         return ResultMessage.failure;
     }
 
     @Override
-    public ResultMessage deleteUserInfo(Object vo) {
+    public ResultMessage deleteUserInfo(String id) {
         return ResultMessage.failure;
     }
 
     @Override
-    public ResultMessage modifyUserInfo(Object vo) {
+    public ResultMessage modifyUserInfo(UserVO vo) {
         return ResultMessage.failure;
     }
 
     @Override
-    public Object findUserInfo(String id) {
+    public UserVO findUserInfo(String id) {
         return null;
     }
 
     @Override
-    public Object showUserInfo() {
+    public UserVO showUserInfo() {
         return null;
     }
 
     @Override
-    public ArrayList<Object> showUserInfoList() {
+    public ArrayList<UserVO> showUserInfoList() {
         return null;
     }
 
@@ -76,7 +78,7 @@ public class UserInfoViewControllerImpl implements UserInfoViewControllerService
     }
 
     @Override
-    public ResultMessage signup(CustomerVO vo) {
+    public ResultMessage signup(UserVO vo) {
         return ResultMessage.failure;
     }
 }

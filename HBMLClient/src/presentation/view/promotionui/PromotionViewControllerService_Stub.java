@@ -1,69 +1,77 @@
 package presentation.view.promotionui;
 
-import vo.HotelPromotionVO;
-import vo.WebPromotionVO;
+import businesslogic.promotionbl.Promotion;
+import message.ResultMessage;
+import model.PromotionType;
+import model.PromotionTypeHelper;
+import vo.PromotionVO;
+
+import java.util.ArrayList;
 
 public class PromotionViewControllerService_Stub implements PromotionViewControllerService{
 
 	@Override
-	public void showPromotion() {
+	public PromotionVO showPromotion() {
 		// TODO 自动生成的方法存根
 		System.out.println("show Promotion success");
+		return new PromotionVO("H00001");
 	}
 
 	@Override
-	public void showPromotionList() {
+	public ArrayList<PromotionVO> showPromotionList() {
 		// TODO 自动生成的方法存根
+		ArrayList<PromotionVO> promotionVOs=new ArrayList<PromotionVO>();
+		promotionVOs.add(new PromotionVO("H00001"));
+		promotionVOs.add(new PromotionVO("H00002"));
+		promotionVOs.add(new PromotionVO("H00003"));
+		promotionVOs.add(new PromotionVO("H00004"));
 		System.out.println("show PromotionList success");
+		return promotionVOs;
 	}
 
 	@Override
-	public boolean addPromotion(HotelPromotionVO hotelPromotionVO) {
+	public ResultMessage addPromotion(PromotionVO promotionVO) {
 		// TODO 自动生成的方法存根
-		System.out.println("add HotelPromotion success");
-		return false;
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.HotelPromotion)){
+			System.out.println("add HotelPromotion success");
+			return ResultMessage.success;
+		}else if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.WebPromotion)){
+			System.out.println("add WebPromotion success");
+			return ResultMessage.success;
+		}
+		System.out.println("add promotion failed");
+		return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean addPromotion(WebPromotionVO webPromotionVO) {
+	public ResultMessage deletePromotion(String ID) {
 		// TODO 自动生成的方法存根
-		System.out.println("show WebPromotion success");
-		return false;
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(ID).equals(PromotionType.HotelPromotion)){
+			System.out.println("delete HotelPromotion success");
+			return ResultMessage.success;
+		}else if(promotionTypeHelper.getPromotionType(ID).equals(PromotionType.WebPromotion)){
+			System.out.println("delete WebPromotion success");
+			return ResultMessage.success;
+		}
+		System.out.println("delete Promotion failed");
+		return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean deletePromotion(String ID) {
+	public ResultMessage modify(PromotionVO promotionVO) {
 		// TODO 自动生成的方法存根
-		System.out.println("delete Promotion success");
-		return false;
-	}
-
-	@Override
-	public boolean modify(HotelPromotionVO hotelPromotionVO) {
-		// TODO 自动生成的方法存根
-		System.out.println("modify HotelPromotion success");
-		return false;
-	}
-
-	@Override
-	public boolean modify(WebPromotionVO webPromotionVO) {
-		// TODO 自动生成的方法存根
-		System.out.println("modify WebPromotion success");
-		return false;
-	}
-
-	@Override
-	public HotelPromotionVO getHotelPromotionVO() {
-		// TODO 自动生成的方法存根
-		System.out.println("get HotelPromotionVO success");
-		return null;
-	}
-
-	@Override
-	public WebPromotionVO getWebPromotionVO() {
-		// TODO 自动生成的方法存根
-		System.out.println("get WebPromotionVO success");
-		return null;
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.HotelPromotion)){
+			System.out.println("modify HotelPromotion success");
+			return ResultMessage.success;
+		}else if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.WebPromotion)){
+			System.out.println("modify WebPromotion success");
+			return ResultMessage.success;
+		}
+		System.out.println("modify promotion failed");
+		return ResultMessage.failure;
 	}
 
 }

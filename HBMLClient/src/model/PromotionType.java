@@ -4,14 +4,16 @@ package model;
  * Created by alex on 16-11-13.
  */
 public enum PromotionType {
-    HotelPromotion,
-    WebPromotion,
-    NoSuchPromotion;
-    public PromotionType getPromotionType(String promotionid){
-        if(promotionid.charAt(0)=='H'){
-            return PromotionType.HotelPromotion;
-        }else if(promotionid.charAt(0)=='W'){
-            return PromotionType.WebPromotion;
-        }else return PromotionType.NoSuchPromotion;
+    HotelPromotion(0),
+    WebPromotion(1),
+    NoSuchPromotion(2);
+    PromotionType(int value){
+        this.value=value;
     }
+    public int getValue(){
+        return value;
+    }
+
+    //member
+    private int value;
 }

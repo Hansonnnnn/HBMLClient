@@ -11,13 +11,13 @@ public class PromotionDaoImpl_stub implements PromotionDao{
 
 
 	@Override
-	public void showPromotion() {
-
+	public PromotionPO showPromotion() {
+		return null;
 	}
 
 	@Override
-	public void showPromotionList() {
-
+	public ArrayList<PromotionPO> showPromotionList() {
+		return null;
 	}
 
 	@Override

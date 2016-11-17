@@ -1,5 +1,7 @@
 package presentation.view.userinfoui;
 
+import vo.UserVO;
+
 import javax.swing.*;
 
 /**
@@ -29,14 +31,14 @@ public class WebManagerOfUserView extends JPanel{
     }
 
     public void modifyUserInfo(){
-        controller.modifyUserInfo(new WebMarketerVO("00020"));
+        controller.modifyUserInfo(new UserVO("0200000000"));
     }
 
     public void addUserInfo(){
-        controller.addUserInfo(new WebMarketerVO("00020"));
+        controller.addUserInfo(new UserVO("0200000000"));
     }
 
     public void deleteUserInfo(){
-        controller.deleteUserInfo(new WebMarketerVO("00020"));
+        controller.deleteUserInfo("0200000000");
     }
 }

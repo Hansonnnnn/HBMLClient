@@ -1,7 +1,9 @@
 package presentation.view.promotionui;
 
 import message.ResultMessage;
-import po.HotelPromotionPO;
+import vo.PromotionVO;
+
+import java.util.ArrayList;
 
 public class StaffOfPromotionView {
 	PromotionViewControllerService controller;
@@ -10,11 +12,25 @@ public class StaffOfPromotionView {
 		this.controller=controller;
 	}
 	
-	public ResultMessage addHotelPromotion(HotelPromotionPO po){
+	public ResultMessage addHotelPromotion(PromotionVO vo){
 		return ResultMessage.success;
 	}
 	
-	public ResultMessage modifyHotelPromotion(HotelPromotionPO po){
+	public ResultMessage deleteHotelPromotion(PromotionVO vo){
 		return ResultMessage.success;
+	}
+
+	public ResultMessage modifyHotelPromotion(PromotionVO vo){
+		return ResultMessage.success;
+	}
+
+	public PromotionVO showPromotion(){
+		controller.showPromotion();
+		return new PromotionVO("H00001");
+	}
+
+	public ArrayList<PromotionVO> showPromotionList(){
+		controller.showPromotionList();
+		return null;
 	}
 }

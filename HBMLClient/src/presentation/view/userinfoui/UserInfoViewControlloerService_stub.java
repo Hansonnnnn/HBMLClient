@@ -1,6 +1,9 @@
 package presentation.view.userinfoui;
 
 import message.ResultMessage;
+import model.UserType;
+import model.UserTypeHelper;
+import vo.UserVO;
 
 import java.util.ArrayList;
 
@@ -16,7 +19,7 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
     }
 
     @Override
-    public ResultMessage addUserInfo(Object vo) {
+    public ResultMessage addUserInfo(UserVO vo) {
         if(this.users_type.equals("Customer")){
             //add a customer
             return ResultMessage.success;
@@ -34,30 +37,31 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
     }
 
     @Override
-    public ResultMessage deleteUserInfo(Object vo) {
-        if(this.users_type.equals("Customer")){
+    public ResultMessage deleteUserInfo(String id) {
+        UserTypeHelper userTypeHelper=new UserTypeHelper();
+        if(userTypeHelper.getUserType(id).equals(UserType.Customer)){
             //delete the customer
             return ResultMessage.success;
-        }else if(this.users_type.equals("Staff")){
-            //delete th staff
+        }else if(userTypeHelper.getUserType(id).equals(UserType.Staff)){
+            //delete the staff
             return ResultMessage.success;
-        }else if(this.users_type.equals("WebMarketer")){
+        }else if(userTypeHelper.getUserType(id).equals(UserType.WebMarketer)){
             //delete the web marketer
             return ResultMessage.success;
-        }else if(this.users_type.equals("WebManager")){
-            //delete the web manager
+        }else if(userTypeHelper.getUserType(id).equals(UserType.WebManager)){
+            //delete the web mananger
             return ResultMessage.success;
-        }
-        return ResultMessage.failure;
+        }else return ResultMessage.failure;
+
     }
 
     @Override
-    public ResultMessage modifyUserInfo(Object vo) {
+    public ResultMessage modifyUserInfo(UserVO vo) {
         if(this.users_type.equals("Customer")){
             //modify the customer
             return ResultMessage.success;
         }else if(this.users_type.equals("Staff")){
-            //modify th staff
+            //modify the staff
             return ResultMessage.success;
         }else if(this.users_type.equals("WebMarketer")){
             //modify the web marketer
@@ -70,56 +74,38 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
     }
 
     @Override
-    public Object findUserInfo(String id) {
-        if(id.equals("0000")){
+    public UserVO findUserInfo(String id) {
+        UserTypeHelper userTypeHelper=new UserTypeHelper();
+        if(userTypeHelper.getUserType(id).equals(UserType.NoSuchUser)){
+            return null;
+        }else{
             //fetch by id
-            return new CustomerVO(id);
-        }else if(id.equals("0001")){
-            //fetch by id
-            return new StaffVO(id);
-        }else if(id.equals("0002")){
-            //fetch by id
-            return new WebMarketerVO(id);
-        }else if(id.equals("0003")){
-            //fetch by id
-            return new WebManagerVO(id);
+            return new UserVO(id);
         }
-        return ResultMessage.failure;
     }
 
     @Override
-    public Object showUserInfo() {
-        if(this.users_ID.equals("0000")){
-            //fetch by id
-            return new CustomerVO(this.users_ID);
-        }else if(this.users_ID.equals("0001")){
-            //fetch by id
-            return new StaffVO(this.users_ID);
-        }else if(this.users_ID.equals("0002")){
-            //fetch by id
-            return new WebMarketerVO(this.users_ID);
-        }else if(this.users_ID.equals("0003")){
-            //fetch by id
-            return new WebManagerVO(this.users_ID);
-        }
-        return ResultMessage.failure;
+    public UserVO showUserInfo() {
+        return this.findUserInfo(this.users_ID);
     }
 
     @Override
-    public ArrayList<Object> showUserInfoList() {
-        if(this.users_ID.equals("0001")){
+    public ArrayList<UserVO> showUserInfoList() {
+        UserTypeHelper userTypeHelper=new UserTypeHelper();
+        if(userTypeHelper.getUserType(this.users_ID).equals(UserType.Customer)){
             //fetch by id
-            ArrayList<Object> vos=new ArrayList<Object>();
-            vos.add(new CustomerVO("0000"));
-            vos.add(new CustomerVO("000000"));
-            vos.add(new CustomerVO("0000000"));
+            ArrayList<UserVO> vos=new ArrayList<UserVO>();
+            vos.add(new UserVO("1230000000"));
+            vos.add(new UserVO("1230000001"));
+            vos.add(new UserVO("1230000002"));
             return vos;
-        }else if(this.users_ID.equals("0003")){
+        }else if(userTypeHelper.getUserType(this.users_ID).equals(UserType.WebMarketer)){
             //fetch by id
-            ArrayList<Object> vos=new ArrayList<Object>();
-            vos.add(new CustomerVO("0002"));
-            vos.add(new CustomerVO("000200"));
-            vos.add(new CustomerVO("0002000"));
+            ArrayList<UserVO> vos=new ArrayList<UserVO>();
+            vos.add(new UserVO("0200000000"));
+            vos.add(new UserVO("0200000001"));
+            vos.add(new UserVO("0200000002"));
+            return vos;
         }
         return null;
     }
@@ -135,7 +121,7 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
     }
 
     @Override
-    public ResultMessage signup(CustomerVO vo) {
+    public ResultMessage signup(UserVO vo) {
         return ResultMessage.success;
     }
 }

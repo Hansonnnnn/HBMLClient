@@ -1,15 +1,16 @@
 package dao.promotion;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import message.ResultMessage;
 import po.PromotionPO;
 import vo.PromotionVO;
 
 public interface PromotionDao {
-	 public void showPromotion();
+	 public PromotionPO showPromotion();
 	 
-	 public void showPromotionList();
+	 public List<PromotionPO> showPromotionList();
 
 	 
 	 public ResultMessage addPromotion(PromotionPO po);
