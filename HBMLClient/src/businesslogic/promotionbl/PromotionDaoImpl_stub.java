@@ -29,4 +29,10 @@ public class PromotionDaoImpl_stub implements PromotionDao{
 	public ResultMessage modifyPromotion(PromotionPO po) {
 		return null;
 	}
+
+	@Override
+	public ResultMessage deletePromotion(String id) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
 }
