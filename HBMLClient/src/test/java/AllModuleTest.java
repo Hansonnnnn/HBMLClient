@@ -1,7 +1,8 @@
-package mock_object;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 import java.rmi.RemoteException;
+
 import org.junit.Test;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
@@ -10,6 +11,8 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogic.orderbl.orderhelper.OrderList;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
+import mock_object.MockObject_Hotel;
+import mock_object.MockObject_Order;
 import presentation.controller.HotelInfoViewControllerImpl;
 import presentation.controller.OrderViewControllerImpl;
 import vo.HotelVO;
@@ -32,7 +35,7 @@ public class AllModuleTest {
 		OrderVO order = controller.showOrderInfo("161113");
 		assertEquals("161113",order.getId());
 	}
-
+	@Test
 	public void testHotel() throws RemoteException
 	{
 		HotelCustomerService customerservice = new HotelCustomerImpl(); 
@@ -47,7 +50,7 @@ public class AllModuleTest {
 		HotelVO hotel = controller.showHotelInfo("Big");
 		assertEquals("Big", hotel.getName());
 	}
-	
+	@Test
 	public void testuser()
 	{
 		
