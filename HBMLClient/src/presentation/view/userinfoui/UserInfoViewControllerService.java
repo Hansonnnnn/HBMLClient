@@ -1,6 +1,7 @@
 package presentation.view.userinfoui;
 
 import message.ResultMessage;
+import vo.UserVO;
 
 import java.util.ArrayList;
 
@@ -8,14 +9,14 @@ import java.util.ArrayList;
  * Created by alex on 16-11-10.
  */
 public interface UserInfoViewControllerService {
-    public ResultMessage addUserInfo(Object vo);
-    public ResultMessage deleteUserInfo(Object vo);
-    public ResultMessage modifyUserInfo(Object vo);
-    public Object findUserInfo(String id);
-    public Object showUserInfo();
-    public ArrayList<Object> showUserInfoList();
+    public ResultMessage addUserInfo(UserVO vo);
+    public ResultMessage deleteUserInfo(String id);
+    public ResultMessage modifyUserInfo(UserVO vo);
+    public UserVO findUserInfo(String id);
+    public UserVO showUserInfo();
+    public ArrayList<UserVO> showUserInfoList();
     public ResultMessage login(String id, String pwd);
     public ResultMessage logout();
-    public ResultMessage signup(CustomerVO vo);
+    public ResultMessage signup(UserVO vo);
 
 }

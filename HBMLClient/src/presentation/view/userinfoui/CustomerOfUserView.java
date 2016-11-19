@@ -1,5 +1,7 @@
 package presentation.view.userinfoui;
 
+import vo.UserVO;
+
 import javax.swing.*;
 
 /**
@@ -12,7 +14,7 @@ public class CustomerOfUserView extends JPanel{
         this.controller=userInfoViewControllerService;
     }
     public void signup(){
-        controller.signup(new CustomerVO("123123"));
+        controller.signup(new UserVO("1231230000"));
     }
 
     public void showUserInfo(){
@@ -29,10 +31,10 @@ public class CustomerOfUserView extends JPanel{
     }
 
     public void addUserInfo(){
-        controller.addUserInfo(new CustomerVO("0000"));
+        controller.addUserInfo(new UserVO("1234120000"));
     }
 
     public void modifyUserInfo(){
-        controller.modifyUserInfo(new CustomerVO("00010"));
+        controller.modifyUserInfo(new UserVO("1234512345"));
     }
 }

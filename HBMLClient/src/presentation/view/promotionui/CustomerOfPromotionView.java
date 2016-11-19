@@ -1,9 +1,7 @@
 package presentation.view.promotionui;
 
 import java.util.ArrayList;
-
-import po.WebPromotionPO;
-import vo.WebPromotionVO;
+import vo.PromotionVO;
 
 public class CustomerOfPromotionView {
 	
@@ -13,12 +11,12 @@ public class CustomerOfPromotionView {
 		this.controller=controller;
 	}
 	
-	public WebPromotionPO showPromotion(){
+	public PromotionVO showPromotion(){
 		controller.showPromotion();
-		return new WebPromotionPO(null,null,null);
+		return new PromotionVO("H00001");
 	}
 	
-	public ArrayList<WebPromotionVO> showPromotionList(){
+	public ArrayList<PromotionVO> showPromotionList(){
 		controller.showPromotionList();
 		return null;
 	}

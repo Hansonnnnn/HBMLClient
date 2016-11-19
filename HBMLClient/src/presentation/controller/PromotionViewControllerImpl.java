@@ -1,11 +1,16 @@
 package presentation.controller;
 
+import businesslogic.utility.TransferImpl;
 import businesslogicservice.promotionblservice.PromotionCustemerService;
 import businesslogicservice.promotionblservice.PromotionStaffService;
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
+import message.ResultMessage;
+import model.PromotionType;
+import model.PromotionTypeHelper;
 import presentation.view.promotionui.PromotionViewControllerService;
-import vo.HotelPromotionVO;
-import vo.WebPromotionVO;
+import vo.PromotionVO;
+
+import java.util.ArrayList;
 
 public class PromotionViewControllerImpl implements PromotionViewControllerService{
 	
@@ -26,48 +31,45 @@ public class PromotionViewControllerImpl implements PromotionViewControllerServi
 	}
 	
 	@Override
-	public void showPromotion() {
-		
+	public PromotionVO showPromotion() {
+		return this.promotionCustomerImpl.showPromotion();
 	}
 
 	@Override
-	public void showPromotionList() {
-		
+	public ArrayList<PromotionVO> showPromotionList() {
+		return this.promotionCustomerImpl.showPromotionList();
 	}
 
 	@Override
-	public boolean addPromotion(HotelPromotionVO hotelPromotionVO) {
-		return false;
+	public ResultMessage addPromotion(PromotionVO promotionVO) {
+		TransferImpl transfer=new TransferImpl();
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.HotelPromotion)){
+			return this.promotionStaffService.addPromotion(transfer.voToPo(promotionVO));
+		}else if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.WebPromotion)){
+			return this.promotionWebMarketerService.addPromotion(transfer.voToPo(promotionVO));
+		}else return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean addPromotion(WebPromotionVO webPromotionVO) {
-		return false;
+	public ResultMessage deletePromotion(String ID) {
+		TransferImpl transfer=new TransferImpl();
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(ID).equals(PromotionType.HotelPromotion)){
+			return this.promotionStaffService.deletePromotion(ID);
+		}else if(promotionTypeHelper.getPromotionType(ID).equals(PromotionType.WebPromotion)){
+			return this.promotionWebMarketerService.deletePromotion(ID);
+		}else return ResultMessage.failure;
 	}
 
 	@Override
-	public boolean deletePromotion(String ID) {
-		return false;
+	public ResultMessage modify(PromotionVO promotionVO) {
+		TransferImpl transfer=new TransferImpl();
+		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
+		if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.HotelPromotion)){
+			return this.promotionStaffService.modifyPromotion(transfer.voToPo(promotionVO));
+		}else if(promotionTypeHelper.getPromotionType(promotionVO.getId()).equals(PromotionType.WebPromotion)){
+			return this.promotionWebMarketerService.modifyPromotion(transfer.voToPo(promotionVO));
+		}else return ResultMessage.failure;
 	}
-
-	@Override
-	public boolean modify(HotelPromotionVO hotelPromotionVO) {
-		return false;
-	}
-
-	@Override
-	public boolean modify(WebPromotionVO webPromotionVO) {
-		return false;
-	}
-
-	@Override
-	public HotelPromotionVO getHotelPromotionVO() {
-		return null;
-	}
-
-	@Override
-	public WebPromotionVO getWebPromotionVO() {
-		return null;
-	}
-
 }

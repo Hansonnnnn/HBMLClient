@@ -1,7 +1,10 @@
 package presentation.view.promotionui;
 
+import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
-import po.WebPromotionPO;
+import vo.PromotionVO;
+
+import java.util.ArrayList;
 
 public class WebMarketerOfPromotionView {
 	private PromotionViewControllerService controller;
@@ -10,11 +13,25 @@ public class WebMarketerOfPromotionView {
 		this.controller=controller;
 	}
 	
-	public ResultMessage addWebPromotion(WebPromotionPO po){
+	public ResultMessage addWebPromotion(PromotionVO vo){
 		return ResultMessage.success;
 	}
-	
-	public ResultMessage modifyWebPromotion(WebPromotionPO po){
+
+	public ResultMessage deleteWebPromotion(PromotionVO vo){
 		return ResultMessage.success;
+	}
+
+	public ResultMessage modifyWebPromotion(PromotionVO vo){
+		return ResultMessage.success;
+	}
+
+	public PromotionVO showPromotion(){
+		controller.showPromotion();
+		return new PromotionVO("H00001");
+	}
+
+	public ArrayList<PromotionVO> showPromotionList(){
+		controller.showPromotionList();
+		return null;
 	}
 }
