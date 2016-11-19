@@ -35,4 +35,15 @@ public class PromotionStaffImpl implements PromotionStaffService{
 		return null;
 	}
 
+	@Override
+	public ResultMessage deletePromotion(String id) {
+		promotionDao=new PromotionDaoImpl_stub();
+		try{
+			promotionDao.deletePromotion(id);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

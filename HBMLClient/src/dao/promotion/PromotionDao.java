@@ -17,5 +17,7 @@ public interface PromotionDao {
 	 
 	 public ResultMessage modifyPromotion(PromotionPO po);
 	 
+	 public ResultMessage deletePromotion(String id);
+	 
 
 }
