@@ -1,0 +1,6 @@
+#revokeButton{
+	-fx-text-fill:white;
+	-fx-font-family:"微软雅黑";
+	-fx-background-color: linear-gradient(#00A600, #009100);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
