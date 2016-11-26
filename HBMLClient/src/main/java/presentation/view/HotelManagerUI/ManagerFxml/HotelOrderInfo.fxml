@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelOrderInfoUIController">
+   <children>
+      <HBox prefWidth="600.0" styleClass="blankHBox">
+         <children>
+            <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../arrow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="orderBrowseLabel" styleClass="labelSize" text="订单浏览/执行" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../arrow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="orderInfoLabel" styleClass="labelSize" text="浏览订单详细信息" />
+         </children>
+      </HBox>
+      <BorderPane prefHeight="40.0" prefWidth="600.0">
+         <right>
+            <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../user.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="toLarge" />
+                     </styleClass></Button>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <VBox prefHeight="100.0" prefWidth="601.0">
+         <children>
+            <Label fx:id="customerLabel" styleClass="boldLabel" text="客户" />
+            <VBox fx:id="customerVBox" prefHeight="110.0" prefWidth="513.0" styleClass="infoVBox">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <children>
+                  <HBox prefHeight="24.0" prefWidth="474.0" spacing="10.0">
+                     <children>
+                        <Label text="姓名 :" />
+                        <Label fx:id="nameLabel" text="Alex Yu" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="24.0" prefWidth="467.0" spacing="10.0">
+                     <children>
+                        <Label text="ID :" />
+                        <Label fx:id="userIdLabel" text="58100010202" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="联系方式 :" />
+                        <Label fx:id="phoneLabel" text="12580" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+      </VBox>
+      <VBox prefHeight="197.0" prefWidth="600.0">
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="orderLabel" styleClass="boldLabel" text="订单" />
+                  <VBox fx:id="orderVBox" prefHeight="200.0" prefWidth="100.0" styleClass="infoVBox">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <HBox prefHeight="24.0" prefWidth="478.0" spacing="10.0">
+                           <children>
+                              <Label text="ID :" />
+                              <Label fx:id="orderIDLabel" text="201402140001" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="生成时间 :" />
+                              <Label fx:id="orderStartLabel" text="2017.2.14 14:38" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="撤销时间 :" />
+                              <Label fx:id="orderRevokeLabel" text="--" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="订单状态 :" />
+                              <Label fx:id="orderStateLabel" text="未执行" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="价值 :" />
+                              <Label fx:id="orderPriceLabel" text="998" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="480.0" spacing="10.0">
+                           <children>
+                              <Label text="入住时间 :" />
+                              <Label fx:id="roomInLabel" text="2017.2.14 18:00" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="预计退房时间 :" />
+                              <Label fx:id="roomOutLabel" text="2017.2.15 18:00" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="133.0" prefWidth="600.0">
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="120.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="roomLabel" styleClass="boldLabel" text="客房&amp;其他" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="infoVBox">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <HBox prefHeight="24.0" prefWidth="470.0" spacing="10.0">
+                           <children>
+                              <Label text="房间号 :" />
+                              <Label fx:id="roomIDLabel" text="3B348" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="房型 :" />
+                              <Label fx:id="roomTypeLabel" text="总统套房" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="入住人数 :" />
+                              <Label fx:id="checkInNumberLabel" text="有" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="有无儿童 :" />
+                              <Label fx:id="havaChildLabel" text="2" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="600.0" spacing="40.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" text="返回订单浏览">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass></Button>
+            <Button fx:id="operationButton" mnemonicParsing="false" prefWidth="110.0" text="Button">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass></Button>
+            <Button fx:id="revokeButton" mnemonicParsing="false" prefWidth="110.0" text="撤销订单">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass></Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="30.0" prefWidth="200.0" styleClass="blankHBox" />
+   </children>
+</VBox>

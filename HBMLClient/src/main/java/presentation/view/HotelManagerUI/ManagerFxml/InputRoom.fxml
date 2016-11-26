@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.InputRoomUIController">
+    <children>
+        <HBox prefWidth="600.0" styleClass="blankHBox">
+            <children>
+                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
+                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../arrow.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="orderBrowseLabel" styleClass="labelSize" text="录入可用客房" />
+            </children>
+        </HBox>
+        <BorderPane prefHeight="0.0" prefWidth="600.0">
+            <right>
+                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../user.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../cancel.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="toLarge" />
+                            </styleClass></Button>
+                    </children>
+                </HBox>
+            </right>
+         <left>
+            <Button mnemonicParsing="false" onAction="#back" styleClass="transButton" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </left>
+        </BorderPane>
+      <VBox alignment="CENTER" prefHeight="299.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="roomTableView" editable="true" maxWidth="352.0">
+               <columns>
+                  <TableColumn fx:id="roomTypeColumn" minWidth="100.0" prefWidth="75.0" text="房型" />
+                  <TableColumn fx:id="roomNumberColumn" minWidth="100.0" prefWidth="75.0" text="可用客房数" />
+                  <TableColumn fx:id="roomPriceColumn" minWidth="150.0" prefWidth="75.0" text="房间价格(元/间)" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Pane prefHeight="40.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="127.0" layoutY="5.0" minWidth="92.0" mnemonicParsing="false" onAction="#deleteRoomType" text="删除房型">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+            <Button layoutX="228.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#reduceRoomNumber" text="-">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+            <Button layoutX="275.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#addRoomNumber" text="+">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="changePriceTextField" layoutX="327.0" layoutY="5.0" maxWidth="146.0" onKeyReleased="#changePrice" />
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <TextField fx:id="roomTypeTextField" maxWidth="120.0" promptText="房间类型" />
+            <TextField fx:id="roomNumberTextField" maxWidth="120.0" promptText="可用客房数量" />
+            <TextField fx:id="roomPriceTextField" prefWidth="120.0" promptText="房间价格" />
+            <Button mnemonicParsing="false" onAction="#addRoomType" text="录入">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+     </children>
+</VBox>

@@ -22,6 +22,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import presentation.view.HotelManagerUI.HotelManagerScene;
 import presentation.view.WebMarketerUI.WebMarker;
 
 public class UserLoginScene {
@@ -98,8 +99,9 @@ public class UserLoginScene {
 	
 	private double yOffset = 0;
 	
-	public UserLoginScene(Stage primaryStage) {
+	public UserLoginScene (Stage primaryStage) {
 		gridPane=new GridPane();
+		gridPane.setPrefSize(400,200);
 		Scene scene=new Scene(gridPane,400,210);
 		
 		gridPane.setHgap(10);
@@ -157,12 +159,15 @@ public class UserLoginScene {
 		});
 		
 		
-		accountTextField.setText("11");
+		accountTextField.setText("10");
 		passwordField.setText("admin");
 		loginButton.setOnAction((ActionEvent e)->{
 			if(accountTextField.getText().equals("11")
 					&&passwordField.getText().equals("admin")){
 				primaryStage.setScene(new WebMarker(new Group(),primaryStage,scene));
+			}else if(accountTextField.getText().equals("10")
+					&&passwordField.getText().equals("admin")){
+				primaryStage.setScene(new HotelManagerScene(new Group(),primaryStage,scene));
 			}
 		});
 		
