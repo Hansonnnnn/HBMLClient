@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelPromotionUIController">
+    <children>
+        <HBox prefWidth="600.0" styleClass="blankHBox">
+            <children>
+                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
+                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../arrow.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="updateRoomLabel" styleClass="labelSize" text="制定酒店促销策略" />
+            </children>
+        </HBox>
+        <BorderPane prefHeight="40.0" prefWidth="600.0">
+            <right>
+                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../user.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../cancel.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="toLarge" />
+                            </styleClass></Button>
+                    </children>
+                </HBox>
+            </right>
+            <left>
+                <Button mnemonicParsing="false" onAction="#back" styleClass="transButton" BorderPane.alignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../back.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </left>
+        </BorderPane>
+      <VBox alignment="CENTER" prefHeight="416.0" prefWidth="700.0">
+         <children>
+            <TableView fx:id="hotelPromotionTableView" maxWidth="502.0" prefHeight="423.0">
+               <columns>
+                  <TableColumn fx:id="promotionNameTableColumn" prefWidth="100.0" text="促销策略名" />
+                  <TableColumn fx:id="promotionStartTableColumn" prefWidth="150.0" text="策略开始时间" />
+                  <TableColumn fx:id="promotionEndTableColumn" prefWidth="150.0" text="策略结束时间" />
+                  <TableColumn fx:id="memberLevelTableColumn" prefWidth="100.0" text="所需会员等级" />
+               </columns>
+            </TableView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="700.0" spacing="20.0">
+         <children>
+            <Label text="促销策略名" />
+            <TextField fx:id="nametextField" editable="false" />
+            <Button mnemonicParsing="false" onAction="#toPromotionInfo" text="查看详细信息">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="700.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#toNewPromotion" text="制 定 新 策 略">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="40.0" prefWidth="200.0" styleClass="blankHBox" />
+    </children>
+</VBox>

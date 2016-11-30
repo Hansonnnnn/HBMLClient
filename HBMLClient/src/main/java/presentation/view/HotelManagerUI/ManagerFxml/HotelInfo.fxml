@@ -66,18 +66,18 @@
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                      <children>
-                        <HBox prefWidth="200.0" spacing="33.0">
+                        <HBox prefWidth="200.0" spacing="32.0">
                            <children>
                               <HBox spacing="15.0">
                                  <children>
                                     <Label text="酒店名 :" />
-                                    <TextField fx:id="hotelNameTextField" editable="false" maxWidth="204.0" prefHeight="30.0" prefWidth="208.0" text="HOTEL168" />
+                                    <TextField fx:id="hotelNameTextField" editable="false" maxWidth="202.0" prefHeight="30.0" prefWidth="202.0" text="HOTEL168" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="所属商圈 :" />
-                                    <ComboBox fx:id="hotelRegionComboBox" disable="true" prefHeight="30.0" prefWidth="206.0" promptText="徐家汇" />
+                                    <ComboBox fx:id="hotelRegionComboBox" disable="true" prefHeight="30.0" prefWidth="200.0" promptText="徐家汇" />
                                  </children>
                               </HBox>
                            </children>
@@ -85,18 +85,38 @@
                         <HBox prefWidth="200.0">
                            <children>
                               <Label text="酒店地址 :" />
-                              <TextField fx:id="hotelAddressTextField" editable="false" prefHeight="30.0" prefWidth="512.0" text="上海市徐家汇区肇嘉滨路3号" />
+                              <TextField fx:id="hotelAddressTextField" editable="false" prefHeight="30.0" prefWidth="503.0" text="上海市徐家汇区肇嘉滨路3号" />
                            </children>
                         </HBox>
                         <HBox prefHeight="156.0" prefWidth="580.0" spacing="30.0">
                            <children>
                               <Label text="简介 :" />
-                              <TextArea fx:id="hotelIntroTextArea" editable="false" prefHeight="100.0" prefWidth="510.0" text="便宜，设施好" />
+                              <TextArea fx:id="hotelIntroTextArea" editable="false" prefHeight="100.0" prefWidth="503.0" text="便宜，设施好" />
                            </children>
                         </HBox>
-                        <HBox prefHeight="233.0" prefWidth="580.0">
+                        <HBox prefHeight="209.0" prefWidth="580.0">
                            <children>
                               <Label text="酒店环境 :" />
+                              <HBox prefHeight="225.0" prefWidth="503.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="213.0" prefWidth="245.0" styleClass="transButton">
+                                       <graphic>
+                                          <ImageView fx:id="hotelImageView" fitHeight="200.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" />
+                                       </graphic></Button>
+                                    <Button fx:id="addImageButton" disable="true" mnemonicParsing="false" onAction="#addImage" prefHeight="213.0" prefWidth="245.0">
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../ManagerImages/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="transButton" />
+                                          <String fx:value="buttonBorder" />
+                                       </styleClass></Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </HBox>
                      </children>

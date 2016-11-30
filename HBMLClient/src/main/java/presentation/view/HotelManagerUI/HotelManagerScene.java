@@ -183,6 +183,9 @@ public class HotelManagerScene extends Scene {
         buttons.get(3).setOnAction((ActionEvent e)->{
             stage.setScene(new HotelInfoUI(new Group(),stage,this,loginScene));
         });
+        buttons.get(4).setOnAction((ActionEvent e)->{
+            stage.setScene(new HotelPromotionUI(new Group(),stage,this,loginScene));
+        });
 
     }
 }
