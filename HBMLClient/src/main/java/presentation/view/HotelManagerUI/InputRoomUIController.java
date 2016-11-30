@@ -50,7 +50,7 @@ public class InputRoomUIController {
 
         if(roomTableView.getSelectionModel().getSelectedItems()!=null){
             roomTableView.getSelectionModel().selectedItemProperty().addListener((v,oldValue,newValue)->{
-                changePriceTextField.setText(String.valueOf(((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).getRoomPrice()));
+                    changePriceTextField.setText(String.valueOf(((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).getRoomPrice()));
             });
         }else{
             changePriceTextField.setText("");

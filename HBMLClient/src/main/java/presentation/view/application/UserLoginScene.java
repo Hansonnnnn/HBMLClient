@@ -6,23 +6,19 @@ package presentation.view.application;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import presentation.view.HotelManagerUI.HotelManagerScene;
+import presentation.view.WebManagerUI.WebManagerUI;
 import presentation.view.WebMarketerUI.WebMarker;
 
 public class UserLoginScene {
@@ -165,9 +161,12 @@ public class UserLoginScene {
 			if(accountTextField.getText().equals("11")
 					&&passwordField.getText().equals("admin")){
 				primaryStage.setScene(new WebMarker(new Group(),primaryStage,scene));
-			}else if(accountTextField.getText().equals("10")
+			}else if(accountTextField.getText().equals("01")
 					&&passwordField.getText().equals("admin")){
 				primaryStage.setScene(new HotelManagerScene(new Group(),primaryStage,scene));
+			}else if(accountTextField.getText().equals("10")
+					&&passwordField.getText().equals("admin")){
+				primaryStage.setScene(new WebManagerUI(new Group(),primaryStage,scene));
 			}
 		});
 		
