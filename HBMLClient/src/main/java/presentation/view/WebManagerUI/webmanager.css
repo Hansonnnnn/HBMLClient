@@ -1,0 +1,73 @@
+.transButton{
+    -fx-background-color: transparent;
+}
+
+.grayBackground{
+    -fx-background-color: #BEBEBE;
+}
+
+.rightBorder{
+    -fx-border-right-style:solid;
+    -fx-border-right-width:2px;
+}
+
+.circle{
+    -fx-background-radius:15px;
+}
+
+.rightBorder{
+    -fx-border-style:solid;
+    -fx-border-width:0px 1px 0px 0px;
+}
+
+.operationButton:hover{
+    -fx-background-color: #0080FF;
+}
+
+.fontsize{
+    -fx-font-size: 16px;
+}
+
+
+/**
+ *设置提示输入错误的标签为红色
+ */
+.tipLabelColor{
+    -fx-font-color:#FF0000;
+}
+
+/**
+ *添加信息显示框背景和边界
+ */
+.infoVBox{
+    -fx-background-color: #BEBEBE;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/**
+ *将信息标签加粗
+ */
+.infoLabel{
+    -fx-font-weight: bold;
+}
+
+/**
+ *给确认按钮添加绿色背景
+ */
+.confirmButton{
+    -fx-text-fill:white;
+    -fx-font-family:"微软雅黑";
+    -fx-background-color: linear-gradient(#00A600, #009100);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.confirmButton:hover{
+    -fx-text-fill:#46A3FF;
+}
+
+.titleLabel{
+    -fx-font-size:22px;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebManagerUI.WebMarketerInfoUIController">
+   <padding>
+      <Insets bottom="9.0" left="39.0" right="39.0" top="8.0" />
+   </padding>
+   <children>
+      <VBox prefHeight="666.0" prefWidth="660.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="seekMarketerIdTextField" prefHeight="30.0" prefWidth="350.0" promptText="网站营销人员ID" styleClass="circle">
+                     <padding>
+                        <Insets left="20.0" right="55.0" />
+                     </padding></TextField>
+                  <Button mnemonicParsing="false" onAction="#seekMarketerInfo" styleClass="transButton">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../webmanagerimages/seek.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="-45.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Label fx:id="tipLabel" styleClass="tipLabelColor" text="未找到网站营销人员,请输入正确的网站营销人员ID" visible="false" />
+               </children>
+            </HBox>
+            <VBox fx:id="infoVBox" prefHeight="573.0" prefWidth="660.0" visible="false">
+               <padding>
+                  <Insets left="30.0" right="30.0" top="60.0" />
+               </padding>
+               <children>
+                  <VBox styleClass="infoVBox">
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="175.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.0" minWidth="10.0" prefWidth="375.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="网站营销人员ID :" />
+                              <Label text="账号 :" GridPane.rowIndex="1" />
+                              <Label text="密码 :" GridPane.rowIndex="2" />
+                              <Label text="姓名 :" GridPane.rowIndex="3" />
+                              <Label text="联系方式 :" GridPane.rowIndex="4" />
+                              <TextField fx:id="marketerIdTextField" disable="true" text="151250888" GridPane.columnIndex="1" />
+                              <TextField fx:id="marketerAccountTextField" disable="true" text="11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="marketerPasswordTextField" disable="true" text="admin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="marketerNameTextField" disable="true" text="李四" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="marketerPhoneTextField" disable="true" text="10088" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="164.0" prefWidth="540.0" spacing="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#edit" prefWidth="120.0" styleClass="confirmButton" text="编辑" />
+                        <Button mnemonicParsing="false" onAction="#confirm" prefWidth="120.0" styleClass="confirmButton" text="确认修改" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
