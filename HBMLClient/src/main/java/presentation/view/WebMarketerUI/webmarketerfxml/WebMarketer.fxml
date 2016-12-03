@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebMarketerUIController">
+    <children>
+        <VBox prefHeight="660.0" prefWidth="199.0" styleClass="rightBorder">
+            <children>
+                <VBox alignment="CENTER" prefHeight="132.0" prefWidth="200.0" spacing="10.0" styleClass="grayBackground">
+                    <children>
+                        <Label styleClass="titleLabel" text="HBMS         " />
+                        <Label styleClass="titleLabel" text="酒店管理系统" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="541.0" prefWidth="159.0">
+                    <children>
+                        <Button fx:id="exceptionOrderButton" mnemonicParsing="false" onAction="#toExceptionOrder" prefHeight="40.0" prefWidth="193.0" text="异常订单处理">
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="operationButton" />
+                                <String fx:value="fontsize" />
+                            </styleClass></Button>
+                        <Button fx:id="webPromotionButton" mnemonicParsing="false" onAction="#toWebPromotion" prefHeight="40.0" prefWidth="193.0" text="网站促销活动制定">
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="operationButton" />
+                                <String fx:value="fontsize" />
+                            </styleClass></Button>
+                        <Button fx:id="regionPromotionButton" mnemonicParsing="false" onAction="#toRegionPromotion" prefHeight="40.0" prefWidth="193.0" text="特定商圈折扣制定">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="operationButton" />
+                                <String fx:value="fontsize" />
+                            </styleClass>
+                        </Button>
+                        <Button fx:id="memberGradeButton" mnemonicParsing="false" onAction="#toMemberGrade" prefHeight="40.0" prefWidth="193.0" text="会员等级制定">
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="operationButton" />
+                                <String fx:value="fontsize" />
+                            </styleClass></Button>
+                        <Button fx:id="creditValueButton" mnemonicParsing="false" onAction="#toCreditValue" prefHeight="40.0" prefWidth="193.0" text="信 用 值 充 值">
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="operationButton" />
+                                <String fx:value="fontsize" />
+                            </styleClass></Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <VBox prefHeight="711.0" prefWidth="745.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="711.0" styleClass="grayBackground">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../webmarketerimages/user.png" />
+                            </image></ImageView>
+                        <Label text="张三,欢迎你" />
+                        <Button mnemonicParsing="false" onAction="#backToLogin" styleClass="transButton">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../webmarketerimages/cancel.png" />
+                                    </image></ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <VBox fx:id="infoVBox" prefHeight="666.0" prefWidth="738.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>

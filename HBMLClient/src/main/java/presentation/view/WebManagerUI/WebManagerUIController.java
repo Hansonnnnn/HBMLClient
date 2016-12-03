@@ -25,6 +25,9 @@ public class WebManagerUIController {
     public void init(Stage stage,Scene beforeScene){
         this.stage=stage;
         this.beforeScene=beforeScene;
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new AddHotelUI());
+        addHotelButton.setStyle("-fx-background-color: #0080FF");
     }
 
     /**

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.RechargeCreditValueUIController">
+   <children>
+      <Pane prefHeight="64.0" prefWidth="738.0">
+         <children>
+            <Button layoutY="7.0" mnemonicParsing="false" onAction="#back" styleClass="transButton">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../webmarketerimages/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator layoutX="60.0" layoutY="7.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="0.0" />
+            <Label layoutX="77.0" layoutY="22.0" text="用户信用值充值" />
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" prefHeight="473.0" prefWidth="738.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="用户姓名(昵称) :" />
+                  <Label text="联系方式 :" GridPane.rowIndex="1" />
+                  <Label text="张三" GridPane.columnIndex="1" />
+                  <Label text="当前信用值 :" GridPane.rowIndex="2" />
+                  <Label text="10086" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="5000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="充值金额 :" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <TextField />
+                        <Label text="元" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="100.0" top="100.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="71.0" prefWidth="738.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="100.0" text="确认充值" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

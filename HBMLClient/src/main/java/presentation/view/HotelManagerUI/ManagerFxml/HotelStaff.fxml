@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelStaffUIController">
+    <children>
+        <HBox prefWidth="600.0" styleClass="blankHBox">
+            <children>
+                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
+                <Label fx:id="orderBrowseLabel" styleClass="labelSize" />
+            </children>
+        </HBox>
+        <BorderPane prefHeight="0.0" prefWidth="600.0">
+            <right>
+                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../user.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../cancel.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <styleClass>
+                                <String fx:value="transButton" />
+                                <String fx:value="toLarge" />
+                            </styleClass></Button>
+                    </children>
+                </HBox>
+            </right>
+        </BorderPane>
+      <VBox alignment="CENTER" prefHeight="492.0" prefWidth="670.0" spacing="15.0">
+         <children>
+            <Button fx:id="orderBrowseButton" mnemonicParsing="false" onAction="#toOrderBrowse" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="订单浏览/执行" />
+            <Button fx:id="inputRoomButton" mnemonicParsing="false" onAction="#toInputRoom" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="录入可用客房" />
+            <Button fx:id="updateRoomButton" mnemonicParsing="false" onAction="#toUpdateRoom" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="更新入住/退房信息" />
+            <Button fx:id="hotelInfoButton" mnemonicParsing="false" onAction="#toHotelInfo" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="录入酒店信息" />
+            <Button fx:id="hotelPromotionButton" mnemonicParsing="false" onAction="#toHotelPromotion" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="制定信息策略" />
+         </children>
+      </VBox>
+      <HBox prefHeight="40.0" prefWidth="200.0" styleClass="blankHBox" />
+    </children>
+</VBox>

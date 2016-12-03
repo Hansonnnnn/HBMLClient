@@ -6,10 +6,6 @@
     -fx-background-color: #BEBEBE;
 }
 
-.rightBorder{
-    -fx-border-right-style:solid;
-    -fx-border-right-width:2px;
-}
 
 .circle{
     -fx-background-radius:15px;
@@ -33,7 +29,7 @@
  *设置提示输入错误的标签为红色
  */
 .tipLabelColor{
-    -fx-font-color:#FF0000;
+    -fx-text-fill:#FF0000;
 }
 
 /**
@@ -70,4 +66,5 @@
 .titleLabel{
     -fx-font-size:22px;
     -fx-font-weight: bold;
+    -fx-font-family:serif;
 }

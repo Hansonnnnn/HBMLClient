@@ -18,8 +18,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import presentation.view.HotelManagerUI.HotelManagerScene;
+import presentation.view.HotelManagerUI.HotelStaffUI;
 import presentation.view.WebManagerUI.WebManagerUI;
 import presentation.view.WebMarketerUI.WebMarker;
+import presentation.view.WebMarketerUI.WebMarketerUI;
 
 public class UserLoginScene {
 	/*
@@ -160,10 +162,11 @@ public class UserLoginScene {
 		loginButton.setOnAction((ActionEvent e)->{
 			if(accountTextField.getText().equals("11")
 					&&passwordField.getText().equals("admin")){
-				primaryStage.setScene(new WebMarker(new Group(),primaryStage,scene));
+//				primaryStage.setScene(new WebMarker(new Group(),primaryStage,scene));
+				primaryStage.setScene(new WebMarketerUI(new Group(),primaryStage,scene));
 			}else if(accountTextField.getText().equals("01")
 					&&passwordField.getText().equals("admin")){
-				primaryStage.setScene(new HotelManagerScene(new Group(),primaryStage,scene));
+				primaryStage.setScene(new HotelStaffUI(new Group(),primaryStage,scene));
 			}else if(accountTextField.getText().equals("10")
 					&&passwordField.getText().equals("admin")){
 				primaryStage.setScene(new WebManagerUI(new Group(),primaryStage,scene));
