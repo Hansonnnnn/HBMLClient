@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.InputRoomUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.InputRoomUIController">
     <children>
         <HBox prefWidth="600.0" styleClass="blankHBox">
             <children>
@@ -56,9 +56,9 @@
             </Button>
          </left>
         </BorderPane>
-      <VBox alignment="CENTER" prefHeight="299.0" prefWidth="600.0">
+      <VBox alignment="CENTER" prefHeight="355.0" prefWidth="670.0">
          <children>
-            <TableView fx:id="roomTableView" editable="true" maxWidth="352.0">
+            <TableView fx:id="roomTableView" editable="true" maxWidth="352.0" prefHeight="396.0" prefWidth="352.0">
                <columns>
                   <TableColumn fx:id="roomTypeColumn" minWidth="100.0" prefWidth="75.0" text="房型" />
                   <TableColumn fx:id="roomNumberColumn" minWidth="100.0" prefWidth="75.0" text="可用客房数" />
@@ -69,28 +69,28 @@
       </VBox>
       <Pane prefHeight="40.0" prefWidth="600.0">
          <children>
-            <Button layoutX="127.0" layoutY="5.0" minWidth="92.0" mnemonicParsing="false" onAction="#deleteRoomType" text="删除房型">
+            <Button layoutX="164.0" layoutY="5.0" minWidth="92.0" mnemonicParsing="false" onAction="#deleteRoomType" text="删除房型">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <Button layoutX="228.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#reduceRoomNumber" text="-">
+            <Button layoutX="265.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#reduceRoomNumber" text="-">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <Button layoutX="275.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#addRoomNumber" text="+">
+            <Button layoutX="312.0" layoutY="5.0" minWidth="47.0" mnemonicParsing="false" onAction="#addRoomNumber" text="+">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <TextField fx:id="changePriceTextField" layoutX="327.0" layoutY="5.0" maxWidth="146.0" onKeyReleased="#changePrice" />
+            <TextField fx:id="changePriceTextField" layoutX="364.0" layoutY="5.0" maxWidth="146.0" onKeyReleased="#changePrice" />
          </children>
       </Pane>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0" spacing="10.0">
+      <HBox alignment="CENTER" prefHeight="63.0" prefWidth="620.0" spacing="10.0">
          <children>
             <TextField fx:id="roomTypeTextField" maxWidth="120.0" promptText="房间类型" />
             <TextField fx:id="roomNumberTextField" maxWidth="120.0" promptText="可用客房数量" />
@@ -103,5 +103,6 @@
             </Button>
          </children>
       </HBox>
+      <HBox prefHeight="40.0" prefWidth="620.0" styleClass="blankHBox" />
      </children>
 </VBox>

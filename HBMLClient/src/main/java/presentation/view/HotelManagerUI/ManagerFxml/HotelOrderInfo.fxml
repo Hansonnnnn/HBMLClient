@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelOrderInfoUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelOrderInfoUIController">
    <children>
       <HBox prefWidth="600.0" styleClass="blankHBox">
          <children>
@@ -56,7 +56,7 @@
             <Label fx:id="customerLabel" styleClass="boldLabel" text="客户" />
             <VBox fx:id="customerVBox" prefHeight="110.0" prefWidth="513.0" styleClass="infoVBox">
                <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                </padding>
                <children>
                   <HBox prefHeight="24.0" prefWidth="474.0" spacing="10.0">
@@ -94,7 +94,7 @@
                   <Label fx:id="orderLabel" styleClass="boldLabel" text="订单" />
                   <VBox fx:id="orderVBox" prefHeight="200.0" prefWidth="100.0" styleClass="infoVBox">
                      <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                      <children>
                         <HBox prefHeight="24.0" prefWidth="478.0" spacing="10.0">
@@ -145,17 +145,17 @@
             </VBox>
          </children>
       </VBox>
-      <VBox prefHeight="133.0" prefWidth="600.0">
+      <VBox prefHeight="109.0" prefWidth="670.0">
          <padding>
             <Insets left="40.0" right="40.0" />
          </padding>
          <children>
-            <VBox prefHeight="120.0" prefWidth="100.0">
+            <VBox prefHeight="116.0" prefWidth="590.0">
                <children>
                   <Label fx:id="roomLabel" styleClass="boldLabel" text="客房&amp;其他" />
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="infoVBox">
                      <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                      <children>
                         <HBox prefHeight="24.0" prefWidth="470.0" spacing="10.0">
@@ -188,7 +188,7 @@
             </VBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="600.0" spacing="40.0">
+      <HBox alignment="CENTER" prefHeight="44.0" prefWidth="670.0" spacing="40.0">
          <children>
             <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" text="返回订单浏览">
                <styleClass>
