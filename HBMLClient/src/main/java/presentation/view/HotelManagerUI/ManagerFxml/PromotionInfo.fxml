@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.PromotionInfoUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.PromotionInfoUIController">
     <children>
         <HBox prefWidth="600.0" styleClass="blankHBox">
             <children>
@@ -64,7 +64,7 @@
         </BorderPane>
       <VBox prefWidth="700.0">
          <padding>
-            <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
          </padding>
          <children>
             <VBox prefWidth="620.0" spacing="10.0" styleClass="infoVBox">
@@ -72,19 +72,19 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="620.0" spacing="15.0">
                      <children>
                         <Label text="促销策略名 :" />
-                        <TextField fx:id="promotionNameTextField" disable="true" maxWidth="200.0" text="双十一" />
+                        <TextField fx:id="promotionNameTextField" disable="true" maxWidth="180.0" text="双十一" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
                      <children>
                         <Label text="所需会员等级 :" />
-                        <TextField fx:id="memberLevelTextField" disable="true" maxWidth="200.0" text="5" />
+                        <TextField fx:id="memberLevelTextField" disable="true" maxWidth="180.0" text="5" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefWidth="200.0">
                      <children>
                         <Label text="策略开始时间 :" />
-                        <DatePicker fx:id="startDatePicker" disable="true" maxWidth="200.0" />
+                        <DatePicker fx:id="startDatePicker" disable="true" maxWidth="180.0" />
                         <Pane>
                            <children>
                               <ComboBox fx:id="startHourComboBox" disable="true" layoutX="22.0" layoutY="1.0" prefWidth="100.0" visibleRowCount="8" />
@@ -102,7 +102,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
                      <children>
                         <Label text="策略结束时间 :" />
-                        <DatePicker fx:id="endDatePicker" disable="true" maxWidth="200.0" />
+                        <DatePicker fx:id="endDatePicker" disable="true" maxWidth="180.0" />
                         <Pane>
                            <children>
                               <ComboBox fx:id="endHourComboBox" disable="true" layoutX="22.0" layoutY="5.0" prefWidth="100.0" visibleRowCount="8" />
@@ -120,7 +120,7 @@
                   <HBox prefHeight="198.0" prefWidth="620.0" spacing="30.0">
                      <children>
                         <Label text="策略内容 :" />
-                        <TextArea fx:id="contentTextArea" disable="true" prefHeight="200.0" prefWidth="470.0" text="减免" />
+                        <TextArea fx:id="contentTextArea" disable="true" prefHeight="200.0" prefWidth="450.0" text="减免" />
                      </children>
                   </HBox>
                </children>
@@ -130,7 +130,7 @@
             </VBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="50.0">
+      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="670.0" spacing="50.0">
          <children>
             <Button fx:id="editButton" minWidth="100.0" mnemonicParsing="false" onAction="#edit" text="编辑">
                <styleClass>
@@ -152,6 +152,6 @@
             </Button>
          </children>
       </HBox>
-      <HBox prefHeight="40.0" prefWidth="200.0" styleClass="blankHBox" />
+      <HBox prefHeight="40.0" prefWidth="670.0" styleClass="blankHBox" />
     </children>
 </VBox>

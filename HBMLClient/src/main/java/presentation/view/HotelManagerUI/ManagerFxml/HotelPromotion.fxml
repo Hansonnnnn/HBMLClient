@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelPromotionUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelPromotionUIController">
     <children>
         <HBox prefWidth="600.0" styleClass="blankHBox">
             <children>
@@ -56,9 +56,9 @@
                 </Button>
             </left>
         </BorderPane>
-      <VBox alignment="CENTER" prefHeight="416.0" prefWidth="700.0">
+      <VBox alignment="CENTER" prefHeight="390.0" prefWidth="670.0">
          <children>
-            <TableView fx:id="hotelPromotionTableView" maxWidth="502.0" prefHeight="423.0">
+            <TableView fx:id="hotelPromotionTableView" maxWidth="502.0" prefHeight="369.0" prefWidth="502.0">
                <columns>
                   <TableColumn fx:id="promotionNameTableColumn" prefWidth="100.0" text="促销策略名" />
                   <TableColumn fx:id="promotionStartTableColumn" prefWidth="150.0" text="策略开始时间" />
@@ -86,7 +86,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="700.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="670.0">
          <children>
             <Button mnemonicParsing="false" onAction="#toNewPromotion" text="制 定 新 策 略">
                <styleClass>

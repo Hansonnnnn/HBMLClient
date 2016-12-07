@@ -48,12 +48,12 @@ public class orderBrowseScene extends Scene{
 	/*
 	 * 订单列表数据
 	 */
-    private ObservableList<HotelOrder> data;
-
-	/*
-	 * 酒店订单列表
-	 */
-    private TableView<HotelOrder> hotelOrderTableView;
+//    private ObservableList<HotelOrder> data;
+//
+//	/*
+//	 * 酒店订单列表
+//	 */
+//    private TableView<HotelOrder> hotelOrderTableView;
 
     /*
      *订单编号标签
@@ -89,17 +89,17 @@ public class orderBrowseScene extends Scene{
         nodes.add(orderBrowseLabel);
         vBox.getChildren().add(hotelManager.addHeadTitle("张三", beforeScene, loginScene, nodes, true, stage));
 
-        hotelOrderTableView=new TableView<>();
-        hotelOrderTableView.setEditable(false);
-        hotelOrderTableView.setMaxWidth(402);
-        data=FXCollections.observableArrayList();
-        data.add(new HotelOrder("李四", "201611260001", "未执行"));
-        data.add(new HotelOrder("王五", "201611260002", "异常"));
-        hotelOrderTableView=addTableView(hotelOrderTableView, data);
+//        hotelOrderTableView=new TableView<>();
+//        hotelOrderTableView.setEditable(false);
+//        hotelOrderTableView.setMaxWidth(402);
+//        data=FXCollections.observableArrayList();
+//        data.add(new HotelOrder("李四", "201611260001", "未执行"));
+//        data.add(new HotelOrder("王五", "201611260002", "异常"));
+//        hotelOrderTableView=addTableView(hotelOrderTableView, data);
 
         VBox tableVBox=new VBox();
         tableVBox.setAlignment(Pos.CENTER);
-        tableVBox.getChildren().add(hotelOrderTableView);
+//        tableVBox.getChildren().add(hotelOrderTableView);
         vBox.getChildren().add(tableVBox);
 
         HBox hBox=new HBox();
@@ -113,9 +113,9 @@ public class orderBrowseScene extends Scene{
         orderInfoButton.setOnAction((ActionEvent e)->{
             stage.setScene(new HotelOrderInfoUI(new Group(),stage,this,loginScene));
         });
-        hotelOrderTableView.getSelectionModel().selectedItemProperty().addListener((v,oldValue,newValue)->{
-            orderIDTextField.setText(((HotelOrder)hotelOrderTableView.getSelectionModel().getSelectedItem()).getOrderID());
-        });
+//        hotelOrderTableView.getSelectionModel().selectedItemProperty().addListener((v,oldValue,newValue)->{
+//            orderIDTextField.setText(((HotelOrder)hotelOrderTableView.getSelectionModel().getSelectedItem()).getOrderID());
+//        });
         hBox.getChildren().addAll(orderIDLabel,orderIDTextField,orderInfoButton);
 
         vBox.getChildren().add(hBox);
@@ -128,54 +128,54 @@ public class orderBrowseScene extends Scene{
 
 
 
-    public static TableView<HotelOrder> addTableView(TableView<HotelOrder> hotelOrderTableView,
-                                                     ObservableList<HotelOrder> data){
-        TableColumn<HotelOrder,String> nameColumn=new TableColumn<>("客户姓名");
-        nameColumn.setMinWidth(100);
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("userName"));
+//    public static TableView<HotelOrder> addTableView(TableView<HotelOrder> hotelOrderTableView,
+//                                                     ObservableList<HotelOrder> data){
+//        TableColumn<HotelOrder,String> nameColumn=new TableColumn<>("客户姓名");
+//        nameColumn.setMinWidth(100);
+//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("userName"));
+//
+//        TableColumn<HotelOrder,String> idColumn=new TableColumn<>("订单ID");
+//        idColumn.setMinWidth(150);
+//        idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+//
+//        TableColumn<HotelOrder,String> stateColumn=new TableColumn<>("订单状态");
+//        stateColumn.setMinWidth(150);
+//        stateColumn.setCellValueFactory(new PropertyValueFactory<>("orderState"));
+//        hotelOrderTableView.setItems(data);
+//        hotelOrderTableView.getColumns().addAll(nameColumn,idColumn,stateColumn);
+//
+//        return hotelOrderTableView;
+//    }
 
-        TableColumn<HotelOrder,String> idColumn=new TableColumn<>("订单ID");
-        idColumn.setMinWidth(150);
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
-
-        TableColumn<HotelOrder,String> stateColumn=new TableColumn<>("订单状态");
-        stateColumn.setMinWidth(150);
-        stateColumn.setCellValueFactory(new PropertyValueFactory<>("orderState"));
-        hotelOrderTableView.setItems(data);
-        hotelOrderTableView.getColumns().addAll(nameColumn,idColumn,stateColumn);
-
-        return hotelOrderTableView;
-    }
 
 
-
-    public class HotelOrder{
-        private String userName;
-        private String orderID;
-        private String orderState;
-        public HotelOrder(String userName,String orderID,String orderState){
-            this.userName=userName;
-            this.orderID=orderID;
-            this.orderState=orderState;
-        }
-        public String getUserName() {
-            return userName;
-        }
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
-        public String getOrderID() {
-            return orderID;
-        }
-        public void setOrderID(String orderID) {
-            this.orderID = orderID;
-        }
-        public String getOrderState() {
-            return orderState;
-        }
-        public void setOrderState(String orderState) {
-            this.orderState = orderState;
-        }
-    }
+//    public class HotelOrder{
+//        private String userName;
+//        private String orderID;
+//        private String orderState;
+//        public HotelOrder(String userName,String orderID,String orderState){
+//            this.userName=userName;
+//            this.orderID=orderID;
+//            this.orderState=orderState;
+//        }
+//        public String getUserName() {
+//            return userName;
+//        }
+//        public void setUserName(String userName) {
+//            this.userName = userName;
+//        }
+//        public String getOrderID() {
+//            return orderID;
+//        }
+//        public void setOrderID(String orderID) {
+//            this.orderID = orderID;
+//        }
+//        public String getOrderState() {
+//            return orderState;
+//        }
+//        public void setOrderState(String orderState) {
+//            this.orderState = orderState;
+//        }
+//    }
 
 }

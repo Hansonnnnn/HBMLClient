@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.UpdateRoomUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.UpdateRoomUIController">
     <children>
         <HBox prefWidth="600.0" styleClass="blankHBox">
             <children>
@@ -56,9 +56,9 @@
                 </Button>
             </left>
         </BorderPane>
-      <VBox alignment="CENTER" prefHeight="306.0" prefWidth="600.0">
+      <VBox alignment="CENTER" prefHeight="432.0" prefWidth="620.0">
          <children>
-            <TableView fx:id="updateRoomTableView" maxWidth="402.0" prefHeight="282.0" prefWidth="352.0">
+            <TableView fx:id="updateRoomTableView" maxWidth="402.0" prefHeight="399.0" prefWidth="402.0">
                <columns>
                   <TableColumn fx:id="roomIdColumn" minWidth="100.0" prefWidth="75.0" text="房间号" />
                   <TableColumn fx:id="roomStateColumn" minWidth="100.0" prefWidth="75.0" text="房间状态" />
@@ -67,7 +67,7 @@
             </TableView>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0" spacing="50.0">
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="670.0" spacing="50.0">
          <children>
             <Button mnemonicParsing="false" onAction="#toCheckInfoUI" text="更新入住信息">
                <styleClass>
@@ -83,6 +83,6 @@
             </Button>
          </children>
       </HBox>
-      <HBox prefHeight="39.0" prefWidth="600.0" styleClass="blankHBox" />
+      <HBox prefHeight="40.0" prefWidth="600.0" styleClass="blankHBox" />
     </children>
 </VBox>

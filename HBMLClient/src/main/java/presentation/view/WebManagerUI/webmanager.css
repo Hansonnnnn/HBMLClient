@@ -3,19 +3,17 @@
 }
 
 .grayBackground{
-    -fx-background-color: #BEBEBE;
+    /*-fx-background-color: #BEBEBE;*/
+    -fx-background-color: #1c3048;
 }
 
-.rightBorder{
-    -fx-border-right-style:solid;
-    -fx-border-right-width:2px;
-}
 
 .circle{
     -fx-background-radius:15px;
 }
 
 .rightBorder{
+    -fx-border-color: #0080FF;
     -fx-border-style:solid;
     -fx-border-width:0px 1px 0px 0px;
 }
@@ -25,7 +23,8 @@
 }
 
 .fontsize{
-    -fx-font-size: 16px;
+    -fx-font-size: 17px;
+    -fx-text-fill: #ffffff;
 }
 
 
@@ -33,7 +32,7 @@
  *设置提示输入错误的标签为红色
  */
 .tipLabelColor{
-    -fx-font-color:#FF0000;
+    -fx-text-fill:#FF0000;
 }
 
 /**
@@ -70,4 +69,19 @@
 .titleLabel{
     -fx-font-size:22px;
     -fx-font-weight: bold;
+    -fx-font-family:serif;
+    -fx-text-fill: #ffffff;
+}
+
+.nameLabel{
+    -fx-text-fill: #ffffff;
+}
+
+/**
+ *酒店管理系统标签所在的VBox，显示其下边界
+ */
+.titleVBox{
+    -fx-border-color: #0080FF;
+    -fx-border-style:solid;
+    -fx-border-width:0px 0px 1px 0px;
 }
