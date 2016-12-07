@@ -1,15 +1,18 @@
 package presentation.view.customerui.customerui;
 
+import java.util.Map;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import presentation.view.customerui.customerui.UnexecutedOrderPageController.CheckOrderButtonCell;
-import presentation.view.customerui.customerui.UnexecutedOrderPageController.UnexecutedOrderButtonCell;
+import vo.OrderVO;
 import vo.UnexecutedOrderVO;
 
 public class ExecutedOrderUIController {
@@ -22,8 +25,9 @@ public class ExecutedOrderUIController {
 	@FXML private TableColumn priceColumn; 
 	@FXML private TableColumn checkOrderButtonColumn;
 	
-	@FXML private ObservableList<UnexecutedOrderVO> executedOrderData;
+	@FXML private ObservableList<OrderVO> executedOrderData;
 	
+	private Map<Integer, OrderVO> orderList;
 	public void init()
 	{
 		initTable();
@@ -44,18 +48,33 @@ public class ExecutedOrderUIController {
 				return new CheckOrderButtonCell();
 			}
 		});
-		cancelOrderButtonColumn.setCellFactory(new Callback<TableColumn<UnexecutedOrderVO, Boolean>, TableCell<UnexecutedOrderVO, Boolean>>() 
+		
+		
+		executedOrderData = FXCollections.observableArrayList();
+		for(int i = 0;i < orderList.size();i++)
 		{
-			@Override
-			public TableCell call(TableColumn param)
+			executedOrderData.add();
+		}
+		executedOrderData.add(new OrderVO("201611220001","2016.11.22 8:00","2016.11.22 20:00","2016.11.22 24:00",200));
+		list.setItems(executedOrderData);
+	}
+	
+	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
+	{
+		private Button cancelOrderButton = new Button("撤销订单");
+		
+		protected void updateItem(Boolean t, boolean empty)
+		{
+			super.updateItem(t, empty);
+			if(empty)
 			{
-				return new UnexecutedOrderButtonCell();
+				setGraphic(null);
+				setText(null);
+			}else
+			{
+				setGraphic(cancelOrderButton);
+				setText(null);
 			}
-		});
-		
-		
-		unexecuteOrderData = FXCollections.observableArrayList();
-		unexecuteOrderData.add(new UnexecutedOrderVO("201611220001","2016.11.22 8:00","2016.11.22 20:00","2016.11.22 24:00",200));
-		list.setItems(unexecuteOrderData);
+		}
 	}
 }

@@ -34,7 +34,7 @@ public class OrderPO implements Serializable{
 	}
 
 	public OrderPO(int orderID, int userID, int hotelID, int roomInfoID, OrderStateMessage orderState,
-			Date generateTime, Date cancelTime, Date executeDDl, Date chechinTime, Date chechoutTime, int number,
+			Date generateTime, Date cancelTime, Date executeDDl, Date checkinTime, Date checkoutTime, int number,
 			int hasChild, int price) {
 		super();
 		this.orderID = orderID;
@@ -45,8 +45,8 @@ public class OrderPO implements Serializable{
 		this.generateTime = generateTime;
 		this.cancelTime = cancelTime;
 		this.executeDDl = executeDDl;
-		this.chechinTime = chechinTime;
-		this.chechoutTime = chechoutTime;
+		this.checkinTime = checkinTime;
+		this.checkoutTime = checkoutTime;
 		this.number = number;
 		this.hasChild = hasChild;
 		this.price = price;
@@ -116,20 +116,20 @@ public class OrderPO implements Serializable{
 		this.executeDDl = executeDDl;
 	}
 
-	public Date getChechinTime() {
-		return chechinTime;
+	public Date getcheckinTime() {
+		return checkinTime;
 	}
 
-	public void setChechinTime(Date chechinTime) {
-		this.chechinTime = chechinTime;
+	public void setcheckinTime(Date checkinTime) {
+		this.checkinTime = checkinTime;
 	}
 
-	public Date getChechoutTime() {
-		return chechoutTime;
+	public Date getcheckoutTime() {
+		return checkoutTime;
 	}
 
-	public void setChechoutTime(Date chechoutTime) {
-		this.chechoutTime = chechoutTime;
+	public void setcheckoutTime(Date checkoutTime) {
+		this.checkoutTime = checkoutTime;
 	}
 
 	public int getNumber() {
@@ -160,8 +160,8 @@ public class OrderPO implements Serializable{
 	public String toString() {
 		return "OrderPO [orderID=" + orderID + ", userID=" + userID + ", hotelID=" + hotelID + ", roomInfoID="
 				+ roomInfoID + ", orderState=" + orderState + ", generateTime=" + generateTime + ", cancelTime="
-				+ cancelTime + ", executeDDl=" + executeDDl + ", chechinTime=" + chechinTime + ", chechoutTime="
-				+ chechoutTime + ", number=" + number + ", hasChild=" + hasChild + ", price=" + price + "]";
+				+ cancelTime + ", executeDDl=" + executeDDl + ", checkinTime=" + checkinTime + ", checkoutTime="
+				+ checkoutTime + ", number=" + number + ", hasChild=" + hasChild + ", price=" + price + "]";
 	}
 	
 	
