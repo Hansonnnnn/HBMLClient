@@ -13,6 +13,10 @@ import message.OrderStateMessage;
 
 
 public class OrderPO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5375281150006214703L;
 	int orderID;
 	int userID;
 	int hotelID;
@@ -116,19 +120,19 @@ public class OrderPO implements Serializable{
 		this.executeDDl = executeDDl;
 	}
 
-	public Date getcheckinTime() {
+	public Date getChechinTime() {
 		return checkinTime;
 	}
 
-	public void setcheckinTime(Date checkinTime) {
+	public void setChechinTime(Date checkinTime) {
 		this.checkinTime = checkinTime;
 	}
 
-	public Date getcheckoutTime() {
+	public Date getChechoutTime() {
 		return checkoutTime;
 	}
 
-	public void setcheckoutTime(Date checkoutTime) {
+	public void setChechoutTime(Date checkoutTime) {
 		this.checkoutTime = checkoutTime;
 	}
 
@@ -163,7 +167,6 @@ public class OrderPO implements Serializable{
 				+ cancelTime + ", executeDDl=" + executeDDl + ", checkinTime=" + checkinTime + ", checkoutTime="
 				+ checkoutTime + ", number=" + number + ", hasChild=" + hasChild + ", price=" + price + "]";
 	}
-	
 	
 	
 }

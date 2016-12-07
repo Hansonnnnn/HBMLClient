@@ -1,7 +1,7 @@
 package businesslogic.hotelInfobl;
 
 import java.rmi.RemoteException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
@@ -17,7 +17,7 @@ public class HotelCustomerImpl implements HotelCustomerService{
 	
 	public HotelCustomerImpl() throws RemoteException {
 		hotelDao = ClientRunner.remoteHelper.getHotelDao();
-		hotelList = new HashMap<String, HotelVO>();
+		hotelList = new LinkedHashMap<String, HotelVO>();
 		
 	}
 	

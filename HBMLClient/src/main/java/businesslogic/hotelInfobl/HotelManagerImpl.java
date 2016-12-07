@@ -4,13 +4,13 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
-import businesslogicservice.hotelinfoblservice.HotelManagerService;
+import businesslogicservice.hotelinfoblservice.HotelStaffService;
 import dao.hotel.HotelDao;
 import po.HotelPO;
 import rmi.ClientRunner;
 import vo.HotelVO;
 
-public class HotelManagerImpl implements HotelManagerService{
+public class HotelManagerImpl implements HotelStaffService{
 
 	
 	private int hotel_ID;

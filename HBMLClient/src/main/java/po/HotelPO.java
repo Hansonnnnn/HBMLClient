@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.List;
 
 public class HotelPO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1854219570798741040L;
 	String name;
 	int id;
 	int star;
@@ -13,12 +17,13 @@ public class HotelPO implements Serializable{
 	String introduction;
 	String facility;
 	List<Image> environment;
-	int score;
+	double score;
+	int lowestPrice;
 	
 	
 
 	public HotelPO(String name, int id, int star, String address, int region, String introduction, String facility,
-			List<Image> environment, int score) {
+			List<Image> environment, double score,int lowestPrice) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -29,6 +34,7 @@ public class HotelPO implements Serializable{
 		this.facility = facility;
 		this.environment = environment;
 		this.score = score;
+		this.lowestPrice = lowestPrice;
 	}
 
 	public HotelPO() {
@@ -99,14 +105,30 @@ public class HotelPO implements Serializable{
 		this.environment = environment;
 	}
 
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 
+	public int getLowestPrice() {
+		return lowestPrice;
+	}
+
+	public void setLowestPrice(int lowestPrice) {
+		this.lowestPrice = lowestPrice;
+	}
+
+	@Override
+	public String toString() {
+		return "HotelPO [name=" + name + ", id=" + id + ", star=" + star + ", address=" + address + ", region=" + region
+				+ ", introduction=" + introduction + ", facility=" + facility + ", environment=" + environment
+				+ ", score=" + score + ", lowestPrice=" + lowestPrice + "]";
+	}
+
+	
 	
 	
 	

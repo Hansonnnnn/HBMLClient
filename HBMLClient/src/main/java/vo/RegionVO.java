@@ -1,19 +1,14 @@
-package po;
+package vo;
 
-import java.io.Serializable;
+public class RegionVO {
 
-public class RegionPO implements Serializable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7967208747639332844L;
 	int regionID;
 	String province;
 	String city;
 	String regionName;
 	
-	public RegionPO(int regionID, String province, String city, String regionName) {
+	public RegionVO(int regionID, String province, String city, String regionName) {
 		super();
 		this.regionID = regionID;
 		this.province = province;
@@ -58,6 +53,5 @@ public class RegionPO implements Serializable{
 	public void setRegionName(String regionName) {
 		this.regionName = regionName;
 	}
-	
 	
 }

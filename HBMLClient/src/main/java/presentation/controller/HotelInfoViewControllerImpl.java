@@ -4,7 +4,7 @@ import java.util.Map;
 
 import businesslogicservice.TransferService;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
-import businesslogicservice.hotelinfoblservice.HotelManagerService;
+import businesslogicservice.hotelinfoblservice.HotelStaffService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import presentation.view.hotelinfoui.HotelInfoViewControlerService;
 import vo.HotelVO;
@@ -12,11 +12,11 @@ import vo.HotelVO;
 public class HotelInfoViewControllerImpl implements HotelInfoViewControlerService {
 
 	TransferService hotelTransferImpl;
-	HotelManagerService hotelStaffImpl;
+	HotelStaffService hotelStaffImpl;
 	HotelCustomerService hotelUserImpl;	
 	HotelWebManagerService hotelWebManagerImpl;
 	
-	public HotelInfoViewControllerImpl(HotelManagerService hotelStaffImp) {
+	public HotelInfoViewControllerImpl(HotelStaffService hotelStaffImp) {
 
 		this.hotelStaffImpl = hotelStaffImp;
 	}
