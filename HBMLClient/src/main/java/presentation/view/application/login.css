@@ -1,0 +1,53 @@
+/**
+ *修改用户登录界面的主背景颜色
+ */
+.loginVBox{
+    -fx-background-color: #1c3048;
+}
+
+/**
+ *设置登录界面账号和密码文本框的背景颜色，字体颜色，以及边界颜色和边界圆角
+ */
+.loginTextField{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 7px;
+}
+
+.userLoginLabel{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 40px;
+    -fx-font-family:"华文彩云";
+}
+
+.loginButton{
+    -fx-background-color: #0080FF;
+    -fx-text-fill: #ffffff;
+    -fx-font-size:17px;
+}
+
+/**
+ *用户登录界面找回密码和注册按钮设置样式
+ */
+.seekButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+.seekButton:hover{
+    -fx-text-fill: #0080FF;
+}
+
+/**
+ *用户登录界面的工作人员登录入口按钮
+ */
+.workerLoginButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: #0080FF;
+    /*-fx-cursor: hand;*/
+}
+
+.button{
+    /*-fx-cursor: v_resize;*/
+    -fx-cursor:hand;
+}

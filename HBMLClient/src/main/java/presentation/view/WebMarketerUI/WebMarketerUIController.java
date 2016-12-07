@@ -51,7 +51,7 @@ public class WebMarketerUIController {
     @FXML
     private void toWebPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new WebPromotionUI());
+        infoVBox.getChildren().add(new WebPromotionUI(infoVBox));
     }
 
     /**
@@ -59,7 +59,8 @@ public class WebMarketerUIController {
      */
     @FXML
     private void toRegionPromotion(){
-
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new RegionPromotionUI());
     }
 
     /**

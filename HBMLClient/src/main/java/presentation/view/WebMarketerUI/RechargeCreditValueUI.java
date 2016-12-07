@@ -19,5 +19,6 @@ public class RechargeCreditValueUI extends VBox{
 
         RechargeCreditValueUIController rechargeCreditValueUIController=fxmlLoader.getController();
         rechargeCreditValueUIController.init(infoVBox);
+        this.getStylesheets().add(RechargeCreditValueUI.class.getResource("webmarketer.css").toExternalForm());
     }
 }

@@ -79,29 +79,29 @@ public class HotelStaffUIController {
         stage.setScene(new HotelPromotionUI(new Group(),stage,thisScene,loginScene));
     }
 
-    /**
-     * 鼠标移动到组件上时，组件变大
-     */
-    private void toLarger(Node node){
-        node.setOnMouseEntered((MouseEvent e)->{
-            node.setScaleX(1.2);
-            node.setScaleY(1.2);
-        });
-        node.setOnMouseExited((MouseEvent e)->{
-            node.setScaleX(1.0);
-            node.setScaleY(1.0);
-        });
-    }
+//    /**
+//     * 鼠标移动到组件上时，组件变大
+//     */
+//    private void toLarger(Node node){
+//        node.setOnMouseEntered((MouseEvent e)->{
+//            node.setScaleX(1.2);
+//            node.setScaleY(1.2);
+//        });
+//        node.setOnMouseExited((MouseEvent e)->{
+//            node.setScaleX(1.0);
+//            node.setScaleY(1.0);
+//        });
+//    }
 
     /**
      * 初始化操作按钮
      */
     private void initButton(){
-        toLarger(orderBrowseButton);
-        toLarger(inputRoomButton);
-        toLarger(updateRoomButton);
-        toLarger(hotelInfoButton);
-        toLarger(hotelPromotionButton);
+//        toLarger(orderBrowseButton);
+//        toLarger(inputRoomButton);
+//        toLarger(updateRoomButton);
+//        toLarger(hotelInfoButton);
+//        toLarger(hotelPromotionButton);
     }
 
 }

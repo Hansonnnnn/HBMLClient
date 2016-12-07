@@ -2,18 +2,21 @@
 
     -fx-background-color: transparent;
 
-    -fx-border-radius: 10px;
+    /*-fx-border-radius: 10px;*/
 
-    -fx-border-color: gray;
+    /*-fx-border-color: gray;*/
 
-    -fx-border-width: 5px;
+    /*-fx-border-width: 5px;*/
 }
 
 .managerButton:hover{
-    -fx-background-color:transparent;
-    -fx-border-radius:10px;
-    -fx-border-color:#46A3FF;
-    -fx-border-width:5px;
+    -fx-border-radius: 10px;
+    -fx-border-color: gray;
+    -fx-border-width: 5px;
+    /*-fx-background-color:transparent;*/
+    /*-fx-border-radius:10px;*/
+    /*-fx-border-color:#46A3FF;*/
+    /*-fx-border-width:5px;*/
 }
 
 /**

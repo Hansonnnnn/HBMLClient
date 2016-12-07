@@ -6,23 +6,27 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.AddWebPromotionUIController">
     <children>
         <HBox prefHeight="51.0" prefWidth="738.0">
             <children>
                 <Pane prefHeight="51.0" prefWidth="257.0">
                     <children>
-                        <Button layoutX="-6.0" layoutY="4.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="31.0">
+                        <Button mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="31.0" styleClass="transButton">
                             <graphic>
-                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" onDragDetected="#back" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../webmarketerimages/back.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Separator layoutX="46.0" layoutY="4.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="5.0" />
-                        <Label layoutX="55.0" layoutY="16.0" text="添加新促销策略" />
+                        <Label layoutX="66.0" layoutY="13.0" styleClass="positionLabel" text="添加新促销策略" />
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="30.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../webmarketerimages/verticalLine%20%20.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </Pane>
             </children>

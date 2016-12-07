@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelStaffUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelStaffUIController">
     <children>
         <HBox prefWidth="600.0" styleClass="blankHBox">
             <children>
@@ -42,11 +42,64 @@
         </BorderPane>
       <VBox alignment="CENTER" prefHeight="492.0" prefWidth="670.0" spacing="15.0">
          <children>
-            <Button fx:id="orderBrowseButton" mnemonicParsing="false" onAction="#toOrderBrowse" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="订单浏览/执行" />
-            <Button fx:id="inputRoomButton" mnemonicParsing="false" onAction="#toInputRoom" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="录入可用客房" />
-            <Button fx:id="updateRoomButton" mnemonicParsing="false" onAction="#toUpdateRoom" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="更新入住/退房信息" />
-            <Button fx:id="hotelInfoButton" mnemonicParsing="false" onAction="#toHotelInfo" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="录入酒店信息" />
-            <Button fx:id="hotelPromotionButton" mnemonicParsing="false" onAction="#toHotelPromotion" prefHeight="50.0" prefWidth="250.0" styleClass="managerButton" text="制定信息策略" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+               <children>
+                  <Button fx:id="orderBrowseButton" contentDisplay="TOP" minHeight="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#toOrderBrowse" prefHeight="130.0" prefWidth="150.0" styleClass="managerButton" text="订单浏览/执行">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ManagerImages/browse.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputRoomButton" contentDisplay="TOP" minHeight="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#toInputRoom" styleClass="managerButton" text="录入可用客房">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ManagerImages/input.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+               <children>
+                  <Button fx:id="updateRoomButton" contentDisplay="TOP" minHeight="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#toUpdateRoom" styleClass="managerButton" text="更新入住/退房信息">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ManagerImages/update.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="hotelInfoButton" contentDisplay="TOP" minHeight="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#toHotelInfo" prefHeight="150.0" prefWidth="150.0" styleClass="managerButton" text="录入酒店信息">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ManagerImages/hotel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+               <children>
+                  <Button fx:id="hotelPromotionButton" contentDisplay="TOP" minHeight="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#toHotelPromotion" prefHeight="150.0" prefWidth="150.0" styleClass="managerButton" text="制定信息策略">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ManagerImages/promotion.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button minHeight="160.0" minWidth="160.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="150.0" text="Button" visible="false" />
+               </children>
+            </HBox>
          </children>
       </VBox>
       <HBox prefHeight="40.0" prefWidth="200.0" styleClass="blankHBox" />

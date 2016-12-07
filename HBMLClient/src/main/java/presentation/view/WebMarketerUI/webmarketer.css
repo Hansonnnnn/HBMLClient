@@ -38,16 +38,42 @@
 }
 
 .grayBackground{
-    -fx-background-color: #BEBEBE;
+    /*-fx-background-color: #BEBEBE;*/
+    /*-fx-background-color: #640F6C;*/
+    /*-fx-background-color: #1faf91;*/
+    -fx-background-color: #1c3048;
 }
+
 
 .transButton{
     -fx-background-color: transparent;
 }
 
 /**
- *
+ *将组件的左右边界变为圆弧形
  */
 .circle{
     -fx-background-radius:15px;
 }
+
+/**
+ *设置分隔符的宽度和颜色
+ */
+.separatorStyle{
+    -fx-border-color: black;
+    -fx-border-width: 0 1 0 0;
+
+    /*-fx-width:2px;*/
+    /*-fx-background-color: #1faf91;*/
+    /*-fx-border-style: none;*/
+    /*-fx-border-color: #1faf91;*/
+    /*-fx-pref-width: 1px;*/
+}
+
+.positionLabel{
+    /*-fx-font-weight: bold;*/
+    -fx-font-size:20px;
+    -fx-text-fill:#1faf91;
+    /*-fx-font-family: serif;*/
+}
+
