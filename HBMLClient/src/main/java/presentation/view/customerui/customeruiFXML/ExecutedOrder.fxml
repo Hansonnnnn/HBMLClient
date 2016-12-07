@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox fx:id="contentBox" prefHeight="616.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.EditingOrderUIController">
+   <children>
+      <TableView fx:id="list" prefHeight="624.0" prefWidth="848.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="120.0" text="订单编号" />
+            <TableColumn fx:id="generateTimeColumn" prefWidth="120.0" text="生成时间" />
+            <TableColumn fx:id="executeTimeColumn" prefWidth="120.0" text="执行时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="120.0" text="信用值变化" />
+            <TableColumn fx:id="priceColumn" prefWidth="120.0" text="价格" />
+            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="118.0" />
+            <TableColumn fx:id="makeOrderButtonColumn" prefWidth="128.155029296875" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

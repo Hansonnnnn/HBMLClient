@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox fx:id="contentBox" prefHeight="495.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.CancelledOrderPageUIController">
+   <children>
+      <TableView fx:id="list" prefHeight="497.0" prefWidth="596.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="111.0" text="订单编号" />
+            <TableColumn fx:id="generateTimeColumn" prefWidth="115.0" text="生成时间" />
+            <TableColumn fx:id="cancelTimeColumn" prefWidth="115.0" text="撤销时间" />
+            <TableColumn fx:id="executeDDLColumn" prefWidth="115.0" text="最晚执行时间" />
+            <TableColumn fx:id="priceColumn" prefWidth="62.0" text="价格" />
+            <TableColumn fx:id="appealButtonColumn" prefWidth="87.0" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

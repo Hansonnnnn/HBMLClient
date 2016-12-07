@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="5.0" layoutY="82.0" prefHeight="483.0" prefWidth="140.0" spacing="30.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="54.0" text="联系方式" />
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="入住时间" wrapText="true" />
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="离开时间" />
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="53.0" text="有无儿童" />
+         </children>
+      </VBox>
+      <Separator layoutX="146.0" orientation="VERTICAL" prefHeight="618.0" prefWidth="14.0" />
+      <VBox alignment="CENTER" layoutX="219.0" layoutY="82.0" prefHeight="460.0" prefWidth="567.0" spacing="30.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="547.0">
+               <children>
+                  <TextField prefHeight="39.0" prefWidth="494.0" />
+               </children>
+            </HBox>
+            <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
+               <children>
+                  <DatePicker prefHeight="38.0" prefWidth="494.0" />
+               </children>
+            </HBox>
+            <HBox fx:id="checkin_time_hbox1" alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
+               <children>
+                  <DatePicker prefHeight="38.0" prefWidth="494.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" prefHeight="38.0" text="有无儿童" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="817.0" layoutY="236.0" prefHeight="177.0" prefWidth="62.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="138.0" prefWidth="42.0" text="生成订单" textAlignment="CENTER" wrapText="true" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
+   </children>
+</AnchorPane>

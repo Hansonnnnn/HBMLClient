@@ -4,13 +4,13 @@ import java.util.Map;
 
 import businesslogicservice.orderblservice.OrderBLService;
 import businesslogicservice.orderblservice.OrderStaffService;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public class OrderStaffServiceImpl implements OrderStaffService, OrderBLService
 {
 
 	@Override
-	public Map<String, OrderVO> showOrderList(String type) {
+	public Map<String, UnexecutedOrderVO> showOrderList(String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,7 +29,7 @@ public class OrderStaffServiceImpl implements OrderStaffService, OrderBLService
 	}
 
 	@Override
-	public OrderVO showOrderInfo(String orderID) {
+	public UnexecutedOrderVO showOrderInfo(String orderID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

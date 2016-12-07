@@ -4,7 +4,7 @@ import java.util.Map;
 
 import businesslogicservice.orderblservice.OrderBLService;
 import businesslogicservice.orderblservice.OrderCustomerService;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerService
 {
@@ -61,12 +61,10 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 	}
 
 	@Override
-	public Map<String, OrderVO> showOrderList(String type) {
+	public Map<String, UnexecutedOrderVO> showOrderList(String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 
 	@Override
@@ -76,7 +74,7 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 	}
 
 	@Override
-	public OrderVO showOrderInfo(String orderID) {
+	public UnexecutedOrderVO showOrderInfo(String orderID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

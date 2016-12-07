@@ -16,7 +16,7 @@ import mock_object.MockObject_Order;
 import presentation.controller.HotelInfoViewControllerImpl;
 import presentation.controller.OrderViewControllerImpl;
 import vo.HotelVO;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public class AllModuleTest {
 

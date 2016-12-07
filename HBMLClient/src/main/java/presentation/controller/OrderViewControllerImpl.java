@@ -6,7 +6,7 @@ import businesslogicservice.orderblservice.OrderStaffService;
 import businesslogicservice.orderblservice.OrderWebMarketerService;
 import presentation.view.orderui.CustomerOfOrderView;
 import presentation.view.orderui.OrderViewControllerService;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public class OrderViewControllerImpl implements OrderViewControllerService
 {
@@ -34,9 +34,9 @@ public class OrderViewControllerImpl implements OrderViewControllerService
 		/**
 		 * 显示订单信息
 		 */
-		public OrderVO showOrderInfo(String orderID)
+		public UnexecutedOrderVO showOrderInfo(String orderID)
 		{
-			OrderVO order = orderblservice.showOrderInfo(orderID);
+			UnexecutedOrderVO order = orderblservice.showOrderInfo(orderID);
 			return order;
 		}
 		/**

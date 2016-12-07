@@ -1,6 +1,5 @@
 package presentation.view.HotelManagerUI;
 
-import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

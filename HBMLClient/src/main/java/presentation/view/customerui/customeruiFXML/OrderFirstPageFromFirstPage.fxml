@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.OrderFirstPageUIFromFirstPageController">
+   <children>
+      <Button fx:id="bacnkButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
+      <VBox alignment="CENTER" layoutY="70.0" prefHeight="550.0" prefWidth="139.0" spacing="40.0">
+         <children>
+            <Button fx:id="secondOrderButton" mnemonicParsing="false" onAction="#secondButtonAction" prefHeight="35.0" prefWidth="120.0" text="未完成订单" />
+            <Button fx:id="thirdOrderButton" mnemonicParsing="false" onAction="#thirdButtonAction" prefHeight="35.0" prefWidth="120.0" text="已执行订单" />
+            <Button fx:id="forthOrderButton" mnemonicParsing="false" onAction="#forthButtonAction" prefHeight="35.0" prefWidth="120.0" text="已撤销订单" />
+            <Button fx:id="fifthOrderButton" mnemonicParsing="false" onAction="#fifthBuutonAction" prefHeight="35.0" prefWidth="120.0" text="异常订单" />
+         </children>
+      </VBox>
+      <Separator layoutX="142.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="621.0" prefWidth="2.0" />
+      <VBox fx:id="contentBox" layoutX="151.0" layoutY="1.0" prefHeight="616.0" prefWidth="848.0" />
+   </children>
+</AnchorPane>

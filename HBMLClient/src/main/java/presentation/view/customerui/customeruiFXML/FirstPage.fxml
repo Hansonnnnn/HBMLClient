@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" AnchorPane.leftAnchor="0.0">
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <TextField fx:id="searchField" prefHeight="39.0" prefWidth="641.0" promptText="Search Whatever You Want!">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="85.0" text="Search" textFill="#222020" wrapText="true" />
+         </children>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="881.0" layoutY="-1.0" prefHeight="618.0" prefWidth="116.0" spacing="20.0">
+         <children>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="117.0" prefWidth="82.0" text="登录" />
+            <Button fx:id="orderButton" mnemonicParsing="false" onAction="#orderPartAction" prefHeight="117.0" prefWidth="82.0" text="订单" />
+            <Button fx:id="commentButton" mnemonicParsing="false" onAction="#commentPartAction" prefHeight="117.0" prefWidth="82.0" text="评价" />
+            <Button fx:id="personalInfoButton" mnemonicParsing="false" onAction="#personalInfoPartAction" prefHeight="117.0" prefWidth="82.0" text="个人信息" />
+         </children>
+      </VBox>
+      <Separator layoutX="9.0" layoutY="83.0" prefHeight="17.0" prefWidth="853.0" />
+      <Separator layoutX="858.0" layoutY="2.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="2.0" />
+      <VBox alignment="CENTER" layoutX="6.0" layoutY="88.0" prefHeight="429.0" prefWidth="218.0" spacing="30.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="52.0" text="地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="商圈">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="入住时间" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="离开时间">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="星级">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="182.0" layoutY="89.0" prefHeight="437.0" prefWidth="646.0" spacing="30.0">
+         <children>
+            <HBox fx:id="address_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0">
+               <children>
+                  <TextField fx:id="address_field" alignment="CENTER" prefHeight="27.0" prefWidth="482.0" />
+               </children>
+            </HBox>
+            <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0">
+               <children>
+                  <TextField fx:id="circle_field" prefHeight="27.0" prefWidth="482.0" />
+               </children>
+            </HBox>
+            <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
+               <children>
+                  <DatePicker prefHeight="0.0" prefWidth="482.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
+               <children>
+                  <DatePicker prefHeight="16.0" prefWidth="482.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="5星   " />
+                  <CheckBox mnemonicParsing="false" text="4星   " />
+                  <CheckBox mnemonicParsing="false" text="3星   " />
+                  <CheckBox mnemonicParsing="false" text="2星   " />
+                  <CheckBox mnemonicParsing="false" text="1星" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="searchTwoButton" layoutX="303.0" layoutY="503.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="288.0" text="按条件搜索" />
+   </children>
+</AnchorPane>

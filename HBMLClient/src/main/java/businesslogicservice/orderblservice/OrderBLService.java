@@ -3,7 +3,7 @@ package businesslogicservice.orderblservice;
 import java.util.Map;
 
 import businesslogic.orderbl.Order;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public interface OrderBLService {
 	/**
@@ -11,7 +11,7 @@ public interface OrderBLService {
 	 * 特殊的：显示未执行订单的方法多一个参与者：WebMarketer
 	 * @param order
 	 */
-	public Map<String, OrderVO> showOrderList(String type);
+	public Map<String, UnexecutedOrderVO> showOrderList(String type);
 	
 	/**
 	 * 显示订单列表，订单列表可能是各种形式的订单组合成的一个列表
@@ -20,7 +20,7 @@ public interface OrderBLService {
 	 * @param orderList
 	 */
 //	public void showOrderList(OrderVO[] orderList);
-	public OrderVO showOrderInfo(String orderID);
+	public UnexecutedOrderVO showOrderInfo(String orderID);
 	
 	/**
 	 * 凡是对订单对象有操作的Impl，只要改变订单的数据或状态，就要对OrderPO进行更新

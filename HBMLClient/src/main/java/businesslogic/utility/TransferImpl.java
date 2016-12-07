@@ -11,8 +11,6 @@ import vo.RoomInfoVO;
 import vo.UserVO;
 
 public class TransferImpl implements TransferService{
-	HotelPO newPo = null;
-	HotelVO newVo = null;
 	@Override
 	public HotelVO poToVo(HotelPO po) {
 		

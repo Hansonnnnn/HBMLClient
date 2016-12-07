@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="264.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.SearchPageController">
+   <children>
+      <Pane focusTraversable="true" prefHeight="494.0" prefWidth="705.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="494.0" prefWidth="90.0">
+               <children>
+                  <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="返回" />
+                  <VBox alignment="CENTER" prefHeight="403.0" prefWidth="72.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="34.0" text="地址" />
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="34.0" text="商圈" />
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="入住时间" wrapText="true" />
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="离开时间" />
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="34.0" text="星级" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="106.0" layoutY="104.0" prefHeight="320.0" prefWidth="517.0" spacing="20.0">
+               <children>
+                  <HBox fx:id="address_hbox" alignment="CENTER" prefHeight="37.0" prefWidth="284.0">
+                     <children>
+                        <TextField fx:id="address_field" alignment="CENTER" prefHeight="27.0" prefWidth="482.0" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="37.0" prefWidth="284.0">
+                     <children>
+                        <TextField fx:id="circle_field" prefHeight="27.0" prefWidth="482.0" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="37.0" prefWidth="284.0" spacing="37.0">
+                     <children>
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label prefHeight="17.0" prefWidth="24.0" text="年" />
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label prefHeight="17.0" prefWidth="24.0" text="月" />
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label text="日" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="284.0" spacing="37.0">
+                     <children>
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label prefHeight="17.0" prefWidth="24.0" text="年" />
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label prefHeight="17.0" prefWidth="24.0" text="月" />
+                        <DatePicker prefHeight="27.0" prefWidth="75.0" />
+                        <Label text="日" />
+                     </children></HBox>
+                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="284.0" spacing="37.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="5星   " />
+                        <CheckBox mnemonicParsing="false" text="4星   " />
+                        <CheckBox mnemonicParsing="false" text="3星   " />
+                        <CheckBox mnemonicParsing="false" text="2星   " />
+                        <CheckBox mnemonicParsing="false" text="1星" />
+                     </children></HBox>
+               </children>
+            </VBox>
+            <Separator layoutX="90.0" layoutY="1.0" orientation="VERTICAL" prefHeight="494.0" prefWidth="2.0" />
+            <ProgressBar layoutX="622.0" layoutY="42.0" prefHeight="20.0" prefWidth="44.0" progress="0.0" />
+            <Button alignment="CENTER" layoutX="622.0" layoutY="159.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="44.0" text="搜索" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

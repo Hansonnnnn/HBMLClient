@@ -6,7 +6,7 @@ import po.CreditRecordPO;
 import po.HotelPO;
 import po.OrderPO;
 import po.PersonalInfoPO;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 
 public class Order {
 		private OrderPO orderpo;
@@ -56,7 +56,7 @@ public class Order {
 			
 		}
 		
-		public Order(OrderVO ordervo)
+		public Order(UnexecutedOrderVO ordervo)
 		{
 			
 		}

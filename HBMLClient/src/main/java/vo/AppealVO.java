@@ -3,7 +3,7 @@ package vo;
 import java.io.Serializable;
 import java.util.Date;
 
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 import vo.WebMarketerAccountVO;;
 
 public class AppealVO implements Serializable{
@@ -11,7 +11,7 @@ public class AppealVO implements Serializable{
 	WebMarketerAccountVO webMarketerAccount;
 	String explanation;
 	String state;
-	OrderVO order;
+	UnexecutedOrderVO order;
 	
 	public AppealVO()
 	{
@@ -22,7 +22,7 @@ public class AppealVO implements Serializable{
 		this.explanation = explaination;
 	}
 	public AppealVO(Date t,WebMarketerAccountVO wMA,String e,
-			String s,OrderVO o){
+			String s,UnexecutedOrderVO o){
 		time=t;
 		webMarketerAccount=wMA;
 		explanation=e;
@@ -62,11 +62,11 @@ public class AppealVO implements Serializable{
 		this.state = state;
 	}
 
-	public OrderVO getOrder() {
+	public UnexecutedOrderVO getOrder() {
 		return order;
 	}
 
-	public void setOrder(OrderVO order) {
+	public void setOrder(UnexecutedOrderVO order) {
 		this.order = order;
 	}
 

@@ -6,11 +6,15 @@ import vo.CreditRecordVO;
 import vo.HotelVO;
 import vo.PersonalInfoVO;
 
-public class OrderVO {
-	PersonalInfoVO personalInfo;
-	String id;
-	Date createDate;
-	Date cancelDate;
+public class UnexecutedOrderVO {
+	public  PersonalInfoVO personalInfo;
+	public  String orderID;
+	public  String generateTime;
+	public  String cancelledTime;
+	public  String execuedDDL;
+	public  double price;
+//	Date createDate;
+//	Date cancelDate;
 	HotelVO hotelInfo;
 	CreditRecordVO creditRecord;
 	String state;
@@ -20,34 +24,43 @@ public class OrderVO {
 	boolean hasChild;
 	String contactInfo;
 	String creditExplanation;
-	Date executeDeadline;
-	int price;
+//	Date executeDeadline;
+//	int price;
 	
-	public OrderVO(String id)
+	public UnexecutedOrderVO(String id)
 	{
-		this.id = id;
+		this.orderID = id;
 	}
-	public OrderVO(PersonalInfoVO pI,String i,Date cD,Date caD,HotelVO hI,
-			CreditRecordVO cR,String s,
-			Date chD,Date coD,int num,boolean hC,String cI,
-			String cE,Date eD,int p){
-		personalInfo=pI;
-		id=i;
-		createDate=cD;
-		cancelDate=caD;
-		hotelInfo=hI;
-		creditRecord=cR;
-		state=s;
-		checkDate=cD;
-		checkoutDate=coD;
-		number=num;
-		hasChild=hC;
-		contactInfo=cI;
-		creditExplanation=cE;
-		executeDeadline=eD;
-		price=p;
-		
+	
+	public UnexecutedOrderVO(String orderID, String generateTime, String cancelledTime, String executedDDL, double price)
+	{
+		this.orderID = orderID;
+		this.generateTime = generateTime;
+		this.cancelledTime = cancelledTime;
+		this.execuedDDL = executedDDL;
+		this.price = price;
 	}
+//	public OrderVO(PersonalInfoVO pI,String i,Date cD,Date caD,HotelVO hI,
+//			CreditRecordVO cR,String s,
+//			Date chD,Date coD,int num,boolean hC,String cI,
+//			String cE,Date eD,int p){
+//		personalInfo=pI;
+//		id=i;
+//		createDate=cD;
+//		cancelDate=caD;
+//		hotelInfo=hI;
+//		creditRecord=cR;
+//		state=s;
+//		checkDate=cD;
+//		checkoutDate=coD;
+//		number=num;
+//		hasChild=hC;
+//		contactInfo=cI;
+//		creditExplanation=cE;
+//		executeDeadline=eD;
+//		price=p;
+//		
+//	}
 
 
 	public PersonalInfoVO getPersonalInfo() {
@@ -57,36 +70,6 @@ public class OrderVO {
 
 	public void setPersonalInfo(PersonalInfoVO personalInfo) {
 		this.personalInfo = personalInfo;
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-
-	public Date getCancelDate() {
-		return cancelDate;
-	}
-
-
-	public void setCancelDate(Date cancelDate) {
-		this.cancelDate = cancelDate;
 	}
 
 
@@ -179,20 +162,6 @@ public class OrderVO {
 		this.creditExplanation = creditExplanation;
 	}
 
-
-	public Date getExecuteDeadline() {
-		return executeDeadline;
-	}
-
-
-	public void setExecuteDeadline(Date executeDeadline) {
-		this.executeDeadline = executeDeadline;
-	}
-
-
-	public int getPrice() {
-		return price;
-	}
 
 
 	public void setPrice(int price) {

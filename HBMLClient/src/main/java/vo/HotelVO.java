@@ -3,31 +3,61 @@ package vo;
 import java.awt.Image;
 import java.util.List;
 
+import com.sun.xml.internal.bind.v2.runtime.NameList;
+
 import vo.CommentInfoVO;
-import vo.OrderVO;
+import vo.UnexecutedOrderVO;
 import vo.RoomInfoVO;
 import vo.StaffAccountVO;
 
 public class HotelVO {
-	String name;
-	String id;
-	int star;
-	String address;
-	String region;
-	String introduction;
-	String facility;
-	Image environment;
-	CommentInfoVO commentInfo;
-	RoomInfoVO roomInfo;
-	List<OrderVO> historyOrder;
-	StaffAccountVO staffAccount;
+	private String name;
+	private String id;
+	private int star;
+	private double price;
+	private int score;
+	private String address;
+	private String region;
+	private String introduction;
+	private String facility;
+	private Image environment;
+	private CommentInfoVO commentInfo;
+	private RoomInfoVO roomInfo;
+	private List<UnexecutedOrderVO> historyOrder;
+	private StaffAccountVO staffAccount;
 	
 	public HotelVO() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	//界面显示酒店列表时，需要显示的内容
+	public HotelVO(String name, String address, int star, double price, int score)
+	{
+		this.name = name;
+		this.address = address;
+		this.star = star;
+		this.price = price;
+		this.score = score;
+	}
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	public HotelVO(String n,String i,int s,String a,
 			String r,String in,String f,Image e,
-			RoomInfoVO rI,List<OrderVO> hO,StaffAccountVO sA){
+			RoomInfoVO rI,List<UnexecutedOrderVO> hO,StaffAccountVO sA){
 		name=n;
 		id=i;
 		star=s;
@@ -121,11 +151,11 @@ public class HotelVO {
 		this.roomInfo = roomInfo;
 	}
 
-	public List<OrderVO> getHistoryOrder() {
+	public List<UnexecutedOrderVO> getHistoryOrder() {
 		return historyOrder;
 	}
 
-	public void setHistoryOrder(List<OrderVO> historyOrder) {
+	public void setHistoryOrder(List<UnexecutedOrderVO> historyOrder) {
 		this.historyOrder = historyOrder;
 	}
 
