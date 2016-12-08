@@ -3,64 +3,37 @@ import java.awt.Image;
 import java.util.List;
 
 public class HotelVO {
-	private String name;
-	private String id;
-	private int star;
-	private double price;
-	private int score;
-	private String address;
-	private String region;
-	private String introduction;
-	private String facility;
-	private Image environment;
-	private CommentInfoVO commentInfo;
-	private RoomInfoVO roomInfo;
-	private List<OrderVO> historyOrder;
-	private StaffAccountVO staffAccount;
+
+	String name;
+	int id;
+	int star;
+	String address;
+	int region;
+	String introduction;
+	String facility;
+	List<Image> environment;
+	double score;
+	int lowestPrice;
 	
+	
+
+	public HotelVO(String name, int id, int star, String address, int region, String introduction, String facility,
+			List<Image> environment, double score,int lowestPrice) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.star = star;
+		this.address = address;
+		this.region = region;
+		this.introduction = introduction;
+		this.facility = facility;
+		this.environment = environment;
+		this.score = score;
+		this.lowestPrice = lowestPrice;
+	}
+
 	public HotelVO() {
 		// TODO Auto-generated constructor stub
-	}
-	
-	//界面显示酒店列表时，需要显示的内容
-	public HotelVO(String name, String address, int star, double price, int score)
-	{
-		this.name = name;
-		this.address = address;
-		this.star = star;
-		this.price = price;
-		this.score = score;
-	}
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
-
-	public HotelVO(String n,String i,int s,String a,
-			String r,String in,String f,Image e,
-			RoomInfoVO rI,List<OrderVO> hO,StaffAccountVO sA){
-		name=n;
-		id=i;
-		star=s;
-		address=a;
-		region=r;
-		introduction=in;
-		facility=f;
-		environment=e;
-		roomInfo=rI;
-		historyOrder=hO;
-		staffAccount=sA;
 	}
 
 	public String getName() {
@@ -71,11 +44,11 @@ public class HotelVO {
 		this.name = name;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -95,11 +68,11 @@ public class HotelVO {
 		this.address = address;
 	}
 
-	public String getRegion() {
+	public int getRegion() {
 		return region;
 	}
 
-	public void setRegion(String region) {
+	public void setRegion(int region) {
 		this.region = region;
 	}
 
@@ -119,44 +92,38 @@ public class HotelVO {
 		this.facility = facility;
 	}
 
-	public Image getEnvironment() {
+	public List<Image> getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(Image environment) {
+	public void setEnvironment(List<Image> environment) {
 		this.environment = environment;
 	}
 
-	public CommentInfoVO getCommentInfo() {
-		return commentInfo;
+	public double getScore() {
+		return score;
 	}
 
-	public void setCommentInfo(CommentInfoVO commentInfo) {
-		this.commentInfo = commentInfo;
+	public void setScore(double score) {
+		this.score = score;
 	}
 
-	public RoomInfoVO getRoomInfo() {
-		return roomInfo;
+	public int getLowestPrice() {
+		return lowestPrice;
 	}
 
-	public void setRoomInfo(RoomInfoVO roomInfo) {
-		this.roomInfo = roomInfo;
+	public void setLowestPrice(int lowestPrice) {
+		this.lowestPrice = lowestPrice;
 	}
 
-	public List<OrderVO> getHistoryOrder() {
-		return historyOrder;
+	@Override
+	public String toString() {
+		return "HotelPO [name=" + name + ", id=" + id + ", star=" + star + ", address=" + address + ", region=" + region
+				+ ", introduction=" + introduction + ", facility=" + facility + ", environment=" + environment
+				+ ", score=" + score + ", lowestPrice=" + lowestPrice + "]";
 	}
 
-	public void setHistoryOrder(List<OrderVO> historyOrder) {
-		this.historyOrder = historyOrder;
-	}
-
-	public StaffAccountVO getStaffAccount() {
-		return staffAccount;
-	}
-
-	public void setStaffAccount(StaffAccountVO staffAccount) {
-		this.staffAccount = staffAccount;
-	}
+	
+	
 
 }

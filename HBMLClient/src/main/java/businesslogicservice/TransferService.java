@@ -1,11 +1,15 @@
 package businesslogicservice;
 
+import po.CommentInfoPO;
 import po.HotelPO;
 import po.PromotionPO;
+import po.RegionPO;
 import po.RoomInfoPO;
 import po.UserPO;
+import vo.CommentInfoVO;
 import vo.HotelVO;
 import vo.PromotionVO;
+import vo.RegionVO;
 import vo.RoomInfoVO;
 import vo.UserVO;
 /*
@@ -28,4 +32,10 @@ public interface TransferService {
 	public PromotionVO poToVo(PromotionPO po);
 	
 	public PromotionPO voToPo(PromotionVO vo);
+	
+	public CommentInfoVO poToVo(CommentInfoPO commentInfoPO);
+
+	public CommentInfoPO voToPo(CommentInfoVO commentInfoVO);
+
+	public RegionVO poToVo(RegionPO regionPO);
 }

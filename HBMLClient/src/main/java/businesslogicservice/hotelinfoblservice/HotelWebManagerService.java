@@ -7,7 +7,11 @@ import vo.HotelVO;
 
 public interface HotelWebManagerService {
 
-	public Map<Integer, HotelVO> getHotelList(HotelFilter filter,String order);	
+	/**
+	 * @param name 预期搜索酒店的名字
+	 * @return
+	 */
+	public Map<Integer, HotelVO> getHotelList(String name);	
 	
 	public HotelVO getHotelInfo(int hotelID);
 		

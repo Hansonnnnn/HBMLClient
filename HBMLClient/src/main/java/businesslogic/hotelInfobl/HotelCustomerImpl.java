@@ -1,49 +1,46 @@
 package businesslogic.hotelInfobl;
 
-import java.rmi.RemoteException;
-import java.util.LinkedHashMap;
+import java.util.Date;
 import java.util.Map;
 
+import businesslogic.hotelInfobl.helper.CommentHelper;
+import businesslogic.hotelInfobl.helper.HotelHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
-import dao.hotel.HotelDao;
-import rmi.ClientRunner;
+import message.ResultMessage;
+import model.HotelFilter;
+import vo.CommentInfoVO;
 import vo.HotelVO;
 
 public class HotelCustomerImpl implements HotelCustomerService{
 
-	private Map<String, HotelVO> hotelList;
+	HotelHelper hotelHelper;
+	CommentHelper commentHelper;
 	
-	private HotelDao hotelDao;
-	
-	public HotelCustomerImpl() throws RemoteException {
-		hotelDao = ClientRunner.remoteHelper.getHotelDao();
-		hotelList = new LinkedHashMap<String, HotelVO>();
-		
-	}
-	
-	
-	public Map<String, HotelVO> showHotelList(String hotel_region) {
-		// TODO Auto-generated method stub
-		hotelDao = new HotelDaoImpl_stub();
-		try {
-			hotelDao.getHotelList("0001");
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	public HotelCustomerImpl(){
+		hotelHelper = new HotelHelper();
+		commentHelper = new CommentHelper();
 	}
 
-	public HotelVO showHotelInfo(String hotel_ID) {
-		// TODO Auto-generated method stub
-		hotelDao = new HotelDaoImpl_stub();
-		try {
-			hotelDao.getHotelInfo("0001");
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	@Override
+	public Map<Integer, HotelVO> getHotelList(HotelFilter filter, String order, Date date) {
+		
+		return hotelHelper.getHotelList(filter, order, date);
 	}
+
+	@Override
+	public HotelVO getHotelInfo(int hotelID) {
+		
+		
+		return hotelHelper.getHotelInfo(hotelID);
+	}
+
+	@Override
+	public ResultMessage addComment(CommentInfoVO commentInfoVO) {
+		
+		
+		return commentHelper.addComment(commentInfoVO);
+	}
+	
+	
 	
 }

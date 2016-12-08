@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 import org.junit.Test;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
-import businesslogic.hotelInfobl.hotelhelper.HotelList;
+import businesslogic.hotelInfobl.helper.HotelHelper;
 import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogic.orderbl.orderhelper.OrderList;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;

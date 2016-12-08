@@ -1,6 +1,6 @@
 package driver;
 
-import businesslogic.hotelInfobl.HotelManagerImpl;
+import businesslogic.hotelInfobl.HotelStaffImpl;
 
 import java.rmi.RemoteException;
 
@@ -27,7 +27,7 @@ public class Client {
 		HotelCustomerService hotelUserImpl = null;
 		try {
 			hotelUserImpl = new HotelCustomerImpl();
-			hotelStaffImpl = new HotelManagerImpl(0001);
+			hotelStaffImpl = new HotelStaffImpl(0001);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
