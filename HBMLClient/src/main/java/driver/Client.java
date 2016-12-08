@@ -1,6 +1,7 @@
 package driver;
 
 import java.awt.Image;
+import java.io.File;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
@@ -24,9 +25,8 @@ public class Client {
 		Map<Integer, HotelVO> map = hotelCustomerService.getHotelList(null, null, null);
 	
 		for (HotelVO hotelVO : map.values()) {
-			System.out.println(map);
+			System.out.println(hotelVO);
 		}
 	
-		Image
 	}
 }

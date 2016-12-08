@@ -41,6 +41,7 @@ public class HotelHelper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		
 		return hotelList;
 	}	
