@@ -22,6 +22,7 @@ public class WebManagerUI extends Scene{
 
         WebManagerUIController userInfoUIController=fxmlLoader.getController();
         userInfoUIController.init(stage,beforeScene);
+        this.getStylesheets().add(WebManagerUI.class.getResource("webmanager.css").toExternalForm());
     }
 }
 
