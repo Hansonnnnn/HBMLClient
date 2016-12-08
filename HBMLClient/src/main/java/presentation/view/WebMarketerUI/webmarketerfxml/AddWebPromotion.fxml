@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.AddWebPromotionUIController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.AddWebPromotionUIController" stylesheets="@../webmarketer.css">
     <children>
         <HBox prefHeight="51.0" prefWidth="738.0">
             <children>
@@ -24,7 +24,7 @@
                         <Label layoutX="66.0" layoutY="13.0" styleClass="positionLabel" text="添加新促销策略" />
                   <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="30.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../webmarketerimages/verticalLine%20%20.png" />
+                        <Image url="@../webmarketerimages/verticalLine.png" />
                      </image>
                   </ImageView>
                     </children>
