@@ -7,7 +7,7 @@ import java.util.Map;
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.TransferService;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
-import dao.hotel.HotelDao;
+import dao.HotelDao;
 import po.RegionPO;
 import rmi.ClientRunner;
 import vo.RegionVO;

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import businesslogicservice.roominfoblservice.RoomInfoHotelManagerService;
-import dao.roominfo.RoomDao;
+import dao.RoomDao;
 import message.ResultMessage;
 import message.RoomStateMessage;
 import po.RoomInfoPO;

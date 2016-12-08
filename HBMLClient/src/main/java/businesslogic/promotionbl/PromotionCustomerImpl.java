@@ -5,7 +5,7 @@ import java.util.List;
 
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.promotionblservice.PromotionCustemerService;
-import dao.promotion.PromotionDao;
+import dao.PromotionDao;
 import po.PromotionPO;
 import vo.PromotionVO;
 

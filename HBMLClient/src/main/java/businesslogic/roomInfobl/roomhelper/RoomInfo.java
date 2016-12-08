@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 import businesslogic.roomInfobl.RoomDaoImpl_stub;
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.TransferService;
-import dao.roominfo.RoomDao;
+import dao.RoomDao;
 import message.ResultMessage;
 import message.RoomStateMessage;
 import po.RoomInfoPO;

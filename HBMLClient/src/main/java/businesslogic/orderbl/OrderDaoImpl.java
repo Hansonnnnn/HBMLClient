@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
-import dao.order.OrderDao;
+import dao.OrderDao;
 import message.OrderStateMessage;
 import message.ResultMessage;
 import model.UserType;
@@ -79,6 +79,7 @@ public class OrderDaoImpl implements OrderDao
 		// TODO Auto-generated method stub
 		return null;
 	}
+}
 
 //	@Override
 //	public Map<String, OrderPO> getOrderList(String userID)
@@ -131,4 +132,4 @@ public class OrderDaoImpl implements OrderDao
 //		return returnOrderPO;
 //	}
 
-}
+

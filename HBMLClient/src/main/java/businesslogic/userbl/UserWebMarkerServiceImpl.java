@@ -1,7 +1,7 @@
 package businesslogic.userbl;
 
 import businesslogicservice.userblservice.UserWebMarketerService;
-import dao.user.UserDao;
+import dao.UserDao;
 import message.ResultMessage;
 import rmi.ClientRunner;
 

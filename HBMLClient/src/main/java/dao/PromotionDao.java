@@ -1,4 +1,4 @@
-package dao.promotion;
+package dao;
 
 import java.util.List;
 

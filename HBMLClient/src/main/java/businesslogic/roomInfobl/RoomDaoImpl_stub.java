@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.Map;
 
-import dao.roominfo.RoomDao;
+import dao.RoomDao;
 import message.ResultMessage;
 import message.RoomStateMessage;
 import po.RoomInfoPO;

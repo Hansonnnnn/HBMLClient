@@ -1,4 +1,4 @@
-package dao.roominfo;
+package dao;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

@@ -2,7 +2,7 @@ package businesslogic.userbl;
 
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.userblservice.UserWebManagerService;
-import dao.user.UserDao;
+import dao.UserDao;
 import message.ResultMessage;
 import po.UserPO;
 import rmi.ClientRunner;

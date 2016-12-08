@@ -1,7 +1,7 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
-import dao.promotion.PromotionDao;
+import dao.PromotionDao;
 import message.ResultMessage;
 import po.PromotionPO;
 

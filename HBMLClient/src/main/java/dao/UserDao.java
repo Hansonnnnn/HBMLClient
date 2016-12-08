@@ -1,4 +1,4 @@
-package dao.user;
+package dao;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;

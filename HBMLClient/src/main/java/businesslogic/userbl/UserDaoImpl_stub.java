@@ -1,11 +1,12 @@
 package businesslogic.userbl;
 
-import dao.user.UserDao;
 import message.ResultMessage;
 import po.UserPO;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+
+import dao.UserDao;
 
 /**
  * Created by alex on 16-11-9.

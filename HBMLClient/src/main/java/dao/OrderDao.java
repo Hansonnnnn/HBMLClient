@@ -1,4 +1,4 @@
-package dao.order;
+package dao;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

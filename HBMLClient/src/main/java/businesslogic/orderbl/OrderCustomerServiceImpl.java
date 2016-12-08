@@ -3,7 +3,7 @@ package businesslogic.orderbl;
 import java.util.Map;
 import businesslogicservice.orderblservice.OrderBLService;
 import businesslogicservice.orderblservice.OrderCustomerService;
-import dao.order.OrderDao;
+import dao.OrderDao;
 import model.UserType;
 import vo.OrderVO;
 
