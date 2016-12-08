@@ -9,7 +9,6 @@ import dao.roominfo.RoomDao;
 import message.ResultMessage;
 import message.RoomStateMessage;
 import po.RoomInfoPO;
-import po.RoomStatePO;
 import vo.RoomInfoVO;
 
 public class RoomInfo {
@@ -50,8 +49,8 @@ public class RoomInfo {
 		
 		return ResultMessage.failure;
 	}
-	public ResultMessage modifyRoomInfoState(RoomStateMessage roomStateMessage) {
-		
-		return roomState.modifyRoomInfoState(roomStateMessage);
-	}
+//	public ResultMessage modifyRoomInfoState(RoomStateMessage roomStateMessage) {
+//		
+//		return roomState.modifyRoomInfoState(roomStateMessage);
+//	}
 }

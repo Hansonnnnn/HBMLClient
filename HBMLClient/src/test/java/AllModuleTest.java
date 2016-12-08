@@ -11,12 +11,9 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogic.orderbl.orderhelper.OrderList;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
-import mock_object.MockObject_Hotel;
-import mock_object.MockObject_Order;
 import presentation.controller.HotelInfoViewControllerImpl;
 import presentation.controller.OrderViewControllerImpl;
 import vo.HotelVO;
-import vo.UnexecutedOrderVO;
 
 public class AllModuleTest {
 

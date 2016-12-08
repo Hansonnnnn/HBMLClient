@@ -69,7 +69,7 @@ public class HotelListPageController {
 			 }
 		});
 		 hotelData = FXCollections.observableArrayList();
-		 hotelData.add(new HotelVO("绿地洲际酒店","江苏省南京市栖霞区", 5,5,2000));
+//		 hotelData.add(new HotelVO("绿地洲际酒店","江苏省南京市栖霞区", 5,5,2000));
 		 list.setItems(hotelData);
 	 }
 	 

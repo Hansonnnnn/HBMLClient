@@ -25,13 +25,9 @@ public class Client {
 		TransferService hotelTransferImpl = new TransferImpl();
 		HotelStaffService hotelStaffImpl = null;
 		HotelCustomerService hotelUserImpl = null;
-		try {
-			hotelUserImpl = new HotelCustomerImpl();
-			hotelStaffImpl = new HotelStaffImpl(0001);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+		//谢振宇修改过
+		hotelUserImpl = new HotelCustomerImpl();
+		hotelStaffImpl = new HotelStaffImpl();	
 		HotelWebManagerService hotelWebManagerImpl = new HotelWebManagerImpl();
 		HotelInfoBLService_Driver hotelInfoBLService_Driver = new HotelInfoBLService_Driver();
 		hotelInfoBLService_Driver.drive(hotelStaffImpl, hotelUserImpl,hotelWebManagerImpl);

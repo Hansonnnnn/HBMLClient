@@ -14,10 +14,10 @@ public class UserDaoImpl_stub implements UserDao{
     @Override
     public ArrayList<UserPO> getUserList() throws RemoteException {
         ArrayList<UserPO> userlist=new ArrayList<UserPO>();
-        userlist.add(new UserPO("0000000000"));
-        userlist.add(new UserPO("0000000001"));
-        userlist.add(new UserPO("0000000002"));
-        userlist.add(new UserPO("0000000003"));
+//        userlist.add(new UserPO("0000000000"));
+//        userlist.add(new UserPO("0000000001"));
+//        userlist.add(new UserPO("0000000002"));
+//        userlist.add(new UserPO("0000000003"));
         return userlist;
     }
 
@@ -36,20 +36,20 @@ public class UserDaoImpl_stub implements UserDao{
 
     @Override
     public UserPO find(String id) throws RemoteException {
-        if(id.equals("0000000000")){
-            System.out.println("a customer found");
-            return new UserPO("9900000000");
-        }else if(id.equals("0200000000")){
-            System.out.println("a staff found");
-            return new UserPO("0200000000");
-        }else if(id.equals("0100000000")){
-            System.out.println("a web marketer found");
-            return new UserPO("0100000000");
-        }else if(id.equals("0000000000")){
-            System.out.println("a web manager found");
-            return new UserPO("0000000000");
-        }
-        System.out.println("find unsuccessfully");
+//        if(id.equals("0000000000")){
+//            System.out.println("a customer found");
+//            return new UserPO("9900000000");
+//        }else if(id.equals("0200000000")){
+//            System.out.println("a staff found");
+//            return new UserPO("0200000000");
+//        }else if(id.equals("0100000000")){
+//            System.out.println("a web marketer found");
+//            return new UserPO("0100000000");
+//        }else if(id.equals("0000000000")){
+//            System.out.println("a web manager found");
+//            return new UserPO("0000000000");
+//        }
+//        System.out.println("find unsuccessfully");
         return null;
     }
 

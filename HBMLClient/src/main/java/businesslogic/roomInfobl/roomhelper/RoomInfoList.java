@@ -25,20 +25,20 @@ public class RoomInfoList {
 		roomInfoList = new HashMap<String, RoomInfoVO>();
 	}
 	
-	public Map<String, RoomInfoVO> getRoomInfoList() {
-		try {
-			Map<String , RoomInfoPO> roomInfoPoList = roomInfoDao.getRoomList("0001");
-			for (String string:roomInfoPoList.keySet()) {
-				if (string != null) {
-					roomInfoList.put(string,roomInfoTransferService.poToVo(roomInfoPoList.get(string)));
-				}
-			}
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return roomInfoList;
-	}
+//	public Map<String, RoomInfoVO> getRoomInfoList() {
+//		try {
+//			Map<String , RoomInfoPO> roomInfoPoList = roomInfoDao.getRoomList("0001");
+//			for (String string:roomInfoPoList.keySet()) {
+//				if (string != null) {
+//					roomInfoList.put(string,roomInfoTransferService.poToVo(roomInfoPoList.get(string)));
+//				}
+//			}
+//		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return roomInfoList;
+//	}
 	  
 	public RoomInfoVO getRoomInfo() {
 		
