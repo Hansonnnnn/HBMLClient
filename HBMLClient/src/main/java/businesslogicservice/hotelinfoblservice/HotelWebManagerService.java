@@ -1,18 +1,19 @@
 package businesslogicservice.hotelinfoblservice;
 
 import java.util.Map;
-
+import message.ResultMessage;
+import model.HotelFilter;
 import vo.HotelVO;
 
 public interface HotelWebManagerService {
 
-	public Map<String, HotelVO> showHotelList(String hotel_region);
+	public Map<Integer, HotelVO> getHotelList(HotelFilter filter,String order);	
 	
-	public HotelVO showHotelInfo(String hotel_ID);
+	public HotelVO getHotelInfo(int hotelID);
+		
+	public ResultMessage addHotel(HotelVO vo);
 	
-	public boolean addHotel(HotelVO vo);
+	public ResultMessage modifyHotel(HotelVO vo);
 	
-	public boolean modifyHotel(HotelVO vo);
-	
-	public boolean deleteHotel(String hotel_ID);
+	public ResultMessage deleteHotel(int hotel_ID);
 }

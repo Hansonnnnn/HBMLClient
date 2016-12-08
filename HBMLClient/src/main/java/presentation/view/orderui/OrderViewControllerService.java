@@ -1,10 +1,10 @@
 package presentation.view.orderui;
 
-import vo.UnexecutedOrderVO;
+import presentation.view.customerui.customerui.OrderVO;
 
 public interface OrderViewControllerService {
 	
-		public UnexecutedOrderVO showOrderInfo(String orderID);
+		public OrderVO showOrderInfo(String orderID);
 	
 		public void showOrderList();
 		

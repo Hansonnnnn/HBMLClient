@@ -1,13 +1,14 @@
-package po;
+package vo;
 
-public class RegionPO {
+public class RegionVO {
+
 
 	int regionID;
 	String province;
 	String city;
 	String regionName;
 	
-	public RegionPO(int regionID, String province, String city, String regionName) {
+	public RegionVO(int regionID, String province, String city, String regionName) {
 		super();
 		this.regionID = regionID;
 		this.province = province;
@@ -52,6 +53,5 @@ public class RegionPO {
 	public void setRegionName(String regionName) {
 		this.regionName = regionName;
 	}
-	
 	
 }

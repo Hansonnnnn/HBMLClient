@@ -39,20 +39,20 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
     @Override
     public ResultMessage deleteUserInfo(String id) {
         UserTypeHelper userTypeHelper=new UserTypeHelper();
-        if(userTypeHelper.getUserType(id).equals(UserType.Customer)){
-            //delete the customer
-            return ResultMessage.success;
-        }else if(userTypeHelper.getUserType(id).equals(UserType.Staff)){
-            //delete the staff
-            return ResultMessage.success;
-        }else if(userTypeHelper.getUserType(id).equals(UserType.WebMarketer)){
-            //delete the web marketer
-            return ResultMessage.success;
-        }else if(userTypeHelper.getUserType(id).equals(UserType.WebManager)){
-            //delete the web mananger
-            return ResultMessage.success;
-        }else return ResultMessage.failure;
-
+//        if(userTypeHelper.getUserType(id).equals(UserType.Customer)){
+//            //delete the customer
+//            return ResultMessage.success;
+//        }else if(userTypeHelper.getUserType(id).equals(UserType.Staff)){
+//            //delete the staff
+//            return ResultMessage.success;
+//        }else if(userTypeHelper.getUserType(id).equals(UserType.WebMarketer)){
+//            //delete the web marketer
+//            return ResultMessage.success;
+//        }else if(userTypeHelper.getUserType(id).equals(UserType.WebManager)){
+//            //delete the web mananger
+//            return ResultMessage.success;
+//        }else return ResultMessage.failure;
+        return null;
     }
 
     @Override
@@ -75,13 +75,14 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
 
     @Override
     public UserVO findUserInfo(String id) {
-        UserTypeHelper userTypeHelper=new UserTypeHelper();
-        if(userTypeHelper.getUserType(id).equals(UserType.NoSuchUser)){
-            return null;
-        }else{
-            //fetch by id
-            return new UserVO(id);
-        }
+//        UserTypeHelper userTypeHelper=new UserTypeHelper();
+//        if(userTypeHelper.getUserType(id).equals(UserType.NoSuchUser)){
+//            return null;
+//        }else{
+//            //fetch by id
+//            return new UserVO(id);
+//        }
+    	return null;
     }
 
     @Override
@@ -91,22 +92,22 @@ public class UserInfoViewControlloerService_stub implements UserInfoViewControll
 
     @Override
     public ArrayList<UserVO> showUserInfoList() {
-        UserTypeHelper userTypeHelper=new UserTypeHelper();
-        if(userTypeHelper.getUserType(this.users_ID).equals(UserType.Customer)){
-            //fetch by id
-            ArrayList<UserVO> vos=new ArrayList<UserVO>();
-            vos.add(new UserVO("1230000000"));
-            vos.add(new UserVO("1230000001"));
-            vos.add(new UserVO("1230000002"));
-            return vos;
-        }else if(userTypeHelper.getUserType(this.users_ID).equals(UserType.WebMarketer)){
-            //fetch by id
-            ArrayList<UserVO> vos=new ArrayList<UserVO>();
-            vos.add(new UserVO("0200000000"));
-            vos.add(new UserVO("0200000001"));
-            vos.add(new UserVO("0200000002"));
-            return vos;
-        }
+//        UserTypeHelper userTypeHelper=new UserTypeHelper();
+//        if(userTypeHelper.getUserType(this.users_ID).equals(UserType.Customer)){
+//            //fetch by id
+//            ArrayList<UserVO> vos=new ArrayList<UserVO>();
+//            vos.add(new UserVO("1230000000"));
+//            vos.add(new UserVO("1230000001"));
+//            vos.add(new UserVO("1230000002"));
+//            return vos;
+//        }else if(userTypeHelper.getUserType(this.users_ID).equals(UserType.WebMarketer)){
+//            //fetch by id
+//            ArrayList<UserVO> vos=new ArrayList<UserVO>();
+//            vos.add(new UserVO("0200000000"));
+//            vos.add(new UserVO("0200000001"));
+//            vos.add(new UserVO("0200000002"));
+//            return vos;
+//        }
         return null;
     }
 

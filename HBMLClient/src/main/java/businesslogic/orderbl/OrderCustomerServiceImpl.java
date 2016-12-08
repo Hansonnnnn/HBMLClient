@@ -12,7 +12,6 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 //	private OrderDao dao;//dao返回的Map里里面包含的是PO
 	public OrderCustomerServiceImpl()  
 	{
-		
 	}
 	
 	@Override
@@ -73,10 +72,10 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 		return false;
 	}
 
-	@Override
-	public Map<Integer, OrderVO> getUnexecutedOrderList(int ID, UserType userType) {
-		return dao.getUnexecutedOrderList(ID, userType);
-	}
+//	@Override
+//	public Map<Integer, OrderVO> getUnexecutedOrderList(int ID, UserType userType) {
+////		return dao.getUnexecutedOrderList(ID, userType);
+//	}
 
 	@Override
 	public Map<Integer, OrderVO> getExecutedOrderList(int ID, UserType userType) {
@@ -97,7 +96,13 @@ public class OrderCustomerServiceImpl implements OrderBLService, OrderCustomerSe
 	}
 
 	@Override
-	public businesslogicservice.orderblservice.UnexecutedOrderVO showOrderInfo(String orderID) {
+	public OrderVO showOrderInfo(String orderID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Integer, OrderVO> getUnexecutedOrderList(int ID, UserType userType) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,6 +1,5 @@
 package driver;
 
-import businesslogic.orderbl.Order;
 import businesslogicservice.orderblservice.OrderBLService;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import businesslogicservice.orderblservice.OrderStaffService;
@@ -14,10 +13,9 @@ public class OrderAllService_Driver
 									OrderStaffService staffService,
 									OrderWebMarketerService webMarketerService)
 		{
-			orderBLService.showOrderList("0001");
+//			orderBLService.showOrderList("0001");
 			orderBLService.showOrderInfo("20161110");
-			Order order = new Order();
-			orderBLService.updateOrderPO(order);
+//			orderBLService.updateOrderPO(order);
 			
 			customerService.appealForAbnormalOrder();
 			customerService.cancelOrder();
@@ -28,7 +26,7 @@ public class OrderAllService_Driver
 			
 			staffService.executeOrder();
 			
-			AppealVO appeal = new AppealVO();
-			webMarketerService.checkAppealReason(appeal);
+//			AppealVO appeal = new AppealVO();
+//			webMarketerService.checkAppealReason(appeal);
 		}
 }

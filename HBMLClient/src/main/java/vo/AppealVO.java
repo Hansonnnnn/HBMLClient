@@ -2,72 +2,109 @@ package vo;
 
 import java.io.Serializable;
 import java.util.Date;
-
+import message.AppealStateMessage;
 import vo.UnexecutedOrderVO;
 import vo.WebMarketerAccountVO;;
 
-public class AppealVO implements Serializable{
-	Date time;
-	WebMarketerAccountVO webMarketerAccount;
-	String explanation;
-	String state;
-	UnexecutedOrderVO order;
+public class AppealVO {
+	int appealID;
+	int orderID;
+	int userID;
+	int webMarketerID;
+	Date appealTime;
+	String content;
+	AppealStateMessage appealState;
 	
-	public AppealVO()
-	{
-		
-	}
-	public AppealVO(String explaination)
-	{
-		this.explanation = explaination;
-	}
-	public AppealVO(Date t,WebMarketerAccountVO wMA,String e,
-			String s,UnexecutedOrderVO o){
-		time=t;
-		webMarketerAccount=wMA;
-		explanation=e;
-		state=s;
-		order=o;
+	
+	public AppealVO(int appealID, int orderID, int userID, int webMarketerID, Date appealTime, String content,
+			AppealStateMessage appealState) {
+		super();
+		this.appealID = appealID;
+		this.orderID = orderID;
+		this.userID = userID;
+		this.webMarketerID = webMarketerID;
+		this.appealTime = appealTime;
+		this.content = content;
+		this.appealState = appealState;
 	}
 
-	public Date getTime() {
-		return time;
+
+	public int getAppealID() {
+		return appealID;
 	}
 
-	public void setTime(Date time) {
-		this.time = time;
+
+	public void setAppealID(int appealID) {
+		this.appealID = appealID;
 	}
 
-	public WebMarketerAccountVO getWebMarketerAccount() {
-		return webMarketerAccount;
+
+	public int getOrderID() {
+		return orderID;
 	}
 
-	public void setWebMarketerAccount(WebMarketerAccountVO webMarketerAccount) {
-		this.webMarketerAccount = webMarketerAccount;
+
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
 	}
 
-	public String getExplanation() {
-		return explanation;
+
+	public int getUserID() {
+		return userID;
 	}
 
-	public void setExplanation(String explanation) {
-		this.explanation = explanation;
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
-	public String getState() {
-		return state;
+
+	public int getWebMarketerID() {
+		return webMarketerID;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+
+	public void setWebMarketerID(int webMarketerID) {
+		this.webMarketerID = webMarketerID;
 	}
 
-	public UnexecutedOrderVO getOrder() {
-		return order;
+
+	public Date getAppealTime() {
+		return appealTime;
 	}
 
-	public void setOrder(UnexecutedOrderVO order) {
-		this.order = order;
+
+	public void setAppealTime(Date appealTime) {
+		this.appealTime = appealTime;
 	}
 
+
+	public String getContent() {
+		return content;
+	}
+
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+
+	public AppealStateMessage getAppealState() {
+		return appealState;
+	}
+
+
+	public void setAppealState(AppealStateMessage appealState) {
+		this.appealState = appealState;
+	}
+
+
+	@Override
+	public String toString() {
+		return "AppealPO [appealID=" + appealID + ", orderID=" + orderID + ", userID=" + userID + ", webMarketerID="
+				+ webMarketerID + ", appealTime=" + appealTime + ", content=" + content + ", appealState=" + appealState
+				+ "]";
+	}
+	
+	
 }

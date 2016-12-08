@@ -3,11 +3,9 @@ package businesslogicservice.orderblservice;
 import java.rmi.RemoteException;
 import java.util.Map;
 
-import businesslogic.orderbl.Order;
 import model.UserType;
 import po.OrderPO;
 import vo.OrderVO;
-import vo.UnexecutedOrderVO;
 
 public interface OrderBLService {
 	//获取未执行订单（即订单已生成，但是订单的用户还未入住，订单未执行状态）
@@ -28,13 +26,13 @@ public interface OrderBLService {
 	 * @param orderList
 	 */
 //	public void showOrderList(OrderVO[] orderList);
-	public UnexecutedOrderVO showOrderInfo(String orderID);
+	public OrderVO showOrderInfo(String orderID);
 	
 	/**
 	 * 凡是对订单对象有操作的Impl，只要改变订单的数据或状态，就要对OrderPO进行更新
 	 * @param id
 	 * @return
 	 */
-	public boolean updateOrderPO(Order orderNeededToUpdate);
+//	public boolean updateOrderPO(Order orderNeededToUpdate);
 
 }
