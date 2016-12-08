@@ -10,18 +10,20 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
+import message.OrderStateMessage;
+import vo.OrderVO;
 
 public class CancelledOrderPageUIController {
 	@FXML private TableView list;
 	@FXML private TableColumn idColumn;
+	@FXML private TableColumn hotelNameColumn;
 	@FXML private TableColumn generateTimeColumn;
-	@FXML private TableColumn	 cancelTimeColumn;
-	@FXML private TableColumn priceColumn;
-	@FXML private TableColumn executeDDLColumn;
+	@FXML private TableColumn	 cancelledTimeColumn;
+	@FXML private TableColumn creditColumn;
 	
-	@FXML private TableColumn appealButtonColumn;
+	@FXML private TableColumn checkOrderButtonColumn;
 	
-	@FXML private ObservableList cancelledOrderData;
+	@FXML private ObservableList<OrderVO> cancelledOrderData;
 	
 	public void init()
 	{
@@ -31,86 +33,28 @@ public class CancelledOrderPageUIController {
 	private void initTable()
 	{
 		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+		hotelNameColumn.setCellValueFactory(new PropertyValueFactory<>("hotelName"));
 		generateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("generateTime"));
-		cancelTimeColumn.setCellValueFactory(new PropertyValueFactory<>("cancelTimeColumn"));
-		executeDDLColumn.setCellValueFactory(new PropertyValueFactory<>("executeDDL"));
-		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+		cancelledTimeColumn.setCellValueFactory(new PropertyValueFactory<>("cancelTime"));
+		creditColumn.setCellValueFactory(new PropertyValueFactory<>("credit"));
 		
-		appealButtonColumn.setCellFactory(new Callback<TableColumn<CancelledOrder, Boolean>, TableCell<CancelledOrder, Boolean>>() 
+		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
 			public TableCell call(TableColumn param)
 			{
-				return new AppealButtonCell();
+				return new CheckButtonCell();
 			}
 		});
 		
 		cancelledOrderData = FXCollections.observableArrayList();
-		cancelledOrderData.add(new CancelledOrder("201611220001","2016.11.22 8:00","2016.11.22 20:00","2016.11.22 24:00",200));
+		cancelledOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
 		list.setItems(cancelledOrderData);
 	}
 	
-	public class CancelledOrder
+	public class CheckButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private String orderID;
-		private String generateTime;
-		private String cancelTime;
-		private String executeDDL;
-		private double price;
-		
-		public CancelledOrder(String id, String generateTime, String cancelTime, String executeDDL, double price)
-		{
-			this.orderID = id;
-			this.generateTime = generateTime;
-			this.cancelTime = cancelTime;
-			this.executeDDL = executeDDL;
-			this.price = price;
-		}
-
-		public String getId() {
-			return orderID;
-		}
-
-		public void setId(String id) {
-			this.orderID = id;
-		}
-
-		public String getGenerateTime() {
-			return generateTime;
-		}
-
-		public void setGenerateTime(String generateTime) {
-			this.generateTime = generateTime;
-		}
-
-		public String getCancelTime() {
-			return cancelTime;
-		}
-
-		public void setCancelTime(String cancelTime) {
-			this.cancelTime = cancelTime;
-		}
-
-		public String getExecuteDDL() {
-			return executeDDL;
-		}
-
-		public void setExecuteDDL(String executeDDL) {
-			this.executeDDL = executeDDL;
-		}
-
-		public double getPrice() {
-			return price;
-		}
-
-		public void setPrice(double price) {
-			this.price = price;
-		}
-	}
-	
-	public class AppealButtonCell extends TableCell<CancelledOrder, Boolean>
-	{
-		private Button appealButton = new Button("申诉");
+		private Button checkButton = new Button("查看");
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -120,7 +64,7 @@ public class CancelledOrderPageUIController {
 				setText(null);
 			}else
 			{
-				setGraphic(appealButton);
+				setGraphic(checkButton);
 				setText(null);
 			}
 		}

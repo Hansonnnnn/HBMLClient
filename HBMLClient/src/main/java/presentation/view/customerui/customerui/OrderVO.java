@@ -1,4 +1,4 @@
-package vo;
+package presentation.view.customerui.customerui;
 
 import java.util.Date;
 

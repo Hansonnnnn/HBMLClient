@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class LoginPageUI extends Dialog
 {
-	public LoginPageUI(Parent root, Stage stage, Scene preScene) 
+	public LoginPageUI() 
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/LoginPage.fxml"));
 		LoginPageUIController controller = fxmlLoader.getController();

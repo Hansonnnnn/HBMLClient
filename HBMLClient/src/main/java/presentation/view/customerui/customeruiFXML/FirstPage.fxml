@@ -81,12 +81,12 @@
             </HBox>
             <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker prefHeight="0.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkinTime" prefHeight="0.0" prefWidth="482.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker prefHeight="16.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkoutTime" prefHeight="16.0" prefWidth="482.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
@@ -100,6 +100,6 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="searchTwoButton" layoutX="303.0" layoutY="503.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="288.0" text="按条件搜索" />
+      <Button fx:id="searchTwoButton" layoutX="303.0" layoutY="503.0" mnemonicParsing="false" onAction="#searchByConditions" prefHeight="48.0" prefWidth="288.0" text="按条件搜索" />
    </children>
 </AnchorPane>

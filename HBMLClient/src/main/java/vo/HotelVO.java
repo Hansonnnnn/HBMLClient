@@ -3,13 +3,6 @@ package vo;
 import java.awt.Image;
 import java.util.List;
 
-import com.sun.xml.internal.bind.v2.runtime.NameList;
-
-import vo.CommentInfoVO;
-import vo.UnexecutedOrderVO;
-import vo.RoomInfoVO;
-import vo.StaffAccountVO;
-
 public class HotelVO {
 	private String name;
 	private String id;
@@ -23,7 +16,7 @@ public class HotelVO {
 	private Image environment;
 	private CommentInfoVO commentInfo;
 	private RoomInfoVO roomInfo;
-	private List<UnexecutedOrderVO> historyOrder;
+	private List<OrderVO> historyOrder;
 	private StaffAccountVO staffAccount;
 	
 	public HotelVO() {
@@ -57,7 +50,7 @@ public class HotelVO {
 
 	public HotelVO(String n,String i,int s,String a,
 			String r,String in,String f,Image e,
-			RoomInfoVO rI,List<UnexecutedOrderVO> hO,StaffAccountVO sA){
+			RoomInfoVO rI,List<OrderVO> hO,StaffAccountVO sA){
 		name=n;
 		id=i;
 		star=s;
@@ -151,11 +144,11 @@ public class HotelVO {
 		this.roomInfo = roomInfo;
 	}
 
-	public List<UnexecutedOrderVO> getHistoryOrder() {
+	public List<OrderVO> getHistoryOrder() {
 		return historyOrder;
 	}
 
-	public void setHistoryOrder(List<UnexecutedOrderVO> historyOrder) {
+	public void setHistoryOrder(List<OrderVO> historyOrder) {
 		this.historyOrder = historyOrder;
 	}
 

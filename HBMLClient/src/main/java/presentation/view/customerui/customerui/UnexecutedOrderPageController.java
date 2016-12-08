@@ -10,9 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import message.OrderStateMessage;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrder;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrderButtonCell;
-import vo.UnexecutedOrderVO;
+import vo.OrderVO;
 
 public class UnexecutedOrderPageController {
 	@FXML private TableView list;
@@ -25,7 +26,7 @@ public class UnexecutedOrderPageController {
 	@FXML private TableColumn checkOrderButtonColumn;
 	@FXML private TableColumn cancelOrderButtonColumn;
 	
-	@FXML private ObservableList<UnexecutedOrderVO> unexecuteOrderData;
+	@FXML private ObservableList<OrderVO> unexecuteOrderData;
 	
 	public void init()
 	{
@@ -39,7 +40,7 @@ public class UnexecutedOrderPageController {
 		cancelTimeColumn.setCellValueFactory(new PropertyValueFactory<>("cancelTime"));
 		executeDDLColumn.setCellValueFactory(new PropertyValueFactory<>("executeDDL"));
 		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<UnexecutedOrderVO, Boolean>, TableCell<UnexecutedOrderVO, Boolean>>() 
+		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
 			public TableCell call(TableColumn param)
@@ -47,7 +48,7 @@ public class UnexecutedOrderPageController {
 				return new CheckOrderButtonCell();
 			}
 		});
-		cancelOrderButtonColumn.setCellFactory(new Callback<TableColumn<UnexecutedOrderVO, Boolean>, TableCell<UnexecutedOrderVO, Boolean>>() 
+		cancelOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
 			public TableCell call(TableColumn param)
@@ -58,11 +59,11 @@ public class UnexecutedOrderPageController {
 		
 		
 		unexecuteOrderData = FXCollections.observableArrayList();
-		unexecuteOrderData.add(new UnexecutedOrderVO("201611220001","2016.11.22 8:00","2016.11.22 20:00","2016.11.22 24:00",200));
+		unexecuteOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
 		list.setItems(unexecuteOrderData);
 	}
 	
-	public class CheckOrderButtonCell extends TableCell<UnexecutedOrderVO, Boolean>
+	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkOrderButton = new Button("查看订单");
 		protected void updateItem(Boolean t, boolean empty)
@@ -79,7 +80,7 @@ public class UnexecutedOrderPageController {
 			}
 		}
 	}
-	public class UnexecutedOrderButtonCell extends TableCell<UnexecutedOrderVO, Boolean>
+	public class UnexecutedOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button cancelOrderButton = new Button("撤销订单");
 		

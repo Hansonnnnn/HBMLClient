@@ -30,8 +30,18 @@ public class HotelListPageController {
 	 private Stage stage;
 	 private Scene preScene;
 	 
+	 private String address;
+	 private String region;
+	 private String checkinTime;
+	 private String checkoutTime;
+	 private int star;
 	 private ObservableList<HotelVO> hotelData;
-	 public void init(Stage stage, Scene preScene)
+	 public void init(Stage stage, Scene preScene, String searchInfo)
+	 {
+		 this.stage = stage;
+		 this.preScene = preScene;
+	 }
+	 public void init(Stage stage, Scene preScene, String address, String region, String checkinTime, String checkoutTime, int star)
 	 {
 		 this.stage = stage;
 		 this.preScene = preScene;

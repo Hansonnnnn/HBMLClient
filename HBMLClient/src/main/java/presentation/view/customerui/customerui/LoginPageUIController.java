@@ -1,7 +1,5 @@
 package presentation.view.customerui.customerui;
 
-import com.sun.org.apache.xml.internal.security.Init;
-
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -41,8 +39,8 @@ public class LoginPageUIController
 		
 	}
 	
-	private void createUser(String userName, String )
-	{
-		
-	}
+//	private void createUser(String userName, String )
+//	{
+//		
+//	}
 }

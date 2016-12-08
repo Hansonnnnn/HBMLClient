@@ -21,6 +21,20 @@ public class HotelListPageUI extends Scene
 		}
 		
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene);
+		controller.init(stage, preScene, searchInfo);
+	}
+	
+	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String address, String region, String checkinTime, String checkoutTime, int star)
+	{
+		super(root);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
+		try{
+			this.setRoot(fxmlLoader.load());
+		}catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		HotelListPageController controller = fxmlLoader.getController();
+		controller.init(stage, preScene, address, region, checkinTime, checkoutTime, star);
 	}
 }

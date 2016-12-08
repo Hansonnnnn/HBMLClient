@@ -5,16 +5,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox fx:id="contentBox" prefHeight="495.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.CancelledOrderPageUIController">
+<VBox fx:id="contentBox" prefHeight="616.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.CancelledOrderPageUIController">
    <children>
-      <TableView fx:id="list" prefHeight="497.0" prefWidth="596.0">
+      <TableView fx:id="list" prefHeight="624.0" prefWidth="848.0">
          <columns>
-            <TableColumn fx:id="idColumn" prefWidth="111.0" text="订单编号" />
-            <TableColumn fx:id="generateTimeColumn" prefWidth="115.0" text="生成时间" />
-            <TableColumn fx:id="cancelTimeColumn" prefWidth="115.0" text="撤销时间" />
-            <TableColumn fx:id="executeDDLColumn" prefWidth="115.0" text="最晚执行时间" />
-            <TableColumn fx:id="priceColumn" prefWidth="62.0" text="价格" />
-            <TableColumn fx:id="appealButtonColumn" prefWidth="87.0" />
+            <TableColumn fx:id="idColumn" prefWidth="120.0" text="订单编号" />
+            <TableColumn fx:id="hotelNameColumn" prefWidth="120.0" text="酒店名称" />
+            <TableColumn fx:id="generateTimeColumn" prefWidth="120.0" text="生成时间" />
+            <TableColumn fx:id="cancelledTimeColumn" prefWidth="120.0" text="撤销时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="120.0" text="信用值变化" />
+            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="118.0" />
+            <TableColumn fx:id="appealButtonColumn" prefWidth="128.155029296875" />
          </columns>
       </TableView>
    </children>
