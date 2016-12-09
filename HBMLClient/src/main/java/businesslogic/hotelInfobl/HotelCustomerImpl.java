@@ -2,10 +2,12 @@ package businesslogic.hotelInfobl;
 
 import java.util.Date;
 import java.util.Map;
+import java.util.Set;
 
 import businesslogic.hotelInfobl.helper.CommentHelper;
 import businesslogic.hotelInfobl.helper.HotelHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
+import message.OrderStateMessage;
 import message.ResultMessage;
 import model.HotelFilter;
 import vo.CommentInfoVO;
@@ -39,6 +41,13 @@ public class HotelCustomerImpl implements HotelCustomerService{
 		
 		
 		return commentHelper.addComment(commentInfoVO);
+	}
+
+	@Override
+	public Set<Integer> hotelRecord(int userID, OrderStateMessage orderState) {
+		
+		
+		return hotelHelper.hotelRecord(userID,orderState);
 	}
 	
 	

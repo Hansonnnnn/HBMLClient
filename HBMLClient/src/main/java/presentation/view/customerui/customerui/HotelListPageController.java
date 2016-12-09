@@ -1,5 +1,7 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.hotelInfobl.HotelCustomerImpl;
+import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -36,6 +38,9 @@ public class HotelListPageController {
 	 private String checkoutTime;
 	 private int star;
 	 private ObservableList<HotelVO> hotelData;
+	 
+	 private HotelCustomerService service;
+	 
 	 public void init(Stage stage, Scene preScene, String searchInfo)
 	 {
 		 this.stage = stage;
@@ -69,6 +74,12 @@ public class HotelListPageController {
 			 }
 		});
 		 hotelData = FXCollections.observableArrayList();
+		 service = new HotelCustomerImpl();
+		 
+		 for (HotelVO hotelVO : service.getHotelList(null, "star", null).values()) 
+		 {
+			hotelData.add(hotelVO);
+		}
 //		 hotelData.add(new HotelVO("绿地洲际酒店","江苏省南京市栖霞区", 5,5,2000));
 		 list.setItems(hotelData);
 	 }

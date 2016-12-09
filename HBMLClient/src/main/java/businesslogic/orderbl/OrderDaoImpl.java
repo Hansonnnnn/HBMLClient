@@ -15,7 +15,7 @@ public class OrderDaoImpl implements OrderDao
 {
 
 	@Override
-	public Map<Integer, OrderPO> getOrderList(int ID, UserType userType) throws RemoteException {
+	public Map<Integer, OrderPO> getOrderList(int ID, UserType userType,OrderStateMessage orderState) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}

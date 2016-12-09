@@ -2,7 +2,9 @@ package businesslogicservice.hotelinfoblservice;
 
 import java.util.Date;
 import java.util.Map;
+import java.util.Set;
 
+import message.OrderStateMessage;
 import message.ResultMessage;
 import model.HotelFilter;
 import vo.CommentInfoVO;
@@ -17,6 +19,8 @@ public interface HotelCustomerService {
 	 * @return 	删选后排好序的map集合
 	 */
 	public Map<Integer, HotelVO> getHotelList(HotelFilter filter,String order,Date date);	
+	
+	public Set<Integer> hotelRecord(int userID,OrderStateMessage orderState);
 	
 	public HotelVO getHotelInfo(int hotelID);
 	
