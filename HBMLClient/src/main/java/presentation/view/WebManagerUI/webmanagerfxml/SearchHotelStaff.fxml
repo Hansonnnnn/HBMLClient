@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="738.0" stylesheets="@../webmanager.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebManagerUI.SearchHotelStaffUIController">
+   <padding>
+      <Insets bottom="9.0" left="39.0" right="39.0" top="8.0" />
+   </padding>
+   <children>
+      <VBox prefHeight="653.0" prefWidth="660.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="seekStaffIdTextField" prefHeight="30.0" prefWidth="350.0" promptText="酒店工作人员ID" styleClass="circle">
+                     <padding>
+                        <Insets left="20.0" right="55.0" top="2.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#seekStaffInfo" styleClass="transButton">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../webmanagerimages/seek.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="-45.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Label fx:id="tipLabel" styleClass="tipLabelColor" text="未找到酒店工作人员，请输入正确的酒店工作人员ID" visible="false" />
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="479.0" prefWidth="660.0">
+               <children>
+                  <TableView fx:id="hotelTableView" maxWidth="482.0" prefHeight="484.0" prefWidth="532.0">
+                    <columns>
+                      <TableColumn fx:id="hotelIdTableColumn" prefWidth="150.0" text="酒店编号" />
+                      <TableColumn fx:id="hotelNameTableColumn" minWidth="0.0" prefWidth="200.0" text="酒店名称" />
+                        <TableColumn fx:id="operationTableColumn" prefWidth="130.0" text="操作" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

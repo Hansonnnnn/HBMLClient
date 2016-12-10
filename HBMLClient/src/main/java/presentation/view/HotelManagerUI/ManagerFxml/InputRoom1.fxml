@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.InputRoomUIController">
+    <children>
+      <VBox alignment="CENTER" prefHeight="481.0" prefWidth="759.0">
+         <children>
+            <TableView fx:id="roomTypeTableView" editable="true" maxWidth="452.0" prefHeight="447.0" prefWidth="392.0">
+               <columns>
+                  <TableColumn fx:id="roomTypeColumn" minWidth="100.0" prefWidth="150.0" text="房型" />
+                  <TableColumn fx:id="roomNumberColumn" minWidth="100.0" prefWidth="150.0" text="总客房数" />
+                  <TableColumn fx:id="viewInfoColumn" minWidth="150.0" prefWidth="150.0" text="查看房间详情" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="27.0" prefWidth="759.0" spacing="10.0">
+         <children>
+            <TextField fx:id="roomTypeTextField" maxWidth="120.0" prefHeight="35.0" promptText="房间类型" />
+            <TextField fx:id="roomIdTextField" maxWidth="120.0" prefHeight="35.0" promptText="房间号" />
+            <TextField fx:id="roomPriceTextField" prefHeight="35.0" prefWidth="120.0" promptText="房间价格" />
+            <Button mnemonicParsing="false" onAction="#addRoomType" prefHeight="35.0" prefWidth="70.0" text="录入">
+               <styleClass>
+                  <String fx:value="confirmButton" />
+                  <String fx:value="toLarge" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+     </children>
+   <padding>
+      <Insets top="50.0" />
+   </padding>
+</VBox>

@@ -1,6 +1,5 @@
 package presentation.view.WebMarketerUI;
 
-import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +13,7 @@ import java.io.IOException;
 public class WebMarketerUI extends Scene {
     public WebMarketerUI(Parent root, Stage stage,Scene beforeScene) {
         super(root);
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/WebMarketer.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/WebMarketer1.fxml"));
         try{
             this.setRoot(fxmlLoader.load());
         }catch (IOException e) {
@@ -23,6 +22,5 @@ public class WebMarketerUI extends Scene {
 
         WebMarketerUIController webMarketerUIController=fxmlLoader.getController();
         webMarketerUIController.init(stage,beforeScene);
-        this.getStylesheets().add(WebMarketerUI.class.getResource("webmarketer.css").toExternalForm());
     }
 }

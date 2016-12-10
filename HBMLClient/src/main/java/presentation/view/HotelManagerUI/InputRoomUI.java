@@ -1,28 +1,23 @@
 package presentation.view.HotelManagerUI;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 /**
  * Created by LENOVO on 2016/11/25.
  */
-public class InputRoomUI extends Scene{
-    public InputRoomUI(Parent root, Stage stage, Scene beforeScene, Scene loginScene) {
-        super(root);
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/InputRoom.fxml"));
+public class InputRoomUI extends VBox{
+    public InputRoomUI(VBox infoVBox) {
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/InputRoom1.fxml"));
         try{
-            this.setRoot(fxmlLoader.load());
+            this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {
             e.printStackTrace();
         }
 
         InputRoomUIController inputRoomUIController=fxmlLoader.getController();
-        inputRoomUIController.init(stage,beforeScene,loginScene);
-
-        this.getStylesheets().add(InputRoomUI.class.getResource("manager.css").toExternalForm());
+        inputRoomUIController.init(infoVBox,this);
     }
 }

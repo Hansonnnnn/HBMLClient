@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebMarketerUIController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="950.0" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebMarketerUIController">
     <children>
         <VBox prefHeight="660.0" prefWidth="199.0" styleClass="rightBorder">
             <children>
-                <VBox alignment="CENTER" prefHeight="132.0" prefWidth="200.0" spacing="10.0" styleClass="grayBackground">
+                <VBox alignment="CENTER" prefHeight="132.0" prefWidth="200.0" spacing="10.0">
                     <children>
                         <Label styleClass="titleLabel" text="HBMS         " />
                         <Label styleClass="titleLabel" text="酒店管理系统" />
                     </children>
+               <styleClass>
+                  <String fx:value="grayBackground" />
+                  <String fx:value="bottomBorder" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                 </VBox>
-                <VBox alignment="CENTER" prefHeight="541.0" prefWidth="159.0">
+                <VBox alignment="CENTER" prefHeight="581.0" prefWidth="198.0" styleClass="grayBackground">
                     <children>
-                        <Button fx:id="exceptionOrderButton" mnemonicParsing="false" onAction="#toExceptionOrder" prefHeight="40.0" prefWidth="193.0" text="异常订单处理">
+                        <Button fx:id="exceptionOrderButton" mnemonicParsing="false" onAction="#toExceptionOrder" prefHeight="40.0" prefWidth="213.0" text="异常订单处理">
                             <styleClass>
                                 <String fx:value="transButton" />
                                 <String fx:value="operationButton" />
                                 <String fx:value="fontsize" />
                             </styleClass></Button>
-                        <Button fx:id="webPromotionButton" mnemonicParsing="false" onAction="#toWebPromotion" prefHeight="40.0" prefWidth="193.0" text="网站促销活动制定">
+                        <Button fx:id="webPromotionButton" mnemonicParsing="false" onAction="#toWebPromotion" prefHeight="40.0" prefWidth="213.0" text="网站促销活动制定">
                             <styleClass>
                                 <String fx:value="transButton" />
                                 <String fx:value="operationButton" />
                                 <String fx:value="fontsize" />
                             </styleClass></Button>
-                        <Button fx:id="regionPromotionButton" mnemonicParsing="false" onAction="#toRegionPromotion" prefHeight="40.0" prefWidth="193.0" text="特定商圈折扣制定">
+                        <Button fx:id="regionPromotionButton" mnemonicParsing="false" onAction="#toRegionPromotion" prefHeight="40.0" prefWidth="213.0" text="特定商圈折扣制定">
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin>
@@ -40,13 +55,13 @@
                                 <String fx:value="fontsize" />
                             </styleClass>
                         </Button>
-                        <Button fx:id="memberGradeButton" mnemonicParsing="false" onAction="#toMemberGrade" prefHeight="40.0" prefWidth="193.0" text="会员等级制定">
+                        <Button fx:id="memberGradeButton" mnemonicParsing="false" onAction="#toMemberGrade" prefHeight="40.0" prefWidth="213.0" text="会员等级制定">
                             <styleClass>
                                 <String fx:value="transButton" />
                                 <String fx:value="operationButton" />
                                 <String fx:value="fontsize" />
                             </styleClass></Button>
-                        <Button fx:id="creditValueButton" mnemonicParsing="false" onAction="#toCreditValue" prefHeight="40.0" prefWidth="193.0" text="信 用 值 充 值">
+                        <Button fx:id="creditValueButton" mnemonicParsing="false" onAction="#toCreditValue" prefHeight="40.0" prefWidth="213.0" text="信 用 值 充 值">
                             <styleClass>
                                 <String fx:value="transButton" />
                                 <String fx:value="operationButton" />
@@ -56,15 +71,15 @@
                 </VBox>
             </children>
         </VBox>
-        <VBox prefHeight="711.0" prefWidth="745.0">
+        <VBox prefHeight="710.0" prefWidth="758.0">
             <children>
-                <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="711.0" styleClass="grayBackground">
+                <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="758.0" styleClass="grayBackground">
                     <children>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../webmarketerimages/user.png" />
                             </image></ImageView>
-                        <Label text="张三,欢迎你" />
+                        <Label styleClass="whiteFont" text="张三,欢迎你" />
                         <Button mnemonicParsing="false" onAction="#backToLogin" styleClass="transButton">
                             <graphic>
                                 <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -75,7 +90,7 @@
                         </Button>
                     </children>
                 </HBox>
-                <VBox fx:id="infoVBox" prefHeight="666.0" prefWidth="738.0">
+                <VBox fx:id="infoVBox" prefHeight="666.0" prefWidth="759.0">
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>

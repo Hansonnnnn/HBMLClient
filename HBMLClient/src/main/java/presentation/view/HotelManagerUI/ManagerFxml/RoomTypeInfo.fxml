@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.RoomTypeInfoUIController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="759.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#back" styleClass="transButton">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ManagerImages/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="55.0" layoutX="33.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ManagerImages/verticalLine.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="70.0" layoutY="11.0" styleClass="positionLabel" text="房间类型信息浏览" />
+         </children>
+      </Pane>
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="759.0">
+         <children>
+            <Label prefHeight="20.0" prefWidth="97.0" styleClass="orderInfoLableSize" text="可用客房数 :" />
+            <Label styleClass="orderInfoLableSize" text="10" />
+         </children>
+         <padding>
+            <Insets left="120.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="498.0" prefWidth="759.0">
+         <children>
+            <TableView fx:id="roomTableView" maxWidth="520.0" prefHeight="498.0" prefWidth="645.0">
+              <columns>
+                <TableColumn fx:id="roomIdColumn" prefWidth="100.0" text="房间号" />
+                <TableColumn fx:id="roomStateColumn" prefWidth="150.0" text="房间状态" />
+                  <TableColumn fx:id="roomPriceColumn" prefWidth="150.0" text="价格(元/天)" />
+                  <TableColumn fx:id="roomInfoColumn" prefWidth="120.0" text="设置房间信息" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>

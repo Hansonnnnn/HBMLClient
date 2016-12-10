@@ -6,77 +6,69 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.OrderBrowseUIController">
-    <children>
-        <HBox prefWidth="600.0" styleClass="blankHBox">
-            <children>
-                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
-                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../arrow.png" />
-                    </image>
-                </ImageView>
-                <Label fx:id="updateRoomLabel" styleClass="labelSize" text="订单浏览/执行" />
-            </children>
-        </HBox>
-        <BorderPane prefHeight="40.0" prefWidth="600.0">
-            <right>
-                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../user.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
-                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
-                            <graphic>
-                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../cancel.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="toLarge" />
-                            </styleClass></Button>
-                    </children>
-                </HBox>
-            </right>
-         <left>
-            <Button mnemonicParsing="false" onAction="#back" styleClass="transButton" BorderPane.alignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </left>
-        </BorderPane>
-      <VBox alignment="CENTER" prefHeight="490.0" prefWidth="670.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.OrderBrowseUIController">
+   <children>
+      <HBox prefHeight="31.0" prefWidth="759.0">
          <children>
-            <TableView fx:id="hotelOrderTableView" maxWidth="472.0" prefHeight="472.0">
-              <columns>
-                <TableColumn fx:id="nameColumn" prefWidth="120.0" text="客户姓名" />
-                <TableColumn fx:id="idColumn" minWidth="0.0" prefWidth="200.0" text="订单ID" />
-                  <TableColumn fx:id="stateColumn" prefWidth="150.0" text="订单状态" />
-              </columns>
-            </TableView>
-            <HBox alignment="CENTER" prefHeight="97.0" prefWidth="550.0" spacing="10.0">
-               <children>
-                  <Label text="酒店订单编号" />
-                  <TextField />
-                  <Button mnemonicParsing="false" onAction="#toOrderInfo" styleClass="confirmButton" text="浏览订单详情" />
-               </children>
-            </HBox>
+            <ToggleButton mnemonicParsing="false" onAction="#toUnexecutedOrder" prefWidth="100.0" text="未执行订单" />
+            <ToggleButton mnemonicParsing="false" onAction="#toExecutedOrder" prefWidth="100.0" text="已执行订单" />
+            <ToggleButton mnemonicParsing="false" onAction="#toAbnormalOrder" prefWidth="100.0" text="异常订单" />
+            <ToggleButton mnemonicParsing="false" onAction="#toCancelledOrder" prefWidth="100.0" text="已撤销订单" />
          </children>
          <padding>
-            <Insets left="60.0" right="60.0" />
+            <Insets left="104.0" />
          </padding>
-      </VBox>
-      <HBox prefHeight="40.0" prefWidth="670.0" styleClass="blankHBox" />
-    </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="567.0" prefWidth="759.0">
+         <children>
+            <TableView fx:id="unexecutedOrderTableView" maxWidth="592.0" prefHeight="544.0" prefWidth="668.0">
+              <columns>
+                <TableColumn fx:id="unexecutedCustomerNameTableColumn" prefWidth="120.0" text="客户姓名" />
+                <TableColumn fx:id="unexecutedOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
+                  <TableColumn fx:id="unexecutedPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
+                  <TableColumn fx:id="unexecutedOperationTableColumn" prefWidth="120.0" text="操作" />
+              </columns>
+            </TableView>
+            <TableView fx:id="executedOrderTableView" maxWidth="592.0" prefHeight="567.0" prefWidth="616.0" visible="false">
+              <columns>
+                <TableColumn fx:id="executedCustomerNameTableColumn" prefWidth="120.0" text="客户姓名" />
+                <TableColumn fx:id="executedOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
+                  <TableColumn fx:id="executedPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
+                  <TableColumn fx:id="executedOperationTableColumn" prefWidth="120.0" text="操作" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="-592.0" />
+               </HBox.margin>
+            </TableView>
+            <TableView fx:id="abnormalOrderTableView" maxWidth="592.0" prefHeight="567.0" prefWidth="592.0" visible="false">
+              <columns>
+                <TableColumn fx:id="abnormalCustomerNameTableColumn" prefWidth="120.0" text="客户姓名" />
+                <TableColumn fx:id="abnormalOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
+                  <TableColumn fx:id="abnormalPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
+                  <TableColumn fx:id="abnormalOperationTableColumn" prefWidth="120.0" text="操作" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="-592.0" />
+               </HBox.margin>
+            </TableView>
+            <TableView fx:id="cancelledOrderTableView" maxWidth="592.0" prefHeight="567.0" prefWidth="592.0" visible="false">
+              <columns>
+                <TableColumn fx:id="cancelledCustomerNameTableColumn" prefWidth="120.0" text="客户姓名" />
+                <TableColumn fx:id="cancelledOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
+                  <TableColumn fx:id="cancelledPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
+                  <TableColumn fx:id="cancelledOperationTableColumn" prefWidth="120.0" text="操作" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="-592.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="40.0" />
+   </padding>
 </VBox>
