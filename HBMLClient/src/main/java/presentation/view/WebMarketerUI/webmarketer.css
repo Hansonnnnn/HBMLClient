@@ -15,6 +15,7 @@
     -fx-font-size:22px;
     -fx-font-weight: bold;
     -fx-font-family:serif;
+    -fx-text-fill: #ffffff;
 }
 
 /**
@@ -29,12 +30,14 @@
 }
 
 .fontsize{
-    -fx-font-size: 16px;
+    -fx-font-size: 17px;
+    -fx-text-fill: #ffffff;
 }
 
 .rightBorder{
     -fx-border-style:solid;
-    -fx-border-width:0px 1px 0px 0px;
+    -fx-border-width:0px 1px 1px 0px;
+    -fx-border-color: #0080FF;
 }
 
 .grayBackground{
@@ -76,4 +79,21 @@
     -fx-text-fill:#1faf91;
     /*-fx-font-family: serif;*/
 }
+/**
+ *将组建下方边界设为蓝色
+ */
+.bottomBorder{
+    -fx-border-color: #0080FF;
+    -fx-border-style:solid;
+    -fx-border-width:0px 0px 1px 0px;
+}
+
+/**
+ *将字体的颜色设置为白色
+ */
+.whiteFont{
+    -fx-text-fill: #ffffff;
+}
+
+
 

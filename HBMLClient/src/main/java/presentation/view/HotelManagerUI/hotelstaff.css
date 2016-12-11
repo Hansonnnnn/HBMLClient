@@ -1,0 +1,81 @@
+/**
+ *设置背景颜色
+ */
+.grayBackground{
+    -fx-background-color: #1c3048;
+}
+
+/**
+ *设置按钮背景颜色
+ */
+.transButton{
+    -fx-background-color: transparent;
+}
+
+.fontsize{
+    -fx-font-size: 17px;
+    -fx-text-fill: #ffffff;
+}
+
+/**
+ *显示出左边工作内容选择区域的右边界,并设置边界颜色
+ */
+.rightBorder{
+    -fx-border-style:solid;
+    -fx-border-width:0px 1px 1px 0px;
+    -fx-border-color: #0080FF;
+}
+
+.titleLabel{
+    -fx-font-size:22px;
+    -fx-font-weight: bold;
+    -fx-font-family:serif;
+    -fx-text-fill: #ffffff;
+}
+
+/**
+ *将组建下方边界设为蓝色
+ */
+.bottomBorder{
+    -fx-border-color: #0080FF;
+    -fx-border-style:solid;
+    -fx-border-width:0px 0px 1px 0px;
+}
+
+/**
+ *将字体的颜色设置为白色
+ */
+.whiteFont{
+    -fx-text-fill: #ffffff;
+}
+
+.positionLabel{
+    -fx-font-size:20px;
+    -fx-text-fill:#1faf91;
+}
+
+.orderInfoLableSize{
+    -fx-font-size: 17px;
+}
+
+
+/**
+ *设置房间类型列表的字体大小,对齐方式，cell的最小高度
+ */
+#roomTypeTableView .table-column{
+    -fx-font-size: 18px;
+    -fx-alignment: center-left;
+    -fx-min-height: 55;
+}
+
+/**
+ *修改添加图片按钮的背景颜色
+ */
+.addImageButton{
+    -fx-border-style: solid;
+    -fx-border-color: #BEBEBE;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+

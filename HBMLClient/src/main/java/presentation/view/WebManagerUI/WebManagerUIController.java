@@ -98,7 +98,7 @@ public class WebManagerUIController {
     @FXML
     private void toHotelStuffInfo(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new HotelStaffInfoUI());
+        infoVBox.getChildren().add(new SearchHotelStaffUI(infoVBox));
         addHotelButton.setStyle("-fx-background-color:transparent");
         addMarketerButton.setStyle("-fx-background-color:transparent");
         userInfoButton.setStyle("-fx-background-color:transparent");

@@ -85,3 +85,34 @@
     -fx-border-style:solid;
     -fx-border-width:0px 0px 1px 0px;
 }
+
+/**
+ *修改用户信息标签的字体大小
+ */
+.userInfoLabel{
+    -fx-font-size: 17px;
+}
+
+/**
+ *指示当前所在界面的标签,修改颜色和字体大小
+ */
+.positionLabel {
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 20px;
+    -fx-text-fill: #1faf91;
+    /*-fx-font-family: serif;*/
+}
+
+/**
+ *设置酒店列表的字体大小,对齐方式，cell的最小高度
+ */
+#hotelTableView .table-column {
+    -fx-font-size: 18px;
+    -fx-alignment: center-left;
+    -fx-min-height: 55;
+}
+
+#hotelTableView .table-column .label{
+}
+
+

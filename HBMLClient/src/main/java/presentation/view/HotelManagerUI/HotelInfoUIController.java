@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -33,36 +34,17 @@ public class HotelInfoUIController {
     @FXML private ImageView hotelImageView;
     @FXML private Button addImageButton;
 
+    private VBox infoVBox;
     private Stage stage;
-    private Scene beforeScene;
-    private Scene loginScene;
     private Desktop desktop ;
     private FileChooser fileChooser;
     private ObservableList regionData;
 
-
-    public void init(Stage stage,Scene beforeScene,Scene loginScene){
-        this.stage=stage;
-        this.beforeScene=beforeScene;
-        this.loginScene=loginScene;
+    public void init(Stage stage,VBox infoVBox){
+        this.infoVBox=infoVBox;
         initComboBox();
     }
 
-    /**
-     * 点击返回按钮，返回到上一个界面
-     */
-    @FXML
-    private void back(){
-        stage.setScene(beforeScene);
-    }
-
-    /**
-     * 点击注销按钮，返回到登录界面
-     */
-    @FXML
-    private void backToLogin(){
-        stage.setScene(loginScene);
-    }
 
     /**
      * 点击编辑按钮，编辑酒店信息

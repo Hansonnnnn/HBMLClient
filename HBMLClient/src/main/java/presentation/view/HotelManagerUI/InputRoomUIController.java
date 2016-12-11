@@ -2,162 +2,83 @@ package presentation.view.HotelManagerUI;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import  javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 /**
  * Created by LENOVO on 2016/11/25.
  */
 public class InputRoomUIController {
-    @FXML private TableView roomTableView;
-    @FXML private TextField changePriceTextField;
+    @FXML private TableView roomTypeTableView;
     @FXML private TextField roomTypeTextField;
-    @FXML private TextField roomNumberTextField;
+    @FXML private TextField roomIdTextField;
     @FXML private TextField roomPriceTextField;
     @FXML private TableColumn roomTypeColumn;
     @FXML private TableColumn roomNumberColumn;
-    @FXML private TableColumn roomPriceColumn;
+    @FXML private TableColumn viewInfoColumn;
 
 
-    private Stage stage;
-    private Scene beforeScene;
-    private Scene loginScene;
+    private VBox infoVBox;
+    private VBox thisVBox;
     private ObservableList data;
-
-    public void init(Stage stage,Scene beforeScene,Scene loginScene){
-        this.stage=stage;
-        this.beforeScene=beforeScene;
-        this.loginScene=loginScene;
+    public void init(VBox infoVBox,VBox thisVBox){
+        this.infoVBox=infoVBox;
+        this.thisVBox=thisVBox;
         addTableView();
     }
 
     private void addTableView(){
-
         roomTypeColumn.setCellValueFactory(new PropertyValueFactory<>("roomType"));
         roomNumberColumn.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
-        roomPriceColumn.setCellValueFactory(new PropertyValueFactory<>("roomPrice"));
-
+        viewInfoColumn.setCellFactory(new Callback<TableColumn<RoomTypeInfo,Boolean>, TableCell<RoomTypeInfo,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new RoomTypeInfoButtonCell(infoVBox,thisVBox);
+            }
+        });
         data= FXCollections.observableArrayList();
-        data.add(new RoomInfo("陋室",10,128));
-        data.add(new RoomInfo("标准单人间",100,328));
-        data.add(new RoomInfo("标准双人间",100,648));
-        data.add(new RoomInfo("总统套房",10,998));
+        data.add(new RoomTypeInfo("陋室",10));
+        data.add(new RoomTypeInfo("标准单人间",100));
+        data.add(new RoomTypeInfo("标准双人间",100));
+        data.add(new RoomTypeInfo("总统套房",10));
 
-        if(roomTableView.getSelectionModel().getSelectedItems()!=null){
-            roomTableView.getSelectionModel().selectedItemProperty().addListener((v,oldValue,newValue)->{
-                    changePriceTextField.setText(String.valueOf(((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).getRoomPrice()));
-            });
-        }else{
-            changePriceTextField.setText("");
-        }
-
-
-        roomTableView.setItems(data);
+        roomTypeTableView.setItems(data);
 
     }
 
-    /**
-     * 点击返回按钮，返回到上一个界面
-     */
-    @FXML
-    private void back(){
-        stage.setScene(beforeScene);
-    }
 
-    /**
-     * 点击注销按钮，返回到登录界面
-     */
-    @FXML
-    private void backToLogin(){
-        stage.setScene(loginScene);
-    }
-
-    /**
-     * 点击删除房型按钮，删除房型
-     */
-    @FXML
-    private void deleteRoomType(){
-        if(roomTableView.getSelectionModel().getSelectedItem()!=null){
-            roomTableView.getSelectionModel().getSelectedItems()
-                    .forEach(roomTableView.getItems()::remove);
-            roomTableView.refresh();
-        }
-    }
-
-    /**
-     * 点击减按钮，减少可用客房数量
-     */
-    @FXML
-    private void reduceRoomNumber(){
-        if(roomTableView.getSelectionModel().getSelectedItem()!=null){
-            int beforeNumber=((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).getRoomNumber();
-            ((RoomInfo) roomTableView.getSelectionModel().getSelectedItem()).setRoomNumber(beforeNumber-1);
-            roomTableView.refresh();
-        }
-    }
-
-    /**
-     * 点击加按钮，增加可用客房数量
-     */
-    @FXML
-    private void addRoomNumber(){
-        if(roomTableView.getSelectionModel().getSelectedItem()!=null){
-            int beforeNumber=((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).getRoomNumber();
-            ((RoomInfo) roomTableView.getSelectionModel().getSelectedItem()).setRoomNumber(beforeNumber+1);
-            roomTableView.refresh();
-        }
-    }
 
     /**
      * 点击录入按钮时，录入添加的房间类型
      */
     @FXML
     private void addRoomType(){
-        if((roomTypeTextField!=null)&&(roomNumberTextField!=null)&&(roomPriceTextField!=null)){
-            data.add(new RoomInfo(roomTypeTextField.getText(),Integer.parseInt(roomNumberTextField.getText()),Integer.parseInt(roomPriceTextField.getText())));
+        if((roomTypeTextField!=null)&&(roomIdTextField!=null)&&(roomPriceTextField!=null)){
+            data.add(new RoomTypeInfo(roomTypeTextField.getText(),Integer.parseInt(roomIdTextField.getText())));
             roomTypeTextField.setText("");
-            roomNumberTextField.setText("");
+            roomIdTextField.setText("");
             roomPriceTextField.setText("");
-            roomTableView.refresh();
-        }
-    }
-
-    /**
-     * 修改文本框中的数字，就修改选中房间价格
-     */
-    @FXML
-    private void changePrice(){
-        if(changePriceTextField.getText()!=null&&!changePriceTextField.getText().equals("")){
-            ((RoomInfo)roomTableView.getSelectionModel().getSelectedItem()).setRoomPrice(Integer.parseInt(changePriceTextField.getText()));
-            roomTableView.refresh();
+            roomTypeTableView.refresh();
         }
     }
 
 
-    public class RoomInfo{
+    public class RoomTypeInfo{
         private String roomType;
         private int roomNumber;
-        private int roomPrice;
-        public RoomInfo(String roomType, int roomNumber, int roomPrice){
+
+        public RoomTypeInfo(String roomType, int roomNumber){
             this.roomType=roomType;
             this.roomNumber=roomNumber;
-
-            this.roomPrice=roomPrice;
         }
-
-        public int getRoomPrice() {
-            return roomPrice;
-        }
-
-        public void setRoomPrice(int roomPrice) {
-            this.roomPrice = roomPrice;
-        }
-
         public int getRoomNumber() {
             return roomNumber;
         }
@@ -174,6 +95,31 @@ public class InputRoomUIController {
             this.roomType = roomType;
         }
 
+    }
+
+    public class RoomTypeInfoButtonCell extends TableCell<RoomTypeInfo,Boolean>{
+        private Button viewButton=new Button();
+        private ImageView viewImageView=new ImageView(new Image(getClass().getResourceAsStream("ManagerImages/view1.png")));
+        public RoomTypeInfoButtonCell(VBox infoVBox,VBox beforeVBox){
+            viewButton.setStyle("-fx-background-color: transparent");
+            viewButton.setGraphic(viewImageView);
+            viewButton.setOnAction((ActionEvent e)->{
+                infoVBox.getChildren().remove(0);
+                infoVBox.getChildren().add(new RoomTypeInfoUI(infoVBox,beforeVBox));
+            });
+        }
+
+        @Override
+        protected void updateItem(Boolean t,boolean empty){
+            super.updateItem(t,empty);
+            if(empty){
+                setGraphic(null);
+                setText(null);
+            }else{
+                setGraphic(viewButton);
+                setText(null);
+            }
+        }
     }
 
 }

@@ -23,7 +23,6 @@ public class HotelStaffUI extends Scene{
         }
 
         HotelStaffUIController hotelStaffUIController=fxmlLoader.getController();
-        hotelStaffUIController.init(stage,this,beforeScene);
-        this.getStylesheets().add(HotelStaffUI.class.getResource("manager.css").toExternalForm());
+        hotelStaffUIController.init(stage,beforeScene);
     }
 }

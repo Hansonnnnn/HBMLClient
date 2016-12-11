@@ -6,104 +6,55 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelInfoUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelInfoUIController">
     <children>
-        <HBox prefWidth="600.0" styleClass="blankHBox">
-            <children>
-                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
-                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../arrow.png" />
-                    </image>
-                </ImageView>
-                <Label fx:id="updateRoomLabel" styleClass="labelSize" text="录入酒店信息" />
-            </children>
-        </HBox>
-        <BorderPane prefHeight="40.0" prefWidth="600.0">
-            <right>
-                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../user.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
-                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
-                            <graphic>
-                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../cancel.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="toLarge" />
-                            </styleClass></Button>
-                    </children>
-                </HBox>
-            </right>
-         <left>
-            <Button mnemonicParsing="false" onAction="#back" styleClass="transButton" BorderPane.alignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </left>
-        </BorderPane>
-      <VBox prefWidth="600.0">
+      <VBox prefHeight="541.0" prefWidth="759.0">
          <children>
-            <VBox prefWidth="520.0" spacing="10.0">
+            <VBox prefHeight="502.0" prefWidth="679.0" spacing="10.0">
                <children>
-                  <Label styleClass="boldLabel" text="基本信息" />
-                  <VBox prefWidth="620.0" spacing="10.0" styleClass="infoVBox">
+                  <VBox prefHeight="503.0" prefWidth="679.0" spacing="10.0" styleClass="infoVBox">
                      <padding>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                      <children>
                         <HBox prefWidth="200.0" spacing="32.0">
                            <children>
-                              <HBox spacing="15.0">
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
                                  <children>
-                                    <Label text="酒店名 :" />
-                                    <TextField fx:id="hotelNameTextField" editable="false" maxWidth="202.0" prefHeight="30.0" prefWidth="202.0" text="HOTEL168" />
+                                    <Label styleClass="orderInfoLableSize" text="酒店名 :" />
+                                    <TextField fx:id="hotelNameTextField" editable="false" maxWidth="202.0" prefHeight="35.0" prefWidth="202.0" styleClass="orderInfoLableSize" text="HOTEL168" />
                                  </children>
                               </HBox>
-                              <HBox>
+                              <HBox alignment="CENTER_LEFT">
                                  <children>
-                                    <Label text="所属商圈 :" />
-                                    <ComboBox fx:id="hotelRegionComboBox" disable="true" prefHeight="30.0" prefWidth="200.0" promptText="徐家汇" />
+                                    <Label styleClass="orderInfoLableSize" text="所属商圈 :" />
+                                    <ComboBox fx:id="hotelRegionComboBox" disable="true" prefHeight="35.0" prefWidth="200.0" promptText="徐家汇" styleClass="orderInfoLableSize" />
                                  </children>
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefWidth="200.0">
                            <children>
-                              <Label text="酒店地址 :" />
-                              <TextField fx:id="hotelAddressTextField" editable="false" prefHeight="30.0" prefWidth="503.0" text="上海市徐家汇区肇嘉滨路3号" />
+                              <Label styleClass="orderInfoLableSize" text="酒店地址 :" />
+                              <TextField fx:id="hotelAddressTextField" editable="false" prefHeight="35.0" prefWidth="510.0" styleClass="orderInfoLableSize" text="上海市徐家汇区肇嘉滨路3号" />
                            </children>
                         </HBox>
-                        <HBox prefHeight="156.0" prefWidth="580.0" spacing="30.0">
+                        <HBox prefHeight="156.0" prefWidth="580.0" spacing="35.0">
                            <children>
-                              <Label text="简介 :" />
-                              <TextArea fx:id="hotelIntroTextArea" editable="false" prefHeight="100.0" prefWidth="503.0" text="便宜，设施好" />
+                              <Label styleClass="orderInfoLableSize" text="简介 :" />
+                              <TextArea fx:id="hotelIntroTextArea" editable="false" prefHeight="156.0" prefWidth="510.0" styleClass="orderInfoLableSize" text="便宜，设施好" />
                            </children>
                         </HBox>
                         <HBox prefHeight="209.0" prefWidth="580.0">
                            <children>
-                              <Label text="酒店环境 :" />
-                              <HBox prefHeight="225.0" prefWidth="503.0" spacing="10.0">
+                              <Label styleClass="orderInfoLableSize" text="酒店环境 :" />
+                              <HBox prefHeight="210.0" prefWidth="512.0" spacing="10.0">
                                  <children>
                                     <Button mnemonicParsing="false" prefHeight="213.0" prefWidth="245.0" styleClass="transButton">
                                        <graphic>
                                           <ImageView fx:id="hotelImageView" fitHeight="200.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" />
                                        </graphic></Button>
-                                    <Button fx:id="addImageButton" disable="true" mnemonicParsing="false" onAction="#addImage" prefHeight="213.0" prefWidth="245.0">
+                                    <Button fx:id="addImageButton" disable="true" mnemonicParsing="false" onAction="#addImage" prefHeight="210.0" prefWidth="252.0">
                                        <graphic>
                                           <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -113,7 +64,7 @@
                                        </graphic>
                                        <styleClass>
                                           <String fx:value="transButton" />
-                                          <String fx:value="buttonBorder" />
+                                          <String fx:value="addImageButton" />
                                        </styleClass></Button>
                                  </children>
                               </HBox>
@@ -125,18 +76,21 @@
             </VBox>
          </children>
          <padding>
-            <Insets left="40.0" right="40.0" />
+            <Insets left="40.0" right="40.0" top="40.0" />
          </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </VBox>
       <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="100.0">
          <children>
-            <Button minWidth="80.0" mnemonicParsing="false" onAction="#editHotelInfo" text="编辑">
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#editHotelInfo" prefHeight="35.0" text="编辑">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" onAction="#confirmHotelInfo" text="确认修改">
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#confirmHotelInfo" prefHeight="35.0" text="确认修改">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
@@ -144,6 +98,8 @@
             </Button>
          </children>
       </HBox>
-      <HBox prefHeight="40.0" prefWidth="700.0" styleClass="blankHBox" />
     </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
 </VBox>

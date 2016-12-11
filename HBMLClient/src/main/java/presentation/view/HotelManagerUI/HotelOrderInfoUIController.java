@@ -1,23 +1,13 @@
 package presentation.view.HotelManagerUI;
 
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import presentation.view.application.UserLoginScene;
 
 /**
  * Created by LENOVO on 2016/11/25.
  */
 public class HotelOrderInfoUIController {
-
-    @FXML private Label userLabel;
-    @FXML private Button cancelButton;
 
     @FXML private Label customerLabel;
     @FXML private VBox customerVBox;
@@ -38,32 +28,23 @@ public class HotelOrderInfoUIController {
     @FXML private Label checkInNumberLabel;
     @FXML private Label havaChildLabel;
 
-    @FXML private Button backButton;
-    @FXML private Button operationButton;
-    @FXML private Button revokeButton;
 
-    private Stage stage;
-    private Scene beforeScene;
-    private Scene loginScene;
 
-    public void getScene(Stage stage,Scene beforeScene,Scene loginScene){
-        this.stage=stage;
-        this.beforeScene=beforeScene;
-        this.loginScene=loginScene;
+
+    private VBox infoVBox;
+    private VBox beforeVBox;
+    public void getScene(VBox infoVBox,VBox beforeVBox){
+        this.infoVBox=infoVBox;
+        this.beforeVBox=beforeVBox;
     }
 
-
+    /**
+     * 点击返回按钮,返回到上一个界面
+     */
     @FXML
     private void back(){
-        stage.setScene(beforeScene);
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(beforeVBox);
     }
-
-    @FXML
-    private void backToLogin(){
-        stage.setScene(loginScene);
-    }
-
-
-
 
 }
