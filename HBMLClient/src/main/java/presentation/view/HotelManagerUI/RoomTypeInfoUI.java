@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class RoomTypeInfoUI extends VBox{
     public RoomTypeInfoUI(VBox infoVBox,VBox beforeVBox){
-               FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/RoomTypeInfo.fxml"));
+               FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/RoomTypeInfo1.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {

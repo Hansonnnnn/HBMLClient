@@ -6,120 +6,91 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="670.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.PromotionInfoUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.PromotionInfoUIController">
     <children>
-        <HBox prefWidth="600.0" styleClass="blankHBox">
-            <children>
-                <Label fx:id="managerLabel" styleClass="labelSize" text="HBMS酒店管理系统" />
-                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../arrow.png" />
-                    </image>
-                </ImageView>
-                <Label fx:id="updateRoomLabel" styleClass="labelSize" text="制定酒店促销策略" />
-            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+      <Pane prefHeight="76.0" prefWidth="759.0">
+         <children>
+            <Button layoutY="11.0" mnemonicParsing="false" onAction="#back" styleClass="transButton">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ManagerImages/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="55.0" layoutX="33.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../arrow.png" />
+                  <Image url="@../ManagerImages/verticalLine.png" />
                </image>
             </ImageView>
-            <Label styleClass="labelSize" text="浏览促销策略详细信息" />
-            </children>
-        </HBox>
-        <BorderPane prefHeight="40.0" prefWidth="600.0">
-            <right>
-                <HBox prefHeight="36.0" prefWidth="199.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../user.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="userLabel" prefHeight="44.0" styleClass="nameSize" text="张三，欢迎你" />
-                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#backToLogin">
-                            <graphic>
-                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../cancel.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="toLarge" />
-                            </styleClass></Button>
-                    </children>
-                </HBox>
-            </right>
-            <left>
-                <Button mnemonicParsing="false" onAction="#back" styleClass="transButton" BorderPane.alignment="CENTER">
-                    <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../back.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </left>
-        </BorderPane>
-      <VBox prefWidth="700.0">
+            <Label layoutX="69.0" layoutY="22.0" styleClass="positionLabel" text="促销策略详细信息" />
+         </children>
+      </Pane>
+      <VBox prefHeight="483.0" prefWidth="759.0">
          <padding>
             <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
          </padding>
          <children>
-            <VBox prefWidth="620.0" spacing="10.0" styleClass="infoVBox">
+            <VBox prefWidth="620.0" spacing="15.0" styleClass="infoVBox">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="620.0" spacing="15.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="620.0" spacing="20.0">
                      <children>
-                        <Label text="促销策略名 :" />
-                        <TextField fx:id="promotionNameTextField" disable="true" maxWidth="180.0" text="双十一" />
+                        <Label styleClass="orderInfoLableSize" text="促销策略名 :" />
+                        <TextField fx:id="promotionNameTextField" disable="true" maxWidth="180.0" prefHeight="35.0" text="双十一" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Label text="所需会员等级 :" />
-                        <TextField fx:id="memberLevelTextField" disable="true" maxWidth="180.0" text="5" />
+                        <Label styleClass="orderInfoLableSize" text="所需会员等级 :" />
+                        <ComboBox fx:id="" prefHeight="35.0" prefWidth="180.0" />
+                        <Pane prefHeight="40.0" prefWidth="273.0">
+                           <children>
+                              <Label layoutX="23.0" layoutY="8.0" styleClass="orderInfoLableSize" text="折扣(%) :" />
+                              <ComboBox layoutX="123.0" layoutY="5.0" prefHeight="35.0" prefWidth="150.0" />
+                           </children>
+                        </Pane>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Label text="策略开始时间 :" />
-                        <DatePicker fx:id="startDatePicker" disable="true" maxWidth="180.0" />
+                        <Label styleClass="orderInfoLableSize" text="策略开始时间 :" />
+                        <DatePicker fx:id="startDatePicker" disable="true" maxWidth="180.0" prefHeight="35.0" />
                         <Pane>
                            <children>
-                              <ComboBox fx:id="startHourComboBox" disable="true" layoutX="22.0" layoutY="1.0" prefWidth="100.0" visibleRowCount="8" />
+                              <ComboBox fx:id="startHourComboBox" disable="true" layoutX="22.0" layoutY="1.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
                               <Label layoutX="122.0" layoutY="6.0" text="时" />
                            </children>
                         </Pane>
                         <Pane>
                            <children>
-                              <ComboBox fx:id="startMinuteComboBox" disable="true" layoutX="14.0" layoutY="2.0" prefWidth="100.0" visibleRowCount="8" />
+                              <ComboBox fx:id="startMinuteComboBox" disable="true" layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
                               <Label layoutX="114.0" layoutY="8.0" text="分" />
                            </children>
                         </Pane>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Label text="策略结束时间 :" />
-                        <DatePicker fx:id="endDatePicker" disable="true" maxWidth="180.0" />
+                        <Label styleClass="orderInfoLableSize" text="策略结束时间 :" />
+                        <DatePicker fx:id="endDatePicker" disable="true" maxWidth="180.0" prefHeight="35.0" />
                         <Pane>
                            <children>
-                              <ComboBox fx:id="endHourComboBox" disable="true" layoutX="22.0" layoutY="5.0" prefWidth="100.0" visibleRowCount="8" />
+                              <ComboBox fx:id="endHourComboBox" disable="true" layoutX="22.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
                               <Label layoutX="122.0" layoutY="10.0" text="时" />
                            </children>
                         </Pane>
                         <Pane>
                            <children>
-                              <ComboBox fx:id="endMinuteComboBox" disable="true" layoutX="14.0" layoutY="5.0" prefWidth="100.0" visibleRowCount="8" />
+                              <ComboBox fx:id="endMinuteComboBox" disable="true" layoutX="14.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
                               <Label layoutX="114.0" layoutY="10.0" text="分" />
                            </children>
                         </Pane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="198.0" prefWidth="620.0" spacing="30.0">
+                  <HBox prefHeight="198.0" prefWidth="620.0" spacing="40.0">
                      <children>
-                        <Label text="策略内容 :" />
+                        <Label styleClass="orderInfoLableSize" text="策略内容 :" />
                         <TextArea fx:id="contentTextArea" disable="true" prefHeight="200.0" prefWidth="450.0" text="减免" />
                      </children>
                   </HBox>
@@ -130,7 +101,7 @@
             </VBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="670.0" spacing="50.0">
+      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="670.0" spacing="100.0">
          <children>
             <Button fx:id="editButton" minWidth="100.0" mnemonicParsing="false" onAction="#edit" text="编辑">
                <styleClass>
@@ -144,14 +115,7 @@
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <Button fx:id="deleteButton" minWidth="100.0" mnemonicParsing="false" onAction="#delete" text="删除策略">
-               <styleClass>
-                  <String fx:value="confirmButton" />
-                  <String fx:value="toLarge" />
-               </styleClass>
-            </Button>
          </children>
       </HBox>
-      <HBox prefHeight="40.0" prefWidth="670.0" styleClass="blankHBox" />
     </children>
 </VBox>

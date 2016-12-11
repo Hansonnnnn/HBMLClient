@@ -61,7 +61,8 @@ public class HotelStaffUIController {
      */
     @FXML
     private void toHotelPromotion(){
-//        stage.setScene(new HotelPromotionUI(new Group(),stage,thisScene,loginScene));
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new HotelPromotionUI(infoVBox));
     }
 
 }

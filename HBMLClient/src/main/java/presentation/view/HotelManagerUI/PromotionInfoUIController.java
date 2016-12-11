@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -17,7 +18,7 @@ import java.time.temporal.ChronoUnit;
 public class PromotionInfoUIController {
 
     @FXML private TextField promotionNameTextField;
-    @FXML private TextField memberLevelTextField;
+//    @FXML private TextField memberLevelComboBox;
     @FXML private TextArea contentTextArea;
     @FXML private DatePicker startDatePicker;
     @FXML private ComboBox startHourComboBox;
@@ -27,16 +28,13 @@ public class PromotionInfoUIController {
     @FXML private ComboBox endMinuteComboBox;
 
 
-
-    private Stage stage;
-    private Scene beforeScene;
-    private Scene loginScene;
+    private VBox infoVBox;
+    private VBox beforeVBox;
     private ObservableList hourData;
     private ObservableList minuteData;
-    public void init(Stage stage,Scene beforeScene,Scene loginScene){
-        this.stage=stage;
-        this.beforeScene=beforeScene;
-        this.loginScene=loginScene;
+    public void init(VBox infoVBox,VBox beforeVBox){
+        this.infoVBox=infoVBox;
+        this.beforeVBox=beforeVBox;
         initDatePicker();
         initComboBox();
     }
@@ -46,15 +44,8 @@ public class PromotionInfoUIController {
      */
     @FXML
     private void back(){
-        stage.setScene(beforeScene);
-    }
-
-    /**
-     * 点击注销按钮，返回到登录界面
-     */
-    @FXML
-    private void backToLogin(){
-        stage.setScene(loginScene);
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(beforeVBox);
     }
 
     /**
@@ -63,7 +54,6 @@ public class PromotionInfoUIController {
     @FXML
     private void edit(){
         promotionNameTextField.setDisable(false);
-        memberLevelTextField.setDisable(false);
         startDatePicker.setDisable(false);
         startHourComboBox.setDisable(false);
         startMinuteComboBox.setDisable(false);
@@ -79,7 +69,7 @@ public class PromotionInfoUIController {
     @FXML
     private void confirm(){
         promotionNameTextField.setDisable(true);
-        memberLevelTextField.setDisable(true);
+
         startDatePicker.setDisable(true);
         startHourComboBox.setDisable(true);
         startMinuteComboBox.setDisable(true);

@@ -1,11 +1,7 @@
 package presentation.view.HotelManagerUI;
 
-import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -14,7 +10,7 @@ import java.io.IOException;
  */
 public class OrderBrowseUI extends VBox{
     public OrderBrowseUI(VBox infoVBox) {
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/OrderBrowse.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/OrderBrowse1.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {

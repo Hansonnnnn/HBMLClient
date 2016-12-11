@@ -17,6 +17,7 @@ public class RoomInfoUI extends VBox{
             e.printStackTrace();
         }
 
-
+        RoomInfoUIController roomInfoUIController=fxmlLoader.getController();
+        roomInfoUIController.init(infoVBox,beforeVBox);
     }
 }

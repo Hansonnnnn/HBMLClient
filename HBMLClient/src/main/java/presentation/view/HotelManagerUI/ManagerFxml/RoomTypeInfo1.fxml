@@ -38,7 +38,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="498.0" prefWidth="759.0">
          <children>
-            <TableView fx:id="roomTableView" maxWidth="520.0" prefHeight="498.0" prefWidth="645.0">
+            <TableView fx:id="roomTableView" maxWidth="520.0" prefHeight="498.0" prefWidth="645.0" styleClass="roomTypeTableView">
               <columns>
                 <TableColumn fx:id="roomIdColumn" prefWidth="100.0" text="房间号" />
                 <TableColumn fx:id="roomStateColumn" prefWidth="150.0" text="房间状态" />
