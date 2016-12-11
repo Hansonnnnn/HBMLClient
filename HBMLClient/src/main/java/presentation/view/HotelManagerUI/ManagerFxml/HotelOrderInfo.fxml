@@ -10,7 +10,7 @@
    <children>
       <Pane prefHeight="74.0" prefWidth="759.0">
          <children>
-            <Button fx:id="back" layoutY="12.0" mnemonicParsing="false" styleClass="transButton">
+            <Button layoutY="12.0" mnemonicParsing="false" onAction="#back" styleClass="transButton">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>

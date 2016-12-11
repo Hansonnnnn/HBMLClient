@@ -10,7 +10,7 @@
     <children>
       <VBox alignment="CENTER" prefHeight="481.0" prefWidth="759.0">
          <children>
-            <TableView fx:id="roomTypeTableView" editable="true" maxWidth="452.0" prefHeight="447.0" prefWidth="392.0">
+            <TableView fx:id="roomTypeTableView" editable="true" maxWidth="452.0" prefHeight="447.0" prefWidth="392.0" styleClass="roomTypeTableView">
                <columns>
                   <TableColumn fx:id="roomTypeColumn" minWidth="100.0" prefWidth="150.0" text="房型" />
                   <TableColumn fx:id="roomNumberColumn" minWidth="100.0" prefWidth="150.0" text="总客房数" />

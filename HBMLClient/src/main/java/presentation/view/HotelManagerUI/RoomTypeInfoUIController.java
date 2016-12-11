@@ -9,6 +9,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import vo.RoomInfoVO;
@@ -54,26 +56,65 @@ public class RoomTypeInfoUIController {
         roomIdColumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
         roomStateColumn.setCellValueFactory(new PropertyValueFactory<>("roomState"));
         roomPriceColumn.setCellValueFactory(new PropertyValueFactory<>("defaultPrice"));
-        roomInfoColumn.setCellFactory(new Callback<TableColumn<RoomInfoVO,Boolean>, TableCell<RoomInfoVO,Boolean>>() {
+        roomInfoColumn.setCellFactory(new Callback<TableColumn<RoomInfo,Boolean>, TableCell<RoomInfo,Boolean>>() {
             @Override
             public TableCell call(TableColumn param) {
-                return new RoomInfoButtonCell(infoVBox,beforeVBox);
+                return new RoomInfoButtonCell(infoVBox,thisVBox);
             }
         });
 
         roomInfoData= FXCollections.observableArrayList();
-        roomInfoData.add(new RoomInfoVO());
+        roomInfoData.add(new RoomInfo("3B666","空闲",128));
+        roomInfoData.add(new RoomInfo("3B888","已预订",333));
+        roomTableView.setItems(roomInfoData);
     }
 
-    public class RoomInfoButtonCell extends TableCell<RoomInfoVO,Boolean>{
+    public class RoomInfo{
+        private String roomID;
+        private String roomState;
+        private int defaultPrice;
+        public RoomInfo(String roomID,String roomState,int defaultPrice){
+            this.roomID=roomID;
+            this.roomState=roomState;
+            this.defaultPrice=defaultPrice;
+        }
+
+        public String getRoomID() {
+            return roomID;
+        }
+
+        public void setRoomID(String roomID) {
+            this.roomID = roomID;
+        }
+
+        public String getRoomState() {
+            return roomState;
+        }
+
+        public void setRoomState(String roomState) {
+            this.roomState = roomState;
+        }
+
+        public int getDefaultPrice() {
+            return defaultPrice;
+        }
+
+        public void setDefaultPrice(int defaultPrice) {
+            this.defaultPrice = defaultPrice;
+        }
+    }
+
+    public class RoomInfoButtonCell extends TableCell<RoomInfo,Boolean>{
         private Button viewRoomInfoButton=new Button();
+        private ImageView viewImageView=new ImageView(new Image(getClass().getResourceAsStream("ManagerImages/view1.png")));
         public RoomInfoButtonCell(VBox infoVBox,VBox beforeVBox){
+            viewRoomInfoButton.setGraphic(viewImageView);
+            viewRoomInfoButton.setStyle("-fx-background-color: transparent");
             viewRoomInfoButton.setOnAction((ActionEvent e)->{
                 infoVBox.getChildren().remove(0);
                 infoVBox.getChildren().add(new RoomInfoUI(infoVBox,beforeVBox));
             });
         }
-
 
         @Override
         protected void updateItem(Boolean t,boolean empty){
