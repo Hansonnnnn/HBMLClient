@@ -1,7 +1,13 @@
 package presentation.view.customerui.customerui;
 
+import java.time.LocalDate;
+import java.util.Date;
+
+import com.sun.corba.se.spi.orbutil.fsm.Action;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -11,11 +17,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import message.OrderStateMessage;
+import model.DateHelper;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrder;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrderButtonCell;
 import vo.OrderVO;
 
-public class UnexecutedOrderPageController {
+public class UnexecutedOrderPageController 
+{
 	@FXML private TableView list;
 	
 	@FXML private TableColumn idColumn;
@@ -59,13 +67,25 @@ public class UnexecutedOrderPageController {
 		
 		
 		unexecuteOrderData = FXCollections.observableArrayList();
-		unexecuteOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+		
+		
+		LocalDate localDate = LocalDate.now();
+		Date date = DateHelper.localDateToDate(localDate);
+		unexecuteOrderData.add(new OrderVO(111, 111, 111, "绿地洲际酒店", 000000, OrderStateMessage.Abnormal, date, date, date, date, date, 9, 9, 200));
 		list.setItems(unexecuteOrderData);
 	}
 	
 	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button checkOrderButton = new Button("查看订单");
+		private Button checkOrderButton = new Button("查看");
+		public CheckOrderButtonCell()
+		{
+			checkOrderButton.setOnAction((ActionEvent e)->{
+			int selectedIndex = getTableRow().getIndex();
+			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+			new OrderInfoPage(orderVO).show();
+			});
+		}
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -82,7 +102,7 @@ public class UnexecutedOrderPageController {
 	}
 	public class UnexecutedOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button cancelOrderButton = new Button("撤销订单");
+		private Button cancelOrderButton = new Button("撤销");
 		
 		protected void updateItem(Boolean t, boolean empty)
 		{

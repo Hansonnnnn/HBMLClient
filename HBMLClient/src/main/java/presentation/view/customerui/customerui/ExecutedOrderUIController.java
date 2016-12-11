@@ -59,7 +59,7 @@ public class ExecutedOrderUIController {
 //		{
 //			executedOrderData.add(orderVO);
 //		}
-		executedOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+//		executedOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
 		list.setItems(executedOrderData);
 	}
 	

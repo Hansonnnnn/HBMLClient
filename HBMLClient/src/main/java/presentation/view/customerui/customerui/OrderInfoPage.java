@@ -6,12 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.OrderVO;
 
-public class LoginPageUI extends Stage
+public class OrderInfoPage extends Stage
 {
-	public LoginPageUI() 
+	public OrderInfoPage(OrderVO orderVO) 
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/LoginPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/OrderInfoPage.fxml"));
 		Parent root = null;
 		try {
 			root = fxmlLoader.load();
@@ -21,7 +22,7 @@ public class LoginPageUI extends Stage
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		LoginPageUIController controller = fxmlLoader.getController();
-		controller.init(this);
+		OrderInfoPageController controller = fxmlLoader.getController();
+		controller.init(this, orderVO);
 	}
 }

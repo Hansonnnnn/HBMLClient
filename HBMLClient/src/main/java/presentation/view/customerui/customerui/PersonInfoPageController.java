@@ -17,7 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class PersonInfoPageFirstController {
+public class PersonInfoPageController {
 	@FXML private Button backButton;
 	@FXML private Button editImageButton;
 	@FXML private Button vipEnrollButton;

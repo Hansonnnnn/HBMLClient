@@ -7,9 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class PersonInfoPageFromFirstPage extends Scene
+public class PersonInfoPage extends Scene
 {
-		public PersonInfoPageFromFirstPage(Parent root, Stage stage, Scene preScene)
+		public PersonInfoPage(Parent root, Stage stage, Scene preScene)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PersonalInfoManagePage.fxml"));
@@ -18,10 +18,10 @@ public class PersonInfoPageFromFirstPage extends Scene
 			}catch(IOException e)
 			{
 				e.printStackTrace();
-				System.out.println("PersonalInfoPageFromFirstPage Error");
+//				System.out.println("PersonalInfoPageFromFirstPage Error");
 			}
 			
-			PersonInfoPageFirstController controller = fxmlLoader.getController();
+			PersonInfoPageController controller = fxmlLoader.getController();
 			controller.init(stage, preScene, this);
 		}
 }

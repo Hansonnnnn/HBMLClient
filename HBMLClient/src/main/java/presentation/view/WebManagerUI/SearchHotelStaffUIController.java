@@ -42,7 +42,7 @@ public class SearchHotelStaffUIController {
     private void seekStaffInfo(){
         if(seekStaffIdTextField.getText().equals("01")){
             infoVBox.getChildren().remove(0);
-            infoVBox.getChildren().add(new HotelStaffinfoUI(infoVBox,thisVBox));
+            infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,thisVBox));
             tipLabel.setVisible(false);
         }else{
             tipLabel.setVisible(true);

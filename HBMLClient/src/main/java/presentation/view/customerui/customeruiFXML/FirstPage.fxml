@@ -81,21 +81,21 @@
             </HBox>
             <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker fx:id="checkinTime" prefHeight="0.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkinTimePicker" prefHeight="0.0" prefWidth="482.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker fx:id="checkoutTime" prefHeight="16.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkoutTimePicker" prefHeight="16.0" prefWidth="482.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="5星   " />
-                  <CheckBox mnemonicParsing="false" text="4星   " />
-                  <CheckBox mnemonicParsing="false" text="3星   " />
-                  <CheckBox mnemonicParsing="false" text="2星   " />
-                  <CheckBox mnemonicParsing="false" text="1星" />
+                  <CheckBox fx:id="fiveStarCheckBox" mnemonicParsing="false" text="5星   " />
+                  <CheckBox fx:id="fourStarCheckBox" mnemonicParsing="false" text="4星   " />
+                  <CheckBox fx:id="threeStarCheckBox" mnemonicParsing="false" text="3星   " />
+                  <CheckBox fx:id="twoStarCheckBox" mnemonicParsing="false" text="2星   " />
+                  <CheckBox fx:id="oneStarCheckBox" mnemonicParsing="false" text="1星" />
                </children>
             </HBox>
          </children>

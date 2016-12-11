@@ -9,8 +9,8 @@ import java.io.IOException;
 /**
  * Created by LENOVO on 2016/12/9.
  */
-public class HotelStaffinfoUI extends VBox{
-    public HotelStaffinfoUI(VBox infoVBox,VBox beforeVBox){
+public class HotelStaffInfoUI extends VBox{
+    public HotelStaffInfoUI(VBox infoVBox,VBox beforeVBox){
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmanagerfxml/HotelStaffinfo.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
@@ -18,7 +18,7 @@ public class HotelStaffinfoUI extends VBox{
             e.printStackTrace();
         }
 
-        HotelStaffinfoUIController hotelStaffinfoUIController=fxmlLoader.getController();
+        HotelStaffInfoUIController hotelStaffinfoUIController=fxmlLoader.getController();
         hotelStaffinfoUIController.init(infoVBox,beforeVBox);
     }
 }

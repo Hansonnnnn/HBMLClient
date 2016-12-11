@@ -7,7 +7,7 @@ import javafx.scene.layout.VBox;
 /**
  * Created by LENOVO on 2016/12/9.
  */
-public class HotelStaffinfoUIController {
+public class HotelStaffInfoUIController {
 
     @FXML private TextField staffIdTextField;
     @FXML private TextField staffAccountTextField;

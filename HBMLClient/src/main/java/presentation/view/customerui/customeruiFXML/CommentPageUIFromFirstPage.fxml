@@ -13,10 +13,26 @@
       <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
       <VBox alignment="CENTER" layoutY="69.0" prefHeight="544.0" prefWidth="148.0" spacing="30.0">
          <children>
-            <Button fx:id="uncommentedButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="待评价酒店" />
-            <Button fx:id="commentedButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="已评价酒店" />
+            <Button fx:id="uncommentedButton" mnemonicParsing="false" onAction="#firstAction" prefHeight="38.0" prefWidth="116.0" text="待评价酒店" />
+            <Button fx:id="commentedButton" mnemonicParsing="false" onAction="#secondAction" prefHeight="38.0" prefWidth="116.0" text="已评价酒店" />
          </children>
       </VBox>
-      <VBox layoutX="154.0" prefHeight="618.0" prefWidth="847.0" />
+      <VBox fx:id="contentBox" layoutX="154.0" prefHeight="618.0" prefWidth="847.0">
+         <children>
+            <VBox prefHeight="627.0" prefWidth="847.0">
+               <children>
+                  <TableView fx:id="list" prefHeight="618.0" prefWidth="847.0">
+                     <columns>
+                        <TableColumn fx:id="nameColumn" prefWidth="212.95465087890625" text="名称" />
+                        <TableColumn fx:id="starColumn" minWidth="0.0" prefWidth="89.040771484375" text="星级" />
+                        <TableColumn fx:id="scoreColumn" minWidth="0.0" prefWidth="60.14739990234375" text="评分" />
+                        <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="96.9749755859375" text="价格" />
+                        <TableColumn fx:id="checkButtonColumn" minWidth="0.0" prefWidth="192.126953125" />
+                        <TableColumn fx:id="makeOrderButtonColumn" minWidth="3.9998779296875" prefWidth="194.8729248046875" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children></VBox>
    </children>
 </AnchorPane>

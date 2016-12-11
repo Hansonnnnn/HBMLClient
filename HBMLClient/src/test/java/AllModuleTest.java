@@ -12,7 +12,6 @@ import businesslogic.orderbl.orderhelper.OrderList;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import presentation.controller.HotelInfoViewControllerImpl;
-import presentation.controller.OrderViewControllerImpl;
 import vo.HotelVO;
 
 public class AllModuleTest {

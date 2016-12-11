@@ -14,23 +14,20 @@ public class LoginPageUIController
 	@FXML private Button enrollButton;
 	@FXML private Button loginButton;
 	
-//	private Stage stage;
+	private Stage stage;
 //	private Scene preScene;
 //	
-//	public void init(Stage stage, Scene preScene)
-//	{
-//		this.stage = stage;
-//		this.preScene = preScene;
-//	}
-	public void init()
+	public void init(Stage stage)
 	{
-		
+		this.stage = stage;
+//		this.preScene = preScene;
 	}
+	
 	
 	@FXML
 	private void login()
 	{
-		
+		stage.close();
 	}
 	
 	@FXML

@@ -48,7 +48,7 @@ public class CancelledOrderPageUIController {
 		});
 		
 		cancelledOrderData = FXCollections.observableArrayList();
-		cancelledOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+//		cancelledOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
 		list.setItems(cancelledOrderData);
 	}
 	

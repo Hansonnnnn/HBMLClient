@@ -2,7 +2,8 @@ package vo;
 import java.io.File;
 import java.util.List;
 
-public class HotelVO {
+public class HotelVO
+{
 
 	String name;
 	int id;

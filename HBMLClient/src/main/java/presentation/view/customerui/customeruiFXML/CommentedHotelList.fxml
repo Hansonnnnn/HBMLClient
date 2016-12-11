@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="627.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.CommentedHotelListPageController">
+   <children>
+      <TableView fx:id="list" prefHeight="618.0" prefWidth="847.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="212.95465087890625" text="名称" />
+            <TableColumn fx:id="starColumn" minWidth="0.0" prefWidth="89.040771484375" text="星级" />
+            <TableColumn fx:id="scoreColumn" minWidth="0.0" prefWidth="60.14739990234375" text="评分" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="96.9749755859375" text="价格" />
+            <TableColumn fx:id="checkButtonColumn" minWidth="0.0" prefWidth="192.126953125" />
+            <TableColumn fx:id="makeOrderButtonColumn" minWidth="3.9998779296875" prefWidth="194.8729248046875" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

@@ -1,15 +1,27 @@
 package presentation.view.customerui.customerui;
 
 import java.time.LocalDate;
+import java.util.Date;
 
+import org.omg.CORBA.INTERNAL;
+
+import com.sun.javafx.collections.MappingChange.Map;
+
+import businesslogic.hotelInfobl.HotelCustomerImpl;
+import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import model.HotelFilter;
+import vo.HotelVO;
 
 public class FirstPageUIController {
 	@FXML private TextField searchField;
@@ -26,16 +38,23 @@ public class FirstPageUIController {
 	@FXML private TextField circle_field;
 	@FXML private DatePicker checkinTimePicker;
 	@FXML private DatePicker checkoutTimePicker;
-//	@FXML private 如何判断选中星级
 	@FXML private Button searchByConditionsButton;
+	@FXML private CheckBox fiveStarCheckBox;
+	@FXML private CheckBox fourStarCheckBox;
+	@FXML private CheckBox threeStarCheckBox;
+	@FXML private CheckBox twoStarCheckBox;
+	@FXML private CheckBox oneStarCheckBox;
 	
 	private Scene firstPageUI;
 	private Stage stage;
+	
+	private Map<Integer, HotelVO> hotelList = null;
 	
 	public void init(Stage stage, Scene firstPageUI)
 	{
 		this.stage = stage;
 		this.firstPageUI = firstPageUI;
+		initDatePicker();
 	}
 	
 	@FXML
@@ -53,7 +72,7 @@ public class FirstPageUIController {
 	@FXML
 	private void personalInfoPartAction()
 	{
-		stage.setScene(new PersonInfoPageFromFirstPage(new Group(),stage, firstPageUI));
+		stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI));
 	}
 	
 	@FXML
@@ -85,14 +104,51 @@ public class FirstPageUIController {
 		}
 		
 		//获取两个DatePicker里面的时间
-		
-		
+		checkinTime = checkinTimePicker.getValue().toString();
+		checkoutTime = checkoutTimePicker.getValue().toString();
+		//获得星级
+		if(fiveStarCheckBox.isSelected())
+		{
+			HotelFilter filter = new HotelFilter();
+			filter.add("star", "=", star);
+			HotelCustomerService serviceImpl = new HotelCustomerImpl();
+//			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
+		}
 		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, address, region, checkinTime, checkoutTime, star));
+	}
+	
+	private void initDatePicker()
+	{
+		checkinTimePicker.setPromptText(LocalDate.now().toString());
+		checkoutTimePicker.setPromptText(LocalDate.now().toString());
+		checkinTimePicker.setValue(LocalDate.now());
+		final Callback<DatePicker, DateCell> dateCellFactory = new Callback<DatePicker, DateCell>() 
+		{
+			@Override
+			public DateCell call(final DatePicker datePicker)
+			{
+				return new DateCell()
+						{
+							@Override
+							public void updateItem(LocalDate item, boolean empty)
+							{
+								super.updateItem(item, empty);
+								if(item.isBefore(checkinTimePicker.getValue().plusDays(1)))
+								{
+									setDisable(true);
+									 setStyle("-fx-background-color: #ffc0cb;");
+								}
+							}
+						};
+			}
+		};
+		checkoutTimePicker.setDayCellFactory(dateCellFactory);
+		checkoutTimePicker.setValue(LocalDate.now().plusDays(1));
 	}
 	@FXML 
 	private void login()
 	{
-		new LoginPageUI();
+		new LoginPageUI().showAndWait();
 	}
 	
 }

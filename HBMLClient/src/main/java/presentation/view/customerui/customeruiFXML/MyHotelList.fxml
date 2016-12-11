@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MyHotelListPageController">
+   <children>
+      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
+      <VBox layoutX="22.0" layoutY="89.0" prefHeight="494.0" prefWidth="938.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="705.0">
+               <children>
+                  <ComboBox fx:id="first" prefWidth="333.0" promptText="推荐排序" />
+                  <ComboBox fx:id="second" prefWidth="333.0" />
+                  <ComboBox fx:id="third" prefWidth="333.0" />
+               </children>
+            </HBox>
+            <TableView fx:id="list" prefHeight="545.0" prefWidth="996.0">
+               <columns>
+                  <TableColumn fx:id="nameColumn" prefWidth="195.96924591064453" text="名称" />
+                  <TableColumn fx:id="addressColumn" minWidth="8.443283081054688" prefWidth="272.8944091796875" text="地址" />
+                  <TableColumn fx:id="starColumn" minWidth="0.0" text="星级" />
+                  <TableColumn fx:id="scoreColumn" minWidth="0.0" text="评分" />
+                  <TableColumn fx:id="priceColumn" minWidth="0.0" text="价格" />
+                  <TableColumn fx:id="checkButtonColumn" minWidth="0.0" prefWidth="113.29510498046875" />
+                  <TableColumn fx:id="makeOrderButtonColumn" prefWidth="103.810546875" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

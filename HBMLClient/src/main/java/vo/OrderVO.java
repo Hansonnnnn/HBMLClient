@@ -12,8 +12,10 @@ public class OrderVO {
 	private OrderStateMessage orderState;
 	private String hotelName;
 	//最近一次操作事件，生成po时该项为null
-	private String generateTime;
-	private String cancelTime;
+//	private String generateTime;
+//	private String cancelTime;
+	private Date generateTime;
+	private Date cancelTime;
 	private Date executeDDl;
 	private Date checkinTime;
 	private Date checkoutTime;
@@ -22,7 +24,7 @@ public class OrderVO {
 	private int price;
 	
 	public OrderVO(int orderID, int userID, int hotelID, String hotelName, int roomInfoID, OrderStateMessage orderState,
-			String generateTime, String cancelTime, Date executeDDl, Date checkinTime, Date checkoutTime, int number,
+			Date generateTime,Date cancelTime, Date executeDDl, Date checkinTime, Date checkoutTime, int number,
 			int hasChild, int price) {
 		this.orderID = orderID;
 		this.userID = userID;
@@ -80,19 +82,19 @@ public class OrderVO {
 		this.orderState = orderState;
 	}
 
-	public String getGenerateTime() {
-		return generateTime;
-	}
-
-	public void setGenerateTime(String generateTime) {
-		this.generateTime = generateTime;
-	}
-
-	public String getCancelTime() {
+	public Date getCancelTime() {
 		return cancelTime;
 	}
 
-	public void setCancelTime(String cancelTime) {
+	public Date getGenerateTime() {
+		return generateTime;
+	}
+
+	public void setGenerateTime(Date generateTime) {
+		this.generateTime = generateTime;
+	}
+
+	public void setCancelTime(Date cancelTime) {
 		this.cancelTime = cancelTime;
 	}
 
