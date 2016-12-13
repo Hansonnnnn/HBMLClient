@@ -1,5 +1,7 @@
 package businesslogic.creditbl;
 
+import po.CreditRecordPO;
+
 public class Credit {
 		public int value;
 		public CreditRecordPO record;

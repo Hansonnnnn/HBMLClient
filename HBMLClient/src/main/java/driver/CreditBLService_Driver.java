@@ -1,18 +1,17 @@
 package driver;
 
 import businesslogicservice.creditblservice.CreditCustomerService;
+import businesslogicservice.creditblservice.CreditWebMarketerService;
 
 public class CreditBLService_Driver {
-	public void drive(CreditBLService creditBLService,CreditCustomerService creditCustomerService){
-		creditBLService.showCredit();
-		creditBLService.showCreditRecord();
-		creditBLService.addCredit(1000);
-		creditBLService.resumeCredit(new CreditVO(1000,null));
-		creditBLService.getCreditInfo();
-		creditBLService.getCreditValue("0001");
-		creditBLService.setCreditValue("0001", 1000);
-		creditCustomerService.getChangeType("0001");
-		creditCustomerService.getReasonType("0001");
-		creditCustomerService.getAccount("0001");
+	public void drive(CreditCustomerService creditCustomerService, CreditWebMarketerService creditWebMarketerService){
+		//testing creditCustomerService
+		creditCustomerService.getCreditRecordList(1);
+		creditCustomerService.getCreditRecord(1);
+		creditCustomerService.getCreditValue(1);
+
+		//testing creditWebMarketerService
+		creditWebMarketerService.addCreditValue(1,100);
+		creditWebMarketerService.resumeCreditValue(1,200);
 	}
 }

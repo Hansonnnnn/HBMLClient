@@ -4,6 +4,7 @@ import businesslogicservice.TransferService;
 import businesslogicservice.userblservice.*;
 import message.ResultMessage;
 import presentation.view.userinfoui.UserInfoViewControllerService;
+import vo.UserVO;
 
 import java.util.ArrayList;
 
@@ -36,19 +37,20 @@ public class UserInfoViewControllerImpl implements UserInfoViewControllerService
         this.userTransferServiceImpl=userTransferService;
     }
 
+
     @Override
     public ResultMessage addUserInfo(UserVO vo) {
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
     public ResultMessage deleteUserInfo(String id) {
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
     public ResultMessage modifyUserInfo(UserVO vo) {
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
@@ -68,16 +70,16 @@ public class UserInfoViewControllerImpl implements UserInfoViewControllerService
 
     @Override
     public ResultMessage login(String id, String pwd) {
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
     public ResultMessage logout() {
-        return ResultMessage.failure;
+        return null;
     }
 
     @Override
     public ResultMessage signup(UserVO vo) {
-        return ResultMessage.failure;
+        return null;
     }
 }

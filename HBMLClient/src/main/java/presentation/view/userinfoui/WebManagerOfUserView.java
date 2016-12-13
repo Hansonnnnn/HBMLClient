@@ -31,11 +31,11 @@ public class WebManagerOfUserView extends JPanel{
     }
 
     public void modifyUserInfo(){
-        controller.modifyUserInfo(new UserVO("0200000000"));
+        //controller.modifyUserInfo(new UserVO("0200000000"));
     }
 
     public void addUserInfo(){
-        controller.addUserInfo(new UserVO("0200000000"));
+        //controller.addUserInfo(new UserVO("0200000000"));
     }
 
     public void deleteUserInfo(){

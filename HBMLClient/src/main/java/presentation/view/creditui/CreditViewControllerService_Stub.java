@@ -1,6 +1,8 @@
 package presentation.view.creditui;
 
 
+import vo.CreditRecordVO;
+
 public class CreditViewControllerService_Stub implements CreditViewControllerService{
 	String user_Type;
 	String user_ID;
@@ -32,17 +34,17 @@ public class CreditViewControllerService_Stub implements CreditViewControllerSer
 	}
 
 	@Override
-	public boolean resumeCredit(CreditVO credit) {
+	public boolean resumeCredit(CreditRecordVO credit) {
 		// TODO 自动生成的方法存根
 		System.out.println("Resume Credit Success");
 		return false;
 	}
 
 	@Override
-	public CreditVO getCreditInfo() {
+	public CreditRecordVO getCreditInfo() {
 		// TODO 自动生成的方法存根
 		System.out.println("Get CreditInfo Success");
-		return new CreditVO(1000, null);
+		return null;
 	}
 
 	@Override

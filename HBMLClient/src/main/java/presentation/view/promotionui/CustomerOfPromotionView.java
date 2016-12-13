@@ -14,7 +14,7 @@ public class CustomerOfPromotionView {
 	
 	public PromotionVO showPromotion(){
 		controller.showPromotion();
-		return new PromotionVO("H00001");
+		return null;
 	}
 	
 	public ArrayList<PromotionVO> showPromotionList(){

@@ -2,46 +2,36 @@ package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import message.ResultMessage;
+import model.PromotionFilter;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
-	
-	private PromotionDao promotionDao;
-	
+
+
 	@Override
-	public ResultMessage addPromotion(PromotionPO po) {
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.addPromotion(po);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		// TODO 自动生成的方法存根
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) {
 		return null;
 	}
 
 	@Override
-	public ResultMessage modifyPromotion(PromotionPO po) {
-		// TODO 自动生成的方法存根
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.modifyPromotion(po);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	public PromotionVO getPromotion(int promotionID) {
 		return null;
 	}
 
 	@Override
-	public ResultMessage deletePromotion(String id) {
-		promotionDao=new PromotionDaoImpl_stub();
-		try{
-			promotionDao.deletePromotion(id);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+	public ResultMessage addWebPromotion(PromotionVO vo) {
 		return null;
 	}
 
+	@Override
+	public ResultMessage deleteWebPromotion(int promotionID) {
+		return null;
+	}
+
+	@Override
+	public ResultMessage modifyWebPromotion(PromotionVO po) {
+		return null;
+	}
 }

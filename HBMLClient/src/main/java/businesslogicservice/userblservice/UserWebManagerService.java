@@ -12,7 +12,7 @@ public interface UserWebManagerService {
 
     public ResultMessage addUser(UserVO vo);
 
-    public ResultMessage deleteUser(UserVO vo);
+    public ResultMessage deleteUser(int userID);
 
     public ResultMessage modifyUser(UserVO vo);
 

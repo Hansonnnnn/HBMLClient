@@ -12,7 +12,7 @@ public class CustomerOfUserView extends JPanel{
         this.controller=userInfoViewControllerService;
     }
     public void signup(){
-        controller.signup(new UserVO("1231230000"));
+        //controller.signup(new UserVO("1231230000"));
     }
 
     public void showUserInfo(){
@@ -29,10 +29,10 @@ public class CustomerOfUserView extends JPanel{
     }
 
     public void addUserInfo(){
-        controller.addUserInfo(new UserVO("1234120000"));
+        //controller.addUserInfo(new UserVO("1234120000"));
     }
 
     public void modifyUserInfo(){
-        controller.modifyUserInfo(new UserVO("1234512345"));
+        //controller.modifyUserInfo(new UserVO("1234512345"));
     }
 }
