@@ -1,4 +1,4 @@
-package businesslogic.userbl;
+/*package businesslogic.userbl;
 
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.userblservice.UserWebManagerService;
@@ -11,9 +11,9 @@ import vo.UserVO;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-/**
+*//**
  * Created by alex on 16-11-9.
- */
+ *//*
 public class UserWebManagerServiceImpl implements UserWebManagerService{
     private ArrayList<UserPO> userInfo;
 
@@ -137,3 +137,4 @@ public class UserWebManagerServiceImpl implements UserWebManagerService{
         return ResultMessage.success;
     }
 }
+*/

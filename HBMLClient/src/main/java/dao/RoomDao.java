@@ -9,6 +9,10 @@ import message.ResultMessage;
 import message.RoomStateMessage;
 import po.RoomInfoPO;
 
+/**
+ * @author 凡
+ *
+ */
 public interface RoomDao extends Remote {
 	
 	/**
@@ -28,9 +32,9 @@ public interface RoomDao extends Remote {
 	public ResultMessage deleteRoom(int hotelID,String roomID)throws RemoteException;
 	
 	/**
-	 * @Description: TODO 更改房间状态（针对房间，不针对具体某天）只针对房间默认属性
+	 * @Description: TODO 更改房间状态（针对房间，不针对具体某天）只针对房间当天属性
 	 * 
-	 * 若RoomState改为unavailable 表示房间不可预订
+	 * 若RoomState改为unavailable 表示房间不可预订，date1与date2为null
 	 
 	 */
 	public ResultMessage modifyRoomState(int roomInfoID,RoomStateMessage room_state)throws RemoteException;
@@ -61,4 +65,3 @@ public interface RoomDao extends Remote {
 	
 
 }
-

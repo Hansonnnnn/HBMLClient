@@ -1,4 +1,5 @@
 package dao;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Date;
@@ -11,6 +12,10 @@ import po.CommentInfoPO;
 import po.HotelPO;
 import po.RegionPO;
 
+/**
+ * @author 凡
+ *
+ */
 public interface HotelDao extends Remote{
 	/*
 	 * filter规则查看model里该类规则

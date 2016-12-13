@@ -1,4 +1,4 @@
-package businesslogic.userbl;
+/*package businesslogic.userbl;
 
 import message.ResultMessage;
 import po.UserPO;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 import dao.UserDao;
 
-/**
+*//**
  * Created by alex on 16-11-9.
- */
+ *//*
 public class UserDaoImpl_stub implements UserDao{
     @Override
     public ArrayList<UserPO> getUserList() throws RemoteException {
@@ -93,3 +93,4 @@ public class UserDaoImpl_stub implements UserDao{
         return ResultMessage.success;
     }
 }
+*/

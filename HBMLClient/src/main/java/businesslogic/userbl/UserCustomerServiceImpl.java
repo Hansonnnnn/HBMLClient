@@ -1,4 +1,4 @@
-package businesslogic.userbl;
+/*package businesslogic.userbl;
 
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.userblservice.UserCustomerService;
@@ -11,9 +11,9 @@ import vo.UserVO;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-/**
+*//**
  * Created by alex on 16-11-9.
- */
+ *//*
 public class UserCustomerServiceImpl implements UserCustomerService{
     private ArrayList<UserPO> customerInfo;
 
@@ -90,3 +90,4 @@ public class UserCustomerServiceImpl implements UserCustomerService{
         return ResultMessage.failure;
     }
 }
+*/

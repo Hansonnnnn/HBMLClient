@@ -1,4 +1,4 @@
-package businesslogic.userbl;
+/*package businesslogic.userbl;
 
 import businesslogicservice.userblservice.UserWebMarketerService;
 import dao.UserDao;
@@ -7,9 +7,9 @@ import rmi.ClientRunner;
 
 import java.rmi.RemoteException;
 
-/**
+*//**
  * Created by alex on 16-11-9.
- */
+ *//*
 public class UserWebMarkerServiceImpl implements UserWebMarketerService{
     UserDao userDao;
     public UserWebMarkerServiceImpl(){
@@ -34,3 +34,4 @@ public class UserWebMarkerServiceImpl implements UserWebMarketerService{
         return ResultMessage.success;
     }
 }
+*/
