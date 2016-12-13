@@ -1,8 +1,6 @@
 package presentation.view.creditui;
 
 
-import vo.CreditVO;
-
 public class CreditViewControllerService_Stub implements CreditViewControllerService{
 	String user_Type;
 	String user_ID;

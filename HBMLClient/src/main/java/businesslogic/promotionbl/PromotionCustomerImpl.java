@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import businesslogic.utility.TransferImpl;
-import businesslogicservice.promotionblservice.PromotionCustemerService;
-import dao.PromotionDao;
-import po.PromotionPO;
-import vo.PromotionVO;
+import businesslogicservice.promotionblservice.PromotionCustomerService;
 
-public class PromotionCustomerImpl implements PromotionCustemerService{
+public class PromotionCustomerImpl implements PromotionCustomerService {
 	
 	private PromotionDao promotionDao;
 	

@@ -7,9 +7,16 @@ import vo.UserVO;
  * Created by alex on 16-11-9.
  */
 public interface UserCustomerService {
+
+    public UserVO getUserData(int userID);
+
+    public UserVO getUserData(String accountName);
+
     public ResultMessage modifyUserInfo(UserVO vo);
-    public UserVO showUserInfo();
-    public ResultMessage login(String id,String pwd);
+
+    public ResultMessage login(String accountName,String pwd);
+
     public ResultMessage logout();
+
     public ResultMessage signup(UserVO vo);
 }

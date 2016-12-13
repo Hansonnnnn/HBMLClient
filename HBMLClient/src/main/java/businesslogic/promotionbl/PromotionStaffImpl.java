@@ -1,9 +1,7 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionStaffService;
-import dao.PromotionDao;
 import message.ResultMessage;
-import po.PromotionPO;
 
 public class PromotionStaffImpl implements PromotionStaffService{
 	

@@ -1,6 +1,5 @@
 package presentation.view.promotionui;
 
-import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
 import model.PromotionType;
 import model.PromotionTypeHelper;

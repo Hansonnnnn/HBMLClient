@@ -1,9 +1,7 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
-import dao.PromotionDao;
 import message.ResultMessage;
-import po.PromotionPO;
 
 public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 	

@@ -1,7 +1,5 @@
 package presentation.view.creditui;
 
-import vo.CreditVO;
-
 public interface CreditViewControllerService {
 	
 	public void showCredit();

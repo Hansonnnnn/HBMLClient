@@ -1,7 +1,8 @@
 package presentation.view.promotionui;
 
-import java.util.ArrayList;
 import vo.PromotionVO;
+
+import java.util.ArrayList;
 
 public class CustomerOfPromotionView {
 	

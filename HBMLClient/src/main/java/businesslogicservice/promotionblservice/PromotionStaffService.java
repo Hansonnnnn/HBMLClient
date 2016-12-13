@@ -1,10 +1,20 @@
 package businesslogicservice.promotionblservice;
 
 import message.ResultMessage;
-import po.PromotionPO;
+import model.PromotionFilter;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 public interface PromotionStaffService {
-	public ResultMessage addPromotion(PromotionPO po);
-	public ResultMessage deletePromotion(String id);
-	public ResultMessage modifyPromotion(PromotionPO po);
+
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter);
+
+	public PromotionVO getPromotion(int promotionID);
+
+	public ResultMessage addHotelPromotion(PromotionVO vo);
+
+	public ResultMessage deleteHotelPromotion(int promotionID);
+
+	public ResultMessage modifyHotelPromotion(PromotionVO vo);
 }

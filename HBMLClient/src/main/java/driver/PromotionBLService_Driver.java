@@ -1,17 +1,17 @@
 package driver;
 
-import businesslogicservice.promotionblservice.PromotionBLService;
-import businesslogicservice.promotionblservice.PromotionCustemerService;
+import businesslogicservice.promotionblservice.PromotionCustomerService;
 import businesslogicservice.promotionblservice.PromotionStaffService;
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import po.PromotionPO;
 import vo.PromotionVO;
+
 public class PromotionBLService_Driver {
 	
 	private PromotionVO PromotonVO=new PromotionVO("0001");
 	
 	
-	public void drive(PromotionBLService promotionBLService,PromotionCustemerService promotionCustemerService,
+	public void drive(PromotionBLService promotionBLService,PromotionCustomerService promotionCustemerService,
 			PromotionStaffService promotionStaffService,PromotionWebMarketerService promotionWebMarketerService){
 		
 		promotionBLService.showPromotion();

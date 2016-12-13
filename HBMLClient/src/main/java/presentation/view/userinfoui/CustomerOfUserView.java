@@ -1,7 +1,5 @@
 package presentation.view.userinfoui;
 
-import vo.UserVO;
-
 import javax.swing.*;
 
 /**

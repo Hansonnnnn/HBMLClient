@@ -1,7 +1,7 @@
 package presentation.controller;
 
 import businesslogic.utility.TransferImpl;
-import businesslogicservice.promotionblservice.PromotionCustemerService;
+import businesslogicservice.promotionblservice.PromotionCustomerService;
 import businesslogicservice.promotionblservice.PromotionStaffService;
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import message.ResultMessage;
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class PromotionViewControllerImpl implements PromotionViewControllerService{
 	
-	PromotionCustemerService promotionCustomerImpl;
+	PromotionCustomerService promotionCustomerImpl;
 	PromotionStaffService promotionStaffService;
 	PromotionWebMarketerService promotionWebMarketerService;
 	
-	public PromotionViewControllerImpl(PromotionCustemerService promotionCustemerService) {
+	public PromotionViewControllerImpl(PromotionCustomerService promotionCustemerService) {
 		this.promotionCustomerImpl=promotionCustemerService;
 	}
 	

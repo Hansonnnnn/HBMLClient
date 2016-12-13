@@ -2,10 +2,7 @@ package businesslogic.promotionbl;
 
 import java.util.ArrayList;
 
-import dao.PromotionDao;
 import message.ResultMessage;
-import po.PromotionPO;
-import vo.PromotionVO;
 
 public class PromotionDaoImpl_stub implements PromotionDao{
 

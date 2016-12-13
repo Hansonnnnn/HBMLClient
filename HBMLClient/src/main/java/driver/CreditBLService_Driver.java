@@ -1,8 +1,6 @@
 package driver;
 
-import businesslogicservice.creditblservice.CreditBLService;
 import businesslogicservice.creditblservice.CreditCustomerService;
-import vo.CreditVO;
 
 public class CreditBLService_Driver {
 	public void drive(CreditBLService creditBLService,CreditCustomerService creditCustomerService){

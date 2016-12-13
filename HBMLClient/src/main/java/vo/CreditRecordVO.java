@@ -1,32 +1,51 @@
 package vo;
 
+import model.CreditRecordReasonType;
+
 import java.io.Serializable;
+import java.util.Date;
 
 public class CreditRecordVO implements Serializable{
-	String changeType;
-	String reasonType;
+
+
+	private static final long serialVersionUID = 5432468739548863445L;
+	int creditRecordID;
+	Date time;
+	int userID;
+	CreditRecordReasonType reasonType;
 	Long amount;
-	public CreditRecordVO(String cT,String rT,Long a){
-		changeType=cT;
-		reasonType=rT;
-		amount=a;
+	int orderID;
+
+	public CreditRecordVO(int creditRecordID, Date time, int userID, CreditRecordReasonType reasonType, Long amount, int orderID) {
+		this.creditRecordID = creditRecordID;
+		this.time = time;
+		this.userID = userID;
+		this.reasonType = reasonType;
+		this.amount = amount;
+		this.orderID = orderID;
 	}
-	public String getChangeType() {
-		return changeType;
+
+	public int getCreditRecordID() {
+		return creditRecordID;
 	}
-	public void setChangeType(String changeType) {
-		this.changeType = changeType;
+
+	public Date getTime() {
+		return time;
 	}
-	public String getReasonType() {
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public CreditRecordReasonType getReasonType() {
 		return reasonType;
 	}
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-	}
+
 	public Long getAmount() {
 		return amount;
 	}
-	public void setAmount(Long amount) {
-		this.amount = amount;
+
+	public int getOrderID() {
+		return orderID;
 	}
 }

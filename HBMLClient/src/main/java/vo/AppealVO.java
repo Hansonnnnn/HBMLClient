@@ -1,9 +1,8 @@
 package vo;
 
-import java.io.Serializable;
 import java.util.Date;
 import message.AppealStateMessage;
-import vo.WebMarketerAccountVO;;
+;
 
 public class AppealVO {
 	int appealID;

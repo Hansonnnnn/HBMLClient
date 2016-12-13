@@ -1,7 +1,5 @@
 package presentation.view.userinfoui;
 
-import vo.UserVO;
-
 /**
  * Created by alex on 16-11-10.
  */

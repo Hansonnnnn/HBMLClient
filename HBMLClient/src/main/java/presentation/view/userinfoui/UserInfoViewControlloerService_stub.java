@@ -1,7 +1,6 @@
 package presentation.view.userinfoui;
 
 import message.ResultMessage;
-import model.UserType;
 import model.UserTypeHelper;
 import vo.UserVO;
 

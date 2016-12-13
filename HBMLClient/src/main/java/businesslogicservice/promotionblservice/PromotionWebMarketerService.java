@@ -1,12 +1,21 @@
 package businesslogicservice.promotionblservice;
 
 
-import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
-import po.PromotionPO;
+import model.PromotionFilter;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 public interface PromotionWebMarketerService {
-	public ResultMessage addPromotion(PromotionPO po);
-	public ResultMessage deletePromotion(String id);
-	public ResultMessage modifyPromotion(PromotionPO po);
+
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter);
+
+	public PromotionVO getPromotion(int promotionID);
+
+	public ResultMessage addWebPromotion(PromotionVO vo);
+
+	public ResultMessage deleteWebPromotion(int promotionID);
+
+	public ResultMessage modifyWebPromotion(PromotionVO po);
 }
