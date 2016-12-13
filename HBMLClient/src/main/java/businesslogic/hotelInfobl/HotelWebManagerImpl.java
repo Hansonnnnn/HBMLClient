@@ -9,6 +9,10 @@ import message.ResultMessage;
 import model.HotelFilter;
 import vo.HotelVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class HotelWebManagerImpl implements HotelWebManagerService{
 
 	HotelHelper hotelHelper;
@@ -26,6 +30,12 @@ public class HotelWebManagerImpl implements HotelWebManagerService{
 		return hotelHelper.getHotelList(hotelFilter, null, null);
 	}
 
+	@Override
+	public Map<Integer, HotelVO> getAllHotel() {
+		
+		
+		return hotelHelper.getHotelList(null, null, null);
+	}
 	@Override
 	public HotelVO getHotelInfo(int hotelID) {
 		
@@ -53,6 +63,7 @@ public class HotelWebManagerImpl implements HotelWebManagerService{
 		
 		return hotelHelper.deleteHotel(hotel_ID);
 	}
+	
 	
 	
 }

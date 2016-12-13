@@ -4,7 +4,7 @@ import java.util.Map;
 
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.TransferService;
-import businesslogicservice.roominfoblservice.RoomInfoHotelManagerService;
+import businesslogicservice.roominfoblservice.RoomInfoStaffService;
 import message.ResultMessage;
 import message.RoomStateMessage;
 import presentation.view.roominfoui.RoomInfoViewControllerService;
@@ -13,9 +13,9 @@ import vo.RoomInfoVO;
 public class RoomInfoViewControllerImpl implements RoomInfoViewControllerService{
 
 	TransferService roomTransferImpl;
-	RoomInfoHotelManagerService roomInfoHotelManagerServiceImpl;
+	RoomInfoStaffService roomInfoHotelManagerServiceImpl;
 	
-	public RoomInfoViewControllerImpl(RoomInfoHotelManagerService roomInfoHotelManagerServiceImpl) {
+	public RoomInfoViewControllerImpl(RoomInfoStaffService roomInfoHotelManagerServiceImpl) {
 		this.roomInfoHotelManagerServiceImpl = roomInfoHotelManagerServiceImpl;
 		roomTransferImpl = new TransferImpl();
 	}

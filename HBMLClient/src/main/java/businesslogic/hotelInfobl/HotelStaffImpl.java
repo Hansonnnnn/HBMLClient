@@ -9,6 +9,10 @@ import message.ResultMessage;
 import vo.CommentInfoVO;
 import vo.HotelVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class HotelStaffImpl implements HotelStaffService{
 
 	HotelHelper hotelHelper;

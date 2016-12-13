@@ -1,5 +1,10 @@
 package businesslogicservice.orderblservice;
 
+import java.util.Date;
+
+import message.ResultMessage;
+import message.RoomStateMessage;
+
 /**
  * 该类为所有orderbl模块中Customer需要提供的服务
  * @author xiezhenyu
@@ -13,4 +18,6 @@ public interface OrderCustomerService {
 		public void evaluateOrder();
 		public void appealForAbnormalOrder();
 		public void saveAppeal();
+		
+		
 }

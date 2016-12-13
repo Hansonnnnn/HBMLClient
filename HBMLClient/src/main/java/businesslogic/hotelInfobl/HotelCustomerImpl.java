@@ -13,6 +13,10 @@ import model.HotelFilter;
 import vo.CommentInfoVO;
 import vo.HotelVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class HotelCustomerImpl implements HotelCustomerService{
 
 	HotelHelper hotelHelper;

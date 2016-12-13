@@ -12,6 +12,10 @@ import po.RegionPO;
 import rmi.ClientRunner;
 import vo.RegionVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class RegionHelper implements HotelRegionHelper{
 
 	Map<Integer, RegionVO> regions;

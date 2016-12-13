@@ -17,7 +17,7 @@ public interface RoomDao extends Remote {
 	 */
 	public Map<String, RoomInfoPO> getRoomList(int hotel_ID,Date date)throws RemoteException;
 	
-	public RoomInfoPO getRoomInfo(String roomType)throws RemoteException;
+	public RoomInfoPO getRoomInfo(String roomID)throws RemoteException;
 		
 	public ResultMessage addRoom(RoomInfoPO po)throws RemoteException;
 	
@@ -28,9 +28,9 @@ public interface RoomDao extends Remote {
 	public ResultMessage deleteRoom(int hotelID,String roomID)throws RemoteException;
 	
 	/**
-	 * @Description: TODO 更改房间状态（针对房间，不针对具体某天）只针对房间当天属性
+	 * @Description: TODO 更改房间状态（针对房间，不针对具体某天）只针对房间默认属性
 	 * 
-	 * 若RoomState改为unavailable 表示房间不可预订，date1与date2为null
+	 * 若RoomState改为unavailable 表示房间不可预订
 	 
 	 */
 	public ResultMessage modifyRoomState(int roomInfoID,RoomStateMessage room_state)throws RemoteException;

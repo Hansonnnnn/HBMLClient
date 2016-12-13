@@ -10,6 +10,10 @@ import model.HotelFilter;
 import vo.CommentInfoVO;
 import vo.HotelVO;
 
+/**
+ * @author 凡
+ *
+ */
 public interface HotelCustomerService {
 	
 	/**
@@ -20,6 +24,11 @@ public interface HotelCustomerService {
 	 */
 	public Map<Integer, HotelVO> getHotelList(HotelFilter filter,String order,Date date);	
 	
+	/**
+	 * @param userID  当前登录用户ＩＤ
+	 * @param orderState	  查询什么类型的住宿酒店记录   
+	 * @return
+	 */
 	public Set<Integer> hotelRecord(int userID,OrderStateMessage orderState);
 	
 	public HotelVO getHotelInfo(int hotelID);

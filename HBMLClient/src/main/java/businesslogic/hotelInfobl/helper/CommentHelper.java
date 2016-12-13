@@ -13,6 +13,10 @@ import po.CommentInfoPO;
 import rmi.ClientRunner;
 import vo.CommentInfoVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class CommentHelper {
 
 	Map<Integer, CommentInfoVO> commentInfoList;

@@ -30,14 +30,14 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public RoomInfoVO poToVo(RoomInfoPO po) {
-		
-		return null;
+		RoomInfoVO roomInfoVO = new RoomInfoVO(po.getRoomInfoID(), po.getHotelID(), po.getRoomID(), po.getRoomType(), po.getDefaultPrice(), po.getRoomState(), po.getDetailedInfo1(), po.getDetailedInfo2());
+		return roomInfoVO;
 	}
 
 	@Override
 	public RoomInfoPO voToPO(RoomInfoVO vo) {
-		
-		return null;
+		RoomInfoPO roomInfoPO = new RoomInfoPO(vo.getRoomInfoID(), vo.getHotelID(), vo.getRoomID(), vo.getRoomType(), vo.getDefaultPrice(), vo.getRoomState(), vo.getDetailedInfo1(), vo.getDetailedInfo2());
+		return roomInfoPO;
 	}
 
 	@Override

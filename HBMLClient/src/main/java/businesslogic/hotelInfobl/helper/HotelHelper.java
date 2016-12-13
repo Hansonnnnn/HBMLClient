@@ -23,6 +23,10 @@ import vo.CommentInfoVO;
 import vo.HotelVO;
 import vo.RegionVO;
 
+/**
+ * @author 凡
+ *
+ */
 public class HotelHelper {
 
 	Map<Integer, HotelVO> hotelList;
