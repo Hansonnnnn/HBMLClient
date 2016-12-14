@@ -12,6 +12,11 @@ public interface PromotionStaffService {
 
 	public PromotionVO getPromotion(int promotionID);
 
+	/**
+	 * 如果传入vo的name属性为"0"，代表客户生日优惠; 如果是"1",代表合作企业折扣
+	 * @param vo
+	 * @return
+	 */
 	public ResultMessage addHotelPromotion(PromotionVO vo);
 
 	public ResultMessage deleteHotelPromotion(int promotionID);

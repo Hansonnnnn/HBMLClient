@@ -20,8 +20,5 @@ public class CreditCustomerImpl implements CreditCustomerService{
         return null;
     }
 
-    @Override
-    public CreditRecordVO getCreditRecord(int creditRecordID) {
-        return null;
-    }
+
 }

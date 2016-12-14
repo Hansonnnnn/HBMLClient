@@ -8,9 +8,11 @@ import vo.UserVO;
  */
 public interface UserWebMarketerService {
 
-    public ResultMessage login(String accountName,String pwd);
+    public UserVO getUserData(int userID);
 
-    public ResultMessage logout();
+    public UserVO getUserData(String accountName);
+
+    public ResultMessage login(String accountName,String pwd);
 
     public ResultMessage signup(UserVO vo);
 

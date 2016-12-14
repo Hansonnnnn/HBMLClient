@@ -15,7 +15,6 @@ public interface UserStaffService {
 
     public ResultMessage login(String accountName, String pwd);
 
-    public ResultMessage logout();
 
     public ResultMessage signup(UserVO vo);
 }

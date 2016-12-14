@@ -4,6 +4,27 @@
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditCustomerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditWebMarketerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/TransferService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/TransferService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditWebMarketerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionCustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionWebMarketerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/model/ImageHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/model/ImageHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -757,7 +778,9 @@
       <workItem from="1481625063011" duration="210000" />
       <workItem from="1481640910856" duration="566000" />
       <workItem from="1481644153330" duration="289000" />
-      <workItem from="1481712583610" duration="39000" />
+      <workItem from="1481712583610" duration="71000" />
+      <workItem from="1481712733910" duration="114000" />
+      <workItem from="1481725281074" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -773,11 +796,25 @@
       <option name="project" value="LOCAL" />
       <updated>1481644314478</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;">
+      <created>1481712639880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1481712639880</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit &quot;Debug_King&quot; ver 0.1.2&#10;//test&#10;">
+      <created>1481712782739</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1481712782739</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2774000" />
+    <option name="totallyTimeSpent" value="2929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -830,7 +867,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
+    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.2&#10;//test&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit &quot;Debug_King&quot; ver 0.1.2&#10;//test&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

@@ -17,7 +17,6 @@ public class PromotionStaffImpl implements PromotionStaffService{
 
 	@Override
 	public PromotionVO getPromotion(int promotionID) {
-		System.out.println("asdf");
 		return null;
 	}
 

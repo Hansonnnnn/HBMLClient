@@ -9,8 +9,14 @@ import vo.UserVO;
  * Created by alex on 12/13/16.
  */
 public class UserWebManagerImpl implements UserWebManagerService{
+
     @Override
-    public UserVO getUser(int userID) {
+    public UserVO getUserData(int userID) {
+        return null;
+    }
+
+    @Override
+    public UserVO getUserData(String accountName) {
         return null;
     }
 
@@ -31,11 +37,6 @@ public class UserWebManagerImpl implements UserWebManagerService{
 
     @Override
     public ResultMessage login(String accountName, String pwd) {
-        return null;
-    }
-
-    @Override
-    public ResultMessage logout() {
         return null;
     }
 

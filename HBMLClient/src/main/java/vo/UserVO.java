@@ -3,6 +3,7 @@ package vo;
 import model.MemberType;
 import model.UserType;
 
+import java.awt.*;
 import java.io.File;
 import java.io.Serializable;
 
@@ -23,7 +24,7 @@ public class UserVO implements Serializable{
     String password;
     String name;
     String contact;
-    File portrait;
+    Image portrait;
     long creditValue;
     MemberType memberType;
     String memberInfo;
@@ -36,7 +37,7 @@ public class UserVO implements Serializable{
     }
 
     public UserVO(int userID, UserType userType, String accountName, String password, String name
-            , String contact, File portrait, long creditValue
+            , String contact, Image portrait, long creditValue
             , MemberType memberType, String memberInfo, int rank
             , String workid, int hotelid) {
         this.userID = userID;
@@ -56,7 +57,7 @@ public class UserVO implements Serializable{
 
     //constructors for customer
     public UserVO(int id, String pwd, String name, String contact,
-                  File image, long creditValue, MemberType memberType, String memberInfo, int rank){
+                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
         this.userID=id;
         this.userType= UserType.Customer;
         this.password=pwd;
@@ -70,7 +71,7 @@ public class UserVO implements Serializable{
     }
 
     //constructors for Staff
-    public UserVO(int id, String pwd, String name, String contact, File image, String workid, int hotelid){
+    public UserVO(int id, String pwd, String name, String contact, Image image, String workid, int hotelid){
         this.userID=id;
         this.userType= UserType.Staff;
         this.password=pwd;
@@ -82,7 +83,7 @@ public class UserVO implements Serializable{
     }
 
     //constructors for WebMarketer and WebManager
-    public UserVO(int id, UserType userType, String pwd, String name, String contact, File image){
+    public UserVO(int id, UserType userType, String pwd, String name, String contact, Image image){
         this.userID=id;
         this.userType=userType;
         this.password=pwd;
@@ -116,7 +117,7 @@ public class UserVO implements Serializable{
         return contact;
     }
 
-    public File getPortrait() {
+    public Image getPortrait() {
         return portrait;
     }
 

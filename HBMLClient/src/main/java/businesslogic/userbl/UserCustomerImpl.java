@@ -8,6 +8,7 @@ import vo.UserVO;
  * Created by alex on 12/13/16.
  */
 public class UserCustomerImpl implements UserCustomerService{
+
     @Override
     public UserVO getUserData(int userID) {
         return null;
@@ -19,17 +20,12 @@ public class UserCustomerImpl implements UserCustomerService{
     }
 
     @Override
-    public ResultMessage modifyUserInfo(UserVO vo) {
+    public ResultMessage modifyUser(UserVO vo) {
         return null;
     }
 
     @Override
     public ResultMessage login(String accountName, String pwd) {
-        return null;
-    }
-
-    @Override
-    public ResultMessage logout() {
         return null;
     }
 

@@ -31,7 +31,7 @@ public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 	}
 
 	@Override
-	public ResultMessage modifyWebPromotion(PromotionVO po) {
+	public ResultMessage modifyWebPromotion(PromotionVO vo) {
 		return null;
 	}
 }

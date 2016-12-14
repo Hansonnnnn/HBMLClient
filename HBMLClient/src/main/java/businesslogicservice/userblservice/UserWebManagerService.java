@@ -8,7 +8,10 @@ import vo.UserVO;
  * Created by alex on 16-11-9.
  */
 public interface UserWebManagerService {
-    public UserVO getUser(int userID);
+    //getPortrait获得Image对象
+    public UserVO getUserData(int userID);
+
+    public UserVO getUserData(String accountName);
 
     public ResultMessage addUser(UserVO vo);
 
@@ -17,8 +20,6 @@ public interface UserWebManagerService {
     public ResultMessage modifyUser(UserVO vo);
 
     public ResultMessage login(String accountName,String pwd);
-
-    public ResultMessage logout();
 
     public ResultMessage signup(UserVO vo);
 }

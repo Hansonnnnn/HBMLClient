@@ -7,14 +7,20 @@ import vo.UserVO;
 /**
  * Created by alex on 12/13/16.
  */
-public class UserWebMarketerImpl implements UserWebMarketerService{
+public class UserWebMarketerImpl implements UserWebMarketerService {
+
     @Override
-    public ResultMessage login(String accountName, String pwd) {
+    public UserVO getUserData(int userID) {
         return null;
     }
 
     @Override
-    public ResultMessage logout() {
+    public UserVO getUserData(String accountName) {
+        return null;
+    }
+
+    @Override
+    public ResultMessage login(String accountName, String pwd) {
         return null;
     }
 

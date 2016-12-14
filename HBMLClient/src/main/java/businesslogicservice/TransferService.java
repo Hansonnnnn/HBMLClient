@@ -16,9 +16,9 @@ public interface TransferService {
 	//vo变成po
 	public RoomInfoPO voToPO(RoomInfoVO vo);
 	
-	public UserVO poToVo(UserPO po);
+	public UserVO poToVo(UserPO po)throws Exception;
 	
-	public UserPO voToPo(UserVO vo);
+	public UserPO voToPo(UserVO vo)throws Exception;
 	
 	public PromotionVO poToVo(PromotionPO po);
 	
