@@ -13,12 +13,8 @@ import java.io.Serializable;
 public class UserVO implements Serializable{
 
 
-    private static final long serialVersionUID = 2358054794207235733L;
-    /**
-	 *
-	 */
-
-	int userID;
+    private static final long serialVersionUID = -6022579940937350048L;
+    int userID;
     UserType userType;
     String accountName;
     String password;
@@ -31,11 +27,31 @@ public class UserVO implements Serializable{
     int rank;
     String workid;
     int hotelid;
-    //constructors for allVO
+
+    /**
+     * 此constructor仅供测试用
+     * @param userID
+     */
     public UserVO(int userID){
         this.userID=userID;
     }
 
+    /**
+     * 这是完整的constructor,参数用作参考
+     * @param userID        用户ID
+     * @param userType      用户类型，参见model.UserType
+     * @param accountName   账号：用于登陆和系统唯一定位的
+     * @param password
+     * @param name          名字：真正的名字
+     * @param contact
+     * @param portrait      头像Image文件
+     * @param creditValue   当前信用值
+     * @param memberType    会员类型，参见model.MemberType
+     * @param memberInfo    如果是非会员，此项为null,如果是个人，此项为生日(String),如果是企业，此项为公司名
+     * @param rank          会员等级
+     * @param workid        工号，可以自己定义，传空字符串也行
+     * @param hotelid
+     */
     public UserVO(int userID, UserType userType, String accountName, String password, String name
             , String contact, Image portrait, long creditValue
             , MemberType memberType, String memberInfo, int rank
@@ -56,9 +72,46 @@ public class UserVO implements Serializable{
     }
 
     //constructors for customer
+
+    /**
+     *
+     * @param id                客户ID
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param creditValue
+     * @param memberType
+     * @param memberInfo
+     * @param rank
+     */
     public UserVO(int id, String pwd, String name, String contact,
                   Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
         this.userID=id;
+        this.userType= UserType.Customer;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+        this.creditValue=creditValue;
+        this.memberInfo=memberInfo;
+        this.memberType=memberType;
+        this.rank=rank;
+    }
+
+    /**
+     * 这是不带用户ID的客户constructor
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param creditValue
+     * @param memberType
+     * @param memberInfo
+     * @param rank
+     */
+    public UserVO(String pwd, String name, String contact,
+                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
         this.userType= UserType.Customer;
         this.password=pwd;
         this.accountName=name;
@@ -82,6 +135,35 @@ public class UserVO implements Serializable{
         this.hotelid=hotelid;
     }
 
+    /**
+     * 这是不带用户ID的酒店工作人员constructor
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param workid
+     * @param hotelid
+     */
+    public UserVO(String pwd, String name, String contact, Image image, String workid, int hotelid){
+        this.userType= UserType.Staff;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+        this.workid=workid;
+        this.hotelid=hotelid;
+    }
+
+    //这个不需要传image了
+    public UserVO(String pwd, String name, String contact, String workid, int hotelid){
+        this.userType= UserType.Staff;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.workid=workid;
+        this.hotelid=hotelid;
+    }
+
     //constructors for WebMarketer and WebManager
     public UserVO(int id, UserType userType, String pwd, String name, String contact, Image image){
         this.userID=id;
@@ -91,6 +173,31 @@ public class UserVO implements Serializable{
         this.contact=contact;
         this.portrait=image;
     }
+
+    /**
+     * 这是不带用户ID的网站营销人员和网站工作人员constructor
+     * @param userType
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     */
+    public UserVO(UserType userType, String pwd, String name, String contact, Image image){
+        this.userType=userType;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+    }
+
+    //这个不需要传image了
+    public UserVO(UserType userType, String pwd, String name, String contact){
+        this.userType=userType;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+    }
+
 
     //getters
     public int getUserID() {
