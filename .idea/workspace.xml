@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditCustomerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditWebMarketerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionDaoImpl_stub.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserDaoImpl_stub.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarkerServiceImpl.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/Credit.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/Credit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/CreditBLService_Driver.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/CreditBLService_Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/PromotionBLService_Driver.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/PromotionBLService_Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/UserInfoBLService_Driver.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/UserInfoBLService_Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/PromotionViewControllerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/PromotionViewControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/UserInfoViewControllerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/UserInfoViewControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService_Stub.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService_Stub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/CustomerOfPromotionView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/CustomerOfPromotionView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService_Stub.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService_Stub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/StaffOfPromotionView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/StaffOfPromotionView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/WebMarketerOfPromotionView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/WebMarketerOfPromotionView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/CustomerOfUserView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/CustomerOfUserView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/UserInfoView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/UserInfoView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/WebManagerOfUserView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/userinfoui/WebManagerOfUserView.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,6 +71,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,11 +234,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="presentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promotionui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -751,7 +756,8 @@
       <workItem from="1481211932604" duration="48000" />
       <workItem from="1481625063011" duration="210000" />
       <workItem from="1481640910856" duration="566000" />
-      <workItem from="1481644153330" duration="17000" />
+      <workItem from="1481644153330" duration="289000" />
+      <workItem from="1481712583610" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -760,11 +766,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481641046519</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;">
+      <created>1481644314478</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1481644314478</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2463000" />
+    <option name="totallyTimeSpent" value="2774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -816,7 +829,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!" />
+    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
