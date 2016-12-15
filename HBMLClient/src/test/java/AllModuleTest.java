@@ -1,18 +1,7 @@
 
-import static org.junit.Assert.assertEquals;
-
 import java.rmi.RemoteException;
 
 import org.junit.Test;
-
-import businesslogic.hotelInfobl.HotelCustomerImpl;
-import businesslogic.hotelInfobl.helper.HotelHelper;
-import businesslogic.orderbl.OrderCustomerServiceImpl;
-import businesslogic.orderbl.orderhelper.OrderList;
-import businesslogicservice.hotelinfoblservice.HotelCustomerService;
-import businesslogicservice.orderblservice.OrderCustomerService;
-import presentation.controller.HotelInfoViewControllerImpl;
-import vo.HotelVO;
 
 public class AllModuleTest {
 
