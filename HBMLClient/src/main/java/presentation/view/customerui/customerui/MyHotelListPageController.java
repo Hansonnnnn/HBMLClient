@@ -22,6 +22,7 @@ import javafx.util.Callback;
 import presentation.view.customerui.customerui.HotelListPageController.CheckInfoButtonCell;
 import presentation.view.customerui.customerui.HotelListPageController.MakeOrderButtonCell;
 import vo.HotelVO;
+import vo.OrderVO;
 
 public class MyHotelListPageController 
 {
@@ -170,6 +171,10 @@ public class MyHotelListPageController
 				 makeOrderButton.setOnAction((ActionEvent e)->{
 					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene));
 				 });
+				 
+				 //设置按钮响应，来生成订单
+				 OrderVO orderVO = null;
+				 
 			 }
 			 
 			 protected void updateItem(Boolean t, boolean empty) 

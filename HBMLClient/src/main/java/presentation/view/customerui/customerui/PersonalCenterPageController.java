@@ -33,11 +33,13 @@ public class PersonalCenterPageController {
 	private Desktop desktop;
 	private FileChooser fileChooser;
 	
-	public void init(Stage stage, Scene preScene, Scene presentScene)
+	private String userName;
+	public void init(Stage stage, Scene preScene, Scene presentScene, String userName)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
 		this.presentScene = presentScene;
+		this.userName = userName;
 	}
 	
 	@FXML
