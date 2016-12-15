@@ -1,7 +1,9 @@
 package businesslogicservice.promotionblservice;
 
 import model.PromotionFilter;
+import vo.OrderVO;
 import vo.PromotionVO;
+import vo.SelectedPromotionVO;
 
 import java.util.Map;
 
@@ -18,4 +20,12 @@ public interface PromotionCustomerService {
 	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter);
 
 	public PromotionVO getPromotion(int promotionID);
+
+	/**
+	 *
+	 * @param vo		传入一个完整的OrderVO
+	 * @return			返回的SelectedPromotionVO拥有getPrice()和getPromotionVO()方法
+	 */
+	public SelectedPromotionVO getSelectedPromotion(OrderVO vo);
+
 }
