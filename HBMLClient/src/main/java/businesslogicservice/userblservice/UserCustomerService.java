@@ -12,11 +12,11 @@ public interface UserCustomerService {
      * @param userID
      * @return
      */
-    public UserVO getUserData(int userID);
+    public UserVO getUserData(int userID)throws Exception;
 
-    public UserVO getUserData(String accountName);
+    public UserVO getUserData(String accountName)throws Exception;
 
-    public ResultMessage modifyUser(UserVO vo);
+    public ResultMessage modifyUser(UserVO vo)throws Exception;
 
     /**
      *
@@ -24,12 +24,12 @@ public interface UserCustomerService {
      * @param pwd
      * @return成功，失败(密码错误)，不存在
      */
-    public ResultMessage login(String accountName,String pwd);
+    public ResultMessage login(String accountName,String pwd)throws Exception;
 
     /**
      *
      * @param vo
      * @return如果返回failure,提示用户名已存在；如果是success,可以调用登陆方法
      */
-    public ResultMessage signup(UserVO vo);
+    public ResultMessage signup(UserVO vo)throws Exception;
 }

@@ -13,7 +13,7 @@ public interface CreditWebMarketerService {
      * @param
      * @return
      */
-    public ResultMessage resumeCreditValue(int userID,long price,int type);
+    public ResultMessage resumeCreditValue(int userID,long price,int type)throws Exception;
 
-    public ResultMessage addCreditValue(int UserID,long value);
+    public ResultMessage addCreditValue(int UserID,long value)throws Exception;
 }
