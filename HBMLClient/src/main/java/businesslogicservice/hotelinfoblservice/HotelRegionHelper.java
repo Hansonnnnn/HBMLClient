@@ -1,7 +1,9 @@
 package businesslogicservice.hotelinfoblservice;
 
+import java.util.List;
 import java.util.Map;
 
+import po.RegionPO;
 import vo.RegionVO;
 
 /**
@@ -12,8 +14,19 @@ public interface HotelRegionHelper {
 
 	
 	/**
-	 * @return Integer是Region编号  
-	 * @see  编号是有意义的   具体什么意义看越明定义的文件说明
+	 * @return 所有的省的名字
 	 */
-	public Map<Integer, RegionVO> getRegions();
+	public List<String> getProvinces();
+	
+	/**
+	 * @param province  传入省的名字
+	 * @return	该省所有市的名字
+	 */
+	public List<String> getCities(String province);
+	
+	/**
+	 * @param city   传入市的名字
+	 * @return    该市所有商圈的VO
+	 */
+	public Map<Integer, RegionVO> getRegions(String city);
 }

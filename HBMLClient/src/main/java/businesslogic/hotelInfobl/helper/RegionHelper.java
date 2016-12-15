@@ -2,6 +2,7 @@ package businesslogic.hotelInfobl.helper;
 
 import java.rmi.RemoteException;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import businesslogic.utility.TransferImpl;
@@ -27,11 +28,37 @@ public class RegionHelper implements HotelRegionHelper{
 		regionTransferService = new TransferImpl();
 	}
 	
+
+
 	@Override
-	public Map<Integer, RegionVO> getRegions() {
+	public List<String> getProvinces() {
+		
+		try {
+			return hotelDao.getProvinces();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<String> getCities(String province) {
+		
+		try {
+			return hotelDao.getCities(province);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Map<Integer, RegionVO> getRegions(String city) {
 		try {
 			regions = new LinkedHashMap<>();
-			Map<Integer, RegionPO> map = hotelDao.getRegions();
+			Map<Integer, RegionPO> map = hotelDao.getRegions(city);
 			for (int key : map.keySet()) {
 				
 				regions.put(key, regionTransferService.poToVo(map.get(key)));
