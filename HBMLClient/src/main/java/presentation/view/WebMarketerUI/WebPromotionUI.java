@@ -9,7 +9,7 @@ import java.io.IOException;
  * Created by LENOVO on 2016/12/2.
  */
 public class WebPromotionUI extends VBox{
-    public WebPromotionUI(VBox infoVBox){
+    public WebPromotionUI(VBox infoVBox) {
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/WebPromotion.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
@@ -17,6 +17,10 @@ public class WebPromotionUI extends VBox{
             e.printStackTrace();
         }
         WebPromotionUIController webPromotionUIController=fxmlLoader.getController();
-        webPromotionUIController.init(infoVBox,this);
+        try{
+            webPromotionUIController.init(infoVBox,this);
+        }catch(Exception e){
+
+        }
     }
 }

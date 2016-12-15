@@ -1,4 +1,5 @@
 package vo;
+import model.DateHelper;
 import model.DiscountType;
 import model.PromotionType;
 
@@ -9,7 +10,7 @@ import java.util.Date;
  * Created by alex on 16-11-17.
  */
 public class PromotionVO implements Serializable{
-
+    DateHelper dateHelper=new DateHelper();
 
     private static final long serialVersionUID = 5787582319450754775L;
     int promotionID;
@@ -19,6 +20,8 @@ public class PromotionVO implements Serializable{
     String content;
     Date startDate;
     Date endDate;
+    String startDateString;
+    String endDateString;
     int minRankAvailable;
     int maxRankAvailable;
     DiscountType type;
@@ -39,6 +42,8 @@ public class PromotionVO implements Serializable{
         this.type = type;
         this.requirement = condition;
         this.discount = discount;
+        startDateString=dateHelper.dateToString(startDate);
+        endDateString=dateHelper.dateToString(endDate);
     }
 
     //general constructor without promotionID, and the rank is unique
@@ -96,6 +101,7 @@ public class PromotionVO implements Serializable{
         this.type = type;
         this.requirement = condition;
         this.discount = discount;
+
     }
 
     //这是特殊hotel promotion：生日特惠和合作企业特惠
@@ -208,5 +214,13 @@ public class PromotionVO implements Serializable{
 
     public int getDiscount() {
         return discount;
+    }
+
+    public String getStartDateString() {
+        return startDateString;
+    }
+
+    public String getEndDateString() {
+        return endDateString;
     }
 }

@@ -7,13 +7,13 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebPromotionUIController">
    <children>
-      <TableView maxWidth="662.0" prefHeight="529.0" prefWidth="622.0">
+      <TableView fx:id="webPromotionTableView" maxWidth="662.0" prefHeight="529.0" prefWidth="622.0">
         <columns>
-          <TableColumn prefWidth="120.0" text="促销策略名" />
-          <TableColumn prefWidth="150.0" text="策略开始时间" />
-            <TableColumn prefWidth="150.0" text="策略结束时间" />
-            <TableColumn prefWidth="120.0" text="所需会员等级" />
-            <TableColumn prefWidth="120.0" text="操作" />
+          <TableColumn fx:id="nameColumn" prefWidth="120.0" text="促销策略名" />
+          <TableColumn fx:id="startTimeColumn" prefWidth="150.0" text="策略开始时间" />
+            <TableColumn fx:id="endTimeColumn" prefWidth="150.0" text="策略结束时间" />
+            <TableColumn fx:id="memberGradeColumn" prefWidth="120.0" text="所需会员等级" />
+            <TableColumn fx:id="operationColumn" prefWidth="120.0" text="操作" />
         </columns>
          <styleClass>
             <String fx:value="table-column" />
