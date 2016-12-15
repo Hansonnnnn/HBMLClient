@@ -8,12 +8,12 @@ import vo.UserVO;
  */
 public interface UserWebMarketerService {
 
-    public UserVO getUserData(int userID);
+    public UserVO getUserData(int userID) throws Exception;
 
-    public UserVO getUserData(String accountName);
+    public UserVO getUserData(String accountName)throws Exception;
 
-    public ResultMessage login(String accountName,String pwd);
+    public ResultMessage login(String accountName,String pwd)throws Exception;
 
-    public ResultMessage signup(UserVO vo);
+    public ResultMessage signup(UserVO vo)throws Exception;
 
 }
