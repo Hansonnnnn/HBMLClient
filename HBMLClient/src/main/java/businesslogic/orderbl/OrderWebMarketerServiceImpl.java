@@ -1,27 +1,34 @@
 package businesslogic.orderbl;
 
+import java.util.Map;
+
+import businesslogic.orderbl.orderhelper.AppealHelper;
 import businesslogicservice.orderblservice.OrderWebMarketerService;
+import message.ResultMessage;
 import vo.AppealVO;
 
 public class OrderWebMarketerServiceImpl implements OrderWebMarketerService
 {
+	AppealHelper appealHelper;
+
+	public OrderWebMarketerServiceImpl() {
+		appealHelper = new AppealHelper();
+	}
 
 	@Override
-	public void checkAppealReason(AppealVO appeal) {
-		// TODO Auto-generated method stub
+	public Map<Integer, AppealVO> getAppealOrderList(int userID) {
 		
-	}
-
-	@Override
-	public void showAppealList(AppealVO[] appealItem) {
-		// TODO Auto-generated method stub
 		
+		return appealHelper.getAppealOrderList(userID);
 	}
 
 	@Override
-	public boolean saveAppealResultReason(AppealVO[] appealItem) {
-		// TODO Auto-generated method stub
-		return false;
+	public ResultMessage modifyAppealOrder(AppealVO appealVO) {
+		
+		
+		return appealHelper.modifyAppealOrder(appealVO);
 	}
+
+	
 
 }

@@ -9,7 +9,7 @@ public interface OrderStaffService
 {
 		public Map<Integer, OrderVO> getUnexecutedOrderList(int hotelID) ;
 		
-		//获取已执行订单（即订单用户已入住，订单处于在执行状态，直到用户退房或撤销订单）
+		//获取已执行订单（即订单用户已入住，订单处于在执行状态）
 		public Map<Integer, OrderVO> getExecutedOrderList(int hotelID) ;
 		
 		//获取已撤销订单（即订单用户对该订单执行撤销操作之后，订单处于的状态）

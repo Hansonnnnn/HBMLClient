@@ -2,73 +2,59 @@ package businesslogic.orderbl;
 
 import java.util.Map;
 
-import businesslogicservice.orderblservice.OrderBLService;
+import businesslogic.orderbl.orderhelper.AppealHelper;
+import businesslogic.orderbl.orderhelper.OrderHelper;
 import businesslogicservice.orderblservice.OrderStaffService;
+import message.OrderStateMessage;
+import message.ResultMessage;
 import model.UserType;
 import vo.OrderVO;
 
-public class OrderStaffServiceImpl implements OrderStaffService, OrderBLService
-{
+public class OrderStaffServiceImpl implements OrderStaffService{
 
+	OrderHelper orderhelper;
+	AppealHelper appealHelper;
+
+	public OrderStaffServiceImpl() {
+		orderhelper = new OrderHelper();
+		appealHelper = new AppealHelper();
+	}
+	
 	@Override
-	public Map<Integer, OrderVO> getUnexecutedOrderList(int ID, UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<Integer, OrderVO> getUnexecutedOrderList(int hotelID) {
+		
+		
+		return orderhelper.getUnexecutedOrderList(hotelID, UserType.Staff);
 	}
 
 	@Override
-	public Map<Integer, OrderVO> getExecutedOrderList(int ID, UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<Integer, OrderVO> getExecutedOrderList(int hotelID) {
+		
+		
+		return orderhelper.getExecutedOrderList(hotelID, UserType.Staff);
 	}
 
 	@Override
-	public Map<Integer, OrderVO> getCancelledOrderList(int ID, UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<Integer, OrderVO> getCancelledOrderList(int hotelID) {
+		
+		
+		return orderhelper.getCancelledOrderList(hotelID, UserType.Staff);
 	}
 
 	@Override
-	public Map<Integer, OrderVO> getAbnormalOrderList(int ID, UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<Integer, OrderVO> getAbnormalOrderList(int hotelID) {
+		
+		
+		return orderhelper.getAbnormalOrderList(hotelID, UserType.Staff);
 	}
 
 	@Override
-	public OrderVO showOrderInfo(String orderID) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultMessage executeOrder(int orderID) {
+		
+		
+		return orderhelper.changeOrderState(orderID, OrderStateMessage.Executed);
 	}
 
-	@Override
-	public boolean executeOrder() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-//	@Override
-//	public Map<String, UnexecutedOrderVO> showOrderList(String type) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//
-//	@Override
-//	public boolean updateOrderPO(Order orderNeededToUpdate) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean executeOrder() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public UnexecutedOrderVO showOrderInfo(String orderID) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	
 
 }

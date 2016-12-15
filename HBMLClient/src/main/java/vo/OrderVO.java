@@ -145,4 +145,12 @@ public class OrderVO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	public String getHotelName() {
+		return hotelName;
+	}
+
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
 }

@@ -1,13 +1,17 @@
 package businesslogic.utility;
 
 import businesslogicservice.TransferService;
+import dao.HotelDao;
 import po.*;
+import rmi.ClientRunner;
 import vo.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.rmi.RemoteException;
 
 public class TransferImpl implements TransferService{
 	@Override
@@ -43,12 +47,7 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public UserPO voToPo(UserVO vo) throws Exception{
-		File file=null;
-		BufferedImage bufImg = new BufferedImage(vo.getPortrait().getWidth(null), vo.getPortrait().getHeight(null),BufferedImage.TYPE_INT_RGB);
-		Graphics g = bufImg .createGraphics();
-		g.drawImage(vo.getPortrait(), 0, 0, null);
-		g.dispose();
-		ImageIO.write(bufImg,"jpg",file);
+		File file=imageToFile(vo.getPortrait());
 		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),file,vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
 		return userPO;
 	}
@@ -67,23 +66,39 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public CommentInfoVO poToVo(CommentInfoPO commentInfoPO) {
-		
-		
-		return null;
+		CommentInfoVO commentInfoVO = new CommentInfoVO(commentInfoPO.getCommentID(), commentInfoPO.getTime(), commentInfoPO.getHotelID(), commentInfoPO.getScore(), commentInfoPO.getComment(),null,null,null);		
+		try {
+			if (commentInfoPO.getPicture1()!=null) {
+				commentInfoVO.setPicture1(ImageIO.read(commentInfoPO.getPicture1()));
+			}
+			if (commentInfoPO.getPicture2()!=null) {
+				commentInfoVO.setPicture2(ImageIO.read(commentInfoPO.getPicture2()));
+			}
+			if (commentInfoPO.getPicture3()!=null) {
+				commentInfoVO.setPicture3(ImageIO.read(commentInfoPO.getPicture3()));
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return commentInfoVO;
 	}
 
 	@Override
 	public CommentInfoPO voToPo(CommentInfoVO commentInfoVO) {
-		
-		
-		return null;
+		File file1 = imageToFile(commentInfoVO.getPicture1());
+		File file2 = imageToFile(commentInfoVO.getPicture2());
+		File file3 = imageToFile(commentInfoVO.getPicture3());
+
+		CommentInfoPO commentInfoPO = new CommentInfoPO(commentInfoVO.getCommentID(), commentInfoVO.getTime(), commentInfoVO.getHotelID(), commentInfoVO.getScore(), commentInfoVO.getComment(), file1, file2, file3);
+		return commentInfoPO;
 	}
 
 	@Override
 	public RegionVO poToVo(RegionPO regionPO) {
 		
-		
-		return null;
+		RegionVO regionVO = new RegionVO(regionPO.getRegionID(), regionPO.getProvince(), regionPO.getCity(), regionPO.getRegionName());
+		return regionVO;
 	}
 
 	@Override
@@ -98,5 +113,62 @@ public class TransferImpl implements TransferService{
 		return creditRecordPO;
 	}
 
+	@Override
+	public OrderVO poToVo(OrderPO orderPO) {
+		
+		OrderVO orderVO = new OrderVO(orderPO.getOrderID(), orderPO.getUserID(), orderPO.getHotelID(), null, orderPO.getRoomInfoID(), orderPO.getOrderState(), orderPO.getGenerateTime(), orderPO.getCancelTime(), orderPO.getExecuteDDl(), orderPO.getCheckinTime(), orderPO.getCheckoutTime(), orderPO.getNumber(), orderPO.getHasChild(), orderPO.getPrice());	 
+		HotelDao hoteldao= ClientRunner.remoteHelper.getHotelDao();
+		try {
+			HotelPO hotelPO = hoteldao.getHotelInfo(orderPO.getHotelID());
+			orderVO.setHotelName(hotelPO.getName());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return orderVO;
+	}
+
+	@Override
+	public AppealVO poToVo(AppealPO appealPO) {
+		
+		AppealVO appealVO = new AppealVO(appealPO.getAppealID(), appealPO.getOrderID(), appealPO.getUserID(), appealPO.getWebMarketerID(), appealPO.getAppealTime(), appealPO.getContent(), appealPO.getAppealState());
+		 
+		return appealVO;
+	}
+
+	@Override
+	public OrderPO voToPo(OrderVO orderVO) {
+		
+		OrderPO orderPO = new OrderPO(orderVO.getOrderID(), orderVO.getUserID(), orderVO.getHotelID(), orderVO.getRoomInfoID(), orderVO.getOrderState(), orderVO.getGenerateTime(), orderVO.getCancelTime(), orderVO.getExecuteDDl(), orderVO.getCheckinTime(), orderVO.getCheckoutTime(), orderVO.getNumber(), orderVO.getHasChild(), orderVO.getPrice());
+		 
+		return orderPO;
+	}
+
+	@Override
+	public AppealPO voToPo(AppealVO appealVO) {
+		
+		AppealPO appealPO = new AppealPO(appealVO.getAppealID(), appealVO.getOrderID(), appealVO.getUserID(), appealVO.getWebMarketerID(), appealVO.getAppealTime(), appealVO.getContent(), appealVO.getAppealState());
+		 
+		 
+		return appealPO;
+	}
+
+	private File imageToFile(Image image){
+		if (image ==null) {
+			return null;
+		}
+		File file=null;
+		BufferedImage bufImg = new BufferedImage(image.getWidth(null), image.getHeight(null),BufferedImage.TYPE_INT_RGB);
+		Graphics g = bufImg .createGraphics();
+		g.drawImage(image, 0, 0, null);
+		g.dispose();
+		try {
+			ImageIO.write(bufImg,"jpg",file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return file;
+	}
 
 }

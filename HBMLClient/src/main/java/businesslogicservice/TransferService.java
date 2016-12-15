@@ -33,4 +33,12 @@ public interface TransferService {
 	public CreditRecordVO poToVo(CreditRecordPO po);
 
 	public CreditRecordPO voToPo(CreditRecordVO vo);
+	
+	public OrderVO poToVo(OrderPO orderPO);
+	
+	public AppealVO poToVo(AppealPO appealPO);
+	
+	public OrderPO voToPo(OrderVO orderVO);
+	
+	public AppealPO voToPo(AppealVO appealVO);
 }
