@@ -33,40 +33,84 @@
                 </VBox>
                 <VBox alignment="CENTER" prefHeight="581.0" prefWidth="198.0" styleClass="grayBackground">
                     <children>
-                        <Button fx:id="exceptionOrderButton" mnemonicParsing="false" onAction="#toExceptionOrder" prefHeight="40.0" prefWidth="213.0" text="异常订单处理">
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="operationButton" />
-                                <String fx:value="fontsize" />
-                            </styleClass></Button>
-                        <Button fx:id="webPromotionButton" mnemonicParsing="false" onAction="#toWebPromotion" prefHeight="40.0" prefWidth="213.0" text="网站促销活动制定">
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="operationButton" />
-                                <String fx:value="fontsize" />
-                            </styleClass></Button>
-                        <Button fx:id="regionPromotionButton" mnemonicParsing="false" onAction="#toRegionPromotion" prefHeight="40.0" prefWidth="213.0" text="特定商圈折扣制定">
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="operationButton" />
-                                <String fx:value="fontsize" />
-                            </styleClass>
+                  <Pane prefHeight="593.0" prefWidth="195.0">
+                     <children>
+                        <Label fx:id="sliderLabel" layoutY="160.0" prefHeight="42.0" prefWidth="195.0" styleClass="sliderColor" />
+                              <Button fx:id="exceptionOrderButton" graphicTextGap="6.0" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#toExceptionOrder" prefHeight="42.0" prefWidth="213.0" text="异常订单处理">
+                                  <styleClass>
+                                      <String fx:value="transButton" />
+                                      <String fx:value="operationButton" />
+                                      <String fx:value="fontsize" />
+                                  </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmarketerimages/order.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
-                        <Button fx:id="memberGradeButton" mnemonicParsing="false" onAction="#toMemberGrade" prefHeight="40.0" prefWidth="213.0" text="会员等级制定">
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="operationButton" />
-                                <String fx:value="fontsize" />
-                            </styleClass></Button>
-                        <Button fx:id="creditValueButton" mnemonicParsing="false" onAction="#toCreditValue" prefHeight="40.0" prefWidth="213.0" text="信 用 值 充 值">
-                            <styleClass>
-                                <String fx:value="transButton" />
-                                <String fx:value="operationButton" />
-                                <String fx:value="fontsize" />
-                            </styleClass></Button>
+                              <Button fx:id="webPromotionButton" graphicTextGap="6.0" layoutX="-9.0" layoutY="200.0" mnemonicParsing="false" onAction="#toWebPromotion" prefHeight="42.0" prefWidth="213.0" text="促销活动制定">
+                                  <styleClass>
+                                      <String fx:value="transButton" />
+                                      <String fx:value="operationButton" />
+                                      <String fx:value="fontsize" />
+                                  </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmarketerimages/sale.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                              <Button fx:id="regionPromotionButton" graphicTextGap="6.0" layoutX="-9.0" layoutY="244.0" mnemonicParsing="false" onAction="#toRegionPromotion" prefHeight="40.0" prefWidth="213.0" text="商圈折扣制定">
+                                  <styleClass>
+                                      <String fx:value="transButton" />
+                                      <String fx:value="operationButton" />
+                                      <String fx:value="fontsize" />
+                                  </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmarketerimages/region.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                              </Button>
+                              <Button fx:id="creditValueButton" graphicTextGap="6.0" layoutX="-9.0" layoutY="328.0" mnemonicParsing="false" onAction="#toCreditValue" prefHeight="40.0" prefWidth="213.0" text="信用值充值">
+                                  <styleClass>
+                                      <String fx:value="transButton" />
+                                      <String fx:value="operationButton" />
+                                      <String fx:value="fontsize" />
+                                  </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmarketerimages/recharge.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets right="16.0" />
+                           </padding>
+                        </Button>
+                              <Button fx:id="memberGradeButton" graphicTextGap="6.0" layoutX="-9.0" layoutY="286.0" mnemonicParsing="false" onAction="#toMemberGrade" prefHeight="40.0" prefWidth="213.0" text="会员等级制定">
+                                  <styleClass>
+                                      <String fx:value="transButton" />
+                                      <String fx:value="operationButton" />
+                                      <String fx:value="fontsize" />
+                                  </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmarketerimages/member.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
                     </children>
                 </VBox>
             </children>

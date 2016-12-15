@@ -1,5 +1,8 @@
 package presentation.view.HotelManagerUI;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 /**
  * Created by LENOVO on 2016/11/27.
@@ -27,7 +31,8 @@ public class HotelPromotionUIController {
     @FXML private TableColumn operationTableColumn;
 
     @FXML private VBox hotelPromotionVBox;
-//    @FXML private VBox otherPromotionVBox1;
+    @FXML private VBox otherPromotionVBox1;
+    @FXML private Label sliderLabel;
 
     private ObservableList promotionData;
     private VBox infoVBox;
@@ -66,7 +71,8 @@ public class HotelPromotionUIController {
     @FXML
     private void toHotelPromotion(){
         hotelPromotionVBox.setVisible(true);
-//        otherPromotionVBox1.setVisible(false);
+        otherPromotionVBox1.setVisible(false);
+        moveOperationButtonBackground(sliderLabel,35);
     }
 
     /**
@@ -74,8 +80,21 @@ public class HotelPromotionUIController {
      */
     @FXML
     private void toOtherPromotion(){
-//        otherPromotionVBox1.setVisible(true);
+        otherPromotionVBox1.setVisible(true);
         hotelPromotionVBox.setVisible(false);
+        moveOperationButtonBackground(sliderLabel,165);
+    }
+
+    /**
+     * 设置按钮下边界滑动效果
+     */
+    private void moveOperationButtonBackground(Label label, double x){
+        Timeline timeline=new Timeline();
+        timeline.setAutoReverse(false);
+        KeyValue newX=new KeyValue(label.layoutXProperty(),x);
+        KeyFrame kf=new KeyFrame(Duration.millis(300),newX);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
     }
 
 
@@ -85,7 +104,7 @@ public class HotelPromotionUIController {
     @FXML
     private void toNewPromotion(){
         infoVBox.getChildren().remove(0);
-//        infoVBox.getChildren().add()
+        infoVBox.getChildren().add(new NewPromotionUI(infoVBox,thisVBox));
     }
 
     /**

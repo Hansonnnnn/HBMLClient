@@ -1,10 +1,15 @@
 package presentation.view.WebMarketerUI;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * Created by LENOVO on 2016/12/1.
@@ -18,6 +23,7 @@ public class WebMarketerUIController {
     @FXML private Button memberGradeButton;
     @FXML private Button creditValueButton;
     @FXML private VBox infoVBox;
+    @FXML private Label sliderLabel;
 
     private Stage stage;
     private Scene loginScene;
@@ -43,6 +49,7 @@ public class WebMarketerUIController {
     private void toExceptionOrder(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new ExceptionOrderUI());
+        moveOperationButtonBackground(sliderLabel,160);
     }
 
     /**
@@ -52,6 +59,7 @@ public class WebMarketerUIController {
     private void toWebPromotion(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new WebPromotionUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,202);
     }
 
     /**
@@ -61,6 +69,7 @@ public class WebMarketerUIController {
     private void toRegionPromotion(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new RegionPromotionUI());
+        moveOperationButtonBackground(sliderLabel,244);
     }
 
     /**
@@ -68,7 +77,9 @@ public class WebMarketerUIController {
      */
     @FXML
     private void toMemberGrade(){
-
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new MemberGradeUI());
+        moveOperationButtonBackground(sliderLabel,286);
     }
 
     /**
@@ -78,5 +89,18 @@ public class WebMarketerUIController {
     private void toCreditValue(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new SearchCustomerUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,328);
+    }
+
+    /**
+     * 设置按钮背景色滑动效果
+     */
+    private void moveOperationButtonBackground(Label label, double y){
+        Timeline timeline=new Timeline();
+        timeline.setAutoReverse(false);
+        KeyValue newY=new KeyValue(label.layoutYProperty(),y);
+        KeyFrame kf=new KeyFrame(Duration.millis(300),newY);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
     }
 }

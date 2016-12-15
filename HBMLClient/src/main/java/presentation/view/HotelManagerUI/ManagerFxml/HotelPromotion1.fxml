@@ -10,7 +10,7 @@
     <children>
       <VBox prefWidth="670.0">
          <children>
-            <Pane prefHeight="72.0" prefWidth="759.0">
+            <Pane prefHeight="65.0" prefWidth="759.0">
                <children>
                   <ToggleButton layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#toHotelPromotion" prefWidth="130.0" text="酒店活动优惠">
                      <styleClass>
@@ -18,12 +18,13 @@
                         <String fx:value="orderInfoLableSize" />
                      </styleClass>
                   </ToggleButton>
-                  <ToggleButton fx:id="otherPromotionVBox1" layoutX="165.0" layoutY="23.0" mnemonicParsing="false" onAction="#toOtherPromotion" text="其他促销策略">
+                  <ToggleButton layoutX="165.0" layoutY="23.0" mnemonicParsing="false" onAction="#toOtherPromotion" prefWidth="130.0" text="其他促销策略">
                      <styleClass>
                         <String fx:value="transButton" />
                         <String fx:value="orderInfoLableSize" />
                      </styleClass>
                   </ToggleButton>
+                  <Label fx:id="sliderLabel" layoutX="35.0" layoutY="57.0" maxHeight="4.0" minHeight="4.0" prefHeight="4.0" prefWidth="130.0" styleClass="sliderColor" />
                </children></Pane>
          </children>
          <opaqueInsets>
@@ -58,7 +59,7 @@
             <Insets left="35.0" />
          </padding>
       </VBox>
-      <VBox prefHeight="543.0" prefWidth="100.0" visible="false">
+      <VBox fx:id="otherPromotionVBox1" prefHeight="543.0" prefWidth="100.0" visible="false">
          <VBox.margin>
             <Insets top="-553.0" />
          </VBox.margin>

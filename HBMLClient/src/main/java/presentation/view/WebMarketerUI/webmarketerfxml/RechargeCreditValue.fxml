@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.RechargeCreditValueUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.RechargeCreditValueUIController">
    <children>
       <Pane prefHeight="64.0" prefWidth="738.0">
          <children>
@@ -41,17 +41,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="用户姓名(昵称) :" />
-                  <Label text="联系方式 :" GridPane.rowIndex="1" />
-                  <Label text="张三" GridPane.columnIndex="1" />
-                  <Label text="当前信用值 :" GridPane.rowIndex="2" />
-                  <Label text="10086" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="5000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label text="充值金额 :" GridPane.rowIndex="3" />
+                  <Label styleClass="infoLabelSize" text="用户姓名(昵称) :" />
+                  <Label styleClass="infoLabelSize" text="联系方式 :" GridPane.rowIndex="1" />
+                  <Label styleClass="infoLabelSize" text="张三" GridPane.columnIndex="1" />
+                  <Label styleClass="infoLabelSize" text="当前信用值 :" GridPane.rowIndex="2" />
+                  <Label styleClass="infoLabelSize" text="10086" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label styleClass="infoLabelSize" text="5000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label styleClass="infoLabelSize" text="充值金额 :" GridPane.rowIndex="3" />
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
                         <TextField />
-                        <Label text="元" />
+                        <Label styleClass="infoLabelSize" text="元" />
                      </children>
                   </HBox>
                </children>
@@ -66,7 +66,7 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="71.0" prefWidth="738.0">
          <children>
-            <Button mnemonicParsing="false" prefWidth="100.0" text="确认充值" />
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="confirmButton" text="确认充值" />
          </children>
          <VBox.margin>
             <Insets />

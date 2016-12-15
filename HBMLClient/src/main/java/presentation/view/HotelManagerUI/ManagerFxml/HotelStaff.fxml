@@ -25,37 +25,67 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="581.0" prefWidth="198.0" styleClass="grayBackground">
                <children>
-                  <Button mnemonicParsing="false" onAction="#toOrderBrowse" prefHeight="40.0" prefWidth="213.0" text="订单浏览执行">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#toInputRoom" prefHeight="40.0" prefWidth="213.0" text="录入可用客房">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#toHotelInfo" prefHeight="40.0" prefWidth="213.0" text="录入酒店信息">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#toHotelPromotion" prefHeight="40.0" prefWidth="213.0" text="制定促销策略">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass>
-                  </Button>
+                  <Pane prefHeight="611.0" prefWidth="195.0">
+                     <children>
+                        <Label fx:id="sliderLabel" layoutY="180.0" prefHeight="42.0" prefWidth="190.0" styleClass="sliderColor" />
+                        <Button layoutX="-9.0" layoutY="180.0" mnemonicParsing="false" onAction="#toOrderBrowse" prefHeight="42.0" prefWidth="213.0" text="订单浏览执行">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="operationButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ManagerImages/order.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-9.0" layoutY="222.0" mnemonicParsing="false" onAction="#toInputRoom" prefHeight="42.0" prefWidth="213.0" text="录入可用客房">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="operationButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ManagerImages/room.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-9.0" layoutY="264.0" mnemonicParsing="false" onAction="#toHotelInfo" prefHeight="40.0" prefWidth="213.0" text="录入酒店信息">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="operationButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ManagerImages/input.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-9.0" layoutY="306.0" mnemonicParsing="false" onAction="#toHotelPromotion" prefHeight="40.0" prefWidth="213.0" text="制定促销策略">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="operationButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ManagerImages/promotion.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
                </children>
             </VBox>
          </children>
