@@ -4,6 +4,7 @@ package presentation.view.creditui;
 import vo.CreditRecordVO;
 
 public class CreditViewControllerService_Stub implements CreditViewControllerService{
+	/*
 	String user_Type;
 	String user_ID;
 	int creditValue;
@@ -82,5 +83,6 @@ public class CreditViewControllerService_Stub implements CreditViewControllerSer
 		System.out.println("Get Account Success");
 		return null;
 	}
+	*/
 
 }

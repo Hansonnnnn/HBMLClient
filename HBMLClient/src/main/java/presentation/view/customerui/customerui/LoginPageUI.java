@@ -9,19 +9,20 @@ import javafx.stage.Stage;
 
 public class LoginPageUI extends Stage
 {
-	public LoginPageUI() 
+	public LoginPageUI(Stage mainStage, Scene mainScene, FirstPageUIController fcontroller) 
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/LoginPage.fxml"));
 		Parent root = null;
+		Scene scene = null;
 		try {
 			root = fxmlLoader.load();
-			Scene scene = new Scene(root);
+			scene = new Scene(root);
 			this.setScene(scene);
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 		LoginPageUIController controller = fxmlLoader.getController();
-		controller.init(this);
+		controller.init(this, scene, fcontroller);
 	}
 }

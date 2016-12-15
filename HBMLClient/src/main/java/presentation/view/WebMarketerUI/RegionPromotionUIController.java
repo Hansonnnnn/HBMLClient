@@ -3,9 +3,16 @@ package presentation.view.WebMarketerUI;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
 /**
  * Created by LENOVO on 2016/12/7.
@@ -18,6 +25,7 @@ public class RegionPromotionUIController {
     @FXML private TableColumn regionTableColumn;
     @FXML private TableColumn memberGradeTableColumn;
     @FXML private TableColumn discountTableColumn;
+    @FXML private TableColumn operationTableColumn;
 
 
     private ObservableList regionPromotionData;
@@ -34,11 +42,40 @@ public class RegionPromotionUIController {
         regionTableColumn.setCellValueFactory(new PropertyValueFactory<>("region"));
         memberGradeTableColumn.setCellValueFactory(new PropertyValueFactory<>("memberGrade"));
         discountTableColumn.setCellValueFactory(new PropertyValueFactory<>("discount"));
+        operationTableColumn.setCellFactory(new Callback<TableColumn<regionPromotion,Boolean>, TableCell<regionPromotion,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new RegionPromotionButtonCell();
+            }
+        });
 
         regionPromotionData= FXCollections.observableArrayList();
         regionPromotionData.add(new regionPromotion("江苏省","南京市","仙林",2,70));
         regionPromotionData.add(new regionPromotion("湖南省","长沙市","雨花区",2,70));
         regionPromotionTableView.setItems(regionPromotionData);
+    }
+
+    public class RegionPromotionButtonCell extends TableCell<regionPromotion,Boolean>{
+        private Button deleteButton=new Button();
+        private ImageView deleteImageView=new ImageView(new Image(getClass().getResourceAsStream("webmarketerimages/delete.png")));
+        public RegionPromotionButtonCell(){
+            deleteButton.setStyle("-fx-background-color: transparent");
+            deleteImageView.setFitHeight(35);
+            deleteImageView.setFitWidth(35);
+            deleteButton.setGraphic(deleteImageView);
+        }
+
+        @Override
+        protected  void updateItem(Boolean t,boolean empty){
+            super.updateItem(t,empty);
+            if(empty){
+                setGraphic(null);
+                setText(null);
+            }else{
+                setGraphic(deleteButton);
+                setText(null);
+            }
+        }
     }
 
     public class regionPromotion{

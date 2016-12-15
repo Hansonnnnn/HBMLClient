@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -103,6 +104,16 @@ public class UnexecutedOrderPageController
 	public class UnexecutedOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button cancelOrderButton = new Button("撤销");
+		
+		public UnexecutedOrderButtonCell()
+		{
+			cancelOrderButton.setOnAction((ActionEvent e)->{
+				Dialog dialog = new Dialog();
+				dialog.setContentText("撤销订单成功");
+				dialog.getOnCloseRequest();
+				dialog.show();
+			});
+		}
 		
 		protected void updateItem(Boolean t, boolean empty)
 		{

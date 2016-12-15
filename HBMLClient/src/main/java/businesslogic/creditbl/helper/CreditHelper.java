@@ -1,6 +1,5 @@
 package businesslogic.creditbl.helper;
 
-import businesslogic.creditbl.Credit;
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.TransferService;
 import dao.CreditDao;
@@ -57,6 +56,9 @@ public class CreditHelper {
             price=price/2;
         }
         CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(2),price);
+        long creditValue=creditDao.getCreditValue(userID);
+        creditValue+=price;
+        creditDao.setCreditValue(userID,creditValue);
         return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
     }
 
@@ -64,6 +66,9 @@ public class CreditHelper {
     public ResultMessage addCreditValue(int UserID,long value)throws Exception{
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
+        long creditValue=creditDao.getCreditValue(UserID);
+        creditValue+=value;
+        creditDao.setCreditValue(UserID,value);
         return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
     }
 }

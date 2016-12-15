@@ -52,17 +52,19 @@ public class HotelListPageController {
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
-	 
-	 public void init(Stage stage, Scene firstPage, String searchInfo)
+	 private boolean state;
+	 public void init(Stage stage, Scene firstPage, String searchInfo,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
+		 this.state = state;
 		 initTable();
 	 }
-	 public void init(Stage stage, Scene firstPage, String address, String region, String checkinTime, String checkoutTime, int star)
+	 public void init(Stage stage, Scene firstPage, String address, String region, String checkinTime, String checkoutTime, int star,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
+		 this.state = state;
 		 initTable();
 	 }
 	 @FXML
@@ -179,9 +181,7 @@ public class HotelListPageController {
 			 makeOrderButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
 				 makeOrderButton.setEffect(null);
 			 });
-			 makeOrderButton.setOnAction((ActionEvent e)->{
-				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage));
-			 });
+			 
 		 }
 		 
 		 protected void updateItem(Boolean t, boolean empty) 
@@ -208,6 +208,6 @@ public class HotelListPageController {
 			{
 				searchInfo = searchField.getText();
 			}
-		 stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo));
+		 stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,state));
 	 }
 }

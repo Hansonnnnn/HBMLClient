@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class HotelListPageUI extends Scene
 {
-	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String searchInfo)
+	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String searchInfo, boolean state)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
@@ -21,10 +21,10 @@ public class HotelListPageUI extends Scene
 		}
 		
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, searchInfo);
+		controller.init(stage, preScene, searchInfo, state);
 	}
 	
-	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String address, String region, String checkinTime, String checkoutTime, int star)
+	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String address, String region, String checkinTime, String checkoutTime, int star,boolean state)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
@@ -35,6 +35,6 @@ public class HotelListPageUI extends Scene
 			e.printStackTrace();
 		}
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, address, region, checkinTime, checkoutTime, star);
+		controller.init(stage, preScene, address, region, checkinTime, checkoutTime, star,state);
 	}
 }

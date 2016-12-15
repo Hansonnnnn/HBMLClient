@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class RegionPromotionUI extends VBox{
     public RegionPromotionUI(){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/RegionPromotion.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/RegionPromotion1.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {

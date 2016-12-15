@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class PersonalCenterPage extends Scene
 {
-	public PersonalCenterPage(Parent root, Stage stage, Scene preScene)
+	public PersonalCenterPage(Parent root, Stage stage, Scene preScene, String userName)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PersonalCenter.fxml"));
@@ -22,6 +22,6 @@ public class PersonalCenterPage extends Scene
 		}
 		
 		PersonalCenterPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, this);
+		controller.init(stage, preScene, this, userName);
 	}
 }

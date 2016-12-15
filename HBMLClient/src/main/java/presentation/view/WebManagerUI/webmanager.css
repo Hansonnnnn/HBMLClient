@@ -18,10 +18,6 @@
     -fx-border-width:0px 1px 0px 0px;
 }
 
-.operationButton:hover{
-    -fx-background-color: #0080FF;
-}
-
 .fontsize{
     -fx-font-size: 17px;
     -fx-text-fill: #ffffff;
@@ -114,5 +110,14 @@
 
 #hotelTableView .table-column .label{
 }
+
+/**
+ *设置滑块的背景颜色
+ */
+.sliderColor{
+    -fx-background-color: #0080FF;
+}
+
+
 
 

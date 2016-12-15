@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" spacing="10.0" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.ExceptionOrderUIController">
+   <children>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="41.0" prefWidth="738.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <Pane prefHeight="41.0" prefWidth="446.0">
+               <children>
+                  <ToggleButton layoutX="20.0" layoutY="5.0" mnemonicParsing="false" onAction="#toUnexecutedOrder" prefWidth="145.0" text="未执行订单列表">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="order" />
+                     </toggleGroup>
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="infoLabelSize" />
+                     </styleClass>
+                  </ToggleButton>
+                  <ToggleButton layoutX="165.0" layoutY="5.0" mnemonicParsing="false" onAction="#toExceptionOrder" prefWidth="145.0" text="异常订单列表" toggleGroup="$order">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="infoLabelSize" />
+                     </styleClass></ToggleButton>
+                  <Label fx:id="sliderLabel" layoutX="20.0" layoutY="36.0" maxHeight="4.0" minHeight="4.0" prefWidth="145.0" styleClass="sliderColor" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="738.0">
+         <children>
+            <TableView fx:id="exceptionOrderTableView" maxWidth="700.0" prefHeight="469.0" prefWidth="700.0" styleClass="orderTypeTableView">
+               <columns>
+                  <TableColumn fx:id="idColumn1" prefWidth="140.0" resizable="false" text="订单编号" />
+                  <TableColumn fx:id="nameColumn1" prefWidth="100.0" resizable="false" text="用户姓名" />
+                  <TableColumn fx:id="startColumn1" prefWidth="140.0" resizable="false" text="订单生成时间" />
+                  <TableColumn fx:id="endColumn1" prefWidth="140.0" resizable="false" text="最晚执行时间" />
+                  <TableColumn fx:id="priceColumn1" resizable="false" text="价格" />
+                  <TableColumn fx:id="revokeColumn" prefWidth="97.0" resizable="false" text="撤销操作" />
+               </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="unexecutedTableView" maxWidth="700.0" prefHeight="469.0" prefWidth="700.0" styleClass="orderTypeTableView">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="140.0" resizable="false" text="订单编号" />
+                <TableColumn fx:id="nameColumn" prefWidth="100.0" resizable="false" text="用户姓名" />
+                  <TableColumn fx:id="startColumn" prefWidth="140.0" resizable="false" text="订单生成时间" />
+                  <TableColumn fx:id="endColumn" prefWidth="140.0" resizable="false" text="最晚执行时间" />
+                  <TableColumn fx:id="priceColumn" resizable="false" text="价格" />
+                  <TableColumn prefWidth="97.0" resizable="false" text="撤销操作" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="-469.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="50.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelPromotionUIController">
+    <children>
+      <VBox prefWidth="670.0">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="759.0">
+               <children>
+                  <ToggleButton layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#toHotelPromotion" prefWidth="130.0" text="酒店活动优惠">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="orderInfoLableSize" />
+                     </styleClass>
+                  </ToggleButton>
+                  <ToggleButton layoutX="165.0" layoutY="23.0" mnemonicParsing="false" onAction="#toOtherPromotion" prefWidth="130.0" text="其他促销策略">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="orderInfoLableSize" />
+                     </styleClass>
+                  </ToggleButton>
+                  <Label fx:id="sliderLabel" layoutX="35.0" layoutY="57.0" maxHeight="4.0" minHeight="4.0" prefHeight="4.0" prefWidth="130.0" styleClass="sliderColor" />
+               </children></Pane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox fx:id="hotelPromotionVBox" prefHeight="543.0" prefWidth="759.0">
+         <children>
+            <TableView fx:id="hotelPromotionTableView" maxWidth="682.0" prefHeight="471.0" prefWidth="652.0" styleClass="roomTypeTableView">
+               <columns>
+                  <TableColumn fx:id="promotionNameTableColumn" prefWidth="150.0" text="促销策略名" />
+                  <TableColumn fx:id="promotionStartTableColumn" prefWidth="200.0" text="策略开始时间" />
+                  <TableColumn fx:id="promotionEndTableColumn" prefWidth="200.0" text="策略结束时间" />
+                  <TableColumn fx:id="operationTableColumn" prefWidth="130.0" text="操作" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="709.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#toNewPromotion" prefHeight="35.0" text="制 定 新 策 略">
+                     <styleClass>
+                        <String fx:value="confirmButton" />
+                        <String fx:value="toLarge" />
+                     </styleClass>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="47.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="35.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="otherPromotionVBox1" prefHeight="543.0" prefWidth="100.0" visible="false">
+         <VBox.margin>
+            <Insets top="-553.0" />
+         </VBox.margin>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="759.0">
+               <children>
+                  <Label layoutX="67.0" layoutY="35.0" styleClass="promotionLabelSize" text="客户生日优惠折扣" />
+                  <Label layoutX="108.0" layoutY="91.0" styleClass="promotionLabelSize" text="折扣(%) :" />
+                  <ComboBox layoutX="217.0" layoutY="87.0" prefHeight="35.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="67.0" layoutY="35.0" styleClass="promotionLabelSize" text="合作企业客户折扣" />
+                  <Label layoutX="108.0" layoutY="91.0" styleClass="promotionLabelSize" text="折扣(%) :" />
+                  <ComboBox layoutX="221.0" layoutY="87.0" prefHeight="35.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="119.0" prefWidth="759.0">
+               <children>
+                  <Button layoutX="200.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="编辑" />
+                  <Button layoutX="459.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="确认修改" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+    </children>
+</VBox>

@@ -4,6 +4,7 @@ import po.CreditRecordPO;
 import vo.CreditRecordVO;
 
 public interface CreditViewControllerService {
+	/*
 	
 	public void showCredit();
 	
@@ -24,4 +25,5 @@ public interface CreditViewControllerService {
 	public String getReasonType(String id);
 	
 	public String getAccount(String id);
+	*/
 }

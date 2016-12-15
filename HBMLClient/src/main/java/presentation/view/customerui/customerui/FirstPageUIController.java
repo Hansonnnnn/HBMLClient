@@ -1,12 +1,7 @@
 package presentation.view.customerui.customerui;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import org.omg.CORBA.INTERNAL;
-
 import com.sun.javafx.collections.MappingChange.Map;
-
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import javafx.fxml.FXML;
@@ -48,6 +43,9 @@ public class FirstPageUIController {
 	private Scene firstPageUI;
 	private Stage stage;
 	
+	private boolean state;
+	private String userName;
+	
 	private Map<Integer, HotelVO> hotelList = null;
 	
 	public void init(Stage stage, Scene firstPageUI)
@@ -72,7 +70,13 @@ public class FirstPageUIController {
 	@FXML
 	private void personalInfoPartAction()
 	{
-		stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI));
+		if(!state)
+		{
+			stage.setScene(new NullUserPage(new Group(), stage, firstPageUI));
+		}else
+		{
+			stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI, userName));
+		}
 	}
 	
 	@FXML
@@ -83,7 +87,7 @@ public class FirstPageUIController {
 		{
 			searchInfo = searchField.getText();
 		}
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo));
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo,state));
 	}
 	
 	@FXML 
@@ -114,7 +118,7 @@ public class FirstPageUIController {
 			HotelCustomerService serviceImpl = new HotelCustomerImpl();
 //			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
 		}
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, address, region, checkinTime, checkoutTime, star));
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, address, region, checkinTime, checkoutTime, star, state));
 	}
 	
 	private void initDatePicker()
@@ -148,7 +152,16 @@ public class FirstPageUIController {
 	@FXML 
 	private void login()
 	{
-		new LoginPageUI().showAndWait();
+		new LoginPageUI(stage, firstPageUI, this).showAndWait();
 	}
 	
+	public boolean getState()
+	{
+		return state;
+	}
+	public void setState(boolean state, String userName)
+	{
+		this.state = state;
+		this.userName = userName;
+	}
 }

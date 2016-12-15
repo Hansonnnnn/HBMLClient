@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebManagerUI.WebManagerUIController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="950.0" stylesheets="@../webmanager.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebManagerUI.WebManagerUIController">
    <children>
       <VBox prefHeight="660.0" prefWidth="220.0" styleClass="rightBorder">
          <children>
@@ -22,40 +22,82 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="578.0" prefWidth="213.0" styleClass="grayBackground">
                <children>
-                  <Button fx:id="addHotelButton" mnemonicParsing="false" onAction="#toAddHotel" prefHeight="40.0" prefWidth="213.0" text="酒   店   添   加">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass></Button>
-                  <Button fx:id="addMarketerButton" mnemonicParsing="false" onAction="#toAddWebMarketer" prefHeight="40.0" prefWidth="213.0" text="网站营销人员添加">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass></Button>
-                  <Button fx:id="userInfoButton" mnemonicParsing="false" onAction="#toUserInfo" prefHeight="40.0" prefWidth="213.0" text="用 户 信 息 管 理">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="staffInfoButton" mnemonicParsing="false" onAction="#toHotelStuffInfo" prefHeight="40.0" prefWidth="213.0" text="酒店工作人员信息管理">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass></Button>
-                  <Button fx:id="marketerInfoButton" mnemonicParsing="false" onAction="#toWebMarketerInfo" prefHeight="40.0" prefWidth="213.0" text="网站营销人员信息管理">
-                     <styleClass>
-                        <String fx:value="transButton" />
-                        <String fx:value="operationButton" />
-                        <String fx:value="fontsize" />
-                     </styleClass></Button>
+                  <Pane prefHeight="587.0" prefWidth="212.0">
+                     <children>
+                        <Label fx:id="sliderLabel" layoutY="160.0" prefHeight="42.0" prefWidth="213.0" styleClass="sliderColor" />
+                        <Button fx:id="addHotelButton" layoutY="160.0" mnemonicParsing="false" onAction="#toAddHotel" prefHeight="42.0" prefWidth="213.0" text="酒店添加">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmanagerimages/hotel.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets right="67.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="userInfoButton" layoutY="202.0" mnemonicParsing="false" onAction="#toUserInfo" prefHeight="42.0" prefWidth="213.0" text="用户管理">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmanagerimages/manage.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets right="67.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="addMarketerButton" layoutY="244.0" mnemonicParsing="false" onAction="#toAddWebMarketer" prefHeight="42.0" prefWidth="213.0" text="网站营销人员添加">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmanagerimages/addwebmarketer.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="staffInfoButton" layoutY="328.0" mnemonicParsing="false" onAction="#toHotelStuffInfo" prefHeight="42.0" prefWidth="213.0" text="酒店工作人员管理">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmanagerimages/manager.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="marketerInfoButton" layoutY="286.0" mnemonicParsing="false" onAction="#toWebMarketerInfo" prefHeight="42.0" prefWidth="213.0" text="网站营销人员管理">
+                           <styleClass>
+                              <String fx:value="transButton" />
+                              <String fx:value="fontsize" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../webmanagerimages/market.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
                </children>
             </VBox>
          </children>

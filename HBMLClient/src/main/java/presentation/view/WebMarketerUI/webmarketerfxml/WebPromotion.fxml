@@ -5,23 +5,27 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebPromotionUIController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="738.0" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.WebPromotionUIController">
    <children>
-      <TableView maxWidth="622.0" prefHeight="529.0" prefWidth="622.0">
+      <TableView maxWidth="662.0" prefHeight="529.0" prefWidth="622.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="促销策略名" />
+          <TableColumn prefWidth="120.0" text="促销策略名" />
           <TableColumn prefWidth="150.0" text="策略开始时间" />
             <TableColumn prefWidth="150.0" text="策略结束时间" />
-            <TableColumn prefWidth="100.0" text="所需会员等级" />
-            <TableColumn prefWidth="120.0" text="查看策略详情" />
+            <TableColumn prefWidth="120.0" text="所需会员等级" />
+            <TableColumn prefWidth="120.0" text="操作" />
         </columns>
+         <styleClass>
+            <String fx:value="table-column" />
+            <String fx:value="orderTypeTableView" />
+         </styleClass>
       </TableView>
       <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="738.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#toAddWebPromotion" text="添加新促销策略" />
+            <Button mnemonicParsing="false" onAction="#toAddWebPromotion" prefHeight="35.0" prefWidth="130.0" styleClass="confirmButton" text="添加新促销策略" />
          </children>
          <padding>
-            <Insets right="30.0" />
+            <Insets right="38.0" />
          </padding>
       </HBox>
    </children>
