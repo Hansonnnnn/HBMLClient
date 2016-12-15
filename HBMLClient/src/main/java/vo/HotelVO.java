@@ -1,5 +1,5 @@
 package vo;
-import java.io.File;
+import java.awt.Image;
 import java.util.List;
 
 public class HotelVO
@@ -12,14 +12,14 @@ public class HotelVO
 	int region;
 	String introduction;
 	String facility;
-	List<File> environment;
+	List<Image> environment;
 	double score;
 	int lowestPrice;
 	
 	
 
 	public HotelVO(String name, int id, int star, String address, int region, String introduction, String facility,
-			List<File> environment, double score,int lowestPrice) {
+			List<Image> environment, double score,int lowestPrice) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -93,11 +93,11 @@ public class HotelVO
 		this.facility = facility;
 	}
 
-	public List<File> getEnvironment() {
+	public List<Image> getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(List<File> environment) {
+	public void setEnvironment(List<Image> environment) {
 		this.environment = environment;
 	}
 

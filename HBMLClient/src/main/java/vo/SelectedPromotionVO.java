@@ -3,16 +3,14 @@ package vo;
 import model.DiscountType;
 import model.PromotionType;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by alex on 12/15/16.
  */
-public class SelectedPromotionVO extends     PromotionVO implements Serializable{
+public class SelectedPromotionVO extends     PromotionVO {
 
 
-    private static final long serialVersionUID = 5713819000515788978L;
     PromotionVO promotionVO;
     long price;
 

@@ -3,16 +3,14 @@ import model.DateHelper;
 import model.DiscountType;
 import model.PromotionType;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by alex on 16-11-17.
  */
-public class PromotionVO implements Serializable{
+public class PromotionVO{
     DateHelper dateHelper=new DateHelper();
 
-    private static final long serialVersionUID = 5787582319450754775L;
     int promotionID;
     PromotionType promotionType;
     int region;

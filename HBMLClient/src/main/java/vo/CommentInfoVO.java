@@ -1,9 +1,8 @@
 package vo;
 import java.awt.Image;
-import java.io.Serializable;
 import java.util.Date;
 
-public class CommentInfoVO implements Serializable{
+public class CommentInfoVO{
 	int commentID;
 	Date time;
 	int hotelID;

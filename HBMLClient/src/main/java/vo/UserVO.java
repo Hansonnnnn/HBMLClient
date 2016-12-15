@@ -4,16 +4,13 @@ import model.MemberType;
 import model.UserType;
 
 import java.awt.*;
-import java.io.File;
-import java.io.Serializable;
 
 /**
  * Created by alex on 16-11-17.
  */
-public class UserVO implements Serializable{
+public class UserVO {
 
 
-    private static final long serialVersionUID = -6022579940937350048L;
     int userID;
     UserType userType;
     String accountName;

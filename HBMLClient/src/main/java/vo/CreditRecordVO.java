@@ -1,14 +1,10 @@
 package vo;
 
 import model.CreditRecordReasonType;
-
-import java.io.Serializable;
 import java.util.Date;
 
-public class CreditRecordVO implements Serializable{
+public class CreditRecordVO{
 
-
-	private static final long serialVersionUID = 2436059735173648306L;
 	int creditRecordID;
 	Date time;
 	int userID;

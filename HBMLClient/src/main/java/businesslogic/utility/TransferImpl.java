@@ -12,18 +12,32 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransferImpl implements TransferService{
 	@Override
 	public HotelVO poToVo(HotelPO po) {
-		
-		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), po.getEnvironment(), po.getScore(), po.getLowestPrice());
+		List<Image> list = new ArrayList<>();
+		for (File file : po.getEnvironment()) {
+			try {
+				list.add(ImageIO.read(file));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), list, po.getScore(), po.getLowestPrice());
 		return hotelVO;
 	}
 
 	@Override
 	public HotelPO voToPO(HotelVO vo) {
-		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(), vo.getEnvironment(), vo.getScore(), vo.getLowestPrice());
+		List<File> list = new ArrayList<>();
+		for (Image image : vo.getEnvironment()) {
+			list.add(imageToFile(image));
+		}
+		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),list , vo.getScore(), vo.getLowestPrice());
 		return hotelPO;
 	}
 
