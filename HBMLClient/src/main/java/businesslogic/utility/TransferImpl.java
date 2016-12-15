@@ -1,18 +1,13 @@
 package businesslogic.utility;
 
 import businesslogicservice.TransferService;
-import po.CommentInfoPO;
-import po.HotelPO;
-import po.PromotionPO;
-import po.RegionPO;
-import po.RoomInfoPO;
-import po.UserPO;
-import vo.CommentInfoVO;
-import vo.HotelVO;
-import vo.PromotionVO;
-import vo.RegionVO;
-import vo.RoomInfoVO;
-import vo.UserVO;
+import po.*;
+import vo.*;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class TransferImpl implements TransferService{
 	@Override
@@ -41,23 +36,33 @@ public class TransferImpl implements TransferService{
 	}
 
 	@Override
-	public UserVO poToVo(UserPO po) {
-		return new UserVO("");
+	public UserVO poToVo(UserPO po) throws Exception{
+		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), ImageIO.read(po.getPortrait()),po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
+		return userVO;
 	}
 
 	@Override
-	public UserPO voToPo(UserVO vo) {
-		return new UserPO(0);
+	public UserPO voToPo(UserVO vo) throws Exception{
+		File file=null;
+		BufferedImage bufImg = new BufferedImage(vo.getPortrait().getWidth(null), vo.getPortrait().getHeight(null),BufferedImage.TYPE_INT_RGB);
+		Graphics g = bufImg .createGraphics();
+		g.drawImage(vo.getPortrait(), 0, 0, null);
+		g.dispose();
+		ImageIO.write(bufImg,"jpg",file);
+		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),file,vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
+		return userPO;
 	}
 
 	@Override
 	public PromotionVO poToVo(PromotionPO po) {
-		return new PromotionVO(po.getId());
+		PromotionVO promotionVO=new PromotionVO(po.getPromotionID(),po.getPromotionType(),po.getRegion(),po.getName(),po.getContent(),po.getStartDate(),po.getEndDate(),po.getMinRankAvailable(),po.getMaxRankAvailable(),po.getType(),po.getDiscount(),po.getDiscount());
+		return promotionVO;
 	}
 
 	@Override
 	public PromotionPO voToPo(PromotionVO vo) {
-		return new PromotionPO(vo.getId());
+		PromotionPO promotionPO=new PromotionPO(vo.getPromotionID(),vo.getPromotionType(),vo.getRegion(),vo.getName(),vo.getContent(),vo.getStartDate(),vo.getEndDate(),vo.getMinRankAvailable(),vo.getMaxRankAvailable(),vo.getType(),vo.getDiscount(),vo.getDiscount());
+		return promotionPO;
 	}
 
 	@Override
@@ -79,6 +84,18 @@ public class TransferImpl implements TransferService{
 		
 		
 		return null;
+	}
+
+	@Override
+	public CreditRecordVO poToVo(CreditRecordPO po) {
+		CreditRecordVO creditRecordVO=new CreditRecordVO(po.getCreditRecordID(),po.getTime(),po.getUserID(),po.getReasonType(),po.getAmount(),po.getOrderID());
+		return creditRecordVO;
+	}
+
+	@Override
+	public CreditRecordPO voToPo(CreditRecordVO vo) {
+		CreditRecordPO creditRecordPO=new CreditRecordPO(vo.getCreditRecordID(),vo.getTime(),vo.getUserID(),vo.getReasonType(),vo.getAmount(),vo.getOrderID());
+		return creditRecordPO;
 	}
 
 

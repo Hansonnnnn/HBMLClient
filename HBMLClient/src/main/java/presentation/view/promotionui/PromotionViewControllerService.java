@@ -9,6 +9,6 @@ public interface PromotionViewControllerService {
 	public PromotionVO showPromotion();
     public List<PromotionVO> showPromotionList();
     public ResultMessage addPromotion(PromotionVO promotionVO);
-    public ResultMessage deletePromotion(String ID);
+    public ResultMessage deletePromotion(int ID);
     public ResultMessage modify(PromotionVO promotionVO);
 }

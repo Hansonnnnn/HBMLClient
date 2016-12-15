@@ -1,49 +1,37 @@
 package businesslogic.promotionbl;
 
 import businesslogicservice.promotionblservice.PromotionStaffService;
-import dao.PromotionDao;
 import message.ResultMessage;
-import po.PromotionPO;
+import model.PromotionFilter;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 public class PromotionStaffImpl implements PromotionStaffService{
-	
-	private PromotionDao promotionDao;
-	
+
+
 	@Override
-	public ResultMessage addPromotion(PromotionPO po) {
-		// TODO 自动生成的方法存根
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.addPromotion(po);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) {
 		return null;
 	}
 
 	@Override
-	public ResultMessage modifyPromotion(PromotionPO po) {
-		// TODO 自动生成的方法存根
-		promotionDao=new PromotionDaoImpl_stub();
-		try {
-			promotionDao.modifyPromotion(po);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	public PromotionVO getPromotion(int promotionID) {
 		return null;
 	}
 
 	@Override
-	public ResultMessage deletePromotion(String id) {
-		promotionDao=new PromotionDaoImpl_stub();
-		try{
-			promotionDao.deletePromotion(id);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+	public ResultMessage addHotelPromotion(PromotionVO vo) {
 		return null;
 	}
 
+	@Override
+	public ResultMessage deleteHotelPromotion(int promotionID) {
+		return null;
+	}
+
+	@Override
+	public ResultMessage modifyHotelPromotion(PromotionVO vo) {
+		return null;
+	}
 }

@@ -1,81 +1,258 @@
 package vo;
+
+import model.MemberType;
+import model.UserType;
+
+import java.awt.*;
+import java.io.File;
 import java.io.Serializable;
+
 /**
- * Created by alex on 16-11-13.
+ * Created by alex on 16-11-17.
  */
 public class UserVO implements Serializable{
-    //shared
-    String id;
+
+
+    private static final long serialVersionUID = -6022579940937350048L;
+    int userID;
+    UserType userType;
+    String accountName;
     String password;
-    PersonalInfoVO personalInfo;
-    //for customers
-    CreditVO creditInfo;
-    MemberInfoVO memberInfo;
-    //for staffs
+    String name;
+    String contact;
+    Image portrait;
+    long creditValue;
+    MemberType memberType;
+    String memberInfo;
+    int rank;
     String workid;
-    String hotelid;
-    //for web marketers and web managers: shared ones are enough
-    //constructors for allVO
-    public UserVO(String id){
-        this.id=id;
+    int hotelid;
+
+    /**
+     * 此constructor仅供测试用
+     * @param userID
+     */
+    public UserVO(int userID){
+        this.userID=userID;
     }
 
-    //constructors for customerVO
-    public UserVO(String id,String pwd,PersonalInfoVO personalInfo,CreditVO creditInfo
-            ,MemberInfoVO memberInfo){
-        this.id=id;
-        this.password=pwd;
-        this.personalInfo=personalInfo;
-        this.creditInfo=creditInfo;
-        this.memberInfo=memberInfo;
+    /**
+     * 这是完整的constructor,参数用作参考
+     * @param userID        用户ID
+     * @param userType      用户类型，参见model.UserType
+     * @param accountName   账号：用于登陆和系统唯一定位的
+     * @param password
+     * @param name          名字：真正的名字
+     * @param contact
+     * @param portrait      头像Image文件
+     * @param creditValue   当前信用值
+     * @param memberType    会员类型，参见model.MemberType
+     * @param memberInfo    如果是非会员，此项为null,如果是个人，此项为生日(String),如果是企业，此项为公司名
+     * @param rank          会员等级
+     * @param workid        工号，可以自己定义，传空字符串也行
+     * @param hotelid
+     */
+    public UserVO(int userID, UserType userType, String accountName, String password, String name
+            , String contact, Image portrait, long creditValue
+            , MemberType memberType, String memberInfo, int rank
+            , String workid, int hotelid) {
+        this.userID = userID;
+        this.userType=userType;
+        this.accountName = accountName;
+        this.password = password;
+        this.name = name;
+        this.contact = contact;
+        this.portrait = portrait;
+        this.creditValue = creditValue;
+        this.memberType = memberType;
+        this.memberInfo = memberInfo;
+        this.rank = rank;
+        this.workid = workid;
+        this.hotelid = hotelid;
     }
 
-    //constructors for StaffVO
-    public UserVO(String id,String pwd,PersonalInfoVO personalInfo,CreditVO creditInfo
-            ,MemberInfoVO memberInfo,String workid,String hotelid){
-        this.id=id;
+    //constructors for customer
+
+    /**
+     *
+     * @param id                客户ID
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param creditValue
+     * @param memberType
+     * @param memberInfo
+     * @param rank
+     */
+    public UserVO(int id, String pwd, String name, String contact,
+                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+        this.userID=id;
+        this.userType= UserType.Customer;
         this.password=pwd;
-        this.personalInfo=personalInfo;
-        this.creditInfo=creditInfo;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+        this.creditValue=creditValue;
         this.memberInfo=memberInfo;
+        this.memberType=memberType;
+        this.rank=rank;
+    }
+
+    /**
+     * 这是不带用户ID的客户constructor
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param creditValue
+     * @param memberType
+     * @param memberInfo
+     * @param rank
+     */
+    public UserVO(String pwd, String name, String contact,
+                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+        this.userType= UserType.Customer;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+        this.creditValue=creditValue;
+        this.memberInfo=memberInfo;
+        this.memberType=memberType;
+        this.rank=rank;
+    }
+
+    //constructors for Staff
+    public UserVO(int id, String pwd, String name, String contact, Image image, String workid, int hotelid){
+        this.userID=id;
+        this.userType= UserType.Staff;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
         this.workid=workid;
         this.hotelid=hotelid;
     }
 
-    //constructors for WebMarketerVO and WebManagerVO
-    public UserVO(String id,String pwd,PersonalInfoVO personalInfo){
-        this.id=id;
+    /**
+     * 这是不带用户ID的酒店工作人员constructor
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     * @param workid
+     * @param hotelid
+     */
+    public UserVO(String pwd, String name, String contact, Image image, String workid, int hotelid){
+        this.userType= UserType.Staff;
         this.password=pwd;
-        this.personalInfo=personalInfo;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+        this.workid=workid;
+        this.hotelid=hotelid;
     }
 
+    //这个不需要传image了
+    public UserVO(String pwd, String name, String contact, String workid, int hotelid){
+        this.userType= UserType.Staff;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.workid=workid;
+        this.hotelid=hotelid;
+    }
+
+    //constructors for WebMarketer and WebManager
+    public UserVO(int id, UserType userType, String pwd, String name, String contact, Image image){
+        this.userID=id;
+        this.userType=userType;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+    }
+
+    /**
+     * 这是不带用户ID的网站营销人员和网站工作人员constructor
+     * @param userType
+     * @param pwd
+     * @param name
+     * @param contact
+     * @param image
+     */
+    public UserVO(UserType userType, String pwd, String name, String contact, Image image){
+        this.userType=userType;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+        this.portrait=image;
+    }
+
+    //这个不需要传image了
+    public UserVO(UserType userType, String pwd, String name, String contact){
+        this.userType=userType;
+        this.password=pwd;
+        this.accountName=name;
+        this.contact=contact;
+    }
+
+
     //getters
-    public String getId() {
-        return id;
+    public int getUserID() {
+        return userID;
+    }
+
+    public UserType getUserType(){
+        return userType;
+    }
+
+    public String getAccountName() {
+        return accountName;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public PersonalInfoVO getPersonalInfo() {
-        return personalInfo;
+    public String getName() {
+        return name;
     }
 
-    public CreditVO getCreditInfo() {
-        return creditInfo;
+    public String getContact() {
+        return contact;
     }
 
-    public MemberInfoVO getMemberInfo(){
+    public Image getPortrait() {
+        return portrait;
+    }
+
+    public long getCreditValue() {
+        return creditValue;
+    }
+
+    public MemberType getMemberType() {
+        return memberType;
+    }
+
+    public String getMemberInfo() {
         return memberInfo;
+    }
+
+    public int getRank() {
+        return rank;
     }
 
     public String getWorkid() {
         return workid;
     }
 
-    public String getHotelid() {
+    public int getHotelid() {
         return hotelid;
     }
-}
 
+    public void setCreditValue(long creditValue) {
+        this.creditValue = creditValue;
+    }
+}

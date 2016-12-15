@@ -1,12 +1,42 @@
 package businesslogicservice.promotionblservice;
 
 
-import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
-import po.PromotionPO;
+import model.PromotionFilter;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 public interface PromotionWebMarketerService {
-	public ResultMessage addPromotion(PromotionPO po);
-	public ResultMessage deletePromotion(String id);
-	public ResultMessage modifyPromotion(PromotionPO po);
+	/**
+	 * PromotionFilter filter =new PromotionFilter();
+	 * 传filter
+	 * @param promotionFilter
+	 * @return
+	 */
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter);
+
+	public PromotionVO getPromotion(int promotionID);
+
+	/**
+	 * 添加网站营销策略，需要将信息写进一个新建VO里
+	 * @param vo
+	 * @return
+	 */
+	public ResultMessage addWebPromotion(PromotionVO vo);
+
+	/**
+	 * 获取促销信息VO对象，使用getID
+	 * 调用此方法后，需要重新调用getWebPromotionList，并打印
+	 * @param promotionID
+	 * @return
+	 */
+	public ResultMessage deleteWebPromotion(int promotionID);
+
+	/**
+	 * 类似addWebPromotion,需要将信息写进一个新建VO里
+	 * @param vo
+	 * @return
+	 */
+	public ResultMessage modifyWebPromotion(PromotionVO vo);
 }

@@ -1,6 +1,5 @@
 package presentation.view.promotionui;
 
-import businesslogic.promotionbl.Promotion;
 import message.ResultMessage;
 import vo.PromotionVO;
 
@@ -27,7 +26,7 @@ public class WebMarketerOfPromotionView {
 
 	public PromotionVO showPromotion(){
 		controller.showPromotion();
-		return new PromotionVO("H00001");
+		return null;
 	}
 
 	public ArrayList<PromotionVO> showPromotionList(){

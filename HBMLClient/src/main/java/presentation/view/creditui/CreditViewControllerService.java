@@ -1,6 +1,7 @@
 package presentation.view.creditui;
 
-import vo.CreditVO;
+import po.CreditRecordPO;
+import vo.CreditRecordVO;
 
 public interface CreditViewControllerService {
 	
@@ -10,9 +11,9 @@ public interface CreditViewControllerService {
 	
 	public boolean addCredit(int creditValue);
 	
-	public boolean resumeCredit(CreditVO credit);
+	public boolean resumeCredit(CreditRecordVO credit);
 	
-	public CreditVO getCreditInfo();
+	public CreditRecordVO getCreditInfo();
 
 	public int getCreditValue(String id);
 	

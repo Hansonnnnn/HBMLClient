@@ -1,17 +1,8 @@
 package businesslogicservice;
 
-import po.CommentInfoPO;
-import po.HotelPO;
-import po.PromotionPO;
-import po.RegionPO;
-import po.RoomInfoPO;
-import po.UserPO;
-import vo.CommentInfoVO;
-import vo.HotelVO;
-import vo.PromotionVO;
-import vo.RegionVO;
-import vo.RoomInfoVO;
-import vo.UserVO;
+import po.*;
+import vo.*;
+
 /*
  * PO  VO 之间的转换
  */
@@ -25,9 +16,9 @@ public interface TransferService {
 	//vo变成po
 	public RoomInfoPO voToPO(RoomInfoVO vo);
 	
-	public UserVO poToVo(UserPO po);
+	public UserVO poToVo(UserPO po)throws Exception;
 	
-	public UserPO voToPo(UserVO vo);
+	public UserPO voToPo(UserVO vo)throws Exception;
 	
 	public PromotionVO poToVo(PromotionPO po);
 	
@@ -38,4 +29,8 @@ public interface TransferService {
 	public CommentInfoPO voToPo(CommentInfoVO commentInfoVO);
 
 	public RegionVO poToVo(RegionPO regionPO);
+
+	public CreditRecordVO poToVo(CreditRecordPO po);
+
+	public CreditRecordPO voToPo(CreditRecordVO vo);
 }

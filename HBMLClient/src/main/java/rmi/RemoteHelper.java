@@ -2,12 +2,7 @@ package rmi;
 
 import java.rmi.Remote;
 
-import dao.CreditDao;
-import dao.HotelDao;
-import dao.OrderDao;
-import dao.PromotionDao;
-import dao.RoomDao;
-import dao.UserDao;
+import dao.*;
 
 
 public class RemoteHelper {
