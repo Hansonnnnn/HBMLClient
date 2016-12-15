@@ -14,6 +14,7 @@ import rmi.ClientRunner;
 import vo.CreditRecordVO;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -35,6 +36,7 @@ public class CreditHelper {
 
     public Map<Integer, CreditRecordVO> getCreditRecordList(int userID) throws Exception{
         Map<Integer, CreditRecordPO> map=creditDao.getCreditRecordList(userID);
+        creditRecordList=new LinkedHashMap<>();
         for(int key:map.keySet()){
             creditRecordList.put(key,creditTransferService.poToVo(map.get(key)));
         }
