@@ -2,12 +2,12 @@ package presentation.view.creditui;
 
 public class CustomerView {
 	
-	CreditViewControllerService controller;
+	private CreditViewControllerService controller;
 	
 	public CustomerView(CreditViewControllerService controller){
 		this.controller=controller;
 	}
-	
+	/*
 	public String getChangeType(String id){
 		return controller.getChangeType("0001");
 	}
@@ -19,4 +19,5 @@ public class CustomerView {
 	public String getAccount(String id){
 		return controller.getAccount("0001");
 	}
+	*/
 }

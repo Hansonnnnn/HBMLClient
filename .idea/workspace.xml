@@ -1,124 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="commit ver 0.2&#10;//test commit&#10;modify creditbl&#10;&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata.values.at" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/_src_/schema/hbmsdatabase.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/order.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/room.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerimages/addwebmarketer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerimages/hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerimages/manage.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerimages/manager.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerimages/market.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/grade7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/member.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/order.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/recharge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/region.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/sale.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/view1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc/storage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/MemberGradeUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/MemberGradeUIController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebPromotionInfoUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebPromotionInfoUIController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/ExceptionOrder2.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/MemberGrade.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/EnrollUserPage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/EnrollUserPageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/FindPasswordPageUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/NullUserPage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/NullUserPageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/FindPasswordPage.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/NullUserPage.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/.idea/workspace.xml" afterPath="" />
+    <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;">
       <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/Credit.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/Promotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/CreditBLService_Driver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/UserInfoBLService_Driver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/hotel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/update.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/CreditScene.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/PromotionScene.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/Web.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebMarker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/cancel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/credit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/credit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/order.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/order.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/orderScene.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/promotion.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/promotion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/ExceptionOrder.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerimages/arrow.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/HotelPromotion.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/HotelPromotion1.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/PromotionInfo.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/PromotionInfo1.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/RegionPromotion.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/RegionPromotion1.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/input.png" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/input.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/promotion.png" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerImages/promotion.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.gitignore" afterPath="$PROJECT_DIR$/HBMLClient/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelPromotionUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelPromotionUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelPromotionUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelPromotionUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelStaffUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/HotelStaffUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/HotelStaff.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/HotelStaff.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/NewPromotion.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/ManagerFxml/NewPromotion.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/NewPromotionUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/NewPromotionUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/NewPromotionUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/NewPromotionUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/PromotionInfoUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/HotelManagerUI/PromotionInfoUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/WebManagerUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/WebManagerUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanager.css" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanager.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerfxml/HotelStaffInfo.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerfxml/HotelStaffInfo.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerfxml/WebManager.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/webmanagerfxml/WebManager.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/ExceptionOrderUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/ExceptionOrderUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/ExceptionOrderUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/ExceptionOrderUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/RegionPromotionUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/RegionPromotionUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/RegionPromotionUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/RegionPromotionUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebMarketerUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebMarketerUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebPromotionUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/WebPromotionUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketer.css" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/AddWebPromotion.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/AddWebPromotion.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/RechargeCreditValue.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/RechargeCreditValue.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebMarketer1.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebMarketer1.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebPromotion.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebPromotion.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebPromotionInfo.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebMarketerUI/webmarketerfxml/WebPromotionInfo.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService_Stub.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CreditViewControllerService_Stub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/FirstPageUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/FirstPageUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/HotelListPageController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/HotelListPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/HotelListPageUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/HotelListPageUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/LoginPageUI.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/LoginPageUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/LoginPageUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/LoginPageUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/MyHotelListPageController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/MyHotelListPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/PersonalCenterPage.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/PersonalCenterPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/PersonalCenterPageController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/PersonalCenterPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/UnexecutedOrderPageController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/UnexecutedOrderPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/EnrollUserPage.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/EnrollUserPage.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/MakeOrderPage.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/MakeOrderPage.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/PersonalInfoManagePage.fxml" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/PersonalInfoManagePage.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,11 +49,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#364#365#0" expanded="false" />
-                <element signature="e#383#384#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -174,14 +57,14 @@
       <file leaf-file-name="SelectedPromotionVO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="234">
               <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
@@ -191,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransferService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/TransferService.java">
+      <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -206,9 +89,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,9 +99,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,9 +109,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,9 +119,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -269,6 +144,7 @@
       <list>
         <option value="$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java" />
       </list>
     </option>
   </component>
@@ -307,7 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -328,282 +203,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="businesslogicservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HBMLClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1129,7 +731,8 @@
       <workItem from="1481802992230" duration="312000" />
       <workItem from="1481803450461" duration="115000" />
       <workItem from="1481803587005" duration="79000" />
-      <workItem from="1481804981650" duration="360000" />
+      <workItem from="1481804981650" duration="608000" />
+      <workItem from="1481805662168" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -1187,11 +790,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481803042828</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit ver 0.2&#10;//test commit&#10;modify creditbl&#10;&#10;&#10;">
+      <created>1481805459130</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481805459130</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5814000" />
+    <option name="totallyTimeSpent" value="6135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -1199,7 +809,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1269,7 +879,8 @@
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.5&#10;modify promotionUserblservice&#10;add SelectedPromotionVO&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.6&#10;code creditbl&#10;&#10;" />
     <MESSAGE value="commit ver 0.2&#10;//test commit&#10;modify creditbl&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2&#10;//test commit&#10;modify creditbl&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1280,26 +891,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1570,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1578,9 +1168,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1588,9 +1176,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,9 +1184,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1608,9 +1192,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1634,11 +1216,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#364#365#0" expanded="false" />
-            <element signature="e#383#384#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1652,8 +1230,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="234">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/MakeOrderPage.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1662,6 +1251,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
