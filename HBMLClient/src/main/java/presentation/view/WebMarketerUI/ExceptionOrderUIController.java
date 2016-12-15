@@ -1,16 +1,19 @@
 package presentation.view.WebMarketerUI;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 /**
  * Created by LENOVO on 2016/12/2.
@@ -24,10 +27,17 @@ public class ExceptionOrderUIController {
     @FXML private TableColumn startColumn;
     @FXML private TableColumn endColumn;
     @FXML private TableColumn priceColumn;
+    @FXML private TableColumn idColumn1;
+    @FXML private TableColumn nameColumn1;
+    @FXML private TableColumn startColumn1;
+    @FXML private TableColumn endColumn1;
+    @FXML private TableColumn priceColumn1;
     @FXML private TableColumn revokeColumn;
+    @FXML private Label sliderLabel;
 
 
     private ObservableList<ExceptionOrder> unexecutedOrderData;
+    private ObservableList<ExceptionOrder> exceptionOrderData;
     public void init(){
         initTableView();
     }
@@ -39,6 +49,7 @@ public class ExceptionOrderUIController {
     private void toUnexecutedOrder(){
         unexecutedTableView.setVisible(true);
         exceptionOrderTableView.setVisible(false);
+        moveOrderButtonBottomBorder(sliderLabel,20);
     }
 
     /**
@@ -48,6 +59,19 @@ public class ExceptionOrderUIController {
     private void toExceptionOrder(){
         exceptionOrderTableView.setVisible(true);
         unexecutedTableView.setVisible(false);
+        moveOrderButtonBottomBorder(sliderLabel,165);
+    }
+
+    /**
+     * 设置按钮底部滑动效果
+     */
+    private void moveOrderButtonBottomBorder(Label label, double x){
+        Timeline timeline=new Timeline();
+        timeline.setAutoReverse(false);
+        KeyValue newX=new KeyValue(label.layoutXProperty(),x);
+        KeyFrame kf=new KeyFrame(Duration.millis(300),newX);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
     }
 
 
@@ -60,16 +84,27 @@ public class ExceptionOrderUIController {
         startColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         endColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        unexecutedOrderData= FXCollections.observableArrayList();
+        unexecutedOrderData.add(new ExceptionOrder("201611220001","李四","2016.11.22 8:00","2016.11.22 20:00",200));
+        unexecutedOrderData.add(new ExceptionOrder("201611220002","王五","2016.11.22 9:00","2016.11.22 22:00",300));
+        unexecutedTableView.setItems(unexecutedOrderData);
+
+        idColumn1.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        nameColumn1.setCellValueFactory(new PropertyValueFactory<>("userName"));
+        startColumn1.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        endColumn1.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
         revokeColumn.setCellFactory(new Callback<TableColumn<ExceptionOrder,Boolean>, TableCell<ExceptionOrder,Boolean>>() {
             @Override
             public TableCell call(TableColumn param) {
                 return new ExceptionOrderListButtonCell();
             }
         });
-        unexecutedOrderData= FXCollections.observableArrayList();
-        unexecutedOrderData.add(new ExceptionOrder("201611220001","李四","2016.11.22 8:00","2016.11.22 20:00",200));
-        unexecutedOrderData.add(new ExceptionOrder("201611220002","王五","2016.11.22 9:00","2016.11.22 22:00",300));
-        unexecutedTableView.setItems(unexecutedOrderData);
+        exceptionOrderData= FXCollections.observableArrayList();
+        exceptionOrderData.add(new ExceptionOrder("111","李四","2016.11.22 8:00","2016.11.22 20:00",200));
+        exceptionOrderData.add(new ExceptionOrder("222","王五","2016.11.22 9:00","2016.11.22 22:00",300));
+        exceptionOrderTableView.setItems(exceptionOrderData);
     }
 
     public  class ExceptionOrder{
@@ -119,11 +154,14 @@ public class ExceptionOrderUIController {
     }
 
     public class ExceptionOrderListButtonCell extends TableCell<ExceptionOrder,Boolean>{
-        private Button revokeButton=new Button("撤销订单");
-        private Stage stage;
-//        public ExceptionOrderListButtonCell(Stage stage){
-//            this.stage=stage;
-//        }
+        private Button revokeButton=new Button();
+        private ImageView revokeImageView=new ImageView(new Image(getClass().getResourceAsStream("webmarketerimages/delete.png")));
+        public ExceptionOrderListButtonCell(){
+            revokeButton.setStyle("-fx-background-color: transparent");
+            revokeImageView.setFitHeight(35);
+            revokeImageView.setFitWidth(35);
+            revokeButton.setGraphic(revokeImageView);
+        }
 
         @Override
         protected  void updateItem(Boolean t,boolean empty){

@@ -4,6 +4,7 @@
 .confirmButton{
     -fx-text-fill:white;
     -fx-font-family:"微软雅黑";
+    -fx-border-radius: 4px;
     -fx-background-color: linear-gradient(#00A600, #009100);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
@@ -94,6 +95,39 @@
 .whiteFont{
     -fx-text-fill: #ffffff;
 }
+
+/**
+ *设置会员等级设置表格的字体大小
+ */
+.memberGradeFontSize{
+    -fx-font-size: 20px;
+}
+
+/**
+ *网站营销人员浏览订单列表
+ */
+.orderTypeTableView .table-column{
+    -fx-font-size: 16px;
+    -fx-alignment: center-left;
+    -fx-min-height: 55;
+}
+
+/**
+ *信息标签的大小
+ */
+.infoLabelSize{
+    -fx-font-size:17px;
+}
+
+/**
+ *设置滑块的背景颜色
+ */
+.sliderColor{
+    -fx-background-color: #0080FF;
+}
+
+
+
 
 
 

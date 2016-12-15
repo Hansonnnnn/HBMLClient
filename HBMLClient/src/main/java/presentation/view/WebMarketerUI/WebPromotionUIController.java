@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
  */
 public class WebPromotionUIController {
 
+
+
     private VBox infoVBox;
     private VBox thisVBox;
     public void init(VBox infoVBox,VBox thisVBox){

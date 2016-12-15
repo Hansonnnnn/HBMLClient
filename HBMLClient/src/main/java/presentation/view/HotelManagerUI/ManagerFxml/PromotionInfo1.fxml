@@ -29,7 +29,7 @@
       </Pane>
       <VBox prefHeight="483.0" prefWidth="759.0">
          <padding>
-            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            <Insets bottom="10.0" left="40.0" right="20.0" top="10.0" />
          </padding>
          <children>
             <VBox prefWidth="620.0" spacing="15.0" styleClass="infoVBox">
@@ -43,7 +43,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="所需会员等级 :" />
-                        <ComboBox fx:id="" prefHeight="35.0" prefWidth="180.0" />
+                        <ComboBox fx:id="memberLevelComboBox" prefHeight="35.0" prefWidth="180.0" />
                         <Pane prefHeight="40.0" prefWidth="273.0">
                            <children>
                               <Label layoutX="23.0" layoutY="8.0" styleClass="orderInfoLableSize" text="折扣(%) :" />

@@ -1,10 +1,15 @@
 package presentation.view.HotelManagerUI;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * Created by LENOVO on 2016/12/1.
@@ -12,6 +17,7 @@ import javafx.stage.Stage;
 public class HotelStaffUIController {
 
     @FXML private VBox infoVBox;
+    @FXML private Label sliderLabel;
 
     private Stage stage;
     private Scene loginScene;
@@ -36,6 +42,7 @@ public class HotelStaffUIController {
     private void toOrderBrowse(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new OrderBrowseUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,180);
     }
 
     /**
@@ -45,6 +52,7 @@ public class HotelStaffUIController {
     private void toInputRoom(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new InputRoomUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,222);
     }
 
     /**
@@ -54,6 +62,7 @@ public class HotelStaffUIController {
     private void toHotelInfo(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new HotelInfoUI(stage,infoVBox));
+        moveOperationButtonBackground(sliderLabel,264);
     }
 
     /**
@@ -63,6 +72,19 @@ public class HotelStaffUIController {
     private void toHotelPromotion(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new HotelPromotionUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,306);
+    }
+
+    /**
+     * 设置按钮背景色滑动效果
+     */
+    private void moveOperationButtonBackground(Label label, double y){
+        Timeline timeline=new Timeline();
+        timeline.setAutoReverse(false);
+        KeyValue newY=new KeyValue(label.layoutYProperty(),y);
+        KeyFrame kf=new KeyFrame(Duration.millis(300),newY);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
     }
 
 }

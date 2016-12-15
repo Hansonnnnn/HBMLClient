@@ -1,12 +1,16 @@
 package presentation.view.WebManagerUI;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
+import javafx.util.Duration;
 
 
 /**
@@ -19,6 +23,7 @@ public class WebManagerUIController {
     @FXML private Button staffInfoButton;
     @FXML private Button marketerInfoButton;
     @FXML private VBox infoVBox;
+    @FXML private Label sliderLabel;
 
     private Stage stage;
     private Scene beforeScene;
@@ -27,7 +32,6 @@ public class WebManagerUIController {
         this.beforeScene=beforeScene;
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new AddHotelUI());
-        addHotelButton.setStyle("-fx-background-color: #0080FF");
     }
 
     /**
@@ -45,15 +49,7 @@ public class WebManagerUIController {
     private void toAddHotel(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new AddHotelUI());
-        addHotelButton.setStyle("-fx-background-color:#0080FF");
-        addMarketerButton.setStyle("-fx-background-color:transparent");
-        userInfoButton.setStyle("-fx-background-color:transparent");
-        staffInfoButton.setStyle("-fx-background-color:transparent");
-        marketerInfoButton.setStyle("-fx-background-color:transparent");
-//        buttonBackground(addMarketerButton);
-//        buttonBackground(userInfoButton);
-//        buttonBackground(staffInfoButton);
-//        buttonBackground(marketerInfoButton);
+        moveOperationButtonBackground(sliderLabel,160);
     }
 
     /**
@@ -63,51 +59,7 @@ public class WebManagerUIController {
     private void toUserInfo(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new UserInfoUI());
-        addHotelButton.setStyle("-fx-background-color:transparent");
-        addMarketerButton.setStyle("-fx-background-color:transparent");
-        staffInfoButton.setStyle("-fx-background-color:transparent");
-        marketerInfoButton.setStyle("-fx-background-color:transparent");
-//        buttonBackground(addHotelButton);
-//        buttonBackground(addMarketerButton);
-//        buttonBackground(staffInfoButton);
-//        buttonBackground(marketerInfoButton);
-        userInfoButton.setStyle("-fx-background-color:#0080FF");
-    }
-
-    /**
-     * 点击网站营销人员信息管理按钮，跳转至对应界面
-     */
-    @FXML
-    private void toWebMarketerInfo(){
-        infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new WebMarketerInfoUI());
-        addHotelButton.setStyle("-fx-background-color:transparent");
-        addMarketerButton.setStyle("-fx-background-color:transparent");
-        userInfoButton.setStyle("-fx-background-color:transparent");
-        staffInfoButton.setStyle("-fx-background-color:transparent");
-//        buttonBackground(addHotelButton);
-//        buttonBackground(addMarketerButton);
-//        buttonBackground(userInfoButton);
-//        buttonBackground(staffInfoButton);
-        marketerInfoButton.setStyle("-fx-background-color:#0080FF");
-    }
-
-    /**
-     * 点击酒店工作人员信息管理按钮，跳转至对应界面
-     */
-    @FXML
-    private void toHotelStuffInfo(){
-        infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new SearchHotelStaffUI(infoVBox));
-        addHotelButton.setStyle("-fx-background-color:transparent");
-        addMarketerButton.setStyle("-fx-background-color:transparent");
-        userInfoButton.setStyle("-fx-background-color:transparent");
-        marketerInfoButton.setStyle("-fx-background-color:transparent");
-//        buttonBackground(addHotelButton);
-//        buttonBackground(addMarketerButton);
-//        buttonBackground(userInfoButton);
-//        buttonBackground(marketerInfoButton);
-        staffInfoButton.setStyle("-fx-background-color:#0080FF");
+        moveOperationButtonBackground(sliderLabel,202);
     }
 
     /**
@@ -117,27 +69,43 @@ public class WebManagerUIController {
     private void toAddWebMarketer(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new AddWebMarketerUI());
-        addHotelButton.setStyle("-fx-background-color:transparent");
-        userInfoButton.setStyle("-fx-background-color:transparent");
-        staffInfoButton.setStyle("-fx-background-color:transparent");
-        marketerInfoButton.setStyle("-fx-background-color:transparent");
-//        buttonBackground(addHotelButton);
-//        buttonBackground(userInfoButton);
-//        buttonBackground(staffInfoButton);
-//        buttonBackground(marketerInfoButton);
-        addMarketerButton.setStyle("-fx-background-color:#0080FF");
+        moveOperationButtonBackground(sliderLabel,244);
     }
 
     /**
-     * 当鼠标移到按钮上时，背景变为蓝色
+     * 点击网站营销人员信息管理按钮，跳转至对应界面
      */
-    private void buttonBackground(Button button){
-        button.setOnMouseEntered((MouseEvent e)->{
-            button.setStyle("-fx-background-color: #0080FF");
-        });
-//        button.setOnMouseExited((MouseEvent e)->{
-//            button.setStyle("-fx-background-color: #BEBEBE");
-//        });
+    @FXML
+    private void toWebMarketerInfo(){
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new WebMarketerInfoUI());
+        moveOperationButtonBackground(sliderLabel,286);
     }
+
+    /**
+     * 点击酒店工作人员信息管理按钮，跳转至对应界面
+     */
+    @FXML
+    private void toHotelStuffInfo(){
+        infoVBox.getChildren().remove(0);
+        infoVBox.getChildren().add(new SearchHotelStaffUI(infoVBox));
+        moveOperationButtonBackground(sliderLabel,328);
+    }
+
+
+
+    /**
+     * 设置按钮背景色滑动效果
+     */
+    private void moveOperationButtonBackground(Label label, double y){
+        Timeline timeline=new Timeline();
+        timeline.setAutoReverse(false);
+        KeyValue newY=new KeyValue(label.layoutYProperty(),y);
+        KeyFrame kf=new KeyFrame(Duration.millis(300),newY);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
+    }
+
+
 
 }

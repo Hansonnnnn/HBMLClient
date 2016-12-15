@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class ExceptionOrderUI extends VBox{
     public ExceptionOrderUI(){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/ExceptionOrder.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/ExceptionOrder2.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {
