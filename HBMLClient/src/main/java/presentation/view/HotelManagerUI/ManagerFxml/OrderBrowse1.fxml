@@ -50,39 +50,6 @@
                   <TableColumn fx:id="unexecutedOperationTableColumn" prefWidth="130.0" text="操作" />
               </columns>
             </TableView>
-            <TableView fx:id="executedOrderTableView" maxWidth="602.0" prefHeight="541.0" prefWidth="602.0" styleClass="roomTypeTableView" visible="false">
-              <columns>
-                <TableColumn fx:id="executedCustomerNameTableColumn" prefWidth="120.0" text="客户ID" />
-                <TableColumn fx:id="executedOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
-                  <TableColumn fx:id="executedPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
-                  <TableColumn fx:id="executedOperationTableColumn" prefWidth="130.0" text="操作" />
-              </columns>
-               <HBox.margin>
-                  <Insets left="-602.0" />
-               </HBox.margin>
-            </TableView>
-            <TableView fx:id="abnormalOrderTableView" maxWidth="602.0" prefHeight="200.0" prefWidth="602.0" styleClass="roomTypeTableView" visible="false">
-              <columns>
-                <TableColumn fx:id="abnormalCustomerNameTableColumn" prefWidth="120.0" text="客户ID" />
-                <TableColumn fx:id="abnormalOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
-                  <TableColumn fx:id="abnormalPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
-                  <TableColumn fx:id="abnormalOperationTableColumn" prefWidth="130.0" text="操作" />
-              </columns>
-               <HBox.margin>
-                  <Insets left="-602.0" />
-               </HBox.margin>
-            </TableView>
-            <TableView fx:id="cancelledOrderTableView" maxWidth="602.0" prefHeight="200.0" prefWidth="602.0" styleClass="roomTypeTableView" visible="false">
-              <columns>
-                <TableColumn fx:id="cancelledCustomerNameTableColumn" prefWidth="120.0" text="客户ID" />
-                <TableColumn fx:id="cancelledOrderIdTableColumn" prefWidth="200.0" text="订单ID" />
-                  <TableColumn fx:id="cancelledPriceTableColumn" prefWidth="150.0" text="订单价值(元)" />
-                  <TableColumn fx:id="cancelledOperationTableColumn" prefWidth="139.0" text="操作" />
-              </columns>
-               <HBox.margin>
-                  <Insets left="-602.0" />
-               </HBox.margin>
-            </TableView>
          </children>
          <padding>
             <Insets left="40.0" top="5.0" />

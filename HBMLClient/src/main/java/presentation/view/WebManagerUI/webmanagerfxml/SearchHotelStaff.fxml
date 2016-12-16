@@ -44,11 +44,11 @@
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="479.0" prefWidth="660.0">
                <children>
-                  <TableView fx:id="hotelTableView" maxWidth="482.0" prefHeight="484.0" prefWidth="532.0">
+                  <TableView fx:id="hotelTableView" maxWidth="482.0" prefHeight="484.0" prefWidth="482.0">
                     <columns>
-                      <TableColumn fx:id="hotelIdTableColumn" prefWidth="150.0" text="酒店编号" />
-                      <TableColumn fx:id="hotelNameTableColumn" minWidth="0.0" prefWidth="200.0" text="酒店名称" />
-                        <TableColumn fx:id="operationTableColumn" prefWidth="130.0" text="操作" />
+                      <TableColumn fx:id="hotelIdTableColumn" prefWidth="150.0" sortable="false" text="酒店编号" />
+                      <TableColumn fx:id="hotelNameTableColumn" minWidth="0.0" prefWidth="200.0" sortable="false" text="酒店名称" />
+                        <TableColumn fx:id="operationTableColumn" prefWidth="130.0" sortable="false" text="操作" />
                     </columns>
                   </TableView>
                </children>

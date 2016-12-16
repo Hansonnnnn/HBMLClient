@@ -1,9 +1,11 @@
 package presentation.view.application;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import presentation.view.HotelManagerUI.HotelStaffUI;
 import presentation.view.WebManagerUI.WebManagerUI;
@@ -41,14 +43,27 @@ public class WorkerLoginUIController {
     private void workerLogin(){
         if(workerAccountTextField.getText().equals("11")
                 &&workerPasswordTextField.getText().equals("admin")){
-//				primaryStage.setScene(new WebMarker(new Group(),primaryStage,scene));
             stage.setScene(new WebMarketerUI(new Group(),stage,thisScene));
+            centerStage(stage);
         }else if(workerAccountTextField.getText().equals("01")
                 &&workerPasswordTextField.getText().equals("admin")){
            stage.setScene(new HotelStaffUI(new Group(),stage,thisScene));
+           centerStage(stage);
         }else if(workerAccountTextField.getText().equals("10")
                 &&workerPasswordTextField.getText().equals("admin")){
+            centerStage(stage);
            stage.setScene(new WebManagerUI(new Group(),stage,thisScene));
+           centerStage(stage);
         }
+    }
+
+    /**
+     * 设置stage位于屏幕中间
+     * @param newStage
+     */
+    private void centerStage(Stage newStage){
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        newStage.setX((primScreenBounds.getWidth() - newStage.getWidth()) / 2);
+        newStage.setY((primScreenBounds.getHeight() - newStage.getHeight()) / 2);
     }
 }

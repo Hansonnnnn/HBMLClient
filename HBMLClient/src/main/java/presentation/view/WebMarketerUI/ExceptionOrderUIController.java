@@ -5,6 +5,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -14,6 +15,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+
+import javax.swing.*;
 
 /**
  * Created by LENOVO on 2016/12/2.
@@ -35,10 +38,11 @@ public class ExceptionOrderUIController {
     @FXML private TableColumn revokeColumn;
     @FXML private Label sliderLabel;
 
-
+    private Stage stage;
     private ObservableList<ExceptionOrder> unexecutedOrderData;
     private ObservableList<ExceptionOrder> exceptionOrderData;
-    public void init(){
+    public void init(Stage stage){
+        this.stage=stage;
         initTableView();
     }
 
@@ -161,6 +165,9 @@ public class ExceptionOrderUIController {
             revokeImageView.setFitHeight(35);
             revokeImageView.setFitWidth(35);
             revokeButton.setGraphic(revokeImageView);
+            revokeButton.setOnAction((ActionEvent e)->{
+                new ValueJudgeUI(stage);
+            });
         }
 
         @Override

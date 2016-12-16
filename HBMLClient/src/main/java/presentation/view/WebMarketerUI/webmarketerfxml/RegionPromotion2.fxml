@@ -8,12 +8,12 @@
    <children>
       <TableView fx:id="regionPromotionTableView" maxWidth="617.0" prefHeight="426.0" prefWidth="617.0" styleClass="orderTypeTableView">
         <columns>
-          <TableColumn fx:id="proviceTableColumn" prefWidth="100.0" text="省" />
-          <TableColumn fx:id="cityTableColumn" prefWidth="100.0" text="市" />
-            <TableColumn fx:id="regionTableColumn" prefWidth="120.0" text="商圈" />
-            <TableColumn fx:id="memberGradeTableColumn" prefWidth="100.0" text="会员等级" />
-            <TableColumn fx:id="discountTableColumn" prefWidth="120.0" text="折扣优惠(%)" />
-            <TableColumn fx:id="operationTableColumn" prefWidth="75.0" text="操作" />
+          <TableColumn fx:id="proviceTableColumn" prefWidth="100.0" sortable="false" text="省" />
+          <TableColumn fx:id="cityTableColumn" prefWidth="100.0" sortable="false" text="市" />
+            <TableColumn fx:id="regionTableColumn" prefWidth="120.0" sortable="false" text="商圈" />
+            <TableColumn fx:id="memberGradeTableColumn" prefWidth="100.0" sortable="false" text="会员等级" />
+            <TableColumn fx:id="discountTableColumn" prefWidth="120.0" sortable="false" text="折扣优惠(%)" />
+            <TableColumn fx:id="operationTableColumn" prefWidth="75.0" sortable="false" text="操作" />
         </columns>
       </TableView>
       <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="738.0" spacing="15.0">

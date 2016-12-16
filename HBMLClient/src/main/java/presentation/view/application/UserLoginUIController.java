@@ -1,7 +1,9 @@
 package presentation.view.application;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -38,4 +40,7 @@ public class UserLoginUIController {
     private void toWorkerLogin(){
         stage.setScene(new WorkerLoginUI(new Group(),stage));
     }
+
+
+
 }

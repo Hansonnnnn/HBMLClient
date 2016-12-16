@@ -2,6 +2,7 @@ package presentation.view.WebManagerUI;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -92,6 +93,17 @@ public class SearchHotelStaffUIController {
             deleteTooltip.setStyle("-fx-background-color:#d81e06;-fx-text-fill:#ffffff");
             viewHotelStaffInfoButton.setTooltip(viewTooltip);
             deleteButton.setTooltip(deleteTooltip);
+            buttonAction();
+        }
+
+        private void buttonAction(){
+            viewHotelStaffInfoButton.setOnAction((ActionEvent e)->{
+                infoVBox.getChildren().remove(0);
+                infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox));
+            });
+            deleteButton.setOnAction((ActionEvent e)->{
+
+            });
         }
 
         @Override

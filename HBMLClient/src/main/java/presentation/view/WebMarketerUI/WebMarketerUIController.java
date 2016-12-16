@@ -30,7 +30,7 @@ public class WebMarketerUIController {
     public void init(Stage stage,Scene loginScene){
         this.stage=stage;
         this.loginScene=loginScene;
-        infoVBox.getChildren().add(new ExceptionOrderUI());
+        infoVBox.getChildren().add(new ExceptionOrderUI(stage));
     }
 
     /**
@@ -48,7 +48,7 @@ public class WebMarketerUIController {
     @FXML
     private void toExceptionOrder(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new ExceptionOrderUI());
+        infoVBox.getChildren().add(new ExceptionOrderUI(stage));
         moveOperationButtonBackground(sliderLabel,160);
     }
 

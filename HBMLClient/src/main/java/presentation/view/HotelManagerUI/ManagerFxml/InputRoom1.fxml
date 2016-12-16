@@ -24,10 +24,11 @@
             <TextField fx:id="roomTypeTextField" maxWidth="120.0" prefHeight="35.0" promptText="房间类型" />
             <TextField fx:id="roomIdTextField" maxWidth="120.0" prefHeight="35.0" promptText="房间号" />
             <TextField fx:id="roomPriceTextField" prefHeight="35.0" prefWidth="120.0" promptText="房间价格" />
-            <Button mnemonicParsing="false" onAction="#addRoomType" prefHeight="35.0" prefWidth="70.0" text="录入">
+            <Button fx:id="inputButton" mnemonicParsing="false" onAction="#addRoomType" prefHeight="35.0" prefWidth="70.0" text="录入">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
+                  <String fx:value="orderInfoLableSize" />
                </styleClass>
             </Button>
          </children>

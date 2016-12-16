@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import vo.OrderVO;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  */
 public class HotelOrderInfoUI extends VBox{
 
-    public HotelOrderInfoUI(VBox infoVBox,VBox beforeVBox) {
+    public HotelOrderInfoUI(VBox infoVBox, VBox beforeVBox, OrderVO orderVO) {
             FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/HotelOrderInfo.fxml"));
             try{
                 this.getChildren().add(fxmlLoader.load());
@@ -22,6 +23,6 @@ public class HotelOrderInfoUI extends VBox{
         }
 
         HotelOrderInfoUIController hotelOrderInfoUIController = fxmlLoader.getController();
-        hotelOrderInfoUIController.getScene(infoVBox,beforeVBox);
+        hotelOrderInfoUIController.getScene(infoVBox,beforeVBox,orderVO);
     }
 }

@@ -3,6 +3,7 @@ package presentation.view.HotelManagerUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import vo.OrderVO;
 
 /**
  * Created by LENOVO on 2016/11/25.
@@ -29,13 +30,14 @@ public class HotelOrderInfoUIController {
     @FXML private Label havaChildLabel;
 
 
-
-
     private VBox infoVBox;
     private VBox beforeVBox;
-    public void getScene(VBox infoVBox,VBox beforeVBox){
+    private OrderVO orderVO;
+    public void getScene(VBox infoVBox, VBox beforeVBox, OrderVO orderVO){
         this.infoVBox=infoVBox;
         this.beforeVBox=beforeVBox;
+        this.orderVO=orderVO;
+        init();
     }
 
     /**
@@ -45,6 +47,20 @@ public class HotelOrderInfoUIController {
     private void back(){
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(beforeVBox);
+    }
+
+    /**
+     * 将订单信息写入
+     */
+    private void init(){
+        userIdLabel.setText(String.valueOf(orderVO.getUserID()));
+//        phoneLabel.setText(orderVO.get);
+        orderIDLabel.setText(String.valueOf(orderVO.getOrderID()));
+
+
+        roomIDLabel.setText(String.valueOf(orderVO.getRoomInfoID()));
+//        roomTypeLabel.setText(String.valueOf(orderVO.get));
+        checkInNumberLabel.setText(String.valueOf(orderVO.getNumber()));
     }
 
 }

@@ -29,40 +29,13 @@ import vo.OrderVO;
 public class OrderBrowseUIController {
 
     /**
-     * 未执行订单列表
+     * 酒店订单列表
      */
     @FXML private TableView unexecutedOrderTableView;
     @FXML private TableColumn unexecutedCustomerNameTableColumn;
     @FXML private TableColumn unexecutedOrderIdTableColumn;
     @FXML private TableColumn unexecutedPriceTableColumn;
     @FXML private TableColumn unexecutedOperationTableColumn;
-
-    /**
-     * 已执行订单列表
-     */
-    @FXML private TableView executedOrderTableView;
-    @FXML private TableColumn executedCustomerNameTableColumn;
-    @FXML private TableColumn executedOrderIdTableColumn;
-    @FXML private TableColumn executedPriceTableColumn;
-    @FXML private TableColumn executedOperationTableColumn;
-
-    /**
-     * 异常订单列表
-     */
-    @FXML private TableView abnormalOrderTableView;
-    @FXML private TableColumn abnormalCustomerNameTableColumn;
-    @FXML private TableColumn abnormalOrderIdTableColumn;
-    @FXML private TableColumn abnormalPriceTableColumn;
-    @FXML private TableColumn abnormalOperationTableColumn;
-
-    /**
-     * 已撤销订单
-     */
-    @FXML private TableView cancelledOrderTableView;
-    @FXML private TableColumn cancelledCustomerNameTableColumn;
-    @FXML private TableColumn cancelledOrderIdTableColumn;
-    @FXML private TableColumn cancelledPriceTableColumn;
-    @FXML private TableColumn cancelledOperationTableColumn;
 
     @FXML private Label orderBottomLabel;
 
@@ -86,11 +59,14 @@ public class OrderBrowseUIController {
      */
     @FXML
     private void toUnexecutedOrder(){
-        unexecutedOrderTableView.setVisible(true);
-        executedOrderTableView.setVisible(false);
-        abnormalOrderTableView.setVisible(false);
-        cancelledOrderTableView.setVisible(false);
         moveOrderButtonBottomBorder(orderBottomLabel,100);
+        unexecutedOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,0);
+            }
+        });
+        unexecutedOrderTableView.setItems(unexecutedData);
     }
 
     /**
@@ -98,11 +74,14 @@ public class OrderBrowseUIController {
      */
     @FXML
     private void toExecutedOrder(){
-        unexecutedOrderTableView.setVisible(false);
-        executedOrderTableView.setVisible(true);
-        abnormalOrderTableView.setVisible(false);
-        cancelledOrderTableView.setVisible(false);
         moveOrderButtonBottomBorder(orderBottomLabel,220);
+        unexecutedOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,1);
+            }
+        });
+        unexecutedOrderTableView.setItems(executedData);
     }
 
     /**
@@ -110,11 +89,15 @@ public class OrderBrowseUIController {
      */
     @FXML
     private void toAbnormalOrder(){
-        unexecutedOrderTableView.setVisible(false);
-        executedOrderTableView.setVisible(false);
-        abnormalOrderTableView.setVisible(true);
-        cancelledOrderTableView.setVisible(false);
         moveOrderButtonBottomBorder(orderBottomLabel,340);
+        unexecutedOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,2);
+            }
+        });
+        unexecutedOrderTableView.setItems(abnormalData);
+
     }
 
     /**
@@ -122,11 +105,14 @@ public class OrderBrowseUIController {
      */
     @FXML
     private void toCancelledOrder(){
-        unexecutedOrderTableView.setVisible(false);
-        executedOrderTableView.setVisible(false);
-        abnormalOrderTableView.setVisible(false);
-        cancelledOrderTableView.setVisible(true);
         moveOrderButtonBottomBorder(orderBottomLabel,460);
+        unexecutedOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
+            @Override
+            public TableCell call(TableColumn param) {
+                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,3);
+            }
+        });
+        unexecutedOrderTableView.setItems(cancelledData);
 
     }
 
@@ -157,58 +143,29 @@ public class OrderBrowseUIController {
         });
         unexecutedData=FXCollections.observableArrayList();
         unexecutedData.add(new OrderVO(000001,00,0,null,0, OrderStateMessage.Unexecuted
-        ,null,null,null,null,null,0,0,100));
+        ,null,null,null,null,null,2,0,100));
         unexecutedData.add(new OrderVO(000002,00,0,null,0, OrderStateMessage.Unexecuted
-                ,null,null,null,null,null,0,0,100));
+                ,null,null,null,null,null,3,0,100));
         unexecutedOrderTableView.setItems(unexecutedData);
 
-        executedCustomerNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        executedOrderIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
-        executedPriceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        executedOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
-            @Override
-            public TableCell call(TableColumn param) {
-                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,1);
-            }
-        });
         executedData=FXCollections.observableArrayList();
         executedData.add(new OrderVO(000003,01,0,null,0, OrderStateMessage.Executed
-                ,null,null,null,null,null,0,0,200));
+                ,null,null,null,null,null,4,0,200));
         executedData.add(new OrderVO(000004,01,0,null,0, OrderStateMessage.Executed
-                ,null,null,null,null,null,0,0,200));
-        executedOrderTableView.setItems(executedData);
+                ,null,null,null,null,null,5,0,200));
 
-        abnormalCustomerNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        abnormalOrderIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
-        abnormalPriceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        abnormalOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
-            @Override
-            public TableCell call(TableColumn param) {
-                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,2);
-            }
-        });
         abnormalData=FXCollections.observableArrayList();
         abnormalData.add(new OrderVO(000005,10,0,null,0, OrderStateMessage.Abnormal
-                ,null,null,null,null,null,0,0,298));
+                ,null,null,null,null,null,6,0,298));
         abnormalData.add(new OrderVO(000006,10,0,null,0, OrderStateMessage.Abnormal
-                ,null,null,null,null,null,0,0,298));
-        abnormalOrderTableView.setItems(abnormalData);
+                ,null,null,null,null,null,7,0,298));
 
-        cancelledCustomerNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        cancelledOrderIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
-        cancelledPriceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        cancelledOperationTableColumn.setCellFactory(new Callback<TableColumn<OrderVO,Boolean>, TableCell<OrderVO,Boolean>>() {
-            @Override
-            public TableCell call(TableColumn param) {
-                return new HotelOrderOperationButtonCell(infoVBox,thisVBox,3);
-            }
-        });
         cancelledData=FXCollections.observableArrayList();
         cancelledData.add(new OrderVO(000007,11,0,null,0, OrderStateMessage.Cancelled
-                ,null,null,null,null,null,0,0,398));
+                ,null,null,null,null,null,8,0,398));
         cancelledData.add(new OrderVO(0000007,11,0,null,0, OrderStateMessage.Cancelled
-                ,null,null,null,null,null,0,0,398));
-        cancelledOrderTableView.setItems(cancelledData);
+                ,null,null,null,null,null,9,0,398));
+
     }
 
 
@@ -258,7 +215,9 @@ public class OrderBrowseUIController {
         private void ButtonEvent(){
             viewButton.setOnAction((ActionEvent e)->{
                 infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new HotelOrderInfoUI(infoVBox,beforeVBox));
+                int seletedIndex=getTableRow().getIndex();
+                OrderVO orderVO=(OrderVO)unexecutedOrderTableView.getItems().get(seletedIndex);
+                infoVBox.getChildren().add(new HotelOrderInfoUI(infoVBox,beforeVBox,orderVO));
             });
             executeButton.setOnAction((ActionEvent e)->{
 
@@ -270,7 +229,6 @@ public class OrderBrowseUIController {
 
             });
         }
-
         @Override
         protected  void updateItem(Boolean t,boolean empty){
             super.updateItem(t,empty);

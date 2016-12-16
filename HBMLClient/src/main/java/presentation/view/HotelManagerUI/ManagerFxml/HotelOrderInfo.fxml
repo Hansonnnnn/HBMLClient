@@ -40,13 +40,13 @@
                <children>
                   <HBox prefHeight="24.0" prefWidth="474.0" spacing="10.0">
                      <children>
-                        <Label styleClass="orderInfoLableSize" text="姓名 :" />
+                        <Label styleClass="orderInfoLableSize" text="客户ID :" />
                         <Label fx:id="nameLabel" styleClass="orderInfoLableSize" text="Alex Yu" />
                      </children>
                   </HBox>
                   <HBox prefHeight="24.0" prefWidth="467.0" spacing="10.0">
                      <children>
-                        <Label styleClass="orderInfoLableSize" text="ID :" />
+                        <Label styleClass="orderInfoLableSize" text="订单ID :" />
                         <Label fx:id="userIdLabel" styleClass="orderInfoLableSize" text="58100010202" />
                      </children>
                   </HBox>
