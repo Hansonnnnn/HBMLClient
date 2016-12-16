@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/model/PromotionConditionHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/test/Alex_Test_Promotion.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources/73597204-32e3-49b2-9ee4-8c75aed20adc.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Credit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Promotion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/HBMLClient/src/test/Alex_Test_Promotion.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/helper/PromotionHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/helper/PromotionHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/PromotionViewControllerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/controller/PromotionViewControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/promotionui/PromotionViewControllerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/PromotionDao.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/PromotionDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,8 +83,8 @@
       <file leaf-file-name="UserVO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="186">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -189,8 +190,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,9 +201,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -734,7 +745,8 @@
       <workItem from="1481847377994" duration="61000" />
       <workItem from="1481862541685" duration="316000" />
       <workItem from="1481863570242" duration="428000" />
-      <workItem from="1481895428791" duration="30000" />
+      <workItem from="1481895428791" duration="786000" />
+      <workItem from="1481905509016" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -820,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481862826245</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit ver 0.2.4&#10;modify promotionbl,creditbl&#10;//code for &quot;get the selected promotion&quot; part&#10;tests are left before the next commit&#10;&#10;&#10;&#10;">
+      <created>1481895504955</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1481895504955</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7911000" />
+    <option name="totallyTimeSpent" value="8675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -841,7 +860,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -905,7 +924,8 @@
     <MESSAGE value="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.2&#10;//test commit&#10;modify promotionbl&#10;&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.3&#10;modify promotionbl,creditbl, and userbl&#10;//refine the logic in those 3 packages&#10;//now only the logic &quot;get the selected promotion&quot; is left&#10;&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.3&#10;modify promotionbl,creditbl, and userbl&#10;//refine the logic in those 3 packages&#10;//now only the logic &quot;get the selected promotion&quot; is left&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.4&#10;modify promotionbl,creditbl&#10;//code for &quot;get the selected promotion&quot; part&#10;tests are left before the next commit&#10;&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.4&#10;modify promotionbl,creditbl&#10;//code for &quot;get the selected promotion&quot; part&#10;tests are left before the next commit&#10;&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1268,8 +1288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="186">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>
