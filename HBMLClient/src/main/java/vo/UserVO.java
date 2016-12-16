@@ -113,6 +113,7 @@ public class UserVO {
         this.userType=userType;
         this.accountName=accountName;
         this.password=password;
+        this.memberType=MemberType.Tourist;
 
     }
 
