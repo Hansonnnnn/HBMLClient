@@ -1,5 +1,6 @@
 package presentation.view.customerui.customerui;
 
+import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -8,9 +9,14 @@ import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -38,9 +44,9 @@ public class FirstPageUIController {
 	
 	@FXML private Button searchTwoButton;
 	
-	@FXML private ChoiceBox provinceBox;
-	@FXML private ChoiceBox cityBox;
-	@FXML private ChoiceBox regionBox;
+	@FXML private ChoiceBox<String> provinceBox;
+	@FXML private ChoiceBox<String> cityBox;
+	@FXML private ChoiceBox<String> regionBox;
 	@FXML private DatePicker checkinTimePicker;
 	@FXML private DatePicker checkoutTimePicker;
 	@FXML private Button searchByConditionsButton;
@@ -115,8 +121,8 @@ public class FirstPageUIController {
 	{
 		int star = 1;
 		//获取两个DatePicker里面的时间
-		checkinTime = dateHelper.localDateToDate(checkinTimePicker.getValue());
-		checkoutTime = dateHelper.localDateToDate(checkoutTimePicker.getValue());
+		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
+		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
 		//获得星级
 		if(fiveStarCheckBox.isSelected())
 		{
@@ -171,13 +177,17 @@ public class FirstPageUIController {
 		defaultList = FXCollections.observableArrayList();
 		defaultList.add("");
 		
+		provinceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				provinceName = provinceShowList.get(newValue.intValue());
+				cityBox.setItems(defaultList);
+				regionBox.setItems(defaultList);
+				initCityBox();
+			}
+		});
 		
-//		provinceBox.setOnAction((Event e)->{
-//			provinceName = provinceBox.getSelectionModel().getSelectedItem().toString();
-//			cityBox.setItems(defaultList);
-//			regionBox.setItems(defaultList);
-//			initCityBox();
-//		});
 	}
 	
 	private void initCityBox()
@@ -188,11 +198,19 @@ public class FirstPageUIController {
 		defaultList = FXCollections.observableArrayList();
 		defaultList.add("");
 		cityBox.setItems(cityShowList);
-		cityBox.setOnAction((Event e)->{
-			cityName = cityBox.getSelectionModel().getSelectedItem().toString();
-			regionBox.setItems(defaultList);
-			initRegionBox();
-//			System.out.println(cityName);
+		
+		cityBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				if (newValue.intValue()>=0) {
+					cityName = cityShowList.get(newValue.intValue());
+					regionBox.setItems(defaultList);
+					initRegionBox();
+				}
+				
+			}
+			
 		});
 	}
 	
