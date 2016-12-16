@@ -35,10 +35,10 @@
          <children>
             <TableView fx:id="hotelPromotionTableView" maxWidth="682.0" prefHeight="471.0" prefWidth="652.0" styleClass="roomTypeTableView">
                <columns>
-                  <TableColumn fx:id="promotionNameTableColumn" prefWidth="150.0" text="促销策略名" />
+                  <TableColumn fx:id="promotionNameTableColumn" prefWidth="150.0" sortable="false" text="促销策略名" />
                   <TableColumn fx:id="promotionStartTableColumn" prefWidth="200.0" text="策略开始时间" />
-                  <TableColumn fx:id="promotionEndTableColumn" prefWidth="200.0" text="策略结束时间" />
-                  <TableColumn fx:id="operationTableColumn" prefWidth="130.0" text="操作" />
+                  <TableColumn fx:id="promotionEndTableColumn" prefWidth="200.0" sortable="false" text="策略结束时间" />
+                  <TableColumn fx:id="operationTableColumn" prefWidth="130.0" sortable="false" text="操作" />
                </columns>
             </TableView>
             <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="709.0">
@@ -80,8 +80,8 @@
             </Pane>
             <Pane prefHeight="119.0" prefWidth="759.0">
                <children>
-                  <Button layoutX="200.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="编辑" />
-                  <Button layoutX="459.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="确认修改" />
+                  <Button layoutX="200.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="confirmButton" text="编辑" />
+                  <Button layoutX="459.0" layoutY="45.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="confirmButton" text="确认修改" />
                </children>
             </Pane>
          </children>

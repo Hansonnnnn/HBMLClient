@@ -2,6 +2,7 @@ package presentation.view.WebMarketerUI;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -9,7 +10,7 @@ import java.io.IOException;
  * Created by LENOVO on 2016/12/1.
  */
 public class ExceptionOrderUI extends VBox{
-    public ExceptionOrderUI(){
+    public ExceptionOrderUI(Stage stage){
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/ExceptionOrder2.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
@@ -18,7 +19,7 @@ public class ExceptionOrderUI extends VBox{
         }
 
         ExceptionOrderUIController exceptionOrderUIController=fxmlLoader.getController();
-        exceptionOrderUIController.init();
+        exceptionOrderUIController.init(stage);
         this.getStylesheets().add(ExceptionOrderUI.class.getResource("webmarketer.css").toExternalForm());
     }
 }

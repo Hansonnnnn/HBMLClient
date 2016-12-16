@@ -50,7 +50,11 @@
                   <Label styleClass="infoLabelSize" text="充值金额 :" GridPane.rowIndex="3" />
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <TextField />
+                        <TextField>
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="infoLabelSize" />
+                           </styleClass></TextField>
                         <Label styleClass="infoLabelSize" text="元" />
                      </children>
                   </HBox>

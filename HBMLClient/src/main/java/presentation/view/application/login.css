@@ -51,3 +51,26 @@
     /*-fx-cursor: v_resize;*/
     -fx-cursor:hand;
 }
+
+.dialogButton{
+    -fx-text-fill:white;
+    -fx-font-family:"微软雅黑";
+    -fx-border-radius: 4px;
+    -fx-background-color: linear-gradient(#0080FF, #0072E3);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+/**
+ *修改mydialog对话框的背景色
+ */
+.dialogBackground{
+    -fx-background-color: #EAEAEA;
+}
+
+.transButton{
+    -fx-background-color: transparent;
+}
+
+.dialogLabelSize{
+    -fx-font-size: 17px;
+}

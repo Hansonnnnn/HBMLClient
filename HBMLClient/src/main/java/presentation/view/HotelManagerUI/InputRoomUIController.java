@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import  javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -12,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import presentation.view.application.MyDialog;
 
 /**
  * Created by LENOVO on 2016/11/25.
@@ -24,14 +24,16 @@ public class InputRoomUIController {
     @FXML private TableColumn roomTypeColumn;
     @FXML private TableColumn roomNumberColumn;
     @FXML private TableColumn viewInfoColumn;
-
+    @FXML private Button inputButton;
 
     private VBox infoVBox;
     private VBox thisVBox;
+    private Stage stage;
     private ObservableList data;
-    public void init(VBox infoVBox,VBox thisVBox){
+    public void init(VBox infoVBox,VBox thisVBox,Stage stage){
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        this.stage=stage;
         addTableView();
     }
 
@@ -61,12 +63,15 @@ public class InputRoomUIController {
      */
     @FXML
     private void addRoomType(){
-        if((roomTypeTextField!=null)&&(roomIdTextField!=null)&&(roomPriceTextField!=null)){
+        if((roomTypeTextField.getText()!=null)&&(roomIdTextField.getText()!=null)&&(roomPriceTextField.getText()!=null)
+                &&(!roomTypeTextField.getText().equals(""))&&(!roomIdTextField.getText().equals(""))&&(!roomPriceTextField.getText().equals(""))){
             data.add(new RoomTypeInfo(roomTypeTextField.getText(),Integer.parseInt(roomIdTextField.getText())));
             roomTypeTextField.setText("");
             roomIdTextField.setText("");
             roomPriceTextField.setText("");
             roomTypeTableView.refresh();
+        }else{
+            new MyDialog(stage,"请将录入的客房信息填写完整",0);
         }
     }
 

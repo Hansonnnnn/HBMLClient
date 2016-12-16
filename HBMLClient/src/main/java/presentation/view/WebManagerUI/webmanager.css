@@ -35,11 +35,11 @@
  *添加信息显示框背景和边界
  */
 .infoVBox{
-    -fx-background-color: #BEBEBE;
     -fx-border-width: 2px;
     -fx-border-style: solid;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
+    -fx-border-color: #BDBDBD;
 }
 
 /**
@@ -119,5 +119,69 @@
 }
 
 
+/**
+ *设置ComboBox的样式
+ */
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+/**
+ *设置textfield的样式
+ */
+.textField{
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+/**
+ *设置textarea的样式
+ */
+.text-area .content{
+    -fx-background-color: transparent;
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: #BDBDBD;*/
+    /*-fx-border-radius: 2px;*/
+}
+
+.text-area{
+    -fx-background-insets: 0;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+.combo-box-base .content{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label{
+    -fx-background-color: #f9f9f9;
+    -fx-font-weight: 500;
+    -fx-border-style: solid;
+    -fx-border-color: #EDEDED;
+    -fx-border-size:1px;
+}
+
+.table-view .column-header,.filler{
+    -fx-background-color: #F4F4F4;
+    -fx-background-size: 1px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    /*-fx-border-color: #BDBDBD;*/
+    /*-fx-border-style: solid;*/
+    /*-fx-background-size:1px;*/
+}
+
+.table-view .table-row-cell:selected{
+    -fx-background-color: #BEBEBE;
+}
 
 

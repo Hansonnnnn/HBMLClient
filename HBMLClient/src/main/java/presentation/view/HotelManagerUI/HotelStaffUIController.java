@@ -51,7 +51,7 @@ public class HotelStaffUIController {
     @FXML
     private void toInputRoom(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new InputRoomUI(infoVBox));
+        infoVBox.getChildren().add(new InputRoomUI(infoVBox,stage));
         moveOperationButtonBackground(sliderLabel,222);
     }
 

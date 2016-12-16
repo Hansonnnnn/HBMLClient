@@ -101,3 +101,88 @@
     -fx-font-size:20px;
 }
 
+/**
+ *给确认按钮添加绿色背景
+ */
+.confirmButton{
+    -fx-text-fill:white;
+    -fx-font-family:"微软雅黑";
+    -fx-border-radius: 4px;
+    -fx-background-color: linear-gradient(#00A600, #009100);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.confirmButton:hover{
+    -fx-text-fill:#46A3FF;
+}
+
+/**
+ *设置ComboBox的样式
+ */
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+/**
+ *设置textfield的样式
+ */
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+/**
+ *设置textarea的样式
+ */
+.text-area .content{
+    -fx-background-color: transparent;
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: #BDBDBD;*/
+    /*-fx-border-radius: 2px;*/
+}
+
+.text-area{
+    -fx-background-insets: 0;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
+
+.combo-box-base .content{
+    -fx-background-color: transparent;
+}
+
+/**
+ *设置tableview的样式
+ */
+.table-view .column-header .label{
+    -fx-background-color: #f9f9f9;
+    -fx-font-weight: 500;
+    -fx-border-style: solid;
+    -fx-border-color: #EDEDED;
+    -fx-border-size:1px;
+}
+
+.table-view .column-header,.filler{
+    -fx-background-color: #F4F4F4;
+    -fx-background-size: 1px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    /*-fx-border-color: #BDBDBD;*/
+    /*-fx-border-style: solid;*/
+    /*-fx-background-size:1px;*/
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #BEBEBE;
+}
+
+
+
+

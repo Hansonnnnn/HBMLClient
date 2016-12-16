@@ -103,13 +103,13 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="41.0" prefWidth="670.0" spacing="100.0">
          <children>
-            <Button fx:id="editButton" minWidth="100.0" mnemonicParsing="false" onAction="#edit" text="编辑">
+            <Button fx:id="editButton" minWidth="100.0" mnemonicParsing="false" onAction="#edit" prefHeight="35.0" text="编辑">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />
                </styleClass>
             </Button>
-            <Button fx:id="confirmButton" minWidth="100.0" mnemonicParsing="false" onAction="#confirm" text="确认修改">
+            <Button fx:id="confirmButton" minWidth="100.0" mnemonicParsing="false" onAction="#confirm" prefHeight="35.0" text="确认修改">
                <styleClass>
                   <String fx:value="confirmButton" />
                   <String fx:value="toLarge" />

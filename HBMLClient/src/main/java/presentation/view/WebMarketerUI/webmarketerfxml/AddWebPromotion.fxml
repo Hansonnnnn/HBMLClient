@@ -45,7 +45,7 @@
             </rowConstraints>
             <children>
                 <Label styleClass="infoLabelSize" text="促销策略名 :" />
-                <TextField prefHeight="35.0" prefWidth="191.0" GridPane.columnIndex="1" />
+                <TextField prefHeight="35.0" prefWidth="191.0" styleClass="textField" GridPane.columnIndex="1" />
                 <Label styleClass="infoLabelSize" text="所需会员等级 :" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                 <ComboBox prefHeight="35.0" prefWidth="217.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                 <Label styleClass="infoLabelSize" text="折扣(%) :" GridPane.rowIndex="1" />
