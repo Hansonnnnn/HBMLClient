@@ -38,13 +38,14 @@ public class HotelInfoUIController
 		
 		private RoomInfoCustomerService service = new RoomInfoCustomerServiceImpl();
 		private Map<String, RoomInfoVO> roomlist;
-		private int hotelid;
+		private HotelVO hotelVO;
 		private Date checkinTime;
-		public void init(Stage stage, Scene preScece,int hotelid,Date checkinTime)
+		
+		public void init(Stage stage, Scene preScece,HotelVO hotelVO,Date checkinTime)
 		{
 			this.stage = stage;
 			this.preScene = preScece;
-			this.hotelid = hotelid;
+			this.hotelVO = hotelVO;
 			this.checkinTime = checkinTime;
 			initTable();
 		}
@@ -68,7 +69,7 @@ public class HotelInfoUIController
 				}
 			});
 			roomdata = FXCollections.observableArrayList();
-			roomlist = service.getRoomList(hotelid, checkinTime);
+			roomlist = service.getRoomList(hotelVO.getId(), checkinTime);
 			roomdata.addAll(roomlist.values());
 			list.setItems(roomdata);
 		}

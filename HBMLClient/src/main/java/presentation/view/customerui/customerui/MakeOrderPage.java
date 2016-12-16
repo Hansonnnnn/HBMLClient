@@ -1,15 +1,18 @@
 package presentation.view.customerui.customerui;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.HotelVO;
+import vo.RoomInfoVO;
 
 public class MakeOrderPage extends Scene
 {
-		public MakeOrderPage(Parent root, Stage stage, Scene preScene)
+		public MakeOrderPage(Parent root, Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO, Date checkinTime)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/MakeOrderPage.fxml"));
@@ -22,6 +25,6 @@ public class MakeOrderPage extends Scene
 			}
 			
 			MakeOrderPageController controller = fxmlLoader.getController();
-			controller.init(stage, preScene);
+			controller.init(stage, preScene, hotelVO, roomInfoVO, checkinTime);
 		}
 }

@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.HotelFilter;
 import vo.HotelVO;
+import vo.RoomInfoVO;
 
 public class HotelListPageController {
 	@FXML private Button backButton;
@@ -47,6 +48,7 @@ public class HotelListPageController {
 	@FXML private TableView list;
 	 private Stage stage;
 	 private Scene firstPage;
+	 private Scene hotelListPageScene;
 	 
 	 private String province;
 	 private String city;
@@ -60,15 +62,18 @@ public class HotelListPageController {
 	 private boolean state;
 	 private boolean searchByName;
 	 private String hotelName;
-	 private Map<String, Integer> nameMapID;
+//	 private Map<String, Integer> nameMapID;
+	 private HotelVO selectedHotel;
+	 private RoomInfoVO defaultRoom;
 	 
-	 public void init(Stage stage, Scene firstPage, String hotelName,boolean state)
+	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, String hotelName,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
 		 this.state = state;
 		 this.hotelName = hotelName;
 		 this.searchByName = true;
+		 this.hotelListPageScene = hotelListPageScene;
 		 initTable();
 	 }
 	 public void init(Stage stage, Scene firstPage, String province, String city, String region, Date checkinTime,  int star,boolean state)
@@ -121,18 +126,18 @@ public class HotelListPageController {
 		 if(searchByName)
 		 {
 			 filter = new HotelFilter();
-//			 filter.add("name", "=", hotelName);
+			 filter.add("name", "like","%"+ hotelName+"%");
 		 }else
 		 {
 			 filter = new HotelFilter();
 			 filter.add("region", "=", region);
 			 filter.add("star", "<", star);
 		 }
-		 nameMapID = new LinkedHashMap<>();
+//		 nameMapID = new LinkedHashMap<>();
 		 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
 		 {
 			hotelData.add(hotelVO);
-			nameMapID.put(hotelVO.getName(), hotelVO.getId());
+//			nameMapID.put(hotelVO.getName(), hotelVO.getId());
 		}
 
 		 list.setItems(hotelData);
@@ -183,8 +188,9 @@ public class HotelListPageController {
 		
 			 checkButton.setOnAction((ActionEvent e)->{
 //				 hotelName = 把列表的选中项里面的vo取出来
-				 int hotelID = nameMapID.get(hotelName);
-				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage,hotelID,checkinTime));
+				 int seletedIndex=getTableRow().getIndex();
+				 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
+				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage, selectedHotel,checkinTime));
 			 });
 		 }
 		 protected void updateItem(Boolean t, boolean empty)
@@ -207,15 +213,10 @@ public class HotelListPageController {
 		 private Button makeOrderButton = new Button("预订");
 		 
 		 public MakeOrderButtonCell(Stage stage)
-		 {
-			 DropShadow shadow = new DropShadow();
-			 makeOrderButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-				makeOrderButton.setEffect(shadow); 
-			 });
-			 makeOrderButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-				 makeOrderButton.setEffect(null);
-			 });
-			 
+		 {	 
+//			 makeOrderButton.setOnAction((ActionEvent e)-{
+//				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel));
+//			 });
 		 }
 		 
 		 protected void updateItem(Boolean t, boolean empty) 

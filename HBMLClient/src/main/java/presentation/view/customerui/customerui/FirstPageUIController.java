@@ -4,10 +4,13 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
+
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -38,9 +41,9 @@ public class FirstPageUIController {
 	
 	@FXML private Button searchTwoButton;
 	
-	@FXML private ChoiceBox provinceBox;
-	@FXML private ChoiceBox cityBox;
-	@FXML private ChoiceBox regionBox;
+	@FXML private ChoiceBox<String> provinceBox;
+	@FXML private ChoiceBox<String> cityBox;
+	@FXML private ChoiceBox<String> regionBox;
 	@FXML private DatePicker checkinTimePicker;
 	@FXML private DatePicker checkoutTimePicker;
 	@FXML private Button searchByConditionsButton;
@@ -65,6 +68,8 @@ public class FirstPageUIController {
 	private Date checkoutTime;
 	private DateHelper dateHelper;
 	private ObservableList<String> defaultList;
+	private ObservableList<String> cityShowList;
+	ObservableList<String> regionNameShowList;
 	
 	public void init(Stage stage, Scene firstPageUI)
 	{
@@ -168,32 +173,50 @@ public class FirstPageUIController {
 		ObservableList<String> provinceShowList = FXCollections.observableArrayList();
 		provinceShowList.addAll(provinceMap);
 		provinceBox.setItems(provinceShowList);
-		defaultList = FXCollections.observableArrayList();
-		defaultList.add("");
 		
+		cityShowList = FXCollections.observableArrayList();
+		cityBox.setItems(cityShowList);
 		
+		regionNameShowList = FXCollections.observableArrayList();
+		regionBox.setItems(regionNameShowList);
+		
+//		provinceBox.getSelectionModel().selectedIndexProperty()
+		provinceBox.getSelectionModel().selectedIndexProperty().addListener(
+				(ObservableValue<? extends Number> ov, Number oldValue, Number newValue)->{
+					provinceName = provinceMap.get(newValue.intValue());
+//					System.out.println(provinceName);
+					cityShowList.clear();
+					regionNameShowList.clear();
+					initCityBox();
+					
+				});
 //		provinceBox.setOnAction((Event e)->{
 //			provinceName = provinceBox.getSelectionModel().getSelectedItem().toString();
-//			cityBox.setItems(defaultList);
-//			regionBox.setItems(defaultList);
+////			cityBox.setItems(defaultList);
+////			regionBox.setItems(defaultList);
 //			initCityBox();
 //		});
 	}
-	
 	private void initCityBox()
 	{
 		List<String> cityNameList = helper.getCities(provinceName);
-		ObservableList<String> cityShowList = FXCollections.observableArrayList();
+		cityShowList = FXCollections.observableArrayList();
 		cityShowList.addAll(cityNameList);
-		defaultList = FXCollections.observableArrayList();
-		defaultList.add("");
+		
 		cityBox.setItems(cityShowList);
-		cityBox.setOnAction((Event e)->{
-			cityName = cityBox.getSelectionModel().getSelectedItem().toString();
-			regionBox.setItems(defaultList);
-			initRegionBox();
-//			System.out.println(cityName);
-		});
+		cityBox.getSelectionModel().selectedIndexProperty().addListener(
+				(ObservableValue<? extends Number> ov, Number oldValue, Number newValue)->{
+					cityName = cityNameList.get(newValue.intValue());
+//					regionBox.setItems(defaultList);
+					regionNameShowList.clear();
+					initRegionBox();
+				});
+//		cityBox.setOnAction((Event e)->{
+//			cityName = cityBox.getSelectionModel().getSelectedItem().toString();
+////			regionBox.setItems(defaultList);
+//			initRegionBox();
+////			System.out.println(cityName);
+//		});
 	}
 	
 	private void initRegionBox()
@@ -205,9 +228,10 @@ public class FirstPageUIController {
 		{
 			regionNameList[index++] = regionVO.getRegionName();
 		}
-		ObservableList<String> regionNameShowList = FXCollections.observableArrayList();
+		regionNameShowList = FXCollections.observableArrayList();
 		regionNameShowList.addAll(regionNameList);
 		regionBox.setItems(regionNameShowList);
+//		regionBox.
 	}
 	@FXML 
 	private void login()

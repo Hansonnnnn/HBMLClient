@@ -22,7 +22,7 @@ public class HotelListPageUI extends Scene
 		}
 		
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, searchInfo, state);
+		controller.init(stage, preScene,this, searchInfo, state);
 	}
 	
 	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String province, String city, String region, Date checkinTime, int star,boolean state)
