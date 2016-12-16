@@ -3,8 +3,7 @@ package model;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by alex on 12/5/16.
@@ -70,6 +69,17 @@ public class ImageHelper {
             return true;
         }else return false;
 
+    }
+
+    public Image fileToImage(File file){
+        try {
+            InputStream inputStream = new FileInputStream(file);
+            BufferedImage bufferedImage=ImageIO.read(inputStream);
+            Image image=(Image)bufferedImage;
+            return image;
+        }catch(Exception e){
+            return null;
+        }
     }
 
 }

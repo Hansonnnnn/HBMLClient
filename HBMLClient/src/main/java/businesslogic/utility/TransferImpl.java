@@ -2,6 +2,7 @@ package businesslogic.utility;
 
 import businesslogicservice.TransferService;
 import dao.HotelDao;
+import model.ImageHelper;
 import po.*;
 import rmi.ClientRunner;
 import vo.*;
@@ -18,11 +19,14 @@ import java.util.List;
 public class TransferImpl implements TransferService{
 	@Override
 	public HotelVO poToVo(HotelPO po) {
+		ImageHelper imageHelper=new ImageHelper();
 		List<Image> list = new ArrayList<>();
 		for (File file : po.getEnvironment()) {
 			try {
-				list.add(ImageIO.read(file));
-			} catch (IOException e) {
+				//list.add(ImageIO.read(file));
+				//changeTo
+				list.add(imageHelper.fileToImage(file));
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -55,7 +59,9 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public UserVO poToVo(UserPO po) throws Exception{
-		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), ImageIO.read(po.getPortrait()),po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
+		ImageHelper imageHelper=new ImageHelper();
+		Image image= imageHelper.fileToImage(po.getPortrait());
+		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), image,po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
 		return userVO;
 	}
 

@@ -58,6 +58,7 @@ public class test_Alex {
      //   test_Alex_Promotion.deletePromotion(1);
      //   test_Alex_Promotion.updatePromotion();
     //test_Alex_Promotion.getPromotionList();
+        test_alex_promotion.getSelectedPromotion();
     }
 
     public static void main(String args[]){
