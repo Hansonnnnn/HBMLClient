@@ -3,6 +3,7 @@ package presentation.view.customerui.customerui;
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import businesslogic.hotelInfobl.HotelCustomerImpl;
@@ -65,8 +66,13 @@ public class FirstPageUIController {
 	private Map<Integer, HotelVO> hotelList = null;
 	private HotelRegionHelper helper = null;
 	private String provinceName;
+	private ObservableList<String> provinceShowList;
 	private String cityName;
+	private ObservableList<String> cityShowList;
 	private String regionName;
+	private ObservableList<String> regionNameShowList ;
+	private Map<String, Integer> regionNameMap ;
+	private int regionID;
 	private Date checkinTime;
 	private Date checkoutTime;
 	private DateHelper dateHelper;
@@ -171,7 +177,7 @@ public class FirstPageUIController {
 	private void initProvinceBox()
 	{
 		List<String> provinceMap = helper.getProvinces();
-		ObservableList<String> provinceShowList = FXCollections.observableArrayList();
+		provinceShowList = FXCollections.observableArrayList();
 		provinceShowList.addAll(provinceMap);
 		provinceBox.setItems(provinceShowList);
 		defaultList = FXCollections.observableArrayList();
@@ -188,17 +194,6 @@ public class FirstPageUIController {
 			}
 		});
 		
-	}
-	
-	private void initCityBox()
-	{
-		List<String> cityNameList = helper.getCities(provinceName);
-		ObservableList<String> cityShowList = FXCollections.observableArrayList();
-		cityShowList.addAll(cityNameList);
-		defaultList = FXCollections.observableArrayList();
-		defaultList.add("");
-		cityBox.setItems(cityShowList);
-		
 		cityBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -212,20 +207,45 @@ public class FirstPageUIController {
 			}
 			
 		});
+		
+		regionBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				if (newValue.intValue()>=0) {
+					regionID = regionNameMap.get(regionNameShowList.get(newValue.intValue()));
+				}
+			}
+			
+		});
+		
+	}
+	
+	private void initCityBox()
+	{
+		List<String> cityNameList = helper.getCities(provinceName);
+		cityShowList = FXCollections.observableArrayList();
+		cityShowList.addAll(cityNameList);
+		defaultList = FXCollections.observableArrayList();
+		defaultList.add("");
+		cityBox.setItems(cityShowList);
+	
 	}
 	
 	private void initRegionBox()
 	{
 		Map<Integer, RegionVO> regionMap = helper.getRegions(cityName);
-		String[] regionNameList = new String[regionMap.size()];
-		int index = 0;
-		for (RegionVO regionVO : regionMap.values())
-		{
-			regionNameList[index++] = regionVO.getRegionName();
+		regionNameMap = new LinkedHashMap<>();
+		
+		for (int key : regionMap.keySet()) {
+			regionNameMap.put(regionMap.get(key).getRegionName(), key);
 		}
-		ObservableList<String> regionNameShowList = FXCollections.observableArrayList();
-		regionNameShowList.addAll(regionNameList);
+	
+		regionNameShowList = FXCollections.observableArrayList();
+		regionNameShowList.addAll(regionNameMap.keySet());
 		regionBox.setItems(regionNameShowList);
+		
+	
 	}
 	@FXML 
 	private void login()
