@@ -10,22 +10,22 @@ import javafx.stage.Stage;
 
 public class HotelListPageUI extends Scene
 {
-	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String searchInfo, boolean state)
-	{
-		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
-		try{
-			this.setRoot(fxmlLoader.load());
-		}catch(IOException e)
-		{
-			e.printStackTrace();
-		}
-		
-		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene,this, searchInfo, state);
-	}
+//	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String searchInfo,Date checkinTime, boolean state)
+//	{
+//		super(root);
+//		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
+//		try{
+//			this.setRoot(fxmlLoader.load());
+//		}catch(IOException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		
+//		HotelListPageController controller = fxmlLoader.getController();
+//		controller.init(stage, preScene,this, searchInfo,checkinTime, state);
+//	}
 	
-	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String province, String city, String region, Date checkinTime, int star,boolean state)
+	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String province, String city, int region,String hotelName, Date checkinTime, int star,boolean state)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
@@ -36,6 +36,6 @@ public class HotelListPageUI extends Scene
 			e.printStackTrace();
 		}
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, province, city, region, checkinTime, star,state);
+		controller.init(stage, preScene, province, city, region,hotelName, checkinTime, star,state);
 	}
 }

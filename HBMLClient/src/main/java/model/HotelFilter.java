@@ -18,7 +18,7 @@ public class HotelFilter implements Serializable{
 	/**
 	 * @param name （hotelID,name,address,region,star,facility,score,price)
 	 * @param relation (=,>,<,like)
-	 * @param value (like 需 value为 %+String+%
+	 * @param value (like 需 value为 '%+String+%'
 	 */
 	public void add(String name ,String relation,Object value) {
 		Map<String, Object> param = new HashMap<>();

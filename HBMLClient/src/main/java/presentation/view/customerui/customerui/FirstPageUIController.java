@@ -1,19 +1,23 @@
 package presentation.view.customerui.customerui;
 
+import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Observable;
-
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -62,14 +66,17 @@ public class FirstPageUIController {
 	private Map<Integer, HotelVO> hotelList = null;
 	private HotelRegionHelper helper = null;
 	private String provinceName;
+	private ObservableList<String> provinceShowList;
 	private String cityName;
+	private ObservableList<String> cityShowList;
 	private String regionName;
+	private ObservableList<String> regionNameShowList ;
+	private Map<String, Integer> regionNameMap ;
+	private int regionID;
 	private Date checkinTime;
 	private Date checkoutTime;
 	private DateHelper dateHelper;
 	private ObservableList<String> defaultList;
-	private ObservableList<String> cityShowList;
-	ObservableList<String> regionNameShowList;
 	
 	public void init(Stage stage, Scene firstPageUI)
 	{
@@ -104,38 +111,44 @@ public class FirstPageUIController {
 		}
 	}
 	
-	@FXML
-	private void search()
-	{
-		String searchInfo = "绿地洲际酒店";
-		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
-		{
-			searchInfo = searchField.getText();
-		}
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo,state));
-	}
+//	@FXML
+//	private void search()
+//	{
+//		String searchInfo = "绿地洲际酒店";
+//		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
+//		{
+//			searchInfo = searchField.getText();
+//		}
+//		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
+//		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo, checkinTime,state));
+//	}
 	
 	@FXML 
 	private void searchByConditions()
 	{
 		int star = 1;
+		String hotelName = null;
+		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
+		{
+			hotelName = searchField.getText();
+		}
 		//获取两个DatePicker里面的时间
-		checkinTime = dateHelper.localDateToDate(checkinTimePicker.getValue());
-		checkoutTime = dateHelper.localDateToDate(checkoutTimePicker.getValue());
+		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
+		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
 		//获得星级
 		if(fiveStarCheckBox.isSelected())
 		{
 			star = 5;
-//			HotelFilter filter = new HotelFilter();
-//			filter.add("star", "=", star);
-//			HotelCustomerService serviceImpl = new HotelCustomerImpl();
-//			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
+			HotelFilter filter = new HotelFilter();
+			filter.add("star", "=", star);
+			HotelCustomerService serviceImpl = new HotelCustomerImpl();
+			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
 		}
 		if(fourStarCheckBox.isSelected()){star = 4;}
 		if(threeStarCheckBox.isSelected()){star = 3;}
 		if(twoStarCheckBox.isSelected()){star = 2;}
 		if(oneStarCheckBox.isSelected()){star = 1;}
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionName, checkinTime, star, state));
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionID,hotelName, checkinTime, star, state));
 	}
 	
 	private void initDatePicker()
@@ -170,68 +183,75 @@ public class FirstPageUIController {
 	private void initProvinceBox()
 	{
 		List<String> provinceMap = helper.getProvinces();
-		ObservableList<String> provinceShowList = FXCollections.observableArrayList();
+		provinceShowList = FXCollections.observableArrayList();
 		provinceShowList.addAll(provinceMap);
 		provinceBox.setItems(provinceShowList);
+		defaultList = FXCollections.observableArrayList();
+		defaultList.add("");
 		
-		cityShowList = FXCollections.observableArrayList();
-		cityBox.setItems(cityShowList);
+		provinceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				provinceName = provinceShowList.get(newValue.intValue());
+				cityBox.setItems(defaultList);
+				regionBox.setItems(defaultList);
+				initCityBox();
+			}
+		});
 		
-		regionNameShowList = FXCollections.observableArrayList();
-		regionBox.setItems(regionNameShowList);
+		cityBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				if (newValue.intValue()>=0) {
+					cityName = cityShowList.get(newValue.intValue());
+					regionBox.setItems(defaultList);
+					initRegionBox();
+				}
+				
+			}
+			
+		});
 		
-//		provinceBox.getSelectionModel().selectedIndexProperty()
-		provinceBox.getSelectionModel().selectedIndexProperty().addListener(
-				(ObservableValue<? extends Number> ov, Number oldValue, Number newValue)->{
-					provinceName = provinceMap.get(newValue.intValue());
-//					System.out.println(provinceName);
-					cityShowList.clear();
-					regionNameShowList.clear();
-					initCityBox();
-					
-				});
-//		provinceBox.setOnAction((Event e)->{
-//			provinceName = provinceBox.getSelectionModel().getSelectedItem().toString();
-////			cityBox.setItems(defaultList);
-////			regionBox.setItems(defaultList);
-//			initCityBox();
-//		});
+		regionBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				if (newValue.intValue()>=0) {
+					regionID = regionNameMap.get(regionNameShowList.get(newValue.intValue()));
+				}
+			}
+			
+		});
+		
 	}
+	
 	private void initCityBox()
 	{
 		List<String> cityNameList = helper.getCities(provinceName);
 		cityShowList = FXCollections.observableArrayList();
 		cityShowList.addAll(cityNameList);
-		
+		defaultList = FXCollections.observableArrayList();
+		defaultList.add("");
 		cityBox.setItems(cityShowList);
-		cityBox.getSelectionModel().selectedIndexProperty().addListener(
-				(ObservableValue<? extends Number> ov, Number oldValue, Number newValue)->{
-					cityName = cityNameList.get(newValue.intValue());
-//					regionBox.setItems(defaultList);
-					regionNameShowList.clear();
-					initRegionBox();
-				});
-//		cityBox.setOnAction((Event e)->{
-//			cityName = cityBox.getSelectionModel().getSelectedItem().toString();
-////			regionBox.setItems(defaultList);
-//			initRegionBox();
-////			System.out.println(cityName);
-//		});
+	
 	}
 	
 	private void initRegionBox()
 	{
 		Map<Integer, RegionVO> regionMap = helper.getRegions(cityName);
-		String[] regionNameList = new String[regionMap.size()];
-		int index = 0;
-		for (RegionVO regionVO : regionMap.values())
-		{
-			regionNameList[index++] = regionVO.getRegionName();
+		regionNameMap = new LinkedHashMap<>();
+		
+		for (int key : regionMap.keySet()) {
+			regionNameMap.put(regionMap.get(key).getRegionName(), key);
 		}
+	
 		regionNameShowList = FXCollections.observableArrayList();
-		regionNameShowList.addAll(regionNameList);
+		regionNameShowList.addAll(regionNameMap.keySet());
 		regionBox.setItems(regionNameShowList);
-//		regionBox.
+		
+	
 	}
 	@FXML 
 	private void login()

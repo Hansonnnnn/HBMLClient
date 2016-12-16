@@ -1,5 +1,4 @@
 package presentation.view.customerui.customerui;
-
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;

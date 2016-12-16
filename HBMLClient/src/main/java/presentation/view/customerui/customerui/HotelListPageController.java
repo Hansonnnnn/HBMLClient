@@ -6,6 +6,8 @@ import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,6 +26,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.DateHelper;
 import model.HotelFilter;
 import vo.HotelVO;
 import vo.RoomInfoVO;
@@ -41,9 +44,9 @@ public class HotelListPageController {
 	@FXML private TableColumn checkButtonColumn;
 	@FXML private TableColumn makeOrderButtonColumn;
 	
-	@FXML private ComboBox first;
-	@FXML private ComboBox second;
-	@FXML private ComboBox third;
+	@FXML private ComboBox<String> first;
+	@FXML private ComboBox<String> second;
+	@FXML private ComboBox<String> third;
 	
 	@FXML private TableView list;
 	 private Stage stage;
@@ -52,7 +55,7 @@ public class HotelListPageController {
 	 
 	 private String province;
 	 private String city;
-	 private String region;
+	 private int region;
 	 private Date checkinTime;
 	 private int star;
 	 private String choice = "推荐排序";
@@ -65,18 +68,20 @@ public class HotelListPageController {
 //	 private Map<String, Integer> nameMapID;
 	 private HotelVO selectedHotel;
 	 private RoomInfoVO defaultRoom;
+	 private HotelFilter filter;
 	 
-	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, String hotelName,boolean state)
-	 {
-		 this.stage = stage;
-		 this.firstPage = firstPage;
-		 this.state = state;
-		 this.hotelName = hotelName;
-		 this.searchByName = true;
-		 this.hotelListPageScene = hotelListPageScene;
-		 initTable();
-	 }
-	 public void init(Stage stage, Scene firstPage, String province, String city, String region, Date checkinTime,  int star,boolean state)
+//	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, String hotelName, Date checkinTime, boolean state)
+//	 {
+//		 this.stage = stage;
+//		 this.firstPage = firstPage;
+//		 this.state = state;
+//		 this.hotelName = hotelName;
+//		 this.checkinTime = checkinTime;
+//		 this.searchByName = true;
+//		 this.hotelListPageScene = hotelListPageScene;
+//		 initTable();
+//	 }
+	 public void init(Stage stage, Scene firstPage, String province, String city, int region,String hotelName, Date checkinTime,  int star,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
@@ -84,9 +89,11 @@ public class HotelListPageController {
 		 this.province = province;
 		 this.city = city;
 		 this.region = region;
+		 this.hotelName = hotelName;
 		 this.checkinTime = checkinTime;
 		 this.star = star;
 		 this.searchByName = false;
+		 searchField.setPromptText(hotelName);
 		 initTable();
 	 }
 	 @FXML
@@ -121,32 +128,42 @@ public class HotelListPageController {
 		});
 		 hotelData = FXCollections.observableArrayList();
 		 
-		 //
-		 HotelFilter filter = null;
-		 if(searchByName)
-		 {
+//		 if(searchByName)
+//		 {
+//			 filter = new HotelFilter();
+//			 filter.add("name", "like","'%"+ hotelName+"%'");
+//			 System.out.println(hotelName);
+//			 System.out.println(DateHelper.dateToString(checkinTime));
+//		 }else
+//		 {
 			 filter = new HotelFilter();
-			 filter.add("name", "like","%"+ hotelName+"%");
-		 }else
-		 {
-			 filter = new HotelFilter();
+			 if(hotelName!=null){
+				 filter.add("name", "like", "'%"+hotelName+"%'"); 
+			 }
 			 filter.add("region", "=", region);
-			 filter.add("star", "<", star);
-		 }
+			 filter.add("star", "=", star);
+			 
+//		 }
 //		 nameMapID = new LinkedHashMap<>();
-		 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+		 
+		 if(service.getHotelList(filter, "star", checkinTime) != null)
 		 {
-			hotelData.add(hotelVO);
-//			nameMapID.put(hotelVO.getName(), hotelVO.getId());
-		}
+			 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+			 {
+				hotelData.add(hotelVO);
+//				nameMapID.put(hotelVO.getName(), hotelVO.getId());
+			} 
+		 }
 
 		 list.setItems(hotelData);
 	 }
 	 
 	 private void initComboBox()
 	 {
+		 service = new HotelCustomerImpl();
+		 
 		 ObservableList<String> optionsOne = FXCollections.observableArrayList(
-				 "推荐排序","好评优先","高价排序","低价排序");
+				 "推荐排序","好评优先","低价排序");
 		 ObservableList<String> optionsTwo = FXCollections.observableArrayList(
 				 "五星级","四星级","三星级","二星级","一星级");
 		 ObservableList<String> optionsThree = FXCollections.observableArrayList(
@@ -159,18 +176,81 @@ public class HotelListPageController {
 		 second.setPromptText("星级排序");
 		 third.setPromptText("位置区域");
 		 
-		 first.setOnAction((Event e) -> {
-			 choice = first.getSelectionModel().getSelectedItem().toString();
-//			 System.out.println(choice);
+		 first.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
+			 @Override
+			 public void changed(ObservableValue<? extends Number> ob, Number oldValue, Number newValue){
+				 choice = optionsOne.get(newValue.intValue());
+				 if(choice.equals("好评优先"))
+				 {
+					 if(service.getHotelList(filter, "score", checkinTime) != null)
+					 {
+						 hotelData.clear();
+						 for (HotelVO hotelVO : service.getHotelList(filter, "score", checkinTime).values()) 
+						 {
+							hotelData.add(hotelVO);
+						} 
+					 }
+				 }
+				 else if(choice.equals("低价排序"))
+				 {
+					 if(service.getHotelList(filter, "lowestPrice", checkinTime) != null)
+					 {
+						 hotelData.clear();
+						 for (HotelVO hotelVO : service.getHotelList(filter, "lowestPrice", checkinTime).values()) 
+						 {
+							hotelData.add(hotelVO);
+						} 
+					 }
+				 }else 
+				 {
+					 if(service.getHotelList(filter, "star", checkinTime) != null)
+					 {
+						 hotelData.clear();
+						 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+						 {
+							hotelData.add(hotelVO);
+						} 
+					 }
+				 }
+			 }
 		 });
-		 second.setOnAction((Event e)->{
-			 choice = second.getSelectionModel().getSelectedItem().toString();
+		 second.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
+			 @Override
+			 public void changed(ObservableValue<? extends Number> ob, Number oldValue, Number newValue){
+				 choice = optionsTwo.get(newValue.intValue());
+				 //"五星级","四星级","三星级","二星级","一星级"
+				 if(choice.equals("一星级"))
+				 {
+					 star = 1;
+					 filter.del("star");
+					 filter.add("star", ">", star);
+				 }
+				 else if(choice.equals("二星级"))
+				 {
+					 star = 2;
+					 filter.del("star");
+					 filter.add("star", ">", star);
+				 }
+				 else if(choice.equals("三星级"))
+				 {
+					 star = 3;
+					 filter.del("star");
+					 filter.add("star", ">", star);
+				 }
+				 else if(choice.equals("四星级"))
+				 {
+					 star = 4;
+					 filter.del("star");
+					 filter.add("star", ">", star);
+				 }
+				 else if(choice.equals("五星级"))
+				 {
+					 star = 5;
+					 filter.del("star");
+					 filter.add("star", ">", star);
+				 }
+			 }
 		 });
-		 third.setOnAction((Event e)->{
-			 choice = third.getSelectionModel().getSelectedItem().toString();
-		 });
-		 //调用搜索方法
-		 service = new HotelCustomerImpl();
 	 }
 
 	 public class CheckInfoButtonCell extends TableCell<HotelVO, Boolean>
@@ -213,11 +293,7 @@ public class HotelListPageController {
 		 private Button makeOrderButton = new Button("预订");
 		 
 		 public MakeOrderButtonCell(Stage stage)
-		 {	 
-//			 makeOrderButton.setOnAction((ActionEvent e)-{
-//				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel));
-//			 });
-		 }
+		 {	 }
 		 
 		 protected void updateItem(Boolean t, boolean empty) 
 		 {
@@ -238,11 +314,24 @@ public class HotelListPageController {
 	 @FXML
 		private void search()
 		{
-			String searchInfo = "绿地洲际酒店";
+		 	hotelData.clear();
+			String searchInfo = null;
 			if(searchField.getText()!=null&&!searchField.getText().isEmpty())
 			{
 				searchInfo = searchField.getText();
+				filter.del("name");
+				filter.add("name", "like", "'%"+ searchInfo+"%'");
 			}
-			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,state));
+			
+			 if(service.getHotelList(filter, "star", checkinTime) != null)
+			 {
+				 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+				 {
+					hotelData.add(hotelVO);
+//					nameMapID.put(hotelVO.getName(), hotelVO.getId());
+				} 
+			 }
+			 list.setItems(hotelData);
+//			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,checkinTime,state));
 		}
 }

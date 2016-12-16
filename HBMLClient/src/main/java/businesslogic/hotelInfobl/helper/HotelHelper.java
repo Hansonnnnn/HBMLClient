@@ -42,6 +42,9 @@ public class HotelHelper {
 		try {
 			hotelList = new LinkedHashMap<>();
 			Map<Integer, HotelPO> map = hotelDao.getHotelList(filter, order, date);
+			if (map==null) {
+				return null;
+			}
 			for (int key : map.keySet()) {
 				
 				hotelList.put(key, hotelTransferService.poToVo(map.get(key)));
