@@ -7,37 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MakeOrderPageController">
    <children>
-      <VBox alignment="CENTER" layoutX="5.0" layoutY="82.0" prefHeight="483.0" prefWidth="140.0" spacing="30.0" />
-      <VBox alignment="CENTER" layoutX="236.0" layoutY="157.0" prefHeight="307.0" prefWidth="562.0" spacing="30.0">
-         <children>
-            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="547.0">
-               <children>
-                  <TextField prefHeight="39.0" prefWidth="494.0" />
-               </children>
-            </HBox>
-            <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
-               <children>
-                  <DatePicker prefHeight="38.0" prefWidth="494.0" />
-               </children>
-            </HBox>
-            <HBox fx:id="checkin_time_hbox1" alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
-               <children>
-                  <DatePicker prefHeight="38.0" prefWidth="494.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="266.0">
-               <children>
-                  <CheckBox mnemonicParsing="false" prefHeight="38.0" text="有无儿童" />
-               </children>
-            </HBox>
-         </children>
-         <padding>
-            <Insets left="10.0" right="10.0" top="20.0" />
-         </padding>
-      </VBox>
-      <VBox layoutX="856.0" layoutY="182.0" prefHeight="177.0" prefWidth="62.0">
+      <VBox layoutX="880.0" layoutY="211.0" prefHeight="177.0" prefWidth="62.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="138.0" prefWidth="42.0" text="生成订单" textAlignment="CENTER" wrapText="true" />
          </children>
@@ -46,20 +18,53 @@
          </padding>
       </VBox>
       <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
-      <VBox alignment="CENTER" layoutX="124.0" layoutY="136.0" prefHeight="307.0" prefWidth="84.0" spacing="30.0">
+      <VBox alignment="CENTER" layoutX="167.0" layoutY="69.0" prefHeight="508.0" prefWidth="669.0">
          <children>
-            <Label alignment="CENTER" prefHeight="38.0" prefWidth="54.0" text="联系方式" />
-            <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="入住时间" wrapText="true" />
-            <Label alignment="CENTER" prefHeight="38.0" prefWidth="55.0" text="离开时间" />
-            <Label alignment="CENTER" prefHeight="38.0" prefWidth="53.0" text="有无儿童" />
-         </children>
-         <padding>
-            <Insets left="10.0" right="10.0" top="20.0" />
-         </padding>
-      </VBox>
-      <VBox layoutX="155.0" layoutY="67.0" prefHeight="38.0" prefWidth="703.0">
-         <children>
-            <ChoiceBox prefHeight="41.0" prefWidth="707.0" />
+            <HBox prefHeight="50.0" prefWidth="735.0" spacing="80.0">
+               <children>
+                  <Label text="酒店名称" />
+                  <Label fx:id="hotelNameLabel" text="Label" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="669.0" spacing="80.0">
+               <children>
+                  <Label text="酒店地址" />
+                  <Label fx:id="hotelAddressLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="541.0" spacing="80.0">
+               <children>
+                  <Label text="房间类型" />
+                  <Label fx:id="roomTypeLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="541.0" spacing="106.0">
+               <children>
+                  <Label text="价格" />
+                  <Label fx:id="priceLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="541.0" spacing="55.0">
+               <children>
+                  <Label text="最晚执行时间" />
+                  <Label fx:id="executeDDLLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="541.0" spacing="55.0">
+               <children>
+                  <Label text="预计离开时间" />
+                  <Label fx:id="checkoutTimeLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="541.0" spacing="80.0">
+               <children>
+                  <Label text="优惠方式" />
+                  <Label fx:id="promotionLabel" text="Label" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>

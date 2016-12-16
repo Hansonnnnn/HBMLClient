@@ -29,13 +29,13 @@ public class Client extends Application{
 		
 		ClientRunner cr = new ClientRunner();
 		
-		OrderCustomerService orderCustomerService = new OrderCustomerServiceImpl();
-		Map<Integer, OrderVO> map = orderCustomerService.getUnexecutedOrderList(1);
-		for (OrderVO orderVO : map.values()) {
-			System.out.println(orderVO);
-			orderCustomerService.addOrder(orderVO);
-		}
+//		OrderCustomerService orderCustomerService = new OrderCustomerServiceImpl();
+//		Map<Integer, OrderVO> map = orderCustomerService.getUnexecutedOrderList(1);
+//		for (OrderVO orderVO : map.values()) {
+//			System.out.println(orderVO);
+//			orderCustomerService.addOrder(orderVO);
+//		}
 	
-	//	launch(args);
+		launch(args);
 	}
 }

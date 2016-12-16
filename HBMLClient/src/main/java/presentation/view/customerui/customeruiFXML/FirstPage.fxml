@@ -10,19 +10,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" AnchorPane.leftAnchor="0.0">
          <padding>
             <Insets left="20.0" right="20.0" top="20.0" />
          </padding>
          <children>
-            <TextField fx:id="searchField" prefHeight="39.0" prefWidth="641.0" promptText="Search Whatever You Want!">
+            <TextField fx:id="searchField" prefHeight="38.0" prefWidth="727.0" promptText="Search Whatever You Want!">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="85.0" text="Search" textFill="#222020" wrapText="true" />
          </children>
          <opaqueInsets>
             <Insets left="20.0" />
@@ -40,11 +39,6 @@
       <Separator layoutX="858.0" layoutY="2.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="2.0" />
       <VBox alignment="CENTER" layoutX="6.0" layoutY="88.0" prefHeight="429.0" prefWidth="218.0" spacing="30.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="52.0" text="地址">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="商圈">
                <font>
                   <Font size="18.0" />
@@ -69,14 +63,14 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="182.0" layoutY="89.0" prefHeight="437.0" prefWidth="646.0" spacing="30.0">
          <children>
-            <HBox fx:id="address_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0">
+            <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="17.0">
                <children>
-                  <TextField fx:id="address_field" alignment="CENTER" prefHeight="27.0" prefWidth="482.0" />
-               </children>
-            </HBox>
-            <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0">
-               <children>
-                  <TextField fx:id="circle_field" prefHeight="27.0" prefWidth="482.0" />
+                  <Label text="省" />
+                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" />
+                  <Label text="市" />
+                  <ChoiceBox fx:id="cityBox" prefWidth="120.0" />
+                  <Label text="区" />
+                  <ChoiceBox fx:id="regionBox" prefWidth="120.0" />
                </children>
             </HBox>
             <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">

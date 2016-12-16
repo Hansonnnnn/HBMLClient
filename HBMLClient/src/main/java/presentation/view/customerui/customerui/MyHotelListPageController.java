@@ -1,5 +1,9 @@
 package presentation.view.customerui.customerui;
 
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import javafx.collections.FXCollections;
@@ -19,6 +23,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.HotelFilter;
 import presentation.view.customerui.customerui.HotelListPageController.CheckInfoButtonCell;
 import presentation.view.customerui.customerui.HotelListPageController.MakeOrderButtonCell;
 import vo.HotelVO;
@@ -46,6 +51,12 @@ public class MyHotelListPageController
 		private Stage stage;
 		private Scene preScene;
 		
+		 private String hotelName;
+		 private Map<String, Integer> nameMapID;
+		 private String region;
+		 private Date checkinTime;
+		 private int star;
+		 
 		private HotelCustomerService service;
 		
 		public void init(Stage stage, Scene preScene)
@@ -85,11 +96,15 @@ public class MyHotelListPageController
 				 }
 			});
 			 hotelData = FXCollections.observableArrayList();
-//			 for (HotelVO hotelVO : service.getHotelList(null, "star", null).values()) 
-//			 {
-//				hotelData.add(hotelVO);
-//			}
-			 hotelData.add(new HotelVO("绿地洲际酒店", 0001, 5, "江苏省南京市", 1, "!!", "11", null, 5, 100));
+
+			 HotelFilter filter = new HotelFilter();
+			
+			 nameMapID = new LinkedHashMap<>();
+			 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+			 {
+				hotelData.add(hotelVO);
+				nameMapID.put(hotelVO.getName(), hotelVO.getId());
+			}
 			 list.setItems(hotelData);
 		 }
 		 
@@ -137,7 +152,8 @@ public class MyHotelListPageController
 				 });
 			
 				 checkButton.setOnAction((ActionEvent e)->{
-					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene));
+					 HotelVO hotelVO = (HotelVO)list.getSelectionModel().getSelectedItem();
+					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene,hotelVO,checkinTime));
 				 });
 			 }
 			 protected void updateItem(Boolean t, boolean empty)
@@ -169,7 +185,7 @@ public class MyHotelListPageController
 					 makeOrderButton.setEffect(null);
 				 });
 				 makeOrderButton.setOnAction((ActionEvent e)->{
-					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene));
+//					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene));
 				 });
 				 
 				 //设置按钮响应，来生成订单

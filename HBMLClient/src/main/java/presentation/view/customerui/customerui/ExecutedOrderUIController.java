@@ -2,7 +2,6 @@ package presentation.view.customerui.customerui;
 
 import java.util.Map;
 
-//import businesslogicservice.orderblservice.OrderBLService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,7 +28,7 @@ public class ExecutedOrderUIController {
 	@FXML private ObservableList<OrderVO> executedOrderData;
 	
 	private Map<Integer, OrderVO> orderList;
-	//private OrderBLService service;
+//	private OrderBLService service;
 	
 	public void init()
 	{
