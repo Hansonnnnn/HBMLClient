@@ -30,7 +30,9 @@ public class UserVO {
      * @param userID
      */
     public UserVO(int userID){
+
         this.userID=userID;
+
     }
 
     /**
@@ -53,6 +55,7 @@ public class UserVO {
             , String contact, Image portrait, long creditValue
             , MemberType memberType, String memberInfo, int rank
             , String workid, int hotelid) {
+
         this.userID = userID;
         this.userType=userType;
         this.accountName = accountName;
@@ -66,6 +69,7 @@ public class UserVO {
         this.rank = rank;
         this.workid = workid;
         this.hotelid = hotelid;
+
     }
 
     //constructors for customer
@@ -84,6 +88,7 @@ public class UserVO {
      */
     public UserVO(int id, String pwd, String name, String contact,
                   Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+
         this.userID=id;
         this.userType= UserType.Customer;
         this.password=pwd;
@@ -94,6 +99,21 @@ public class UserVO {
         this.memberInfo=memberInfo;
         this.memberType=memberType;
         this.rank=rank;
+
+    }
+
+    /**
+     * 这是注册用户时可以使用的constructor
+     * @param userType
+     * @param accountName
+     * @param password
+     */
+    public UserVO(UserType userType,String accountName, String password){
+
+        this.userType=userType;
+        this.accountName=accountName;
+        this.password=password;
+
     }
 
     /**
@@ -109,6 +129,7 @@ public class UserVO {
      */
     public UserVO(String pwd, String name, String contact,
                   Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+
         this.userType= UserType.Customer;
         this.password=pwd;
         this.accountName=name;
@@ -118,10 +139,12 @@ public class UserVO {
         this.memberInfo=memberInfo;
         this.memberType=memberType;
         this.rank=rank;
+
     }
 
     //constructors for Staff
     public UserVO(int id, String pwd, String name, String contact, Image image, String workid, int hotelid){
+
         this.userID=id;
         this.userType= UserType.Staff;
         this.password=pwd;
@@ -130,6 +153,24 @@ public class UserVO {
         this.portrait=image;
         this.workid=workid;
         this.hotelid=hotelid;
+
+    }
+
+    /**
+     * 这是酒店工作人员注册所需constructor
+     * @param accountName
+     * @param password
+     * @param name
+     * @param hotelID
+     * @param contact
+     */
+    public UserVO(String accountName,String password,String name,int hotelID,String contact){
+        this.userType=UserType.Staff;
+        this.accountName=accountName;
+        this.password=password;
+        this.name=name;
+        this.hotelid=hotelID;
+        this.contact=contact;
     }
 
     /**
@@ -141,7 +182,9 @@ public class UserVO {
      * @param workid
      * @param hotelid
      */
+
     public UserVO(String pwd, String name, String contact, Image image, String workid, int hotelid){
+
         this.userType= UserType.Staff;
         this.password=pwd;
         this.accountName=name;
@@ -149,26 +192,31 @@ public class UserVO {
         this.portrait=image;
         this.workid=workid;
         this.hotelid=hotelid;
+
     }
 
     //这个不需要传image了
     public UserVO(String pwd, String name, String contact, String workid, int hotelid){
+
         this.userType= UserType.Staff;
         this.password=pwd;
         this.accountName=name;
         this.contact=contact;
         this.workid=workid;
         this.hotelid=hotelid;
+
     }
 
     //constructors for WebMarketer and WebManager
     public UserVO(int id, UserType userType, String pwd, String name, String contact, Image image){
+
         this.userID=id;
         this.userType=userType;
         this.password=pwd;
         this.accountName=name;
         this.contact=contact;
         this.portrait=image;
+
     }
 
     /**
@@ -180,19 +228,23 @@ public class UserVO {
      * @param image
      */
     public UserVO(UserType userType, String pwd, String name, String contact, Image image){
+
         this.userType=userType;
         this.password=pwd;
         this.accountName=name;
         this.contact=contact;
         this.portrait=image;
+
     }
 
     //这个不需要传image了
     public UserVO(UserType userType, String pwd, String name, String contact){
+
         this.userType=userType;
         this.password=pwd;
         this.accountName=name;
         this.contact=contact;
+
     }
 
 

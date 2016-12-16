@@ -18,8 +18,10 @@ public class UserHelper {
 
 
     public UserHelper() {
+
         userDao= ClientRunner.remoteHelper.getUserDao();
         userTransferService=new TransferImpl();
+
     }
 
     public UserVO getUserData(int userID)throws Exception{

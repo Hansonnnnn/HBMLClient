@@ -7,5 +7,6 @@ public enum ResultMessage {
     failure,
     success,
     notexist,
-	disconnection;
+	disconnection,          //请不要更改disconnection的枚举值(位置)
+    insufficient
 }

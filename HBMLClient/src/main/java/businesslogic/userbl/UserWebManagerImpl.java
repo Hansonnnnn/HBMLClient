@@ -4,6 +4,7 @@ import businesslogic.userbl.helper.UserHelper;
 import businesslogicservice.userblservice.UserWebManagerService;
 import businesslogicservice.userblservice.UserWebMarketerService;
 import message.ResultMessage;
+import model.UserType;
 import vo.UserVO;
 
 /**
@@ -14,42 +15,70 @@ public class UserWebManagerImpl implements UserWebManagerService{
     UserHelper userHelper;
 
     public UserWebManagerImpl() {
+
         userHelper=new UserHelper();
+
     }
 
 
     @Override
     public UserVO getUserData(int userID) throws Exception{
-        return userHelper.getUserData(userID);
+
+        UserVO userVO=userHelper.getUserData(userID);
+        if(userVO!=null){
+            if(userVO.getUserType().equals(UserType.WebManager)) return userVO;
+            else return null;
+        }
+        return userVO;
+
     }
 
     @Override
     public UserVO getUserData(String accountName) throws Exception {
-        return userHelper.getUserData(accountName);
+
+        UserVO userVO=userHelper.getUserData(accountName);
+        if(userVO!=null){
+            if(userVO.getUserType().equals(UserType.WebManager)) return userVO;
+            else return null;
+        }
+        return userVO;
     }
 
     @Override
     public ResultMessage addUser(UserVO vo)throws Exception {
-        return userHelper.addUser(vo);
+
+        //judge whether the userInfo is sufficient
+        if(vo.getUserType().equals(UserType.Staff)||vo.getUserType().equals(UserType.WebMarketer)){
+            return userHelper.addUser(vo);
+        }else return ResultMessage.failure;
+
     }
 
     @Override
     public ResultMessage deleteUser(int userID) throws Exception{
+
         return userHelper.deleteUser(userID);
+
     }
 
     @Override
     public ResultMessage modifyUser(UserVO vo)throws Exception {
+
         return userHelper.modifyUser(vo);
+
     }
 
     @Override
     public ResultMessage login(String accountName, String pwd)throws Exception {
+
         return userHelper.login(accountName, pwd);
+
     }
 
     @Override
     public ResultMessage signup(UserVO vo)throws Exception {
+
         return userHelper.signup(vo);
+
     }
 }

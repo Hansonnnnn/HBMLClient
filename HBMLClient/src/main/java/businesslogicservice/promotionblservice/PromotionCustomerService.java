@@ -15,9 +15,9 @@ public interface PromotionCustomerService {
 	 * @param promotionFilter
 	 * @return
 	 */
-	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter);
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter)throws Exception;
 
-	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter);
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter)throws Exception;
 
 	public PromotionVO getPromotion(int promotionID);
 
@@ -26,6 +26,6 @@ public interface PromotionCustomerService {
 	 * @param vo		传入一个完整的OrderVO
 	 * @return			返回的SelectedPromotionVO拥有getPrice()和getPromotionVO()方法
 	 */
-	public SelectedPromotionVO getSelectedPromotion(OrderVO vo);
+	public SelectedPromotionVO getSelectedPromotion(OrderVO vo)throws Exception;
 
 }

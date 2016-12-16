@@ -13,6 +13,12 @@ public interface UserWebManagerService {
 
     public UserVO getUserData(String accountName)throws Exception;
 
+    /**
+     *
+     * @param vo
+     * @return
+     * @throws Exception
+     */
     public ResultMessage addUser(UserVO vo)throws Exception;
 
     public ResultMessage deleteUser(int userID)throws Exception;

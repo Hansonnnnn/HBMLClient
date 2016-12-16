@@ -14,7 +14,7 @@ public interface PromotionWebMarketerService {
 	 * @param promotionFilter
 	 * @return
 	 */
-	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter);
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) throws Exception;
 
 	public PromotionVO getPromotion(int promotionID);
 
@@ -23,7 +23,7 @@ public interface PromotionWebMarketerService {
 	 * @param vo
 	 * @return
 	 */
-	public ResultMessage addWebPromotion(PromotionVO vo);
+	public ResultMessage addWebPromotion(PromotionVO vo)throws Exception;
 
 	/**
 	 * 获取促销信息VO对象，使用getID
@@ -31,12 +31,12 @@ public interface PromotionWebMarketerService {
 	 * @param promotionID
 	 * @return
 	 */
-	public ResultMessage deleteWebPromotion(int promotionID);
+	public ResultMessage deleteWebPromotion(int promotionID)throws Exception;
 
 	/**
 	 * 类似addWebPromotion,需要将信息写进一个新建VO里
 	 * @param vo
 	 * @return
 	 */
-	public ResultMessage modifyWebPromotion(PromotionVO vo);
+	public ResultMessage modifyWebPromotion(PromotionVO vo)throws Exception;
 }

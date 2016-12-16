@@ -16,6 +16,12 @@ public interface UserCustomerService {
 
     public UserVO getUserData(String accountName)throws Exception;
 
+    /**
+     *
+     * @param vo
+     * @return  成功返回ResultMessage.success,如果vo信息矛盾返回ResultMessage.failure
+     * @throws Exception
+     */
     public ResultMessage modifyUser(UserVO vo)throws Exception;
 
     /**

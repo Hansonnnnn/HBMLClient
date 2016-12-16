@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import businesslogic.promotionbl.helper.PromotionHelper;
 import businesslogic.utility.TransferImpl;
 import businesslogicservice.promotionblservice.PromotionCustomerService;
 import model.PromotionFilter;
@@ -13,25 +14,41 @@ import vo.SelectedPromotionVO;
 
 public class PromotionCustomerImpl implements PromotionCustomerService {
 
+	PromotionHelper promotionHelper;
+
+	public PromotionCustomerImpl() {
+
+		promotionHelper=new PromotionHelper();
+
+	}
+
 
 	@Override
-	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) {
-		return null;
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) throws Exception{
+
+		return promotionHelper.getHotelPromotionList(promotionFilter);
+
 	}
 
 	@Override
-	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) {
-		return null;
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) throws Exception{
+
+		return promotionHelper.getWebPromotionList(promotionFilter);
+
 	}
 
 	@Override
 	public PromotionVO getPromotion(int promotionID) {
-		return null;
+
+		return promotionHelper.getPromotion(promotionID);
+
 	}
 
 	@Override
-	public SelectedPromotionVO getSelectedPromotion(OrderVO vo) {
+	public SelectedPromotionVO getSelectedPromotion(OrderVO vo)throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return promotionHelper.getSelectedPromotion(vo);
+
 	}
+
 }
