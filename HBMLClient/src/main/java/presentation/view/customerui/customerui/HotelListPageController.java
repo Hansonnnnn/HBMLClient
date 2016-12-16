@@ -1,5 +1,9 @@
 package presentation.view.customerui.customerui;
 
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import javafx.collections.FXCollections;
@@ -20,6 +24,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.HotelFilter;
 import vo.HotelVO;
 
 public class HotelListPageController {
@@ -43,28 +48,40 @@ public class HotelListPageController {
 	 private Stage stage;
 	 private Scene firstPage;
 	 
-	 private String address;
+	 private String province;
+	 private String city;
 	 private String region;
-	 private String checkinTime;
-	 private String checkoutTime;
+	 private Date checkinTime;
 	 private int star;
 	 private String choice = "推荐排序";
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
 	 private boolean state;
-	 public void init(Stage stage, Scene firstPage, String searchInfo,boolean state)
+	 private boolean searchByName;
+	 private String hotelName;
+	 private Map<String, Integer> nameMapID;
+	 
+	 public void init(Stage stage, Scene firstPage, String hotelName,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
 		 this.state = state;
+		 this.hotelName = hotelName;
+		 this.searchByName = true;
 		 initTable();
 	 }
-	 public void init(Stage stage, Scene firstPage, String address, String region, String checkinTime, String checkoutTime, int star,boolean state)
+	 public void init(Stage stage, Scene firstPage, String province, String city, String region, Date checkinTime,  int star,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
 		 this.state = state;
+		 this.province = province;
+		 this.city = city;
+		 this.region = region;
+		 this.checkinTime = checkinTime;
+		 this.star = star;
+		 this.searchByName = false;
 		 initTable();
 	 }
 	 @FXML
@@ -98,11 +115,26 @@ public class HotelListPageController {
 			 }
 		});
 		 hotelData = FXCollections.observableArrayList();
-//		 for (HotelVO hotelVO : service.getHotelList(null, "star", null).values()) 
-//		 {
-//			hotelData.add(hotelVO);
-//		}
-		 hotelData.add(new HotelVO("绿地洲际酒店", 0001, 5, "江苏省南京市", 1, "!!", "11", null, 5, 100));
+		 
+		 //
+		 HotelFilter filter = null;
+		 if(searchByName)
+		 {
+			 filter = new HotelFilter();
+//			 filter.add("name", "=", hotelName);
+		 }else
+		 {
+			 filter = new HotelFilter();
+			 filter.add("region", "=", region);
+			 filter.add("star", "<", star);
+		 }
+		 nameMapID = new LinkedHashMap<>();
+		 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+		 {
+			hotelData.add(hotelVO);
+			nameMapID.put(hotelVO.getName(), hotelVO.getId());
+		}
+
 		 list.setItems(hotelData);
 	 }
 	 
@@ -150,7 +182,9 @@ public class HotelListPageController {
 			 });
 		
 			 checkButton.setOnAction((ActionEvent e)->{
-				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage));
+//				 hotelName = 把列表的选中项里面的vo取出来
+				 int hotelID = nameMapID.get(hotelName);
+				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage,hotelID,checkinTime));
 			 });
 		 }
 		 protected void updateItem(Boolean t, boolean empty)
@@ -201,13 +235,13 @@ public class HotelListPageController {
 	 }
 	 
 	 @FXML
-	 private void search()
-	 {
-		 String searchInfo = "recommendedHotel";
+		private void search()
+		{
+			String searchInfo = "绿地洲际酒店";
 			if(searchField.getText()!=null&&!searchField.getText().isEmpty())
 			{
 				searchInfo = searchField.getText();
 			}
-		 stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,state));
-	 }
+			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,state));
+		}
 }

@@ -1,0 +1,133 @@
+/**
+ *给确认按钮添加绿色背景
+ */
+.confirmButton{
+    -fx-text-fill:white;
+    -fx-font-family:"微软雅黑";
+    -fx-border-radius: 4px;
+    -fx-background-color: linear-gradient(#00A600, #009100);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.confirmButton:hover{
+    -fx-text-fill:#46A3FF;
+}
+
+.titleLabel{
+    -fx-font-size:22px;
+    -fx-font-weight: bold;
+    -fx-font-family:serif;
+    -fx-text-fill: #ffffff;
+}
+
+/**
+ *添加信息显示框背景和边界
+ */
+.infoVBox{
+    -fx-background-color: #BEBEBE;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.fontsize{
+    -fx-font-size: 17px;
+    -fx-text-fill: #ffffff;
+}
+
+.rightBorder{
+    -fx-border-style:solid;
+    -fx-border-width:0px 1px 1px 0px;
+    -fx-border-color: #0080FF;
+}
+
+.grayBackground{
+    /*-fx-background-color: #BEBEBE;*/
+    /*-fx-background-color: #640F6C;*/
+    /*-fx-background-color: #1faf91;*/
+    -fx-background-color: #1c3048;
+}
+
+
+.transButton{
+    -fx-background-color: transparent;
+}
+
+/**
+ *将组件的左右边界变为圆弧形
+ */
+.circle{
+    -fx-background-radius:15px;
+}
+
+/**
+ *设置分隔符的宽度和颜色
+ */
+.separatorStyle{
+    -fx-border-color: black;
+    -fx-border-width: 0 1 0 0;
+
+    /*-fx-width:2px;*/
+    /*-fx-background-color: #1faf91;*/
+    /*-fx-border-style: none;*/
+    /*-fx-border-color: #1faf91;*/
+    /*-fx-pref-width: 1px;*/
+}
+
+.positionLabel{
+    /*-fx-font-weight: bold;*/
+    -fx-font-size:20px;
+    -fx-text-fill:#1faf91;
+    /*-fx-font-family: serif;*/
+}
+/**
+ *将组建下方边界设为蓝色
+ */
+.bottomBorder{
+    -fx-border-color: #0080FF;
+    -fx-border-style:solid;
+    -fx-border-width:0px 0px 1px 0px;
+}
+
+/**
+ *将字体的颜色设置为白色
+ */
+.whiteFont{
+    -fx-text-fill: #ffffff;
+}
+
+/**
+ *设置会员等级设置表格的字体大小
+ */
+.memberGradeFontSize{
+    -fx-font-size: 20px;
+}
+
+/**
+ *网站营销人员浏览订单列表
+ */
+.orderTypeTableView .table-column{
+    -fx-font-size: 16px;
+    -fx-alignment: center-left;
+    -fx-min-height: 55;
+}
+
+/**
+ *信息标签的大小
+ */
+.infoLabelSize{
+    -fx-font-size:17px;
+}
+
+/**
+ *设置滑块的背景颜色
+ */
+.sliderColor{
+    -fx-background-color: #0080FF;
+}
+
+
+
+
+
+

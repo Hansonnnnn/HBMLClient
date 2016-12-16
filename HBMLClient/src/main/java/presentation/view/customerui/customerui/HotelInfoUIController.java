@@ -1,5 +1,10 @@
 package presentation.view.customerui.customerui;
 
+import java.util.Date;
+import java.util.Map;
+
+import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
+import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,10 +36,16 @@ public class HotelInfoUIController
 		
 		private ObservableList<RoomInfoVO> roomdata;
 		
-		public void init(Stage stage, Scene preScece)
+		private RoomInfoCustomerService service = new RoomInfoCustomerServiceImpl();
+		private Map<String, RoomInfoVO> roomlist;
+		private int hotelid;
+		private Date checkinTime;
+		public void init(Stage stage, Scene preScece,int hotelid,Date checkinTime)
 		{
 			this.stage = stage;
 			this.preScene = preScece;
+			this.hotelid = hotelid;
+			this.checkinTime = checkinTime;
 			initTable();
 		}
 		
@@ -57,6 +68,8 @@ public class HotelInfoUIController
 				}
 			});
 			roomdata = FXCollections.observableArrayList();
+			roomlist = service.getRoomList(hotelid, checkinTime);
+			roomdata.addAll(roomlist.values());
 			list.setItems(roomdata);
 		}
 		

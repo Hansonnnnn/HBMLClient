@@ -1,22 +1,31 @@
 package presentation.view.customerui.customerui;
 
 import java.time.LocalDate;
-import com.sun.javafx.collections.MappingChange.Map;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import businesslogic.hotelInfobl.HotelCustomerImpl;
+import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
+import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.DateHelper;
 import model.HotelFilter;
 import vo.HotelVO;
+import vo.RegionVO;
 
 public class FirstPageUIController {
 	@FXML private TextField searchField;
@@ -25,12 +34,13 @@ public class FirstPageUIController {
 	@FXML private Button orderButton;
 	@FXML private Button commentButton;
 	@FXML private Button personInfoButton;
-	@FXML private ImageView hotelPicView;
 	@FXML private Button loginButton;
 	
 	@FXML private Button searchTwoButton;
-	@FXML private TextField address_field;
-	@FXML private TextField circle_field;
+	
+	@FXML private ChoiceBox provinceBox;
+	@FXML private ChoiceBox cityBox;
+	@FXML private ChoiceBox regionBox;
 	@FXML private DatePicker checkinTimePicker;
 	@FXML private DatePicker checkoutTimePicker;
 	@FXML private Button searchByConditionsButton;
@@ -47,12 +57,22 @@ public class FirstPageUIController {
 	private String userName;
 	
 	private Map<Integer, HotelVO> hotelList = null;
+	private HotelRegionHelper helper = null;
+	private String provinceName;
+	private String cityName;
+	private String regionName;
+	private Date checkinTime;
+	private Date checkoutTime;
+	private DateHelper dateHelper;
+	private ObservableList<String> defaultList;
 	
 	public void init(Stage stage, Scene firstPageUI)
 	{
 		this.stage = stage;
 		this.firstPageUI = firstPageUI;
+		helper = new RegionHelper();
 		initDatePicker();
+		initProvinceBox();
 	}
 	
 	@FXML
@@ -82,7 +102,7 @@ public class FirstPageUIController {
 	@FXML
 	private void search()
 	{
-		String searchInfo = "recommendedHotel";
+		String searchInfo = "绿地洲际酒店";
 		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
 		{
 			searchInfo = searchField.getText();
@@ -93,32 +113,24 @@ public class FirstPageUIController {
 	@FXML 
 	private void searchByConditions()
 	{
-		String address = "江苏省南京市";
-		String region = "栖霞区";
-		String checkinTime = "2016:12:08";
-		String checkoutTime = "2016:12:08";
 		int star = 1;
-		if(address_field.getText()!=null&&!address_field.getText().isEmpty())
-		{
-			address = address_field.getText();
-		}
-		if(circle_field.getText()!=null&&!circle_field.getText().isEmpty())
-		{
-			region = circle_field.getText();
-		}
-		
 		//获取两个DatePicker里面的时间
-		checkinTime = checkinTimePicker.getValue().toString();
-		checkoutTime = checkoutTimePicker.getValue().toString();
+		checkinTime = dateHelper.localDateToDate(checkinTimePicker.getValue());
+		checkoutTime = dateHelper.localDateToDate(checkoutTimePicker.getValue());
 		//获得星级
 		if(fiveStarCheckBox.isSelected())
 		{
-			HotelFilter filter = new HotelFilter();
-			filter.add("star", "=", star);
-			HotelCustomerService serviceImpl = new HotelCustomerImpl();
+			star = 5;
+//			HotelFilter filter = new HotelFilter();
+//			filter.add("star", "=", star);
+//			HotelCustomerService serviceImpl = new HotelCustomerImpl();
 //			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
 		}
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, address, region, checkinTime, checkoutTime, star, state));
+		if(fourStarCheckBox.isSelected()){star = 4;}
+		if(threeStarCheckBox.isSelected()){star = 3;}
+		if(twoStarCheckBox.isSelected()){star = 2;}
+		if(oneStarCheckBox.isSelected()){star = 1;}
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionName, checkinTime, star, state));
 	}
 	
 	private void initDatePicker()
@@ -149,12 +161,59 @@ public class FirstPageUIController {
 		checkoutTimePicker.setDayCellFactory(dateCellFactory);
 		checkoutTimePicker.setValue(LocalDate.now().plusDays(1));
 	}
+	
+	private void initProvinceBox()
+	{
+		List<String> provinceMap = helper.getProvinces();
+		ObservableList<String> provinceShowList = FXCollections.observableArrayList();
+		provinceShowList.addAll(provinceMap);
+		provinceBox.setItems(provinceShowList);
+		defaultList = FXCollections.observableArrayList();
+		defaultList.add("");
+		
+		
+//		provinceBox.setOnAction((Event e)->{
+//			provinceName = provinceBox.getSelectionModel().getSelectedItem().toString();
+//			cityBox.setItems(defaultList);
+//			regionBox.setItems(defaultList);
+//			initCityBox();
+//		});
+	}
+	
+	private void initCityBox()
+	{
+		List<String> cityNameList = helper.getCities(provinceName);
+		ObservableList<String> cityShowList = FXCollections.observableArrayList();
+		cityShowList.addAll(cityNameList);
+		defaultList = FXCollections.observableArrayList();
+		defaultList.add("");
+		cityBox.setItems(cityShowList);
+		cityBox.setOnAction((Event e)->{
+			cityName = cityBox.getSelectionModel().getSelectedItem().toString();
+			regionBox.setItems(defaultList);
+			initRegionBox();
+//			System.out.println(cityName);
+		});
+	}
+	
+	private void initRegionBox()
+	{
+		Map<Integer, RegionVO> regionMap = helper.getRegions(cityName);
+		String[] regionNameList = new String[regionMap.size()];
+		int index = 0;
+		for (RegionVO regionVO : regionMap.values())
+		{
+			regionNameList[index++] = regionVO.getRegionName();
+		}
+		ObservableList<String> regionNameShowList = FXCollections.observableArrayList();
+		regionNameShowList.addAll(regionNameList);
+		regionBox.setItems(regionNameShowList);
+	}
 	@FXML 
 	private void login()
 	{
 		new LoginPageUI(stage, firstPageUI, this).showAndWait();
 	}
-	
 	public boolean getState()
 	{
 		return state;

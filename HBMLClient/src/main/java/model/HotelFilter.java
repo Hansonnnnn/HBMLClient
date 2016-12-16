@@ -16,7 +16,7 @@ public class HotelFilter implements Serializable{
 	public List<Map<String, Object>> filter = new ArrayList<>();
 	
 	/**
-	 * @param name （hotelID,name,address,region,star,facility,score，price)
+	 * @param name （hotelID,name,address,region,star,facility,score,price)
 	 * @param relation (=,>,<,like)
 	 * @param value (like 需 value为 %+String+%
 	 */
