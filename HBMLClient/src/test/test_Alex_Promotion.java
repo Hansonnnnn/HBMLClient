@@ -94,7 +94,8 @@ public class test_Alex_Promotion {
 
     static void getSelectedPromotion()throws Exception{
         OrderCustomerService orderCustomerService=new OrderCustomerServiceImpl();
-        Map<Integer,OrderVO> map=orderCustomerService.getUnexecutedOrderList(1);
+        Map<Integer,OrderVO> map=orderCustomerService.getExecutedOrderList(1);
+        System.out.println("mapsize:  "+map.size());
         OrderVO orderVO=null;
         for(int key:map.keySet()){
             orderVO=map.get(key);
@@ -124,7 +125,7 @@ public class test_Alex_Promotion {
             po1=new PromotionPO(i*i, PromotionType.HotelPromotion,0,"promotion between double 11 and double 12***","all 50% off!!!",date1,date2,i,10,discountTypeHelper.getDiscountType(1),0,50);
             promotionDao.updatePromotion(po1);
         }
-        */
+        //*/
         ///*
         PromotionHelper promotionHelper=new PromotionHelper();
         UserCustomerService userCustomerService=new UserCustomerImpl();
@@ -133,7 +134,8 @@ public class test_Alex_Promotion {
        // orderCustomerService.addOrder(orderVO);
 
         UserVO userVO=userCustomerService.getUserData(orderVO.getUserID());
-        System.out.println(userVO.getPassword());
+        System.out.println(userVO.getName());
+        System.out.println("the price is "+orderVO.getPrice());
 
         SelectedPromotionVO selectedPromotionVO= promotionHelper.getSelectedPromotion(orderVO);
         System.out.println(selectedPromotionVO.getPrice());

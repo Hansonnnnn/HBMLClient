@@ -4,6 +4,7 @@ import model.MemberType;
 import model.UserType;
 
 import java.awt.*;
+import java.io.File;
 
 /**
  * Created by alex on 16-11-17.
@@ -17,7 +18,7 @@ public class UserVO {
     String password;
     String name;
     String contact;
-    Image portrait;
+    File portrait;
     long creditValue;
     MemberType memberType;
     String memberInfo;
@@ -52,7 +53,7 @@ public class UserVO {
      * @param hotelid
      */
     public UserVO(int userID, UserType userType, String accountName, String password, String name
-            , String contact, Image portrait, long creditValue
+            , String contact, File portrait, long creditValue
             , MemberType memberType, String memberInfo, int rank
             , String workid, int hotelid) {
 
@@ -87,7 +88,7 @@ public class UserVO {
      * @param rank
      */
     public UserVO(int id, String pwd, String name, String contact,
-                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+                  File image, long creditValue, MemberType memberType, String memberInfo, int rank){
 
         this.userID=id;
         this.userType= UserType.Customer;
@@ -129,7 +130,7 @@ public class UserVO {
      * @param rank
      */
     public UserVO(String pwd, String name, String contact,
-                  Image image, long creditValue, MemberType memberType, String memberInfo, int rank){
+                  File image, long creditValue, MemberType memberType, String memberInfo, int rank){
 
         this.userType= UserType.Customer;
         this.password=pwd;
@@ -144,7 +145,7 @@ public class UserVO {
     }
 
     //constructors for Staff
-    public UserVO(int id, String pwd, String name, String contact, Image image, String workid, int hotelid){
+    public UserVO(int id, String pwd, String name, String contact, File image, String workid, int hotelid){
 
         this.userID=id;
         this.userType= UserType.Staff;
@@ -184,7 +185,7 @@ public class UserVO {
      * @param hotelid
      */
 
-    public UserVO(String pwd, String name, String contact, Image image, String workid, int hotelid){
+    public UserVO(String pwd, String name, String contact, File image, String workid, int hotelid){
 
         this.userType= UserType.Staff;
         this.password=pwd;
@@ -209,7 +210,7 @@ public class UserVO {
     }
 
     //constructors for WebMarketer and WebManager
-    public UserVO(int id, UserType userType, String pwd, String name, String contact, Image image){
+    public UserVO(int id, UserType userType, String pwd, String name, String contact, File image){
 
         this.userID=id;
         this.userType=userType;
@@ -228,7 +229,7 @@ public class UserVO {
      * @param contact
      * @param image
      */
-    public UserVO(UserType userType, String pwd, String name, String contact, Image image){
+    public UserVO(UserType userType, String pwd, String name, String contact, File image){
 
         this.userType=userType;
         this.password=pwd;
@@ -274,7 +275,7 @@ public class UserVO {
         return contact;
     }
 
-    public Image getPortrait() {
+    public File getPortrait() {
         return portrait;
     }
 

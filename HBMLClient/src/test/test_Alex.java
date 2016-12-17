@@ -16,27 +16,27 @@ public class test_Alex {
 
     static void testing_User()throws Exception{
 
-        test_Alex_User.deleteUser(2);
-        test_Alex_User.addUser();
-        test_alex_user.deleteUser(3);
-        test_alex_user.getUser(1);
-        test_alex_user.getUser(3);
-        test_alex_user.getUser("alex2097");
-        test_alex_user.getUser("alex2098");
-        test_alex_user.modifyUser();
-        test_alex_user.signup();
-        test_alex_user.deleteUser(5);
-        test_alex_user.login();
+//        test_Alex_User.deleteUser(2);
+//        test_Alex_User.addUser();
+//        test_alex_user.deleteUser(3);
+//        test_alex_user.getUser(1);
+//        test_alex_user.getUser(3);
+//        test_alex_user.getUser("alex2097");
+//        test_alex_user.getUser("alex2098");
+//        test_alex_user.modifyUser();
+//        test_alex_user.signup();
+//        test_alex_user.deleteUser(5);
+//        test_alex_user.login();
 
     }
 
     static void testing_Credit()throws Exception{
 
-        test_alex_credit.getCreditRecordList(1);
-        test_alex_credit.getCreditRecordList(2);
-        test_alex_credit.addCreditRecord();
-        test_alex_credit.getCreditValue();
-        test_alex_credit.setCreditValue();
+ //      test_alex_credit.getCreditRecordList(1);
+ //      test_alex_credit.getCreditRecordList(2);
+  //   test_alex_credit.addCreditRecord();
+   //  test_alex_credit.getCreditValue();
+//     test_alex_credit.setCreditValue();
 
     }
 
@@ -53,12 +53,12 @@ public class test_Alex {
         date1=simpleDateFormat.parse("2017-12-10");
         date2=simpleDateFormat.parse("2017-12-14");
 
-    //    test_Alex_Promotion.addPromotion(po1);
-//        test_Alex_Promotion.addPromotion(po2);
-     //   test_Alex_Promotion.deletePromotion(1);
+      // test_Alex_Promotion.addPromotion(po1);
+//    test_Alex_Promotion.addPromotion(po2);
+      // test_Alex_Promotion.deletePromotion(1);
      //   test_Alex_Promotion.updatePromotion();
     //test_Alex_Promotion.getPromotionList();
-        test_alex_promotion.getSelectedPromotion();
+       test_alex_promotion.getSelectedPromotion();
     }
 
     public static void main(String args[]){

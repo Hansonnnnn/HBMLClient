@@ -1,5 +1,6 @@
 package vo;
 import java.awt.Image;
+import java.io.File;
 import java.util.Date;
 
 public class CommentInfoVO{
@@ -8,11 +9,11 @@ public class CommentInfoVO{
 	int hotelID;
 	int score;
 	String comment;
-	Image picture1;
-	Image picture2;
-	Image picture3;
-	public CommentInfoVO(int commentID, Date time, int hotelID, int score, String comment, Image picture1,
-			Image picture2, Image picture3) {
+	File picture1;
+	File picture2;
+	File picture3;
+	public CommentInfoVO(int commentID, Date time, int hotelID, int score, String comment, File picture1,
+			File picture2, File picture3) {
 		super();
 		this.commentID = commentID;
 		this.time = time;
@@ -53,22 +54,22 @@ public class CommentInfoVO{
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public Image getPicture1() {
+	public File getPicture1() {
 		return picture1;
 	}
-	public void setPicture1(Image picture1) {
+	public void setPicture1(File picture1) {
 		this.picture1 = picture1;
 	}
-	public Image getPicture2() {
+	public File getPicture2() {
 		return picture2;
 	}
-	public void setPicture2(Image picture2) {
+	public void setPicture2(File picture2) {
 		this.picture2 = picture2;
 	}
-	public Image getPicture3() {
+	public File getPicture3() {
 		return picture3;
 	}
-	public void setPicture3(Image picture3) {
+	public void setPicture3(File picture3) {
 		this.picture3 = picture3;
 	}
 	@Override

@@ -1,7 +1,10 @@
 package model;
 
+import javafx.scene.image.*;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -71,15 +74,14 @@ public class ImageHelper {
 
     }
 
-    public Image fileToImage(File file){
+    public javafx.scene.image.Image fileToImage(File file){
+        javafx.scene.image.Image fxImage=null;
         try {
-            InputStream inputStream = new FileInputStream(file);
-            BufferedImage bufferedImage=ImageIO.read(inputStream);
-            Image image=(Image)bufferedImage;
-            return image;
+            fxImage = new javafx.scene.image.Image(new FileInputStream(file));
         }catch(Exception e){
             return null;
         }
+        return fxImage;
     }
 
 }

@@ -8,8 +8,7 @@ import rmi.ClientRunner;
 import vo.*;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
+
 import java.io.File;
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -19,13 +18,10 @@ import java.util.List;
 public class TransferImpl implements TransferService{
 	@Override
 	public HotelVO poToVo(HotelPO po) {
-		ImageHelper imageHelper=new ImageHelper();
-		List<Image> list = new ArrayList<>();
+		List<File> list = new ArrayList<>();
 		for (File file : po.getEnvironment()) {
 			try {
-				//list.add(ImageIO.read(file));
-				//changeTo
-				list.add(imageHelper.fileToImage(file));
+				list.add(file);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -38,8 +34,8 @@ public class TransferImpl implements TransferService{
 	@Override
 	public HotelPO voToPO(HotelVO vo) {
 		List<File> list = new ArrayList<>();
-		for (Image image : vo.getEnvironment()) {
-			list.add(imageToFile(image));
+		for (File image : vo.getEnvironment()) {
+			list.add(image);
 		}
 		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),list , vo.getScore(), vo.getLowestPrice());
 		return hotelPO;
@@ -59,15 +55,14 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public UserVO poToVo(UserPO po) throws Exception{
-		ImageHelper imageHelper=new ImageHelper();
-		Image image= imageHelper.fileToImage(po.getPortrait());
+		File image=po.getPortrait();
 		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), image,po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
 		return userVO;
 	}
 
 	@Override
 	public UserPO voToPo(UserVO vo) throws Exception{
-		File file=imageToFile(vo.getPortrait());
+		File file=vo.getPortrait();
 		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),file,vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
 		return userPO;
 	}
@@ -86,29 +81,24 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public CommentInfoVO poToVo(CommentInfoPO commentInfoPO) {
-		CommentInfoVO commentInfoVO = new CommentInfoVO(commentInfoPO.getCommentID(), commentInfoPO.getTime(), commentInfoPO.getHotelID(), commentInfoPO.getScore(), commentInfoPO.getComment(),null,null,null);		
-		try {
-			if (commentInfoPO.getPicture1()!=null) {
-				commentInfoVO.setPicture1(ImageIO.read(commentInfoPO.getPicture1()));
-			}
-			if (commentInfoPO.getPicture2()!=null) {
-				commentInfoVO.setPicture2(ImageIO.read(commentInfoPO.getPicture2()));
-			}
-			if (commentInfoPO.getPicture3()!=null) {
-				commentInfoVO.setPicture3(ImageIO.read(commentInfoPO.getPicture3()));
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		CommentInfoVO commentInfoVO = new CommentInfoVO(commentInfoPO.getCommentID(), commentInfoPO.getTime(), commentInfoPO.getHotelID(), commentInfoPO.getScore(), commentInfoPO.getComment(),null,null,null);
+		if (commentInfoPO.getPicture1()!=null) {
+			commentInfoVO.setPicture1(commentInfoPO.getPicture1());
+		}
+		if (commentInfoPO.getPicture2()!=null) {
+			commentInfoVO.setPicture2(commentInfoPO.getPicture2());
+		}
+		if (commentInfoPO.getPicture3()!=null) {
+			commentInfoVO.setPicture3(commentInfoPO.getPicture3());
 		}
 		return commentInfoVO;
 	}
 
 	@Override
 	public CommentInfoPO voToPo(CommentInfoVO commentInfoVO) {
-		File file1 = imageToFile(commentInfoVO.getPicture1());
-		File file2 = imageToFile(commentInfoVO.getPicture2());
-		File file3 = imageToFile(commentInfoVO.getPicture3());
+		File file1 =commentInfoVO.getPicture1();
+		File file2 =commentInfoVO.getPicture2();
+		File file3 =commentInfoVO.getPicture3();
 
 		CommentInfoPO commentInfoPO = new CommentInfoPO(commentInfoVO.getCommentID(), commentInfoVO.getTime(), commentInfoVO.getHotelID(), commentInfoVO.getScore(), commentInfoVO.getComment(), file1, file2, file3);
 		return commentInfoPO;
@@ -171,24 +161,6 @@ public class TransferImpl implements TransferService{
 		 
 		 
 		return appealPO;
-	}
-
-	private File imageToFile(Image image){
-		if (image ==null) {
-			return null;
-		}
-		File file=null;
-		BufferedImage bufImg = new BufferedImage(image.getWidth(null), image.getHeight(null),BufferedImage.TYPE_INT_RGB);
-		Graphics g = bufImg .createGraphics();
-		g.drawImage(image, 0, 0, null);
-		g.dispose();
-		try {
-			ImageIO.write(bufImg,"jpg",file);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return file;
 	}
 
 }
