@@ -22,14 +22,15 @@ public class EnrollUserPageController
 		private Stage stage;
 		private Scene preScene;
 		FirstPageUIController controller;
-		private UserCustomerService service;
+		private UserVO userVO;
+		private UserCustomerService customerService;
 		
 		public void init(Stage stage, Scene preScene, FirstPageUIController controller)
 		{
 			this.stage = stage;
 			this.preScene = preScene;
 			this.controller = controller;
-			service = new UserCustomerImpl();
+			customerService = new UserCustomerImpl();
 		}
 		
 		@FXML
@@ -40,6 +41,15 @@ public class EnrollUserPageController
 			if(nameField.getText()!=null&&!nameField.getText().isEmpty())
 			{
 				name = nameField.getText();
+				try {
+					if(customerService.getUserData(name)!=null)
+					{
+						userVO = customerService.getUserData(name);
+					}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			if(passwordField.getText()!=null&&!passwordField.getText().isEmpty())
 			{
@@ -56,7 +66,7 @@ public class EnrollUserPageController
 			
 			
 			//切换个人信息中心界面
-			controller.setState(true, name);
+			controller.setState(true, name,userVO.getUserID());
 			stage.close();
 		}
 		

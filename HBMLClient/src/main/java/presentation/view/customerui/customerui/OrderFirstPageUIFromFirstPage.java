@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class OrderFirstPageUIFromFirstPage extends Scene
 {
-	public OrderFirstPageUIFromFirstPage(Parent root, Stage stage, Scene preScene)
+	public OrderFirstPageUIFromFirstPage(Parent root, Stage stage, Scene preScene,int userID)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/OrderFirstPageFromFirstPage.fxml"));
@@ -22,6 +22,6 @@ public class OrderFirstPageUIFromFirstPage extends Scene
 		}
 		
 		OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene);
+		controller.init(stage, preScene,userID);
 	}
 }

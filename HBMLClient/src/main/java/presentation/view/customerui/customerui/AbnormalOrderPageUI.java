@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 
 public class AbnormalOrderPageUI extends VBox{
-	public AbnormalOrderPageUI()
+	public AbnormalOrderPageUI(int userID)
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/AbnormalOrderPage.fxml"));
 		try{
@@ -18,6 +18,6 @@ public class AbnormalOrderPageUI extends VBox{
 //		OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
 //		controller.initAbnormalOrderPart();
 		AbnormalOrderVboxUIController controller = fxmlLoader.getController();
-		controller.init();
+		controller.init(userID);
 	}
 }

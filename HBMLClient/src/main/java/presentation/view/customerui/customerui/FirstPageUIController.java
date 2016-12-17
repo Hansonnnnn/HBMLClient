@@ -61,6 +61,7 @@ public class FirstPageUIController {
 	
 	private boolean state;
 	private String userName;
+	private int userID;
 	
 	private Map<Integer, HotelVO> hotelList = null;
 	private HotelRegionHelper helper = null;
@@ -89,7 +90,7 @@ public class FirstPageUIController {
 	@FXML
 	private void orderPartAction()
 	{
-		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI));
+		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
 	}
 	
 	@FXML
@@ -260,10 +261,11 @@ public class FirstPageUIController {
 	{
 		return state;
 	}
-	public void setState(boolean state, String userName)
+	public void setState(boolean state, String userName, int userID)
 	{
 		this.state = state;
 		this.userName = userName;
+		this.userID = userID;
 	}
 	public void setState(boolean state)
 	{

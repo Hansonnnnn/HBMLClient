@@ -7,7 +7,7 @@ import javafx.scene.layout.VBox;
 
 public class ExecutedOrderPageUI extends VBox
 {
-	public ExecutedOrderPageUI()
+	public ExecutedOrderPageUI(int userID)
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/ExecutedOrder.fxml"));
 		try
@@ -20,6 +20,6 @@ public class ExecutedOrderPageUI extends VBox
 //		OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
 //		controller.initEditingPart();
 		ExecutedOrderUIController controller = fxmlLoader.getController();
-		controller.init();
+		controller.init(userID);
 	}
 }

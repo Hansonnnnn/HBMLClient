@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 
 public class UnexecutedOrderPageUI extends VBox
 {
-		public UnexecutedOrderPageUI()
+		public UnexecutedOrderPageUI(int userID)
 		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnexecutedOrderPage.fxml"));
 			try
@@ -22,6 +22,6 @@ public class UnexecutedOrderPageUI extends VBox
 //			OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
 //			controller.initUnexecutedOrderPart();
 			UnexecutedOrderPageController controller = fxmlLoader.getController();
-			controller.init();
+			controller.init(userID);
 		}
 }

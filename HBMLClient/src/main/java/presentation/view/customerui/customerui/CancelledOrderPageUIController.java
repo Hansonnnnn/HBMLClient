@@ -1,5 +1,9 @@
 package presentation.view.customerui.customerui;
 
+import org.omg.CORBA.INTERNAL;
+
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,9 +28,13 @@ public class CancelledOrderPageUIController {
 	@FXML private TableColumn checkOrderButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> cancelledOrderData;
+	private int userID;
+	private OrderCustomerService customerService;
 	
-	public void init()
+	public void init(int userID)
 	{
+		this.userID = userID;
+		customerService = new OrderCustomerServiceImpl();
 		initTable();
 	}
 	
@@ -48,7 +56,13 @@ public class CancelledOrderPageUIController {
 		});
 		
 		cancelledOrderData = FXCollections.observableArrayList();
-//		cancelledOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+		if(customerService.getCancelledOrderList(userID)!=null)
+		{
+			for (OrderVO orderVO : customerService.getCancelledOrderList(userID).values())
+			{
+				cancelledOrderData.add(orderVO);
+			}
+		}
 		list.setItems(cancelledOrderData);
 	}
 	

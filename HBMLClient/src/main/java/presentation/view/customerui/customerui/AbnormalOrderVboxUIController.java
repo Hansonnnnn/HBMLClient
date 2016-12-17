@@ -1,5 +1,7 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,8 +25,12 @@ public class AbnormalOrderVboxUIController {
 	@FXML private TableColumn appealButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> abnormalOrderData;
-	public void init()
+	private int userID;
+	private OrderCustomerService customerService;
+	public void init(int userID)
 	{
+		customerService = new OrderCustomerServiceImpl();
+		this.userID = userID;
 		initTable();
 	}
 	
@@ -52,7 +58,13 @@ public class AbnormalOrderVboxUIController {
 		});
 		
 		abnormalOrderData = FXCollections.observableArrayList();
-//		abnormalOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+		if(customerService.getAbnormalOrderList(userID)!=null)
+		{
+			for (OrderVO orderVO : customerService.getAbnormalOrderList(userID).values())
+			{
+				abnormalOrderData.add(orderVO);
+			}
+		}
 		list.setItems(abnormalOrderData);
 	}
 	
