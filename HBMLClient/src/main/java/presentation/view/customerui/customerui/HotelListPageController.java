@@ -1,8 +1,6 @@
 package presentation.view.customerui.customerui;
 
 import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
@@ -16,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -26,7 +25,6 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import model.DateHelper;
 import model.HotelFilter;
 import vo.HotelVO;
 import vo.RoomInfoVO;
@@ -58,7 +56,8 @@ public class HotelListPageController {
 	 private int region;
 	 private Date checkinTime;
 	 private int star;
-	 private String choice = "推荐排序";
+	 private String choiceOne = "推荐排序";
+	 private String choiceTwo = "五星级";
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
@@ -127,31 +126,39 @@ public class HotelListPageController {
 			 }
 		});
 		 hotelData = FXCollections.observableArrayList();
-		 
-//		 if(searchByName)
-//		 {
-//			 filter = new HotelFilter();
-//			 filter.add("name", "like","'%"+ hotelName+"%'");
-//			 System.out.println(hotelName);
-//			 System.out.println(DateHelper.dateToString(checkinTime));
-//		 }else
-//		 {
-			 filter = new HotelFilter();
-			 if(hotelName!=null){
-				 filter.add("name", "like", "'%"+hotelName+"%'"); 
-			 }
-			 filter.add("region", "=", region);
-			 filter.add("star", "=", star);
-			 
-//		 }
-//		 nameMapID = new LinkedHashMap<>();
-		 
-		 if(service.getHotelList(filter, "star", checkinTime) != null)
+
+		 filter = new HotelFilter();
+		 if(hotelName!=null)
 		 {
-			 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
+			 filter.add("name", "like", "'%"+hotelName+"%'"); 
+		 }
+		 //region一定会传过来
+		 filter.add("region", "=", region);
+		 //star也会传过来
+		 System.out.println("**************");
+		 filter.add("star", "=", star);
+		 System.out.println("**************");
+			 
+		//初始化排序方式选择框后，会拿到排序策略（choiceOne）和星级（star）
+		 String order = "star";
+		 if(choiceOne.equals("好评优先"))
+		 {
+			 order = "score";
+			 choiceTwoStrategy();
+		 }
+		 else if(choiceOne.equals("低价排序"))
+		 {
+			 order = "lowestPrice";
+			 choiceTwoStrategy();
+		 }else
+		 {
+			 choiceTwoStrategy();
+		 }
+		 if(service.getHotelList(filter, order, checkinTime) != null)
+		 {
+			 for (HotelVO hotelVO : service.getHotelList(filter, order, checkinTime).values()) 
 			 {
 				hotelData.add(hotelVO);
-//				nameMapID.put(hotelVO.getName(), hotelVO.getId());
 			} 
 		 }
 
@@ -166,93 +173,79 @@ public class HotelListPageController {
 				 "推荐排序","好评优先","低价排序");
 		 ObservableList<String> optionsTwo = FXCollections.observableArrayList(
 				 "五星级","四星级","三星级","二星级","一星级");
-		 ObservableList<String> optionsThree = FXCollections.observableArrayList(
-				 );
-		 first.setItems(optionsOne);
-		 second.setItems(optionsTwo);
-		 third.setItems(optionsThree);
+		 ObservableList<String> optionsThree = FXCollections.observableArrayList();
+		 
+//		 first.setItems(optionsOne);
+//		 second.setItems(optionsTwo);
+//		 third.setItems(optionsThree);
+		 if(first.getItems().isEmpty())
+		 {
+			 first.getItems().addAll(optionsOne);
+		 }
+		 if(second.getItems().isEmpty())
+		 {
+			 second.getItems().addAll(optionsTwo);
+		 }
+		 if(third.getItems().isEmpty())
+		 {
+			 third.getItems().addAll(optionsThree);
+		 }
 		
 		 first.setPromptText("推荐排序");
 		 second.setPromptText("星级排序");
 		 third.setPromptText("位置区域");
 		 
-		 first.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
+		 first.valueProperty().addListener(new ChangeListener<String>() {
 			 @Override
-			 public void changed(ObservableValue<? extends Number> ob, Number oldValue, Number newValue){
-				 choice = optionsOne.get(newValue.intValue());
-				 if(choice.equals("好评优先"))
-				 {
-					 if(service.getHotelList(filter, "score", checkinTime) != null)
-					 {
-						 hotelData.clear();
-						 for (HotelVO hotelVO : service.getHotelList(filter, "score", checkinTime).values()) 
-						 {
-							hotelData.add(hotelVO);
-						} 
-					 }
-				 }
-				 else if(choice.equals("低价排序"))
-				 {
-					 if(service.getHotelList(filter, "lowestPrice", checkinTime) != null)
-					 {
-						 hotelData.clear();
-						 for (HotelVO hotelVO : service.getHotelList(filter, "lowestPrice", checkinTime).values()) 
-						 {
-							hotelData.add(hotelVO);
-						} 
-					 }
-				 }else 
-				 {
-					 if(service.getHotelList(filter, "star", checkinTime) != null)
-					 {
-						 hotelData.clear();
-						 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
-						 {
-							hotelData.add(hotelVO);
-						} 
-					 }
-				 }
+			 public void changed(ObservableValue ov, String oldValue, String newValue){
+				 choiceOne = newValue;
+				 initTable();
 			 }
-		 });
-		 second.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
+		});
+		 
+		 second.valueProperty().addListener(new ChangeListener<String>() {
 			 @Override
-			 public void changed(ObservableValue<? extends Number> ob, Number oldValue, Number newValue){
-				 choice = optionsTwo.get(newValue.intValue());
-				 //"五星级","四星级","三星级","二星级","一星级"
-				 if(choice.equals("一星级"))
-				 {
-					 star = 1;
-					 filter.del("star");
-					 filter.add("star", ">", star);
-				 }
-				 else if(choice.equals("二星级"))
-				 {
-					 star = 2;
-					 filter.del("star");
-					 filter.add("star", ">", star);
-				 }
-				 else if(choice.equals("三星级"))
-				 {
-					 star = 3;
-					 filter.del("star");
-					 filter.add("star", ">", star);
-				 }
-				 else if(choice.equals("四星级"))
-				 {
-					 star = 4;
-					 filter.del("star");
-					 filter.add("star", ">", star);
-				 }
-				 else if(choice.equals("五星级"))
-				 {
-					 star = 5;
-					 filter.del("star");
-					 filter.add("star", ">", star);
-				 }
+			 public void changed(ObservableValue ov, String oldValue, String newValue)
+			 {
+				 choiceTwo = newValue;
+				 initTable();
 			 }
-		 });
+		});
 	 }
 
+	 private void choiceTwoStrategy()
+	 {
+		 if(choiceTwo.equals("一星级"))
+		 {
+			 star = 1;
+			 filter.del("star");
+			 filter.add("star", ">", star);
+		 }
+		 else if(choiceTwo.equals("二星级"))
+		 {
+			 star = 2;
+			 filter.del("star");
+			 filter.add("star", ">", star);
+		 }
+		 else if(choiceTwo.equals("三星级"))
+		 {
+			 star = 3;
+			 filter.del("star");
+			 filter.add("star", ">", star);
+		 }
+		 else if(choiceTwo.equals("四星级"))
+		 {
+			 star = 4;
+			 filter.del("star");
+			 filter.add("star", ">", star);
+		 }
+		 else if(choiceTwo.equals("五星级"))
+		 {
+			 star = 5;
+			 filter.del("star");
+			 filter.add("star", "=", star);
+		 }
+	 }
 	 public class CheckInfoButtonCell extends TableCell<HotelVO, Boolean>
 	 {
 		 private Button checkButton = new Button("查看");
