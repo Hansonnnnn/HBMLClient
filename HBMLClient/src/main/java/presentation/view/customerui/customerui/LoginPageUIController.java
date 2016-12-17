@@ -1,4 +1,7 @@
 package presentation.view.customerui.customerui;
+
+import businesslogic.userbl.UserCustomerImpl;
+import businesslogicservice.userblservice.UserCustomerService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -6,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import message.ResultMessage;
+import presentation.view.application.MyDialog;
 
 public class LoginPageUIController 
 {
@@ -13,6 +18,10 @@ public class LoginPageUIController
 	@FXML private PasswordField passwordField;
 	@FXML private Button enrollButton;
 	@FXML private Button loginButton;
+	@FXML private Button cancelButton;
+	@FXML private Button findPasswordButton;
+	private UserCustomerService service; 
+	private ResultMessage resultMessage;
 	
 	private Stage stage;
 	private Scene loginScene;
@@ -21,6 +30,8 @@ public class LoginPageUIController
 	
 	public void init(Stage stage, Scene loginScene, FirstPageUIController controller)
 	{
+		service = new UserCustomerImpl();
+		resultMessage = ResultMessage.failure;
 		this.stage = stage;
 		this.loginScene = loginScene;
 		this.controller = controller;
@@ -42,10 +53,24 @@ public class LoginPageUIController
 		}
 		//bl层来检查用户名和密码是否匹配
 		//如果
-		
-		
-		controller.setState(true, name);
-		stage.close();
+		try {
+			resultMessage = service.login(name, password);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(resultMessage == ResultMessage.success)
+		{
+			controller.setState(true, name);
+			stage.close();
+		}else if(resultMessage == ResultMessage.notexist)
+		{
+			//显示不存在提示对话框
+			new MyDialog(stage,"该用户名不存在" , 0);
+		}else
+		{
+			new MyDialog(stage,"用户名或密码错误" ,1);
+		}
 	}
 	
 	@FXML
@@ -63,10 +88,7 @@ public class LoginPageUIController
 	@FXML
 	private void findPassword()
 	{
-		stage.setScene(new FindPasswordPageUI(new Group()));
+		stage.setScene(new FindPasswordPageUI(new Group(),stage,loginScene));
 	}
-//	private void createUser(String userName, String )
-//	{
-//		
-//	}
+	
 }

@@ -248,7 +248,13 @@ public class FirstPageUIController {
 	@FXML 
 	private void login()
 	{
-		new LoginPageUI(stage, firstPageUI, this).showAndWait();
+		if(state)
+		{
+			new LogoutPageUI(stage, firstPageUI, this).showAndWait();
+		}else 
+		{
+			new LoginPageUI(stage, firstPageUI, this).showAndWait();
+		}
 	}
 	public boolean getState()
 	{
@@ -258,5 +264,9 @@ public class FirstPageUIController {
 	{
 		this.state = state;
 		this.userName = userName;
+	}
+	public void setState(boolean state)
+	{
+		this.state = state;
 	}
 }

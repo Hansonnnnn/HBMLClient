@@ -1,5 +1,6 @@
 package presentation.view.customerui.customerui;
 
+import java.io.File;
 import java.util.Date;
 import java.util.Map;
 
@@ -21,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.ImageHelper;
 import vo.HotelVO;
 import vo.RoomInfoVO;
 
@@ -69,8 +71,9 @@ public class HotelInfoUIController
 		private void initLabel()
 		{
 			Image defaultImage = null;
-			for (Image hotelImage : hotelVO.getEnvironment())
+			for (File hotelImageFile : hotelVO.getEnvironment())
 			{
+				Image hotelImage = ImageHelper.fileToImage(hotelImageFile);
 				if(hotelImage!=null){defaultImage = hotelImage;}
 			}
 			hotelImageView.setImage(defaultImage);
