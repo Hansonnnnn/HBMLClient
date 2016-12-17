@@ -30,7 +30,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.DateHelper;
-import model.HotelFilter;
 import vo.HotelVO;
 import vo.RegionVO;
 
@@ -135,19 +134,12 @@ public class FirstPageUIController {
 		//获取两个DatePicker里面的时间
 		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
 		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
-		//获得星级
-		if(fiveStarCheckBox.isSelected())
-		{
-			star = 5;
-			HotelFilter filter = new HotelFilter();
-			filter.add("star", "=", star);
-			HotelCustomerService serviceImpl = new HotelCustomerImpl();
-			hotelList = serviceImpl.getHotelList(filter, "score", new Date());
-		}
-		if(fourStarCheckBox.isSelected()){star = 4;}
-		if(threeStarCheckBox.isSelected()){star = 3;}
-		if(twoStarCheckBox.isSelected()){star = 2;}
-		if(oneStarCheckBox.isSelected()){star = 1;}
+//		//获得星级
+//		if(fiveStarCheckBox.isSelected()){star = 5;}
+//		if(fourStarCheckBox.isSelected()){star = 4;}
+//		if(threeStarCheckBox.isSelected()){star = 3;}
+//		if(twoStarCheckBox.isSelected()){star = 2;}
+//		if(oneStarCheckBox.isSelected()){star = 1;}
 		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionID,hotelName, checkinTime, star, state));
 	}
 	
@@ -256,7 +248,13 @@ public class FirstPageUIController {
 	@FXML 
 	private void login()
 	{
-		new LoginPageUI(stage, firstPageUI, this).showAndWait();
+		if(state)
+		{
+			new LogoutPageUI(stage, firstPageUI, this).showAndWait();
+		}else 
+		{
+			new LoginPageUI(stage, firstPageUI, this).showAndWait();
+		}
 	}
 	public boolean getState()
 	{
@@ -266,5 +264,9 @@ public class FirstPageUIController {
 	{
 		this.state = state;
 		this.userName = userName;
+	}
+	public void setState(boolean state)
+	{
+		this.state = state;
 	}
 }

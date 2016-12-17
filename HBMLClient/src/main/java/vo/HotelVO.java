@@ -2,6 +2,8 @@ package vo;
 import java.io.File;
 import java.util.List;
 
+import javafx.scene.image.Image;
+
 public class HotelVO
 {
 

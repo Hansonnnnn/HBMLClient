@@ -1,5 +1,6 @@
 package presentation.view.customerui.customerui;
 
+import java.io.File;
 import java.util.Date;
 import java.util.Map;
 
@@ -12,14 +13,16 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.ImageHelper;
 import vo.HotelVO;
 import vo.RoomInfoVO;
 
@@ -31,22 +34,31 @@ public class HotelInfoUIController
 		@FXML private TableColumn priceColumn;
 		@FXML private TableColumn buttonColumn;
 		
+		@FXML private ImageView hotelImageView;
+		@FXML private Label addressLabel;
+		@FXML private Label introduceLabel;
+		@FXML private Label facilityLabel;
+		
 		private Stage stage;
 		private Scene preScene;
+		private Scene hotelInfoPageScene;
 		
 		private ObservableList<RoomInfoVO> roomdata;
 		
 		private RoomInfoCustomerService service = new RoomInfoCustomerServiceImpl();
 		private Map<String, RoomInfoVO> roomlist;
 		private HotelVO hotelVO;
+		private RoomInfoVO selectedRoom;
 		private Date checkinTime;
 		
-		public void init(Stage stage, Scene preScece,HotelVO hotelVO,Date checkinTime)
+		public void init(Stage stage, Scene preScece, Scene hotelInfoPageScene, HotelVO hotelVO,Date checkinTime)
 		{
 			this.stage = stage;
 			this.preScene = preScece;
+			this.hotelInfoPageScene = hotelInfoPageScene;
 			this.hotelVO = hotelVO;
 			this.checkinTime = checkinTime;
+			initLabel();
 			initTable();
 		}
 		
@@ -56,10 +68,26 @@ public class HotelInfoUIController
 			stage.setScene(preScene);
 		}
 		
+		private void initLabel()
+		{
+			Image defaultImage = null;
+			for (File hotelImageFile : hotelVO.getEnvironment())
+			{
+				Image hotelImage = ImageHelper.fileToImage(hotelImageFile);
+				if(hotelImage!=null){defaultImage = hotelImage;}
+			}
+			hotelImageView.setImage(defaultImage);
+			addressLabel.setText(hotelVO.getAddress());
+			addressLabel.setWrapText(true);
+			introduceLabel.setText(hotelVO.getIntroduction());
+			introduceLabel.setWrapText(true);
+			facilityLabel.setText(hotelVO.getFacility());
+			facilityLabel.setWrapText(true);
+		}
 		private void initTable()
 		{
-			typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-			priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+			typeColumn.setCellValueFactory(new PropertyValueFactory<>("roomType"));
+			priceColumn.setCellValueFactory(new PropertyValueFactory<>("defaultPrice"));
 			buttonColumn.setCellFactory(new Callback<TableColumn<RoomInfoVO, Boolean>, TableCell<RoomInfoVO, Boolean>>()
 			{
 				@Override
@@ -69,8 +97,16 @@ public class HotelInfoUIController
 				}
 			});
 			roomdata = FXCollections.observableArrayList();
-			roomlist = service.getRoomList(hotelVO.getId(), checkinTime);
-			roomdata.addAll(roomlist.values());
+			if(service.getRoomList(hotelVO.getId(), checkinTime) != null)
+			{
+				for(RoomInfoVO roomInfoVO:service.getRoomList(hotelVO.getId(), checkinTime).values())
+				{
+					roomdata.add(roomInfoVO);
+				}
+			}else
+			{
+				System.out.println("service.getRoomList(hotelVO.getId(), checkinTime) = null");
+			}
 			list.setItems(roomdata);
 		}
 		
@@ -80,16 +116,11 @@ public class HotelInfoUIController
 			 
 			 public MakeOrderButtonCell(Stage stage)
 			 {
-				 DropShadow shadow = new DropShadow();
-				 makeOrderButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-					makeOrderButton.setEffect(shadow); 
+				 makeOrderButton.setOnAction((ActionEvent e)->{
+					 int selectedIndex = getTableRow().getIndex();
+					 selectedRoom = (RoomInfoVO)list.getItems().get(selectedIndex);
+					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom, checkinTime));
 				 });
-				 makeOrderButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-					 makeOrderButton.setEffect(null);
-				 });
-//				 makeOrderButton.setOnAction((ActionEvent e)->{
-//					 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage));
-//				 });
 			 }
 			 
 			 protected void updateItem(Boolean t, boolean empty) 

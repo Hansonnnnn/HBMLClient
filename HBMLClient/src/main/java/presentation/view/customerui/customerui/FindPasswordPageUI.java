@@ -5,10 +5,11 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class FindPasswordPageUI extends Scene
 {
-		public FindPasswordPageUI(Parent root)
+		public FindPasswordPageUI(Parent root,Stage stage, Scene preScene)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/FindPasswordPage.fxml"));
@@ -19,5 +20,8 @@ public class FindPasswordPageUI extends Scene
 			{
 				e.printStackTrace();
 			}
+			
+			FindPasswordPageUIController controller = fxmlLoader.getController();
+			controller.init(stage, preScene);
 		}
 }

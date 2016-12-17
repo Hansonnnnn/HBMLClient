@@ -13,6 +13,7 @@ public class DateHelper
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			return dateFormat.format(date);
 		}
+		
 		public static Date localDateToDate(LocalDate localDate) {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = null;
@@ -25,4 +26,13 @@ public class DateHelper
 			return date;
 		}
 		
+		public static LocalDate dateToLocalDate(Date date)
+		{
+			String dateStr = dateToString(date);
+			int year = Integer.parseInt(dateStr.substring(0, 4));
+			int month = Integer.parseInt(dateStr.substring(5, 7));
+			int day = Integer.parseInt(dateStr.substring(8, 10));
+			LocalDate localDate = LocalDate.of(year, month, day);
+			return localDate;
+		}
 }
