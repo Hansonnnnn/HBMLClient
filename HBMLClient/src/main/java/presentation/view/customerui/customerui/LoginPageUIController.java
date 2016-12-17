@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import message.ResultMessage;
 import presentation.view.application.MyDialog;
+import vo.UserVO;
 
 public class LoginPageUIController 
 {
@@ -27,6 +28,8 @@ public class LoginPageUIController
 	private Scene loginScene;
 
 	private FirstPageUIController controller;
+	private UserVO userVO;
+	private UserCustomerService customerService;
 	
 	public void init(Stage stage, Scene loginScene, FirstPageUIController controller)
 	{
@@ -46,6 +49,15 @@ public class LoginPageUIController
 		if(nameField.getText()!=null&&!nameField.getText().isEmpty())
 		{
 			name = nameField.getText();
+			try {
+				if(customerService.getUserData(name)!=null)
+				{
+					userVO = customerService.getUserData(name);
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
 		}
 		if(passwordField.getText()!=null&&!passwordField.getText().isEmpty())
 		{
@@ -61,7 +73,7 @@ public class LoginPageUIController
 		}
 		if(resultMessage == ResultMessage.success)
 		{
-			controller.setState(true, name);
+			controller.setState(true, name, userVO.getUserID());
 			stage.close();
 		}else if(resultMessage == ResultMessage.notexist)
 		{

@@ -2,6 +2,8 @@ package presentation.view.customerui.customerui;
 
 import java.util.Map;
 
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,12 +28,16 @@ public class ExecutedOrderUIController {
 	@FXML private TableColumn checkOrderButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> executedOrderData;
+	private OrderCustomerService service;
 	
 	private Map<Integer, OrderVO> orderList;
+	private int userID;
 //	private OrderBLService service;
 	
-	public void init()
+	public void init(int userID)
 	{
+		this.userID = userID;
+		service = new OrderCustomerServiceImpl();
 		initTable();
 	}
 	
@@ -52,13 +58,13 @@ public class ExecutedOrderUIController {
 		});
 		
 		executedOrderData = FXCollections.observableArrayList();
-		
-//		orderList = service.getExecutedOrderList(idColumn.get, userType);
-//		for (OrderVO orderVO : orderList.values())
-//		{
-//			executedOrderData.add(orderVO);
-//		}
-//		executedOrderData.add(new OrderVO(1111111, 00, 1111, "LVZJ", 000, OrderStateMessage.Abnormal, "20161808", null, null, null, null, 0, 0, 200));
+		if(service.getExecutedOrderList(userID)!=null)
+		{
+			for(OrderVO orderVO : service.getExecutedOrderList(userID).values())
+			{
+				executedOrderData.add(orderVO);
+			}
+		}
 		list.setItems(executedOrderData);
 	}
 	

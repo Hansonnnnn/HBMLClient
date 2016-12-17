@@ -5,6 +5,8 @@ import java.util.Date;
 
 import com.sun.corba.se.spi.orbutil.fsm.Action;
 
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,8 +39,13 @@ public class UnexecutedOrderPageController
 	
 	@FXML private ObservableList<OrderVO> unexecuteOrderData;
 	
-	public void init()
+	private OrderCustomerService service;
+	private int userID;
+	
+	public void init(int userID)
 	{
+		this.userID = userID;
+		service = new OrderCustomerServiceImpl();
 		initTable();
 	}
 	
@@ -68,11 +75,13 @@ public class UnexecutedOrderPageController
 		
 		
 		unexecuteOrderData = FXCollections.observableArrayList();
-		
-		
-		LocalDate localDate = LocalDate.now();
-		Date date = DateHelper.localDateToDate(localDate);
-		unexecuteOrderData.add(new OrderVO(111, 111, 111, "绿地洲际酒店", 000000, OrderStateMessage.Abnormal, date, date, date, date, date, 9, 9, 200));
+		if(service.getUnexecutedOrderList(userID)!=null)
+		{
+			for (OrderVO orderVO : service.getUnexecutedOrderList(userID).values())
+			{
+				unexecuteOrderData.add(orderVO);
+			}
+		}
 		list.setItems(unexecuteOrderData);
 	}
 	
