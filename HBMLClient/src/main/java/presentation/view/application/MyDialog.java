@@ -26,10 +26,10 @@ public class MyDialog extends Stage{
         }catch (IOException e) {
             e.printStackTrace();
         }
+        initOwner(owner);
         MyDialogController myDialogController=fxmlLoader.getController();
         myDialogController.init(this,content,myDialogType);
         initStyle(StageStyle.UNDECORATED);
-        initOwner(owner);
         showAndWait();
     }
 }

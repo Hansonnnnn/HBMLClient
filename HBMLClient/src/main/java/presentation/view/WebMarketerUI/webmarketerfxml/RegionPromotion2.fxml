@@ -18,15 +18,15 @@
       </TableView>
       <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="738.0" spacing="15.0">
          <children>
-            <ComboBox prefHeight="35.0" prefWidth="150.0" promptText="省" />
-            <ComboBox prefHeight="35.0" prefWidth="150.0" promptText="市" />
-            <ComboBox prefHeight="35.0" prefWidth="150.0" promptText="商圈" />
+            <ComboBox fx:id="provinceBox" prefHeight="35.0" prefWidth="150.0" promptText="省" />
+            <ComboBox fx:id="cityBox" prefHeight="35.0" prefWidth="150.0" promptText="市" />
+            <ComboBox fx:id="regionBox" prefHeight="35.0" prefWidth="150.0" promptText="商圈" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="738.0" spacing="15.0">
          <children>
-            <ComboBox prefHeight="35.0" prefWidth="150.0" promptText="会员等级" />
-            <ComboBox prefHeight="35.0" prefWidth="150.0" promptText="折扣优惠" />
+            <ComboBox fx:id="gradeBox" prefHeight="35.0" prefWidth="150.0" promptText="会员等级" />
+            <ComboBox fx:id="discountBox" prefHeight="35.0" prefWidth="150.0" promptText="折扣优惠" />
             <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" styleClass="confirmButton" text="确认添加" />
          </children>
       </HBox>

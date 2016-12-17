@@ -1,5 +1,7 @@
 package presentation.view.WebMarketerUI;
 
+import businesslogic.promotionbl.PromotionWebMarketerImpl;
+import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import model.DateHelper;
 import model.DiscountType;
+import model.PromotionFilter;
 import model.PromotionType;
 import presentation.view.HotelManagerUI.HotelPromotionUIController;
 import vo.PromotionVO;
@@ -36,10 +39,12 @@ public class WebPromotionUIController {
 
     private VBox infoVBox;
     private VBox thisVBox;
-    private ObservableList webPromotionData;
+//    private ObservableList webPromotionData;
+    private PromotionWebMarketerService promotionWebMarketerService;
     public void init(VBox infoVBox,VBox thisVBox) throws Exception{
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        promotionWebMarketerService=new PromotionWebMarketerImpl();
         initTableView();
     }
 
@@ -67,13 +72,22 @@ public class WebPromotionUIController {
                 return new WebPromotionInfoButtonCell(infoVBox);
             }
         });
-        webPromotionData= FXCollections.observableArrayList();
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-        Date date=simpleDateFormat.parse("1998-11-22");
-        String startDate=dateHelper.dateToString(date);
-
-        webPromotionData.add(new PromotionVO(1111, PromotionType.WebPromotion,0,"双十一促销",null,date,date,3,7, DiscountType.DaZhe,0,80));
+        ObservableList webPromotionData=FXCollections.observableArrayList();
+        if(promotionWebMarketerService.getWebPromotionList(new PromotionFilter())!=null){
+            for (PromotionVO promotionVO:promotionWebMarketerService.getWebPromotionList(new PromotionFilter()).values()) {
+                webPromotionData.add(promotionVO);
+            }
+        }else{
+            System.out.println("数据库促销数据为空");
+        }
         webPromotionTableView.setItems(webPromotionData);
+//        webPromotionData= FXCollections.observableArrayList();
+//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+//        Date date=simpleDateFormat.parse("1998-11-22");
+//        String startDate=dateHelper.dateToString(date);
+
+//        webPromotionData.add(new PromotionVO(1111, PromotionType.WebPromotion,0,"双十一促销",null,date,date,3,7, DiscountType.DaZhe,0,80));
+//        webPromotionTableView.setItems(webPromotionData);
     }
 
     /**
@@ -96,8 +110,10 @@ public class WebPromotionUIController {
             deleteButton.setGraphic(deleteImageView);
             deleteButton.setStyle("-fx-background-color: transparent");
             viewButton.setOnAction((ActionEvent e)->{
+                int seletedIndex=getTableRow().getIndex();
+                PromotionVO promotionVO=(PromotionVO)webPromotionTableView.getItems().get(seletedIndex);
                 infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new WebPromotionInfoUI(infoVBox));
+                infoVBox.getChildren().add(new WebPromotionInfoUI(infoVBox,promotionVO));
             });
         }
         @Override
