@@ -23,6 +23,6 @@ public class HotelInfoUI extends Scene
 			e.printStackTrace();
 		}
 		HotelInfoUIController controller = fxmlLoader.getController();
-		controller.init(stage, preScene,hotelVO,checkinTime);
+		controller.init(stage, preScene,this,hotelVO,checkinTime);
 	}
 }
