@@ -8,7 +8,7 @@ import java.util.List;
 public interface PromotionViewControllerService {
 	public PromotionVO showPromotion();
     public List<PromotionVO> showPromotionList();
-    public ResultMessage addPromotion(PromotionVO promotionVO);
-    public ResultMessage deletePromotion(int ID);
-    public ResultMessage modify(PromotionVO promotionVO);
+    public ResultMessage addPromotion(PromotionVO promotionVO)throws Exception;
+    public ResultMessage deletePromotion(int ID)throws Exception;
+    public ResultMessage modify(PromotionVO promotionVO) throws Exception;
 }

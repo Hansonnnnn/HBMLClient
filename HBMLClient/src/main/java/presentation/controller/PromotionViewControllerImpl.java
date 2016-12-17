@@ -43,7 +43,7 @@ public class PromotionViewControllerImpl implements PromotionViewControllerServi
 	}
 
 	@Override
-	public ResultMessage addPromotion(PromotionVO promotionVO) {
+	public ResultMessage addPromotion(PromotionVO promotionVO) throws Exception{
 		TransferImpl transfer=new TransferImpl();
 		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
 		if(promotionTypeHelper.getPromotionType(promotionVO.getPromotionID()).equals(PromotionType.HotelPromotion)){
@@ -54,7 +54,7 @@ public class PromotionViewControllerImpl implements PromotionViewControllerServi
 	}
 
 	@Override
-	public ResultMessage deletePromotion(int ID) {
+	public ResultMessage deletePromotion(int ID) throws Exception{
 		TransferImpl transfer=new TransferImpl();
 		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
 		if(promotionTypeHelper.getPromotionType(ID).equals(PromotionType.HotelPromotion)){
@@ -65,7 +65,7 @@ public class PromotionViewControllerImpl implements PromotionViewControllerServi
 	}
 
 	@Override
-	public ResultMessage modify(PromotionVO promotionVO) {
+	public ResultMessage modify(PromotionVO promotionVO) throws Exception{
 		TransferImpl transfer=new TransferImpl();
 		PromotionTypeHelper promotionTypeHelper=new PromotionTypeHelper();
 		if(promotionTypeHelper.getPromotionType(promotionVO.getPromotionID()).equals(PromotionType.HotelPromotion)){

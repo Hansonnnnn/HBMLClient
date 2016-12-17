@@ -1,10 +1,12 @@
 package model;
 
+import javafx.scene.image.*;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by alex on 12/5/16.
@@ -70,6 +72,16 @@ public class ImageHelper {
             return true;
         }else return false;
 
+    }
+
+    public javafx.scene.image.Image fileToImage(File file){
+        javafx.scene.image.Image fxImage=null;
+        try {
+            fxImage = new javafx.scene.image.Image(new FileInputStream(file));
+        }catch(Exception e){
+            return null;
+        }
+        return fxImage;
     }
 
 }

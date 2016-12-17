@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/helper/PromotionHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/model/ImageHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/model/ImageHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/CommentInfoVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/CommentInfoVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/HotelVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/HotelVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Credit.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Credit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Promotion.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Promotion.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/application/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -56,8 +62,28 @@
       <file leaf-file-name="SelectedPromotionVO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserVO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -73,51 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HBMLClient/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserCustomerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserStaffService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserWebManagerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserWebMarketerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="180">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -144,6 +140,7 @@
         <option value="$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java" />
+        <option value="$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java" />
       </list>
     </option>
   </component>
@@ -182,6 +179,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,11 +199,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HBMLClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -732,7 +743,16 @@
       <workItem from="1481803587005" duration="79000" />
       <workItem from="1481804981650" duration="608000" />
       <workItem from="1481805662168" duration="137000" />
-      <workItem from="1481807586915" duration="6000" />
+      <workItem from="1481807586915" duration="717000" />
+      <workItem from="1481817749484" duration="160000" />
+      <workItem from="1481847377994" duration="61000" />
+      <workItem from="1481862541685" duration="316000" />
+      <workItem from="1481863570242" duration="428000" />
+      <workItem from="1481895428791" duration="786000" />
+      <workItem from="1481905509016" duration="158000" />
+      <workItem from="1481908554400" duration="162000" />
+      <workItem from="1481909451572" duration="198000" />
+      <workItem from="1481980608631" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -804,11 +824,53 @@
       <option name="project" value="LOCAL" />
       <updated>1481805738953</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit ver 0.2.2&#10;//test commit&#10;modify promotionbl&#10;&#10;&#10;">
+      <created>1481807610883</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1481807610883</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit ver 0.2.3&#10;modify promotionbl,creditbl, and userbl&#10;//refine the logic in those 3 packages&#10;//now only the logic &quot;get the selected promotion&quot; is left&#10;&#10;&#10;&#10;">
+      <created>1481862826245</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1481862826245</updated>
+    </task>
+    <task id="LOCAL-00013" summary="commit ver 0.2.4&#10;modify promotionbl,creditbl&#10;//code for &quot;get the selected promotion&quot; part&#10;tests are left before the next commit&#10;&#10;&#10;&#10;">
+      <created>1481895504955</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1481895504955</updated>
+    </task>
+    <task id="LOCAL-00014" summary="commit ver 0.2.5&#10;add some test files&#10;modify message.ResultMessage&#10;all modules pass the test except function point &quot;get the selected promotion&quot;&#10;test for &quot;get the selected promotion&quot; is left before the next commit&#10;&#10;&#10;&#10;">
+      <created>1481905612857</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1481905612857</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Merge branch 'master' of https://github.com/RadiationXie/HBMLClient into Debug_King&#10;&#10;# Conflicts:&#10;#&#9;HBMLClient/src/main/java/presentation/view/customerui/customerui/ExecutedOrderUIController.java&#10;">
+      <created>1481908583303</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1481908583303</updated>
+    </task>
+    <task id="LOCAL-00016" summary="commit ver 0.2.6&#10;modify imagehelper,transferImpl&#10;&quot;pass&quot; promotion module tests&#10;//it seems that the function point &quot;get the selected promotion&quot; works fine but it does not mean it's correct&#10;">
+      <created>1481909587917</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1481909587917</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6205000" />
+    <option name="totallyTimeSpent" value="9203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -820,8 +882,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24803768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24803768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -887,7 +949,13 @@
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.6&#10;code creditbl&#10;&#10;" />
     <MESSAGE value="commit ver 0.2&#10;//test commit&#10;modify creditbl&#10;&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.1&#10;//test commit&#10;modify credit controller&#10;preparing for the promotionbl&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.2&#10;//test commit&#10;modify promotionbl&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.3&#10;modify promotionbl,creditbl, and userbl&#10;//refine the logic in those 3 packages&#10;//now only the logic &quot;get the selected promotion&quot; is left&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.4&#10;modify promotionbl,creditbl&#10;//code for &quot;get the selected promotion&quot; part&#10;tests are left before the next commit&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.5&#10;add some test files&#10;modify message.ResultMessage&#10;all modules pass the test except function point &quot;get the selected promotion&quot;&#10;test for &quot;get the selected promotion&quot; is left before the next commit&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/RadiationXie/HBMLClient into Debug_King&#10;&#10;# Conflicts:&#10;#&#9;HBMLClient/src/main/java/presentation/view/customerui/customerui/ExecutedOrderUIController.java&#10;" />
+    <MESSAGE value="commit ver 0.2.6&#10;modify imagehelper,transferImpl&#10;&quot;pass&quot; promotion module tests&#10;//it seems that the function point &quot;get the selected promotion&quot; works fine but it does not mean it's correct&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.6&#10;modify imagehelper,transferImpl&#10;&quot;pass&quot; promotion module tests&#10;//it seems that the function point &quot;get the selected promotion&quot; works fine but it does not mean it's correct&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -898,21 +966,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/message/AppealStateMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/HBMSClient.iml" />
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/dao/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -977,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/message/OrderStateMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1026,20 +1072,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/RoomStateVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/RoomStateVO.java" />
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/RoomInfoVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1170,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,7 +1246,7 @@
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1229,14 +1258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/MakeOrderPage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1244,6 +1265,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1256,10 +1292,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/SelectedPromotionVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="252">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customerui/ExecutedOrderUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-852">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/vo/UserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>

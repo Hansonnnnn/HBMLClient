@@ -14,18 +14,24 @@ public class CreditCustomerImpl implements CreditCustomerService{
     CreditHelper creditHelper;
 
     public CreditCustomerImpl() {
+
         creditHelper=new CreditHelper();
+
     }
 
 
     @Override
     public long getCreditValue(int userID) throws Exception{
+
         return creditHelper.getCreditValue(userID);
+
     }
 
     @Override
     public Map<Integer, CreditRecordVO> getCreditRecordList(int userID) throws Exception{
+
         return creditHelper.getCreditRecordList(userID);
+
     }
 
 
