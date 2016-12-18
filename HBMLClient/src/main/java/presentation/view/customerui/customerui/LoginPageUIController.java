@@ -21,7 +21,6 @@ public class LoginPageUIController
 	@FXML private Button loginButton;
 	@FXML private Button cancelButton;
 	@FXML private Button findPasswordButton;
-	private UserCustomerService service; 
 	private ResultMessage resultMessage;
 	
 	private Stage stage;
@@ -33,7 +32,7 @@ public class LoginPageUIController
 	
 	public void init(Stage stage, Scene loginScene, FirstPageUIController controller)
 	{
-		service = new UserCustomerImpl();
+		customerService = new UserCustomerImpl();
 		resultMessage = ResultMessage.failure;
 		this.stage = stage;
 		this.loginScene = loginScene;
@@ -66,7 +65,7 @@ public class LoginPageUIController
 		//bl层来检查用户名和密码是否匹配
 		//如果
 		try {
-			resultMessage = service.login(name, password);
+			resultMessage = customerService.login(name, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

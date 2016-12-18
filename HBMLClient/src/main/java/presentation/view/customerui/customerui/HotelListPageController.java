@@ -1,6 +1,7 @@
 package presentation.view.customerui.customerui;
 
 import java.util.Date;
+import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
@@ -57,7 +58,7 @@ public class HotelListPageController {
 	 private Date checkinTime;
 	 private int star;
 	 private String choiceOne = "推荐排序";
-	 private String choiceTwo = "五星级";
+	 private String choiceTwo = "默认星级";
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
@@ -93,6 +94,7 @@ public class HotelListPageController {
 		 this.star = star;
 		 this.searchByName = false;
 		 searchField.setPromptText(hotelName);
+		 initComboBox();
 		 initTable();
 	 }
 	 @FXML
@@ -101,9 +103,10 @@ public class HotelListPageController {
 		 stage.setScene(firstPage);
 	 }
 	 
-	 private void initTable()
+	 @SuppressWarnings("unchecked")
+	private void initTable()
 	 {
-		 initComboBox();
+		
 		 nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 		 addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
 		 starColumn.setCellValueFactory(new PropertyValueFactory<>("star"));
@@ -129,21 +132,21 @@ public class HotelListPageController {
 
 		 filter = new HotelFilter();
 		 if(hotelName!=null)
-		 {
+		 {		
+			 filter.del("name");
 			 filter.add("name", "like", "'%"+hotelName+"%'"); 
 		 }
 		 //region一定会传过来
+		 filter.del("region");
 		 filter.add("region", "=", region);
 		 //star也会传过来
-		 System.out.println("**************");
-		 filter.add("star", "=", star);
-		 System.out.println("**************");
-			 
+		 filter.del("star");
+		 filter.add("star", ">=", star);
 		//初始化排序方式选择框后，会拿到排序策略（choiceOne）和星级（star）
-		 String order = "star";
-		 if(choiceOne.equals("好评优先"))
+		 String order = "score";
+		 if(choiceOne.equals("星级排序"))
 		 {
-			 order = "score";
+			 order = "star";
 			 choiceTwoStrategy();
 		 }
 		 else if(choiceOne.equals("低价排序"))
@@ -155,9 +158,11 @@ public class HotelListPageController {
 			 choiceTwoStrategy();
 		 }
 		 if(service.getHotelList(filter, order, checkinTime) != null)
-		 {
+		 {	
+			 hotelData.clear();
 			 for (HotelVO hotelVO : service.getHotelList(filter, order, checkinTime).values()) 
 			 {
+				
 				hotelData.add(hotelVO);
 			} 
 		 }
@@ -170,9 +175,9 @@ public class HotelListPageController {
 		 service = new HotelCustomerImpl();
 		 
 		 ObservableList<String> optionsOne = FXCollections.observableArrayList(
-				 "推荐排序","好评优先","低价排序");
+				 "星级排序","好评优先","低价排序");
 		 ObservableList<String> optionsTwo = FXCollections.observableArrayList(
-				 "五星级","四星级","三星级","二星级","一星级");
+				 "五星级","四星级","三星级","二星级","一星级","默认星级");
 		 ObservableList<String> optionsThree = FXCollections.observableArrayList();
 		 
 //		 first.setItems(optionsOne);
@@ -191,8 +196,8 @@ public class HotelListPageController {
 			 third.getItems().addAll(optionsThree);
 		 }
 		
-		 first.setPromptText("推荐排序");
-		 second.setPromptText("星级排序");
+		 first.setPromptText("排序方式");
+		 second.setPromptText("星级筛选");
 		 third.setPromptText("位置区域");
 		 
 		 first.valueProperty().addListener(new ChangeListener<String>() {
@@ -215,29 +220,32 @@ public class HotelListPageController {
 
 	 private void choiceTwoStrategy()
 	 {
+		 if (choiceTwo.equals("默认星级")) {
+			return;
+		}
 		 if(choiceTwo.equals("一星级"))
 		 {
 			 star = 1;
 			 filter.del("star");
-			 filter.add("star", ">", star);
+			 filter.add("star", "=", star);
 		 }
 		 else if(choiceTwo.equals("二星级"))
 		 {
 			 star = 2;
 			 filter.del("star");
-			 filter.add("star", ">", star);
+			 filter.add("star", "=", star);
 		 }
 		 else if(choiceTwo.equals("三星级"))
 		 {
 			 star = 3;
 			 filter.del("star");
-			 filter.add("star", ">", star);
+			 filter.add("star", "=", star);
 		 }
 		 else if(choiceTwo.equals("四星级"))
 		 {
 			 star = 4;
 			 filter.del("star");
-			 filter.add("star", ">", star);
+			 filter.add("star", "=", star);
 		 }
 		 else if(choiceTwo.equals("五星级"))
 		 {
@@ -320,6 +328,7 @@ public class HotelListPageController {
 			 {
 				 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
 				 {
+					hotelData.clear();
 					hotelData.add(hotelVO);
 //					nameMapID.put(hotelVO.getName(), hotelVO.getId());
 				} 

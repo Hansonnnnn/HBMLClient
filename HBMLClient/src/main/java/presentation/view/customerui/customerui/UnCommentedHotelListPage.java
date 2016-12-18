@@ -3,11 +3,13 @@ package presentation.view.customerui.customerui;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class UnCommentedHotelListPage extends VBox
 {
-		public UnCommentedHotelListPage()
+		public UnCommentedHotelListPage(Stage stage, Scene commentFirstPageScene)
 		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnCommentedHotelList.fxml"));
 			try
@@ -19,6 +21,6 @@ public class UnCommentedHotelListPage extends VBox
 			}
 			
 			UnCommentedHotelListPageController controller = fxmlLoader.getController();
-			controller.init();
+			controller.init(stage, commentFirstPageScene);
 		}
 }

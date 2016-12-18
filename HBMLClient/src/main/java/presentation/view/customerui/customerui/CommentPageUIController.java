@@ -17,11 +17,13 @@ public class CommentPageUIController {
 		
 		private Stage stage;
 		private Scene preScene;
+		private Scene thisPage;
 		
-		public void init(Stage stage, Scene preScene)
+		public void init(Stage stage, Scene preScene,Scene thisPage)
 		{
 			this.stage = stage;
 			this.preScene = preScene;
+			this.thisPage = thisPage;
 		}
 		
 		@FXML
@@ -34,13 +36,13 @@ public class CommentPageUIController {
 		private void firstAction()
 		{
 			contentBox.getChildren().remove(0);
-			contentBox.getChildren().add(new CommentedHotelListPage());
+			contentBox.getChildren().add(new CommentedHotelListPage(stage,thisPage));
 		}
 		
 		@FXML 
 		private void secondAction()
 		{
 			contentBox.getChildren().remove(0);
-			contentBox.getChildren().add(new UnCommentedHotelListPage());
+			contentBox.getChildren().add(new UnCommentedHotelListPage(stage,thisPage));
 		}
 }
