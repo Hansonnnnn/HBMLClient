@@ -77,9 +77,10 @@ public class CreditHelper {
 
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
+
         long creditValue=creditDao.getCreditValue(UserID);
         creditValue+=value;
-        creditDao.setCreditValue(UserID,value);
+        creditDao.setCreditValue(UserID,creditValue);
         return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
 
     }

@@ -23,7 +23,6 @@ public class RemoteHelper {
 	}
 
 	public UserDao getUserDao(){
-		
 		return (UserDao)remote;
 	}
 	
