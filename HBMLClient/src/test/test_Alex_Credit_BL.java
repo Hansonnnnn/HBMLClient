@@ -1,21 +1,28 @@
+import businesslogic.creditbl.CreditCustomerImpl;
+import businesslogic.creditbl.CreditWebMarketerImpl;
+import businesslogicservice.creditblservice.CreditCustomerService;
+import businesslogicservice.creditblservice.CreditWebMarketerService;
 import dao.CreditDao;
 import model.CreditRecordReasonTypeHelper;
 import po.CreditRecordPO;
 import rmi.ClientRunner;
+import vo.CreditRecordVO;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by alex on 12/11/16.
+ * Created by alex on 12/18/16.
  */
-public class test_Alex_Credit {
-    static Map<Integer, CreditRecordPO> map;
+public class test_Alex_Credit_BL {
+    static Map<Integer, CreditRecordVO> map;
+
     static void getCreditRecordList(int id)throws Exception{
-        CreditRecordPO creditRecordPO;
-        CreditDao creditDao= ClientRunner.remoteHelper.getCreditDao();
-        map=creditDao.getCreditRecordList(id);
+        CreditCustomerService creditCustomerService=new CreditCustomerImpl();
+        map=creditCustomerService.getCreditRecordList(id);
+        CreditRecordVO creditRecordVO;
         System.out.println("the map size is: "+map.size());
         if(map.size()==0){
             System.out.println("the map is null");
@@ -23,24 +30,18 @@ public class test_Alex_Credit {
             Set set=map.keySet();
             for(Object obj:set){
                 Integer k=(Integer) obj;
-                creditRecordPO=(CreditRecordPO)map.get(k);
+                creditRecordVO=(CreditRecordVO)map.get(k);
                 System.out.println("checking creditRecord number: "+k);
-                System.out.println(creditRecordPO.getAmount());
-                System.out.println(creditRecordPO.getReasonType());
+                System.out.println(creditRecordVO.getAmount());
+                System.out.println(creditRecordVO.getReasonType());
             }
         }
         System.out.println();
     }
 
-    static void addCreditRecord()throws Exception{
-        CreditDao creditDao=ClientRunner.remoteHelper.getCreditDao();
-        CreditRecordReasonTypeHelper reasonTypeHelper=new CreditRecordReasonTypeHelper();
-        long number=400;
-        Date date=new Date();
-        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        format.format(date);
-        CreditRecordPO creditRecordPOTest=new CreditRecordPO(0,date,1,reasonTypeHelper.getCreditRecordReasonType(0),number,10);
-        creditDao.addCreditRecord(creditRecordPOTest);
+    static void popup(int userID,long value)throws Exception{
+        CreditWebMarketerService creditWebMarketerService=new CreditWebMarketerImpl();
+        creditWebMarketerService.addCreditValue(userID,value);
     }
 
     static long getCreditValue()throws Exception{
@@ -56,5 +57,4 @@ public class test_Alex_Credit {
         long number1=getCreditValue();
         System.out.println(creditDao.setCreditValue(1,number2));
     }
-
 }

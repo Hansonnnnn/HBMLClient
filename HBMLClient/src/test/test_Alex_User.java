@@ -1,9 +1,12 @@
+import businesslogic.utility.TransferImpl;
+import businesslogicservice.TransferService;
 import dao.UserDao;
 import message.ResultMessage;
 import model.MemberType;
 import model.UserType;
 import po.UserPO;
 import rmi.ClientRunner;
+import vo.UserVO;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -83,6 +86,15 @@ public class test_Alex_User {
         System.out.println(userDao.signup(userPOTest1));
         System.out.println("testing inserting an already added user");
         System.out.println(userDao.signup(userPOTest2));
+    }
+
+    static void signup(UserVO userVO)throws Exception{
+        UserDao userDao=ClientRunner.remoteHelper.getUserDao();
+        TransferService userTrans=new TransferImpl();
+        UserPO userPO=userTrans.voToPo(userVO);
+        System.out.println(userPO.getAccountName());
+        System.out.println("how is signing up is working???");
+        System.out.println(userDao.signup(userPO));
     }
 
     static void login() throws Exception{

@@ -66,12 +66,10 @@ public class UserCustomerImpl implements UserCustomerService{
 
     @Override
     public ResultMessage signup(UserVO vo) throws Exception{
-
         ResultMessage resultMessage=userHelper.signup(vo);
         if(resultMessage.equals(ResultMessage.success)){
-            creditHelper.addCreditValue(vo.getUserID(),50);
+            System.out.println("successfully signing up a user!");
         }
         return resultMessage;
-
     }
 }
