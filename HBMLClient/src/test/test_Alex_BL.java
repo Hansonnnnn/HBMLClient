@@ -12,10 +12,12 @@ public class test_Alex_BL {
         //test_alex_user_bl.signup();
         //test_alex_user_bl.login();
         //test_alex_user_bl.getUserInfo();
+        //test_alex_user_bl.delete();
     }
 
     static void test_Credit_BL()throws Exception{
-        test_Alex_Credit_BL.popup(1,10000);
+        //test_Alex_Credit_BL.popup(1,10000);
+        //test_Alex_Credit_BL.getCreditValue();
     }
 
     static void test_Promotion_BL(){

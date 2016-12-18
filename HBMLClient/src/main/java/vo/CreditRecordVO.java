@@ -37,7 +37,8 @@ public class CreditRecordVO{
 		this.orderID = orderID;
 	}
 
-	public CreditRecordVO(Date time, CreditRecordReasonType reasonType, long amount){
+	public CreditRecordVO(int userID,Date time, CreditRecordReasonType reasonType, long amount){
+		this.userID=userID;
 		this.time=time;
 		this.reasonType=reasonType;
 		this.amount=amount;

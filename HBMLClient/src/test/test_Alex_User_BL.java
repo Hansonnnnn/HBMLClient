@@ -1,5 +1,7 @@
 import businesslogic.userbl.UserCustomerImpl;
+import businesslogic.userbl.UserWebManagerImpl;
 import businesslogicservice.userblservice.UserCustomerService;
+import businesslogicservice.userblservice.UserWebManagerService;
 import model.UserType;
 import vo.UserVO;
 
@@ -31,6 +33,12 @@ public class test_Alex_User_BL {
         System.out.println(userVO.getRank());
         System.out.println(userVO.getMemberInfo());
         System.out.println(userVO.getUserID());
+
+    }
+
+    public void delete()throws Exception{
+        UserWebManagerService userWebManagerService=new UserWebManagerImpl();
+        userWebManagerService.deleteUser(3);
 
     }
 }

@@ -19,9 +19,9 @@ public class CreditWebMarketerImpl implements CreditWebMarketerService{
 
 
     @Override
-    public ResultMessage resumeCreditValue(int userID, long price, int type) throws Exception{
+    public ResultMessage resumeCreditValue(int userID, long price, int type,int orderID) throws Exception{
 
-        return creditHelper.resumeCreditValue(userID,price,type);
+        return creditHelper.resumeCreditValue(userID,price,type,orderID);
 
     }
 
