@@ -31,7 +31,7 @@ public class WebManagerUIController {
         this.stage=stage;
         this.beforeScene=beforeScene;
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new AddHotelUI());
+        infoVBox.getChildren().add(new AddHotelUI(stage));
     }
 
     /**
@@ -48,7 +48,7 @@ public class WebManagerUIController {
     @FXML
     private void toAddHotel(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new AddHotelUI());
+        infoVBox.getChildren().add(new AddHotelUI(stage));
         moveOperationButtonBackground(sliderLabel,160);
     }
 
@@ -68,7 +68,7 @@ public class WebManagerUIController {
     @FXML
     private void toAddWebMarketer(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new AddWebMarketerUI());
+        infoVBox.getChildren().add(new AddWebMarketerUI(stage));
         moveOperationButtonBackground(sliderLabel,244);
     }
 
@@ -88,7 +88,7 @@ public class WebManagerUIController {
     @FXML
     private void toHotelStuffInfo(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new SearchHotelStaffUI(infoVBox));
+        infoVBox.getChildren().add(new SearchHotelStaffUI(infoVBox,stage));
         moveOperationButtonBackground(sliderLabel,328);
     }
 

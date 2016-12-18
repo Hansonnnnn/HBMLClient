@@ -28,7 +28,8 @@ public class RechargeCreditValueUIController {
         this.stage=stage;
         this.userVO=userVO;
         this.infoVBox=infoVBox;
-        nameLabel.setText(userVO.getName());
+        System.out.println(userVO.getAccountName()+"    "+userVO.getContact()+"    "+userVO.getName());
+        nameLabel.setText(userVO.getAccountName());
         phoneLabel.setText(userVO.getContact());
         creditLabel.setText(String.valueOf(userVO.getCreditValue()));
         creditWebMarketerService=new CreditWebMarketerImpl();

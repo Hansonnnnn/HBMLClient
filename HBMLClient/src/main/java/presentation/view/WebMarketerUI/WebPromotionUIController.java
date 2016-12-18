@@ -115,6 +115,9 @@ public class WebPromotionUIController {
                 infoVBox.getChildren().remove(0);
                 infoVBox.getChildren().add(new WebPromotionInfoUI(infoVBox,promotionVO));
             });
+            deleteButton.setOnAction((ActionEvent e)->{
+
+            });
         }
         @Override
         protected void updateItem(Boolean t,boolean empty){
