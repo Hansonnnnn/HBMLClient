@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ public class MakeOrderPageController
 		@FXML private Label checkoutTimeLabel;
 		@FXML private Label executeDDLLabel;
 		@FXML private Label promotionLabel;
+		@FXML private Button makeOrderButton;
 		
 		private Stage stage;
 		private Scene preScene;
@@ -51,6 +53,12 @@ public class MakeOrderPageController
 			roomTypeLabel.setText(roomInfoVO.getRoomType());
 			priceLabel.setText(roomInfoVO.getDefaultPrice()+"");
 			executeDDLLabel.setText(DateHelper.dateToString(new Date(checkinTime.getTime()+18*60*60)));
+			
+		}
+		
+		@FXML
+		private void makOrder()
+		{
 			
 		}
 }
