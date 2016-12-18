@@ -9,11 +9,13 @@ public class test_Alex_BL {
     static test_Alex_Promotion_BL test_alex_promotion_bl=new test_Alex_Promotion_BL();
 
     static void test_User_BL()throws Exception{
-        test_alex_user_bl.signup();
+        //test_alex_user_bl.signup();
+        //test_alex_user_bl.login();
+        //test_alex_user_bl.getUserInfo();
     }
 
-    static void test_Credit_BL(){
-
+    static void test_Credit_BL()throws Exception{
+        test_Alex_Credit_BL.popup(1,10000);
     }
 
     static void test_Promotion_BL(){
