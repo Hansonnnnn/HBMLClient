@@ -52,7 +52,7 @@ public class test_Alex_Credit {
 
     static void setCreditValue()throws Exception{
         CreditDao creditDao=ClientRunner.remoteHelper.getCreditDao();
-        long number2=300;
+        long number2=9999;
         long number1=getCreditValue();
         System.out.println(creditDao.setCreditValue(1,number2));
     }

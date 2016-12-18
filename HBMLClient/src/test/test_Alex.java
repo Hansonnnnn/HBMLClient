@@ -1,7 +1,9 @@
 import model.DiscountTypeHelper;
 import model.PromotionType;
+import model.UserType;
 import po.PromotionPO;
 import rmi.ClientRunner;
+import vo.UserVO;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,14 +19,15 @@ public class test_Alex {
     static void testing_User()throws Exception{
 
 //        test_Alex_User.deleteUser(2);
-//        test_Alex_User.addUser();
+         //test_Alex_User.addUser();
 //        test_alex_user.deleteUser(3);
 //        test_alex_user.getUser(1);
 //        test_alex_user.getUser(3);
-//        test_alex_user.getUser("alex2097");
+       // test_alex_user.getUser("alex2097");
 //        test_alex_user.getUser("alex2098");
 //        test_alex_user.modifyUser();
-//        test_alex_user.signup();
+       // test_alex_user.signup();
+            test_alex_user.signup(new UserVO(UserType.Customer,"alex2098","asdf"));
 //        test_alex_user.deleteUser(5);
 //        test_alex_user.login();
 
@@ -36,7 +39,7 @@ public class test_Alex {
  //      test_alex_credit.getCreditRecordList(2);
   //   test_alex_credit.addCreditRecord();
    //  test_alex_credit.getCreditValue();
-//     test_alex_credit.setCreditValue();
+     test_alex_credit.setCreditValue();
 
     }
 
@@ -64,7 +67,7 @@ public class test_Alex {
     public static void main(String args[]){
         ClientRunner clientRunner=new ClientRunner();
         try {
-            /*
+            ///*
             System.out.println("testing user module:");
             testing_User();
             System.out.println();
@@ -76,7 +79,7 @@ public class test_Alex {
             System.out.println();
             //*/
 //---------------------------------------------------------------------------//
-            ///*
+            /*
             System.out.println("testing promotion module");
             testing_Promotion();
             System.out.println();

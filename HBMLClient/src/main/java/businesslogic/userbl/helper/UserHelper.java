@@ -64,8 +64,7 @@ public class UserHelper {
     }
 
     public ResultMessage signup(UserVO vo) throws Exception{
-
-        UserPO userPO=userTransferService.voToPo(vo);
+        UserPO userPO = userTransferService.voToPo(vo);
         return userDao.signup(userPO);
     }
 

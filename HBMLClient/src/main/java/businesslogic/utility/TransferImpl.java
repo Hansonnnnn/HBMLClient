@@ -55,15 +55,14 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public UserVO poToVo(UserPO po) throws Exception{
-		File image=po.getPortrait();
-		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), image,po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
+		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), po.getPortrait(),po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
 		return userVO;
 	}
 
 	@Override
 	public UserPO voToPo(UserVO vo) throws Exception{
-		File file=vo.getPortrait();
-		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),file,vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
+
+		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),vo.getPortrait(),vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
 		return userPO;
 	}
 
