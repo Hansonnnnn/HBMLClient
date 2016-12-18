@@ -91,7 +91,9 @@ public class FirstPageUIController {
 	@FXML
 	private void orderPartAction()
 	{
-		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
+//		System.out.println(userID);
+//		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
+		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, 1));
 	}
 	
 	@FXML
@@ -112,17 +114,6 @@ public class FirstPageUIController {
 		}
 	}
 	
-//	@FXML
-//	private void search()
-//	{
-//		String searchInfo = "绿地洲际酒店";
-//		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
-//		{
-//			searchInfo = searchField.getText();
-//		}
-//		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
-//		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo, checkinTime,state));
-//	}
 	
 	@FXML 
 	private void searchByConditions()

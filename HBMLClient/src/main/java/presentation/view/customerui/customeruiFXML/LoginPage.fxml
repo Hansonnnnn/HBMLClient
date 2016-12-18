@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -28,15 +30,46 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="51.0" prefWidth="500.0" spacing="30.0">
                <children>
-                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="127.0" text="登录" />
-                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" prefWidth="127.0" text="取消" />
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="42.0" prefWidth="130.0">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/成功.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" prefWidth="127.0">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/取消-2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="500.0" spacing="30.0">
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="500.0" spacing="30.0">
                <children>
-                  <Button fx:id="enrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="27.0" prefWidth="127.0" text="注册" />
-                  <Button fx:id="findPasswordButton" mnemonicParsing="false" onAction="#findPassword" prefWidth="127.0" text="找回密码" />
+                  <Button fx:id="enrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="42.0" prefWidth="130.0">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/注册.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="findPasswordButton" mnemonicParsing="false" onAction="#findPassword" prefHeight="42.0" prefWidth="130.0">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/密码找回.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>

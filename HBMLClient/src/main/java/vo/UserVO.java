@@ -306,4 +306,13 @@ public class UserVO {
     public void setCreditValue(long creditValue) {
         this.creditValue = creditValue;
     }
+
+	@Override
+	public String toString() {
+		return "UserVO [userID=" + userID + ", userType=" + userType + ", accountName=" + accountName + ", password="
+				+ password + ", name=" + name + ", contact=" + contact + ", portrait=" + portrait + ", creditValue="
+				+ creditValue + ", memberType=" + memberType + ", memberInfo=" + memberInfo + ", rank=" + rank
+				+ ", workid=" + workid + ", hotelid=" + hotelid + "]";
+	}
+    
 }

@@ -23,7 +23,7 @@ public class CancelledOrderPageUIController {
 	@FXML private TableColumn hotelNameColumn;
 	@FXML private TableColumn generateTimeColumn;
 	@FXML private TableColumn	 cancelledTimeColumn;
-	@FXML private TableColumn creditColumn;
+//	@FXML private TableColumn creditColumn;
 	
 	@FXML private TableColumn checkOrderButtonColumn;
 	
@@ -44,7 +44,7 @@ public class CancelledOrderPageUIController {
 		hotelNameColumn.setCellValueFactory(new PropertyValueFactory<>("hotelName"));
 		generateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("generateTime"));
 		cancelledTimeColumn.setCellValueFactory(new PropertyValueFactory<>("cancelTime"));
-		creditColumn.setCellValueFactory(new PropertyValueFactory<>("credit"));
+//		creditColumn.setCellValueFactory(new PropertyValueFactory<>("credit"));
 		
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{

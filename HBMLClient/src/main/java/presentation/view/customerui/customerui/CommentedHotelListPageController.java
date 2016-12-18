@@ -1,5 +1,6 @@
 package presentation.view.customerui.customerui;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -24,6 +25,8 @@ public class CommentedHotelListPageController
 		
 		private Stage stage;
 		private Scene commentFirstPageScene;
+		
+		private ObservableList<HotelVO> hotelData;
 		
 		public void init(Stage stage, Scene commentFirstPageScene)
 		{

@@ -21,7 +21,7 @@
                   <Button mnemonicParsing="false" text="Button" />
                </children>
             </HBox>
-            <TextArea prefHeight="450.0" prefWidth="850.0" promptText="//填写评论" />
+            <TextArea fx:id="commentArea" prefHeight="450.0" prefWidth="850.0" promptText="//填写评论" />
          </children>
       </VBox>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="466.0" layoutY="20.0" prefHeight="33.0" prefWidth="77.0" text="评价">
@@ -30,8 +30,8 @@
          </font>
       </Label>
       <Button layoutX="21.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" text="返回" />
-      <ImageView fitHeight="384.0" fitWidth="339.0" layoutX="28.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="144.0" layoutY="519.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" text="上传图片" />
-      <Button layoutX="319.0" layoutY="546.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" text="提交评价" />
+      <ImageView fx:id="imageView" fitHeight="383.0" fitWidth="339.0" layoutX="28.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="submitImageButton" layoutX="153.0" layoutY="505.0" mnemonicParsing="false" onAction="#submitImage" prefHeight="35.0" prefWidth="110.0" text="上传图片" />
+      <Button fx:id="submitButton" layoutX="319.0" layoutY="546.0" mnemonicParsing="false" onAction="#submitAll" prefHeight="40.0" prefWidth="258.0" text="提交评价" />
    </children>
 </AnchorPane>
