@@ -27,7 +27,7 @@ public class HotelStaffServiceTest {
 
 	@Test
 	public void testModifyHotel() {
-		HotelVO hotelVO = hotelCustomerService.getHotelInfo(120);
+		HotelVO hotelVO = hotelCustomerService.getHotelInfo(111);
 		ResultMessage resultMessage = hotelStaffService.modifyHotel(hotelVO);
 		assertEquals(ResultMessage.success, resultMessage);
 	}

@@ -17,7 +17,6 @@ public class HotelRegionHelperTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ClientRunner clientRunner = new ClientRunner();
-
 	}
 
 	@Test
@@ -40,5 +39,6 @@ public class HotelRegionHelperTest {
 		Map<Integer, RegionVO> map  = hotelRegionHelper.getRegions("南京");
 		assertNotNull(map);
 	}
+	
 
 }
