@@ -66,13 +66,6 @@ public class SearchHotelStaffUIController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
-        if(seekStaffIdTextField.getText().equals("01")){
-
-            tipLabel.setVisible(false);
-        }else{
-        }
     }
 
     private void initTableView(){
@@ -125,12 +118,17 @@ public class SearchHotelStaffUIController {
         }
 
         private void buttonAction(){
+
             viewHotelStaffInfoButton.setOnAction((ActionEvent e)->{
-                int selectedIndex=getTableRow().getIndex();
-                HotelVO hotelVO=(HotelVO)hotelTableView.getItems().get(selectedIndex);
-//                UserVO
-//                infoVBox.getChildren().remove(0);
-//                infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox,stage));
+                try{
+                    int selectedIndex=getTableRow().getIndex();
+                    HotelVO hotelVO=(HotelVO)hotelTableView.getItems().get(selectedIndex);
+                    UserVO userVO=userStaffService.getUserData(hotelVO.getAccountName());
+                    infoVBox.getChildren().remove(0);
+                    infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox,stage,userVO));
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
             });
             deleteButton.setOnAction((ActionEvent e)->{
                 int selectedIndex=getTableRow().getIndex();
