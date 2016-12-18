@@ -1,5 +1,8 @@
 package presentation.view.WebManagerUI;
 
+import businesslogic.hotelInfobl.HotelWebManagerImpl;
+import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
+import businesslogicservice.userblservice.UserStaffService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,8 +13,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import vo.HotelVO;
+import vo.UserVO;
 
 import javax.xml.soap.Text;
 
@@ -30,9 +35,14 @@ public class SearchHotelStaffUIController {
     private VBox infoVBox;
     private VBox thisVBox;
     private ObservableList hotelData;
-    public void init(VBox infoVBox,VBox thisVBox){
+    private HotelWebManagerService hotelWebManagerService;
+    private UserStaffService userStaffService;
+    private Stage stage;
+    public void init(VBox infoVBox,VBox thisVBox,Stage stage){
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        this.stage=stage;
+        hotelWebManagerService=new HotelWebManagerImpl();
         initTableView();
     }
 
@@ -41,12 +51,20 @@ public class SearchHotelStaffUIController {
      */
     @FXML
     private void seekStaffInfo(){
-        if(seekStaffIdTextField.getText().equals("01")){
-            infoVBox.getChildren().remove(0);
-            infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,thisVBox));
-            tipLabel.setVisible(false);
-        }else{
-            tipLabel.setVisible(true);
+        try{
+            if((!seekStaffIdTextField.getText().equals(""))&&(seekStaffIdTextField!=null)){
+                UserVO userVO=userStaffService.getUserData(seekStaffIdTextField.getText());
+                if(userVO!=null){
+                    infoVBox.getChildren().remove(0);
+                    infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,thisVBox,stage,userVO));
+                }else{
+                    tipLabel.setVisible(true);
+                }
+            }else{
+                tipLabel.setVisible(true);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -61,8 +79,11 @@ public class SearchHotelStaffUIController {
         });
 
         hotelData= FXCollections.observableArrayList();
-        hotelData.add(new HotelVO("如家酒店",123456,2,null,0,null,null,null,0,0));
-        hotelData.add(new HotelVO("仙林酒店",456789,3,null,0,null,null,null,0,0));
+        if(hotelWebManagerService.getAllHotel()!=null){
+            for(HotelVO hotelVO:hotelWebManagerService.getAllHotel().values()){
+                hotelData.add(hotelVO);
+            }
+        }
         hotelTableView.setItems(hotelData);
     }
 
@@ -97,12 +118,23 @@ public class SearchHotelStaffUIController {
         }
 
         private void buttonAction(){
+
             viewHotelStaffInfoButton.setOnAction((ActionEvent e)->{
-                infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox));
+                try{
+                    int selectedIndex=getTableRow().getIndex();
+                    HotelVO hotelVO=(HotelVO)hotelTableView.getItems().get(selectedIndex);
+                    UserVO userVO=userStaffService.getUserData(hotelVO.getAccountName());
+                    infoVBox.getChildren().remove(0);
+                    infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox,stage,userVO));
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
             });
             deleteButton.setOnAction((ActionEvent e)->{
-
+                int selectedIndex=getTableRow().getIndex();
+                HotelVO hotelVO=(HotelVO)hotelTableView.getItems().get(selectedIndex);
+                hotelWebManagerService.deleteHotel(hotelVO.getId());
+                initTableView();
             });
         }
 

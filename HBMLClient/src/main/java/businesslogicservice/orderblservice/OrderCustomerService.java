@@ -21,7 +21,17 @@ public interface OrderCustomerService {
 
 	// 获取异常订单（即用户未按照规定时间入住，订单处于的状态）
 	public Map<Integer, OrderVO> getAbnormalOrderList(int userID);
+	
+	public Map<Integer, OrderVO> getUnexecutedOrderListOfSpecificHotel(int userID,int hotelID);
 
+	// 获取已执行订单（即订单用户已入住，订单处于在执行状态）
+	public Map<Integer, OrderVO> getExecutedOrderListOfSpecificHotel(int userID,int hotelID);
+
+	// 获取已撤销订单（即订单用户对该订单执行撤销操作之后，订单处于的状态）
+	public Map<Integer, OrderVO> getCancelledOrderListOfSpecificHotel(int userID,int hotelID);
+
+	// 获取异常订单（即用户未按照规定时间入住，订单处于的状态）
+	public Map<Integer, OrderVO> getAbnormalOrderListOfSpecificHotel(int userID,int hotelID);
 	/**
 	 * @TODO：撤销订单
 	 * @param orderID 

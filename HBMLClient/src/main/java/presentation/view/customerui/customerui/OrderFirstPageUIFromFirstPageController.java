@@ -35,6 +35,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	{
 		this.stage = stage;
 		this.preScene = preScene;
+		this.userID = userID;
 		contentBox.getChildren().add(new UnexecutedOrderPageUI(userID));
 	}
 	
@@ -78,6 +79,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	@FXML
 	private void fifthBuutonAction()//异常订单
 	{
+//		System.out.println(userID);
 		contentBox.getChildren().remove(0);
 		contentBox.getChildren().add(new AbnormalOrderPageUI(userID));
 	}

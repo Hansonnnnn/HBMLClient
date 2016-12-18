@@ -147,6 +147,7 @@ public class UserVO {
         this.creditValue = creditValue;
     }
 
+
     public void setUserID(int userID) {
         this.userID = userID;
     }

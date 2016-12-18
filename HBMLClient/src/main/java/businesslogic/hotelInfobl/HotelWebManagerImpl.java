@@ -44,7 +44,7 @@ public class HotelWebManagerImpl implements HotelWebManagerService{
 	}
 
 	@Override
-	public ResultMessage addHotel(HotelVO vo) {
+	public int addHotel(HotelVO vo) {
 		
 		
 		return hotelHelper.addHotel(vo);

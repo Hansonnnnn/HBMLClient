@@ -28,7 +28,7 @@ public interface HotelWebManagerService {
 	 * @param vo  以vo为参数的  都是成型正确的VO  
 	 * @return
 	 */
-	public ResultMessage addHotel(HotelVO vo);
+	public int addHotel(HotelVO vo);
 	
 	public ResultMessage modifyHotel(HotelVO vo);
 	

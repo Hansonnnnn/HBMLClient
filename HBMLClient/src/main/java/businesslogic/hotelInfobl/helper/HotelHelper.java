@@ -63,13 +63,13 @@ public class HotelHelper {
 		return hotelList.get(hotelID);
 	}
 	
-	public ResultMessage addHotel(HotelVO vo) {
+	public int addHotel(HotelVO vo) {
 		try {
 			return hotelDao.addHotel(hotelTransferService.voToPO(vo));
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return ResultMessage.disconnection;
+			return -1;
 		}
 	}
 	

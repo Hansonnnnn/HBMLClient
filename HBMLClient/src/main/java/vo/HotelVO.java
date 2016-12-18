@@ -1,12 +1,13 @@
 package vo;
+
 import java.io.File;
 import java.util.List;
 
-import javafx.scene.image.Image;
-
-public class HotelVO
-{
-
+/**
+ * @author 凡
+ *
+ */
+public class HotelVO{
 	String name;
 	int id;
 	int star;
@@ -17,23 +18,9 @@ public class HotelVO
 	List<File> environment;
 	double score;
 	int lowestPrice;
+	String accountName;
 	
 	
-
-	public HotelVO(String name, int id, int star, String address, int region, String introduction, String facility,
-			List<File> environment, double score,int lowestPrice) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.star = star;
-		this.address = address;
-		this.region = region;
-		this.introduction = introduction;
-		this.facility = facility;
-		this.environment = environment;
-		this.score = score;
-		this.lowestPrice = lowestPrice;
-	}
 
 	public HotelVO() {
 		// TODO Auto-generated constructor stub
@@ -119,14 +106,39 @@ public class HotelVO
 		this.lowestPrice = lowestPrice;
 	}
 
+	public String getAccountName() {
+		return accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
 	@Override
 	public String toString() {
-		return "HotelPO [name=" + name + ", id=" + id + ", star=" + star + ", address=" + address + ", region=" + region
+		return "HotelVO [name=" + name + ", id=" + id + ", star=" + star + ", address=" + address + ", region=" + region
 				+ ", introduction=" + introduction + ", facility=" + facility + ", environment=" + environment
-				+ ", score=" + score + ", lowestPrice=" + lowestPrice + "]";
+				+ ", score=" + score + ", lowestPrice=" + lowestPrice + ", accountName=" + accountName + "]";
+	}
+
+	public HotelVO(String name, int id, int star, String address, int region, String introduction, String facility,
+			List<File> environment, double score, int lowestPrice, String accountName) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.star = star;
+		this.address = address;
+		this.region = region;
+		this.introduction = introduction;
+		this.facility = facility;
+		this.environment = environment;
+		this.score = score;
+		this.lowestPrice = lowestPrice;
+		this.accountName = accountName;
 	}
 
 	
 	
-
+	
+	
 }

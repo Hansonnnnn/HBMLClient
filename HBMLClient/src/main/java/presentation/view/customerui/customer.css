@@ -126,6 +126,31 @@
     -fx-background-color: #0080FF;
 }
 
+/**
+ * 白色背景
+ */
+.whitebackground{
+	-fx-background-color:#ffffff;
+}
+
+/**
+ * 显示灰色边界
+ */
+ .grayBorder{
+ 	-fx-background-color:transparent;
+ 	-fx-border-color:#BDBDBD;
+ 	-fx-border-style:solid;
+ 	-fx-border-size:2px;
+ 	-fx-border-radius:4px;
+ }
+ 
+ .buttonBorder:hover{
+ 	-fx-border-color:#BDBDBD;
+ 	-fx-border-style:solid;
+ 	-fx-border-size:2px;
+ 	-fx-border-radius:4px;
+ }
+
 
 
 

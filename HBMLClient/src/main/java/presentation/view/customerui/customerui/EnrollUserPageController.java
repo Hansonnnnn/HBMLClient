@@ -41,15 +41,6 @@ public class EnrollUserPageController
 			if(nameField.getText()!=null&&!nameField.getText().isEmpty())
 			{
 				name = nameField.getText();
-				try {
-					if(customerService.getUserData(name)!=null)
-					{
-						userVO = customerService.getUserData(name);
-					}
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			}
 			if(passwordField.getText()!=null&&!passwordField.getText().isEmpty())
 			{
@@ -61,13 +52,21 @@ public class EnrollUserPageController
 				new MyDialog(stage, "请输入用户名和密码", 1);
 			}else
 			{
-//				service.signup(new UserVO(UserType.Customer, password, name));
+				try {
+					System.out.println("*****************");
+					customerService.signup(new UserVO(UserType.Customer, name, password));
+					
+					userVO = customerService.getUserData(name);
+					System.out.println(userVO.getUserID());
+					//切换个人信息中心界面
+					controller.setState(true, name,userVO.getUserID());
+					stage.close();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
-			
-			//切换个人信息中心界面
-			controller.setState(true, name,userVO.getUserID());
-			stage.close();
 		}
 		
 		@FXML 

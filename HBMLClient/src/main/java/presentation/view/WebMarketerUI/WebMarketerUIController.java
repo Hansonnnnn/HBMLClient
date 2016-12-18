@@ -88,7 +88,7 @@ public class WebMarketerUIController {
     @FXML
     private void toCreditValue(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new SearchCustomerUI(infoVBox));
+        infoVBox.getChildren().add(new SearchCustomerUI(infoVBox,stage));
         moveOperationButtonBackground(sliderLabel,328);
     }
 

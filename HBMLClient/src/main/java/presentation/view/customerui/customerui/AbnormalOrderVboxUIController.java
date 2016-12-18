@@ -17,6 +17,7 @@ import vo.OrderVO;
 
 public class AbnormalOrderVboxUIController {
 	@FXML private TableView list;
+	@FXML private TableColumn idColumn;
 	@FXML private TableColumn hotelNameColumn;
 	@FXML private TableColumn generateTimeColumn;
 	@FXML private TableColumn creditColumn;
@@ -36,6 +37,7 @@ public class AbnormalOrderVboxUIController {
 	
 	private void initTable()
 	{
+		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
 		hotelNameColumn.setCellValueFactory(new PropertyValueFactory<>("hotelName"));
 		generateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("generateTime"));
 		creditColumn.setCellValueFactory(new PropertyValueFactory<>("credit"));
@@ -60,8 +62,10 @@ public class AbnormalOrderVboxUIController {
 		abnormalOrderData = FXCollections.observableArrayList();
 		if(customerService.getAbnormalOrderList(userID)!=null)
 		{
+//			System.out.println(userID);
 			for (OrderVO orderVO : customerService.getAbnormalOrderList(userID).values())
 			{
+				System.out.println(orderVO.getOrderID());
 				abnormalOrderData.add(orderVO);
 			}
 		}

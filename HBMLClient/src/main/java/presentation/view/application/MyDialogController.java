@@ -21,12 +21,15 @@ public class MyDialogController {
 //    private int myDialogType;
     private Image errorImage=new Image(getClass().getResourceAsStream("loginimages/warning.png"));
     private Image warningImage=new Image(getClass().getResourceAsStream("loginimages/warning2.png"));
+    private Image smileImage=new Image(getClass().getResourceAsStream("loginimages/smile.png"));
     public void init(Stage stage, String content, int myDialogType){
         this.stage=stage;
         if(myDialogType==0){
             dialogImageView.setImage(warningImage);
         }else if(myDialogType==1){
             dialogImageView.setImage(errorImage);
+        }else if(myDialogType==2){
+            dialogImageView.setImage(smileImage);
         }
         contentLabel.setText(content);
         drag();

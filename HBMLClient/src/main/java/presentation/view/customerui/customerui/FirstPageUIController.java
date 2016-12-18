@@ -73,6 +73,7 @@ public class FirstPageUIController {
 	private ObservableList<String> regionNameShowList ;
 	private Map<String, Integer> regionNameMap ;
 	private int regionID;
+	private int star;
 	private Date checkinTime;
 	private Date checkoutTime;
 	private DateHelper dateHelper;
@@ -90,7 +91,9 @@ public class FirstPageUIController {
 	@FXML
 	private void orderPartAction()
 	{
-		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
+//		System.out.println(userID);
+//		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
+		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, 1));
 	}
 	
 	@FXML
@@ -111,22 +114,10 @@ public class FirstPageUIController {
 		}
 	}
 	
-//	@FXML
-//	private void search()
-//	{
-//		String searchInfo = "绿地洲际酒店";
-//		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
-//		{
-//			searchInfo = searchField.getText();
-//		}
-//		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
-//		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, searchInfo, checkinTime,state));
-//	}
 	
 	@FXML 
 	private void searchByConditions()
 	{
-		int star = 1;
 		String hotelName = null;
 		if(searchField.getText()!=null&&!searchField.getText().isEmpty())
 		{
@@ -135,15 +126,55 @@ public class FirstPageUIController {
 		//获取两个DatePicker里面的时间
 		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
 		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
-//		//获得星级
-//		if(fiveStarCheckBox.isSelected()){star = 5;}
-//		if(fourStarCheckBox.isSelected()){star = 4;}
-//		if(threeStarCheckBox.isSelected()){star = 3;}
-//		if(twoStarCheckBox.isSelected()){star = 2;}
-//		if(oneStarCheckBox.isSelected()){star = 1;}
+		
 		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionID,hotelName, checkinTime, star, state));
 	}
 	
+	@FXML
+	private void fiveStar()
+	{
+		star = 5;
+		fourStarCheckBox.setSelected(false);
+		threeStarCheckBox.setSelected(false);
+		twoStarCheckBox.setSelected(false);
+		oneStarCheckBox.setSelected(false);
+	}
+	@FXML
+	private void fourStar()
+	{
+		star = 4;
+		fiveStarCheckBox.setSelected(false);
+		threeStarCheckBox.setSelected(false);
+		twoStarCheckBox.setSelected(false);
+		oneStarCheckBox.setSelected(false);
+	}
+	@FXML
+	private void threeStar()
+	{
+		star = 3;
+		fiveStarCheckBox.setSelected(false);
+		fourStarCheckBox.setSelected(false);
+		twoStarCheckBox.setSelected(false);
+		oneStarCheckBox.setSelected(false);
+	}
+	@FXML
+	private void twoStar()
+	{
+		star = 2;
+		fiveStarCheckBox.setSelected(false);
+		fourStarCheckBox.setSelected(false);
+		threeStarCheckBox.setSelected(false);
+		oneStarCheckBox.setSelected(false);
+	}
+	@FXML
+	private void oneStar()
+	{
+		star = 1;
+		fiveStarCheckBox.setSelected(false);
+		fourStarCheckBox.setSelected(false);
+		threeStarCheckBox.setSelected(false);
+		twoStarCheckBox.setSelected(false);
+	}
 	private void initDatePicker()
 	{
 		checkinTimePicker.setPromptText(LocalDate.now().toString());

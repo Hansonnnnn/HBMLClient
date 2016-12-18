@@ -27,7 +27,7 @@ public class TransferImpl implements TransferService{
 				e.printStackTrace();
 			}
 		}
-		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), list, po.getScore(), po.getLowestPrice());
+		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), list, po.getScore(), po.getLowestPrice(),po.getAccountName());
 		return hotelVO;
 	}
 
@@ -37,7 +37,7 @@ public class TransferImpl implements TransferService{
 		for (File image : vo.getEnvironment()) {
 			list.add(image);
 		}
-		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),list , vo.getScore(), vo.getLowestPrice());
+		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),list , vo.getScore(), vo.getLowestPrice(),vo.getAccountName());
 		return hotelPO;
 	}
 
