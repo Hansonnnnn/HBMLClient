@@ -9,6 +9,7 @@ import businesslogicservice.roominfoblservice.RoomInfoStaffService;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.stage.Stage;
+import presentation.view.application.UserLoginUI;
 import presentation.view.customerui.customerui.FirstPageUI;
 import rmi.ClientRunner;
 import vo.OrderVO;
@@ -21,7 +22,9 @@ import vo.RoomInfoVO;
 public class Client extends Application{
 	public void start(Stage stage)
 	{
-		stage.setScene(new FirstPageUI(new Group(), stage));
+		//stage.setScene(new FirstPageUI(new Group(), stage));
+		//stage.show();
+		stage.setScene(new UserLoginUI(new Group(),stage));
 		stage.show();
 	}
 	public static void main(String[] args)

@@ -20,12 +20,17 @@ public class test_Alex_BL {
         //test_Alex_Credit_BL.getCreditValue();
     }
 
-    static void test_Promotion_BL(){
-
+    static void test_Promotion_BL()throws Exception{
+        //test_Alex_Promotion_BL.addPromotion();
+        //test_Alex_Promotion_BL.updatePromotion();
+        //test_Alex_Promotion_BL.deletePromotion();
+        //test_Alex_Promotion_BL.getPromotionList();
+        test_Alex_Promotion_BL.getSelectedPromotion();
     }
 
+
     public static void main(String args[]){
-        ClientRunner clientRunner = new ClientRunner( );
+        ClientRunner clientRunner = new ClientRunner();
         try{
             test_User_BL();
             test_Credit_BL();
