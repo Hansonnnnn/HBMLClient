@@ -70,7 +70,7 @@ public class UserVO {
      * @param password
      */
     public UserVO(UserType userType,String accountName, String password){
-       this(0, userType,accountName,password,"User",null,null,0, MemberType.Tourist,null,1,null,0);
+       this(0, userType,accountName,password,"User",null,null,50, MemberType.Tourist,null,1,null,0);
     }
     /**
      * 这是完整的constructor,参数用作参考

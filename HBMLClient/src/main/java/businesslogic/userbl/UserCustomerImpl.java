@@ -69,7 +69,6 @@ public class UserCustomerImpl implements UserCustomerService{
         ResultMessage resultMessage=userHelper.signup(vo);
         if(resultMessage.equals(ResultMessage.success)){
             System.out.println("successfully signing up a user!");
-            creditHelper.addCreditValue(vo.getUserID(),50);
         }
         return resultMessage;
     }
