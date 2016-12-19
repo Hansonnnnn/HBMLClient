@@ -41,4 +41,8 @@ public interface TransferService {
 	public OrderPO voToPo(OrderVO orderVO);
 	
 	public AppealPO voToPo(AppealVO appealVO);
+	
+	public RankVO poToVo(RankPO rankPO);
+	
+	public RankPO voToPo(RankVO rankVO);
 }

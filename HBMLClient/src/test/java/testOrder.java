@@ -5,12 +5,16 @@ import java.util.Map;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import businesslogic.creditbl.CreditWebMarketerImpl;
 import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
+import businesslogicservice.creditblservice.CreditWebMarketerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
+import dao.CreditDao;
 import rmi.ClientRunner;
 import vo.OrderVO;
+import vo.RankVO;
 import vo.RoomInfoVO;
 
 public class testOrder {
@@ -24,10 +28,17 @@ public class testOrder {
 		}*/
 		
 		
-		RoomInfoCustomerService roominfoCustomerService = new RoomInfoCustomerServiceImpl();
+		/*RoomInfoCustomerService roominfoCustomerService = new RoomInfoCustomerServiceImpl();
 		Map<String, RoomInfoVO> map = roominfoCustomerService.getRoomList(120, null);
 		for (RoomInfoVO roomInfoVO : map.values()) {
 			System.out.println(roomInfoVO);
+		}*/
+		
+		CreditWebMarketerService creditWebMarketerService = new CreditWebMarketerImpl();
+		Map<Integer, RankVO> map = creditWebMarketerService.getRankList();
+		
+		for (RankVO rankVO : map.values()) {
+			System.out.println(rankVO);
 		}
 	}
 }
