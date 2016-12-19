@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" styleClass="whitebackground" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" AnchorPane.leftAnchor="0.0">
          <padding>
@@ -79,8 +79,7 @@
                </styleClass></Button>
          </children>
       </VBox>
-      <Separator layoutX="9.0" layoutY="83.0" prefHeight="17.0" prefWidth="867.0" />
-      <Separator layoutX="858.0" layoutY="2.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="2.0" />
+      <Separator layoutX="875.0" layoutY="6.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="2.0" />
       <VBox alignment="CENTER" layoutX="6.0" layoutY="88.0" prefHeight="429.0" prefWidth="218.0" spacing="30.0">
          <children>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="商圈">
@@ -110,7 +109,7 @@
             <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="17.0">
                <children>
                   <Label text="省" />
-                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" />
+                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" styleClass="textField" />
                   <Label text="市" />
                   <ChoiceBox fx:id="cityBox" prefWidth="120.0" />
                   <Label text="区" />
@@ -186,5 +185,6 @@
             <String fx:value="grayBorder" />
          </styleClass></Button>
       <Separator layoutX="875.0" layoutY="3.0" orientation="VERTICAL" prefHeight="618.0" prefWidth="6.0" />
+      <Separator layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="867.0" />
    </children>
 </AnchorPane>

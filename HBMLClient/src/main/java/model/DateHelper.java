@@ -11,7 +11,14 @@ public class DateHelper
 		public static String dateToString(Date date)
 		{
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			return dateFormat.format(date);
+			if(date != null)
+			{
+				return dateFormat.format(date);
+			}
+			else 
+			{
+				return "yyyy-MM-dd HH:mm:ss";
+			}
 		}
 		
 		public static Date localDateToDate(LocalDate localDate) {

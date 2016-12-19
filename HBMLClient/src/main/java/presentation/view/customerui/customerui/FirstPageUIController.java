@@ -32,6 +32,7 @@ import javafx.util.Callback;
 import model.DateHelper;
 import vo.HotelVO;
 import vo.RegionVO;
+import vo.UserVO;
 
 public class FirstPageUIController {
 	@FXML private TextField searchField;
@@ -59,7 +60,8 @@ public class FirstPageUIController {
 	private Scene firstPageUI;
 	private Stage stage;
 	
-	private boolean state;
+	private boolean logined;
+	private UserVO userVO;
 	private String userName;
 	private int userID;
 	
@@ -79,11 +81,13 @@ public class FirstPageUIController {
 	private DateHelper dateHelper;
 	private ObservableList<String> defaultList;
 	
-	public void init(Stage stage, Scene firstPageUI)
+	public void init(Stage stage, Scene firstPageUI, UserVO userVO, boolean logined)
 	{
 		this.stage = stage;
 		this.firstPageUI = firstPageUI;
 		helper = new RegionHelper();
+		this.userVO = userVO;
+		this.logined  = logined;
 		initDatePicker();
 		initProvinceBox();
 	}
@@ -105,12 +109,12 @@ public class FirstPageUIController {
 	@FXML
 	private void personalInfoPartAction()
 	{
-		if(!state)
+		if(!logined)
 		{
 			stage.setScene(new NullUserPage(new Group(), stage, firstPageUI));
 		}else
 		{
-			stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI, userName));
+			stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI, userVO));
 		}
 	}
 	
@@ -127,7 +131,7 @@ public class FirstPageUIController {
 		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
 		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
 		
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI, provinceName, cityName, regionID,hotelName, checkinTime, star, state));
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI,userVO, provinceName, cityName, regionID,hotelName, checkinTime, star, logined));
 	}
 	
 	@FXML
@@ -280,26 +284,26 @@ public class FirstPageUIController {
 	@FXML 
 	private void login()
 	{
-		if(state)
+		if(logined)
 		{
-			new LogoutPageUI(stage, firstPageUI, this).showAndWait();
+			stage.setScene(new WelcomePageUILogoutEdition(new Group(), stage, firstPageUI, this, userVO.getName()));
 		}else 
 		{
-			new LoginPageUI(stage, firstPageUI, this).showAndWait();
+			stage.setScene(new WelcomePageUI(new Group(), stage));
 		}
 	}
 	public boolean getState()
 	{
-		return state;
+		return logined;
 	}
-	public void setState(boolean state, String userName, int userID)
+	public void setState(boolean logined, String userName, int userID)
 	{
-		this.state = state;
+		this.logined = logined;
 		this.userName = userName;
 		this.userID = userID;
 	}
-	public void setState(boolean state)
+	public void setState(boolean logined)
 	{
-		this.state = state;
+		this.logined = logined;
 	}
 }

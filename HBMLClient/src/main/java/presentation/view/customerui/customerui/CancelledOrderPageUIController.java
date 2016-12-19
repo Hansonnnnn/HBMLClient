@@ -6,6 +6,7 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -13,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import message.OrderStateMessage;
 import vo.OrderVO;
@@ -69,6 +71,14 @@ public class CancelledOrderPageUIController {
 	public class CheckButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkButton = new Button("查看");
+		public CheckButtonCell()
+		{
+			checkButton.setOnAction((ActionEvent e)->{
+				int selectedIndex = getTableRow().getIndex();
+				OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+				new OrderInfoPage(orderVO).show();
+				});
+		}
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);

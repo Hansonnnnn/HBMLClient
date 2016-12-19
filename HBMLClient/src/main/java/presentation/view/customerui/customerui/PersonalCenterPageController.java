@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class PersonalCenterPageController {
 	@FXML private Button backButton;
@@ -33,13 +34,14 @@ public class PersonalCenterPageController {
 	private Desktop desktop;
 	private FileChooser fileChooser;
 	
-	private String userName;
-	public void init(Stage stage, Scene preScene, Scene presentScene, String userName)
+//	private String userName;
+	private UserVO userVO;
+	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
 		this.presentScene = presentScene;
-		this.userName = userName;
+		this.userVO = userVO;
 	}
 	
 	@FXML
@@ -105,6 +107,6 @@ public class PersonalCenterPageController {
 	@FXML 
 	private void myHotel()
 	{
-		stage.setScene(new MyHotelListPage(new Group(), stage, presentScene));
+		stage.setScene(new MyHotelListPage(new Group(), stage, presentScene,userVO));
 	}
 }

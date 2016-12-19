@@ -1,18 +1,11 @@
 package driver;
 
-import java.util.Map;
-
-import businesslogic.orderbl.OrderCustomerServiceImpl;
-import businesslogic.roomInfobl.RoomInfoStaffServiceImpl;
-import businesslogicservice.orderblservice.OrderCustomerService;
-import businesslogicservice.roominfoblservice.RoomInfoStaffService;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.stage.Stage;
 import presentation.view.customerui.customerui.FirstPageUI;
+import presentation.view.customerui.customerui.WelcomePageUI;
 import rmi.ClientRunner;
-import vo.OrderVO;
-import vo.RoomInfoVO;
 /**
  * 驱动的总测试入口
  * @author wangfan
@@ -21,7 +14,8 @@ import vo.RoomInfoVO;
 public class Client extends Application{
 	public void start(Stage stage)
 	{
-		stage.setScene(new FirstPageUI(new Group(), stage));
+//		stage.setScene(new FirstPageUI(new Group(), stage));
+		stage.setScene(new WelcomePageUI(new Group(), stage));
 		stage.show();
 	}
 	public static void main(String[] args)

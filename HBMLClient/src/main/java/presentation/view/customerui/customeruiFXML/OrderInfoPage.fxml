@@ -38,7 +38,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label fx:id="generateTime" text="生成时间" />
+                  <Label text="生成时间" />
                   <Label fx:id="generateTime" text="Label" />
                </children>
                <padding>
@@ -65,8 +65,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label fx:id="checkoutTime" text="退房时间" />
-                  <Label text="Label" />
+                  <Label text="退房时间" />
+                  <Label fx:id="checkoutTime" text="Label" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -74,8 +74,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label fx:id="orderState" text="订单状态" />
-                  <Label text="Label" />
+                  <Label text="订单状态" />
+                  <Label fx:id="orderState" text="Label" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -83,8 +83,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label fx:id="hasChild" text="有无儿童" />
-                  <Label text="Label" />
+                  <Label text="有无儿童" />
+                  <Label fx:id="hasChild" text="Label" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -92,8 +92,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label fx:id="price" text="价格" />
-                  <Label text="Label" />
+                  <Label text="价格" />
+                  <Label fx:id="price" text="Label" />
                </children>
                <padding>
                   <Insets left="30.0" />

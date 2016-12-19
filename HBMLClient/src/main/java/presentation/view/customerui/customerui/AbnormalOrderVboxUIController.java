@@ -4,6 +4,7 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -74,8 +75,15 @@ public class AbnormalOrderVboxUIController {
 	
 	public class CheckButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button checkButton = new Button("查看");
-		
+		private Button checkOrderButton = new Button("查看");
+		public CheckButtonCell()
+		{
+			checkOrderButton.setOnAction((ActionEvent e)->{
+			int selectedIndex = getTableRow().getIndex();
+			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+			new OrderInfoPage(orderVO).show();
+			});
+		}
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -85,7 +93,7 @@ public class AbnormalOrderVboxUIController {
 				setText(null);
 			}else
 			{
-				setGraphic(checkButton);
+				setGraphic(checkOrderButton);
 				setText(null);
 			}
 		}

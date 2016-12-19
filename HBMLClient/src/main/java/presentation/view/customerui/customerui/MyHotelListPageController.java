@@ -28,6 +28,7 @@ import presentation.view.customerui.customerui.HotelListPageController.CheckInfo
 import presentation.view.customerui.customerui.HotelListPageController.MakeOrderButtonCell;
 import vo.HotelVO;
 import vo.OrderVO;
+import vo.UserVO;
 
 public class MyHotelListPageController 
 {
@@ -55,14 +56,15 @@ public class MyHotelListPageController
 		 private Map<String, Integer> nameMapID;
 		 private String region;
 		 private Date checkinTime;
-		 private int star;
+		 private UserVO userVO;
 		 
 		private HotelCustomerService service;
 		
-		public void init(Stage stage, Scene preScene)
+		public void init(Stage stage, Scene preScene,UserVO userVO)
 		{
 			this.stage = stage;
 			this.preScene = preScene;
+			this.userVO = userVO;
 		}
 		
 		@FXML 
@@ -153,7 +155,7 @@ public class MyHotelListPageController
 			
 				 checkButton.setOnAction((ActionEvent e)->{
 					 HotelVO hotelVO = (HotelVO)list.getSelectionModel().getSelectedItem();
-					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene,hotelVO,checkinTime));
+					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene,hotelVO,userVO,checkinTime));
 				 });
 			 }
 			 protected void updateItem(Boolean t, boolean empty)

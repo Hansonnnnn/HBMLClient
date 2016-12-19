@@ -6,6 +6,7 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -71,7 +72,14 @@ public class ExecutedOrderUIController {
 	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkOrderButton = new Button("查看");
-		
+		public CheckOrderButtonCell()
+		{
+			checkOrderButton.setOnAction((ActionEvent e)->{
+			int selectedIndex = getTableRow().getIndex();
+			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+			new OrderInfoPage(orderVO).show();
+			});
+		}
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);

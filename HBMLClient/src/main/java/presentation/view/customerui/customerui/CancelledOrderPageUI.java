@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class CancelledOrderPageUI extends VBox
 {

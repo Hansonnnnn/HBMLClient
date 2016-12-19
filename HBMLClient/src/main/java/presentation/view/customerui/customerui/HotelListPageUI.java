@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class HotelListPageUI extends Scene
 {
@@ -25,7 +26,7 @@ public class HotelListPageUI extends Scene
 //		controller.init(stage, preScene,this, searchInfo,checkinTime, state);
 //	}
 	
-	public HotelListPageUI(Parent root, Stage stage, Scene preScene, String province, String city, int region,String hotelName, Date checkinTime, int star,boolean state)
+	public HotelListPageUI(Parent root, Stage stage, Scene preScene,UserVO userVO, String province, String city, int region,String hotelName, Date checkinTime, int star,boolean state)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
@@ -36,6 +37,6 @@ public class HotelListPageUI extends Scene
 			e.printStackTrace();
 		}
 		HotelListPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, province, city, region,hotelName, checkinTime, star,state);
+		controller.init(stage, preScene,this, userVO, province, city, region,hotelName, checkinTime, star,state);
 	}
 }
