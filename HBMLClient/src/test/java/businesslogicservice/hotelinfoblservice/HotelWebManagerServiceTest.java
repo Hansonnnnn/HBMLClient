@@ -42,9 +42,9 @@ public class HotelWebManagerServiceTest {
 
 	@Test
 	public void testAddHotel() {
-		HotelVO hotelVO = hotelWebManagerService.getHotelInfo(120);
+		HotelVO hotelVO = hotelWebManagerService.getHotelInfo(143);
 		int i = hotelWebManagerService.addHotel(hotelVO);
-		assertNotEquals(0, i);
+		assertEquals(146, i);
 	}
 
 	@Test
