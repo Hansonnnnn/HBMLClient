@@ -115,8 +115,10 @@ public class MakeOrderPageController
 			{
 				sendInfo = 1;
 			}
+			System.out.println(userVO == null);
 			OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
 					new Date(), null, new Date(checkinTime.getTime()+18*60*60), checkinTime, null, number, sendInfo, roomInfoVO.getDefaultPrice());
+			System.out.println(orderVO == null);
 			customerService.addOrder(orderVO);
 		}
 }

@@ -78,6 +78,7 @@ public class WelcomePageController
 			}
 			if(resultMessage == ResultMessage.success)
 			{
+				new MyDialog(stage, "登录成功", 2);
 				stage.setScene(new FirstPageUI(new Group(), stage, userVO, true));
 			}else if(resultMessage == ResultMessage.notexist)
 			{

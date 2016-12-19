@@ -32,9 +32,11 @@ public class CancelledOrderPageUIController {
 	@FXML private ObservableList<OrderVO> cancelledOrderData;
 	private int userID;
 	private OrderCustomerService customerService;
+	private Stage stage;
 	
-	public void init(int userID)
+	public void init(Stage stage,int userID)
 	{
+		this.stage = stage;
 		this.userID = userID;
 		customerService = new OrderCustomerServiceImpl();
 		initTable();

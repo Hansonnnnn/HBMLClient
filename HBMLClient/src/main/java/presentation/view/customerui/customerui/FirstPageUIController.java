@@ -30,6 +30,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.DateHelper;
+import presentation.view.application.MyDialog;
 import vo.HotelVO;
 import vo.RegionVO;
 import vo.UserVO;
@@ -97,7 +98,14 @@ public class FirstPageUIController {
 	{
 //		System.out.println(userID);
 //		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
-		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, 1));
+		if(logined)
+		{
+			stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userVO.getUserID()));
+		}
+		else
+		{
+			new MyDialog(stage, "请登录", 0);
+		}
 	}
 	
 	@FXML

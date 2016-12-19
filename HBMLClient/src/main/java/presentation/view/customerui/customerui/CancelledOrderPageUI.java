@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class CancelledOrderPageUI extends VBox
 {
-		public CancelledOrderPageUI(int userID)
+		public CancelledOrderPageUI(Stage stage,int userID)
 		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CancelledOrderPage.fxml"));
 			try
@@ -22,6 +22,6 @@ public class CancelledOrderPageUI extends VBox
 //			OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
 //			controller.initCancelledOrderPart();
 			CancelledOrderPageUIController controller = fxmlLoader.getController();
-			controller.init(userID);
+			controller.init(stage,userID);
 		}
 }

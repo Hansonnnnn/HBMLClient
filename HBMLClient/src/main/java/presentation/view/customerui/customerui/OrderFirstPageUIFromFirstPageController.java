@@ -30,13 +30,15 @@ public class OrderFirstPageUIFromFirstPageController {
 	private Stage stage;
 	private Scene preScene;
 	private int userID;
+	private Scene orderFirstPageScene;
 	
-	public void init(Stage stage, Scene preScene,int userID)
+	public void init(Stage stage, Scene preScene,Scene orderFirstPageScene,int userID)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
+		this.orderFirstPageScene = orderFirstPageScene;
 		this.userID = userID;
-		contentBox.getChildren().add(new UnexecutedOrderPageUI(userID));
+		contentBox.getChildren().add(new UnexecutedOrderPageUI(stage, userID));
 	}
 	
 	@FXML
@@ -57,7 +59,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	private void secondButtonAction()//未完成订单
 	{
 		contentBox.getChildren().remove(0);
-		contentBox.getChildren().add(new UnexecutedOrderPageUI(userID));
+		contentBox.getChildren().add(new UnexecutedOrderPageUI(stage,userID));
 	}
 	
 
@@ -65,7 +67,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	private void thirdButtonAction()//已执行订单
 	{
 		contentBox.getChildren().remove(0);
-		contentBox.getChildren().add(new ExecutedOrderPageUI(userID));
+		contentBox.getChildren().add(new ExecutedOrderPageUI(stage,userID));
 	}
 	
 
@@ -73,7 +75,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	private void forthButtonAction()//已撤销订单
 	{
 		contentBox.getChildren().remove(0);
-		contentBox.getChildren().add(new CancelledOrderPageUI(userID));
+		contentBox.getChildren().add(new CancelledOrderPageUI(stage,userID));
 	}
 	
 	@FXML
@@ -81,7 +83,7 @@ public class OrderFirstPageUIFromFirstPageController {
 	{
 //		System.out.println(userID);
 		contentBox.getChildren().remove(0);
-		contentBox.getChildren().add(new AbnormalOrderPageUI(userID));
+		contentBox.getChildren().add(new AbnormalOrderPageUI(stage,orderFirstPageScene,userID));
 	}
 	
 	

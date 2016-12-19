@@ -13,6 +13,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import message.OrderStateMessage;
 import presentation.view.customerui.customerui.UnexecutedOrderPageController.CheckOrderButtonCell;
@@ -33,10 +34,12 @@ public class ExecutedOrderUIController {
 	
 	private Map<Integer, OrderVO> orderList;
 	private int userID;
+	private Stage stage;
 //	private OrderBLService service;
 	
-	public void init(int userID)
+	public void init(Stage stage,int userID)
 	{
+		this.stage = stage;
 		this.userID = userID;
 		service = new OrderCustomerServiceImpl();
 		initTable();
