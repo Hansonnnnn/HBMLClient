@@ -6,32 +6,58 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="422.0" styleClass="dialogBackground" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.ValueJudgeUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" styleClass="dialogBackground" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.ValueJudgeUIController">
    <children>
-      <HBox alignment="CENTER" prefHeight="79.0" prefWidth="498.0" spacing="15.0">
+      <VBox prefHeight="350.0" prefWidth="450.0">
          <children>
-            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../webmarketerimages/confirmInfo.png" />
-               </image>
-            </ImageView>
-            <Label styleClass="dialogLabelSize" text="恢复异常订单已扣除信用值的多少?" />
+            <VBox prefHeight="350.0" prefWidth="450.0">
+               <children>
+                  <Label styleClass="infoLabelSize" text="申诉理由:" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="confirmButton" text="合理" />
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="cancelButton" text="不合理" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" top="40.0" />
+               </padding>
+            </VBox>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="498.0" spacing="40.0">
+      </VBox>
+      <VBox prefHeight="350.0" prefWidth="450.0" visible="false">
          <children>
-            <CheckBox fx:id="halfCheckBox" mnemonicParsing="false" onAction="#half" styleClass="dialogLabelSize" text="一半" />
-            <CheckBox fx:id="wholeCheckBox" mnemonicParsing="false" onAction="#whole" styleClass="dialogLabelSize" text="全部" />
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="498.0" spacing="15.0">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../webmarketerimages/confirmInfo.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="dialogLabelSize" text="恢复异常订单已扣除信用值的多少?" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="498.0" spacing="40.0">
+               <children>
+                  <CheckBox fx:id="halfCheckBox" mnemonicParsing="false" onAction="#half" styleClass="dialogLabelSize" text="一半" />
+                  <CheckBox fx:id="wholeCheckBox" mnemonicParsing="false" onAction="#whole" styleClass="dialogLabelSize" text="全部" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="498.0" spacing="40.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#confirm" prefHeight="30.0" prefWidth="80.0" styleClass="confirmButton" text="确认" />
+                  <Button mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="80.0" styleClass="cancelButton" text="取消" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="79.0" prefWidth="498.0" spacing="40.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#confirm" prefHeight="30.0" prefWidth="80.0" styleClass="confirmButton" text="确认" />
-            <Button mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="80.0" styleClass="cancelButton" text="取消" />
-         </children>
-      </HBox>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="-350.0" />
+         </VBox.margin>
+      </VBox>
    </children>
-   <padding>
-      <Insets top="30.0" />
-   </padding>
 </VBox>
