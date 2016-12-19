@@ -1,7 +1,12 @@
 package presentation.view.WebManagerUI;
 
+import businesslogic.hotelInfobl.HotelWebManagerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
+import businesslogic.userbl.UserWebManagerImpl;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
+import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
+import businesslogicservice.userblservice.UserWebManagerService;
+import com.sun.xml.internal.ws.api.pipe.ServerTubeAssemblerContext;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -15,8 +20,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import model.MemberType;
+import model.UserType;
 import presentation.view.application.MyDialog;
+import vo.HotelVO;
 import vo.RegionVO;
+import vo.UserVO;
 
 import javax.xml.soap.Text;
 import java.util.ArrayList;
@@ -29,73 +38,109 @@ import java.util.Map;
  */
 public class AddHotelUIController {
 
-    @FXML private Button starButton1;
-    @FXML private Button starButton2;
-    @FXML private Button starButton3;
-    @FXML private Button starButton4;
-    @FXML private Button starButton5;
-    @FXML private ImageView starImageView1;
-    @FXML private ImageView starImageView2;
-    @FXML private ImageView starImageView3;
-    @FXML private ImageView starImageView4;
-    @FXML private ImageView starImageView5;
+    @FXML
+    private Button starButton1;
+    @FXML
+    private Button starButton2;
+    @FXML
+    private Button starButton3;
+    @FXML
+    private Button starButton4;
+    @FXML
+    private Button starButton5;
+    @FXML
+    private ImageView starImageView1;
+    @FXML
+    private ImageView starImageView2;
+    @FXML
+    private ImageView starImageView3;
+    @FXML
+    private ImageView starImageView4;
+    @FXML
+    private ImageView starImageView5;
 
-    @FXML private TextField nameTextField;
-    @FXML private ComboBox provinceBox;
-    @FXML private ComboBox cityBox;
-    @FXML private ComboBox regionBox;
-    @FXML private TextField addressTextField;
-    @FXML private TextField staffAccountTextField;
-    @FXML private TextField staffPasswordTextField;
-    @FXML private TextField staffNameTextField;
-    @FXML private TextField staffPhoneTextField;
+    @FXML
+    private TextField nameTextField;
+    @FXML
+    private ComboBox provinceBox;
+    @FXML
+    private ComboBox cityBox;
+    @FXML
+    private ComboBox regionBox;
+    @FXML
+    private TextField addressTextField;
+    @FXML
+    private TextField staffAccountTextField;
+    @FXML
+    private TextField staffPasswordTextField;
+    @FXML
+    private TextField staffNameTextField;
+    @FXML
+    private TextField staffPhoneTextField;
 
 
     private ArrayList<ImageView> imageViews;
     private ObservableList<String> provinceShowList;
     private ObservableList<String> cityShowList;
-    private ObservableList<String> regionNameShowList ;
-    private Map<String, Integer> regionNameMap ;
+    private ObservableList<String> regionNameShowList;
+    private Map<String, Integer> regionNameMap;
     private HotelRegionHelper helper;
     private ObservableList<String> defaultList;
     private String provinceName;
     private String cityName;
     private int regionID;
     private int star;
-    private Image starImage=new Image(getClass().getResourceAsStream("webmanagerimages/star.png"));
-    private Image blueStarImage=new Image(getClass().getResourceAsStream("webmanagerimages/bluestar.png"));
+    private HotelWebManagerService hotelWebManagerService;
+    private UserWebManagerService userWebManagerService;
+    private Image starImage = new Image(getClass().getResourceAsStream("webmanagerimages/star.png"));
+    private Image blueStarImage = new Image(getClass().getResourceAsStream("webmanagerimages/bluestar.png"));
     private Stage stage;
-    public void init(Stage stage){
-        this.stage=stage;
+
+    public void init(Stage stage) {
+        this.stage = stage;
         helper = new RegionHelper();
-        star=0;
+        star = 0;
+        hotelWebManagerService = new HotelWebManagerImpl();
+        userWebManagerService = new UserWebManagerImpl();
         initstar();
         initProvinceBox();
     }
+
     /**
      * 点击确认按钮
      */
     @FXML
-    private void confirm(){
-        try{
-            boolean hotelInfoJudge=(!nameTextField.getText().equals(""))&&(nameTextField.getText()!=null)
-                    &&(!addressTextField.getText().equals(""))&&(addressTextField.getText()!=null)&&
-                    (star!=0)&&(provinceBox.getValue()!=null) &&(cityBox.getValue()!=null)&&
-                    (regionBox.getValue()!=null);
-            boolean staffInfoJudge=(!staffAccountTextField.getText().equals(""))&&(staffAccountTextField.getText()!=null)
-                    &&(!staffPasswordTextField.getText().equals(""))&&(staffPasswordTextField.getText()!=null)&&
-                    (!staffNameTextField.getText().equals(""))&&(staffNameTextField.getText()!=null)&&
-                    (!staffPhoneTextField.getText().equals(""))&&(staffPhoneTextField.getText()!=null);
-            if(hotelInfoJudge&&staffInfoJudge){
+    private void confirm() {
+        try {
+            //判断酒店基本信息是否填写完整
+            boolean hotelInfoJudge = (!nameTextField.getText().equals("")) && (nameTextField.getText() != null)
+                    && (!addressTextField.getText().equals("")) && (addressTextField.getText() != null) &&
+                    (star != 0) && (provinceBox.getValue() != null) && (cityBox.getValue() != null) &&
+                    (regionBox.getValue() != null);
+            //判断酒店工作人员基本信息是否填写完整
+            boolean staffInfoJudge = (!staffAccountTextField.getText().equals("")) && (staffAccountTextField.getText() != null)
+                    && (!staffPasswordTextField.getText().equals("")) && (staffPasswordTextField.getText() != null) &&
+                    (!staffNameTextField.getText().equals("")) && (staffNameTextField.getText() != null) &&
+                    (!staffPhoneTextField.getText().equals("")) && (staffPhoneTextField.getText() != null);
 
-            }else if((!hotelInfoJudge)&&(staffInfoJudge)){
-                new MyDialog(stage,"请将酒店基本信息填写完整",0);
-            }else if(hotelInfoJudge&&(!staffInfoJudge)){
-                new MyDialog(stage,"请将酒店工作人员基本信息填写完整",0);
-            }else{
-                new MyDialog(stage,"请将基本信息填写完整",0);
+            if (hotelInfoJudge && staffInfoJudge) {
+                int regionId = regionNameMap.get(regionBox.getValue());
+                System.out.println("regionID；   "+regionId);
+                HotelVO hotelVO = new HotelVO(nameTextField.getText(), 0, star, addressTextField.getText(), regionId, null, null, null, 0, 0, staffAccountTextField.getText());
+                int hotelId = hotelWebManagerService.addHotel(hotelVO);
+                System.out.println("ID:    "+hotelId);
+                UserVO userVO = new UserVO(0, UserType.Staff, staffAccountTextField.getText(), staffPasswordTextField.getText(), staffNameTextField.getText(),
+                        staffPhoneTextField.getText(), null, 0, MemberType.Tourist, null, 0, null, hotelId);
+                userWebManagerService.addUser(userVO);
+                new MyDialog(stage, "添加成功!", 2);
+            } else if ((!hotelInfoJudge) && (staffInfoJudge)) {
+                new MyDialog(stage, "请将酒店基本信息填写完整", 0);
+            } else if (hotelInfoJudge && (!staffInfoJudge)) {
+                new MyDialog(stage, "请将酒店工作人员基本信息填写完整", 0);
+            } else {
+                new MyDialog(stage, "请将基本信息填写完整", 0);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -104,7 +149,7 @@ public class AddHotelUIController {
     /**
      * 初始化数据
      */
-    private void initProvinceBox(){
+    private void initProvinceBox() {
         List<String> provinceMap = helper.getProvinces();
         provinceShowList = FXCollections.observableArrayList();
         provinceShowList.addAll(provinceMap);
@@ -123,7 +168,7 @@ public class AddHotelUIController {
         cityBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if (newValue.intValue()>=0) {
+                if (newValue.intValue() >= 0) {
                     cityName = cityShowList.get(newValue.intValue());
                     regionBox.setItems(defaultList);
                     initRegionBox();
@@ -133,14 +178,14 @@ public class AddHotelUIController {
         regionBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if (newValue.intValue()>=0) {
+                if (newValue.intValue() >= 0) {
                     regionID = regionNameMap.get(regionNameShowList.get(newValue.intValue()));
                 }
             }
         });
     }
 
-    private void initCityBox(){
+    private void initCityBox() {
         List<String> cityNameList = helper.getCities(provinceName);
         cityShowList = FXCollections.observableArrayList();
         cityShowList.addAll(cityNameList);
@@ -161,56 +206,56 @@ public class AddHotelUIController {
     }
 
 
-    private void initstar(){
-        imageViews=new ArrayList<>();
+    private void initstar() {
+        imageViews = new ArrayList<>();
         imageViews.add(starImageView1);
         imageViews.add(starImageView2);
         imageViews.add(starImageView3);
         imageViews.add(starImageView4);
         imageViews.add(starImageView5);
 
-        starButton1.setOnAction((ActionEvent e)->{
-            star=1;
-            for(int j=0;j<=0;j++){
+        starButton1.setOnAction((ActionEvent e) -> {
+            star = 1;
+            for (int j = 0; j <= 0; j++) {
                 imageViews.get(j).setImage(blueStarImage);
             }
-            for(int k=0+1;k<imageViews.size();k++){
+            for (int k = 0 + 1; k < imageViews.size(); k++) {
                 imageViews.get(k).setImage(starImage);
             }
         });
-        starButton2.setOnAction((ActionEvent e)->{
-            star=2;
-            for(int j=0;j<=1;j++){
+        starButton2.setOnAction((ActionEvent e) -> {
+            star = 2;
+            for (int j = 0; j <= 1; j++) {
                 imageViews.get(j).setImage(blueStarImage);
             }
-            for(int k=1+1;k<imageViews.size();k++){
+            for (int k = 1 + 1; k < imageViews.size(); k++) {
                 imageViews.get(k).setImage(starImage);
             }
         });
-        starButton3.setOnAction((ActionEvent e)->{
-            star=3;
-            for(int j=0;j<=2;j++){
+        starButton3.setOnAction((ActionEvent e) -> {
+            star = 3;
+            for (int j = 0; j <= 2; j++) {
                 imageViews.get(j).setImage(blueStarImage);
             }
-            for(int k=2+1;k<imageViews.size();k++){
+            for (int k = 2 + 1; k < imageViews.size(); k++) {
                 imageViews.get(k).setImage(starImage);
             }
         });
-        starButton4.setOnAction((ActionEvent e)->{
-            star=4;
-            for(int j=0;j<=3;j++){
+        starButton4.setOnAction((ActionEvent e) -> {
+            star = 4;
+            for (int j = 0; j <= 3; j++) {
                 imageViews.get(j).setImage(blueStarImage);
             }
-            for(int k=3+1;k<imageViews.size();k++){
+            for (int k = 3 + 1; k < imageViews.size(); k++) {
                 imageViews.get(k).setImage(starImage);
             }
         });
-        starButton5.setOnAction((ActionEvent e)->{
-            star=5;
-            for(int j=0;j<=4;j++){
+        starButton5.setOnAction((ActionEvent e) -> {
+            star = 5;
+            for (int j = 0; j <= 4; j++) {
                 imageViews.get(j).setImage(blueStarImage);
             }
-            for(int k=4+1;k<imageViews.size();k++){
+            for (int k = 4 + 1; k < imageViews.size(); k++) {
                 imageViews.get(k).setImage(starImage);
             }
         });

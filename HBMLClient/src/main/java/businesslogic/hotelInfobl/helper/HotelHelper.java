@@ -59,7 +59,22 @@ public class HotelHelper {
 	}	
 	
 	public HotelVO getHotelInfo(int hotelID) {
-		
+		if (hotelList==null) {
+			try {
+				hotelList = new LinkedHashMap<>();
+				Map<Integer, HotelPO> map = hotelDao.getHotelList(null, null, null);
+				if (map==null) {
+					return null;
+				}
+				for (int key : map.keySet()) {
+					
+					hotelList.put(key, hotelTransferService.poToVo(map.get(key)));
+				}
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return hotelList.get(hotelID);
 	}
 	

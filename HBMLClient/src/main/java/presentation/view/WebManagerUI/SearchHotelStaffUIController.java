@@ -53,7 +53,7 @@ public class SearchHotelStaffUIController {
     private void seekStaffInfo(){
         try{
             if((!seekStaffIdTextField.getText().equals(""))&&(seekStaffIdTextField!=null)){
-                UserVO userVO=userStaffService.getUserData(seekStaffIdTextField.getText());
+                UserVO userVO=userStaffService.getUserData(Integer.parseInt(seekStaffIdTextField.getText()));
                 if(userVO!=null){
                     infoVBox.getChildren().remove(0);
                     infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,thisVBox,stage,userVO));
@@ -123,6 +123,7 @@ public class SearchHotelStaffUIController {
                 try{
                     int selectedIndex=getTableRow().getIndex();
                     HotelVO hotelVO=(HotelVO)hotelTableView.getItems().get(selectedIndex);
+                    System.out.println("Account:   "+hotelVO.getAccountName());
                     UserVO userVO=userStaffService.getUserData(hotelVO.getAccountName());
                     infoVBox.getChildren().remove(0);
                     infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,beforeVBox,stage,userVO));

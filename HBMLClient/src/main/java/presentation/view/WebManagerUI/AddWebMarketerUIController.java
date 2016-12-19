@@ -36,9 +36,8 @@ public class AddWebMarketerUIController {
             if((!accountTextField.getText().equals(""))&&(accountTextField!=null)&&
                     (!passwordTextField.getText().equals(""))&&(passwordTextField!=null)&&
                     (!nameTextField.getText().equals(""))&&(nameTextField!=null)&&
-                    (!idTextField.getText().equals(""))&&(idTextField!=null)&&
                     (!phoneTextField.getText().equals(""))&&(phoneTextField!=null)){
-                UserVO userVO=new UserVO(Integer.parseInt(idTextField.getText()), UserType.WebMarketer,accountTextField.getText(),
+                UserVO userVO=new UserVO(0, UserType.WebMarketer,accountTextField.getText(),
                         passwordTextField.getText(),nameTextField.getText(),phoneTextField.getText(),null,0, MemberType.Tourist,null,
                         0,null,0);
                 userWebManagerService.addUser(userVO);
