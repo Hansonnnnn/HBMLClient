@@ -1,5 +1,7 @@
 package presentation.view.application;
 
+import businesslogic.userbl.UserStaffImpl;
+import businesslogicservice.userblservice.UserStaffService;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
@@ -7,9 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import message.ResultMessage;
+import model.UserType;
 import presentation.view.HotelManagerUI.HotelStaffUI;
 import presentation.view.WebManagerUI.WebManagerUI;
 import presentation.view.WebMarketerUI.WebMarketerUI;
+import vo.UserVO;
 
 /**
  * Created by LENOVO on 2016/12/7.
@@ -21,9 +26,11 @@ public class WorkerLoginUIController {
 
     private Stage stage;
     private Scene thisScene;
+    private UserStaffService userStaffService;
     public void init(Stage stage,Scene thisScene){
         this.stage=stage;
         this.thisScene=thisScene;
+        userStaffService=new UserStaffImpl();
         workerAccountTextField.setText("01");
         workerPasswordTextField.setText("admin");
     }
@@ -41,19 +48,29 @@ public class WorkerLoginUIController {
      */
     @FXML
     private void workerLogin(){
-        if(workerAccountTextField.getText().equals("11")
-                &&workerPasswordTextField.getText().equals("admin")){
+        try{
+//            ResultMessage message=userStaffService.login(workerAccountTextField.getText(),workerPasswordTextField.getText());
+//            System.out.println(message);
+//            if(message.equals(ResultMessage.wrongPassword)){
+//                new MyDialog(stage,"密码错误，请重新输入",0);
+//            }else if(message.equals(ResultMessage.notexist)){
+//                new MyDialog(stage,"该用户不存在",0);
+//            }else if(message.equals(ResultMessage.success)){
+//                UserVO userVO=userStaffService.getUserData(workerAccountTextField.getText());
+//                if(userVO==null){
+//                    System.out.println("userVO为空");
+//                }
+//                if(userVO.getUserType().equals(UserType.Staff)){
+//                    stage.setScene(new HotelStaffUI(new Group(),stage,thisScene,userVO));
+//                }else if(userVO.getUserType().equals(UserType.WebManager)){
+//                    stage.setScene(new WebManagerUI(new Group(),stage,thisScene,userVO));
+//                }else if(userVO.getUserType().equals(UserType.WebMarketer)){
+//                    stage.setScene(new WebMarketerUI(new Group(),stage,thisScene,userVO));
+//                }
+//            }
             stage.setScene(new WebMarketerUI(new Group(),stage,thisScene));
-            centerStage(stage);
-        }else if(workerAccountTextField.getText().equals("01")
-                &&workerPasswordTextField.getText().equals("admin")){
-           stage.setScene(new HotelStaffUI(new Group(),stage,thisScene));
-           centerStage(stage);
-        }else if(workerAccountTextField.getText().equals("10")
-                &&workerPasswordTextField.getText().equals("admin")){
-            centerStage(stage);
-           stage.setScene(new WebManagerUI(new Group(),stage,thisScene));
-           centerStage(stage);
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 
