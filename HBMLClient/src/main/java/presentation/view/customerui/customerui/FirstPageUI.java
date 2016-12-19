@@ -6,11 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class FirstPageUI extends Scene
 {
 	
-	public FirstPageUI(Parent root, Stage stage)
+	public FirstPageUI(Parent root, Stage stage, UserVO userVO, boolean logined)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/FirstPage.fxml"));
@@ -23,6 +24,6 @@ public class FirstPageUI extends Scene
 		}
 		
 		FirstPageUIController controller = fxmlLoader.getController();
-		controller.init(stage, this);
+		controller.init(stage, this, userVO, logined);
 	}
 }

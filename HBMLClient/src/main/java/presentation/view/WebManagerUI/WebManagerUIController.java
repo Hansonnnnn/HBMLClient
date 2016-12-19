@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import vo.UserVO;
 
 
 /**
@@ -24,12 +25,16 @@ public class WebManagerUIController {
     @FXML private Button marketerInfoButton;
     @FXML private VBox infoVBox;
     @FXML private Label sliderLabel;
+    @FXML private Label nameLabel;
 
     private Stage stage;
     private Scene beforeScene;
-    public void init(Stage stage,Scene beforeScene){
+    private UserVO userVO;
+    public void init(Stage stage, Scene beforeScene, UserVO userVO){
         this.stage=stage;
         this.beforeScene=beforeScene;
+        this.userVO=userVO;
+        nameLabel.setText(userVO.getName()+",欢迎你");
         infoVBox.getChildren().remove(0);
         infoVBox.getChildren().add(new AddHotelUI(stage));
     }

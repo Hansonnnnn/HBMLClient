@@ -18,9 +18,16 @@ public class test_Alex_User_BL {
 
     public void login()throws Exception{
         UserCustomerService userCustomerService=new UserCustomerImpl();
-        System.out.println(userCustomerService.login("alex124","124"));
-        System.out.println(userCustomerService.login("alex124","123"));
-        System.out.println(userCustomerService.login("alex125","123"));
+        System.out.println(userCustomerService.login("alex2097","asdf"));
+        System.out.println(userCustomerService.login("alex2097","123"));
+
+        System.out.println(userCustomerService.login("alex2098","asdf"));
+    }
+
+    public void logout()throws Exception{
+        UserCustomerService userCustomerService=new UserCustomerImpl();
+        System.out.println(userCustomerService.logout("alex2097"));
+        System.out.println(userCustomerService.logout("alex2098"));
     }
 
     public void modify() throws Exception{

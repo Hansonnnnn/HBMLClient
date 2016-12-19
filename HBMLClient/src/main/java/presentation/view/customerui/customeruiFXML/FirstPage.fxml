@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" styleClass="whitebackground" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
    <children>
-      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" AnchorPane.leftAnchor="0.0">
+      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" styleClass="topAndRightColor" AnchorPane.leftAnchor="0.0">
          <padding>
             <Insets left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -27,13 +27,13 @@
             <Insets left="20.0" />
          </opaqueInsets>
       </HBox>
-      <VBox alignment="CENTER" layoutX="881.0" layoutY="-1.0" prefHeight="618.0" prefWidth="116.0" spacing="20.0">
+      <VBox alignment="CENTER" layoutX="877.0" prefHeight="628.0" prefWidth="124.0" spacing="20.0" styleClass="topAndRightColor">
          <children>
             <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="115.0" prefWidth="91.0">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CustomerImage/登录.png" />
+                        <Image url="@../CustomerImage/登录-2.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -45,7 +45,7 @@
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CustomerImage/订单.png" />
+                        <Image url="@../CustomerImage/order.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -57,7 +57,7 @@
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CustomerImage/评价.png" />
+                        <Image url="@../CustomerImage/comment.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -69,7 +69,7 @@
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CustomerImage/个人中心.png" />
+                        <Image url="@../CustomerImage/设置.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -79,9 +79,7 @@
                </styleClass></Button>
          </children>
       </VBox>
-      <Separator layoutX="9.0" layoutY="83.0" prefHeight="17.0" prefWidth="867.0" />
-      <Separator layoutX="858.0" layoutY="2.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="2.0" />
-      <VBox alignment="CENTER" layoutX="6.0" layoutY="88.0" prefHeight="429.0" prefWidth="218.0" spacing="30.0">
+      <VBox alignment="CENTER" layoutX="58.0" layoutY="88.0" prefHeight="429.0" prefWidth="166.0" spacing="30.0">
          <children>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="商圈">
                <font>
@@ -90,12 +88,12 @@
             </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="入住时间" wrapText="true">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="离开时间">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="星级">
@@ -109,22 +107,31 @@
          <children>
             <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="17.0">
                <children>
-                  <Label text="省" />
-                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" />
-                  <Label text="市" />
-                  <ChoiceBox fx:id="cityBox" prefWidth="120.0" />
-                  <Label text="区" />
-                  <ChoiceBox fx:id="regionBox" prefWidth="120.0" />
+                  <Label text="省">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" styleClass="textField" />
+                  <Label text="市">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="cityBox" prefWidth="120.0" styleClass="textField" />
+                  <Label text="区">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="regionBox" prefWidth="120.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker fx:id="checkinTimePicker" prefHeight="0.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkinTimePicker" prefHeight="0.0" prefWidth="482.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
                <children>
-                  <DatePicker fx:id="checkoutTimePicker" prefHeight="16.0" prefWidth="482.0" />
+                  <DatePicker fx:id="checkoutTimePicker" prefHeight="16.0" prefWidth="482.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
@@ -177,14 +184,17 @@
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../CustomerImage/搜索.png" />
+                  <Image url="@../CustomerImage/搜索-2.png" />
                </image>
             </ImageView>
          </graphic>
          <styleClass>
             <String fx:value="transButton" />
             <String fx:value="grayBorder" />
+            <String fx:value="topAndRightColor" />
          </styleClass></Button>
-      <Separator layoutX="875.0" layoutY="3.0" orientation="VERTICAL" prefHeight="618.0" prefWidth="6.0" />
+      <Separator layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="867.0" />
+      <HBox layoutY="618.0" prefHeight="10.0" prefWidth="879.0" styleClass="topAndRightColor" />
+      <VBox layoutY="80.0" prefHeight="538.0" prefWidth="10.0" styleClass="topAndRightColor" />
    </children>
 </AnchorPane>

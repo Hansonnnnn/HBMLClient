@@ -19,19 +19,7 @@
       </VBox>
       <VBox fx:id="contentBox" layoutX="154.0" prefHeight="618.0" prefWidth="847.0">
          <children>
-            <VBox prefHeight="627.0" prefWidth="847.0">
-               <children>
-                  <TableView fx:id="list" prefHeight="618.0" prefWidth="847.0">
-                     <columns>
-                        <TableColumn fx:id="nameColumn" prefWidth="230.0" text="名称" />
-                        <TableColumn fx:id="starColumn" minWidth="0.0" prefWidth="120.0" text="星级" />
-                        <TableColumn fx:id="scoreColumn" minWidth="0.0" prefWidth="120.0" text="评分" />
-                        <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="120.0" text="价格" />
-                        <TableColumn fx:id="checkButtonColumn" minWidth="0.0" prefWidth="145.0" />
-                     </columns>
-                  </TableView>
-               </children>
-            </VBox>
+            <VBox prefHeight="627.0" prefWidth="847.0" />
          </children></VBox>
    </children>
 </AnchorPane>

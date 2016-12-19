@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import vo.CommentInfoVO;
 import vo.HotelVO;
 
 public class CommentedHotelListPageController 
@@ -58,6 +59,7 @@ public class CommentedHotelListPageController
 			{
 				commentButton.setOnAction((ActionEvent e)->{
 					stage.setScene(new CommentSubmitPage(new Group(), stage, commentFirstPageScene));
+//					CommentInfoVO commentInfoVO = new CommentInfoVO(commentID, time, hotelID, score, comment, picture1, picture2, picture3)
 				});
 			}
 		}

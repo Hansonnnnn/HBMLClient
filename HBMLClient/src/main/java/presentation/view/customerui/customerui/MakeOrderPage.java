@@ -9,10 +9,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import vo.HotelVO;
 import vo.RoomInfoVO;
+import vo.UserVO;
 
 public class MakeOrderPage extends Scene
 {
-		public MakeOrderPage(Parent root, Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO, Date checkinTime)
+		public MakeOrderPage(Parent root, Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO,UserVO userVO, Date checkinTime)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/MakeOrderPage.fxml"));
@@ -25,6 +26,6 @@ public class MakeOrderPage extends Scene
 			}
 			
 			MakeOrderPageController controller = fxmlLoader.getController();
-			controller.init(stage, preScene, hotelVO, roomInfoVO, checkinTime);
+			controller.init(stage, preScene, hotelVO, roomInfoVO,userVO, checkinTime);
 		}
 }

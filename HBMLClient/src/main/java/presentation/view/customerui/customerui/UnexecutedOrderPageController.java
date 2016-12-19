@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import message.OrderStateMessage;
 import model.DateHelper;
+import presentation.view.application.MyDialog;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrder;
 import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrderButtonCell;
 import vo.OrderVO;
@@ -41,9 +42,11 @@ public class UnexecutedOrderPageController
 	
 	private OrderCustomerService service;
 	private int userID;
+	private Stage stage;
 	
-	public void init(int userID)
+	public void init(Stage stage,int userID)
 	{
+		this.stage = stage;
 		this.userID = userID;
 		service = new OrderCustomerServiceImpl();
 		initTable();
@@ -69,7 +72,7 @@ public class UnexecutedOrderPageController
 			@Override
 			public TableCell call(TableColumn param)
 			{
-				return new UnexecutedOrderButtonCell();
+				return new UnexecutedOrderButtonCell(stage);
 			}
 		});
 		
@@ -114,13 +117,13 @@ public class UnexecutedOrderPageController
 	{
 		private Button cancelOrderButton = new Button("撤销");
 		
-		public UnexecutedOrderButtonCell()
+		public UnexecutedOrderButtonCell(Stage stage)
 		{
 			cancelOrderButton.setOnAction((ActionEvent e)->{
-				Dialog dialog = new Dialog();
-				dialog.setContentText("撤销订单成功");
-				dialog.getOnCloseRequest();
-				dialog.show();
+				int selectedIndex = getTableRow().getIndex();
+				OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+				service.revokeOrder(orderVO.getOrderID());
+				new MyDialog(stage, "撤销成功", 2);
 			});
 		}
 		

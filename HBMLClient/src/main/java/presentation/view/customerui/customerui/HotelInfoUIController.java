@@ -25,6 +25,7 @@ import javafx.util.Callback;
 import model.ImageHelper;
 import vo.HotelVO;
 import vo.RoomInfoVO;
+import vo.UserVO;
 
 public class HotelInfoUIController 
 {
@@ -49,14 +50,16 @@ public class HotelInfoUIController
 		private Map<String, RoomInfoVO> roomlist;
 		private HotelVO hotelVO;
 		private RoomInfoVO selectedRoom;
+		private UserVO userVO;
 		private Date checkinTime;
 		
-		public void init(Stage stage, Scene preScece, Scene hotelInfoPageScene, HotelVO hotelVO,Date checkinTime)
+		public void init(Stage stage, Scene preScece, Scene hotelInfoPageScene, HotelVO hotelVO,UserVO userVO,Date checkinTime)
 		{
 			this.stage = stage;
 			this.preScene = preScece;
 			this.hotelInfoPageScene = hotelInfoPageScene;
 			this.hotelVO = hotelVO;
+			this.userVO = userVO;
 			this.checkinTime = checkinTime;
 			initLabel();
 			initTable();
@@ -119,7 +122,7 @@ public class HotelInfoUIController
 				 makeOrderButton.setOnAction((ActionEvent e)->{
 					 int selectedIndex = getTableRow().getIndex();
 					 selectedRoom = (RoomInfoVO)list.getItems().get(selectedIndex);
-					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom, checkinTime));
+					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom,userVO, checkinTime));
 				 });
 			 }
 			 

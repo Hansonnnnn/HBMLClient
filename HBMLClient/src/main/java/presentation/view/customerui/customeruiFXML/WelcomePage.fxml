@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.WelcomePageController">
+   <children>
+      <VBox alignment="CENTER" layoutX="577.0" layoutY="101.0" prefHeight="424.0" prefWidth="327.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="74.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../CustomerImage/个人中心.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="用户名" />
+                  <TextField fx:id="nameField" prefHeight="30.0" prefWidth="210.0" promptText="用户名" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="密码   " />
+                  <PasswordField fx:id="passwordField" prefHeight="30.0" prefWidth="210.0" promptText="密码" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="327.0" spacing="30.0">
+               <children>
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="100.0" text="登录" />
+                  <Button fx:id="enrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="30.0" prefWidth="100.0" text="注册" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="327.0" spacing="30.0">
+               <children>
+                  <Button fx:id="secondButton" mnemonicParsing="false" onAction="#secondLogin" prefHeight="30.0" prefWidth="100.0" text="访客登录" />
+                  <Button fx:id="findPasswordButton" mnemonicParsing="false" onAction="#findPassword" prefHeight="30.0" prefWidth="100.0" text="找回密码" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="129.0" prefHeight="358.0" prefWidth="271.0" wrapText="true" />
+      <Button fx:id="exitButton" layoutX="898.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" text="退出" />
+   </children>
+</AnchorPane>

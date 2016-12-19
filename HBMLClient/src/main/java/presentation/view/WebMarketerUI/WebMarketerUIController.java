@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import vo.UserVO;
 
 /**
  * Created by LENOVO on 2016/12/1.
@@ -24,12 +25,16 @@ public class WebMarketerUIController {
     @FXML private Button creditValueButton;
     @FXML private VBox infoVBox;
     @FXML private Label sliderLabel;
+    @FXML private Label nameLabel;
 
     private Stage stage;
     private Scene loginScene;
-    public void init(Stage stage,Scene loginScene){
+//    private UserVO userVO;
+    public void init(Stage stage, Scene loginScene){
         this.stage=stage;
         this.loginScene=loginScene;
+//        this.userVO=userVO;
+//        nameLabel.setText(userVO.getName()+",欢迎你");
         infoVBox.getChildren().add(new ExceptionOrderUI(stage));
     }
 

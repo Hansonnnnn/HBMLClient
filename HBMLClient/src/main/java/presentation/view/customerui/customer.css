@@ -54,13 +54,6 @@
 }
 
 /**
- *将组件的左右边界变为圆弧形
- */
-.circle{
-    -fx-background-radius:15px;
-}
-
-/**
  *设置分隔符的宽度和颜色
  */
 .separatorStyle{
@@ -126,33 +119,103 @@
     -fx-background-color: #0080FF;
 }
 
+
 /**
- * 白色背景
+ *设置ComboBox的样式
  */
-.whitebackground{
-	-fx-background-color:#ffffff;
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
 }
 
 /**
- * 显示灰色边界
+ *设置textfield的样式
  */
- .grayBorder{
- 	-fx-background-color:transparent;
- 	-fx-border-color:#BDBDBD;
- 	-fx-border-style:solid;
- 	-fx-border-size:2px;
- 	-fx-border-radius:4px;
- }
- 
- .buttonBorder:hover{
- 	-fx-border-color:#BDBDBD;
- 	-fx-border-style:solid;
- 	-fx-border-size:2px;
- 	-fx-border-radius:4px;
- }
+.textField{
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
 
+/**
+ *设置textarea的样式
+ */
+.text-area .content{
+    -fx-background-color: transparent;
+}
 
+.text-area{
+    -fx-background-insets: 0;
+    -fx-border-style: solid;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 2px;
+}
 
+.combo-box-base .content{
+    -fx-background-color: transparent;
+}
+/**
+ *将组件的左右边界变为圆弧形
+ */
+.circle{
+    -fx-background-radius:15px;
+}
 
+.table-view .column-header .label{
+    -fx-background-color: #f9f9f9;
+    -fx-font-weight: 500;
+    -fx-border-style: solid;
+    -fx-border-color: #EDEDED;
+    -fx-border-size:1px;
+}
 
+.table-view .column-header,.filler{
+    -fx-background-color: #F4F4F4;
+    -fx-background-size: 1px;
+}
 
+.table-view {
+    -fx-background-color: transparent;
+    /*-fx-border-color: #BDBDBD;*/
+    /*-fx-border-style: solid;*/
+    /*-fx-background-size:1px;*/
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #BEBEBE;
+}
+
+/**
+ *修改对话框标签字体大小
+ */
+.dialogLabelSize{
+    -fx-font-size: 18px;
+}
+
+/**
+ *给取消按钮添加红色背景
+ */
+.cancelButton{
+    -fx-text-fill:white;
+    -fx-font-family:"微软雅黑";
+    -fx-border-radius: 4px;
+    -fx-background-color: linear-gradient(#D81E06, #D81E06);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.cancelButton:hover{
+    -fx-text-fill:#46A3FF;
+}
+
+/**
+ *修改mydialog对话框的背景色
+ */
+.dialogBackground{
+    -fx-background-color: #EAEAEA;
+}
+
+.topAndRightColor{
+	-fx-background-color:#1C86EE;
+}

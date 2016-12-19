@@ -5,10 +5,11 @@ import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class UnexecutedOrderPageUI extends VBox
 {
-		public UnexecutedOrderPageUI(int userID)
+		public UnexecutedOrderPageUI(Stage stage,int userID)
 		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnexecutedOrderPage.fxml"));
 			try
@@ -22,6 +23,6 @@ public class UnexecutedOrderPageUI extends VBox
 //			OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
 //			controller.initUnexecutedOrderPart();
 			UnexecutedOrderPageController controller = fxmlLoader.getController();
-			controller.init(userID);
+			controller.init(stage,userID);
 		}
 }

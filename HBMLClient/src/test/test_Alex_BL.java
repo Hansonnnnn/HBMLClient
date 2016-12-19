@@ -11,8 +11,9 @@ public class test_Alex_BL {
     static void test_User_BL()throws Exception{
         //test_alex_user_bl.signup();
         //test_alex_user_bl.login();
-        test_alex_user_bl.getUserInfo();
+        //test_alex_user_bl.getUserInfo();
         //test_alex_user_bl.delete();
+        //test_alex_user_bl.logout();
     }
 
     static void test_Credit_BL()throws Exception{

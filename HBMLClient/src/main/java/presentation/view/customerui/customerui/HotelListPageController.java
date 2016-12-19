@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
+import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
 import javafx.beans.value.ChangeListener;
@@ -30,6 +31,7 @@ import javafx.util.Callback;
 import model.HotelFilter;
 import vo.HotelVO;
 import vo.RoomInfoVO;
+import vo.UserVO;
 
 public class HotelListPageController {
 	@FXML private Button backButton;
@@ -70,12 +72,15 @@ public class HotelListPageController {
 //	 private Map<String, Integer> nameMapID;
 	 private HotelVO selectedHotel;
 	 private RoomInfoVO defaultRoom;
+	 private UserVO userVO;
 	 private HotelFilter filter;
 	 
-	 public void init(Stage stage, Scene firstPage, String province, String city, int region,String hotelName, Date checkinTime,  int star,boolean state)
+	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, UserVO userVO,String province, String city, int region,String hotelName, Date checkinTime,  int star,boolean state)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
+		 this.hotelListPageScene = hotelListPageScene;
+		 this.userVO = userVO;
 		 this.state = state;
 		 this.province = province;
 		 this.city = city;
@@ -85,6 +90,7 @@ public class HotelListPageController {
 		 this.star = star;
 		 this.searchByName = false;
 		 searchField.setPromptText(hotelName);
+		 customerService = new RoomInfoCustomerServiceImpl();
 		 initComboBox();
 		 initTable();
 	 }
@@ -261,7 +267,7 @@ public class HotelListPageController {
 //				 hotelName = 把列表的选中项里面的vo取出来
 				 int seletedIndex=getTableRow().getIndex();
 				 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
-				 stage.setScene(new HotelInfoUI(new Group(), stage, firstPage, selectedHotel,checkinTime));
+				 stage.setScene(new HotelInfoUI(new Group(), stage, hotelListPageScene, selectedHotel,userVO,checkinTime));
 			 });
 		 }
 		 protected void updateItem(Boolean t, boolean empty)
@@ -286,6 +292,9 @@ public class HotelListPageController {
 		 public MakeOrderButtonCell(Stage stage)
 		 {	
 			 makeOrderButton.setOnAction((ActionEvent e)->{
+				 int seletedIndex=getTableRow().getIndex();
+				 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
+				 System.out.println(selectedHotel.getName());
 				 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
 				 {
 					 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
@@ -294,7 +303,8 @@ public class HotelListPageController {
 						break;
 					 }
 				 }
-				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom, checkinTime));
+				 System.out.println(defaultRoom.getDefaultPrice());
+				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom,userVO,checkinTime));
 			 });
 		 }
 		 
@@ -315,7 +325,7 @@ public class HotelListPageController {
 	 }
 	 
 	 @FXML
-		private void search()
+	private void search()
 		{
 		 	hotelData.clear();
 			String searchInfo = null;
@@ -338,4 +348,6 @@ public class HotelListPageController {
 			 list.setItems(hotelData);
 //			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,checkinTime,state));
 		}
+
+	
 }

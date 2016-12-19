@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class PersonalCenterPage extends Scene
 {
-	public PersonalCenterPage(Parent root, Stage stage, Scene preScene, String userName)
+	public PersonalCenterPage(Parent root, Stage stage, Scene preScene, UserVO userVO)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PersonalCenter.fxml"));
@@ -22,6 +23,6 @@ public class PersonalCenterPage extends Scene
 		}
 		
 		PersonalCenterPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene, this, userName);
+		controller.init(stage, preScene, this, userVO);
 	}
 }

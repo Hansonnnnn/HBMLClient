@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.EnrollUserPageNewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="577.0" layoutY="101.0" prefHeight="424.0" prefWidth="327.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="74.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../CustomerImage/个人中心.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="327.0" spacing="30.0">
+               <children>
+                  <Label text="欢迎:" />
+                  <Label prefHeight="21.0" prefWidth="211.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="用户名" />
+                  <Label fx:id="nameLabel" prefHeight="21.0" prefWidth="211.0" text="Label" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="327.0" spacing="30.0">
+               <children>
+                  <Button fx:id="enrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="30.0" prefWidth="100.0" text="登出" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="327.0" spacing="30.0" />
+         </children>
+      </VBox>
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="129.0" prefHeight="358.0" prefWidth="271.0" wrapText="true" />
+      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="34.0" prefWidth="55.0" text="返回" />
+   </children>
+</AnchorPane>

@@ -8,7 +8,8 @@ public class CustomerMain extends Application
 {
 	public void start(Stage stage)
 	{
-		stage.setScene(new FirstPageUI(new Group(), stage));
+//		stage.setScene(new FirstPageUI(new Group(), stage));
+		stage.setScene(new WelcomePageUI(new Group(), stage));
 		stage.show();
 	}
 	

@@ -6,12 +6,14 @@ import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import message.OrderStateMessage;
 import presentation.view.customerui.customerui.UnexecutedOrderPageController.CheckOrderButtonCell;
@@ -32,10 +34,12 @@ public class ExecutedOrderUIController {
 	
 	private Map<Integer, OrderVO> orderList;
 	private int userID;
+	private Stage stage;
 //	private OrderBLService service;
 	
-	public void init(int userID)
+	public void init(Stage stage,int userID)
 	{
+		this.stage = stage;
 		this.userID = userID;
 		service = new OrderCustomerServiceImpl();
 		initTable();
@@ -71,7 +75,14 @@ public class ExecutedOrderUIController {
 	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkOrderButton = new Button("查看");
-		
+		public CheckOrderButtonCell()
+		{
+			checkOrderButton.setOnAction((ActionEvent e)->{
+			int selectedIndex = getTableRow().getIndex();
+			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+			new OrderInfoPage(orderVO).show();
+			});
+		}
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);

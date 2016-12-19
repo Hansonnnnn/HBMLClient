@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class MyHotelListPage extends Scene
 {
-		public MyHotelListPage(Parent root, Stage stage, Scene preScene)
+		public MyHotelListPage(Parent root, Stage stage, Scene preScene, UserVO userVO)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/MyHotelList.fxml"));
@@ -22,6 +23,6 @@ public class MyHotelListPage extends Scene
 			}
 			
 			MyHotelListPageController controller = fxmlLoader.getController();
-			controller.init(stage, preScene);
+			controller.init(stage, preScene,userVO);
 		}
 }

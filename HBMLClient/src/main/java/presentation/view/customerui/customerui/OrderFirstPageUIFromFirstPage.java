@@ -22,6 +22,6 @@ public class OrderFirstPageUIFromFirstPage extends Scene
 		}
 		
 		OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
-		controller.init(stage, preScene,userID);
+		controller.init(stage, preScene,this,userID);
 	}
 }

@@ -24,6 +24,7 @@ public class CommentPageUIController {
 			this.stage = stage;
 			this.preScene = preScene;
 			this.thisPage = thisPage;
+			contentBox.getChildren().add(new CommentedHotelListPage(stage, thisPage));
 		}
 		
 		@FXML

@@ -38,4 +38,12 @@ public interface UserCustomerService {
      * @return如果返回failure,提示用户名已存在；如果是success,可以调用登陆方法
      */
     public ResultMessage signup(UserVO vo)throws Exception;
+
+    /**
+     *
+     * @param accountName
+     * @return  如果返回failure,提示用户已经登出；如果是notexist,提示无此用户
+     * @throws Exception
+     */
+    public ResultMessage logout(String accountName) throws Exception;
 }
