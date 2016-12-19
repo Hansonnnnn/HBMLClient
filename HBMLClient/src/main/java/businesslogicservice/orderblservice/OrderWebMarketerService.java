@@ -4,13 +4,19 @@ import java.util.Map;
 
 import message.ResultMessage;
 import vo.AppealVO;
+import vo.OrderVO;
 
 /**
  * @author 凡
  *
  */
 public interface OrderWebMarketerService {
-	
+	/**
+	 * 
+	 * @TODO： 得到所有未执行订单
+	 * @return
+	 */
+	public Map<Integer, OrderVO> getUnexecutedOrderList();
 	
 	
 	/**

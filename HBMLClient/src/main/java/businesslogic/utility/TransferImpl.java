@@ -2,18 +2,12 @@ package businesslogic.utility;
 
 import businesslogicservice.TransferService;
 import dao.HotelDao;
-import model.ImageHelper;
 import po.*;
 import rmi.ClientRunner;
 import vo.*;
 
-import javax.imageio.ImageIO;
-
 import java.io.File;
-import java.io.IOException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TransferImpl implements TransferService{
 	@Override
@@ -148,6 +142,15 @@ public class TransferImpl implements TransferService{
 		 
 		 
 		return appealPO;
+	}
+	public RankPO voToPo(RankVO rankVO){
+		RankPO rankPO = new RankPO(rankVO.getRank(), rankVO.getDiscount(), rankVO.getValue());
+		return rankPO;
+	}
+	
+	public RankVO poToVo(RankPO rankPO){
+		RankVO rankVO = new RankVO(rankPO.getRank(), rankPO.getDiscount(), rankPO.getValue());
+		return rankVO;
 	}
 
 }

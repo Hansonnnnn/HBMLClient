@@ -9,10 +9,13 @@ import message.ResultMessage;
 import model.CreditRecordReasonTypeHelper;
 import model.UserType;
 import po.CreditRecordPO;
+import po.RankPO;
 import po.UserPO;
 import rmi.ClientRunner;
 import vo.CreditRecordVO;
+import vo.RankVO;
 
+import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -84,4 +87,42 @@ public class CreditHelper {
         return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
 
     }
+
+
+
+	public Map<Integer, RankVO> getRankList() {
+		Map<Integer, RankVO> List = new LinkedHashMap<>();
+		try {
+			Map<Integer, RankPO> map = creditDao.getRankList();
+			RankVO rankVO;
+			for (RankPO rankPO : map.values()) {
+				rankVO = creditTransferService.poToVo(rankPO);
+				List.put(rankVO.getRank(), rankVO);
+			}
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		 
+		return List;
+	}
+
+
+
+	public ResultMessage modifyRankRule(Map<Integer, RankVO> newRule) {
+		Map<Integer, RankPO> map = new LinkedHashMap<>();;
+	
+		for (RankVO rankVO : newRule.values()) {
+			map.put(rankVO.getRank(), creditTransferService.voToPo(rankVO));
+		}
+	
+		try {
+			return creditDao.modifyRankRule(map);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return ResultMessage.failure;
+		}
+	}
 }
