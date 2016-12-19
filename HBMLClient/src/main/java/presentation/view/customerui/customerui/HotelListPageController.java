@@ -5,6 +5,7 @@ import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
+import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -62,6 +63,7 @@ public class HotelListPageController {
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
+	 private RoomInfoCustomerService customerService;
 	 private boolean state;
 	 private boolean searchByName;
 	 private String hotelName;
@@ -70,17 +72,6 @@ public class HotelListPageController {
 	 private RoomInfoVO defaultRoom;
 	 private HotelFilter filter;
 	 
-//	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, String hotelName, Date checkinTime, boolean state)
-//	 {
-//		 this.stage = stage;
-//		 this.firstPage = firstPage;
-//		 this.state = state;
-//		 this.hotelName = hotelName;
-//		 this.checkinTime = checkinTime;
-//		 this.searchByName = true;
-//		 this.hotelListPageScene = hotelListPageScene;
-//		 initTable();
-//	 }
 	 public void init(Stage stage, Scene firstPage, String province, String city, int region,String hotelName, Date checkinTime,  int star,boolean state)
 	 {
 		 this.stage = stage;
@@ -162,7 +153,6 @@ public class HotelListPageController {
 			 hotelData.clear();
 			 for (HotelVO hotelVO : service.getHotelList(filter, order, checkinTime).values()) 
 			 {
-				
 				hotelData.add(hotelVO);
 			} 
 		 }
@@ -294,7 +284,19 @@ public class HotelListPageController {
 		 private Button makeOrderButton = new Button("预订");
 		 
 		 public MakeOrderButtonCell(Stage stage)
-		 {	 }
+		 {	
+			 makeOrderButton.setOnAction((ActionEvent e)->{
+				 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
+				 {
+					 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
+					 {
+						defaultRoom = roomInfoVO;
+						break;
+					 }
+				 }
+				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom, checkinTime));
+			 });
+		 }
 		 
 		 protected void updateItem(Boolean t, boolean empty) 
 		 {

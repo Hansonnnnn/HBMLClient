@@ -26,7 +26,7 @@ public class HotelWebManagerImpl implements HotelWebManagerService{
 	public Map<Integer, HotelVO> getHotelList(String name) {
 	
 		HotelFilter hotelFilter = new HotelFilter();
-		hotelFilter.add("name","like", "%"+name+"%");
+		hotelFilter.add("name","like", "'%"+name+"%'");
 		return hotelHelper.getHotelList(hotelFilter, null, null);
 	}
 

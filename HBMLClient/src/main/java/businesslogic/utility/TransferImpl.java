@@ -18,26 +18,14 @@ import java.util.List;
 public class TransferImpl implements TransferService{
 	@Override
 	public HotelVO poToVo(HotelPO po) {
-		List<File> list = new ArrayList<>();
-		for (File file : po.getEnvironment()) {
-			try {
-				list.add(file);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), list, po.getScore(), po.getLowestPrice(),po.getAccountName());
+		HotelVO hotelVO = new HotelVO(po.getName(), po.getId(), po.getStar(), po.getAddress(), po.getRegion(), po.getIntroduction(), po.getFacility(), po.getEnvironment(), po.getScore(), po.getLowestPrice(),po.getAccountName());
 		return hotelVO;
 	}
 
 	@Override
 	public HotelPO voToPO(HotelVO vo) {
-		List<File> list = new ArrayList<>();
-		for (File image : vo.getEnvironment()) {
-			list.add(image);
-		}
-		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),list , vo.getScore(), vo.getLowestPrice(),vo.getAccountName());
+
+		HotelPO hotelPO = new HotelPO(vo.getName(), vo.getId(), vo.getStar(), vo.getAddress(), vo.getRegion(), vo.getIntroduction(), vo.getFacility(),vo.getEnvironment() , vo.getScore(), vo.getLowestPrice(),vo.getAccountName());
 		return hotelPO;
 	}
 
