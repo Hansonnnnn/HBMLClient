@@ -22,8 +22,9 @@ import vo.RoomInfoVO;
 public class Client extends Application{
 	public void start(Stage stage)
 	{
-		//stage.setScene(new FirstPageUI(new Group(), stage));
-		//stage.show();
+//		stage.setScene(new FirstPageUI(new Group(), stage));
+//		stage.show();
+		//wujun's part
 		stage.setScene(new UserLoginUI(new Group(),stage));
 		stage.show();
 	}

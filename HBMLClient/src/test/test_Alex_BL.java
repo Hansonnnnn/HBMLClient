@@ -11,7 +11,7 @@ public class test_Alex_BL {
     static void test_User_BL()throws Exception{
         //test_alex_user_bl.signup();
         //test_alex_user_bl.login();
-        //test_alex_user_bl.getUserInfo();
+        test_alex_user_bl.getUserInfo();
         //test_alex_user_bl.delete();
     }
 
@@ -25,7 +25,7 @@ public class test_Alex_BL {
         //test_Alex_Promotion_BL.updatePromotion();
         //test_Alex_Promotion_BL.deletePromotion();
         //test_Alex_Promotion_BL.getPromotionList();
-        test_Alex_Promotion_BL.getSelectedPromotion();
+        //test_Alex_Promotion_BL.getSelectedPromotion();
     }
 
 

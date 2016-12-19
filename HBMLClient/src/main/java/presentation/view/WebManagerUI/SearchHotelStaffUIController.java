@@ -1,6 +1,7 @@
 package presentation.view.WebManagerUI;
 
 import businesslogic.hotelInfobl.HotelWebManagerImpl;
+import businesslogic.userbl.UserStaffImpl;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import businesslogicservice.userblservice.UserStaffService;
 import javafx.collections.FXCollections;
@@ -43,6 +44,7 @@ public class SearchHotelStaffUIController {
         this.thisVBox=thisVBox;
         this.stage=stage;
         hotelWebManagerService=new HotelWebManagerImpl();
+        userStaffService=new UserStaffImpl();
         initTableView();
     }
 

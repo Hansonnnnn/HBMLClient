@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/Client.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/driver/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/SearchHotelStaffUIController.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/WebManagerUI/SearchHotelStaffUIController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Promotion_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_Promotion_BL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/driver/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="180">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -189,6 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -409,9 +410,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -976,7 +975,10 @@
       <workItem from="1482062166124" duration="310000" />
       <workItem from="1482067379911" duration="130000" />
       <workItem from="1482073249631" duration="58000" />
-      <workItem from="1482083413969" duration="13000" />
+      <workItem from="1482083413969" duration="183000" />
+      <workItem from="1482110545789" duration="39000" />
+      <workItem from="1482136351533" duration="130000" />
+      <workItem from="1482145895304" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -1132,11 +1134,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482067396957</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="commit ver 0.2.9&#10;//debugging for promotion&#10;&#10;">
+      <created>1482083440228</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1482083440228</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13437000" />
+    <option name="totallyTimeSpent" value="13804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="768" extended-state="6" />
@@ -1227,7 +1236,8 @@
     <MESSAGE value="commit ver 0.2.8.1&#10;//debugging for user module&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.8.2&#10;//debugging for credit.popup&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.8.3&#10;//debugging for credit.popup&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.8.3&#10;//debugging for credit.popup&#10;&#10;" />
+    <MESSAGE value="commit ver 0.2.9&#10;//debugging for promotion&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit ver 0.2.9&#10;//debugging for promotion&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1514,13 +1524,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/customerui/customeruiFXML/MakeOrderPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/presentation/view/creditui/CustomerView.java">
@@ -1596,8 +1606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/driver/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="180">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>

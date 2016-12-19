@@ -29,7 +29,8 @@ public class test_Alex_User_BL {
 
     public void getUserInfo()throws Exception{
         UserCustomerService userCustomerService=new UserCustomerImpl();
-        UserVO userVO=userCustomerService.getUserData("alex124");
+        UserVO userVO=userCustomerService.getUserData("King the JorJ");
+        System.out.println(userVO.getUserID());
         System.out.println(userVO.getRank());
         System.out.println(userVO.getMemberInfo());
         System.out.println(userVO.getUserID());
