@@ -1,10 +1,10 @@
 package presentation.view.HotelManagerUI;
 
-import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 import java.io.IOException;
 
@@ -13,9 +13,9 @@ import java.io.IOException;
  */
 public class HotelStaffUI extends Scene{
 
-    public HotelStaffUI(Parent root, Stage stage,Scene beforeScene) {
+    public HotelStaffUI(Parent root, Stage stage, Scene beforeScene, UserVO userVO) {
         super(root);
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/HotelStaff.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/HotelStaff1.fxml"));
         try{
             this.setRoot(fxmlLoader.load());
         }catch (IOException e) {
@@ -23,6 +23,6 @@ public class HotelStaffUI extends Scene{
         }
 
         HotelStaffUIController hotelStaffUIController=fxmlLoader.getController();
-        hotelStaffUIController.init(stage,beforeScene);
+        hotelStaffUIController.init(stage,beforeScene,userVO);
     }
 }

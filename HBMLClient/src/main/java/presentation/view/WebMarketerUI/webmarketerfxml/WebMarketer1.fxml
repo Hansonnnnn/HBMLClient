@@ -123,7 +123,7 @@
                             <image>
                                 <Image url="@../webmarketerimages/user.png" />
                             </image></ImageView>
-                        <Label styleClass="whiteFont" text="张三,欢迎你" />
+                        <Label fx:id="nameLabel" styleClass="whiteFont" text="张三,欢迎你" />
                         <Button mnemonicParsing="false" onAction="#backToLogin" styleClass="transButton">
                             <graphic>
                                 <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">

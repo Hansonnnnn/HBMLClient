@@ -92,72 +92,72 @@
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <TextField maxWidth="150.0" prefHeight="35.0" prefWidth="150.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="creditTextField1" maxWidth="150.0" prefHeight="35.0" prefWidth="150.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="creditTextField2" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextField fx:id="creditTextField3" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="creditTextField4" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <TextField fx:id="creditTextField5" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <TextField fx:id="creditTextField6" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <TextField fx:id="creditTextField7" maxWidth="150.0" prefHeight="35.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </TextField>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <ComboBox fx:id="discountComboBox1" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox maxWidth="150.0" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <ComboBox fx:id="discountComboBox2" maxWidth="150.0" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <ComboBox fx:id="discountComboBox3" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <ComboBox fx:id="discountComboBox4" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <ComboBox fx:id="discountComboBox5" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <ComboBox fx:id="discountComboBox6" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                  <ComboBox fx:id="discountComboBox7" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets left="30.0" />
                      </GridPane.margin>

@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class HotelStaffInfoUI extends VBox{
     public HotelStaffInfoUI(VBox infoVBox, VBox beforeVBox, Stage stage, UserVO userVO){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmanagerfxml/HotelStaffinfo.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmanagerfxml/HotelStaffInfo.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {

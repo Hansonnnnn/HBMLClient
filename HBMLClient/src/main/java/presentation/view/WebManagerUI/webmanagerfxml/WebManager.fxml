@@ -110,7 +110,7 @@
                      <image>
                         <Image url="@../webmanagerimages/user.png" />
                      </image></ImageView>
-                  <Label styleClass="nameLabel" text="张三,欢迎你" />
+                  <Label fx:id="nameLabel" styleClass="nameLabel" text="张三,欢迎你" />
                   <Button mnemonicParsing="false" onAction="#backToLogin" styleClass="transButton">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
