@@ -62,7 +62,7 @@ public class TransferImpl implements TransferService{
 
 	@Override
 	public CommentInfoVO poToVo(CommentInfoPO commentInfoPO) {
-		CommentInfoVO commentInfoVO = new CommentInfoVO(commentInfoPO.getCommentID(), commentInfoPO.getTime(), commentInfoPO.getHotelID(), commentInfoPO.getScore(), commentInfoPO.getComment(),null,null,null);
+		CommentInfoVO commentInfoVO = new CommentInfoVO(commentInfoPO.getCommentID(), commentInfoPO.getTime(), commentInfoPO.getHotelID(), commentInfoPO.getScore(), commentInfoPO.getComment(),null,null,null,commentInfoPO.getOrderID());
 		if (commentInfoPO.getPicture1()!=null) {
 			commentInfoVO.setPicture1(commentInfoPO.getPicture1());
 		}
@@ -81,7 +81,7 @@ public class TransferImpl implements TransferService{
 		File file2 =commentInfoVO.getPicture2();
 		File file3 =commentInfoVO.getPicture3();
 
-		CommentInfoPO commentInfoPO = new CommentInfoPO(commentInfoVO.getCommentID(), commentInfoVO.getTime(), commentInfoVO.getHotelID(), commentInfoVO.getScore(), commentInfoVO.getComment(), file1, file2, file3);
+		CommentInfoPO commentInfoPO = new CommentInfoPO(commentInfoVO.getCommentID(), commentInfoVO.getTime(), commentInfoVO.getHotelID(), commentInfoVO.getScore(), commentInfoVO.getComment(), file1, file2, file3,commentInfoVO.getOrderID());
 		return commentInfoPO;
 	}
 

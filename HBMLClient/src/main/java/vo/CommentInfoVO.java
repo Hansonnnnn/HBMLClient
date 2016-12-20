@@ -1,9 +1,9 @@
 package vo;
-import java.awt.Image;
 import java.io.File;
 import java.util.Date;
 
 public class CommentInfoVO{
+
 	int commentID;
 	Date time;
 	int hotelID;
@@ -12,18 +12,7 @@ public class CommentInfoVO{
 	File picture1;
 	File picture2;
 	File picture3;
-	public CommentInfoVO(int commentID, Date time, int hotelID, int score, String comment, File picture1,
-			File picture2, File picture3) {
-		super();
-		this.commentID = commentID;
-		this.time = time;
-		this.hotelID = hotelID;
-		this.score = score;
-		this.comment = comment;
-		this.picture1 = picture1;
-		this.picture2 = picture2;
-		this.picture3 = picture3;
-	}
+	int orderID;
 	public int getCommentID() {
 		return commentID;
 	}
@@ -72,11 +61,30 @@ public class CommentInfoVO{
 	public void setPicture3(File picture3) {
 		this.picture3 = picture3;
 	}
+	public int getOrderID() {
+		return orderID;
+	}
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
+	}
 	@Override
 	public String toString() {
-		return "CommentInfoPO [commentID=" + commentID + ", time=" + time + ", hotelID=" + hotelID + ", score=" + score
+		return "CommentInfoVO [commentID=" + commentID + ", time=" + time + ", hotelID=" + hotelID + ", score=" + score
 				+ ", comment=" + comment + ", picture1=" + picture1 + ", picture2=" + picture2 + ", picture3="
-				+ picture3 + "]";
+				+ picture3 + ", orderID=" + orderID + "]";
 	}
-	
+	public CommentInfoVO(int commentID, Date time, int hotelID, int score, String comment, File picture1, File picture2,
+			File picture3, int orderID) {
+		super();
+		this.commentID = commentID;
+		this.time = time;
+		this.hotelID = hotelID;
+		this.score = score;
+		this.comment = comment;
+		this.picture1 = picture1;
+		this.picture2 = picture2;
+		this.picture3 = picture3;
+		this.orderID = orderID;
+	}
+		
 }

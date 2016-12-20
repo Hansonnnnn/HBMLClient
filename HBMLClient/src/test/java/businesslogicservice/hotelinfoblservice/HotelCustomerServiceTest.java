@@ -45,7 +45,7 @@ public class HotelCustomerServiceTest {
 
 	@Test
 	public void testAddComment() {
-		ResultMessage resultMessage = hotelCustomerService.addComment(new CommentInfoVO(0, new Date(), 120, 8, "great", null, null, null));
+		ResultMessage resultMessage = hotelCustomerService.addComment(new CommentInfoVO(0, new Date(), 120, 8, "great", null, null, null,1));
 		assertEquals(ResultMessage.success, resultMessage);
 	}
 
