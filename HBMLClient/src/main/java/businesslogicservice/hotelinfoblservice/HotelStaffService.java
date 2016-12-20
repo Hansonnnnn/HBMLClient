@@ -20,4 +20,6 @@ public interface HotelStaffService {
 	 */
 	public Map<Integer, CommentInfoVO> getComments(int hotelID);
 	
+	public HotelVO getHotelInfo(int hotelID);
+	
 }

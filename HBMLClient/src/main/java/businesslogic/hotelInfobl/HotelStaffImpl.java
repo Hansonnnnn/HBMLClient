@@ -37,5 +37,9 @@ public class HotelStaffImpl implements HotelStaffService{
 		return commentHelper.getComments(hotelID);
 	}
 	
+	public HotelVO getHotelInfo(int hotelID){
+		
+		return hotelHelper.getHotelInfo(hotelID);		
+	}
 	
 }
