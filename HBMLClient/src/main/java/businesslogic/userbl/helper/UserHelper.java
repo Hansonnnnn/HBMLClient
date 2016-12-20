@@ -69,4 +69,11 @@ public class UserHelper {
     }
 
 
+
+    public ResultMessage logout(String accountName) throws Exception{
+        return userDao.logout(accountName);
+    }
+
+
+
 }

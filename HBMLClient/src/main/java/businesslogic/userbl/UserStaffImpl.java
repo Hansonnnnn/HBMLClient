@@ -57,4 +57,9 @@ public class UserStaffImpl implements UserStaffService{
         return userHelper.signup(vo);
 
     }
+
+    @Override
+    public ResultMessage logout(String accountName) throws Exception {
+        return userHelper.logout(accountName);
+    }
 }

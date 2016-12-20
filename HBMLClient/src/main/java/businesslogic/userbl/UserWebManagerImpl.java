@@ -81,4 +81,9 @@ public class UserWebManagerImpl implements UserWebManagerService{
         return userHelper.signup(vo);
 
     }
+
+    @Override
+    public ResultMessage logout(String accountName) throws Exception {
+        return userHelper.logout(accountName);
+    }
 }

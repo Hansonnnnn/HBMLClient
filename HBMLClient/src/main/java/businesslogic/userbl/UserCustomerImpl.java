@@ -72,4 +72,9 @@ public class UserCustomerImpl implements UserCustomerService{
         }
         return resultMessage;
     }
+
+    @Override
+    public ResultMessage logout(String accountName) throws Exception {
+        return userHelper.logout(accountName);
+    }
 }

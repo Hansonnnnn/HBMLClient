@@ -61,13 +61,13 @@ public class CreditHelper {
     }
 
 
-    public ResultMessage resumeCreditValue(int userID, long price, int type)throws Exception{
+    public ResultMessage resumeCreditValue(int userID, long price, int type,int OrderID)throws Exception{
 
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         if(type==0){
             price=price/2;
         }
-        CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(2),price);
+        CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(2),price,OrderID);
         long creditValue=creditDao.getCreditValue(userID);
         creditValue+=price;
         creditDao.setCreditValue(userID,creditValue);
@@ -79,8 +79,7 @@ public class CreditHelper {
     public ResultMessage addCreditValue(int UserID,long value)throws Exception{
 
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
-        CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
-
+        CreditRecordVO creditRecordVO=new CreditRecordVO(UserID,new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
         long creditValue=creditDao.getCreditValue(UserID);
         creditValue+=value;
         creditDao.setCreditValue(UserID,creditValue);

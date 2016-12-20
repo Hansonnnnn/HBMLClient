@@ -28,4 +28,12 @@ public interface UserWebManagerService {
     public ResultMessage login(String accountName,String pwd)throws Exception;
 
     public ResultMessage signup(UserVO vo)throws Exception;
+
+    /**
+     *
+     * @param accountName
+     * @return  如果返回failure,提示用户已经登出；如果是notexist,提示无此用户
+     * @throws Exception
+     */
+    public ResultMessage logout(String accountName) throws Exception;
 }

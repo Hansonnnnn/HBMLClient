@@ -45,16 +45,11 @@ public class test_Alex_Credit_BL {
     }
 
     static long getCreditValue()throws Exception{
-        CreditDao creditDao=ClientRunner.remoteHelper.getCreditDao();
-        long number=creditDao.getCreditValue(1);
+        CreditCustomerService creditCustomerService=new CreditCustomerImpl();
+        long number=creditCustomerService.getCreditValue(1);
         System.out.println("the credit value is: "+number);
         return number;
     }
 
-    static void setCreditValue()throws Exception{
-        CreditDao creditDao=ClientRunner.remoteHelper.getCreditDao();
-        long number2=9999;
-        long number1=getCreditValue();
-        System.out.println(creditDao.setCreditValue(1,number2));
-    }
+
 }
