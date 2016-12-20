@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  * Created by LENOVO on 2016/11/26.
  */
 public class HotelInfoUI extends VBox{
-    public HotelInfoUI(Stage stage,VBox infoVBox) {
+    public HotelInfoUI(Stage stage, VBox infoVBox, UserVO userVO) {
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/HotelInfo.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
@@ -22,6 +23,6 @@ public class HotelInfoUI extends VBox{
         }
 
         HotelInfoUIController hotelInfoUIController=fxmlLoader.getController();
-        hotelInfoUIController.init(stage,infoVBox);
+        hotelInfoUIController.init(stage,infoVBox,userVO);
     }
 }

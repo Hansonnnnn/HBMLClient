@@ -1,5 +1,7 @@
 package presentation.view.WebMarketerUI;
 
+import businesslogic.orderbl.OrderWebMarketerServiceImpl;
+import businesslogicservice.orderblservice.OrderWebMarketerService;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -15,6 +17,9 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import model.DateHelper;
+import vo.AppealVO;
+import vo.OrderVO;
 
 import javax.swing.*;
 
@@ -40,9 +45,13 @@ public class ExceptionOrderUIController {
 
     private Stage stage;
     private ObservableList<ExceptionOrder> unexecutedOrderData;
-    private ObservableList<ExceptionOrder> exceptionOrderData;
+    private ObservableList<AppealVO> exceptionOrderData;
+    private OrderWebMarketerService webMarketerService;
+    private DateHelper dateHelper;
     public void init(Stage stage){
         this.stage=stage;
+        webMarketerService=new OrderWebMarketerServiceImpl();
+        dateHelper=new DateHelper();
         initTableView();
     }
 
@@ -90,24 +99,42 @@ public class ExceptionOrderUIController {
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         unexecutedOrderData= FXCollections.observableArrayList();
-        unexecutedOrderData.add(new ExceptionOrder("201611220001","李四","2016.11.22 8:00","2016.11.22 20:00",200));
-        unexecutedOrderData.add(new ExceptionOrder("201611220002","王五","2016.11.22 9:00","2016.11.22 22:00",300));
+        if(webMarketerService.getUnexecutedOrderList()!=null){
+            System.out.println("有数据");
+            for(OrderVO orderVO: webMarketerService.getUnexecutedOrderList().values()){
+                System.out.println("hhahhha");
+                unexecutedOrderData.add(new ExceptionOrder(String.valueOf(orderVO.getOrderID()),String.valueOf(orderVO.getUserID()),
+                        dateHelper.dateToString(orderVO.getGenerateTime()),dateHelper.dateToString(orderVO.getCancelTime()),orderVO.getPrice()));
+            }
+        }else{
+            System.out.println("没数据");
+        }
+        unexecutedOrderData.add(new ExceptionOrder("333","李四","2016.11.22 8:00","2016.11.22 20:00",200));
+        unexecutedOrderData.add(new ExceptionOrder("444","王五","2016.11.22 9:00","2016.11.22 22:00",300));
         unexecutedTableView.setItems(unexecutedOrderData);
 
+
         idColumn1.setCellValueFactory(new PropertyValueFactory<>("orderID"));
-        nameColumn1.setCellValueFactory(new PropertyValueFactory<>("userName"));
-        startColumn1.setCellValueFactory(new PropertyValueFactory<>("startTime"));
-        endColumn1.setCellValueFactory(new PropertyValueFactory<>("endTime"));
-        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
-        revokeColumn.setCellFactory(new Callback<TableColumn<ExceptionOrder,Boolean>, TableCell<ExceptionOrder,Boolean>>() {
+        nameColumn1.setCellValueFactory(new PropertyValueFactory<>("userID"));
+        startColumn1.setCellValueFactory(new PropertyValueFactory<>("appealTime2"));
+//        endColumn1.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+//        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
+        revokeColumn.setCellFactory(new Callback<TableColumn<AppealVO,Boolean>, TableCell<AppealVO,Boolean>>() {
             @Override
             public TableCell call(TableColumn param) {
                 return new ExceptionOrderListButtonCell();
             }
         });
         exceptionOrderData= FXCollections.observableArrayList();
-        exceptionOrderData.add(new ExceptionOrder("111","李四","2016.11.22 8:00","2016.11.22 20:00",200));
-        exceptionOrderData.add(new ExceptionOrder("222","王五","2016.11.22 9:00","2016.11.22 22:00",300));
+        if(webMarketerService.getAppealOrderList(0)!=null){
+            for(AppealVO appealVO:webMarketerService.getAppealOrderList(0).values()){
+                exceptionOrderData.add(appealVO);
+            }
+        }else{
+            System.out.println("没数据2");
+        }
+//        exceptionOrderData.add(new ExceptionOrder("111","李四","2016.11.22 8:00","2016.11.22 20:00",200));
+//        exceptionOrderData.add(new ExceptionOrder("222","王五","2016.11.22 9:00","2016.11.22 22:00",300));
         exceptionOrderTableView.setItems(exceptionOrderData);
     }
 
@@ -157,7 +184,7 @@ public class ExceptionOrderUIController {
         }
     }
 
-    public class ExceptionOrderListButtonCell extends TableCell<ExceptionOrder,Boolean>{
+    public class ExceptionOrderListButtonCell extends TableCell<AppealVO,Boolean>{
         private Button revokeButton=new Button();
         private ImageView revokeImageView=new ImageView(new Image(getClass().getResourceAsStream("webmarketerimages/delete.png")));
         public ExceptionOrderListButtonCell(){

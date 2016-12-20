@@ -29,12 +29,12 @@ public class WebMarketerUIController {
 
     private Stage stage;
     private Scene loginScene;
-//    private UserVO userVO;
-    public void init(Stage stage, Scene loginScene){
+    private UserVO userVO;
+    public void init(Stage stage, Scene loginScene,UserVO userVO){
         this.stage=stage;
         this.loginScene=loginScene;
-//        this.userVO=userVO;
-//        nameLabel.setText(userVO.getName()+",欢迎你");
+        this.userVO=userVO;
+        nameLabel.setText(userVO.getName()+",欢迎你");
         infoVBox.getChildren().add(new ExceptionOrderUI(stage));
     }
 

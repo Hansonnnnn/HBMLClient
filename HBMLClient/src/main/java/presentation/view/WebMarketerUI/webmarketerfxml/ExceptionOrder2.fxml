@@ -35,7 +35,7 @@
       </HBox>
       <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="738.0">
          <children>
-            <TableView fx:id="exceptionOrderTableView" maxWidth="702.0" prefHeight="469.0" prefWidth="702.0" styleClass="orderTypeTableView">
+            <TableView fx:id="exceptionOrderTableView" maxWidth="702.0" prefHeight="469.0" prefWidth="702.0" styleClass="orderTypeTableView" visible="false">
                <columns>
                   <TableColumn fx:id="idColumn1" prefWidth="140.0" resizable="false" text="订单编号" />
                   <TableColumn fx:id="nameColumn1" prefWidth="100.0" resizable="false" text="用户姓名" />
