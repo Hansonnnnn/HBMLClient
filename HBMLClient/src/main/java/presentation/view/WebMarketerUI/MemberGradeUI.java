@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class MemberGradeUI extends VBox{
     public MemberGradeUI(){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/MemberGrade.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/MemberGrade1.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {
