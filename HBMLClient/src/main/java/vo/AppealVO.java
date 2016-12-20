@@ -2,20 +2,24 @@ package vo;
 
 import java.util.Date;
 import message.AppealStateMessage;
+import model.DateHelper;
 ;
 
 public class AppealVO {
+	private DateHelper dateHelper=new DateHelper();
+
 	int appealID;
 	int orderID;
 	int userID;
 	int webMarketerID;
 	Date appealTime;
+	String appealTimeString;
 	String content;
 	AppealStateMessage appealState;
-	
-	
+
+
 	public AppealVO(int appealID, int orderID, int userID, int webMarketerID, Date appealTime, String content,
-			AppealStateMessage appealState) {
+					AppealStateMessage appealState) {
 		super();
 		this.appealID = appealID;
 		this.orderID = orderID;
@@ -24,6 +28,7 @@ public class AppealVO {
 		this.appealTime = appealTime;
 		this.content = content;
 		this.appealState = appealState;
+		appealTimeString=dateHelper.dateToString(appealTime);
 	}
 
 
@@ -96,7 +101,13 @@ public class AppealVO {
 		this.appealState = appealState;
 	}
 
+	public String getAppealTimeString() {
+		return appealTimeString;
+	}
 
+	public void setAppealTimeString(String appealTimeString) {
+		this.appealTimeString = appealTimeString;
+	}
 	@Override
 	public String toString() {
 		return "AppealPO [appealID=" + appealID + ", orderID=" + orderID + ", userID=" + userID + ", webMarketerID="

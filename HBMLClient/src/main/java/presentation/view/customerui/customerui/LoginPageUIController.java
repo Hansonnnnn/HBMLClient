@@ -1,7 +1,9 @@
 package presentation.view.customerui.customerui;
 
 import businesslogic.userbl.UserCustomerImpl;
+import businesslogic.userbl.UserLogImpl;
 import businesslogicservice.userblservice.UserCustomerService;
+import businesslogicservice.userblservice.UserLogService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -29,10 +31,12 @@ public class LoginPageUIController
 	private FirstPageUIController controller;
 	private UserVO userVO;
 	private UserCustomerService customerService;
+	private UserLogService userLogService;
 	
 	public void init(Stage stage, Scene loginScene, FirstPageUIController controller)
 	{
 		customerService = new UserCustomerImpl();
+		userLogService=new UserLogImpl();
 		resultMessage = ResultMessage.failure;
 		this.stage = stage;
 		this.loginScene = loginScene;
@@ -65,7 +69,7 @@ public class LoginPageUIController
 		//bl层来检查用户名和密码是否匹配
 		//如果
 		try {
-			resultMessage = customerService.login(name, password);
+			resultMessage = userLogService.login(name, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

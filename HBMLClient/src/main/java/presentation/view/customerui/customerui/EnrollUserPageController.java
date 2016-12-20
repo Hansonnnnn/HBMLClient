@@ -1,6 +1,8 @@
 package presentation.view.customerui.customerui;
 import businesslogic.userbl.UserCustomerImpl;
+import businesslogic.userbl.UserLogImpl;
 import businesslogicservice.userblservice.UserCustomerService;
+import businesslogicservice.userblservice.UserLogService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -24,6 +26,7 @@ public class EnrollUserPageController
 		FirstPageUIController controller;
 		private UserVO userVO;
 		private UserCustomerService customerService;
+		private UserLogService userLogService;
 		
 		public void init(Stage stage, Scene preScene, FirstPageUIController controller)
 		{
@@ -31,6 +34,7 @@ public class EnrollUserPageController
 			this.preScene = preScene;
 			this.controller = controller;
 			customerService = new UserCustomerImpl();
+			userLogService=new UserLogImpl();
 		}
 		
 		@FXML
@@ -54,7 +58,7 @@ public class EnrollUserPageController
 			{
 				try {
 					System.out.println("*****************");
-					customerService.signup(new UserVO(UserType.Customer, name, password));
+					userLogService.signup(new UserVO(UserType.Customer, name, password));
 					
 					userVO = customerService.getUserData(name);
 					System.out.println(userVO.getUserID());

@@ -1,7 +1,9 @@
 package presentation.view.customerui.customerui;
 
 import businesslogic.userbl.UserCustomerImpl;
+import businesslogic.userbl.UserLogImpl;
 import businesslogicservice.userblservice.UserCustomerService;
+import businesslogicservice.userblservice.UserLogService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -25,12 +27,14 @@ public class EnrollUserPageNewController {
 	
 	private UserVO userVO;
 	private UserCustomerService customerService;
+	private UserLogService userLogService;
 	
 	public void init(Stage stage, Scene preScene)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
 		customerService = new UserCustomerImpl();
+		userLogService=new UserLogImpl();
 	}
 	
 	@FXML
@@ -59,7 +63,7 @@ public class EnrollUserPageNewController {
 		}else
 		{
 			try {
-				customerService.signup(new UserVO(UserType.Customer, name, password));
+				userLogService.signup(new UserVO(UserType.Customer, name, password));
 				new MyDialog(stage, "恭喜您注册成功！", 2);
 				userVO = customerService.getUserData(name);
 				//切换个人信息中心界面

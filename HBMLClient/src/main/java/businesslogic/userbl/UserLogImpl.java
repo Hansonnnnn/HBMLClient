@@ -3,6 +3,7 @@ package businesslogic.userbl;
 import businesslogic.userbl.helper.UserHelper;
 import businesslogicservice.userblservice.UserLogService;
 import message.ResultMessage;
+import model.UserType;
 import vo.UserVO;
 
 /**
@@ -37,6 +38,23 @@ public class UserLogImpl implements UserLogService{
     public ResultMessage logout(String accountName) throws Exception {
 
         return userHelper.logout(accountName);
+
+    }
+
+    @Override
+    public UserVO getUserData(int userID) throws Exception{
+
+        UserVO userVO=userHelper.getUserData(userID);
+
+        return userVO;
+
+    }
+
+    @Override
+    public UserVO getUserData(String accountName) throws Exception{
+
+        UserVO userVO=userHelper.getUserData(accountName);
+        return userVO;
 
     }
 }

@@ -29,4 +29,8 @@ public interface UserLogService {
      * @throws Exception
      */
     public ResultMessage logout(String accountName) throws Exception;
+
+    public UserVO getUserData(String accountName)throws Exception;
+
+    public UserVO getUserData(int userID)throws Exception;
 }
