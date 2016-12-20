@@ -155,7 +155,7 @@ public class MyHotelListPageController
 			
 				 checkButton.setOnAction((ActionEvent e)->{
 					 HotelVO hotelVO = (HotelVO)list.getSelectionModel().getSelectedItem();
-					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene,hotelVO,userVO,checkinTime));
+					 stage.setScene(new HotelInfoUI(new Group(), stage, preScene,hotelVO,userVO,checkinTime,true));
 				 });
 			 }
 			 protected void updateItem(Boolean t, boolean empty)

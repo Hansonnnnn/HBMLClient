@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox fx:id="contentBox" prefHeight="616.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.UnexecutedOrderPageController">
+<VBox fx:id="contentBox" prefHeight="616.0" prefWidth="848.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.UnexecutedOrderPageController">
    <children>
       <TableView fx:id="list" prefHeight="624.0" prefWidth="848.0">
          <columns>

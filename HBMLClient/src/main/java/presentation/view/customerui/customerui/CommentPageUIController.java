@@ -1,5 +1,9 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.hotelInfobl.HotelCustomerImpl;
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.hotelinfoblservice.HotelCustomerService;
+import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,13 +22,17 @@ public class CommentPageUIController {
 		private Stage stage;
 		private Scene preScene;
 		private Scene thisPage;
+		private HotelCustomerService customerService;
+		private int userID;
 		
-		public void init(Stage stage, Scene preScene,Scene thisPage)
+		public void init(Stage stage, Scene preScene,Scene thisPage,int userID)
 		{
 			this.stage = stage;
 			this.preScene = preScene;
 			this.thisPage = thisPage;
-			contentBox.getChildren().add(new CommentedHotelListPage(stage, thisPage));
+			this.userID = userID;
+			customerService = new HotelCustomerImpl();
+			contentBox.getChildren().add(new CommentedHotelListPage(stage, thisPage,userID));
 		}
 		
 		@FXML
@@ -37,13 +45,13 @@ public class CommentPageUIController {
 		private void firstAction()
 		{
 			contentBox.getChildren().remove(0);
-			contentBox.getChildren().add(new CommentedHotelListPage(stage,thisPage));
+			contentBox.getChildren().add(new CommentedHotelListPage(stage,thisPage,userID));
 		}
 		
 		@FXML 
 		private void secondAction()
 		{
 			contentBox.getChildren().remove(0);
-			contentBox.getChildren().add(new UnCommentedHotelListPage(stage,thisPage));
+			contentBox.getChildren().add(new UnCommentedHotelListPage(stage,thisPage,userID));
 		}
 }

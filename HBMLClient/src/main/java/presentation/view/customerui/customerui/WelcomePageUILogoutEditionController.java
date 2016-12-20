@@ -33,4 +33,10 @@ public class WelcomePageUILogoutEditionController
 			controller.setState(false);
 			stage.setScene(new WelcomePageUI(new Group(), stage));
 		}
+		
+		@FXML
+		private void back()
+		{
+			stage.setScene(preScene);
+		}
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"fx:controller="presentation.view.customerui.customerui.EnrollCompanyVIPController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" stylesheets="@../customer.css" xmlns:fx="http://javafx.com/fxml/1"fx:controller="presentation.view.customerui.customerui.EnrollCompanyVIPController">
    <children>
       <HBox layoutX="152.0" layoutY="73.0" prefHeight="436.0" prefWidth="766.0">
          <children>

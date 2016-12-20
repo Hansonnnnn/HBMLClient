@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.OrderVO;
 
 public class CommentSubmitPage extends Scene
 {
-		public CommentSubmitPage(Parent root,Stage stage, Scene preScene)
+		public CommentSubmitPage(Parent root,Stage stage, Scene preScene, OrderVO orderVO)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CommentPage.fxml"));
@@ -22,6 +23,6 @@ public class CommentSubmitPage extends Scene
 			}
 			
 			CommentSubmitPageController controller = fxmlLoader.getController();
-			controller.init(stage, preScene);
+			controller.init(stage, preScene, orderVO);
 		}
 }

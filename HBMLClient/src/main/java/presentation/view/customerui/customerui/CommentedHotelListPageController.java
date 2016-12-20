@@ -1,5 +1,8 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogicservice.orderblservice.OrderCustomerService;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import vo.CommentInfoVO;
 import vo.HotelVO;
+import vo.OrderVO;
 
 public class CommentedHotelListPageController 
 {
@@ -26,39 +30,54 @@ public class CommentedHotelListPageController
 		
 		private Stage stage;
 		private Scene commentFirstPageScene;
+		private int userID;
+		private ObservableList<OrderVO> orderData;
 		
-		private ObservableList<HotelVO> hotelData;
+		private OrderCustomerService customerService;
 		
-		public void init(Stage stage, Scene commentFirstPageScene)
+		public void init(Stage stage, Scene commentFirstPageScene, int userID)
 		{
 			this.stage = stage;
 			this.commentFirstPageScene = commentFirstPageScene;
+			this.userID = userID;
+			customerService = new OrderCustomerServiceImpl();
 			initTable();
 		}
 		
 		private void initTable()
 		{
-			nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-			starColumn.setCellValueFactory(new PropertyValueFactory<>("star"));
-			scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
-			priceColumn.setCellValueFactory(new PropertyValueFactory<>("lowestPrice"));
-			buttonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() {
+			nameColumn.setCellValueFactory(new PropertyValueFactory<>("hotelName"));
+			priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+			buttonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() {
 				@Override
 				public TableCell call(TableColumn param)
 				{
 					return new CommentButtonCell(stage);
 				}
 			});
+			
+			orderData = FXCollections.observableArrayList();
+			if(customerService.getExecutedOrderList(userID)!=null)
+			{
+				for (OrderVO orderVO : customerService.getExecutedOrderList(userID).values())
+				{
+					orderData.add(orderVO);
+				}
+			}
+			list.setItems(orderData);
 		}
 		
-		public class CommentButtonCell extends TableCell<HotelVO, Boolean>
+		public class CommentButtonCell extends TableCell<OrderVO, Boolean>
 		{
 			private Button commentButton = new Button("追加评价");
 			
 			public CommentButtonCell(Stage stage)
 			{
 				commentButton.setOnAction((ActionEvent e)->{
-					stage.setScene(new CommentSubmitPage(new Group(), stage, commentFirstPageScene));
+					 int seletedIndex=getTableRow().getIndex();
+					 OrderVO selectedOrder = (OrderVO) list.getItems().get(seletedIndex);
+					 stage.setScene(new CommentSubmitPage(new Group(), stage, commentFirstPageScene, selectedOrder));
+					
 //					CommentInfoVO commentInfoVO = new CommentInfoVO(commentID, time, hotelID, score, comment, picture1, picture2, picture3)
 				});
 			}

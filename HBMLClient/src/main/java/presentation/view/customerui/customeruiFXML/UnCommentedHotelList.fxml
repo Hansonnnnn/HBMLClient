@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="627.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.UnCommentedHotelListPageController">
+<VBox prefHeight="627.0" prefWidth="847.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.UnCommentedHotelListPageController">
    <children>
       <TableView fx:id="list" prefHeight="618.0" prefWidth="847.0">
          <columns>

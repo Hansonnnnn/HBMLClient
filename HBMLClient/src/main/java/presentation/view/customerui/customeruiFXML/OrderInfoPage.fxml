@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="474.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.OrderInfoPageController">
+<AnchorPane prefHeight="474.0" prefWidth="400.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.OrderInfoPageController">
    <children>
       <VBox prefHeight="474.0" prefWidth="400.0">
          <children>
             <HBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
                <children>
-                  <Label text="订单信息" />
+                  <Label styleClass="infoLabelSize" text="订单信息" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="订单编号" />
-                  <Label fx:id="orderID" text="Label" />
+                  <Label text="订单编号" textFill="#155ae4" />
+                  <Label fx:id="orderID" text="Label" textFill="#155ae4" />
                </children>
                <VBox.margin>
                   <Insets />
@@ -29,8 +29,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="酒店名称" />
-                  <Label fx:id="hotelName" text="Label" />
+                  <Label text="酒店名称" textFill="#155ae4" />
+                  <Label fx:id="hotelName" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -38,8 +38,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="生成时间" />
-                  <Label fx:id="generateTime" text="Label" />
+                  <Label text="生成时间" textFill="#155ae4" />
+                  <Label fx:id="generateTime" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -47,8 +47,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="撤销时间" />
-                  <Label fx:id="cancelTime" text="Label" />
+                  <Label text="撤销时间" textFill="#155ae4" />
+                  <Label fx:id="cancelTime" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -56,8 +56,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="入住时间" />
-                  <Label fx:id="checkinTime" text="Label" />
+                  <Label text="入住时间" textFill="#155ae4" />
+                  <Label fx:id="checkinTime" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -65,8 +65,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="退房时间" />
-                  <Label fx:id="checkoutTime" text="Label" />
+                  <Label text="退房时间" textFill="#155ae4" />
+                  <Label fx:id="checkoutTime" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -74,8 +74,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="订单状态" />
-                  <Label fx:id="orderState" text="Label" />
+                  <Label text="订单状态" textFill="#155ae4" />
+                  <Label fx:id="orderState" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -83,8 +83,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="有无儿童" />
-                  <Label fx:id="hasChild" text="Label" />
+                  <Label text="有无儿童" textFill="#155ae4" />
+                  <Label fx:id="hasChild" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />
@@ -92,8 +92,8 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="价格" />
-                  <Label fx:id="price" text="Label" />
+                  <Label text="价格" textFill="#155ae4" />
+                  <Label fx:id="price" text="Label" textFill="#155ae4" />
                </children>
                <padding>
                   <Insets left="30.0" />

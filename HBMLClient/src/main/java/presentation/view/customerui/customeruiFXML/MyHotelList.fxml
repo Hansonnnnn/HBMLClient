@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MyHotelListPageController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MyHotelListPageController">
    <children>
-      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
       <VBox layoutX="22.0" layoutY="89.0" prefHeight="494.0" prefWidth="938.0">
          <children>
             <HBox alignment="CENTER" prefHeight="26.0" prefWidth="705.0">
@@ -30,5 +30,18 @@
             </TableView>
          </children>
       </VBox>
+      <Button fx:id="backButton" layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../CustomerImage/返回-2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="transButton" />
+            <String fx:value="backButtonColor" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

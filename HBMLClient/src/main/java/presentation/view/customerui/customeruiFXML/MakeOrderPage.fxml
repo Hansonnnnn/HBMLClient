@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -7,23 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MakeOrderPageController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.MakeOrderPageController">
    <children>
-      <VBox layoutX="880.0" layoutY="211.0" prefHeight="177.0" prefWidth="62.0">
-         <children>
-            <Button fx:id="makeOrderButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#makeOrder" prefHeight="138.0" prefWidth="42.0" text="生成订单" textAlignment="CENTER" wrapText="true" />
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </VBox>
-      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
       <VBox alignment="CENTER" layoutX="167.0" layoutY="69.0" prefHeight="508.0" prefWidth="669.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="735.0" spacing="80.0">
                <children>
-                  <Label text="酒店名称" />
-                  <Label fx:id="hotelNameLabel" text="Label" />
+                  <Label text="酒店名称" textFill="#155ae4" />
+                  <Label fx:id="hotelNameLabel" text="Label" textFill="#155ae4" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -31,53 +23,73 @@
             </HBox>
             <HBox prefHeight="50.0" prefWidth="669.0" spacing="80.0">
                <children>
-                  <Label text="酒店地址" />
-                  <Label fx:id="hotelAddressLabel" text="Label" />
+                  <Label text="酒店地址" textFill="#155ae4" />
+                  <Label fx:id="hotelAddressLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="541.0" spacing="80.0">
                <children>
-                  <Label text="房间类型" />
-                  <Label fx:id="roomTypeLabel" text="Label" />
+                  <Label text="房间类型" textFill="#155ae4" />
+                  <Label fx:id="roomTypeLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="541.0" spacing="106.0">
                <children>
-                  <Label text="价格" />
-                  <Label fx:id="priceLabel" text="Label" />
+                  <Label text="价格" textFill="#155ae4" />
+                  <Label fx:id="priceLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="541.0" spacing="55.0">
                <children>
-                  <Label text="最晚执行时间" />
-                  <Label fx:id="executeDDLLabel" text="Label" />
+                  <Label text="最晚执行时间" textFill="#155ae4" />
+                  <Label fx:id="executeDDLLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="541.0" spacing="55.0">
                <children>
-                  <Label text="预计离开时间" />
-                  <Label fx:id="checkoutTimeLabel" text="Label" />
+                  <Label text="预计离开时间" textFill="#155ae4" />
+                  <Label fx:id="checkoutTimeLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="541.0" spacing="80.0">
                <children>
-                  <Label text="优惠方式" />
-                  <Label fx:id="promotionLabel" text="Label" />
+                  <Label text="优惠方式" textFill="#155ae4" />
+                  <Label fx:id="promotionLabel" text="Label" textFill="#155ae4" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="669.0" spacing="80.0">
                <children>
-                  <Label text="入住人数" />
-                  <ChoiceBox fx:id="numberBox" prefWidth="150.0" />
+                  <Label text="入住人数" textFill="#155ae4" />
+                  <ChoiceBox fx:id="numberBox" prefWidth="150.0" styleClass="circle" />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="669.0" spacing="80.0">
                <children>
-                  <Label text="有无儿童" />
-                  <ChoiceBox fx:id="hasChildBox" prefWidth="150.0" />
+                  <Label text="有无儿童" textFill="#155ae4" />
+                  <ChoiceBox fx:id="hasChildBox" prefWidth="150.0" styleClass="circle" />
                </children>
             </HBox>
          </children>
       </VBox>
+      <Button fx:id="backButton" layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../CustomerImage/返回-2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="transButton" />
+            <String fx:value="backButtonColor" />
+         </styleClass>
+      </Button>
+      <Button fx:id="makeOrderButton" alignment="CENTER" contentDisplay="CENTER" layoutX="864.0" layoutY="240.0" mnemonicParsing="false" onAction="#makeOrder" prefHeight="137.0" prefWidth="78.0" text="生成订单" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <styleClass>
+            <String fx:value="circle" />
+            <String fx:value="transButton" />
+            <String fx:value="backButtonColor" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

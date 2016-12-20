@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.ImageHelper;
+import presentation.view.application.MyDialog;
 import vo.HotelVO;
 import vo.RoomInfoVO;
 import vo.UserVO;
@@ -52,8 +53,9 @@ public class HotelInfoUIController
 		private RoomInfoVO selectedRoom;
 		private UserVO userVO;
 		private Date checkinTime;
+		private boolean logined;
 		
-		public void init(Stage stage, Scene preScece, Scene hotelInfoPageScene, HotelVO hotelVO,UserVO userVO,Date checkinTime)
+		public void init(Stage stage, Scene preScece, Scene hotelInfoPageScene, HotelVO hotelVO,UserVO userVO,Date checkinTime,boolean logined)
 		{
 			this.stage = stage;
 			this.preScene = preScece;
@@ -61,6 +63,7 @@ public class HotelInfoUIController
 			this.hotelVO = hotelVO;
 			this.userVO = userVO;
 			this.checkinTime = checkinTime;
+			this.logined = logined;
 			initLabel();
 			initTable();
 		}
@@ -120,10 +123,16 @@ public class HotelInfoUIController
 			 public MakeOrderButtonCell(Stage stage)
 			 {
 				 makeOrderButton.setOnAction((ActionEvent e)->{
-					 int selectedIndex = getTableRow().getIndex();
-					 selectedRoom = (RoomInfoVO)list.getItems().get(selectedIndex);
-					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom,userVO, checkinTime));
-				 });
+					 if(logined)
+					 {
+						 int selectedIndex = getTableRow().getIndex();
+						 selectedRoom = (RoomInfoVO)list.getItems().get(selectedIndex);
+						 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom,userVO, checkinTime));
+					 }else
+					 {
+						 new MyDialog(stage, "请先登录", 0);
+					 }
+				});
 			 }
 			 
 			 protected void updateItem(Boolean t, boolean empty) 

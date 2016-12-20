@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.HotelListPageController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" styleClass="centerColor" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.HotelListPageController">
    <children>
       <VBox prefHeight="618.0" prefWidth="996.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="705.0" spacing="20.0">
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="940.0" spacing="20.0">
                <children>
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
-                  <TextField fx:id="searchField" prefHeight="38.0" prefWidth="714.0" promptText="Search Whatever You Want!">
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/返回-2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <TextField fx:id="searchField" prefHeight="38.0" prefWidth="642.0" promptText="Search Whatever You Want!">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </TextField>
-                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="38.0" prefWidth="91.0" text="Search" textFill="#222020" wrapText="true" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="38.0" prefWidth="91.0" text="Search" textFill="WHITE" wrapText="true">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass></Button>
+                  <VBox prefHeight="54.0" prefWidth="0.0" />
+                  <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refresh" prefHeight="41.0" prefWidth="58.0" styleClass="transButton">
+                     <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/刷新.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </HBox>
             <VBox prefHeight="564.0" prefWidth="996.0">

@@ -10,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -67,6 +68,7 @@ public class MakeOrderPageController
 		@FXML
 		private void back()
 		{
+//			stage.setScene(new HotelListPageUI(new Group()));
 			stage.setScene(preScene);
 		}
 		
@@ -76,7 +78,7 @@ public class MakeOrderPageController
 			hotelAddressLabel.setText(hotelVO.getAddress());
 			roomTypeLabel.setText(roomInfoVO.getRoomType());
 			priceLabel.setText(roomInfoVO.getDefaultPrice()+"");
-			executeDDLLabel.setText(DateHelper.dateToString(new Date(checkinTime.getTime()+18*60*60)));
+			executeDDLLabel.setText(DateHelper.dateToString(new Date(checkinTime.getTime()+18*60*60*1000)));
 			Integer[] numbers = new Integer[]{1,2,3,4,5};
 			numberList = FXCollections.observableArrayList();
 			numberList.addAll(numbers);
@@ -117,7 +119,7 @@ public class MakeOrderPageController
 			}
 			System.out.println(userVO == null);
 			OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
-					new Date(), null, new Date(checkinTime.getTime()+18*60*60), checkinTime, null, number, sendInfo, roomInfoVO.getDefaultPrice());
+					null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
 			System.out.println(orderVO == null);
 			customerService.addOrder(orderVO);
 		}

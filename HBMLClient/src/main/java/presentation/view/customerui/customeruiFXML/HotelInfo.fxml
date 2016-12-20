@@ -7,9 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="618.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.HotelInfoUIController">
+<AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.HotelInfoUIController">
    <children>
-      <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0" text="返回" />
       <VBox layoutX="379.0" layoutY="80.0" prefHeight="516.0" prefWidth="599.0">
          <children>
             <TableView fx:id="list" prefHeight="536.0" prefWidth="599.0">
@@ -26,7 +25,7 @@
             <ImageView fx:id="hotelImageView" fitHeight="264.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="351.0" spacing="30.0">
                <children>
-                  <Label text="地址" />
+                  <Label text="地址" textFill="#155ae4" />
                   <Label fx:id="addressLabel" text="Label" />
                </children>
                <padding>
@@ -35,7 +34,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="351.0" spacing="30.0">
                <children>
-                  <Label text="简介" />
+                  <Label text="简介" textFill="#155ae4" />
                   <Label fx:id="introduceLabel" text="Label" />
                </children>
                <padding>
@@ -44,7 +43,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="146.0" prefWidth="351.0" spacing="30.0">
                <children>
-                  <Label text="设施" />
+                  <Label text="设施" textFill="#155ae4" />
                   <Label fx:id="facilityLabel" text="Label" />
                </children>
                <padding>
@@ -53,5 +52,18 @@
             </HBox>
          </children>
       </VBox>
+      <Button fx:id="backButton" layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../CustomerImage/返回-2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="transButton" />
+            <String fx:value="backButtonColor" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

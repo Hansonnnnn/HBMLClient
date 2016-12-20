@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
    <children>
-      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" styleClass="topAndRightColor" AnchorPane.leftAnchor="0.0">
+      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" styleClass="loginButtonColor" AnchorPane.leftAnchor="0.0">
          <padding>
             <Insets left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -27,7 +27,7 @@
             <Insets left="20.0" />
          </opaqueInsets>
       </HBox>
-      <VBox alignment="CENTER" layoutX="877.0" prefHeight="628.0" prefWidth="124.0" spacing="20.0" styleClass="topAndRightColor">
+      <VBox alignment="CENTER" layoutX="877.0" prefHeight="628.0" prefWidth="124.0" spacing="20.0" styleClass="loginButtonColor">
          <children>
             <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="115.0" prefWidth="91.0">
                <graphic>
@@ -79,107 +79,126 @@
                </styleClass></Button>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="58.0" layoutY="88.0" prefHeight="429.0" prefWidth="166.0" spacing="30.0">
+      <Separator layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="867.0" />
+      <HBox layoutY="618.0" prefHeight="10.0" prefWidth="879.0" styleClass="topAndRightColor" />
+      <VBox layoutY="80.0" prefHeight="538.0" prefWidth="10.0" styleClass="topAndRightColor" />
+      <HBox layoutX="10.0" layoutY="80.0" prefHeight="538.0" prefWidth="868.0" styleClass="centerColor">
          <children>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="商圈">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="入住时间" wrapText="true">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="离开时间">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="50.0" text="星级">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <VBox alignment="CENTER" prefHeight="429.0" prefWidth="166.0" spacing="30.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="商圈">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="loginButtonColor" />
+                        <String fx:value="titleLabel" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="入住时间" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="loginButtonColor" />
+                        <String fx:value="titleLabel" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="离开时间">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="loginButtonColor" />
+                        <String fx:value="titleLabel" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="99.0" text="星级">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="loginButtonColor" />
+                        <String fx:value="titleLabel" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="437.0" prefWidth="646.0" spacing="30.0">
+               <children>
+                  <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="17.0">
+                     <children>
+                        <Label text="省" textFill="#155ae4" />
+                        <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" styleClass="textField" />
+                        <Label text="市" textFill="#155ae4" />
+                        <ChoiceBox fx:id="cityBox" prefWidth="120.0" styleClass="textField" />
+                        <Label text="区" textFill="#155ae4" />
+                        <ChoiceBox fx:id="regionBox" prefWidth="120.0" styleClass="textField" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
+                     <children>
+                        <DatePicker fx:id="checkinTimePicker" prefHeight="0.0" prefWidth="482.0" styleClass="textField" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
+                     <children>
+                        <DatePicker fx:id="checkoutTimePicker" prefHeight="16.0" prefWidth="482.0" styleClass="textField" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="60.0">
+                     <children>
+                        <Button fx:id="starButton1" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="transButton">
+                           <graphic>
+                              <ImageView fx:id="starImageView1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../CustomerImage/star.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="starButton2" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="transButton">
+                           <graphic>
+                              <ImageView fx:id="starImageView2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../CustomerImage/star.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="starButton3" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="transButton">
+                           <graphic>
+                              <ImageView fx:id="starImageView3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../CustomerImage/star.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="starButton4" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="transButton">
+                           <graphic>
+                              <ImageView fx:id="starImageView4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../CustomerImage/star.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="starButton5" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="transButton">
+                           <graphic>
+                              <ImageView fx:id="starImageView5" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../CustomerImage/star.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="182.0" layoutY="89.0" prefHeight="437.0" prefWidth="646.0" spacing="30.0">
-         <children>
-            <HBox fx:id="circle_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="17.0">
-               <children>
-                  <Label text="省">
-                     <font>
-                        <Font size="17.0" />
-                     </font></Label>
-                  <ChoiceBox fx:id="provinceBox" prefHeight="29.0" prefWidth="120.0" styleClass="textField" />
-                  <Label text="市">
-                     <font>
-                        <Font size="17.0" />
-                     </font></Label>
-                  <ChoiceBox fx:id="cityBox" prefWidth="120.0" styleClass="textField" />
-                  <Label text="区">
-                     <font>
-                        <Font size="17.0" />
-                     </font></Label>
-                  <ChoiceBox fx:id="regionBox" prefWidth="120.0" styleClass="textField" />
-               </children>
-            </HBox>
-            <HBox fx:id="checkin_time_hbox" alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
-               <children>
-                  <DatePicker fx:id="checkinTimePicker" prefHeight="0.0" prefWidth="482.0" styleClass="textField" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
-               <children>
-                  <DatePicker fx:id="checkoutTimePicker" prefHeight="16.0" prefWidth="482.0" styleClass="textField" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="284.0" spacing="37.0">
-               <children>
-                  <CheckBox fx:id="fiveStarCheckBox" mnemonicParsing="false" onAction="#fiveStar">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../CustomerImage/星星.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></CheckBox>
-                  <CheckBox fx:id="fourStarCheckBox" mnemonicParsing="false" onAction="#fourStar">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../CustomerImage/星星.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></CheckBox>
-                  <CheckBox fx:id="threeStarCheckBox" mnemonicParsing="false" onAction="#threeStar">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../CustomerImage/星星.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></CheckBox>
-                  <CheckBox fx:id="twoStarCheckBox" mnemonicParsing="false" onAction="#twoStar">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../CustomerImage/星星.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></CheckBox>
-                  <CheckBox fx:id="oneStarCheckBox" mnemonicParsing="false" onAction="#oneStar">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../CustomerImage/星星.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></CheckBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+      </HBox>
       <Button fx:id="searchTwoButton" layoutX="363.0" layoutY="487.0" mnemonicParsing="false" onAction="#searchByConditions" prefHeight="52.0" prefWidth="216.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
@@ -191,10 +210,7 @@
          <styleClass>
             <String fx:value="transButton" />
             <String fx:value="grayBorder" />
-            <String fx:value="topAndRightColor" />
+            <String fx:value="loginButtonColor" />
          </styleClass></Button>
-      <Separator layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="867.0" />
-      <HBox layoutY="618.0" prefHeight="10.0" prefWidth="879.0" styleClass="topAndRightColor" />
-      <VBox layoutY="80.0" prefHeight="538.0" prefWidth="10.0" styleClass="topAndRightColor" />
    </children>
 </AnchorPane>

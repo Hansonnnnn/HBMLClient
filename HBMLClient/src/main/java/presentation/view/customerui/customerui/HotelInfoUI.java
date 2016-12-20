@@ -12,7 +12,7 @@ import vo.UserVO;
 
 public class HotelInfoUI extends Scene
 {
-	public HotelInfoUI(Parent root, Stage stage, Scene preScene,HotelVO hotelVO,UserVO userVO, Date checkinTime)
+	public HotelInfoUI(Parent root, Stage stage, Scene preScene,HotelVO hotelVO,UserVO userVO, Date checkinTime,boolean logined)
 	{
 		super(root);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelInfo.fxml"));
@@ -24,6 +24,6 @@ public class HotelInfoUI extends Scene
 			e.printStackTrace();
 		}
 		HotelInfoUIController controller = fxmlLoader.getController();
-		controller.init(stage, preScene,this,hotelVO,userVO,checkinTime);
+		controller.init(stage, preScene,this,hotelVO,userVO,checkinTime,logined);
 	}
 }

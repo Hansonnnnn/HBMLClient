@@ -1,23 +1,18 @@
 package presentation.view.customerui.customerui;
 
-import java.awt.event.ActionEvent;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
-import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
-import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -27,6 +22,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.DateHelper;
@@ -52,34 +49,37 @@ public class FirstPageUIController {
 	@FXML private DatePicker checkinTimePicker;
 	@FXML private DatePicker checkoutTimePicker;
 	@FXML private Button searchByConditionsButton;
-	@FXML private CheckBox fiveStarCheckBox;
-	@FXML private CheckBox fourStarCheckBox;
-	@FXML private CheckBox threeStarCheckBox;
-	@FXML private CheckBox twoStarCheckBox;
-	@FXML private CheckBox oneStarCheckBox;
+	@FXML private Button starButton1;
+    @FXML private Button starButton2;
+    @FXML private Button starButton3;
+    @FXML private Button starButton4;
+    @FXML private Button starButton5;
+    @FXML private ImageView starImageView1;
+    @FXML private ImageView starImageView2;
+    @FXML private ImageView starImageView3;
+    @FXML private ImageView starImageView4;
+    @FXML private ImageView starImageView5;
+    
+    private ArrayList<ImageView> imageViews;
 	
+	private Image starImage = new Image(getClass().getResourceAsStream("../CustomerImage/star.png"));
+	private Image blueStarImage = new Image(getClass().getResourceAsStream("../CustomerImage/bluestar.png"));
 	private Scene firstPageUI;
 	private Stage stage;
 	
 	private boolean logined;
 	private UserVO userVO;
-	private String userName;
-	private int userID;
 	
-	private Map<Integer, HotelVO> hotelList = null;
 	private HotelRegionHelper helper = null;
 	private String provinceName;
 	private ObservableList<String> provinceShowList;
 	private String cityName;
 	private ObservableList<String> cityShowList;
-	private String regionName;
 	private ObservableList<String> regionNameShowList ;
 	private Map<String, Integer> regionNameMap ;
 	private int regionID;
 	private int star;
 	private Date checkinTime;
-	private Date checkoutTime;
-	private DateHelper dateHelper;
 	private ObservableList<String> defaultList;
 	
 	public void init(Stage stage, Scene firstPageUI, UserVO userVO, boolean logined)
@@ -91,6 +91,7 @@ public class FirstPageUIController {
 		this.logined  = logined;
 		initDatePicker();
 		initProvinceBox();
+		initstar();
 	}
 	
 	@FXML
@@ -111,7 +112,15 @@ public class FirstPageUIController {
 	@FXML
 	private void commentPartAction()
 	{
-		stage.setScene(new CommentPageUIFromFirstPage(new Group(),stage,firstPageUI));
+		if(logined)
+		{
+			stage.setScene(new CommentPageUIFromFirstPage(new Group(),stage,firstPageUI,userVO.getUserID()));
+		}
+		else
+		{
+			new MyDialog(stage, "请登录", 0);
+		}
+		
 	}
 	
 	@FXML
@@ -119,7 +128,7 @@ public class FirstPageUIController {
 	{
 		if(!logined)
 		{
-			stage.setScene(new NullUserPage(new Group(), stage, firstPageUI));
+			new MyDialog(stage, "请登录", 0);
 		}else
 		{
 			stage.setScene(new PersonalCenterPage(new Group(), stage, firstPageUI, userVO));
@@ -137,56 +146,64 @@ public class FirstPageUIController {
 		}
 		//获取两个DatePicker里面的时间
 		checkinTime = DateHelper.localDateToDate(checkinTimePicker.getValue());
-		checkoutTime = DateHelper.localDateToDate(checkoutTimePicker.getValue());
 		
-		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI,userVO, provinceName, cityName, regionID,hotelName, checkinTime, star, logined));
+		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI,userVO, regionID,hotelName, checkinTime, star, logined));
 	}
 	
-	@FXML
-	private void fiveStar()
-	{
-		star = 5;
-		fourStarCheckBox.setSelected(false);
-		threeStarCheckBox.setSelected(false);
-		twoStarCheckBox.setSelected(false);
-		oneStarCheckBox.setSelected(false);
-	}
-	@FXML
-	private void fourStar()
-	{
-		star = 4;
-		fiveStarCheckBox.setSelected(false);
-		threeStarCheckBox.setSelected(false);
-		twoStarCheckBox.setSelected(false);
-		oneStarCheckBox.setSelected(false);
-	}
-	@FXML
-	private void threeStar()
-	{
-		star = 3;
-		fiveStarCheckBox.setSelected(false);
-		fourStarCheckBox.setSelected(false);
-		twoStarCheckBox.setSelected(false);
-		oneStarCheckBox.setSelected(false);
-	}
-	@FXML
-	private void twoStar()
-	{
-		star = 2;
-		fiveStarCheckBox.setSelected(false);
-		fourStarCheckBox.setSelected(false);
-		threeStarCheckBox.setSelected(false);
-		oneStarCheckBox.setSelected(false);
-	}
-	@FXML
-	private void oneStar()
-	{
-		star = 1;
-		fiveStarCheckBox.setSelected(false);
-		fourStarCheckBox.setSelected(false);
-		threeStarCheckBox.setSelected(false);
-		twoStarCheckBox.setSelected(false);
-	}
+	private void initstar() {
+        imageViews = new ArrayList<>();
+        imageViews.add(starImageView1);
+        imageViews.add(starImageView2);
+        imageViews.add(starImageView3);
+        imageViews.add(starImageView4);
+        imageViews.add(starImageView5);
+
+        starButton1.setOnAction((ActionEvent e) -> {
+            star = 1;
+            for (int j = 0; j <= 0; j++) {
+                imageViews.get(j).setImage(blueStarImage);
+            }
+            for (int k = 0 + 1; k < imageViews.size(); k++) {
+                imageViews.get(k).setImage(starImage);
+            }
+        });
+        starButton2.setOnAction((ActionEvent e) -> {
+            star = 2;
+            for (int j = 0; j <= 1; j++) {
+                imageViews.get(j).setImage(blueStarImage);
+            }
+            for (int k = 1 + 1; k < imageViews.size(); k++) {
+                imageViews.get(k).setImage(starImage);
+            }
+        });
+        starButton3.setOnAction((ActionEvent e) -> {
+            star = 3;
+            for (int j = 0; j <= 2; j++) {
+                imageViews.get(j).setImage(blueStarImage);
+            }
+            for (int k = 2 + 1; k < imageViews.size(); k++) {
+                imageViews.get(k).setImage(starImage);
+            }
+        });
+        starButton4.setOnAction((ActionEvent e) -> {
+            star = 4;
+            for (int j = 0; j <= 3; j++) {
+                imageViews.get(j).setImage(blueStarImage);
+            }
+            for (int k = 3 + 1; k < imageViews.size(); k++) {
+                imageViews.get(k).setImage(starImage);
+            }
+        });
+        starButton5.setOnAction((ActionEvent e) -> {
+            star = 5;
+            for (int j = 0; j <= 4; j++) {
+                imageViews.get(j).setImage(blueStarImage);
+            }
+            for (int k = 4 + 1; k < imageViews.size(); k++) {
+                imageViews.get(k).setImage(starImage);
+            }
+        });
+    }
 	private void initDatePicker()
 	{
 		checkinTimePicker.setPromptText(LocalDate.now().toString());
@@ -307,8 +324,8 @@ public class FirstPageUIController {
 	public void setState(boolean logined, String userName, int userID)
 	{
 		this.logined = logined;
-		this.userName = userName;
-		this.userID = userID;
+//		this.userName = userName;
+//		this.userID = userID;
 	}
 	public void setState(boolean logined)
 	{

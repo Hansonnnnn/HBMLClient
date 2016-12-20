@@ -185,7 +185,7 @@
 }
 
 .table-view .table-row-cell:selected {
-    -fx-background-color: #BEBEBE;
+    -fx-background-color: #1E90FF;
 }
 
 /**
@@ -217,5 +217,16 @@
 }
 
 .topAndRightColor{
-	-fx-background-color:#1C86EE;
+	-fx-background-color:#104E8B;
+}
+.centerColor{
+	-fx-background-color:#FFFFFF;
+}
+.backButtonColor{
+	-fx-background-color:#1E90FF;
+}
+
+
+.loginButtonColor{
+	-fx-background-color:#1296db;
 }

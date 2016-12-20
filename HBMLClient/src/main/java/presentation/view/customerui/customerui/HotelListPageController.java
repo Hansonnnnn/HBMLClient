@@ -1,7 +1,6 @@
 package presentation.view.customerui.customerui;
 
 import java.util.Date;
-import java.util.Map;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
@@ -12,23 +11,28 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import message.OrderStateMessage;
 import model.HotelFilter;
+import presentation.view.application.MyDialog;
 import vo.HotelVO;
 import vo.RoomInfoVO;
 import vo.UserVO;
@@ -37,6 +41,7 @@ public class HotelListPageController {
 	@FXML private Button backButton;
 	@FXML private TextField searchField;
 	@FXML private Button searchButton;
+	@FXML private Button refreshButton;
 	
 	@FXML private TableColumn nameColumn; 
 	@FXML private TableColumn addressColumn;
@@ -54,9 +59,6 @@ public class HotelListPageController {
 	 private Stage stage;
 	 private Scene firstPage;
 	 private Scene hotelListPageScene;
-	 
-	 private String province;
-	 private String city;
 	 private int region;
 	 private Date checkinTime;
 	 private int star;
@@ -66,7 +68,7 @@ public class HotelListPageController {
 	 
 	 private HotelCustomerService service;
 	 private RoomInfoCustomerService customerService;
-	 private boolean state;
+	 private boolean logined;
 	 private boolean searchByName;
 	 private String hotelName;
 //	 private Map<String, Integer> nameMapID;
@@ -75,15 +77,13 @@ public class HotelListPageController {
 	 private UserVO userVO;
 	 private HotelFilter filter;
 	 
-	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, UserVO userVO,String province, String city, int region,String hotelName, Date checkinTime,  int star,boolean state)
+	 public void init(Stage stage, Scene firstPage,Scene hotelListPageScene, UserVO userVO, int region,String hotelName, Date checkinTime,  int star,boolean logined)
 	 {
 		 this.stage = stage;
 		 this.firstPage = firstPage;
 		 this.hotelListPageScene = hotelListPageScene;
 		 this.userVO = userVO;
-		 this.state = state;
-		 this.province = province;
-		 this.city = city;
+		 this.logined = logined;
 		 this.region = region;
 		 this.hotelName = hotelName;
 		 this.checkinTime = checkinTime;
@@ -94,6 +94,20 @@ public class HotelListPageController {
 		 initComboBox();
 		 initTable();
 	 }
+	 
+	 @FXML
+	 private void refresh()
+	 {
+		 initComboBox();
+		 initTable();
+	 }
+	 
+//	 public void refresh()
+//	 {
+//		 initComboBox();
+//		 initTable();
+//	 }
+	 
 	 @FXML
 	 private void back()
 	 {
@@ -105,10 +119,18 @@ public class HotelListPageController {
 	 {
 		
 		 nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-		 addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
 		 starColumn.setCellValueFactory(new PropertyValueFactory<>("star"));
 		 scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
 		 priceColumn.setCellValueFactory(new PropertyValueFactory<>("lowestPrice"));
+		 addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+//		 addressColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() 
+//		 {
+//			 @Override
+//			 public TableCell call(TableColumn param)
+//			 {
+//				 return new OrderStateMark();
+//			 }
+//		});
 		 checkButtonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>()
 		 {
 			 @Override
@@ -160,6 +182,14 @@ public class HotelListPageController {
 			 for (HotelVO hotelVO : service.getHotelList(filter, order, checkinTime).values()) 
 			 {
 				hotelData.add(hotelVO);
+//				 addressColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() 
+//				 {
+//					 @Override
+//					 public TableCell call(TableColumn param)
+//					 {
+//						 return new OrderStateMark(hotelVO);
+//					 }
+//				});
 			} 
 		 }
 
@@ -250,6 +280,7 @@ public class HotelListPageController {
 			 filter.add("star", "=", star);
 		 }
 	 }
+
 	 public class CheckInfoButtonCell extends TableCell<HotelVO, Boolean>
 	 {
 		 private Button checkButton = new Button("查看");
@@ -267,7 +298,7 @@ public class HotelListPageController {
 //				 hotelName = 把列表的选中项里面的vo取出来
 				 int seletedIndex=getTableRow().getIndex();
 				 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
-				 stage.setScene(new HotelInfoUI(new Group(), stage, hotelListPageScene, selectedHotel,userVO,checkinTime));
+				 stage.setScene(new HotelInfoUI(new Group(), stage, hotelListPageScene, selectedHotel,userVO,checkinTime,logined));
 			 });
 		 }
 		 protected void updateItem(Boolean t, boolean empty)
@@ -292,19 +323,24 @@ public class HotelListPageController {
 		 public MakeOrderButtonCell(Stage stage)
 		 {	
 			 makeOrderButton.setOnAction((ActionEvent e)->{
-				 int seletedIndex=getTableRow().getIndex();
-				 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
-				 System.out.println(selectedHotel.getName());
-				 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
+				 if(logined)
 				 {
-					 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
+					 int seletedIndex=getTableRow().getIndex();
+					 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
+					 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
 					 {
-						defaultRoom = roomInfoVO;
-						break;
+						 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
+						 {
+							defaultRoom = roomInfoVO;
+							break;
+						 }
 					 }
+					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom,userVO,checkinTime));
+				 }else
+				 {
+					 new MyDialog(stage, "请先登录", 0);
 				 }
-				 System.out.println(defaultRoom.getDefaultPrice());
-				 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom,userVO,checkinTime));
+				
 			 });
 		 }
 		 
@@ -342,6 +378,7 @@ public class HotelListPageController {
 				 {
 					hotelData.clear();
 					hotelData.add(hotelVO);
+					
 //					nameMapID.put(hotelVO.getName(), hotelVO.getId());
 				} 
 			 }
@@ -349,5 +386,59 @@ public class HotelListPageController {
 //			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,checkinTime,state));
 		}
 
-	
+//	 	public class OrderStateMark extends TableCell<HotelVO, Boolean>
+//	 	{
+//	 		BorderPane borderPane=new BorderPane();
+//	 		Label hotelNameLabel=new Label();
+//	 		HBox hBox=new HBox();
+//	 		ImageView imageView1=new ImageView();
+//	 		Image unexecutedMark = new Image(getClass().getResourceAsStream("../CustomerImage/UnExecuted.png"));
+//	 		ImageView imageView2=new ImageView();
+//	 		Image executedMark = new Image(getClass().getResourceAsStream("../CustomerImage/Executed2.png"));
+//	 		ImageView imageView3=new ImageView();
+//	 		Image abnormalMark = new Image(getClass().getResourceAsStream("../CustomerImage/Abnormal.png"));
+//	 		ImageView imageView4=new ImageView();
+//	 		Image cancelledMark = new Image(getClass().getResourceAsStream("../CustomerImage/cancelled.png"));
+//	 		public OrderStateMark(HotelVO hotelVO)
+//	 		{
+//	 			hotelNameLabel.setText(hotelVO.getName());
+//	 			borderPane.setLeft(hotelNameLabel);
+//	 			borderPane.setRight(hBox);
+//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Unexecuted).contains(hotelVO.getAddress()))
+//	 			{
+//	 				imageView1.setImage(unexecutedMark);
+//	 				hBox.getChildren().add(imageView1);
+//	 			}
+//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Executed).contains(hotelVO.getAddress()))
+//	 			{
+//	 				imageView2.setImage(executedMark);
+//	 				hBox.getChildren().add(imageView2);
+//	 			}
+//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Abnormal).contains(hotelVO.getAddress()))
+//	 			{
+//	 				imageView2.setImage(abnormalMark);
+//	 				hBox.getChildren().add(imageView3);
+//	 			}
+//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Cancelled).contains(hotelVO.getAddress()))
+//	 			{
+//	 				imageView2.setImage(cancelledMark);
+//	 				hBox.getChildren().add(imageView4);
+//	 			}
+//	 		}
+//	 		@Override
+//	 		 protected void updateItem(Boolean t, boolean empty) 
+//			 {
+//				super.updateItem(t, empty);
+//				if(empty)
+//				{
+//					setGraphic(null);
+//					setText(null);
+//				}else
+//				{
+//					setGraphic(borderPane);
+//					setText(null);
+//				}
+//			 }
+//	 	}
+//	 	
 }

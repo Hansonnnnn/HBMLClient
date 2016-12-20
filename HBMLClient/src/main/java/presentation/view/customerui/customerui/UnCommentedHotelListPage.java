@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class UnCommentedHotelListPage extends VBox
 {
-		public UnCommentedHotelListPage(Stage stage, Scene commentFirstPageScene)
+		public UnCommentedHotelListPage(Stage stage, Scene commentFirstPageScene,int userID)
 		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnCommentedHotelList.fxml"));
 			try
@@ -21,6 +21,6 @@ public class UnCommentedHotelListPage extends VBox
 			}
 			
 			UnCommentedHotelListPageController controller = fxmlLoader.getController();
-			controller.init(stage, commentFirstPageScene);
+			controller.init(stage, commentFirstPageScene,userID);
 		}
 }
