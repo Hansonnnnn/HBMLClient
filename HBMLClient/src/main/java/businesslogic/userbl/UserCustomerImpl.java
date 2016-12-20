@@ -57,24 +57,4 @@ public class UserCustomerImpl implements UserCustomerService{
 
     }
 
-    @Override
-    public ResultMessage login(String accountName, String pwd) throws Exception{
-
-        return userHelper.login(accountName,pwd);
-
-    }
-
-    @Override
-    public ResultMessage signup(UserVO vo) throws Exception{
-        ResultMessage resultMessage=userHelper.signup(vo);
-        if(resultMessage.equals(ResultMessage.success)){
-            System.out.println("successfully signing up a user!");
-        }
-        return resultMessage;
-    }
-
-    @Override
-    public ResultMessage logout(String accountName) throws Exception {
-        return userHelper.logout(accountName);
-    }
 }

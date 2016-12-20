@@ -1,6 +1,8 @@
 import businesslogic.userbl.UserCustomerImpl;
+import businesslogic.userbl.UserLogImpl;
 import businesslogic.userbl.UserWebManagerImpl;
 import businesslogicservice.userblservice.UserCustomerService;
+import businesslogicservice.userblservice.UserLogService;
 import businesslogicservice.userblservice.UserWebManagerService;
 import model.UserType;
 import vo.UserVO;
@@ -11,23 +13,23 @@ import vo.UserVO;
  */
 public class test_Alex_User_BL {
     public void signup()throws Exception{
-        UserCustomerService userCustomerService=new UserCustomerImpl();
+        UserLogService userLogService=new UserLogImpl();
         UserVO userVO=new UserVO(UserType.Customer,"alex124","124");
-        System.out.println(userCustomerService.signup(userVO));
+        System.out.println(userLogService.signup(userVO));
     }
 
     public void login()throws Exception{
-        UserCustomerService userCustomerService=new UserCustomerImpl();
-        System.out.println(userCustomerService.login("alex2097","asdf"));
-        System.out.println(userCustomerService.login("alex2097","123"));
+        UserLogService userLogService=new UserLogImpl();
+        System.out.println(userLogService.login("alex2097","asdf"));
+        System.out.println(userLogService.login("alex2097","123"));
 
-        System.out.println(userCustomerService.login("alex2098","asdf"));
+        System.out.println(userLogService.login("alex2098","asdf"));
     }
 
     public void logout()throws Exception{
-        UserCustomerService userCustomerService=new UserCustomerImpl();
-        System.out.println(userCustomerService.logout("alex2097"));
-        System.out.println(userCustomerService.logout("alex2098"));
+        UserLogService userLogService=new UserLogImpl();
+        System.out.println(userLogService.logout("alex2097"));
+        System.out.println(userLogService.logout("alex2098"));
     }
 
     public void modify() throws Exception{

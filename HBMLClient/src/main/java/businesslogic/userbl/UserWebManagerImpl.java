@@ -68,22 +68,4 @@ public class UserWebManagerImpl implements UserWebManagerService{
 
     }
 
-    @Override
-    public ResultMessage login(String accountName, String pwd)throws Exception {
-
-        return userHelper.login(accountName, pwd);
-
-    }
-
-    @Override
-    public ResultMessage signup(UserVO vo)throws Exception {
-
-        return userHelper.signup(vo);
-
-    }
-
-    @Override
-    public ResultMessage logout(String accountName) throws Exception {
-        return userHelper.logout(accountName);
-    }
 }
