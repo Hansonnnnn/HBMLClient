@@ -70,6 +70,21 @@ public class RegionHelper implements HotelRegionHelper{
 		
 		return regions;
 	}
+
+
+
+	@Override
+	public RegionVO getSpecificRegion(int regionID) {
+		RegionVO regionVO = null;
+		try {
+			regionVO = regionTransferService.poToVo(hotelDao.getSpecificRegion(regionID));
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		return regionVO;
+	}
 	
 	
 }

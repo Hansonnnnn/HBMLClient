@@ -29,4 +29,13 @@ public interface HotelRegionHelper {
 	 * @return    该市所有商圈的VO
 	 */
 	public Map<Integer, RegionVO> getRegions(String city);
+	
+	
+	
+	/**
+	 * @TODO：
+	 * @param regionID
+	 * @return   特定regionID对应的RegionVO
+	 */
+	public RegionVO getSpecificRegion(int regionID);
 }
