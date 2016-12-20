@@ -66,7 +66,7 @@ public class HotelStaffUIController {
     @FXML
     private void toHotelInfo(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new HotelInfoUI(stage,infoVBox));
+        infoVBox.getChildren().add(new HotelInfoUI(stage,infoVBox,userVO));
         moveOperationButtonBackground(sliderLabel,264);
     }
 

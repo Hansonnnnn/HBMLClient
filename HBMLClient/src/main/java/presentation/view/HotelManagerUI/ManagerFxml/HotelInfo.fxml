@@ -8,44 +8,56 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelInfoUIController">
     <children>
-      <VBox prefHeight="541.0" prefWidth="759.0">
+      <VBox prefHeight="574.0" prefWidth="759.0">
          <children>
-            <VBox prefHeight="502.0" prefWidth="679.0" spacing="10.0">
+            <VBox prefHeight="552.0" prefWidth="679.0" spacing="10.0">
                <children>
                   <VBox prefHeight="503.0" prefWidth="679.0" spacing="10.0" styleClass="infoVBox">
                      <padding>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                      <children>
-                        <HBox prefWidth="200.0" spacing="32.0">
+                        <HBox prefWidth="200.0" spacing="63.0">
                            <children>
-                              <HBox alignment="CENTER_LEFT" spacing="17.0">
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="317.0" spacing="36.0">
                                  <children>
                                     <Label styleClass="orderInfoLableSize" text="酒店名 :" />
-                                    <TextField fx:id="hotelNameTextField" editable="false" maxWidth="202.0" prefHeight="35.0" prefWidth="202.0" styleClass="orderInfoLableSize" text="HOTEL168" />
+                                    <TextField fx:id="hotelNameTextField" disable="true" maxWidth="202.0" prefHeight="35.0" prefWidth="202.0" styleClass="orderInfoLableSize" text="HOTEL168" />
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER_LEFT">
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="247.0">
+                                 <children>
+                                    <Label styleClass="orderInfoLableSize" text="星级 :" />
+                                    <ComboBox fx:id="starComboBox" disable="true" prefHeight="37.0" prefWidth="198.0" styleClass="orderInfoLableSize" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="624.0" spacing="19.0">
                                  <children>
                                     <Label styleClass="orderInfoLableSize" text="所属商圈 :" />
-                                    <ComboBox fx:id="hotelRegionComboBox" disable="true" prefHeight="35.0" prefWidth="200.0" promptText="徐家汇" styleClass="orderInfoLableSize" />
+                                    <ComboBox fx:id="provinceBox" disable="true" prefHeight="37.0" prefWidth="162.0" promptText="-省-" styleClass="orderInfoLableSize" />
+                                    <ComboBox fx:id="cityBox" disable="true" prefWidth="162.0" promptText="-市-" styleClass="orderInfoLableSize" />
+                                    <ComboBox fx:id="regionBox" disable="true" prefWidth="162.0" promptText="-商圈-" styleClass="orderInfoLableSize" />
                                  </children>
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="20.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="酒店地址 :" />
-                              <TextField fx:id="hotelAddressTextField" editable="false" prefHeight="35.0" prefWidth="510.0" styleClass="orderInfoLableSize" text="上海市徐家汇区肇嘉滨路3号" />
+                              <TextField fx:id="hotelAddressTextField" disable="true" prefHeight="35.0" prefWidth="522.0" styleClass="orderInfoLableSize" text="上海市徐家汇区肇嘉滨路3号" />
                            </children>
                         </HBox>
-                        <HBox prefHeight="156.0" prefWidth="580.0" spacing="35.0">
+                        <HBox prefHeight="156.0" prefWidth="580.0" spacing="55.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="简介 :" />
-                              <TextArea fx:id="hotelIntroTextArea" editable="false" prefHeight="156.0" prefWidth="510.0" styleClass="orderInfoLableSize" text="便宜，设施好" />
+                              <TextArea fx:id="hotelIntroTextArea" disable="true" prefHeight="108.0" prefWidth="522.0" styleClass="orderInfoLableSize" text="便宜，设施好" />
                            </children>
                         </HBox>
-                        <HBox prefHeight="209.0" prefWidth="580.0">
+                        <HBox prefHeight="209.0" prefWidth="580.0" spacing="30.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="酒店环境 :" />
                               <HBox prefHeight="210.0" prefWidth="512.0" spacing="10.0">
@@ -78,7 +90,7 @@
             </VBox>
          </children>
          <padding>
-            <Insets left="40.0" right="40.0" top="40.0" />
+            <Insets left="40.0" right="40.0" top="30.0" />
          </padding>
          <VBox.margin>
             <Insets />
