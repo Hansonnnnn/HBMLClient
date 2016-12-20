@@ -1,5 +1,7 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.userbl.UserLogImpl;
+import businesslogicservice.userblservice.UserLogService;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import businesslogic.userbl.UserCustomerImpl;
@@ -36,13 +38,14 @@ public class WelcomePageController
 		private ResultMessage resultMessage;
 		private UserVO userVO;
 		private UserCustomerService customerService;
-		
+		private UserLogService userLogService;
 		
 		public void init(Stage stage, Scene loginPageScene)
 		{
 			this.stage = stage;
 			this.loginPageScene = loginPageScene;
 			customerService = new UserCustomerImpl();
+			userLogService=new UserLogImpl();
 			resultMessage = ResultMessage.failure;
 		}
 		
@@ -71,7 +74,7 @@ public class WelcomePageController
 			//bl层来检查用户名和密码是否匹配
 			//如果
 			try {
-				resultMessage = customerService.login(name, password);
+				resultMessage = userLogService.login(name, password);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

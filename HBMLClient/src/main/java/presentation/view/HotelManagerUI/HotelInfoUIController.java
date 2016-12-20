@@ -4,6 +4,7 @@ import  java.awt.Desktop;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,7 @@ import vo.UserVO;
 public class HotelInfoUIController {
 
     @FXML private TextField hotelNameTextField;
-    @FXML private ComboBox starComboBox;
+    @FXML private ComboBox<Integer> starComboBox;
     @FXML private ComboBox provinceBox;
     @FXML private ComboBox cityBox;
     @FXML private ComboBox regionBox;
@@ -68,16 +69,23 @@ public class HotelInfoUIController {
     private int regionID;
     private HotelStaffService hotelStaffService;
     private HotelWebManagerService hotelWebManagerService;
+    private HotelRegionHelper hotelRegionHelper;
+    private File file;
+    private ArrayList<File> fileList;
     public void init(Stage stage, VBox infoVBox, UserVO userVO){
         this.infoVBox=infoVBox;
         this.userVO=userVO;
         helper=new RegionHelper();
+        fileList=new ArrayList<>();
+        starData=FXCollections.observableArrayList();
         for(int i=1;i<=5;i++){
             starData.add(i);
         }
         starComboBox.setItems(starData);
         hotelStaffService=new HotelStaffImpl();
         hotelWebManagerService=new HotelWebManagerImpl();
+        hotelRegionHelper=new RegionHelper();
+        initProvinceBox();
         initComboBox();
     }
 
@@ -94,6 +102,7 @@ public class HotelInfoUIController {
         regionBox.setDisable(false);
         hotelAddressTextField.setDisable(false);
         hotelIntroTextArea.setDisable(false);
+        addImageButton.setDisable(false);
     }
 
     /**
@@ -108,7 +117,15 @@ public class HotelInfoUIController {
         regionBox.setDisable(true);
         hotelAddressTextField.setDisable(true);
         hotelIntroTextArea.setDisable(true);
-//        HotelVO hotelVO=new HotelVO(hotelNameTextField.getText(),starComboBox.getValue(),);
+        addImageButton.setDisable(true);
+        System.out.println(regionBox.getValue());
+        int regionID=regionNameMap.get(regionBox.getValue());
+        HotelVO hotelVO=hotelWebManagerService.getHotelInfo(userVO.getHotelid());
+        fileList.add(file);
+        HotelVO newHotelVO=new HotelVO(hotelNameTextField.getText(),hotelVO.getId(),starComboBox.getValue(),
+                hotelAddressTextField.getText(),regionID,hotelIntroTextArea.getText(),hotelVO.getFacility(),fileList,
+                hotelVO.getScore(),hotelVO.getLowestPrice(),hotelVO.getAccountName());
+        hotelStaffService.modifyHotel(newHotelVO);
     }
 
     /**
@@ -128,7 +145,7 @@ public class HotelInfoUIController {
             try{
                 String path="C:/Users/LENOVO/Desktop/picture/";
                 String fileName=path+choicefile.getName().toString();
-                File file=new File(fileName);
+                file=new File(fileName);
                 if(!file.exists()){
                     File newfile=new File(path);
                     newfile.mkdirs();
@@ -218,5 +235,15 @@ public class HotelInfoUIController {
     private void initComboBox(){
         HotelVO hotelVO=hotelWebManagerService.getHotelInfo(userVO.getHotelid());
         hotelNameTextField.setText(hotelVO.getName());
+        starComboBox.setValue(hotelVO.getStar());
+        RegionVO regionVO=hotelRegionHelper.getSpecificRegion(hotelVO.getRegion());
+        provinceBox.setValue(regionVO.getProvince());
+        cityBox.setValue(regionVO.getCity());
+        regionBox.setValue(regionVO.getRegionName());
+        hotelAddressTextField.setText(hotelVO.getAddress());
+        hotelIntroTextArea.setText(hotelVO.getIntroduction());
+//        Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
+//        hotelImageView.setImage(image);
+
     }
 }

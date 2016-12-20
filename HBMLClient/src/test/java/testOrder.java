@@ -34,12 +34,11 @@ public class testOrder {
 		}*/
 		
 		/*
-		RoomInfoCustomerService roominfoCustomerService = new RoomInfoCustomerServiceImpl();
+		/*RoomInfoCustomerService roominfoCustomerService = new RoomInfoCustomerServiceImpl();
 		Map<String, RoomInfoVO> map = roominfoCustomerService.getRoomList(119, new Date());
 		for (RoomInfoVO roomInfoVO : map.values()) {
 			System.out.println(roomInfoVO);
-		}
-		*/
+		}*/
 		/*CreditWebMarketerService creditWebMarketerService = new CreditWebMarketerImpl();
 		Map<Integer, RankVO> map = creditWebMarketerService.getRankList();
 		

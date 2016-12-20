@@ -48,7 +48,7 @@ public class AppealPageUIController
 			if(appealArea.getText()!=null&&!appealArea.getText().isEmpty())
 			{
 				content = appealArea.getText();
-				AppealVO appealVO = new AppealVO(0, orderVO.getOrderID(), userID, 0, new Date(), content, AppealStateMessage.Undealt);
+				AppealVO appealVO = new AppealVO(0, orderVO.getOrderID(), userID, 0, new Date(), content, AppealStateMessage.Undealt,0);
 				customerService.addAppealOrder(appealVO);
 				new MyDialog(stage, "申诉成功，等待处理", 2);
 				stage.setScene(preScene);

@@ -100,23 +100,21 @@ public class ExceptionOrderUIController {
 
         unexecutedOrderData= FXCollections.observableArrayList();
         if(webMarketerService.getUnexecutedOrderList()!=null){
-            System.out.println("有数据");
             for(OrderVO orderVO: webMarketerService.getUnexecutedOrderList().values()){
-                System.out.println("hhahhha");
                 unexecutedOrderData.add(new ExceptionOrder(String.valueOf(orderVO.getOrderID()),String.valueOf(orderVO.getUserID()),
-                        dateHelper.dateToString(orderVO.getGenerateTime()),dateHelper.dateToString(orderVO.getCancelTime()),orderVO.getPrice()));
+                        dateHelper.dateToString(orderVO.getGenerateTime()),dateHelper.dateToString(orderVO.getExecuteDDl()),orderVO.getPrice()));
             }
         }else{
             System.out.println("没数据");
         }
-        unexecutedOrderData.add(new ExceptionOrder("333","李四","2016.11.22 8:00","2016.11.22 20:00",200));
-        unexecutedOrderData.add(new ExceptionOrder("444","王五","2016.11.22 9:00","2016.11.22 22:00",300));
+//        unexecutedOrderData.add(new ExceptionOrder("333","李四","2016.11.22 8:00","2016.11.22 20:00",200));
+//        unexecutedOrderData.add(new ExceptionOrder("444","王五","2016.11.22 9:00","2016.11.22 22:00",300));
         unexecutedTableView.setItems(unexecutedOrderData);
 
 
         idColumn1.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         nameColumn1.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        startColumn1.setCellValueFactory(new PropertyValueFactory<>("appealTime2"));
+        startColumn1.setCellValueFactory(new PropertyValueFactory<>("appealTimeString"));
 //        endColumn1.setCellValueFactory(new PropertyValueFactory<>("endTime"));
 //        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
         revokeColumn.setCellFactory(new Callback<TableColumn<AppealVO,Boolean>, TableCell<AppealVO,Boolean>>() {

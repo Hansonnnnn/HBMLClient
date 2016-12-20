@@ -88,7 +88,7 @@ public class OrderCustomerServiceTest {
 
 	@Test
 	public void testAddAppealOrder() {
-		ResultMessage resultMessage = orderCustomerService.addAppealOrder(new AppealVO(0, 3, 1, 0, null, "Junit测试", null));
+		ResultMessage resultMessage = orderCustomerService.addAppealOrder(new AppealVO(0, 3, 1, 0, null, "Junit测试", null,0));
 		assertEquals(ResultMessage.success, resultMessage);
 	}
 

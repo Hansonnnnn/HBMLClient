@@ -122,7 +122,7 @@ public class TransferImpl implements TransferService{
 	@Override
 	public AppealVO poToVo(AppealPO appealPO) {
 		
-		AppealVO appealVO = new AppealVO(appealPO.getAppealID(), appealPO.getOrderID(), appealPO.getUserID(), appealPO.getWebMarketerID(), appealPO.getAppealTime(), appealPO.getContent(), appealPO.getAppealState());
+		AppealVO appealVO = new AppealVO(appealPO.getAppealID(), appealPO.getOrderID(), appealPO.getUserID(), appealPO.getWebMarketerID(), appealPO.getAppealTime(), appealPO.getContent(), appealPO.getAppealState(),appealPO.getPrice());
 		 
 		return appealVO;
 	}
@@ -138,7 +138,7 @@ public class TransferImpl implements TransferService{
 	@Override
 	public AppealPO voToPo(AppealVO appealVO) {
 		
-		AppealPO appealPO = new AppealPO(appealVO.getAppealID(), appealVO.getOrderID(), appealVO.getUserID(), appealVO.getWebMarketerID(), appealVO.getAppealTime(), appealVO.getContent(), appealVO.getAppealState());
+		AppealPO appealPO = new AppealPO(appealVO.getAppealID(), appealVO.getOrderID(), appealVO.getUserID(), appealVO.getWebMarketerID(), appealVO.getAppealTime(), appealVO.getContent(), appealVO.getAppealState(),appealVO.getPrice());
 		 
 		 
 		return appealPO;

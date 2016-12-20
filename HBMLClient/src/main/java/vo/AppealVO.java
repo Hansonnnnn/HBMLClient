@@ -2,20 +2,24 @@ package vo;
 
 import java.util.Date;
 import message.AppealStateMessage;
+import model.DateHelper;
 ;
 
 public class AppealVO {
+	private DateHelper dateHelper=new DateHelper();
+
 	int appealID;
 	int orderID;
 	int userID;
 	int webMarketerID;
 	Date appealTime;
+	String appealTimeString;
 	String content;
 	AppealStateMessage appealState;
-	
-	
+	int price;
+
 	public AppealVO(int appealID, int orderID, int userID, int webMarketerID, Date appealTime, String content,
-			AppealStateMessage appealState) {
+					AppealStateMessage appealState,int price) {
 		super();
 		this.appealID = appealID;
 		this.orderID = orderID;
@@ -24,6 +28,8 @@ public class AppealVO {
 		this.appealTime = appealTime;
 		this.content = content;
 		this.appealState = appealState;
+		appealTimeString=DateHelper.dateToString(appealTime);
+		this.price = price;
 	}
 
 
@@ -96,13 +102,34 @@ public class AppealVO {
 		this.appealState = appealState;
 	}
 
+	public String getAppealTimeString() {
+		return appealTimeString;
+	}
+
+	public void setAppealTimeString(String appealTimeString) {
+		this.appealTimeString = appealTimeString;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 
 	@Override
 	public String toString() {
-		return "AppealPO [appealID=" + appealID + ", orderID=" + orderID + ", userID=" + userID + ", webMarketerID="
-				+ webMarketerID + ", appealTime=" + appealTime + ", content=" + content + ", appealState=" + appealState
-				+ "]";
+		return "AppealVO [dateHelper=" + dateHelper + ", appealID=" + appealID + ", orderID=" + orderID + ", userID="
+				+ userID + ", webMarketerID=" + webMarketerID + ", appealTime=" + appealTime + ", appealTimeString="
+				+ appealTimeString + ", content=" + content + ", appealState=" + appealState + ", price=" + price + "]";
 	}
+	
+	
+	
 	
 	
 }
