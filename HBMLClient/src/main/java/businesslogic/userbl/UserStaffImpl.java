@@ -21,7 +21,7 @@ public class UserStaffImpl implements UserStaffService{
 
 
     @Override
-    public UserVO getUserData(int userID) throws Exception{
+    public UserVO getUserData(int userID){
 
         UserVO userVO=userHelper.getUserData(userID);
         if(userVO!=null){
@@ -33,7 +33,7 @@ public class UserStaffImpl implements UserStaffService{
     }
 
     @Override
-    public UserVO getUserData(String accountName) throws Exception{
+    public UserVO getUserData(String accountName){
 
         UserVO userVO=userHelper.getUserData(accountName);
         if(userVO!=null){

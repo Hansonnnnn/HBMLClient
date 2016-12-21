@@ -18,7 +18,7 @@ public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 
 
 	@Override
-	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) throws Exception{
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter){
 
 		return promotionHelper.getWebPromotionList(promotionFilter);
 
@@ -32,21 +32,21 @@ public class PromotionWebMarketerImpl implements PromotionWebMarketerService{
 	}
 
 	@Override
-	public ResultMessage addWebPromotion(PromotionVO vo) throws Exception{
+	public ResultMessage addWebPromotion(PromotionVO vo){
 
 		return promotionHelper.addWebPromotion(vo);
 
 	}
 
 	@Override
-	public ResultMessage deleteWebPromotion(int promotionID) throws Exception{
+	public ResultMessage deleteWebPromotion(int promotionID){
 
 		return promotionHelper.deleteWebPromotion(promotionID);
 
 	}
 
 	@Override
-	public ResultMessage modifyWebPromotion(PromotionVO vo) throws Exception{
+	public ResultMessage modifyWebPromotion(PromotionVO vo){
 
 		return promotionHelper.modifyWebPromotion(vo);
 	}

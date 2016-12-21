@@ -14,6 +14,7 @@ import po.PromotionPO;
 import rmi.ClientRunner;
 import vo.*;
 
+import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -41,9 +42,15 @@ public class PromotionHelper {
 
     }
 
-    public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) throws Exception{
+    public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter){
 
-        Map<Integer,PromotionPO> map=promotionDao.getHotelPromotionList(promotionFilter);
+        Map<Integer,PromotionPO> map= null;
+        try {
+            map = promotionDao.getHotelPromotionList(promotionFilter);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
         promotionList=new LinkedHashMap<>();
         for(int key:map.keySet()){
             promotionList.put(key,promotionTranserService.poToVo(map.get(key)));
@@ -52,9 +59,15 @@ public class PromotionHelper {
 
     }
 
-    public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter)throws Exception {
+    public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter){
 
-        Map<Integer,PromotionPO> map=promotionDao.getWebPromotionList(promotionFilter);
+        Map<Integer,PromotionPO> map= null;
+        try {
+            map = promotionDao.getWebPromotionList(promotionFilter);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
         promotionList=new LinkedHashMap<>();
         for(int key:map.keySet()){
             promotionList.put(key,promotionTranserService.poToVo(map.get(key)));
@@ -70,7 +83,7 @@ public class PromotionHelper {
 
     }
 
-    public SelectedPromotionVO getSelectedPromotion(OrderVO orderVO)throws Exception {
+    public SelectedPromotionVO getSelectedPromotion(OrderVO orderVO){
         int userID = orderVO.getUserID();
         int hotelID = orderVO.getHotelID();
         int currentPrice = orderVO.getPrice();
@@ -81,8 +94,22 @@ public class PromotionHelper {
         Calendar calendar2=Calendar.getInstance();
         calendar1.setTime(generateTime);
 
-        UserVO userVO = promotionTranserService.poToVo(userDao.getUserData(userID));
-        HotelVO hotelVO=promotionTranserService.poToVo(hotelDao.getHotelInfo(hotelID));
+        UserVO userVO = null;
+        try {
+            userVO = promotionTranserService.poToVo(userDao.getUserData(userID));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot get user data!!!");
+            return null;
+        }
+        HotelVO hotelVO= null;
+        try {
+            hotelVO = promotionTranserService.poToVo(hotelDao.getHotelInfo(hotelID));
+        } catch (RemoteException e) {
+            System.out.println("cannot get hotel data!!!");
+            e.printStackTrace();
+            return null;
+        }
         PromotionFilter promotionFilter = new PromotionFilter();
         promotionFilter.add("startDate", "<", generateTime);
         promotionFilter.add("endDate", ">", generateTime);
@@ -224,39 +251,69 @@ public class PromotionHelper {
 
 
 
-    public ResultMessage addHotelPromotion(PromotionVO vo) throws Exception{
+    public ResultMessage addHotelPromotion(PromotionVO vo){
 
-        return promotionDao.addPromotion(promotionTranserService.voToPo(vo));
-
-    }
-
-    public ResultMessage addWebPromotion(PromotionVO vo) throws Exception{
-
-        return promotionDao.addPromotion(promotionTranserService.voToPo(vo));
-
-    }
-
-    public ResultMessage deleteHotelPromotion(int promotionID) throws Exception{
-
-        return promotionDao.deletePromotion(promotionID);
+        try {
+            return promotionDao.addPromotion(promotionTranserService.voToPo(vo));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
 
     }
 
-    public ResultMessage deleteWebPromotion(int promotionID) throws Exception{
+    public ResultMessage addWebPromotion(PromotionVO vo){
 
-        return promotionDao.deletePromotion(promotionID);
+        try {
+            return promotionDao.addPromotion(promotionTranserService.voToPo(vo));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
 
     }
 
-    public ResultMessage modifyHotelPromotion(PromotionVO vo) throws Exception{
+    public ResultMessage deleteHotelPromotion(int promotionID){
 
-        return promotionDao.updatePromotion(promotionTranserService.voToPo(vo));
+        try {
+            return promotionDao.deletePromotion(promotionID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
 
     }
 
-    public ResultMessage modifyWebPromotion(PromotionVO vo)throws Exception{
+    public ResultMessage deleteWebPromotion(int promotionID){
 
-        return promotionDao.updatePromotion(promotionTranserService.voToPo(vo));
+        try {
+            return promotionDao.deletePromotion(promotionID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
+
+    }
+
+    public ResultMessage modifyHotelPromotion(PromotionVO vo){
+
+        try {
+            return promotionDao.updatePromotion(promotionTranserService.voToPo(vo));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
+
+    }
+
+    public ResultMessage modifyWebPromotion(PromotionVO vo){
+
+        try {
+            return promotionDao.updatePromotion(promotionTranserService.voToPo(vo));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
 
     }
 }

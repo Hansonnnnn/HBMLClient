@@ -8,5 +8,6 @@ public enum ResultMessage {
     success,
     notexist,
 	disconnection,          //请不要更改disconnection的枚举值(位置)
-    wrongPassword
+    wrongPassword,
+    sqlFailure
 }

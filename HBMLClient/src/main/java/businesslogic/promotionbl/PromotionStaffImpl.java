@@ -21,7 +21,7 @@ public class PromotionStaffImpl implements PromotionStaffService{
 
 
 	@Override
-	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) throws Exception{
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter){
 
 		return promotionHelper.getHotelPromotionList(promotionFilter);
 
@@ -37,20 +37,20 @@ public class PromotionStaffImpl implements PromotionStaffService{
 	}
 
 	@Override
-	public ResultMessage addHotelPromotion(PromotionVO vo) throws Exception{
+	public ResultMessage addHotelPromotion(PromotionVO vo){
 
 		return promotionHelper.addHotelPromotion(vo);
 	}
 
 	@Override
-	public ResultMessage deleteHotelPromotion(int promotionID) throws Exception{
+	public ResultMessage deleteHotelPromotion(int promotionID){
 
 		return promotionHelper.deleteHotelPromotion(promotionID);
 
 	}
 
 	@Override
-	public ResultMessage modifyHotelPromotion(PromotionVO vo) throws Exception{
+	public ResultMessage modifyHotelPromotion(PromotionVO vo){
 
 		return promotionHelper.modifyWebPromotion(vo);
 

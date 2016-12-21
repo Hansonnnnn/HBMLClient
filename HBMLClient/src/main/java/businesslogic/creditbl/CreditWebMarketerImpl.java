@@ -22,14 +22,14 @@ public class CreditWebMarketerImpl implements CreditWebMarketerService{
 
 
     @Override
-    public ResultMessage resumeCreditValue(int userID, long price, int type,int orderID) throws Exception{
+    public ResultMessage resumeCreditValue(int userID, long price, int type,int orderID){
 
         return creditHelper.resumeCreditValue(userID,price,type,orderID);
 
     }
 
     @Override
-    public ResultMessage addCreditValue(int UserID, long value)throws Exception {
+    public ResultMessage addCreditValue(int UserID, long value){
 
         return creditHelper.addCreditValue(UserID,value);
 
