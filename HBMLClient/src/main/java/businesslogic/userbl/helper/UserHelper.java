@@ -8,6 +8,8 @@ import po.UserPO;
 import rmi.ClientRunner;
 import vo.UserVO;
 
+import java.rmi.RemoteException;
+
 /**
  * Created by alex on 12/15/16.
  */
@@ -24,54 +26,111 @@ public class UserHelper {
 
     }
 
-    public UserVO getUserData(int userID)throws Exception{
+    public UserVO getUserData(int userID){
 
-        UserPO userPO=userDao.getUserData(userID);
+        UserPO userPO= null;
+        try {
+            userPO = userDao.getUserData(userID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         if(userPO==null) return null;
-        else return userTransferService.poToVo(userPO);
+        else {
+            try {
+                return userTransferService.poToVo(userPO);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
 
     }
 
-    public UserVO getUserData(String accountName)throws Exception{
+    public UserVO getUserData(String accountName){
 
-        UserPO userPO=userDao.getUserData(accountName);
+        UserPO userPO= null;
+        try {
+            userPO = userDao.getUserData(accountName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         if(userPO==null) return null;
-        else return userTransferService.poToVo(userPO);
+        else {
+            try {
+                return userTransferService.poToVo(userPO);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
 
     }
 
-    public ResultMessage addUser(UserVO vo)throws Exception{
-        UserPO userPO=userTransferService.voToPo(vo);
-        return userDao.addUser(userPO);
+    public ResultMessage addUser(UserVO vo){
+        UserPO userPO= null;
+        userPO = userTransferService.voToPo(vo);
+        try {
+            return userDao.addUser(userPO);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
     }
 
 
-    public ResultMessage deleteUser(int userID)throws Exception{
-        return userDao.deleteUser(userID);
+    public ResultMessage deleteUser(int userID){
+        try {
+            return userDao.deleteUser(userID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
     }
 
 
-    public ResultMessage modifyUser(UserVO vo)throws Exception{
+    public ResultMessage modifyUser(UserVO vo){
 
-        UserPO userPO=userTransferService.voToPo(vo);
-        return userDao.modifyUser(userPO);
+        UserPO userPO= null;
+        userPO = userTransferService.voToPo(vo);
+        try {
+            return userDao.modifyUser(userPO);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
 
     }
 
-    public ResultMessage login(String accountName, String pwd)throws Exception{
+    public ResultMessage login(String accountName, String pwd){
 
-        return userDao.login(accountName,pwd);
+        try {
+            return userDao.login(accountName,pwd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
     }
 
-    public ResultMessage signup(UserVO vo) throws Exception{
-        UserPO userPO = userTransferService.voToPo(vo);
-        return userDao.signup(userPO);
+    public ResultMessage signup(UserVO vo){
+        UserPO userPO = null;
+        userPO = userTransferService.voToPo(vo);
+        try {
+            return userDao.signup(userPO);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
     }
 
 
 
-    public ResultMessage logout(String accountName) throws Exception{
-        return userDao.logout(accountName);
+    public ResultMessage logout(String accountName){
+        try {
+            return userDao.logout(accountName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return ResultMessage.sqlFailure;
+        }
     }
 
 

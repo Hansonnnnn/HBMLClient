@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="commit 0.3&#10;//modify user module&#10;add login/logout logic">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserLogImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserLogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/HBMLClient.iml" afterPath="$PROJECT_DIR$/.idea/HBMLClient.iml" />
+    <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/PromotionVO.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/vo/PromotionVO.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,10 +25,10 @@
       <file leaf-file-name="testOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/test/java/testOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1482287365589" expanded="true" signature="7:336" ph="..." />
               </folding>
             </state>
           </provider>
@@ -49,8 +37,8 @@
       <file leaf-file-name="UserStaffImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="486">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,8 +108,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -496,7 +485,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1088,7 +1076,11 @@
       <workItem from="1482170190699" duration="342000" />
       <workItem from="1482170557508" duration="296000" />
       <workItem from="1482234245968" duration="187000" />
-      <workItem from="1482235450132" duration="10000" />
+      <workItem from="1482235450132" duration="2168000" />
+      <workItem from="1482315502145" duration="20000" />
+      <workItem from="1482317587926" duration="410000" />
+      <workItem from="1482318684247" duration="81000" />
+      <workItem from="1482325354210" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -1272,11 +1264,32 @@
       <option name="project" value="LOCAL" />
       <updated>1482170829018</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="commit 0.3.1&#10;//modify user module&#10;add userlogbl&amp;userlogservice">
+      <created>1482235516753</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1482235516753</updated>
+    </task>
+    <task id="LOCAL-00028" summary="commit 0.3.2&#10;//modify user,promotion,credit module&#10;//abandon throw and apply try ... catch instead">
+      <created>1482317640071</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1482317640071</updated>
+    </task>
+    <task id="LOCAL-00029" summary="commit 0.3.2.1&#10;one modification of user login">
+      <created>1482318722099</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1482318722099</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15789000" />
+    <option name="totallyTimeSpent" value="18475000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1355,9 +1368,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!" />
-    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
-    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.2&#10;//test&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.3&#10;determine the blservice interfaces&#10;modify uservo&#10;//now uservo and userpo hold different portrait types&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.4&#10;modify uservo, promotionvo and creditvo&#10;now the vos can be of use&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.5&#10;modify promotionUserblservice&#10;add SelectedPromotionVO&#10;" />
@@ -1380,7 +1390,10 @@
     <MESSAGE value="commit ver 0.2.9.1&#10;//temp commit&#10;&#10;&#10;" />
     <MESSAGE value="commit ver 0.2.9.2&#10;//temp commit&#10;&#10;&#10;" />
     <MESSAGE value="commit 0.3&#10;//modify user module&#10;add login/logout logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 0.3&#10;//modify user module&#10;add login/logout logic" />
+    <MESSAGE value="commit 0.3.1&#10;//modify user module&#10;add userlogbl&amp;userlogservice" />
+    <MESSAGE value="commit 0.3.2&#10;//modify user,promotion,credit module&#10;//abandon throw and apply try ... catch instead" />
+    <MESSAGE value="commit 0.3.2.1&#10;one modification of user login" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 0.3.2.1&#10;one modification of user login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1708,9 +1721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1732,26 +1742,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/test/java/testOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1482287365589" expanded="true" signature="7:336" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="486">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -22,7 +22,7 @@ public class UserWebManagerImpl implements UserWebManagerService{
 
 
     @Override
-    public UserVO getUserData(int userID) throws Exception{
+    public UserVO getUserData(int userID){
 
         UserVO userVO=userHelper.getUserData(userID);
         if(userVO!=null){
@@ -34,7 +34,7 @@ public class UserWebManagerImpl implements UserWebManagerService{
     }
 
     @Override
-    public UserVO getUserData(String accountName) throws Exception {
+    public UserVO getUserData(String accountName){
 
         UserVO userVO=userHelper.getUserData(accountName);
         if(userVO!=null){
@@ -45,7 +45,7 @@ public class UserWebManagerImpl implements UserWebManagerService{
     }
 
     @Override
-    public ResultMessage addUser(UserVO vo)throws Exception {
+    public ResultMessage addUser(UserVO vo){
 
         //judge whether the userInfo is sufficient
         if(vo.getUserType().equals(UserType.Staff)||vo.getUserType().equals(UserType.WebMarketer)){
@@ -55,14 +55,14 @@ public class UserWebManagerImpl implements UserWebManagerService{
     }
 
     @Override
-    public ResultMessage deleteUser(int userID) throws Exception{
+    public ResultMessage deleteUser(int userID){
 
         return userHelper.deleteUser(userID);
 
     }
 
     @Override
-    public ResultMessage modifyUser(UserVO vo)throws Exception {
+    public ResultMessage modifyUser(UserVO vo){
 
         return userHelper.modifyUser(vo);
 

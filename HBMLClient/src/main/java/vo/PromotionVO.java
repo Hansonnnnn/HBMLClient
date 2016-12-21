@@ -3,6 +3,8 @@ import model.DateHelper;
 import model.DiscountType;
 import model.PromotionType;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -111,6 +113,7 @@ public class PromotionVO{
      * @param type             如果是生日特惠，填０；如果是合作企业特惠，填１
      */
     public PromotionVO(int region,int discount,int type){
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         this.promotionType = PromotionType.HotelPromotion;
         this.region = region;
         if(type==0) this.name = "00";
@@ -118,6 +121,13 @@ public class PromotionVO{
         this.type = DiscountType.DaZhe;
         this.requirement = 0;
         this.discount = discount;
+        try {
+            this.startDate=simpleDateFormat.parse("2000-1-1");
+            this.endDate=simpleDateFormat.parse("2030-1-1");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
     }
 
     //这是普通web promotion(就不包含商圈信息咯，全国通用)
@@ -133,6 +143,7 @@ public class PromotionVO{
      * @param discount
      */
     public PromotionVO(String name, String content, Date startDate, Date endDate, int rank, DiscountType type, int condition, int discount){
+
         this.promotionType = PromotionType.WebPromotion;
         this.name = name;
         this.content = content;
@@ -155,6 +166,8 @@ public class PromotionVO{
      * @param maxRank
      */
     public PromotionVO(int region,int discount,int minRank, int maxRank){
+
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         this.promotionType = PromotionType.HotelPromotion;
         this.region = region;
         this.name="10";
@@ -163,6 +176,12 @@ public class PromotionVO{
         this.type = DiscountType.DaZhe;
         this.requirement = 0;
         this.discount = discount;
+        try {
+            this.startDate=simpleDateFormat.parse("2000-1-1");
+            this.endDate=simpleDateFormat.parse("2030-1-1");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
 
