@@ -8,6 +8,7 @@ import businesslogicservice.promotionblservice.PromotionStaffService;
 import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import businesslogicservice.userblservice.UserCustomerService;
 import dao.PromotionDao;
+import model.DiscountType;
 import model.DiscountTypeHelper;
 import model.PromotionFilter;
 import model.PromotionType;
@@ -29,21 +30,26 @@ import java.util.Set;
 public class test_Alex_Promotion_BL {
 
     static void addPromotion()throws Exception{
+        PromotionStaffService promotionStaffService=new PromotionStaffImpl();
+        PromotionWebMarketerService promotionWebMarketerService=new PromotionWebMarketerImpl();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         DiscountTypeHelper discountTypeHelper=new DiscountTypeHelper();
         Date date1=simpleDateFormat.parse("2017-11-11");
         Date date2=simpleDateFormat.parse("2017-11-15");
-        PromotionVO vo1=new PromotionVO(0, PromotionType.HotelPromotion,2,"double 11 promotion","all 50% off!!!",date1,date2,1,10,discountTypeHelper.getDiscountType(1),0,50);
-        date1=simpleDateFormat.parse("2017-12-10");
-        date2=simpleDateFormat.parse("2017-12-14");
-        PromotionVO vo2=new PromotionVO(0, PromotionType.WebPromotion,3,"双十二满减特惠","满500减１５０",date1,date2,3,10,discountTypeHelper.getDiscountType(0),500,150);
-        date1=simpleDateFormat.parse("2017-12-10");
-        date2=simpleDateFormat.parse("2017-12-14");
 
-        PromotionStaffService promotionStaffService=new PromotionStaffImpl();
-        System.out.println(promotionStaffService.addHotelPromotion(vo1));
-        PromotionWebMarketerService promotionWebMarketerService=new PromotionWebMarketerImpl();
-        System.out.println(promotionWebMarketerService.addWebPromotion(vo2));
+        //a region promotion(web promotion)
+        PromotionVO promotionVO1=new PromotionVO(1,20,2,5);
+        //a birthday promotion(hotel promotion)
+        PromotionVO promotionVO2=new PromotionVO(1,20,0);
+        //a brother company promotion(hotel promotion)
+        PromotionVO promotionVO3=new PromotionVO(1,10,1);
+        //an ordinary promotion(web promotion)
+        PromotionVO promotionVO4=new PromotionVO("double 11","20% off",date1,date2,2, DiscountType.DaZhe,0,20);
+        //an ordinary promotion(hotel promotion)
+        date1=simpleDateFormat.parse("2017-12-10");
+        date2=simpleDateFormat.parse("2017-12-14");
+        PromotionVO promotionVO5=new PromotionVO(1,"double 12","30% off",date1,date2,2,DiscountType.DaZhe,0,30);
+        promotionWebMarketerService.addWebPromotion(promotionVO1);
     }
 
     static void updatePromotion()throws Exception{
