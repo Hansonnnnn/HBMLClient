@@ -168,7 +168,7 @@ public class PromotionVO{
     public PromotionVO(int region,int discount,int minRank, int maxRank){
 
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-        this.promotionType = PromotionType.HotelPromotion;
+        this.promotionType = PromotionType.WebPromotion;
         this.region = region;
         this.name="10";
         this.minRankAvailable=minRank;
