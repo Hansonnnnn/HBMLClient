@@ -16,12 +16,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class PersonInfoPageController {
 	@FXML private Button backButton;
 	@FXML private Button editImageButton;
 	@FXML private Button vipEnrollButton;
-	@FXML private ImageView headImage;
+	@FXML private ImageView headImageView;
 	@FXML private Label creditValueLabel;
 	@FXML private TextField nameField;
 	@FXML private DatePicker yearPicker;
@@ -31,17 +32,28 @@ public class PersonInfoPageController {
 	private Stage stage;
 	private Scene preScene;
 	private Scene presentScene;
+	private UserVO userVO;
 	
 	private Desktop desktop;
 	private FileChooser fileChooser;
 	
-	public void init(Stage stage, Scene preScene, Scene presentScene)
+	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
 		this.presentScene = presentScene;
+		this.userVO = userVO;
+		initHeadImage();
 	}
 	
+	private void initHeadImage()
+	{
+		Image image = new Image("file:///"+userVO.getPortrait().getPath());
+		if(image!=null)
+		{
+			headImageView.setImage(image);
+		}
+	}
 	@FXML
 	private void back()
 	{
@@ -51,7 +63,7 @@ public class PersonInfoPageController {
 	@FXML
 	private void enroll()
 	{
-		stage.setScene(new EnrollVIPPage(new Group(), stage, presentScene));
+		stage.setScene(new EnrollVIPPage(new Group(), stage, presentScene, userVO));
 	}
 	
 	@FXML
@@ -88,11 +100,18 @@ public class PersonInfoPageController {
 	                    input.close();
 	                }
 	                Image image=new Image("file:///"+fileName);
-	                headImage.setImage(image);
+	                
+	                headImageView.setImage(image);
 
 	            }catch (Exception e){
 	                e.printStackTrace();
 	            }
 		}
+	}
+	
+	@FXML
+	private void save()
+	{
+		
 	}
 }

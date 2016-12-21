@@ -10,16 +10,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import message.OrderStateMessage;
 import model.DateHelper;
-import presentation.view.HotelManagerUI.RoomTypeInfoUIController.RoomInfo;
 import presentation.view.application.MyDialog;
 import vo.HotelVO;
 import vo.OrderVO;
@@ -68,7 +65,6 @@ public class MakeOrderPageController
 		@FXML
 		private void back()
 		{
-//			stage.setScene(new HotelListPageUI(new Group()));
 			stage.setScene(preScene);
 		}
 		
@@ -117,10 +113,8 @@ public class MakeOrderPageController
 			{
 				sendInfo = 1;
 			}
-			System.out.println(userVO == null);
 			OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
 					null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
-			System.out.println(orderVO == null);
 			customerService.addOrder(orderVO);
 		}
 }

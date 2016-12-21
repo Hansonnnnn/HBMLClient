@@ -8,26 +8,31 @@
 
 <AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.EnrollUserPageNewController">
    <children>
-      <VBox alignment="CENTER" layoutX="577.0" layoutY="101.0" prefHeight="424.0" prefWidth="327.0">
+      <ImageView fitHeight="734.0" fitWidth="1027.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../CustomerImage/429090-Kycb.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="343.0" layoutY="147.0" prefHeight="424.0" prefWidth="327.0">
          <children>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="imageView" fitHeight="74.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CustomerImage/个人中心.png" />
+                        <Image url="@../CustomerImage/个人中心-2.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="用户名" textFill="#155ae4" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="用户名" />
                   <TextField fx:id="nameField" prefHeight="30.0" prefWidth="210.0" promptText="用户名" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="密码   " textFill="#155ae4" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="40.0" text="密码   " />
                   <PasswordField fx:id="passwordField" prefHeight="30.0" prefWidth="210.0" promptText="密码" />
                </children>
             </HBox>
@@ -43,7 +48,6 @@
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="327.0" spacing="30.0" />
          </children>
       </VBox>
-      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="129.0" prefHeight="358.0" prefWidth="271.0" wrapText="true" />
       <Button fx:id="backButton" layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">

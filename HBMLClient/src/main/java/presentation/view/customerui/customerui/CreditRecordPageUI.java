@@ -2,18 +2,19 @@ package presentation.view.customerui.customerui;
 
 import java.io.IOException;
 
+import businesslogicservice.creditblservice.CreditCustomerService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import vo.UserVO;
 
-public class EnrollVIPPage extends Scene
+public class CreditRecordPageUI extends Scene 
 {
-		public EnrollVIPPage(Parent root, Stage stage, Scene preScene, UserVO userVO)
+		public CreditRecordPageUI(Parent root,Stage stage, Scene preScene, UserVO userVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CommonVIPenroll.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CreditRecordPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());
@@ -22,7 +23,7 @@ public class EnrollVIPPage extends Scene
 				e.printStackTrace();
 			}
 			
-			EnrollVIPPageController controller = fxmlLoader.getController();
+			CreditRecordPageUIController controller = fxmlLoader.getController();
 			controller.init(stage, preScene, userVO);
 		}
 }

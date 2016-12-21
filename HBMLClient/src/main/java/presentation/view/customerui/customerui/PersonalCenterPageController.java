@@ -19,13 +19,13 @@ import vo.UserVO;
 
 public class PersonalCenterPageController {
 	@FXML private Button backButton;
-	@FXML private Button editImageButton;
 	@FXML private Button vipEnrollButton;
 	@FXML private ImageView headImage;
 	@FXML private Label nameLabel;
 	@FXML private Label creditValueLabel;
 	@FXML private Button myInfoButton;
 	@FXML private Button hotelButton;
+	@FXML private Button creditButton;
 	
 	private Stage stage;
 	private Scene preScene;
@@ -42,6 +42,7 @@ public class PersonalCenterPageController {
 		this.preScene = preScene;
 		this.presentScene = presentScene;
 		this.userVO = userVO;
+		nameLabel.setText(userVO.getName());
 	}
 	
 	@FXML
@@ -53,60 +54,24 @@ public class PersonalCenterPageController {
 	@FXML
 	private void editInfo()
 	{
-		stage.setScene(new PersonInfoPage(new Group(), stage, presentScene));
+		stage.setScene(new PersonInfoPage(new Group(), stage, presentScene,userVO));
 	}
 	
 	@FXML
 	private void enroll()
 	{
-		stage.setScene(new EnrollVIPPage(new Group(), stage, presentScene));
-	}
-	
-	@FXML
-	private void editImage()
-	{
-		desktop = Desktop.getDesktop();
-		fileChooser = new FileChooser();
-		java.io.File choiceFile = fileChooser.showOpenDialog(stage);
-		fileChooser.setTitle("选择头像");
-		fileChooser.getExtensionFilters().addAll(
-				new FileChooser.ExtensionFilter("JPG","*.JPG"),
-				new FileChooser.ExtensionFilter("PNG","*PNG")
-				);
-		if (choiceFile!=null) 
-		{
-			 try{
-	                String path="/Users/xiezhenyu/Desktop/Pic";
-	                String fileName=path+choiceFile.getName().toString();
-	                File file=new File(fileName);
-	                if(!file.exists()){
-	                    File newfile=new File(path);
-	                    newfile.mkdirs();
-	                    FileInputStream input=new FileInputStream(choiceFile);
-	                    FileOutputStream output=new FileOutputStream(fileName);
-
-	                    byte[] b=new byte[1824*5];
-	                    int length;
-	                    while((length=input.read(b))!=-1){
-	                        output.write(b,0,length);
-	                    }
-
-	                    output.flush();
-	                    output.close();
-	                    input.close();
-	                }
-	                Image image=new Image("file:///"+fileName);
-	                headImage.setImage(image);
-
-	            }catch (Exception e){
-	                e.printStackTrace();
-	            }
-		}
+		stage.setScene(new EnrollVIPPage(new Group(), stage, presentScene, userVO));
 	}
 	
 	@FXML 
 	private void myHotel()
 	{
 		stage.setScene(new MyHotelListPage(new Group(), stage, presentScene,userVO));
+	}
+	
+	@FXML
+	private void myCreditRecord()
+	{
+		stage.setScene(new CreditRecordPageUI(new Group(), stage, presentScene, userVO));
 	}
 }

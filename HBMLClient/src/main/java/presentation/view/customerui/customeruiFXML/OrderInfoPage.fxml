@@ -38,7 +38,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
                <children>
-                  <Label text="生成时间" textFill="#155ae4" />
+                  <Label text="操作时间" textFill="#155ae4" />
                   <Label fx:id="generateTime" text="Label" textFill="#155ae4" />
                </children>
                <padding>
@@ -90,7 +90,7 @@
                   <Insets left="30.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="30.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="400.0" spacing="55.0">
                <children>
                   <Label text="价格" textFill="#155ae4" />
                   <Label fx:id="price" text="Label" textFill="#155ae4" />

@@ -1,10 +1,5 @@
 package presentation.view.customerui.customerui;
 
-import java.time.LocalDate;
-import java.util.Date;
-
-import com.sun.corba.se.spi.orbutil.fsm.Action;
-
 import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
@@ -12,31 +7,26 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import message.OrderStateMessage;
-import model.DateHelper;
 import presentation.view.application.MyDialog;
-import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrder;
-import presentation.view.customerui.customerui.EditingOrderUIController.EditingOrderButtonCell;
 import vo.OrderVO;
 
 public class UnexecutedOrderPageController 
 {
-	@FXML private TableView list;
+	@FXML private TableView<OrderVO> list;
 	
-	@FXML private TableColumn idColumn;
-	@FXML private TableColumn generateTimeColumn;
-	@FXML private TableColumn	 cancelTimeColumn;
-	@FXML private TableColumn priceColumn;
-	@FXML private TableColumn executeDDLColumn;
-	@FXML private TableColumn checkOrderButtonColumn;
-	@FXML private TableColumn cancelOrderButtonColumn;
+	@FXML private TableColumn<OrderVO, Boolean> idColumn;
+	@FXML private TableColumn<OrderVO, Boolean> generateTimeColumn;
+	@FXML private TableColumn<OrderVO, Boolean>	 cancelTimeColumn;
+	@FXML private TableColumn<OrderVO, Boolean> priceColumn;
+	@FXML private TableColumn<OrderVO, Boolean> executeDDLColumn;
+	@FXML private TableColumn<OrderVO, Boolean> checkOrderButtonColumn;
+	@FXML private TableColumn<OrderVO, Boolean> cancelOrderButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> unexecuteOrderData;
 	
@@ -62,7 +52,7 @@ public class UnexecutedOrderPageController
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
 				return new CheckOrderButtonCell();
 			}
@@ -70,7 +60,7 @@ public class UnexecutedOrderPageController
 		cancelOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
 				return new UnexecutedOrderButtonCell(stage);
 			}

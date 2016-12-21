@@ -9,36 +9,28 @@
 
 <AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.PersonalCenterPageController">
    <children>
-      <VBox alignment="CENTER" layoutX="38.0" layoutY="162.0" prefHeight="229.0" prefWidth="219.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="141.0" prefHeight="158.0" prefWidth="199.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="189.0">
                <children>
-                  <Label text="用户:" />
-                  <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="谢振宇" />
+                  <Label text="欢迎:">
+                     <styleClass>
+                        <String fx:value="whiteFont" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass></Label>
+                  <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" />
                </children>
             </HBox>
-            <ImageView fx:id="headImage" fitHeight="125.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="headImageView" fitHeight="125.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../CustomerImage/个人中心.png" />
+                  <Image url="@../CustomerImage/个人信息-2.png" />
                </image>
             </ImageView>
-            <Button fx:id="editImageButton" mnemonicParsing="false" onAction="#editImage" prefHeight="27.0" prefWidth="126.0" text="编辑头像">
-               <styleClass>
-                  <String fx:value="transButton" />
-                  <String fx:value="backButtonColor" />
-               </styleClass></Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <HBox alignment="CENTER" layoutX="314.0" layoutY="182.0" prefHeight="177.0" prefWidth="633.0" spacing="80.0">
-         <children>
-            <Button fx:id="vipEnrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="148.0" prefWidth="148.0" text="注册会员" />
-            <Button fx:id="myInfoButton" mnemonicParsing="false" onAction="#editInfo" prefHeight="148.0" prefWidth="148.0" text="个人信息" />
-            <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#myHotel" prefHeight="148.0" prefWidth="148.0" text="我的酒店记录" />
-         </children>
-      </HBox>
       <Button fx:id="backButton" layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -52,5 +44,53 @@
             <String fx:value="backButtonColor" />
          </styleClass>
       </Button>
+      <VBox layoutX="431.0" layoutY="138.0" prefHeight="362.0" prefWidth="416.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="177.0" prefWidth="633.0" spacing="80.0">
+               <children>
+                  <Button fx:id="vipEnrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="148.0" prefWidth="148.0" styleClass="personalPageFourButton">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/会员.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#myHotel" prefHeight="148.0" prefWidth="148.0" styleClass="personalPageFourButton">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/酒店.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="188.0" prefWidth="416.0" spacing="80.0">
+               <children>
+                  <Button fx:id="creditButton" mnemonicParsing="false" onAction="#myCreditRecord" prefHeight="179.0" prefWidth="184.0" styleClass="personalPageFourButton">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/信用.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="myInfoButton" mnemonicParsing="false" onAction="#editInfo" prefHeight="148.0" prefWidth="148.0" styleClass="personalPageFourButton">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../CustomerImage/个人信息.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

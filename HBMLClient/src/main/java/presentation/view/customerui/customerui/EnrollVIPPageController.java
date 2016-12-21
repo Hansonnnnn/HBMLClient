@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class EnrollVIPPageController {
 	@FXML private Button backButton;
@@ -18,12 +19,13 @@ public class EnrollVIPPageController {
 	
 	private Stage stage;
 	private Scene preScene;
+	private UserVO userVO;
 	
-	public void init(Stage stage, Scene preScene)
+	public void init(Stage stage, Scene preScene, UserVO userVO)
 	{
 		this.stage = stage;
 		this.preScene = preScene;
-		
+		this.userVO = userVO;
 	}
 	
 	@FXML

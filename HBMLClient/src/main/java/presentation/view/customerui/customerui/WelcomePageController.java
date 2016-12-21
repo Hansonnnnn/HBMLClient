@@ -2,10 +2,6 @@ package presentation.view.customerui.customerui;
 
 import businesslogic.userbl.UserLogImpl;
 import businesslogicservice.userblservice.UserLogService;
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
-import businesslogic.userbl.UserCustomerImpl;
-import businesslogicservice.userblservice.UserCustomerService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -37,14 +33,13 @@ public class WelcomePageController
 		
 		private ResultMessage resultMessage;
 		private UserVO userVO;
-		private UserCustomerService customerService;
 		private UserLogService userLogService;
+		
 		
 		public void init(Stage stage, Scene loginPageScene)
 		{
 			this.stage = stage;
 			this.loginPageScene = loginPageScene;
-			customerService = new UserCustomerImpl();
 			userLogService=new UserLogImpl();
 			resultMessage = ResultMessage.failure;
 		}
@@ -58,9 +53,9 @@ public class WelcomePageController
 			{
 				name = nameField.getText();
 				try {
-					if(customerService.getUserData(name)!=null)
+					if(userLogService.getUserData(name)!=null)
 					{
-						userVO = customerService.getUserData(name);
+						userVO = userLogService.getUserData(name);
 					}
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -87,9 +82,12 @@ public class WelcomePageController
 			{
 				//显示不存在提示对话框
 				new MyDialog(stage,"该用户名不存在" , 0);
-			}else
+			}else if(resultMessage == ResultMessage.failure)
 			{
-				new MyDialog(stage,"用户名或密码错误" ,1);
+				new MyDialog(stage,"您已在其他地点登录，不能同时登录" ,1);
+			}else if(resultMessage == ResultMessage.wrongPassword)
+			{
+				new MyDialog(stage, "用户名或密码错误", 1);
 			}
 		}
 		

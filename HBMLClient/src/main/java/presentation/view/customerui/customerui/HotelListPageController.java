@@ -16,21 +16,15 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import message.OrderStateMessage;
 import model.HotelFilter;
 import presentation.view.application.MyDialog;
 import vo.HotelVO;
@@ -43,19 +37,19 @@ public class HotelListPageController {
 	@FXML private Button searchButton;
 	@FXML private Button refreshButton;
 	
-	@FXML private TableColumn nameColumn; 
-	@FXML private TableColumn addressColumn;
-	@FXML private TableColumn starColumn;
-	@FXML private TableColumn scoreColumn;
-	@FXML private TableColumn priceColumn;
-	@FXML private TableColumn checkButtonColumn;
-	@FXML private TableColumn makeOrderButtonColumn;
+	@FXML private TableColumn<HotelVO, Boolean> nameColumn; 
+	@FXML private TableColumn<HotelVO, Boolean> addressColumn;
+	@FXML private TableColumn<HotelVO, Boolean> starColumn;
+	@FXML private TableColumn<HotelVO, Boolean> scoreColumn;
+	@FXML private TableColumn<HotelVO, Boolean> priceColumn;
+	@FXML private TableColumn<HotelVO, Boolean> checkButtonColumn;
+	@FXML private TableColumn<HotelVO, Boolean> makeOrderButtonColumn;
 	
 	@FXML private ComboBox<String> first;
 	@FXML private ComboBox<String> second;
-	@FXML private ComboBox<String> third;
+	@FXML private ComboBox<String> promotionList;
 	
-	@FXML private TableView list;
+	@FXML private TableView<HotelVO> list;
 	 private Stage stage;
 	 private Scene firstPage;
 	 private Scene hotelListPageScene;
@@ -64,6 +58,7 @@ public class HotelListPageController {
 	 private int star;
 	 private String choiceOne = "推荐排序";
 	 private String choiceTwo = "默认星级";
+	 private String choiceThree = "促销策略";
 	 private ObservableList<HotelVO> hotelData;
 	 
 	 private HotelCustomerService service;
@@ -101,12 +96,7 @@ public class HotelListPageController {
 		 initComboBox();
 		 initTable();
 	 }
-	 
-//	 public void refresh()
-//	 {
-//		 initComboBox();
-//		 initTable();
-//	 }
+
 	 
 	 @FXML
 	 private void back()
@@ -134,7 +124,7 @@ public class HotelListPageController {
 		 checkButtonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>()
 		 {
 			 @Override
-			 public TableCell call(TableColumn param)
+			 public TableCell<HotelVO, Boolean> call(TableColumn param)
 			 {
 				 return new CheckInfoButtonCell(stage);
 			 }
@@ -142,7 +132,7 @@ public class HotelListPageController {
 		 makeOrderButtonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() 
 		 {
 			 @Override
-			 public TableCell call(TableColumn param)
+			 public TableCell<HotelVO, Boolean> call(TableColumn<HotelVO, Boolean> param)
 			 {
 				 return new MakeOrderButtonCell(stage);
 			 }
@@ -204,7 +194,8 @@ public class HotelListPageController {
 				 "星级排序","好评优先","低价排序");
 		 ObservableList<String> optionsTwo = FXCollections.observableArrayList(
 				 "五星级","四星级","三星级","二星级","一星级","默认星级");
-		 ObservableList<String> optionsThree = FXCollections.observableArrayList();
+		 ObservableList<String> optionsThree = FXCollections.observableArrayList(
+				 "酒店促销策略","网站促销策略");
 		 
 //		 first.setItems(optionsOne);
 //		 second.setItems(optionsTwo);
@@ -217,14 +208,14 @@ public class HotelListPageController {
 		 {
 			 second.getItems().addAll(optionsTwo);
 		 }
-		 if(third.getItems().isEmpty())
+		 if(promotionList.getItems().isEmpty())
 		 {
-			 third.getItems().addAll(optionsThree);
+			 promotionList.getItems().addAll(optionsThree);
 		 }
 		
 		 first.setPromptText("排序方式");
 		 second.setPromptText("星级筛选");
-		 third.setPromptText("位置区域");
+		 promotionList.setPromptText("促销策略");
 		 
 		 first.valueProperty().addListener(new ChangeListener<String>() {
 			 @Override
@@ -240,6 +231,15 @@ public class HotelListPageController {
 			 {
 				 choiceTwo = newValue;
 				 initTable();
+			 }
+		});
+		 
+		 promotionList.valueProperty().addListener(new ChangeListener<String>() {
+			 @Override
+			 public void changed(ObservableValue ov, String oldValue, String newValue)
+			 {
+				 choiceThree = newValue;
+				 new PromotionPageUI(choiceThree);
 			 }
 		});
 	 }
@@ -327,15 +327,21 @@ public class HotelListPageController {
 				 {
 					 int seletedIndex=getTableRow().getIndex();
 					 selectedHotel = (HotelVO) list.getItems().get(seletedIndex);
-					 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
+					 if(selectedHotel.getLowestPrice() == 0)
 					 {
-						 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
+						 new MyDialog(stage, "抱歉，该酒店没有空房，您可查看该酒店信息", 1);
+					 }else
+					 {
+						 if(customerService.getRoomList(selectedHotel.getId(), checkinTime)!=null)
 						 {
-							defaultRoom = roomInfoVO;
-							break;
+							 for (RoomInfoVO roomInfoVO : customerService.getRoomList(selectedHotel.getId(), checkinTime).values())
+							 {
+								defaultRoom = roomInfoVO;
+								break;
+							 }
 						 }
+						 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom,userVO,checkinTime));
 					 }
-					 stage.setScene(new MakeOrderPage(new Group(), stage, hotelListPageScene, selectedHotel, defaultRoom,userVO,checkinTime));
 				 }else
 				 {
 					 new MyDialog(stage, "请先登录", 0);

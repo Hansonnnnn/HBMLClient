@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.FirstPageUIController">
    <children>
-      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" styleClass="loginButtonColor" AnchorPane.leftAnchor="0.0">
+      <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="881.0" spacing="30.0" styleClass="topAndRightColor" AnchorPane.leftAnchor="0.0">
          <padding>
             <Insets left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -27,7 +27,7 @@
             <Insets left="20.0" />
          </opaqueInsets>
       </HBox>
-      <VBox alignment="CENTER" layoutX="877.0" prefHeight="628.0" prefWidth="124.0" spacing="20.0" styleClass="loginButtonColor">
+      <VBox alignment="CENTER" layoutX="877.0" prefHeight="628.0" prefWidth="124.0" spacing="20.0" styleClass="topAndRightColor">
          <children>
             <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="115.0" prefWidth="91.0">
                <graphic>
@@ -39,7 +39,7 @@
                </graphic>
                <styleClass>
                   <String fx:value="transButton" />
-                  <String fx:value="buttonBorder" />
+                  <String fx:value="rightFourButton" />
                </styleClass></Button>
             <Button fx:id="orderButton" mnemonicParsing="false" onAction="#orderPartAction" prefHeight="117.0" prefWidth="82.0">
                <graphic>
@@ -51,7 +51,7 @@
                </graphic>
                <styleClass>
                   <String fx:value="transButton" />
-                  <String fx:value="buttonBorder" />
+                  <String fx:value="rightFourButton" />
                </styleClass></Button>
             <Button fx:id="commentButton" mnemonicParsing="false" onAction="#commentPartAction" prefHeight="117.0" prefWidth="82.0">
                <graphic>
@@ -63,7 +63,7 @@
                </graphic>
                <styleClass>
                   <String fx:value="transButton" />
-                  <String fx:value="buttonBorder" />
+                  <String fx:value="rightFourButton" />
                </styleClass></Button>
             <Button fx:id="personalInfoButton" mnemonicParsing="false" onAction="#personalInfoPartAction" prefHeight="117.0" prefWidth="82.0">
                <graphic>
@@ -75,7 +75,7 @@
                </graphic>
                <styleClass>
                   <String fx:value="transButton" />
-                  <String fx:value="buttonBorder" />
+                  <String fx:value="rightFourButton" />
                </styleClass></Button>
          </children>
       </VBox>
@@ -209,7 +209,7 @@
          </graphic>
          <styleClass>
             <String fx:value="transButton" />
-            <String fx:value="grayBorder" />
+            <String fx:value="rightFourButton" />
             <String fx:value="loginButtonColor" />
          </styleClass></Button>
    </children>

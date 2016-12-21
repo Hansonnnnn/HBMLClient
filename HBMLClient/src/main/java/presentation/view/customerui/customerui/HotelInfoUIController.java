@@ -127,7 +127,14 @@ public class HotelInfoUIController
 					 {
 						 int selectedIndex = getTableRow().getIndex();
 						 selectedRoom = (RoomInfoVO)list.getItems().get(selectedIndex);
-						 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom,userVO, checkinTime));
+						 if(selectedRoom.getRoomInfoID() == 0)
+						 {
+							 new MyDialog(stage, "抱歉，该房型无房间", 1);
+						 }else
+						 {
+							 stage.setScene(new MakeOrderPage(new Group(), stage, hotelInfoPageScene, hotelVO, selectedRoom,userVO, checkinTime));
+						 }
+						 
 					 }else
 					 {
 						 new MyDialog(stage, "请先登录", 0);

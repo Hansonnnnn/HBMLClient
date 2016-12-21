@@ -217,7 +217,7 @@
 }
 
 .topAndRightColor{
-	-fx-background-color:#104E8B;
+	-fx-background-color:#1296db;
 }
 .centerColor{
 	-fx-background-color:#FFFFFF;
@@ -230,3 +230,41 @@
 .loginButtonColor{
 	-fx-background-color:#1296db;
 }
+.loginButtonColor:hover{
+	-fx-background-color:#1296db;
+}
+
+.seekButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+.seekButton:hover{
+    -fx-text-fill: #0080FF;
+}
+
+.rightFourButton{
+	-fx-background-color:#1296db;
+}
+.rightFourButton:hover{
+	-fx-border-style:solid;
+	-fx-border-size:10px;
+	-fx-background-color:#C6E2FF;
+	-fx-border-radius:4px;
+}
+
+.personalPageFourButton{
+	-fx-background-color: transparent;
+	-fx-text-fill: #ffffff;
+}
+.personalPageFourButton:hover{
+	-fx-border-style:solid;
+	fx-border-color:#FFFFFF;
+	-fx-border-size:10px;
+	-fx-background-color:#C6E2FF;
+	-fx-border-radius:4px;
+}
+
+.blueLabel{
+	-fx-background-color:#0080FF;
+}
+

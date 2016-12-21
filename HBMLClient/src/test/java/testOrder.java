@@ -27,11 +27,11 @@ public class testOrder {
 
 	public static void main(String[] args) {
 		ClientRunner clientRunner = new ClientRunner();
-		/*OrderCustomerService orderCustomerService = new OrderCustomerServiceImpl();
+		OrderCustomerService orderCustomerService = new OrderCustomerServiceImpl();
 		Map<Integer, OrderVO> map = orderCustomerService.getAbnormalOrderList(1);
 		for (OrderVO orderVO : map.values()) {
 			System.out.println(orderVO);
-		}*/
+		}
 		
 		/*
 		/*RoomInfoCustomerService roominfoCustomerService = new RoomInfoCustomerServiceImpl();
@@ -52,12 +52,5 @@ public class testOrder {
 		}*/
 		
 		
-		UserStaffService userStaffService = new UserStaffImpl();
-		try {
-			System.out.println(userStaffService.getUserData(6).getUserType());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

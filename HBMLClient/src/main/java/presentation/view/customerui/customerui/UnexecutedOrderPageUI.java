@@ -20,8 +20,6 @@ public class UnexecutedOrderPageUI extends VBox
 				e.printStackTrace();
 			}
 			
-//			OrderFirstPageUIFromFirstPageController controller = fxmlLoader.getController();
-//			controller.initUnexecutedOrderPart();
 			UnexecutedOrderPageController controller = fxmlLoader.getController();
 			controller.init(stage,userID);
 		}
