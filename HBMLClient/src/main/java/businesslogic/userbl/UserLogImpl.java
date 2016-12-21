@@ -17,7 +17,7 @@ public class UserLogImpl implements UserLogService{
         userHelper=new UserHelper();
     }
     @Override
-    public ResultMessage login(String accountName, String pwd) throws Exception {
+    public ResultMessage login(String accountName, String pwd){
 
         return userHelper.login(accountName,pwd);
 

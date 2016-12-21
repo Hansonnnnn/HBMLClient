@@ -3,38 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="af01a64f-959d-4c60-bebe-da25a63b9d27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/HBMLClient/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditCustomerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/CreditWebMarketerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/creditbl/helper/CreditHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionCustomerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionStaffImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/PromotionWebMarketerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/helper/PromotionHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/promotionbl/helper/PromotionHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserCustomerImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserLogImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserLogImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserStaffImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/UserWebMarketerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/helper/UserHelper.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/userbl/helper/UserHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogic/utility/TransferImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/TransferService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/TransferService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditCustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/creditblservice/CreditWebMarketerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionCustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionStaffService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/promotionblservice/PromotionWebMarketerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserCustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserLogService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserLogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserStaffService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebManagerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/businesslogicservice/userblservice/UserWebMarketerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/CreditDao.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/CreditDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/PromotionDao.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/PromotionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/UserDao.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/message/ResultMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/main/java/rmi/ClientRunner.java" afterPath="$PROJECT_DIR$/HBMLClient/src/main/java/rmi/ClientRunner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_BL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" afterPath="$PROJECT_DIR$/HBMLClient/src/test/test_Alex_User_BL.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,6 +111,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -513,9 +487,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1109,7 +1081,8 @@
       <workItem from="1482234245968" duration="187000" />
       <workItem from="1482235450132" duration="2168000" />
       <workItem from="1482315502145" duration="20000" />
-      <workItem from="1482317587926" duration="9000" />
+      <workItem from="1482317587926" duration="410000" />
+      <workItem from="1482318684247" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="commit &quot;Debug_King&quot; ver 0.1&#10;//huge numbers of bugs, come and help me !!!!">
       <created>1481641046519</created>
@@ -1300,11 +1273,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482235516753</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="commit 0.3.2&#10;//modify user,promotion,credit module&#10;//abandon throw and apply try ... catch instead">
+      <created>1482317640071</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1482317640071</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17976000" />
+    <option name="totallyTimeSpent" value="18394000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1383,7 +1363,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.1&#10;//think twice before pulling and pushing&#10;//roughly fix all the bugs, maybe it hurts the presentation layer&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.2&#10;//test&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.3&#10;determine the blservice interfaces&#10;modify uservo&#10;//now uservo and userpo hold different portrait types&#10;" />
     <MESSAGE value="commit &quot;Debug_King&quot; ver 0.1.4&#10;modify uservo, promotionvo and creditvo&#10;now the vos can be of use&#10;" />
@@ -1408,7 +1387,8 @@
     <MESSAGE value="commit ver 0.2.9.2&#10;//temp commit&#10;&#10;&#10;" />
     <MESSAGE value="commit 0.3&#10;//modify user module&#10;add login/logout logic" />
     <MESSAGE value="commit 0.3.1&#10;//modify user module&#10;add userlogbl&amp;userlogservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 0.3.1&#10;//modify user module&#10;add userlogbl&amp;userlogservice" />
+    <MESSAGE value="commit 0.3.2&#10;//modify user,promotion,credit module&#10;//abandon throw and apply try ... catch instead" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 0.3.2&#10;//modify user,promotion,credit module&#10;//abandon throw and apply try ... catch instead" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
