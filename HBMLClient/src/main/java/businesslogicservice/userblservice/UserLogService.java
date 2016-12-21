@@ -13,14 +13,14 @@ public interface UserLogService {
      * @param pwd
      * @return成功，失败(密码错误)，不存在
      */
-    public ResultMessage login(String accountName, String pwd)throws Exception;
+    public ResultMessage login(String accountName, String pwd);
 
     /**
      *
      * @param vo
      * @return如果返回failure,提示用户名已存在；如果是success,可以调用登陆方法
      */
-    public ResultMessage signup(UserVO vo)throws Exception;
+    public ResultMessage signup(UserVO vo);
 
     /**
      *
@@ -28,9 +28,9 @@ public interface UserLogService {
      * @return  如果返回failure,提示用户已经登出；如果是notexist,提示无此用户
      * @throws Exception
      */
-    public ResultMessage logout(String accountName) throws Exception;
+    public ResultMessage logout(String accountName);
 
-    public UserVO getUserData(String accountName)throws Exception;
+    public UserVO getUserData(String accountName);
 
-    public UserVO getUserData(int userID)throws Exception;
+    public UserVO getUserData(int userID);
 }

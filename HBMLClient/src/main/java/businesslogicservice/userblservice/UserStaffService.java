@@ -9,7 +9,7 @@ import vo.UserVO;
  */
 public interface UserStaffService {
 
-    public UserVO getUserData(int userID)throws Exception;
+    public UserVO getUserData(int userID);
 
-    public UserVO getUserData(String accountName)throws Exception;
+    public UserVO getUserData(String accountName);
 }

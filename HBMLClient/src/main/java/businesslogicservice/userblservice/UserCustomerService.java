@@ -12,9 +12,9 @@ public interface UserCustomerService {
      * @param userID
      * @return
      */
-    public UserVO getUserData(int userID)throws Exception;
+    public UserVO getUserData(int userID);
 
-    public UserVO getUserData(String accountName)throws Exception;
+    public UserVO getUserData(String accountName);
 
     /**
      *
@@ -22,5 +22,5 @@ public interface UserCustomerService {
      * @return  成功返回ResultMessage.success,如果vo信息矛盾返回ResultMessage.failure
      * @throws Exception
      */
-    public ResultMessage modifyUser(UserVO vo)throws Exception;
+    public ResultMessage modifyUser(UserVO vo);
 }

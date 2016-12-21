@@ -39,9 +39,16 @@ public class CreditHelper {
 
 
 
-    public Map<Integer, CreditRecordVO> getCreditRecordList(int userID) throws Exception{
+    public Map<Integer, CreditRecordVO> getCreditRecordList(int userID){
 
-        Map<Integer, CreditRecordPO> map=creditDao.getCreditRecordList(userID);
+        Map<Integer, CreditRecordPO> map= null;
+        try {
+            map = creditDao.getCreditRecordList(userID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot get credit record!!!");
+            return null;
+        }
         creditRecordList=new LinkedHashMap<>();
         for(int key:map.keySet()){
             creditRecordList.put(key,creditTransferService.poToVo(map.get(key)));
@@ -51,39 +58,90 @@ public class CreditHelper {
     }
 
 
-    public long getCreditValue(int userID)throws Exception{
+    public long getCreditValue(int userID){
 
-        UserPO userPO=userDao.getUserData(userID);
+        UserPO userPO= null;
+        try {
+            userPO = userDao.getUserData(userID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot get user data!!!");
+            return -50001;
+        }
         if(userPO!=null&&userPO.getUserType().equals(UserType.Customer)){
-            return creditDao.getCreditValue(userID);
+            try {
+                return creditDao.getCreditValue(userID);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                System.out.println("cannot get credit value!!!");
+                return -50001;
+            }
         }else return -50001;
 
     }
 
 
-    public ResultMessage resumeCreditValue(int userID, long price, int type,int OrderID)throws Exception{
+    public ResultMessage resumeCreditValue(int userID, long price, int type,int OrderID){
 
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         if(type==0){
             price=price/2;
         }
         CreditRecordVO creditRecordVO=new CreditRecordVO(new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(2),price,OrderID);
-        long creditValue=creditDao.getCreditValue(userID);
+        long creditValue= 0;
+        try {
+            creditValue = creditDao.getCreditValue(userID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot get credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
         creditValue+=price;
-        creditDao.setCreditValue(userID,creditValue);
-        return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
+        try {
+            creditDao.setCreditValue(userID,creditValue);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot set credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
+        try {
+            return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot add credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
 
     }
 
 
-    public ResultMessage addCreditValue(int UserID,long value)throws Exception{
+    public ResultMessage addCreditValue(int UserID,long value){
 
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         CreditRecordVO creditRecordVO=new CreditRecordVO(UserID,new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
-        long creditValue=creditDao.getCreditValue(UserID);
+        long creditValue= 0;
+        try {
+            creditValue = creditDao.getCreditValue(UserID);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot get credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
         creditValue+=value;
-        creditDao.setCreditValue(UserID,creditValue);
-        return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
+        try {
+            creditDao.setCreditValue(UserID,creditValue);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot set credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
+        try {
+            return creditDao.addCreditRecord(creditTransferService.voToPo(creditRecordVO));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            System.out.println("cannot add credit value!!!");
+            return ResultMessage.sqlFailure;
+        }
 
     }
 

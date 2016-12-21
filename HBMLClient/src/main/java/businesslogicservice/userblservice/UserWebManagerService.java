@@ -9,9 +9,9 @@ import vo.UserVO;
  */
 public interface UserWebManagerService {
     //getPortrait获得Image对象
-    public UserVO getUserData(int userID)throws Exception;
+    public UserVO getUserData(int userID);
 
-    public UserVO getUserData(String accountName)throws Exception;
+    public UserVO getUserData(String accountName);
 
     /**
      *
@@ -19,9 +19,9 @@ public interface UserWebManagerService {
      * @return
      * @throws Exception
      */
-    public ResultMessage addUser(UserVO vo)throws Exception;
+    public ResultMessage addUser(UserVO vo);
 
-    public ResultMessage deleteUser(int userID)throws Exception;
+    public ResultMessage deleteUser(int userID);
 
-    public ResultMessage modifyUser(UserVO vo)throws Exception;
+    public ResultMessage modifyUser(UserVO vo);
 }

@@ -11,8 +11,8 @@ public interface CreditCustomerService {
 	 * @param userID
 	 * @return
 	 */
-	public long getCreditValue(int userID)throws Exception;
+	public long getCreditValue(int userID);
 
-	public Map<Integer, CreditRecordVO> getCreditRecordList(int userID)throws Exception;
+	public Map<Integer, CreditRecordVO> getCreditRecordList(int userID);
 
 }

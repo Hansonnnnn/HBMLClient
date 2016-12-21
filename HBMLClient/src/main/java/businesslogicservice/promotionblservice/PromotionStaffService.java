@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface PromotionStaffService {
 
-	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter)throws Exception;
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter);
 
 	public PromotionVO getPromotion(int promotionID);
 
@@ -17,9 +17,9 @@ public interface PromotionStaffService {
 	 * @param vo
 	 * @return
 	 */
-	public ResultMessage addHotelPromotion(PromotionVO vo)throws Exception;
+	public ResultMessage addHotelPromotion(PromotionVO vo);
 
-	public ResultMessage deleteHotelPromotion(int promotionID)throws Exception;
+	public ResultMessage deleteHotelPromotion(int promotionID);
 
-	public ResultMessage modifyHotelPromotion(PromotionVO vo)throws Exception;
+	public ResultMessage modifyHotelPromotion(PromotionVO vo);
 }

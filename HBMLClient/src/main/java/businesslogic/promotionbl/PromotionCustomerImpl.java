@@ -24,14 +24,14 @@ public class PromotionCustomerImpl implements PromotionCustomerService {
 
 
 	@Override
-	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter) throws Exception{
+	public Map<Integer, PromotionVO> getHotelPromotionList(PromotionFilter promotionFilter){
 
 		return promotionHelper.getHotelPromotionList(promotionFilter);
 
 	}
 
 	@Override
-	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter) throws Exception{
+	public Map<Integer, PromotionVO> getWebPromotionList(PromotionFilter promotionFilter){
 
 		return promotionHelper.getWebPromotionList(promotionFilter);
 
@@ -45,7 +45,7 @@ public class PromotionCustomerImpl implements PromotionCustomerService {
 	}
 
 	@Override
-	public SelectedPromotionVO getSelectedPromotion(OrderVO vo)throws Exception {
+	public SelectedPromotionVO getSelectedPromotion(OrderVO vo){
 		// TODO Auto-generated method stub
 		return promotionHelper.getSelectedPromotion(vo);
 

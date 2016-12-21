@@ -24,7 +24,7 @@ public class UserLogImpl implements UserLogService{
     }
 
     @Override
-    public ResultMessage signup(UserVO vo) throws Exception {
+    public ResultMessage signup(UserVO vo){
 
         ResultMessage resultMessage=userHelper.signup(vo);
         if(resultMessage.equals(ResultMessage.success)){
@@ -35,14 +35,14 @@ public class UserLogImpl implements UserLogService{
     }
 
     @Override
-    public ResultMessage logout(String accountName) throws Exception {
+    public ResultMessage logout(String accountName){
 
         return userHelper.logout(accountName);
 
     }
 
     @Override
-    public UserVO getUserData(int userID) throws Exception{
+    public UserVO getUserData(int userID){
 
         UserVO userVO=userHelper.getUserData(userID);
 
@@ -51,7 +51,7 @@ public class UserLogImpl implements UserLogService{
     }
 
     @Override
-    public UserVO getUserData(String accountName) throws Exception{
+    public UserVO getUserData(String accountName){
 
         UserVO userVO=userHelper.getUserData(accountName);
         return userVO;

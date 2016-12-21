@@ -36,13 +36,13 @@ public class TransferImpl implements TransferService{
 	}
 
 	@Override
-	public UserVO poToVo(UserPO po) throws Exception{
+	public UserVO poToVo(UserPO po){
 		UserVO userVO=new UserVO(po.getUserID(),po.getUserType(),po.getAccountName(),po.getPassword(),po.getName(),po.getContact(), po.getPortrait(),po.getCreditValue(),po.getMemberType(),po.getMemberInfo(),po.getRank(),po.getWorkid(),po.getHotelid());
 		return userVO;
 	}
 
 	@Override
-	public UserPO voToPo(UserVO vo) throws Exception{
+	public UserPO voToPo(UserVO vo){
 
 		UserPO userPO=new UserPO(vo.getUserID(),vo.getUserType(),vo.getAccountName(),vo.getPassword(),vo.getName(),vo.getContact(),vo.getPortrait(),vo.getCreditValue(),vo.getMemberType(),vo.getMemberInfo(),vo.getRank(),vo.getWorkid(),vo.getHotelid());
 		return userPO;

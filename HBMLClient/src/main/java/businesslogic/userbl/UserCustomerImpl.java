@@ -24,7 +24,7 @@ public class UserCustomerImpl implements UserCustomerService{
 
 
     @Override
-    public UserVO getUserData(int userID) throws Exception{
+    public UserVO getUserData(int userID){
 
         UserVO userVO=userHelper.getUserData(userID);
         if(userVO!=null){
@@ -36,7 +36,7 @@ public class UserCustomerImpl implements UserCustomerService{
     }
 
     @Override
-    public UserVO getUserData(String accountName) throws Exception{
+    public UserVO getUserData(String accountName){
 
         UserVO userVO=userHelper.getUserData(accountName);
         if(userVO!=null){
@@ -48,7 +48,7 @@ public class UserCustomerImpl implements UserCustomerService{
     }
 
     @Override
-    public ResultMessage modifyUser(UserVO vo) throws Exception{
+    public ResultMessage modifyUser(UserVO vo){
 
         if(!vo.getUserType().equals(UserType.Customer)) return ResultMessage.failure;
         UserVO oldInfo=userHelper.getUserData(vo.getAccountName());
