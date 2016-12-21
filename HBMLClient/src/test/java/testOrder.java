@@ -8,16 +8,21 @@ import org.junit.Test;
 
 import businesslogic.creditbl.CreditWebMarketerImpl;
 import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogic.orderbl.OrderStaffServiceImpl;
+import businesslogic.orderbl.OrderWebMarketerServiceImpl;
 import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
 import businesslogic.userbl.UserCustomerImpl;
 import businesslogic.userbl.UserStaffImpl;
 import businesslogicservice.creditblservice.CreditWebMarketerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
+import businesslogicservice.orderblservice.OrderStaffService;
+import businesslogicservice.orderblservice.OrderWebMarketerService;
 import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
 import businesslogicservice.userblservice.UserCustomerService;
 import businesslogicservice.userblservice.UserStaffService;
 import dao.CreditDao;
 import rmi.ClientRunner;
+import vo.AppealVO;
 import vo.HotelVO;
 import vo.OrderVO;
 import vo.RankVO;
@@ -52,12 +57,23 @@ public class testOrder {
 		}*/
 		
 		
-		UserStaffService userStaffService = new UserStaffImpl();
+		/*UserStaffService userStaffService = new UserStaffImpl();
 		try {
 			System.out.println(userStaffService.getUserData(6).getUserType());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}*/
+		
+		/*OrderWebMarketerService orderWebMarketerService = new OrderWebMarketerServiceImpl();
+		Map<Integer, AppealVO> map = orderWebMarketerService.getAppealOrderList(8);
+		for (AppealVO appealVO : map.values()) {
+			System.out.println(appealVO);
+		}*/
+		
+		OrderStaffService orderStaffService = new OrderStaffServiceImpl();
+		for (OrderVO orderVO :orderStaffService.getExecutedOrderList(120).values() ) {
+			System.out.println(orderVO);
 		}
 	}
 }
