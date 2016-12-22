@@ -30,7 +30,6 @@ public class CreditHelper {
     TransferService creditTransferService;
 
     public CreditHelper() {
-
         userDao= ClientRunner.remoteHelper.getUserDao();
         creditDao= ClientRunner.remoteHelper.getCreditDao();
         creditTransferService=new TransferImpl();
@@ -59,7 +58,6 @@ public class CreditHelper {
 
 
     public long getCreditValue(int userID){
-
         UserPO userPO= null;
         try {
             userPO = userDao.getUserData(userID);

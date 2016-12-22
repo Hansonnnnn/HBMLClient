@@ -68,7 +68,6 @@ public class HotelInfoUIController {
     private String cityName;
     private int regionID;
     private HotelStaffService hotelStaffService;
-    private HotelWebManagerService hotelWebManagerService;
     private HotelRegionHelper hotelRegionHelper;
     private File file;
     private ArrayList<File> fileList;
@@ -120,7 +119,7 @@ public class HotelInfoUIController {
         addImageButton.setDisable(true);
         System.out.println(regionBox.getValue());
         int regionID=regionNameMap.get(regionBox.getValue());
-        HotelVO hotelVO=hotelWebManagerService.getHotelInfo(userVO.getHotelid());
+        HotelVO hotelVO=hotelStaffService.getHotelInfo(userVO.getHotelid());
         fileList.add(file);
         HotelVO newHotelVO=new HotelVO(hotelNameTextField.getText(),hotelVO.getId(),starComboBox.getValue(),
                 hotelAddressTextField.getText(),regionID,hotelIntroTextArea.getText(),hotelVO.getFacility(),fileList,

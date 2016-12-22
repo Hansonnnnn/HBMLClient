@@ -24,6 +24,7 @@ public class CreditCustomerServiceTest {
 		long i =0;
 		try {
 			i = creditCustomerService.getCreditValue(1);
+			System.out.println(i);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
