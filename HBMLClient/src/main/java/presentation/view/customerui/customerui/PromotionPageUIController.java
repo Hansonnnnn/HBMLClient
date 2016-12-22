@@ -24,7 +24,7 @@ public class PromotionPageUIController
 	    @FXML private TableColumn<PromotionVO, Boolean> startTimeColumn;
 	    @FXML private TableColumn<PromotionVO, Boolean> endTimeColumn;
 	    @FXML private TableColumn<PromotionVO, Boolean> conditionsColumn;
-	    @FXML private TableColumn<PromotionVO, Boolean> contentColoumn;
+	    @FXML private TableColumn<PromotionVO, Boolean> contentColumn;
 	    @FXML private Button hotelPromotionButton;
 	    @FXML private Button webPromotionButton;
 	    @FXML private Label sliderLabel;
@@ -39,7 +39,7 @@ public class PromotionPageUIController
 				startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startDateString"));
 				endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endDateString"));
 				conditionsColumn.setCellValueFactory(new PropertyValueFactory<>("requirement"));
-				contentColoumn.setCellValueFactory(new PropertyValueFactory<>("content"));
+				contentColumn.setCellValueFactory(new PropertyValueFactory<>("content"));
 				customerService = new PromotionCustomerImpl();
 				filter = new PromotionFilter();
 				if(type.equals("酒店促销优惠"))
@@ -59,9 +59,9 @@ public class PromotionPageUIController
 				}else
 				{
 					try {
-						if(customerService.getWebPromotionList(null)!=null)
+						if(customerService.getWebPromotionList(filter)!=null)
 						{
-							for (PromotionVO promotionVO : customerService.getWebPromotionList(null).values())
+							for (PromotionVO promotionVO : customerService.getWebPromotionList(filter).values())
 							{
 								promotionData.add(promotionVO);
 							}

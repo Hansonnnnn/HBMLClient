@@ -153,4 +153,14 @@ public class OrderVO {
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
+
+	@Override
+	public String toString() {
+		return "OrderVO [orderID=" + orderID + ", userID=" + userID + ", hotelID=" + hotelID + ", roomInfoID="
+				+ roomInfoID + ", orderState=" + orderState + ", hotelName=" + hotelName + ", generateTime="
+				+ generateTime + ", cancelTime=" + cancelTime + ", executeDDl=" + executeDDl + ", checkinTime="
+				+ checkinTime + ", checkoutTime=" + checkoutTime + ", number=" + number + ", hasChild=" + hasChild
+				+ ", price=" + price + "]";
+	}
+	
 }

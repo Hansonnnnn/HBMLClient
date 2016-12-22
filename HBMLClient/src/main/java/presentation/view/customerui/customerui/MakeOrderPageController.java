@@ -4,7 +4,9 @@ import java.util.Date;
 
 
 import businesslogic.orderbl.OrderCustomerServiceImpl;
+import businesslogic.promotionbl.PromotionCustomerImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
+import businesslogicservice.promotionblservice.PromotionCustomerService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -47,6 +49,7 @@ public class MakeOrderPageController
 		private ObservableList<String> hasChildList;
 		private int number;
 		private String hasChild;
+		private PromotionCustomerService customerService2;
 		
 		public void init(Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO,UserVO userVO, Date checkinTime)
 		{
@@ -57,6 +60,7 @@ public class MakeOrderPageController
 			this.userVO = userVO;
 			this.checkinTime = checkinTime;
 			customerService = new OrderCustomerServiceImpl();
+			customerService2 = new PromotionCustomerImpl();
 			number = 0;
 			hasChild = "";
 			initWholePage();
@@ -88,7 +92,7 @@ public class MakeOrderPageController
 		@FXML
 		private void makeOrder()
 		{
-			new MyDialog(stage, "生成订单成功，请到订单列表查看该订单", 2);
+			
 			numberBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 				@Override
@@ -116,5 +120,6 @@ public class MakeOrderPageController
 			OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
 					null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
 			customerService.addOrder(orderVO);
+			new MyDialog(stage, "生成订单成功，请到订单列表查看该订单", 2);
 		}
 }

@@ -53,7 +53,7 @@
                      <children>
                         <ComboBox fx:id="first" prefWidth="333.0" promptText="推荐排序" />
                         <ComboBox fx:id="second" prefWidth="333.0" />
-                        <ComboBox fx:id="third" prefWidth="333.0" />
+                        <ComboBox fx:id="promotionList" prefWidth="333.0" />
                      </children>
                   </HBox>
                   <TableView fx:id="list" prefHeight="545.0" prefWidth="996.0">

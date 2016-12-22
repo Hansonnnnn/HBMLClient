@@ -208,10 +208,7 @@ public class HotelListPageController {
 		 {
 			 second.getItems().addAll(optionsTwo);
 		 }
-		 if(promotionList.getItems().isEmpty())
-		 {
-			 promotionList.getItems().addAll(optionsThree);
-		 }
+		 promotionList.getItems().addAll(optionsThree);
 		
 		 first.setPromptText("排序方式");
 		 second.setPromptText("星级筛选");
@@ -239,7 +236,7 @@ public class HotelListPageController {
 			 public void changed(ObservableValue ov, String oldValue, String newValue)
 			 {
 				 choiceThree = newValue;
-				 new PromotionPageUI(choiceThree);
+				 new PromotionPageUI(choiceThree).showAndWait();
 			 }
 		});
 	 }
