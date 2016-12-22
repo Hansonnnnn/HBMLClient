@@ -241,8 +241,9 @@ public class HotelInfoUIController {
         regionBox.setValue(regionVO.getRegionName());
         hotelAddressTextField.setText(hotelVO.getAddress());
         hotelIntroTextArea.setText(hotelVO.getIntroduction());
+ 
         if(hotelVO.getEnvironment().size()>0){
-            Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
+           Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer2/HBMSServer"));
             hotelImageView.setImage(image); 
         }
     }
