@@ -14,7 +14,6 @@ import businesslogic.hotelInfobl.HotelWebManagerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelStaffService;
-import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -82,7 +81,6 @@ public class HotelInfoUIController {
         }
         starComboBox.setItems(starData);
         hotelStaffService=new HotelStaffImpl();
-//        hotelWebManagerService=new HotelWebManagerImpl();
         hotelRegionHelper=new RegionHelper();
         initProvinceBox();
         initComboBox();
@@ -243,8 +241,9 @@ public class HotelInfoUIController {
         regionBox.setValue(regionVO.getRegionName());
         hotelAddressTextField.setText(hotelVO.getAddress());
         hotelIntroTextArea.setText(hotelVO.getIntroduction());
-        Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
-        hotelImageView.setImage(image);
-
+        if(hotelVO.getEnvironment().size()>0){
+            Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
+            hotelImageView.setImage(image); 
+        }
     }
 }
