@@ -66,14 +66,17 @@ public class WorkerLoginUIController {
                 }
                 if(userVO.getUserType().equals(UserType.Staff)){
                     stage.setScene(new HotelStaffUI(new Group(),stage,thisScene,userVO));
+                    centerStage(stage);
 //                    workerAccountTextField.setText("");
 //                    workerPasswordTextField.setText("");
                 }else if(userVO.getUserType().equals(UserType.WebManager)){
                     stage.setScene(new WebManagerUI(new Group(),stage,thisScene,userVO));
+                    centerStage(stage);
 //                    workerAccountTextField.setText("");
 //                    workerPasswordTextField.setText("");
                 }else if(userVO.getUserType().equals(UserType.WebMarketer)){
                     stage.setScene(new WebMarketerUI(new Group(),stage,thisScene,userVO));
+                    centerStage(stage);
 //                    workerAccountTextField.setText("");
 //                    workerPasswordTextField.setText("");
                 }

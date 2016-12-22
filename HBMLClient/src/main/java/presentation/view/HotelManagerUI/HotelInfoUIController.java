@@ -14,7 +14,6 @@ import businesslogic.hotelInfobl.HotelWebManagerImpl;
 import businesslogic.hotelInfobl.helper.RegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelRegionHelper;
 import businesslogicservice.hotelinfoblservice.HotelStaffService;
-import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -68,7 +67,6 @@ public class HotelInfoUIController {
     private String cityName;
     private int regionID;
     private HotelStaffService hotelStaffService;
-    private HotelWebManagerService hotelWebManagerService;
     private HotelRegionHelper hotelRegionHelper;
     private File file;
     private ArrayList<File> fileList;
@@ -83,7 +81,6 @@ public class HotelInfoUIController {
         }
         starComboBox.setItems(starData);
         hotelStaffService=new HotelStaffImpl();
-//        hotelWebManagerService=new HotelWebManagerImpl();
         hotelRegionHelper=new RegionHelper();
         initProvinceBox();
         initComboBox();
@@ -120,7 +117,7 @@ public class HotelInfoUIController {
         addImageButton.setDisable(true);
         System.out.println(regionBox.getValue());
         int regionID=regionNameMap.get(regionBox.getValue());
-        HotelVO hotelVO=hotelWebManagerService.getHotelInfo(userVO.getHotelid());
+        HotelVO hotelVO=hotelStaffService.getHotelInfo(userVO.getHotelid());
         fileList.add(file);
         HotelVO newHotelVO=new HotelVO(hotelNameTextField.getText(),hotelVO.getId(),starComboBox.getValue(),
                 hotelAddressTextField.getText(),regionID,hotelIntroTextArea.getText(),hotelVO.getFacility(),fileList,
@@ -244,8 +241,9 @@ public class HotelInfoUIController {
         regionBox.setValue(regionVO.getRegionName());
         hotelAddressTextField.setText(hotelVO.getAddress());
         hotelIntroTextArea.setText(hotelVO.getIntroduction());
-        Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
-        hotelImageView.setImage(image);
-
+        if(hotelVO.getEnvironment().size()>0){
+            Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
+            hotelImageView.setImage(image); 
+        }
     }
 }
