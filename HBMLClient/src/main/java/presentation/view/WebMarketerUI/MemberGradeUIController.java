@@ -116,14 +116,13 @@ public class MemberGradeUIController {
         discountComboBox5.setDisable(true);
         discountComboBox7.setDisable(true);
         Map<Integer,RankVO> newMap=new LinkedHashMap<>();
-        newMap.put(0,null);
         newMap.put(1,new RankVO(1,discountComboBox1.getValue(),Integer.parseInt(creditTextField1.getText())));
         newMap.put(2,new RankVO(2,discountComboBox2.getValue(),Integer.parseInt(creditTextField2.getText())));
-        newMap.put(1,new RankVO(3,discountComboBox3.getValue(),Integer.parseInt(creditTextField3.getText())));
-        newMap.put(1,new RankVO(4,discountComboBox4.getValue(),Integer.parseInt(creditTextField4.getText())));
-        newMap.put(1,new RankVO(5,discountComboBox5.getValue(),Integer.parseInt(creditTextField5.getText())));
-        newMap.put(1,new RankVO(6,discountComboBox6.getValue(),Integer.parseInt(creditTextField6.getText())));
-        newMap.put(1,new RankVO(7,discountComboBox7.getValue(),Integer.parseInt(creditTextField7.getText())));
+        newMap.put(3,new RankVO(3,discountComboBox3.getValue(),Integer.parseInt(creditTextField3.getText())));
+        newMap.put(4,new RankVO(4,discountComboBox4.getValue(),Integer.parseInt(creditTextField4.getText())));
+        newMap.put(5,new RankVO(5,discountComboBox5.getValue(),Integer.parseInt(creditTextField5.getText())));
+        newMap.put(6,new RankVO(6,discountComboBox6.getValue(),Integer.parseInt(creditTextField6.getText())));
+        newMap.put(7,new RankVO(7,discountComboBox7.getValue(),Integer.parseInt(creditTextField7.getText())));
         creditWebMarketerService.modifyRankRule(newMap);
     }
 
