@@ -7,8 +7,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import presentation.view.application.MyDialog;
 import vo.RankVO;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -23,13 +26,13 @@ public class MemberGradeUIController {
     @FXML private TextField creditTextField5;
     @FXML private TextField creditTextField6;
     @FXML private TextField creditTextField7;
-    @FXML private ComboBox discountComboBox1;
-    @FXML private ComboBox discountComboBox6;
-    @FXML private ComboBox discountComboBox2;
-    @FXML private ComboBox discountComboBox3;
-    @FXML private ComboBox discountComboBox4;
-    @FXML private ComboBox discountComboBox5;
-    @FXML private ComboBox discountComboBox7;
+    @FXML private ComboBox<Integer> discountComboBox1;
+    @FXML private ComboBox<Integer> discountComboBox6;
+    @FXML private ComboBox<Integer> discountComboBox2;
+    @FXML private ComboBox<Integer> discountComboBox3;
+    @FXML private ComboBox<Integer> discountComboBox4;
+    @FXML private ComboBox<Integer> discountComboBox5;
+    @FXML private ComboBox<Integer> discountComboBox7;
 
     private CreditWebMarketerService creditWebMarketerService;
     private ObservableList discountData;
@@ -112,7 +115,16 @@ public class MemberGradeUIController {
         discountComboBox4.setDisable(true);
         discountComboBox5.setDisable(true);
         discountComboBox7.setDisable(true);
-
+        Map<Integer,RankVO> newMap=new LinkedHashMap<>();
+        newMap.put(0,null);
+        newMap.put(1,new RankVO(1,discountComboBox1.getValue(),Integer.parseInt(creditTextField1.getText())));
+        newMap.put(2,new RankVO(2,discountComboBox2.getValue(),Integer.parseInt(creditTextField2.getText())));
+        newMap.put(1,new RankVO(3,discountComboBox3.getValue(),Integer.parseInt(creditTextField3.getText())));
+        newMap.put(1,new RankVO(4,discountComboBox4.getValue(),Integer.parseInt(creditTextField4.getText())));
+        newMap.put(1,new RankVO(5,discountComboBox5.getValue(),Integer.parseInt(creditTextField5.getText())));
+        newMap.put(1,new RankVO(6,discountComboBox6.getValue(),Integer.parseInt(creditTextField6.getText())));
+        newMap.put(1,new RankVO(7,discountComboBox7.getValue(),Integer.parseInt(creditTextField7.getText())));
+        creditWebMarketerService.modifyRankRule(newMap);
     }
 
 }
