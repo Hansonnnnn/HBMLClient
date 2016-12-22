@@ -1,4 +1,10 @@
+import businesslogic.promotionbl.PromotionWebMarketerImpl;
+import businesslogicservice.promotionblservice.PromotionWebMarketerService;
+import model.PromotionFilter;
 import rmi.ClientRunner;
+import vo.PromotionVO;
+
+import java.util.Map;
 
 /**
  * Created by alex on 12/18/16.
@@ -11,7 +17,7 @@ public class test_Alex_BL {
     static void test_User_BL()throws Exception{
         //test_alex_user_bl.signup();
         //test_alex_user_bl.login();
-        test_alex_user_bl.getUserInfo();
+        //test_alex_user_bl.getUserInfo();
         //test_alex_user_bl.delete();
         //test_alex_user_bl.logout();
     }
@@ -29,6 +35,14 @@ public class test_Alex_BL {
         //test_Alex_Promotion_BL.getSelectedPromotion();
     }
 
+    static void test_in_test()throws Exception{
+        Map<Integer, PromotionVO> map;
+        PromotionFilter promotionFilter=new PromotionFilter();
+        PromotionWebMarketerService promotionWebMarketerService=new PromotionWebMarketerImpl();
+        map=promotionWebMarketerService.getWebPromotionList(promotionFilter);
+        System.out.println(map.size());
+    }
+
 
     public static void main(String args[]){
         ClientRunner clientRunner = new ClientRunner();
@@ -36,6 +50,7 @@ public class test_Alex_BL {
             test_User_BL();
             test_Credit_BL();
             test_Promotion_BL();
+            test_in_test();
         }catch(Exception ex){
             ex.printStackTrace();
         }
