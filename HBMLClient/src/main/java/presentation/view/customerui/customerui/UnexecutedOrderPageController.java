@@ -112,8 +112,10 @@ public class UnexecutedOrderPageController
 			cancelOrderButton.setOnAction((ActionEvent e)->{
 				int selectedIndex = getTableRow().getIndex();
 				OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
+				
 				service.revokeOrder(orderVO.getOrderID());
 				new MyDialog(stage, "撤销成功", 2);
+				initTable();
 			});
 		}
 		

@@ -35,7 +35,7 @@
             <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="351.0" spacing="30.0">
                <children>
                   <Label text="简介" textFill="#155ae4" />
-                  <Label fx:id="introduceLabel" text="Label" />
+                  <Label fx:id="introduceLabel" text="Label" wrapText="true" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -44,7 +44,7 @@
             <HBox alignment="CENTER_LEFT" prefHeight="146.0" prefWidth="351.0" spacing="30.0">
                <children>
                   <Label text="设施" textFill="#155ae4" />
-                  <Label fx:id="facilityLabel" text="Label" />
+                  <Label fx:id="facilityLabel" text="Label" wrapText="true" />
                </children>
                <padding>
                   <Insets left="20.0" />

@@ -10,12 +10,11 @@
       <TableView fx:id="list" prefHeight="624.0" prefWidth="848.0">
          <columns>
             <TableColumn fx:id="idColumn" prefWidth="120.0" text="订单编号" />
-            <TableColumn fx:id="generateTimeColumn" prefWidth="120.0" text="生成时间" />
-            <TableColumn fx:id="cancelTimeColumn" prefWidth="120.0" text="撤销时间" />
-            <TableColumn fx:id="executeDDLColumn" prefWidth="120.0" text="最晚执行时间" />
-            <TableColumn fx:id="priceColumn" prefWidth="120.0" text="价格" />
-            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="118.0" />
-            <TableColumn fx:id="cancelOrderButtonColumn" prefWidth="128.155029296875" />
+            <TableColumn fx:id="generateTimeColumn" prefWidth="203.9725112915039" text="生成时间" />
+            <TableColumn fx:id="executeDDLColumn" prefWidth="209.02755737304688" text="最晚执行时间" />
+            <TableColumn fx:id="priceColumn" prefWidth="101.697998046875" text="价格" />
+            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="106.98583984375" />
+            <TableColumn fx:id="cancelOrderButtonColumn" prefWidth="103.8487548828125" />
          </columns>
       </TableView>
    </children>

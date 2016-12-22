@@ -61,6 +61,12 @@
                         <TextField fx:id="numberField" prefHeight="35.0" prefWidth="503.0" />
                      </children>
                   </HBox>
+                  <Button fx:id="enrollButton" mnemonicParsing="false" onAction="#enroll" prefHeight="37.0" prefWidth="114.0" text="注册" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass>
+                  </Button>
                </children>
             </VBox>
          </children>

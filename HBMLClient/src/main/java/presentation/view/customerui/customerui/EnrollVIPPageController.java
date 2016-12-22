@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import presentation.view.application.MyDialog;
 import vo.UserVO;
 
 public class EnrollVIPPageController {
@@ -16,6 +17,7 @@ public class EnrollVIPPageController {
 	@FXML private DatePicker birthPicker;
 	@FXML private TextField numberField;
 	@FXML private Button enrollButton;
+	
 	
 	private Stage stage;
 	private Scene preScene;
@@ -32,5 +34,11 @@ public class EnrollVIPPageController {
 	private void back()
 	{
 		stage.setScene(preScene);
+	}
+	
+	@FXML 
+	private void enroll()
+	{
+		new MyDialog(stage, "注册会员成功！", 2);
 	}
 }

@@ -34,6 +34,7 @@ public class MakeOrderPageController
 		@FXML private Label checkoutTimeLabel;
 		@FXML private Label executeDDLLabel;
 		@FXML private Label promotionLabel;
+		@FXML private Label newPriceLabel;
 		@FXML private Button makeOrderButton;
 		@FXML private ChoiceBox<Integer> numberBox;
 		@FXML private ChoiceBox<String> hasChildBox;
@@ -50,6 +51,7 @@ public class MakeOrderPageController
 		private int number;
 		private String hasChild;
 		private PromotionCustomerService customerService2;
+		private OrderVO orderVO;
 		
 		public void init(Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO,UserVO userVO, Date checkinTime)
 		{
@@ -87,39 +89,57 @@ public class MakeOrderPageController
 			hasChildList = FXCollections.observableArrayList();
 			hasChildList.addAll(hasChild);
 			hasChildBox.setItems(hasChildList);
+			orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted, 
+					new Date(), null, new Date(checkinTime.getTime()+18*60*60*1000),null, null, 2, 0, roomInfoVO.getDefaultPrice());
+			if(customerService2.getSelectedPromotion(orderVO)!=null)
+			{
+				promotionLabel.setText(customerService2.getSelectedPromotion(orderVO).getPromotionVO().getContent());
+				newPriceLabel.setText(customerService2.getSelectedPromotion(orderVO).getPrice()+"");
+			}
+//					OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
+//							null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
+//					customerService.addOrder(orderVO);
 		}
 		
 		@FXML
 		private void makeOrder()
 		{
-			
-			numberBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
-				@Override
-				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-					if (newValue.intValue()>=0) {
-						number = numberList.get(newValue.intValue());
-					}
-				}
-				
-			});
-			
-			hasChildBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-				@Override
-				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-					if (newValue.intValue()>=0) {
-						hasChild = hasChildList.get(newValue.intValue());
-					}
-				}
-			});
-			int sendInfo = 0;
-			if(hasChild.equals("是"))
+			if(userVO.getCreditValue()>=0)
 			{
-				sendInfo = 1;
+				numberBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+					@Override
+					public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+						if (newValue.intValue()>=0) {
+							number = numberList.get(newValue.intValue());
+						}
+					}
+					
+				});
+				
+				hasChildBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+					@Override
+					public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+						if (newValue.intValue()>=0) {
+							hasChild = hasChildList.get(newValue.intValue());
+						}
+					}
+				});
+				int sendInfo = 0;
+				if(hasChild.equals("是"))
+				{
+					sendInfo = 1;
+				}
+				System.out.println(sendInfo);
+				orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
+						null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
+				customerService.addOrder(orderVO);
+				new MyDialog(stage, "生成订单成功，请到订单列表查看该订单", 2);
+				stage.setScene(preScene);
+			}else
+			{
+				new MyDialog(stage, "您的信用额度不足，请充值。", 1);
 			}
-			OrderVO orderVO = new OrderVO(0, userVO.getUserID(), hotelVO.getId(), hotelVO.getName(), roomInfoVO.getRoomInfoID(), OrderStateMessage.Unexecuted,
-					null, null, checkinTime, null, null, number, sendInfo, roomInfoVO.getDefaultPrice());
-			customerService.addOrder(orderVO);
-			new MyDialog(stage, "生成订单成功，请到订单列表查看该订单", 2);
+			
 		}
 }

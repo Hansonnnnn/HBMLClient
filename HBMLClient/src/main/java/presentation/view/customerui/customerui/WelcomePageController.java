@@ -45,6 +45,11 @@ public class WelcomePageController
 			userLogService=new UserLogImpl();
 			userInfoService = new UserInfoImpl();
 			resultMessage = ResultMessage.failure;
+			if(userInfoService.getLocalUser()!=null)
+			{
+				nameField.setText(userInfoService.getLocalUser());
+				passwordField.setPromptText("请输入密码继续");
+			}
 		}
 		
 		@FXML

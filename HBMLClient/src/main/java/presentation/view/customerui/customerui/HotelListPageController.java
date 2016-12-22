@@ -22,6 +22,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -208,7 +210,10 @@ public class HotelListPageController {
 		 {
 			 second.getItems().addAll(optionsTwo);
 		 }
-		 promotionList.getItems().addAll(optionsThree);
+		 if(promotionList.getItems().isEmpty())
+		 {
+			 promotionList.getItems().addAll(optionsThree);
+		 }
 		
 		 first.setPromptText("排序方式");
 		 second.setPromptText("星级筛选");
@@ -280,16 +285,16 @@ public class HotelListPageController {
 
 	 public class CheckInfoButtonCell extends TableCell<HotelVO, Boolean>
 	 {
-		 private Button checkButton = new Button("查看");
+		 private Button checkButton = new Button();
 		 public CheckInfoButtonCell(Stage stage)
 		 {
-			 DropShadow shadow = new DropShadow();
-			 checkButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-				checkButton.setEffect(shadow); 
-			 });
-			 checkButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-				 checkButton.setEffect(null);
-			 });
+			 checkButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 imageView.setImage(image);
+			 checkButton.setGraphic(imageView);
 		
 			 checkButton.setOnAction((ActionEvent e)->{
 //				 hotelName = 把列表的选中项里面的vo取出来
@@ -315,10 +320,17 @@ public class HotelListPageController {
 	 
 	 public class MakeOrderButtonCell extends TableCell<HotelVO, Boolean>
 	 {
-		 private Button makeOrderButton = new Button("预订");
+		 private Button makeOrderButton = new Button();
 		 
 		 public MakeOrderButtonCell(Stage stage)
 		 {	
+			 makeOrderButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/GouWuChe.png"));
+			 imageView.setImage(image);
+			 makeOrderButton.setGraphic(imageView);
 			 makeOrderButton.setOnAction((ActionEvent e)->{
 				 if(logined)
 				 {

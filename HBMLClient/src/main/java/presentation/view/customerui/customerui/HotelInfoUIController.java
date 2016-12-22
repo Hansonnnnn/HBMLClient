@@ -107,6 +107,10 @@ public class HotelInfoUIController
 			{
 				for(RoomInfoVO roomInfoVO:service.getRoomList(hotelVO.getId(), checkinTime).values())
 				{
+					if(roomInfoVO.getRoomInfoID() == 0)
+					{
+						roomInfoVO.setRoomType(roomInfoVO.getRoomType() + ("(无房)"));
+					}
 					roomdata.add(roomInfoVO);
 				}
 			}else

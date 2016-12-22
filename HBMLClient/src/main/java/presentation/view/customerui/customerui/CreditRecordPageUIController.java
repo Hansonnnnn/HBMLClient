@@ -42,7 +42,7 @@ public class CreditRecordPageUIController
 			customerService = new CreditCustomerImpl();
 			nameLabel.setText(userVO.getName());
 			try {
-				creditLabel.setText(customerService.getCreditValue(userVO.getUserID())+"");
+				creditLabel.setText(userVO.getCreditValue()+"");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

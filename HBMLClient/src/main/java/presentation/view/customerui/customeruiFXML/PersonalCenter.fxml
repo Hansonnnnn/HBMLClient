@@ -44,7 +44,7 @@
             <String fx:value="backButtonColor" />
          </styleClass>
       </Button>
-      <VBox layoutX="431.0" layoutY="138.0" prefHeight="362.0" prefWidth="416.0">
+      <VBox alignment="CENTER" layoutX="400.0" layoutY="123.0" prefHeight="404.0" prefWidth="447.0">
          <children>
             <HBox alignment="CENTER" prefHeight="177.0" prefWidth="633.0" spacing="80.0">
                <children>

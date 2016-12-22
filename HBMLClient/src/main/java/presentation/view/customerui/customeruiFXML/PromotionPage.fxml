@@ -10,21 +10,14 @@
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="800.0">
          <children>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="69.0" prefWidth="800.0">
-               <padding>
-                  <Insets right="38.0" />
-               </padding>
+            <Pane prefHeight="50.0" prefWidth="500.0">
                <children>
-                  <Pane prefHeight="50.0" prefWidth="500.0">
-                     <children>
-                        <Button fx:id="hotelPromotionButton" layoutY="15.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" styleClass="transButton" text="酒店促销优惠" />
-                        <Button fx:id="webPromotionButton" layoutX="140.0" layoutY="15.0" mnemonicParsing="false" prefWidth="140.0" styleClass="transButton" text="网站促销优惠" />
-                        <Label fx:id="sliderLabel" layoutY="40.0" maxHeight="4.0" minHeight="4.0" prefHeight="4.0" prefWidth="140.0" styleClass="blueLabel" />
-                     </children>
-                  </Pane>
+                  <Label fx:id="sliderLabel" layoutY="40.0" maxHeight="4.0" minHeight="4.0" prefHeight="4.0" prefWidth="140.0" styleClass="blueLabel" />
+                  <Button fx:id="webPromotionButton" layoutX="140.0" layoutY="12.0" mnemonicParsing="false" onAction="#webPromotion" prefWidth="140.0" styleClass="transButton" text="网站促销优惠" />
+                  <Button fx:id="hotelPromotionButton" layoutY="12.0" mnemonicParsing="false" onAction="#hotelPromotion" prefHeight="27.0" prefWidth="140.0" styleClass="transButton" text="酒店促销优惠" />
                </children>
-            </HBox>
-            <TableView fx:id="webPromotionTableView" maxWidth="798.0" prefHeight="602.0" prefWidth="798.0">
+            </Pane>
+            <TableView fx:id="webPromotionTableView" maxWidth="798.0" prefHeight="580.0" prefWidth="798.0">
                <columns>
                   <TableColumn fx:id="nameColumn" prefWidth="124.6433835029602" sortable="false" text="优惠名称" />
                   <TableColumn fx:id="startTimeColumn" prefWidth="92.35662841796875" text="开始时间" />

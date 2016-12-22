@@ -246,7 +246,6 @@
 	-fx-background-color:#1296db;
 }
 .rightFourButton:hover{
-	-fx-border-style:solid;
 	-fx-border-size:10px;
 	-fx-background-color:#C6E2FF;
 	-fx-border-radius:4px;
@@ -257,7 +256,6 @@
 	-fx-text-fill: #ffffff;
 }
 .personalPageFourButton:hover{
-	-fx-border-style:solid;
 	fx-border-color:#FFFFFF;
 	-fx-border-size:10px;
 	-fx-background-color:#C6E2FF;
@@ -266,5 +264,10 @@
 
 .blueLabel{
 	-fx-background-color:#0080FF;
+}
+
+.componentBorder{
+	-fx-border-style:solid;
+	-fx-background-color: transparent;
 }
 

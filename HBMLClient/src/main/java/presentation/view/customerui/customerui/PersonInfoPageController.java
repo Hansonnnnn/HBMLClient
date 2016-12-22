@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+import businesslogicservice.userblservice.UserCustomerService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -33,9 +34,11 @@ public class PersonInfoPageController {
 	private Scene preScene;
 	private Scene presentScene;
 	private UserVO userVO;
+	private File choiceFile;
 	
 	private Desktop desktop;
 	private FileChooser fileChooser;
+	private UserCustomerService customerService;
 	
 	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
@@ -71,7 +74,7 @@ public class PersonInfoPageController {
 	{
 		desktop = Desktop.getDesktop();
 		fileChooser = new FileChooser();
-		java.io.File choiceFile = fileChooser.showOpenDialog(stage);
+		choiceFile = fileChooser.showOpenDialog(stage);
 		fileChooser.setTitle("选择头像");
 		fileChooser.getExtensionFilters().addAll(
 				new FileChooser.ExtensionFilter("JPG","*.JPG"),
