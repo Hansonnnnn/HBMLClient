@@ -15,7 +15,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="seekMarketerIdTextField" prefHeight="30.0" prefWidth="350.0" promptText="网站营销人员ID" styleClass="circle">
+                  <TextField fx:id="seekMarketerIdTextField" prefHeight="30.0" prefWidth="350.0" promptText="网站营销人员账号" styleClass="circle">
                      <padding>
                         <Insets left="20.0" right="55.0" />
                      </padding></TextField>
@@ -41,7 +41,7 @@
                   <Label fx:id="tipLabel" styleClass="tipLabelColor" text="未找到网站营销人员,请输入正确的网站营销人员ID" visible="false" />
                </children>
             </HBox>
-            <VBox fx:id="infoVBox" prefHeight="573.0" prefWidth="660.0">
+            <VBox fx:id="infoVBox" prefHeight="573.0" prefWidth="660.0" visible="false">
                <padding>
                   <Insets left="30.0" right="30.0" top="60.0" />
                </padding>
@@ -66,31 +66,32 @@
                               <Label styleClass="userInfoLabel" text="密码 :" GridPane.rowIndex="2" />
                               <Label styleClass="userInfoLabel" text="姓名 :" GridPane.rowIndex="3" />
                               <Label styleClass="userInfoLabel" text="联系方式 :" GridPane.rowIndex="4" />
-                              <TextField fx:id="marketerIdTextField" disable="true" text="151250888" GridPane.columnIndex="1">
+                              <TextField fx:id="marketerIdTextField" disable="true" GridPane.columnIndex="1">
                                  <styleClass>
                                     <String fx:value="userInfoLabel" />
                                     <String fx:value="textField" />
                                  </styleClass></TextField>
-                              <TextField fx:id="marketerAccountTextField" disable="true" text="11" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="marketerAccountTextField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <styleClass>
                                     <String fx:value="userInfoLabel" />
                                     <String fx:value="textField" />
                                  </styleClass></TextField>
-                              <TextField fx:id="marketerPasswordTextField" disable="true" text="admin" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="marketerNameTextField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <styleClass>
                                     <String fx:value="userInfoLabel" />
                                     <String fx:value="textField" />
                                  </styleClass></TextField>
-                              <TextField fx:id="marketerNameTextField" disable="true" text="李四" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <TextField fx:id="marketerPhoneTextField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <styleClass>
                                     <String fx:value="userInfoLabel" />
                                     <String fx:value="textField" />
                                  </styleClass></TextField>
-                              <TextField fx:id="marketerPhoneTextField" disable="true" text="10088" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <PasswordField fx:id="marketerPasswordTextField" disable="true" editable="false" prefHeight="37.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <styleClass>
-                                    <String fx:value="userInfoLabel" />
                                     <String fx:value="textField" />
-                                 </styleClass></TextField>
+                                    <String fx:value="userInfoLabel" />
+                                 </styleClass>
+                              </PasswordField>
                            </children>
                         </GridPane>
                      </children>

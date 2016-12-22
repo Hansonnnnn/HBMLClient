@@ -55,7 +55,7 @@ public class SearchHotelStaffUIController {
     private void seekStaffInfo(){
         try{
             if((!seekStaffIdTextField.getText().equals(""))&&(seekStaffIdTextField!=null)){
-                UserVO userVO=userStaffService.getUserData(Integer.parseInt(seekStaffIdTextField.getText()));
+                UserVO userVO=userStaffService.getUserData(seekStaffIdTextField.getText());
                 if(userVO!=null){
                     infoVBox.getChildren().remove(0);
                     infoVBox.getChildren().add(new HotelStaffInfoUI(infoVBox,thisVBox,stage,userVO));

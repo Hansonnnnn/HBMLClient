@@ -19,6 +19,5 @@ public class SearchHotelStaffUI extends VBox{
         }
         SearchHotelStaffUIController searchHotelStaffUIController=fxmlLoader.getController();
         searchHotelStaffUIController.init(infoVBox,this,stage);
-        this.getStylesheets().add(SearchHotelStaffUI.class.getResource("webmanager.css").toExternalForm());
     }
 }

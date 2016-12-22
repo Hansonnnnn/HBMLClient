@@ -35,7 +35,7 @@ public class WebMarketerUIController {
         this.loginScene=loginScene;
         this.userVO=userVO;
         nameLabel.setText(userVO.getName()+",欢迎你");
-        infoVBox.getChildren().add(new ExceptionOrderUI(stage));
+        infoVBox.getChildren().add(new ExceptionOrderUI(stage,userVO));
     }
 
     /**
@@ -53,7 +53,7 @@ public class WebMarketerUIController {
     @FXML
     private void toExceptionOrder(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new ExceptionOrderUI(stage));
+        infoVBox.getChildren().add(new ExceptionOrderUI(stage,userVO));
         moveOperationButtonBackground(sliderLabel,160);
     }
 
@@ -63,7 +63,7 @@ public class WebMarketerUIController {
     @FXML
     private void toWebPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new WebPromotionUI(infoVBox));
+        infoVBox.getChildren().add(new WebPromotionUI(infoVBox,stage));
         moveOperationButtonBackground(sliderLabel,202);
     }
 
@@ -73,7 +73,7 @@ public class WebMarketerUIController {
     @FXML
     private void toRegionPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new RegionPromotionUI());
+        infoVBox.getChildren().add(new RegionPromotionUI(stage));
         moveOperationButtonBackground(sliderLabel,244);
     }
 

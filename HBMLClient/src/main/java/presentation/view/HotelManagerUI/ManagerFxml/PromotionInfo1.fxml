@@ -32,63 +32,43 @@
             <Insets bottom="10.0" left="40.0" right="20.0" top="10.0" />
          </padding>
          <children>
-            <VBox prefWidth="620.0" spacing="15.0" styleClass="infoVBox">
+            <VBox prefHeight="456.0" prefWidth="699.0" spacing="15.0" styleClass="infoVBox">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="620.0" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="665.0" spacing="20.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="促销策略名 :" />
-                        <TextField fx:id="promotionNameTextField" disable="true" maxWidth="180.0" prefHeight="35.0" text="双十一" />
+                        <TextField fx:id="promotionNameTextField" editable="false" maxWidth="180.0" prefHeight="35.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="665.0" spacing="5.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="所需会员等级 :" />
                         <ComboBox fx:id="memberLevelComboBox" prefHeight="35.0" prefWidth="180.0" />
                         <Pane prefHeight="40.0" prefWidth="273.0">
                            <children>
-                              <Label layoutX="23.0" layoutY="8.0" styleClass="orderInfoLableSize" text="折扣(%) :" />
-                              <ComboBox layoutX="123.0" layoutY="5.0" prefHeight="35.0" prefWidth="150.0" />
+                              <Label layoutX="20.0" layoutY="11.0" styleClass="orderInfoLableSize" text="折扣(%) :" />
+                              <ComboBox fx:id="discountBox" layoutX="131.0" layoutY="5.0" prefHeight="35.0" prefWidth="180.0" />
                            </children>
                         </Pane>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="665.0" spacing="5.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="策略开始时间 :" />
-                        <DatePicker fx:id="startDatePicker" disable="true" maxWidth="180.0" prefHeight="35.0" />
-                        <Pane>
+                        <DatePicker fx:id="startDatePicker" editable="false" maxWidth="180.0" prefHeight="35.0" />
+                        <Pane />
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="335.0">
                            <children>
-                              <ComboBox fx:id="startHourComboBox" disable="true" layoutX="22.0" layoutY="1.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="122.0" layoutY="6.0" text="时" />
+                              <Label styleClass="orderInfoLableSize" text="策略结束时间 :" />
+                              <DatePicker fx:id="endDatePicker" maxWidth="180.0" prefHeight="35.0" />
                            </children>
-                        </Pane>
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="startMinuteComboBox" disable="true" layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="114.0" layoutY="8.0" text="分" />
-                           </children>
-                        </Pane>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
-                     <children>
-                        <Label styleClass="orderInfoLableSize" text="策略结束时间 :" />
-                        <DatePicker fx:id="endDatePicker" disable="true" maxWidth="180.0" prefHeight="35.0" />
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="endHourComboBox" disable="true" layoutX="22.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="122.0" layoutY="10.0" text="时" />
-                           </children>
-                        </Pane>
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="endMinuteComboBox" disable="true" layoutX="14.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="114.0" layoutY="10.0" text="分" />
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="198.0" prefWidth="620.0" spacing="40.0">
+                  <HBox prefHeight="226.0" prefWidth="665.0" spacing="40.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="策略内容 :" />
                         <TextArea fx:id="contentTextArea" disable="true" prefHeight="200.0" prefWidth="450.0" text="减免" />
@@ -101,21 +81,5 @@
             </VBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="670.0" spacing="100.0">
-         <children>
-            <Button fx:id="editButton" minWidth="100.0" mnemonicParsing="false" onAction="#edit" prefHeight="35.0" text="编辑">
-               <styleClass>
-                  <String fx:value="confirmButton" />
-                  <String fx:value="toLarge" />
-               </styleClass>
-            </Button>
-            <Button fx:id="confirmButton" minWidth="100.0" mnemonicParsing="false" onAction="#confirm" prefHeight="35.0" text="确认修改">
-               <styleClass>
-                  <String fx:value="confirmButton" />
-                  <String fx:value="toLarge" />
-               </styleClass>
-            </Button>
-         </children>
-      </HBox>
     </children>
 </VBox>

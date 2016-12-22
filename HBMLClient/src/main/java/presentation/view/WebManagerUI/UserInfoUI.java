@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class UserInfoUI extends VBox{
     public UserInfoUI(){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmanagerfxml/UserInfo.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmanagerfxml/UserInfo1.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {

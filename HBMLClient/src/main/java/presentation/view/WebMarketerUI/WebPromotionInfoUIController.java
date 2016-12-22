@@ -1,5 +1,7 @@
 package presentation.view.WebMarketerUI;
 
+import businesslogic.promotionbl.PromotionWebMarketerImpl;
+import businesslogicservice.promotionblservice.PromotionWebMarketerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import model.DateHelper;
 import presentation.view.HotelManagerUI.HotelPromotionUIController;
 import presentation.view.HotelManagerUI.PromotionInfoUI;
@@ -22,8 +25,8 @@ import java.util.Date;
  */
 public class WebPromotionInfoUIController {
     @FXML private TextField nameTextField;
-    @FXML private ComboBox discountComboBox;
-    @FXML private ComboBox gradeComboBox;
+    @FXML private ComboBox<Integer> discountComboBox;
+    @FXML private ComboBox<Integer> gradeComboBox;
     @FXML private ComboBox provinceComboBox;
     @FXML private ComboBox cityComboBox;
     @FXML private ComboBox regionComboBox;
@@ -36,9 +39,14 @@ public class WebPromotionInfoUIController {
     private DateHelper dateHelper;
     private ObservableList discountData;
     private ObservableList gradeData;
-    public void init(VBox infoVBox, PromotionVO promotionVO){
+    private Stage stage;
+    private PromotionWebMarketerService promotionWebMarketerService;
+    public void init(VBox infoVBox, PromotionVO promotionVO,Stage stage){
         this.promotionVO=promotionVO;
         this.infoVBox=infoVBox;
+        this.stage=stage;
+        dateHelper=new DateHelper();
+        promotionWebMarketerService=new PromotionWebMarketerImpl();
         discountData= FXCollections.observableArrayList();
         gradeData=FXCollections.observableArrayList();
         for(int i=1;i<=99;i++){
@@ -58,7 +66,7 @@ public class WebPromotionInfoUIController {
     @FXML
     private void back(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new WebPromotionUI(infoVBox));
+        infoVBox.getChildren().add(new WebPromotionUI(infoVBox,stage));
     }
 
     /**
@@ -68,41 +76,44 @@ public class WebPromotionInfoUIController {
         nameTextField.setText(promotionVO.getName());
         discountComboBox.setValue(promotionVO.getDiscount());
         gradeComboBox.setValue(promotionVO.getMinRankAvailable());
-
-//        startDatePicker.setValue();
+        startDatePicker.setValue(dateHelper.dateToLocalDate(promotionVO.getStartDate()));
+        endDatePicker.setValue(dateHelper.dateToLocalDate(promotionVO.getEndDate()));
         contentTextArea.setText(promotionVO.getContent());
     }
 
-    /**
-     * 编辑promotion信息
-     */
-    @FXML
-    private void edit(){
-        nameTextField.setDisable(false);
-        nameTextField.setDisable(false);
-        discountComboBox.setDisable(false);
-        gradeComboBox.setDisable(false);
-        provinceComboBox.setDisable(false);
-        cityComboBox.setDisable(false);
-        regionComboBox.setDisable(false);
-        startDatePicker.setDisable(false);
-        endDatePicker.setDisable(false);
-        contentTextArea.setDisable(false);
-    }
-    /**
-     * 确认修改，保存promotion信息
-     */
-    @FXML
-    private void confirm(){
-        nameTextField.setDisable(true);
-        nameTextField.setDisable(true);
-        discountComboBox.setDisable(true);
-        gradeComboBox.setDisable(true);
-        provinceComboBox.setDisable(true);
-        cityComboBox.setDisable(true);
-        regionComboBox.setDisable(true);
-        startDatePicker.setDisable(true);
-        endDatePicker.setDisable(true);
-        contentTextArea.setDisable(true);
-    }
+//    /**
+//     * 编辑promotion信息
+//     */
+//    @FXML
+//    private void edit(){
+//        nameTextField.setDisable(false);
+//        nameTextField.setDisable(false);
+//        discountComboBox.setDisable(false);
+//        gradeComboBox.setDisable(false);
+//        startDatePicker.setDisable(false);
+//        endDatePicker.setDisable(false);
+//        contentTextArea.setDisable(false);
+//    }
+//    /**
+//     * 确认修改，保存promotion信息
+//     */
+//    @FXML
+//    private void confirm(){
+//        nameTextField.setDisable(true);
+//        nameTextField.setDisable(true);
+//        discountComboBox.setDisable(true);
+//        gradeComboBox.setDisable(true);
+//        provinceComboBox.setDisable(true);
+//        cityComboBox.setDisable(true);
+//        regionComboBox.setDisable(true);
+//        startDatePicker.setDisable(true);
+//        endDatePicker.setDisable(true);
+//        contentTextArea.setDisable(true);
+//        boolean nameFull = (!nameTextField.getText().equals(""))&&(nameTextField.getText()!=null);
+//        if(nameFull){
+//            PromotionVO newPromotionVO=new PromotionVO(nameTextField.getText(),contentTextArea.getText(),dateHelper.localDateToDate(startDatePicker.getValue()),
+//                    dateHelper.localDateToDate(endDatePicker.getValue()), gradeComboBox.getValue(),promotionVO.getType(),0,discountComboBox.getValue());
+//            promotionWebMarketerService.modifyWebPromotion(newPromotionVO);
+//        }
+//    }
 }

@@ -77,7 +77,7 @@ public class WebMarketerInfoUIController {
     private void seekMarketerInfo(){
         try{
             if((!seekMarketerIdTextField.getText().equals(""))&&(seekMarketerIdTextField.getText()!=null)){
-                UserVO userVO=webMarketerService.getUserData(Integer.parseInt(seekMarketerIdTextField.getText()));
+                UserVO userVO=webMarketerService.getUserData(seekMarketerIdTextField.getText());
                 this.userVO=userVO;
                 //将网站营销人员的信息显示出来
                 if(userVO!=null){

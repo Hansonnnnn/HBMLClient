@@ -2,6 +2,7 @@ package presentation.view.WebMarketerUI;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -9,8 +10,8 @@ import java.io.IOException;
  * Created by LENOVO on 2016/12/7.
  */
 public class RegionPromotionUI extends VBox{
-    public RegionPromotionUI(){
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/RegionPromotion2.fxml"));
+    public RegionPromotionUI(Stage stage){
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("webmarketerfxml/RegionPromotion3.fxml"));
         try{
             this.getChildren().add(fxmlLoader.load());
         }catch (IOException e) {
@@ -18,6 +19,6 @@ public class RegionPromotionUI extends VBox{
         }
 
         RegionPromotionUIController regionPromotionUIController=fxmlLoader.getController();
-        regionPromotionUIController.init();
+        regionPromotionUIController.init(stage);
     }
 }

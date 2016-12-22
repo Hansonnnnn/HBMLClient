@@ -29,66 +29,46 @@
       </Pane>
       <VBox prefHeight="483.0" prefWidth="759.0">
          <children>
-            <VBox prefWidth="620.0" spacing="15.0" styleClass="infoVBox">
+            <VBox prefHeight="443.0" prefWidth="699.0" spacing="15.0" styleClass="infoVBox">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="620.0" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="665.0" spacing="20.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="促销策略名 :" />
-                        <TextField fx:id="promotionNameTextField" maxWidth="180.0" prefHeight="35.0" text="双十一" />
+                        <TextField fx:id="promotionNameTextField" maxWidth="180.0" prefHeight="37.0" styleClass="orderInfoLableSize" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="665.0" spacing="5.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="所需会员等级 :" />
-                        <ComboBox fx:id="memberLevelComboBox" prefHeight="35.0" prefWidth="180.0" />
-                        <Pane prefHeight="40.0" prefWidth="273.0">
+                        <ComboBox fx:id="memberLevelComboBox" prefHeight="37.0" prefWidth="180.0" styleClass="orderInfoLableSize" />
+                        <Pane prefHeight="40.0" prefWidth="339.0">
                            <children>
-                              <Label layoutX="23.0" layoutY="8.0" styleClass="orderInfoLableSize" text="折扣(%) :" />
-                              <ComboBox layoutX="123.0" layoutY="5.0" prefHeight="35.0" prefWidth="150.0" />
+                              <Label layoutX="26.0" layoutY="17.0" styleClass="orderInfoLableSize" text="折扣(%) :" />
+                              <ComboBox fx:id="discountBox" layoutX="132.0" layoutY="10.0" prefHeight="37.0" prefWidth="180.0" styleClass="orderInfoLableSize" />
                            </children>
                         </Pane>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="665.0" spacing="5.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="策略开始时间 :" />
                         <DatePicker fx:id="startDatePicker" maxWidth="180.0" prefHeight="35.0" styleClass="transButton" />
-                        <Pane>
+                        <Pane />
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="357.0">
                            <children>
-                              <ComboBox fx:id="startHourComboBox" layoutX="22.0" layoutY="1.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="122.0" layoutY="6.0" text="时" />
+                              <Label styleClass="orderInfoLableSize" text="策略结束时间 :" />
+                              <DatePicker fx:id="endDatePicker" maxWidth="180.0" prefHeight="35.0" styleClass="transButton" />
                            </children>
-                        </Pane>
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="startMinuteComboBox" layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="114.0" layoutY="8.0" text="分" />
-                           </children>
-                        </Pane>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
-                     <children>
-                        <Label styleClass="orderInfoLableSize" text="策略结束时间 :" />
-                        <DatePicker fx:id="endDatePicker" maxWidth="180.0" prefHeight="35.0" styleClass="transButton" />
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="endHourComboBox" layoutX="22.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="122.0" layoutY="10.0" text="时" />
-                           </children>
-                        </Pane>
-                        <Pane>
-                           <children>
-                              <ComboBox fx:id="endMinuteComboBox" layoutX="14.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" visibleRowCount="8" />
-                              <Label layoutX="114.0" layoutY="10.0" text="分" />
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="198.0" prefWidth="620.0" spacing="40.0">
+                  <HBox prefHeight="210.0" prefWidth="665.0" spacing="40.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="策略内容 :" />
-                        <TextArea fx:id="contentTextArea" prefHeight="200.0" prefWidth="450.0" text="减免" />
+                        <TextArea fx:id="contentTextArea" prefHeight="198.0" prefWidth="494.0" />
                      </children>
                   </HBox>
                </children>
@@ -111,7 +91,7 @@
             </Button>
          </children>
          <padding>
-            <Insets right="130.0" />
+            <Insets right="80.0" />
          </padding>
       </HBox>
    </children>

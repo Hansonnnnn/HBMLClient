@@ -8,7 +8,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.RoomInfoUIController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <Pane prefHeight="136.0" prefWidth="759.0">
          <children>
             <Button layoutY="17.0" mnemonicParsing="false" onAction="#back" styleClass="transButton">
                <graphic>
@@ -27,7 +27,7 @@
             <Label layoutX="80.0" layoutY="27.0" styleClass="positionLabel" text="房间信息浏览" />
          </children>
       </Pane>
-      <VBox prefHeight="231.0" prefWidth="759.0">
+      <VBox prefHeight="316.0" prefWidth="759.0">
          <children>
             <GridPane hgap="20.0" vgap="20.0">
               <columnConstraints>
@@ -38,14 +38,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="房间号 :" />
-                  <Label text="房间状态 :" GridPane.rowIndex="1" />
-                  <Label text="价格(元) :" GridPane.rowIndex="2" />
+                  <Label styleClass="orderInfoLableSize" text="房间号 :" />
+                  <Label styleClass="orderInfoLableSize" text="房间状态 :" GridPane.rowIndex="2" />
+                  <Label styleClass="orderInfoLableSize" text="价格(元) :" GridPane.rowIndex="3" />
                   <TextField fx:id="roomIdTextField" disable="true" prefHeight="40.0" prefWidth="365.0" GridPane.columnIndex="1" />
-                  <ComboBox fx:id="roomStateComboBox" disable="true" prefHeight="40.0" prefWidth="429.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="roomPriceTextField" disable="true" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="roomStateComboBox" disable="true" prefHeight="40.0" prefWidth="429.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="roomPriceTextField" disable="true" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label styleClass="orderInfoLableSize" text="房间类型 :" GridPane.rowIndex="1" />
+                  <TextField fx:id="roomTypeTextField" disable="true" prefHeight="40.0" styleClass="orderInfoLableSize" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>
@@ -55,8 +58,8 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="91.0" prefWidth="759.0" spacing="100.0">
          <children>
-            <Button fx:id="editButton" mnemonicParsing="false" prefWidth="100.0" text="编辑" />
-            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirm" prefWidth="100.0" text="确认修改" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" prefWidth="100.0" styleClass="confirmButton" text="编辑" />
+            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirm" prefWidth="100.0" styleClass="confirmButton" text="确认修改" />
          </children>
       </HBox>
    </children>

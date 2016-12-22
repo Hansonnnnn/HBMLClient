@@ -45,7 +45,6 @@ public class UserInfoUIContrller {
         userCustomerService=new UserCustomerImpl();
         userWebManagerService=new UserWebManagerImpl();
         memberTypeHelper=new MemberTypeHelper();
-        infoVBox.setVisible(true);
         initComboBox();
     }
 
@@ -57,7 +56,6 @@ public class UserInfoUIContrller {
 //        userIdTextField.setDisable(false);
         userNameTextField.setDisable(false);
         userAccountTextField.setDisable(false);
-        userPasswordTextField.setDisable(false);
         userPhoneTextField.setDisable(false);
         memberTypeComboBox.setDisable(false);
 //        memberLevelTextField.setDisable(false);
@@ -82,7 +80,7 @@ public class UserInfoUIContrller {
     private void seekUserInfo(){
         try{
             if((!seekIdTextField.getText().equals(""))&&(seekIdTextField.getText()!=null)){
-                UserVO userVO=userCustomerService.getUserData(Integer.parseInt(seekIdTextField.getText()));
+                UserVO userVO=userCustomerService.getUserData(seekIdTextField.getText());
                 this.userVO=userVO;
                 if(userVO!=null){
                     userIdTextField.setText(String.valueOf(userVO.getUserID()));
@@ -123,7 +121,6 @@ public class UserInfoUIContrller {
 //        userIdTextField.setDisable(true);
         userNameTextField.setDisable(true);
         userAccountTextField.setDisable(true);
-        userPasswordTextField.setDisable(true);
         userPhoneTextField.setDisable(true);
         memberTypeComboBox.setDisable(true);
 //        memberLevelTextField.setDisable(true);

@@ -33,14 +33,13 @@
             </Pane>
          </children>
       </HBox>
-      <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="738.0">
+      <VBox prefHeight="540.0" prefWidth="738.0">
          <children>
-            <TableView fx:id="exceptionOrderTableView" maxWidth="702.0" prefHeight="469.0" prefWidth="702.0" styleClass="orderTypeTableView" visible="false">
+            <TableView fx:id="exceptionOrderTableView" maxWidth="640.0" prefHeight="469.0" prefWidth="640.0" styleClass="orderTypeTableView" visible="false">
                <columns>
                   <TableColumn fx:id="idColumn1" prefWidth="140.0" resizable="false" text="订单编号" />
-                  <TableColumn fx:id="nameColumn1" prefWidth="100.0" resizable="false" text="用户姓名" />
-                  <TableColumn fx:id="startColumn1" prefWidth="140.0" resizable="false" text="订单生成时间" />
-                  <TableColumn fx:id="endColumn1" prefWidth="140.0" resizable="false" text="最晚执行时间" />
+                  <TableColumn fx:id="nameColumn1" prefWidth="100.0" resizable="false" text="用户ID" />
+                  <TableColumn fx:id="appealColumn1" prefWidth="200.0" resizable="false" text="申述时间" />
                   <TableColumn fx:id="priceColumn1" resizable="false" text="价格" />
                   <TableColumn fx:id="revokeColumn" prefWidth="97.0" resizable="false" text="撤销操作" />
                </columns>
@@ -54,11 +53,10 @@
             <TableView fx:id="unexecutedTableView" maxWidth="702.0" prefHeight="469.0" prefWidth="702.0" styleClass="orderTypeTableView">
               <columns>
                 <TableColumn fx:id="idColumn" prefWidth="140.0" resizable="false" text="订单编号" />
-                <TableColumn fx:id="nameColumn" prefWidth="100.0" resizable="false" text="用户姓名" />
-                  <TableColumn fx:id="startColumn" prefWidth="140.0" resizable="false" text="订单生成时间" />
-                  <TableColumn fx:id="endColumn" prefWidth="140.0" resizable="false" text="最晚执行时间" />
+                <TableColumn fx:id="nameColumn" prefWidth="100.0" resizable="false" text="用户ID" />
+                  <TableColumn fx:id="startColumn" prefWidth="180.0" resizable="false" text="订单开始时间" />
+                  <TableColumn fx:id="endColumn" prefWidth="180.0" resizable="false" text="最晚执行时间" />
                   <TableColumn fx:id="priceColumn" resizable="false" text="价格" />
-                  <TableColumn prefWidth="97.0" resizable="false" text="撤销操作" />
               </columns>
                <VBox.margin>
                   <Insets top="-469.0" />
@@ -71,6 +69,12 @@
          <VBox.margin>
             <Insets />
          </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </VBox>
    </children>
    <padding>

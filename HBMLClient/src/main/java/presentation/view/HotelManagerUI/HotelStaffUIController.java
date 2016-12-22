@@ -29,7 +29,7 @@ public class HotelStaffUIController {
         this.loginScene=loginScene;
         this.userVO=userVO;
         nameLabel.setText(userVO.getName()+",欢迎你");
-        infoVBox.getChildren().add(new OrderBrowseUI(infoVBox));
+        infoVBox.getChildren().add(new OrderBrowseUI(infoVBox,userVO));
     }
 
     /**
@@ -46,7 +46,7 @@ public class HotelStaffUIController {
     @FXML
     private void toOrderBrowse(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new OrderBrowseUI(infoVBox));
+        infoVBox.getChildren().add(new OrderBrowseUI(infoVBox,userVO));
         moveOperationButtonBackground(sliderLabel,180);
     }
 
@@ -56,7 +56,7 @@ public class HotelStaffUIController {
     @FXML
     private void toInputRoom(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new InputRoomUI(infoVBox,stage));
+        infoVBox.getChildren().add(new InputRoomUI(infoVBox,stage,userVO));
         moveOperationButtonBackground(sliderLabel,222);
     }
 
@@ -76,7 +76,7 @@ public class HotelStaffUIController {
     @FXML
     private void toHotelPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new HotelPromotionUI(infoVBox));
+        infoVBox.getChildren().add(new HotelPromotionUI(infoVBox,stage,userVO));
         moveOperationButtonBackground(sliderLabel,306);
     }
 

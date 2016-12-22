@@ -72,7 +72,7 @@ public class AddHotelUIController {
     @FXML
     private TextField staffAccountTextField;
     @FXML
-    private TextField staffPasswordTextField;
+    private TextField staffPasswordField;
     @FXML
     private TextField staffNameTextField;
     @FXML
@@ -119,20 +119,35 @@ public class AddHotelUIController {
                     (regionBox.getValue() != null);
             //判断酒店工作人员基本信息是否填写完整
             boolean staffInfoJudge = (!staffAccountTextField.getText().equals("")) && (staffAccountTextField.getText() != null)
-                    && (!staffPasswordTextField.getText().equals("")) && (staffPasswordTextField.getText() != null) &&
+                    && (!staffPasswordField.getText().equals("")) && (staffPasswordField.getText() != null) &&
                     (!staffNameTextField.getText().equals("")) && (staffNameTextField.getText() != null) &&
                     (!staffPhoneTextField.getText().equals("")) && (staffPhoneTextField.getText() != null);
 
             if (hotelInfoJudge && staffInfoJudge) {
                 int regionId = regionNameMap.get(regionBox.getValue());
-                System.out.println("regionID；   "+regionId);
                 HotelVO hotelVO = new HotelVO(nameTextField.getText(), 0, star, addressTextField.getText(), regionId, null, null, null, 0, 0, staffAccountTextField.getText());
                 int hotelId = hotelWebManagerService.addHotel(hotelVO);
-                System.out.println("ID:    "+hotelId);
-                UserVO userVO = new UserVO(0, UserType.Staff, staffAccountTextField.getText(), staffPasswordTextField.getText(), staffNameTextField.getText(),
+                UserVO userVO = new UserVO(0, UserType.Staff, staffAccountTextField.getText(), staffPasswordField.getText(), staffNameTextField.getText(),
                         staffPhoneTextField.getText(), null, 0, MemberType.Tourist, null, 0, null, hotelId);
                 userWebManagerService.addUser(userVO);
                 new MyDialog(stage, "添加成功!", 2);
+
+                //将酒店信息栏清空
+                nameTextField.setText("");
+                addressTextField.setText("");
+                provinceBox.setValue("-省-");
+                cityBox.setValue("-市-");
+                regionBox.setValue("-商圈-");
+                starImageView1.setImage(starImage);
+                starImageView2.setImage(starImage);
+                starImageView3.setImage(starImage);
+                starImageView4.setImage(starImage);
+                starImageView5.setImage(starImage);
+                //将酒店管理人员信息栏清空
+                staffAccountTextField.setText("");
+                staffPasswordField.setText("");
+                staffPhoneTextField.setText("");
+                staffNameTextField.setText("");
             } else if ((!hotelInfoJudge) && (staffInfoJudge)) {
                 new MyDialog(stage, "请将酒店基本信息填写完整", 0);
             } else if (hotelInfoJudge && (!staffInfoJudge)) {

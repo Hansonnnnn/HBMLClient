@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  * Created by LENOVO on 2016/11/27.
  */
 public class NewPromotionUI extends VBox {
-    public NewPromotionUI(VBox infoVBox,VBox beforeVBox) {
+    public NewPromotionUI(VBox infoVBox, VBox beforeVBox, UserVO userVO,Stage stage) {
 
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("ManagerFxml/NewPromotion.fxml"));
         try{
@@ -23,6 +24,6 @@ public class NewPromotionUI extends VBox {
         }
 
         NewPromotionUIController newPromotionUIController=fxmlLoader.getController();
-        newPromotionUIController.init(infoVBox,beforeVBox);
+        newPromotionUIController.init(infoVBox,beforeVBox,userVO,stage);
     }
 }

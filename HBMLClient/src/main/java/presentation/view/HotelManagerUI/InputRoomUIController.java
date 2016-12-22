@@ -1,5 +1,7 @@
 package presentation.view.HotelManagerUI;
 
+import businesslogic.roomInfobl.RoomInfoStaffServiceImpl;
+import businesslogicservice.roominfoblservice.RoomInfoStaffService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,10 +10,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import message.RoomStateMessage;
 import presentation.view.application.MyDialog;
+import vo.RoomInfoVO;
+import vo.UserVO;
 
 /**
  * Created by LENOVO on 2016/11/25.
@@ -21,8 +27,9 @@ public class InputRoomUIController {
     @FXML private TextField roomTypeTextField;
     @FXML private TextField roomIdTextField;
     @FXML private TextField roomPriceTextField;
+    @FXML private TableColumn roomIdColumn;
     @FXML private TableColumn roomTypeColumn;
-    @FXML private TableColumn roomNumberColumn;
+    @FXML private TableColumn roomPriceColumn;
     @FXML private TableColumn viewInfoColumn;
     @FXML private Button inputButton;
 
@@ -30,30 +37,34 @@ public class InputRoomUIController {
     private VBox thisVBox;
     private Stage stage;
     private ObservableList data;
-    public void init(VBox infoVBox,VBox thisVBox,Stage stage){
+    private UserVO userVO;
+    private RoomInfoStaffService roomInfoStaffService;
+    public void init(VBox infoVBox, VBox thisVBox, Stage stage, UserVO userVO){
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        this.userVO=userVO;
         this.stage=stage;
+        roomInfoStaffService=new RoomInfoStaffServiceImpl();
         addTableView();
     }
 
     private void addTableView(){
+        roomIdColumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
         roomTypeColumn.setCellValueFactory(new PropertyValueFactory<>("roomType"));
-        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
-        viewInfoColumn.setCellFactory(new Callback<TableColumn<RoomTypeInfo,Boolean>, TableCell<RoomTypeInfo,Boolean>>() {
+        roomPriceColumn.setCellValueFactory(new PropertyValueFactory<>("defaultPrice"));
+        viewInfoColumn.setCellFactory(new Callback<TableColumn<RoomInfoVO,Boolean>, TableCell<RoomInfoVO,Boolean>>() {
             @Override
             public TableCell call(TableColumn param) {
                 return new RoomTypeInfoButtonCell(infoVBox,thisVBox);
             }
         });
         data= FXCollections.observableArrayList();
-        data.add(new RoomTypeInfo("陋室",10));
-        data.add(new RoomTypeInfo("标准单人间",100));
-        data.add(new RoomTypeInfo("标准双人间",100));
-        data.add(new RoomTypeInfo("总统套房",10));
-
+        if(roomInfoStaffService.getRoomList(userVO.getHotelid())!=null){
+            for(RoomInfoVO roomInfoVO:roomInfoStaffService.getRoomList(userVO.getHotelid()).values()){
+                data.add(roomInfoVO);
+            }
+        }
         roomTypeTableView.setItems(data);
-
     }
 
 
@@ -65,7 +76,10 @@ public class InputRoomUIController {
     private void addRoomType(){
         if((roomTypeTextField.getText()!=null)&&(roomIdTextField.getText()!=null)&&(roomPriceTextField.getText()!=null)
                 &&(!roomTypeTextField.getText().equals(""))&&(!roomIdTextField.getText().equals(""))&&(!roomPriceTextField.getText().equals(""))){
-            data.add(new RoomTypeInfo(roomTypeTextField.getText(),Integer.parseInt(roomIdTextField.getText())));
+            RoomInfoVO newRoomInfoVO=new RoomInfoVO(0,userVO.getHotelid(),roomIdTextField.getText(),roomTypeTextField.getText(),
+                    Integer.parseInt(roomPriceTextField.getText()), RoomStateMessage.Blank,null,null);
+            roomInfoStaffService.addRoom(newRoomInfoVO);
+            addTableView();
             roomTypeTextField.setText("");
             roomIdTextField.setText("");
             roomPriceTextField.setText("");
@@ -76,41 +90,30 @@ public class InputRoomUIController {
     }
 
 
-    public class RoomTypeInfo{
-        private String roomType;
-        private int roomNumber;
-
-        public RoomTypeInfo(String roomType, int roomNumber){
-            this.roomType=roomType;
-            this.roomNumber=roomNumber;
-        }
-        public int getRoomNumber() {
-            return roomNumber;
-        }
-
-        public void setRoomNumber(int roomNumber) {
-            this.roomNumber = roomNumber;
-        }
-
-        public String getRoomType() {
-            return roomType;
-        }
-
-        public void setRoomType(String roomType) {
-            this.roomType = roomType;
-        }
-
-    }
-
-    public class RoomTypeInfoButtonCell extends TableCell<RoomTypeInfo,Boolean>{
+    public class RoomTypeInfoButtonCell extends TableCell<RoomInfoVO,Boolean>{
+        private HBox hBox=new HBox();
         private Button viewButton=new Button();
+        private Button deleteButton=new Button();
         private ImageView viewImageView=new ImageView(new Image(getClass().getResourceAsStream("ManagerImages/view1.png")));
+        private ImageView deleteImageView=new ImageView(new Image(getClass().getResourceAsStream("ManagerImages/delete.png")));
         public RoomTypeInfoButtonCell(VBox infoVBox,VBox beforeVBox){
+            hBox.getChildren().addAll(viewButton,deleteButton);
             viewButton.setStyle("-fx-background-color: transparent");
             viewButton.setGraphic(viewImageView);
+            deleteButton.setStyle("-fx-background-color: transparent");
+            deleteButton.setGraphic(deleteImageView);
             viewButton.setOnAction((ActionEvent e)->{
+                int seletedIndex=getTableRow().getIndex();
+                RoomInfoVO roomInfoVO=(RoomInfoVO)roomTypeTableView.getItems().get(seletedIndex);
                 infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new RoomTypeInfoUI(infoVBox,beforeVBox));
+                infoVBox.getChildren().add(new RoomInfoUI(infoVBox,thisVBox,roomInfoVO,stage));
+            });
+            deleteButton.setOnAction((ActionEvent e)->{
+                int seletedIndex=getTableRow().getIndex();
+                RoomInfoVO roomInfoVO=(RoomInfoVO)roomTypeTableView.getItems().get(seletedIndex);
+                roomInfoStaffService.deleteRoom(roomInfoVO.getRoomInfoID());
+                addTableView();
+                roomTypeTableView.refresh();
             });
         }
 
@@ -121,7 +124,7 @@ public class InputRoomUIController {
                 setGraphic(null);
                 setText(null);
             }else{
-                setGraphic(viewButton);
+                setGraphic(hBox);
                 setText(null);
             }
         }

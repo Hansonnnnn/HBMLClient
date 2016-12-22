@@ -27,7 +27,7 @@
          <children>
             <ComboBox fx:id="gradeBox" prefHeight="35.0" prefWidth="150.0" promptText="会员等级" />
             <ComboBox fx:id="discountBox" prefHeight="35.0" prefWidth="150.0" promptText="折扣优惠" />
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" styleClass="confirmButton" text="确认添加" />
+            <Button mnemonicParsing="false" onAction="#confirm" prefHeight="35.0" prefWidth="150.0" styleClass="confirmButton" text="确认添加" />
          </children>
       </HBox>
    </children>

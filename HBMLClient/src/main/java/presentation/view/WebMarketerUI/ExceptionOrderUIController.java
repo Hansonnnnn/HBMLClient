@@ -20,6 +20,7 @@ import javafx.util.Duration;
 import model.DateHelper;
 import vo.AppealVO;
 import vo.OrderVO;
+import vo.UserVO;
 
 import javax.swing.*;
 
@@ -37,8 +38,7 @@ public class ExceptionOrderUIController {
     @FXML private TableColumn priceColumn;
     @FXML private TableColumn idColumn1;
     @FXML private TableColumn nameColumn1;
-    @FXML private TableColumn startColumn1;
-    @FXML private TableColumn endColumn1;
+    @FXML private TableColumn appealColumn1;
     @FXML private TableColumn priceColumn1;
     @FXML private TableColumn revokeColumn;
     @FXML private Label sliderLabel;
@@ -48,8 +48,10 @@ public class ExceptionOrderUIController {
     private ObservableList<AppealVO> exceptionOrderData;
     private OrderWebMarketerService webMarketerService;
     private DateHelper dateHelper;
-    public void init(Stage stage){
+    private UserVO userVO;
+    public void init(Stage stage, UserVO userVO){
         this.stage=stage;
+        this.userVO=userVO;
         webMarketerService=new OrderWebMarketerServiceImpl();
         dateHelper=new DateHelper();
         initTableView();
@@ -114,7 +116,8 @@ public class ExceptionOrderUIController {
 
         idColumn1.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         nameColumn1.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        startColumn1.setCellValueFactory(new PropertyValueFactory<>("appealTimeString"));
+        appealColumn1.setCellValueFactory(new PropertyValueFactory<>("appealTimeString"));
+        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
 //        endColumn1.setCellValueFactory(new PropertyValueFactory<>("endTime"));
 //        priceColumn1.setCellValueFactory(new PropertyValueFactory<>("price"));
         revokeColumn.setCellFactory(new Callback<TableColumn<AppealVO,Boolean>, TableCell<AppealVO,Boolean>>() {
@@ -191,7 +194,9 @@ public class ExceptionOrderUIController {
             revokeImageView.setFitWidth(35);
             revokeButton.setGraphic(revokeImageView);
             revokeButton.setOnAction((ActionEvent e)->{
-                new ValueJudgeUI(stage);
+                int selectedIndex=getTableRow().getIndex();
+                AppealVO appealVO=(AppealVO) exceptionOrderTableView.getItems().get(selectedIndex);
+                new ValueJudgeUI(stage,appealVO,userVO);
             });
         }
 

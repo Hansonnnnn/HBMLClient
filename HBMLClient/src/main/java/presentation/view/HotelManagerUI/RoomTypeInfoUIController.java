@@ -111,8 +111,8 @@ public class RoomTypeInfoUIController {
             viewRoomInfoButton.setGraphic(viewImageView);
             viewRoomInfoButton.setStyle("-fx-background-color: transparent");
             viewRoomInfoButton.setOnAction((ActionEvent e)->{
-                infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new RoomInfoUI(infoVBox,beforeVBox));
+//                infoVBox.getChildren().remove(0);
+//                infoVBox.getChildren().add(new RoomInfoUI(infoVBox,beforeVBox));
             });
         }
 

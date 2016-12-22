@@ -8,7 +8,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="759.0" spacing="10.0" stylesheets="@../hotelstaff.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.HotelManagerUI.HotelOrderInfoUIController">
    <children>
-      <Pane prefHeight="74.0" prefWidth="759.0">
+      <Pane prefHeight="89.0" prefWidth="759.0">
          <children>
             <Button layoutY="12.0" mnemonicParsing="false" onAction="#back" styleClass="transButton">
                <graphic>
@@ -26,7 +26,7 @@
             </ImageView>
             <Label layoutX="74.0" layoutY="23.0" styleClass="positionLabel" text="订单详细信息" />
          </children></Pane>
-      <VBox prefHeight="100.0" prefWidth="601.0">
+      <VBox prefHeight="120.0" prefWidth="759.0">
          <children>
             <Label fx:id="customerLabel" text="客户">
                <styleClass>
@@ -41,19 +41,19 @@
                   <HBox prefHeight="24.0" prefWidth="474.0" spacing="10.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="客户ID :" />
-                        <Label fx:id="nameLabel" styleClass="orderInfoLableSize" text="Alex Yu" />
+                        <Label fx:id="customerIdLabel" styleClass="orderInfoLableSize" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="24.0" prefWidth="467.0" spacing="10.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label styleClass="orderInfoLableSize" text="订单ID :" />
-                        <Label fx:id="userIdLabel" styleClass="orderInfoLableSize" text="58100010202" />
+                        <Label styleClass="orderInfoLableSize" text="客户姓名 :" />
+                        <Label fx:id="customerNameLabel" styleClass="orderInfoLableSize" text="--" />
                      </children>
                   </HBox>
                   <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label styleClass="orderInfoLableSize" text="联系方式 :" />
-                        <Label fx:id="phoneLabel" styleClass="orderInfoLableSize" text="12580" />
+                        <Label fx:id="phoneLabel" styleClass="orderInfoLableSize" text="--" />
                      </children>
                   </HBox>
                </children>
@@ -83,13 +83,13 @@
                         <HBox prefHeight="24.0" prefWidth="478.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="ID :" />
-                              <Label fx:id="orderIDLabel" styleClass="orderInfoLableSize" text="201402140001" />
+                              <Label fx:id="orderIDLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="生成时间 :" />
-                              <Label fx:id="orderStartLabel" styleClass="orderInfoLableSize" text="2017.2.14 14:38" />
+                              <Label fx:id="orderStartLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
@@ -101,25 +101,25 @@
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="订单状态 :" />
-                              <Label fx:id="orderStateLabel" styleClass="orderInfoLableSize" text="未执行" />
+                              <Label fx:id="orderStateLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="价值 :" />
-                              <Label fx:id="orderPriceLabel" styleClass="orderInfoLableSize" text="998" />
+                              <Label fx:id="orderPriceLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="480.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="入住时间 :" />
-                              <Label fx:id="roomInLabel" styleClass="orderInfoLableSize" text="2017.2.14 18:00" />
+                              <Label fx:id="roomInLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="预计退房时间 :" />
-                              <Label fx:id="roomOutLabel" styleClass="orderInfoLableSize" text="2017.2.15 18:00" />
+                              <Label fx:id="roomOutLabel" styleClass="orderInfoLableSize" text="--" />
                            </children>
                         </HBox>
                      </children>
@@ -147,26 +147,20 @@
                      <children>
                         <HBox prefHeight="24.0" prefWidth="470.0" spacing="10.0">
                            <children>
-                              <Label styleClass="orderInfoLableSize" text="房间号 :" />
-                              <Label fx:id="roomIDLabel" styleClass="orderInfoLableSize" text="3B348" />
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
-                           <children>
-                              <Label styleClass="orderInfoLableSize" text="房型 :" />
-                              <Label fx:id="roomTypeLabel" styleClass="orderInfoLableSize" text="总统套房" />
+                              <Label styleClass="orderInfoLableSize" text="酒店名称 :" />
+                              <Label fx:id="hotelNameLabel" styleClass="orderInfoLableSize" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label styleClass="orderInfoLableSize" text="入住人数 :" />
-                              <Label fx:id="checkInNumberLabel" styleClass="orderInfoLableSize" text="有" />
+                              <Label fx:id="checkInNumberLabel" styleClass="orderInfoLableSize" />
                            </children>
                         </HBox>
                         <HBox prefHeight="24.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Label prefHeight="23.0" prefWidth="87.0" styleClass="orderInfoLableSize" text="有无儿童 :" />
-                              <Label fx:id="havaChildLabel" styleClass="orderInfoLableSize" text="2" />
+                              <Label fx:id="havaChildLabel" styleClass="orderInfoLableSize" />
                            </children>
                         </HBox>
                      </children>

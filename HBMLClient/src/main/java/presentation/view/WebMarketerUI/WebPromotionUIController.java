@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.DateHelper;
 import model.DiscountType;
@@ -40,10 +41,12 @@ public class WebPromotionUIController {
     private VBox infoVBox;
     private VBox thisVBox;
 //    private ObservableList webPromotionData;
+    private Stage stage;
     private PromotionWebMarketerService promotionWebMarketerService;
-    public void init(VBox infoVBox,VBox thisVBox) throws Exception{
+    public void init(VBox infoVBox,VBox thisVBox,Stage stage) throws Exception{
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        this.stage=stage;
         promotionWebMarketerService=new PromotionWebMarketerImpl();
         initTableView();
     }
@@ -54,7 +57,7 @@ public class WebPromotionUIController {
     @FXML
     private void toAddWebPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new AddWebPromotionUI(infoVBox,thisVBox));
+        infoVBox.getChildren().add(new AddWebPromotionUI(infoVBox,thisVBox,stage));
     }
 
     /**
@@ -73,8 +76,10 @@ public class WebPromotionUIController {
             }
         });
         ObservableList webPromotionData=FXCollections.observableArrayList();
-        if(promotionWebMarketerService.getWebPromotionList(new PromotionFilter())!=null){
-            for (PromotionVO promotionVO:promotionWebMarketerService.getWebPromotionList(new PromotionFilter()).values()) {
+        PromotionFilter promotionFilter=new PromotionFilter();
+        promotionFilter.add("name","!=","10");
+        if(promotionWebMarketerService.getWebPromotionList(promotionFilter)!=null){
+            for (PromotionVO promotionVO:promotionWebMarketerService.getWebPromotionList(promotionFilter).values()) {
                 webPromotionData.add(promotionVO);
             }
         }else{
@@ -113,10 +118,17 @@ public class WebPromotionUIController {
                 int seletedIndex=getTableRow().getIndex();
                 PromotionVO promotionVO=(PromotionVO)webPromotionTableView.getItems().get(seletedIndex);
                 infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new WebPromotionInfoUI(infoVBox,promotionVO));
+                infoVBox.getChildren().add(new WebPromotionInfoUI(infoVBox,promotionVO,stage));
             });
             deleteButton.setOnAction((ActionEvent e)->{
-
+                int seletedIndex=getTableRow().getIndex();
+                PromotionVO promotionVO=(PromotionVO)webPromotionTableView.getItems().get(seletedIndex);
+                promotionWebMarketerService.deleteWebPromotion(promotionVO.getPromotionID());
+                try{
+                    initTableView();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
             });
         }
         @Override

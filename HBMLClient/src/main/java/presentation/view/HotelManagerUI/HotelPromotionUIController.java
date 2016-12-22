@@ -1,5 +1,7 @@
 package presentation.view.HotelManagerUI;
 
+import businesslogic.promotionbl.PromotionStaffImpl;
+import businesslogicservice.promotionblservice.PromotionStaffService;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -18,6 +20,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import model.PromotionFilter;
+import vo.PromotionVO;
+import vo.UserVO;
 
 /**
  * Created by LENOVO on 2016/11/27.
@@ -29,7 +34,8 @@ public class HotelPromotionUIController {
     @FXML private TableColumn promotionStartTableColumn;
     @FXML private TableColumn promotionEndTableColumn;
     @FXML private TableColumn operationTableColumn;
-
+    @FXML private ComboBox customerDiscountBox;
+    @FXML private ComboBox companyDiscountBox;
     @FXML private VBox hotelPromotionVBox;
     @FXML private VBox otherPromotionVBox1;
     @FXML private Label sliderLabel;
@@ -37,9 +43,15 @@ public class HotelPromotionUIController {
     private ObservableList promotionData;
     private VBox infoVBox;
     private VBox thisVBox;
-    public void init(VBox infoVBox,VBox thisVBox){
+    private Stage stage;
+    private UserVO userVO;
+    private PromotionStaffService promotionStaffService;
+    public void init(VBox infoVBox, VBox thisVBox, Stage stage, UserVO userVO){
         this.infoVBox=infoVBox;
         this.thisVBox=thisVBox;
+        this.stage=stage;
+        this.userVO=userVO;
+        promotionStaffService=new PromotionStaffImpl();
         initTableView();
     }
 
@@ -47,10 +59,10 @@ public class HotelPromotionUIController {
      * 初始化hotelPromotionTableView
      */
     private void initTableView(){
-        promotionNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("promotionName"));
-        promotionStartTableColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
-        promotionEndTableColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
-        operationTableColumn.setCellFactory(new Callback<TableColumn<HotelPromotionInfo,Boolean>, TableCell<HotelPromotionInfo,Boolean>>() {
+        promotionNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        promotionStartTableColumn.setCellValueFactory(new PropertyValueFactory<>("startDateString"));
+        promotionEndTableColumn.setCellValueFactory(new PropertyValueFactory<>("endDateString"));
+        operationTableColumn.setCellFactory(new Callback<TableColumn<PromotionVO,Boolean>, TableCell<PromotionVO,Boolean>>() {
             @Override
             public TableCell call(TableColumn param) {
                 return new PromotionInfoButtonCell(infoVBox,thisVBox);
@@ -58,10 +70,15 @@ public class HotelPromotionUIController {
         });
 
         promotionData=FXCollections.observableArrayList();
-        promotionData.add(new HotelPromotionInfo("双十一","2016.11.11 00:00","2016.11.12 00:00"));
-        promotionData.add(new HotelPromotionInfo("双十二","2016.12.12 00:00","2116.12.13 00:00"));
-        promotionData.add(new HotelPromotionInfo("团购满减","2015.1.5 00:00","2015.1.6 00:00"));
-        promotionData.add(new HotelPromotionInfo("新年甩卖","2016.1.31 00:00","2016.2.15 00:00"));
+        PromotionFilter promotionFilter=new PromotionFilter();
+        promotionFilter.add("region","=",userVO.getHotelid());
+        if(promotionStaffService.getHotelPromotionList(promotionFilter)!=null){
+            for (PromotionVO promotionVO:promotionStaffService.getHotelPromotionList(promotionFilter).values()) {
+                promotionData.add(promotionVO);
+            }
+        }else{
+            System.out.println("数据库促销数据为空");
+        }
         hotelPromotionTableView.setItems(promotionData);
     }
 
@@ -104,13 +121,13 @@ public class HotelPromotionUIController {
     @FXML
     private void toNewPromotion(){
         infoVBox.getChildren().remove(0);
-        infoVBox.getChildren().add(new NewPromotionUI(infoVBox,thisVBox));
+        infoVBox.getChildren().add(new NewPromotionUI(infoVBox,thisVBox,userVO,stage));
     }
 
     /**
      * 在酒店促销策略列表添加查看策略信息按钮
      */
-    public class PromotionInfoButtonCell extends TableCell<HotelPromotionInfo,Boolean>{
+    public class PromotionInfoButtonCell extends TableCell<PromotionVO,Boolean>{
         private HBox operationHBox=new HBox();
         private Button deleteButton=new Button();
         private Button viewButton=new Button();
@@ -123,8 +140,10 @@ public class HotelPromotionUIController {
             deleteButton.setGraphic(deleteImageView);
             deleteButton.setStyle("-fx-background-color: transparent");
             viewButton.setOnAction((ActionEvent e)->{
+                int selectedIndex=getTableRow().getIndex();
+                PromotionVO promotionVO=(PromotionVO)hotelPromotionTableView.getItems().get(selectedIndex);
                 infoVBox.getChildren().remove(0);
-                infoVBox.getChildren().add(new PromotionInfoUI(infoVBox,beforeVBox));
+                infoVBox.getChildren().add(new PromotionInfoUI(infoVBox,beforeVBox,promotionVO));
             });
         }
 
@@ -138,41 +157,6 @@ public class HotelPromotionUIController {
                 setGraphic(operationHBox);
                 setText(null);
             }
-        }
-    }
-
-    public class HotelPromotionInfo{
-        String promotionName;
-        String startTime;
-        String endTime;
-        public HotelPromotionInfo(String promotionName, String startTime, String endTime){
-            this.promotionName=promotionName;
-            this.startTime=startTime;
-            this.endTime=endTime;
-        }
-
-        public String getEndTime() {
-            return endTime;
-        }
-
-        public void setEndTime(String endTime) {
-            this.endTime = endTime;
-        }
-
-        public String getStartTime() {
-            return startTime;
-        }
-
-        public void setStartTime(String startTime) {
-            this.startTime = startTime;
-        }
-
-        public String getPromotionName() {
-            return promotionName;
-        }
-
-        public void setPromotionName(String promotionName) {
-            this.promotionName = promotionName;
         }
     }
 }

@@ -8,16 +8,16 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" styleClass="dialogBackground" stylesheets="@../webmarketer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.WebMarketerUI.ValueJudgeUIController">
    <children>
-      <VBox disable="true" prefHeight="350.0" prefWidth="450.0">
+      <VBox fx:id="firstVBox" prefHeight="350.0" prefWidth="450.0">
          <children>
             <VBox prefHeight="350.0" prefWidth="450.0">
                <children>
                   <Label styleClass="infoLabelSize" text="申诉理由:" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="contentTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="confirmButton" text="合理" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="cancelButton" text="不合理" />
+                        <Button mnemonicParsing="false" onAction="#reason" prefHeight="30.0" prefWidth="80.0" styleClass="confirmButton" text="合理" />
+                        <Button mnemonicParsing="false" onAction="#noreason" prefHeight="30.0" prefWidth="80.0" styleClass="cancelButton" text="不合理" />
                      </children>
                   </HBox>
                </children>
@@ -27,7 +27,7 @@
             </VBox>
          </children>
       </VBox>
-      <VBox prefHeight="350.0" prefWidth="450.0">
+      <VBox fx:id="secondVBox" prefHeight="350.0" prefWidth="450.0" visible="false">
          <children>
             <HBox alignment="CENTER" prefHeight="79.0" prefWidth="498.0" spacing="15.0">
                <children>

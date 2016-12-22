@@ -17,6 +17,7 @@
     -fx-text-fill: #ffffff;
 }
 
+
 /**
  *显示出左边工作内容选择区域的右边界,并设置边界颜色
  */
@@ -152,10 +153,6 @@
     -fx-border-radius: 2px;
 }
 
-.combo-box-base .content{
-    -fx-background-color: transparent;
-}
-
 /**
  *设置tableview的样式
  */
@@ -183,6 +180,13 @@
     -fx-background-color: #BEBEBE;
 }
 
+.infoVBox{
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #BEBEBE;
+}
 
 
 

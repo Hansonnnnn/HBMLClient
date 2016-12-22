@@ -1,7 +1,9 @@
 package presentation.view.WebManagerUI;
 
+import businesslogic.hotelInfobl.HotelStaffImpl;
 import businesslogic.hotelInfobl.HotelWebManagerImpl;
 import businesslogic.userbl.UserWebManagerImpl;
+import businesslogicservice.hotelinfoblservice.HotelStaffService;
 import businesslogicservice.hotelinfoblservice.HotelWebManagerService;
 import businesslogicservice.userblservice.UserWebManagerService;
 import javafx.fxml.FXML;
@@ -29,15 +31,19 @@ public class HotelStaffInfoUIController {
     private Stage stage;
     private UserVO userVO;
     private UserWebManagerService userWebManagerService;
+    private HotelStaffService hotelStaffService;
     public void init(VBox infoVBox, VBox beforeVBox, Stage stage, UserVO userVO){
         this.infoVBox=infoVBox;
         this.beforeVBox=beforeVBox;
         this.stage=stage;
         this.userVO=userVO;
+        hotelStaffService=new HotelStaffImpl();
         userWebManagerService=new UserWebManagerImpl();
+        staffIdTextField.setText(String.valueOf(userVO.getUserID()));
         staffAccountTextField.setText(userVO.getAccountName());
         staffPasswordTextField.setText(userVO.getPassword());
         staffNameTextField.setText(userVO.getName());
+        staffHotelNameTextField.setText(hotelStaffService.getHotelInfo(userVO.getHotelid()).getName());
         staffPhoneTextField.setText(userVO.getContact());
     }
 
@@ -55,11 +61,7 @@ public class HotelStaffInfoUIController {
      */
     @FXML
     private void edit(){
-        staffIdTextField.setDisable(false);
-//        staffAccountTextField.setDisable(false);
-        staffPasswordTextField.setDisable(false);
         staffNameTextField.setDisable(false);
-        staffHotelNameTextField.setDisable(false);
         staffPhoneTextField.setDisable(false);
     }
 
@@ -68,11 +70,7 @@ public class HotelStaffInfoUIController {
      */
     @FXML
     private void confirm(){
-        staffIdTextField.setDisable(true);
-//        staffAccountTextField.setDisable(true);
-        staffPasswordTextField.setDisable(true);
         staffNameTextField.setDisable(true);
-        staffHotelNameTextField.setDisable(true);
         staffPhoneTextField.setDisable(true);
         try{
             if((!staffPasswordTextField.getText().equals(""))&&(staffPasswordTextField.getText()!=null)&&
