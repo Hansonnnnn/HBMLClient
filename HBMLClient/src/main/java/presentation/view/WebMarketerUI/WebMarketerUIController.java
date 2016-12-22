@@ -1,15 +1,19 @@
 package presentation.view.WebMarketerUI;
 
+import businesslogic.userbl.UserLogImpl;
+import businesslogicservice.userblservice.UserLogService;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import presentation.view.application.UserLoginUI;
 import vo.UserVO;
 
 /**
@@ -30,10 +34,12 @@ public class WebMarketerUIController {
     private Stage stage;
     private Scene loginScene;
     private UserVO userVO;
+    private UserLogService userLogService;
     public void init(Stage stage, Scene loginScene,UserVO userVO){
         this.stage=stage;
         this.loginScene=loginScene;
         this.userVO=userVO;
+        userLogService=new UserLogImpl();
         nameLabel.setText(userVO.getName()+",欢迎你");
         infoVBox.getChildren().add(new ExceptionOrderUI(stage,userVO));
     }
@@ -43,7 +49,8 @@ public class WebMarketerUIController {
      */
     @FXML
     private void backToLogin(){
-        stage.setScene(loginScene);
+        stage.setScene(new UserLoginUI(new Group(),stage));
+        userLogService.logout(userVO.getAccountName());
     }
 
 

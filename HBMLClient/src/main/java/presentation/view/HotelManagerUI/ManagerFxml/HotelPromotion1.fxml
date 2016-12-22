@@ -31,7 +31,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <VBox fx:id="hotelPromotionVBox" prefHeight="543.0" prefWidth="759.0" visible="false">
+      <VBox fx:id="hotelPromotionVBox" prefHeight="543.0" prefWidth="759.0">
          <children>
             <TableView fx:id="hotelPromotionTableView" maxWidth="682.0" prefHeight="471.0" prefWidth="652.0" styleClass="roomTypeTableView">
                <columns>
@@ -59,7 +59,7 @@
             <Insets left="35.0" />
          </padding>
       </VBox>
-      <VBox fx:id="otherPromotionVBox1" prefHeight="543.0" prefWidth="100.0">
+      <VBox fx:id="otherPromotionVBox1" prefHeight="543.0" prefWidth="100.0" visible="false">
          <VBox.margin>
             <Insets top="-553.0" />
          </VBox.margin>

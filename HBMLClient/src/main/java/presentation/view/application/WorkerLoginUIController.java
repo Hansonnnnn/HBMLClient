@@ -32,19 +32,11 @@ public class WorkerLoginUIController {
 
     private Stage stage;
     private Scene thisScene;
-//    private UserStaffService userStaffService;
-//    private UserWebManagerService userWebManagerService;
-//    private UserWebMarketerService webMarketerService;
     private UserLogService userLogService;
     public void init(Stage stage,Scene thisScene){
         this.stage=stage;
         this.thisScene=thisScene;
-//        userStaffService=new UserStaffImpl();
-//        userWebManagerService=new UserWebManagerImpl();
-//        webMarketerService=new UserWebMarketerImpl();
         userLogService=new UserLogImpl();
-        workerAccountTextField.setText("01");
-        workerPasswordTextField.setText("admin");
     }
 
     /**
@@ -61,8 +53,6 @@ public class WorkerLoginUIController {
     @FXML
     private void workerLogin(){
         try{
-////            ResultMessage message=webMarketerService.login(workerAccountTextField.getText(),workerPasswordTextField.getText());
-//            ResultMessage message=userWebManagerService.login(workerAccountTextField.getText(),workerPasswordTextField.getText());
             ResultMessage message=userLogService.login(workerAccountTextField.getText(),workerPasswordTextField.getText());
             System.out.println(message);
             if(message.equals(ResultMessage.wrongPassword)){
@@ -71,20 +61,23 @@ public class WorkerLoginUIController {
                 new MyDialog(stage,"该用户不存在",0);
             }else if(message.equals(ResultMessage.success)){
                 UserVO userVO=userLogService.getUserData(workerAccountTextField.getText());
-                System.out.println("  aa  "+userVO.getUserType());
                 if(userVO==null){
                     System.out.println("userVO为空");
                 }
                 if(userVO.getUserType().equals(UserType.Staff)){
                     stage.setScene(new HotelStaffUI(new Group(),stage,thisScene,userVO));
+//                    workerAccountTextField.setText("");
+//                    workerPasswordTextField.setText("");
                 }else if(userVO.getUserType().equals(UserType.WebManager)){
                     stage.setScene(new WebManagerUI(new Group(),stage,thisScene,userVO));
+//                    workerAccountTextField.setText("");
+//                    workerPasswordTextField.setText("");
                 }else if(userVO.getUserType().equals(UserType.WebMarketer)){
                     stage.setScene(new WebMarketerUI(new Group(),stage,thisScene,userVO));
+//                    workerAccountTextField.setText("");
+//                    workerPasswordTextField.setText("");
                 }
             }
-//            stage.setScene(new WebMarketerUI(new Group(),stage,thisScene));
-//            stage.setScene(new HotelStaffUI(new Group(),stage,thisScene));
         }catch(Exception e){
             e.printStackTrace();
         }
