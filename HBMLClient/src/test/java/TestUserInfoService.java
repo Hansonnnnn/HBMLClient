@@ -1,14 +1,22 @@
 import java.rmi.RemoteException;
+import java.util.Map;
 
 import businesslogic.creditbl.CreditCustomerImpl;
+import businesslogic.creditbl.CreditWebMarketerImpl;
+import businesslogic.creditbl.helper.CreditHelper;
+import businesslogic.orderbl.OrderWebMarketerServiceImpl;
 import businesslogic.userbl.UserCustomerImpl;
 import businesslogic.utility.UserInfoImpl;
 import businesslogicservice.UserInfoService;
 import businesslogicservice.creditblservice.CreditCustomerService;
+import businesslogicservice.creditblservice.CreditWebMarketerService;
+import businesslogicservice.orderblservice.OrderWebMarketerService;
 import businesslogicservice.userblservice.UserCustomerService;
 import dao.CreditDao;
 import dao.UserDao;
 import rmi.ClientRunner;
+import vo.AppealVO;
+import vo.OrderVO;
 import vo.UserVO;
 
 public class TestUserInfoService {
@@ -37,8 +45,13 @@ public class TestUserInfoService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		CreditCustomerService creditCustomerService = new CreditCustomerImpl();
+		/*CreditCustomerService creditCustomerService = new CreditCustomerImpl();
 		System.out.println(creditCustomerService.getCreditValue(1));
+	*/
+		OrderWebMarketerService orderWebMarketerService = new OrderWebMarketerServiceImpl();
+		Map<Integer, AppealVO>map = orderWebMarketerService.getAppealOrderList(0);
 	
+		/*CreditWebMarketerService creditWebMarketerService = new CreditWebMarketerImpl();
+		System.out.println(creditWebMarketerService.addCreditValue(1, 22));*/
 	}
 }

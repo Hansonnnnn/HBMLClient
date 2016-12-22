@@ -17,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import message.AppealStateMessage;
 import model.DateHelper;
 import vo.AppealVO;
 import vo.OrderVO;
@@ -72,6 +73,7 @@ public class ExceptionOrderUIController {
      */
     @FXML
     private void toExceptionOrder(){
+  //  	initTableView();
         exceptionOrderTableView.setVisible(true);
         unexecutedTableView.setVisible(false);
         moveOrderButtonBottomBorder(sliderLabel,165);
@@ -129,7 +131,10 @@ public class ExceptionOrderUIController {
         exceptionOrderData= FXCollections.observableArrayList();
         if(webMarketerService.getAppealOrderList(0)!=null){
             for(AppealVO appealVO:webMarketerService.getAppealOrderList(0).values()){
-                exceptionOrderData.add(appealVO);
+            	if (appealVO.getAppealState()==AppealStateMessage.Undealt) {
+            		 exceptionOrderData.add(appealVO);
+				}
+              
             }
         }else{
             System.out.println("没数据2");
