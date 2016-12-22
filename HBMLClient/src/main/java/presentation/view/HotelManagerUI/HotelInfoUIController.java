@@ -83,7 +83,7 @@ public class HotelInfoUIController {
         }
         starComboBox.setItems(starData);
         hotelStaffService=new HotelStaffImpl();
-        hotelWebManagerService=new HotelWebManagerImpl();
+//        hotelWebManagerService=new HotelWebManagerImpl();
         hotelRegionHelper=new RegionHelper();
         initProvinceBox();
         initComboBox();
@@ -143,14 +143,15 @@ public class HotelInfoUIController {
         );
         if(choicefile!=null){
             try{
-                String path="C:/Users/LENOVO/Desktop/picture/";
-                String fileName=path+choicefile.getName().toString();
-                file=new File(fileName);
+               // String path="C:/Users/LENOVO/Desktop/picture/";
+             /*   //String fileName=path+choicefile.getName().toString();
+                //file=new File(fileName);
                 if(!file.exists()){
-                    File newfile=new File(path);
-                    newfile.mkdirs();
+                  //  File newfile=new File(path);
+                   File newfile = choicefile;
+                	newfile.mkdirs();
                     FileInputStream input=new FileInputStream(choicefile);
-                    FileOutputStream output=new FileOutputStream(fileName);
+                    FileOutputStream output=new FileOutputStream(choicefile);
 
                     byte[] b=new byte[1824*5];
                     int length;
@@ -160,8 +161,9 @@ public class HotelInfoUIController {
                     output.flush();
                     output.close();
                     input.close();
-                }
-                Image image=new Image("file:///"+fileName);
+                }*/
+            	file = choicefile;
+                Image image=new Image("file:///"+choicefile.getPath());
                 hotelImageView.setImage(image);
 
             }catch (Exception e){
@@ -233,7 +235,7 @@ public class HotelInfoUIController {
      * 初始化酒店信息
      */
     private void initComboBox(){
-        HotelVO hotelVO=hotelWebManagerService.getHotelInfo(userVO.getHotelid());
+        HotelVO hotelVO=hotelStaffService.getHotelInfo(userVO.getHotelid());
         hotelNameTextField.setText(hotelVO.getName());
         starComboBox.setValue(hotelVO.getStar());
         RegionVO regionVO=hotelRegionHelper.getSpecificRegion(hotelVO.getRegion());
@@ -242,8 +244,8 @@ public class HotelInfoUIController {
         regionBox.setValue(regionVO.getRegionName());
         hotelAddressTextField.setText(hotelVO.getAddress());
         hotelIntroTextArea.setText(hotelVO.getIntroduction());
-//        Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
-//        hotelImageView.setImage(image);
+        Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath());
+        hotelImageView.setImage(image);
 
     }
 }
