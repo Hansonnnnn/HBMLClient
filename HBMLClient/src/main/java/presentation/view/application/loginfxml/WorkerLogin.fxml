@@ -46,11 +46,11 @@
                   <Insets right="-35.0" top="5.0" />
                </HBox.margin>
             </ImageView>
-            <TextField fx:id="workerPasswordTextField" prefHeight="40.0" prefWidth="280.0" promptText="密码" styleClass="loginTextField">
+            <PasswordField fx:id="workerPasswordTextField" prefHeight="40.0" prefWidth="280.0" promptText="密码" styleClass="loginTextField">
                <padding>
                   <Insets left="47.0" />
                </padding>
-            </TextField>
+            </PasswordField>
          </children>
          <padding>
             <Insets top="15.0" />
