@@ -29,12 +29,12 @@ public class TestUserInfoService {
 		System.out.println(userInfoService.getLocalUser());
 		userInfoService.logout();*/
 		
-		/*UserCustomerService userCustomerService = new UserCustomerImpl();
-		UserVO userVO = userCustomerService.getUserData(1);
-		System.out.println(userVO);
-		UserDao userDao = ClientRunner.remoteHelper.getUserDao();
+		UserCustomerService userCustomerService = new UserCustomerImpl();
+		UserVO userVO = userCustomerService.getUserData("我就是谢振宇");
+		System.out.println(userVO.getPortrait());
+	/*	UserDao userDao = ClientRunner.remoteHelper.getUserDao();
 		System.out.println(userDao);*/
-			
+		
 	/*	UserDao userDao  = ClientRunner.remoteHelper.getUserDao();
 		
 		CreditDao creditDao = ClientRunner.remoteHelper.getCreditDao();
@@ -48,9 +48,7 @@ public class TestUserInfoService {
 		/*CreditCustomerService creditCustomerService = new CreditCustomerImpl();
 		System.out.println(creditCustomerService.getCreditValue(1));
 	*/
-		OrderWebMarketerService orderWebMarketerService = new OrderWebMarketerServiceImpl();
-		Map<Integer, AppealVO>map = orderWebMarketerService.getAppealOrderList(0);
-	
+		
 		/*CreditWebMarketerService creditWebMarketerService = new CreditWebMarketerImpl();
 		System.out.println(creditWebMarketerService.addCreditValue(1, 22));*/
 	}
