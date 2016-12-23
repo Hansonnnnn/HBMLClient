@@ -2,6 +2,8 @@ package presentation.view.customerui.customerui;
 
 import businesslogic.userbl.UserCustomerImpl;
 import businesslogic.userbl.UserLogImpl;
+import businesslogic.utility.UserInfoImpl;
+import businesslogicservice.UserInfoService;
 import businesslogicservice.userblservice.UserCustomerService;
 import businesslogicservice.userblservice.UserLogService;
 import javafx.fxml.FXML;
@@ -28,6 +30,8 @@ public class EnrollUserPageNewController {
 	private UserVO userVO;
 	private UserCustomerService customerService;
 	private UserLogService userLogService;
+
+	private UserInfoService userInfoService;
 	
 	public void init(Stage stage, Scene preScene)
 	{
@@ -35,6 +39,7 @@ public class EnrollUserPageNewController {
 		this.preScene = preScene;
 		customerService = new UserCustomerImpl();
 		userLogService=new UserLogImpl();
+		userInfoService = new UserInfoImpl();
 	}
 	
 	@FXML
@@ -51,6 +56,7 @@ public class EnrollUserPageNewController {
 		if(nameField.getText()!=null&&!nameField.getText().isEmpty())
 		{
 			name = nameField.getText();
+			userInfoService.saveLocalUserInfo(name);
 		}
 		if(passwordField.getText()!=null&&!passwordField.getText().isEmpty())
 		{

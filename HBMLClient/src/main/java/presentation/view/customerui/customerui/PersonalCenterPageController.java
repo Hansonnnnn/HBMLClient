@@ -43,6 +43,7 @@ public class PersonalCenterPageController {
 		this.presentScene = presentScene;
 		this.userVO = userVO;
 		nameLabel.setText(userVO.getName());
+//		Image image = new Image("file///:"+userVO.getP)
 	}
 	
 	@FXML

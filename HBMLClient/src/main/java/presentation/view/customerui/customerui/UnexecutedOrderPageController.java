@@ -45,7 +45,7 @@ public class UnexecutedOrderPageController
 	{
 		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
 		generateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("generateTime"));
-		executeDDLColumn.setCellValueFactory(new PropertyValueFactory<>("executeDDL"));
+		executeDDLColumn.setCellValueFactory(new PropertyValueFactory<>("executeDDl"));
 		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
