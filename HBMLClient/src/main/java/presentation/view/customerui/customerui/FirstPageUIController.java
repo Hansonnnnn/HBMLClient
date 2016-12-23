@@ -311,7 +311,7 @@ public class FirstPageUIController {
 	{
 		if(logined)
 		{
-			stage.setScene(new WelcomePageUILogoutEdition(new Group(), stage, firstPageUI, this, userVO.getName()));
+			stage.setScene(new WelcomePageUILogoutEdition(new Group(), stage, firstPageUI, this, userVO));
 		}else 
 		{
 			stage.setScene(new WelcomePageUI(new Group(), stage));

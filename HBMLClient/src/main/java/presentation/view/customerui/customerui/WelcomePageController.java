@@ -53,7 +53,6 @@ public class WelcomePageController
 				UserVO tempUser = userLogService.getUserData(userInfoService.getLocalUser());
 				//System.out.println(tempUser.getPortrait().getAbsolutePath());
 			     Image  headImage=new Image("file:///"+tempUser.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
-			     
 				imageView.setImage(headImage);
 			}
 		}
