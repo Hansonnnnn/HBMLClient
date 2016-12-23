@@ -30,7 +30,6 @@ public class CreditHelper {
     TransferService creditTransferService;
 
     public CreditHelper() {
-
         userDao= ClientRunner.remoteHelper.getUserDao();
         creditDao= ClientRunner.remoteHelper.getCreditDao();
         creditTransferService=new TransferImpl();
@@ -59,7 +58,6 @@ public class CreditHelper {
 
 
     public long getCreditValue(int userID){
-
         UserPO userPO= null;
         try {
             userPO = userDao.getUserData(userID);
@@ -70,7 +68,8 @@ public class CreditHelper {
         }
         if(userPO!=null&&userPO.getUserType().equals(UserType.Customer)){
             try {
-                return creditDao.getCreditValue(userID);
+            	long value = creditDao.getCreditValue(userID);
+                return value;
             } catch (RemoteException e) {
                 e.printStackTrace();
                 System.out.println("cannot get credit value!!!");
@@ -120,14 +119,10 @@ public class CreditHelper {
         CreditRecordReasonTypeHelper creditRecordReasonTypeHelper=new CreditRecordReasonTypeHelper();
         CreditRecordVO creditRecordVO=new CreditRecordVO(UserID,new Date(),creditRecordReasonTypeHelper.getCreditRecordReasonType(3),value);
         long creditValue= 0;
-        try {
-            creditValue = creditDao.getCreditValue(UserID);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            System.out.println("cannot get credit value!!!");
-            return ResultMessage.sqlFailure;
-        }
-        creditValue+=value;
+       
+		creditValue =getCreditValue(UserID);
+		creditValue+=value; 
+		
         try {
             creditDao.setCreditValue(UserID,creditValue);
         } catch (RemoteException e) {

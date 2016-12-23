@@ -31,8 +31,7 @@ public class CreditWebMarketerImpl implements CreditWebMarketerService{
     @Override
     public ResultMessage addCreditValue(int UserID, long value){
 
-        return creditHelper.addCreditValue(UserID,value);
-
+    	 return creditHelper.addCreditValue(UserID,value);
     }
 
 
