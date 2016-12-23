@@ -50,16 +50,16 @@ public class PersonInfoPageController {
 		this.presentScene = presentScene;
 		this.userVO = userVO;
 		customerService = new UserCustomerImpl();
+	 	
 		initHeadImage();
 	}
 	
 	private void initHeadImage()
 	{
-		Image image = new Image("file:///"+userVO.getPortrait().getPath());
-		if(image!=null)
-		{
-			headImageView.setImage(image);
-		}
+		if(userVO.getPortrait()!=null){
+	   		 Image  headImage=new Image("file:///"+userVO.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
+	   		 headImageView.setImage(headImage);
+	   	}
 	}
 	@FXML
 	private void back()

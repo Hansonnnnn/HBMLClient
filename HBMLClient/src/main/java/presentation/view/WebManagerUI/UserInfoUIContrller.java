@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import model.MemberType;
 import model.MemberTypeHelper;
@@ -34,6 +36,7 @@ public class UserInfoUIContrller {
     @FXML private ComboBox memberTypeComboBox;
     @FXML private TextField memberLevelTextField;
     @FXML private TextField memberInfoTextField;
+    @FXML private ImageView userImageView;
 
 
     private ObservableList memberType;
@@ -83,6 +86,11 @@ public class UserInfoUIContrller {
                 UserVO userVO=userCustomerService.getUserData(seekIdTextField.getText());
                 this.userVO=userVO;
                 if(userVO!=null){
+                	if(userVO.getPortrait()!=null){
+                		 Image  headImage=new Image("file:///"+userVO.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
+                		 userImageView.setImage(headImage);
+                	}
+                		
                     userIdTextField.setText(String.valueOf(userVO.getUserID()));
                     userNameTextField.setText(userVO.getName());
                     userAccountTextField.setText(userVO.getAccountName());

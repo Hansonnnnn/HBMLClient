@@ -66,6 +66,10 @@ public class HotelInfoUIController
 			this.logined = logined;
 			initLabel();
 			initTable();
+			if(hotelVO.getEnvironment().size()>0){
+		           Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
+		            hotelImageView.setImage(image); 
+		        }
 		}
 		
 		@FXML 
