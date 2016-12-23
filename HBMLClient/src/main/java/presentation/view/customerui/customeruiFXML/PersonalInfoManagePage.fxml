@@ -92,7 +92,10 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="363.0" layoutY="447.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" styleClass="backButtonColor" text="编辑" />
-      <Button layoutX="576.0" layoutY="446.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" styleClass="backButtonColor" text="保存" />
+      <Button fx:id="saveButton" layoutX="479.0" layoutY="446.0" mnemonicParsing="false" onAction="#save" prefHeight="32.0" prefWidth="120.0" text="保存">
+         <styleClass>
+            <String fx:value="backButtonColor" />
+            <String fx:value="whiteFont" />
+         </styleClass></Button>
    </children>
 </AnchorPane>

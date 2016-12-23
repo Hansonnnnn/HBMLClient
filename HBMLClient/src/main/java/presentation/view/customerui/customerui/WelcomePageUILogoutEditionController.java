@@ -1,5 +1,7 @@
 package presentation.view.customerui.customerui;
 
+import businesslogic.utility.UserInfoImpl;
+import businesslogicservice.UserInfoService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -17,6 +19,7 @@ public class WelcomePageUILogoutEditionController
 		private Scene preScene;
 		private FirstPageUIController controller;
 		private String userName;
+		private UserInfoService cUserInfoService;
 	
 		public void init(Stage stage, Scene preScene, FirstPageUIController controller, String userName)
 		{
@@ -25,12 +28,14 @@ public class WelcomePageUILogoutEditionController
 			this.controller = controller;
 			this.userName = userName;
 			nameLabel.setText(userName);
+			cUserInfoService = new UserInfoImpl();
 		}
 		
 		@FXML 
 		private void logout()
 		{
 			controller.setState(false);
+			cUserInfoService.logout();
 			stage.setScene(new WelcomePageUI(new Group(), stage));
 		}
 		

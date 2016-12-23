@@ -22,7 +22,6 @@ public class UnexecutedOrderPageController
 	
 	@FXML private TableColumn<OrderVO, Boolean> idColumn;
 	@FXML private TableColumn<OrderVO, Boolean> generateTimeColumn;
-	@FXML private TableColumn<OrderVO, Boolean>	 cancelTimeColumn;
 	@FXML private TableColumn<OrderVO, Boolean> priceColumn;
 	@FXML private TableColumn<OrderVO, Boolean> executeDDLColumn;
 	@FXML private TableColumn<OrderVO, Boolean> checkOrderButtonColumn;
@@ -46,7 +45,6 @@ public class UnexecutedOrderPageController
 	{
 		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
 		generateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("generateTime"));
-		cancelTimeColumn.setCellValueFactory(new PropertyValueFactory<>("cancelTime"));
 		executeDDLColumn.setCellValueFactory(new PropertyValueFactory<>("executeDDL"));
 		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import message.ResultMessage;
@@ -49,6 +50,9 @@ public class WelcomePageController
 			{
 				nameField.setText(userInfoService.getLocalUser());
 				passwordField.setPromptText("请输入密码继续");
+				UserVO tempUser = userLogService.getUserData(userInfoService.getLocalUser());
+				Image headImage = new Image("file:///"+tempUser.getPortrait().getPath());
+				imageView.setImage(headImage);
 			}
 		}
 		

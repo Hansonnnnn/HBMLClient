@@ -5,11 +5,7 @@ import javafx.scene.Group;
 import javafx.stage.Stage;
 import presentation.view.application.UserLoginUI;
 import rmi.ClientRunner;
-/**
- * 驱动的总测试入口
- * @author wangfan
- *
- */
+
 public class Client2 extends Application{
 	public void start(Stage stage)
 	{
