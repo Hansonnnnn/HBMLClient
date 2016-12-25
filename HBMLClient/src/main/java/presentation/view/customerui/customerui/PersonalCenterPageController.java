@@ -1,9 +1,5 @@
 package presentation.view.customerui.customerui;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 
 import javafx.fxml.FXML;
@@ -13,14 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import vo.UserVO;
 
 public class PersonalCenterPageController {
 	@FXML private Button backButton;
 	@FXML private Button vipEnrollButton;
-	@FXML private ImageView headImage;
+	@FXML private ImageView headImageView;
 	@FXML private Label nameLabel;
 	@FXML private Label creditValueLabel;
 	@FXML private Button myInfoButton;
@@ -31,10 +26,7 @@ public class PersonalCenterPageController {
 	private Scene preScene;
 	private Scene presentScene;
 	
-	private Desktop desktop;
-	private FileChooser fileChooser;
 	
-//	private String userName;
 	private UserVO userVO;
 	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
@@ -43,8 +35,11 @@ public class PersonalCenterPageController {
 		this.presentScene = presentScene;
 		this.userVO = userVO;
 		nameLabel.setText(userVO.getName());
-//		Image image = new Image("file///:"+userVO.getP)
-	 
+		if(userVO.getPortrait()!=null)
+		{
+			Image  headImage=new Image("file:///"+userVO.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
+			headImageView.setImage(headImage);
+		}
 	}
 	
 	@FXML

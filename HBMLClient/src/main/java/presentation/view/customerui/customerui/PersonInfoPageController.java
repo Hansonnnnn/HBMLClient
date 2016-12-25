@@ -1,9 +1,7 @@
 package presentation.view.customerui.customerui;
 
-import java.awt.Desktop;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.util.Date;
 
 import businesslogic.userbl.UserCustomerImpl;
 import businesslogicservice.userblservice.UserCustomerService;
@@ -18,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.DateHelper;
 import presentation.view.application.MyDialog;
 import vo.UserVO;
 
@@ -28,10 +27,10 @@ public class PersonInfoPageController {
 	@FXML private ImageView headImageView;
 	@FXML private Label creditValueLabel;
 	@FXML private TextField nameField;
-	@FXML private DatePicker yearPicker;
+	@FXML private DatePicker birthDatePicker;
 	@FXML private TextField numberField;
-	@FXML private TextField infoField;
 	@FXML private Button saveButton;
+	@FXML private Label rankLabel;
 	
 	private Stage stage;
 	private Scene preScene;
@@ -39,9 +38,12 @@ public class PersonInfoPageController {
 	private UserVO userVO;
 	private File choiceFile;
 	
-	private Desktop desktop;
 	private FileChooser fileChooser;
 	private UserCustomerService customerService;
+	
+	private String userName;
+	private String birthday;
+	private String contact;
 	
 	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
@@ -49,8 +51,15 @@ public class PersonInfoPageController {
 		this.preScene = preScene;
 		this.presentScene = presentScene;
 		this.userVO = userVO;
+		userName = userVO.getName();
+		nameField.setPromptText(userName);
+		contact = userVO.getContact();
+		numberField.setPromptText(contact);
+		creditValueLabel.setText(userVO.getCreditValue()+"");
+		rankLabel.setText(userVO.getRank()+"");
+		birthDatePicker.setPromptText(userVO.getMemberInfo());
+		birthday = userVO.getMemberInfo();
 		customerService = new UserCustomerImpl();
-	 	
 		initHeadImage();
 	}
 	
@@ -76,7 +85,6 @@ public class PersonInfoPageController {
 	@FXML
 	private void editImage()
 	{
-		desktop = Desktop.getDesktop();
 		fileChooser = new FileChooser();
 		choiceFile = fileChooser.showOpenDialog(stage);
 		fileChooser.setTitle("选择头像");
@@ -86,43 +94,34 @@ public class PersonInfoPageController {
 				);
 		if (choiceFile!=null) 
 		{
-//			 try{
-//	                String path="/Users/xiezhenyu/Desktop/Pic";
-//	                String fileName=path+choiceFile.getName().toString();
-//	                File file=new File(fileName);
-//	                if(!file.exists()){
-//	                    File newfile=new File(path);
-//	                    newfile.mkdirs();
-//	                    FileInputStream input=new FileInputStream(choiceFile);
-//	                    FileOutputStream output=new FileOutputStream(fileName);
-//
-//	                    byte[] b=new byte[1824*5];
-//	                    int length;
-//	                    while((length=input.read(b))!=-1){
-//	                        output.write(b,0,length);
-//	                    }
-//
-//	                    output.flush();
-//	                    output.close();
-//	                    input.close();
-//	                }
-	                Image image=new Image("file:///"+choiceFile.getPath());
-	                headImageView.setImage(image);
-//	            }catch (Exception e){
-//	                e.printStackTrace();
-//	            }
+	         Image image=new Image("file:///"+choiceFile.getPath());
+	         headImageView.setImage(image);
 		}
 	}
 	
 	@FXML
 	private void save()
 	{
+		if(nameField.getText()!=null&&!nameField.getText().isEmpty())
+		{
+			userName = nameField.getText();
+		}
+		if(birthDatePicker.getValue()!=null)
+		{
+			Date tempDate = DateHelper.localDateToDate(birthDatePicker.getValue());
+			birthday = DateHelper.dateToString(tempDate);
+		}
+		if(numberField.getText()!=null&&!numberField.getText().isEmpty())
+		{
+			contact = numberField.getText();
+		}
 		userVO = new UserVO(userVO.getUserID(), userVO.getUserType(),
-				userVO.getAccountName(), userVO.getPassword(), userVO.getName(), 
-				userVO.getContact(), choiceFile, userVO.getCreditValue(),
-				userVO.getMemberType(), userVO.getMemberInfo(), userVO.getRank(),
+				userVO.getAccountName(), userVO.getPassword(), userName, 
+				contact, choiceFile, userVO.getCreditValue(),
+				userVO.getMemberType(), birthday, userVO.getRank(),
 				userVO.getWorkid(), userVO.getHotelid());
 		customerService.modifyUser(userVO);
 		new MyDialog(stage, "保存信息成功", 2);
+		stage.setScene(preScene);
 	}
 }

@@ -41,7 +41,7 @@
                   <Insets left="20.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="146.0" prefWidth="351.0" spacing="30.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="351.0" spacing="30.0">
                <children>
                   <Label text="设施" textFill="#155ae4" />
                   <Label fx:id="facilityLabel" text="Label" wrapText="true" />
@@ -49,6 +49,17 @@
                <padding>
                   <Insets left="20.0" />
                </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="351.0">
+               <children>
+                  <Button fx:id="historyOrderButton" mnemonicParsing="false" onAction="#historyOrder" prefHeight="9.0" prefWidth="321.0" text="历史订单">
+                     <styleClass>
+                        <String fx:value="transButton" />
+                        <String fx:value="backButtonColor" />
+                        <String fx:value="whiteFont" />
+                     </styleClass>
+                  </Button>
+               </children>
             </HBox>
          </children>
       </VBox>

@@ -17,7 +17,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
@@ -28,7 +27,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.DateHelper;
 import presentation.view.application.MyDialog;
-import vo.HotelVO;
 import vo.RegionVO;
 import vo.UserVO;
 
@@ -97,8 +95,6 @@ public class FirstPageUIController {
 	@FXML
 	private void orderPartAction()
 	{
-//		System.out.println(userID);
-//		stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userID));
 		if(logined)
 		{
 			stage.setScene(new OrderFirstPageUIFromFirstPage(new Group(),stage,firstPageUI, userVO.getUserID()));

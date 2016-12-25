@@ -1,7 +1,5 @@
 package presentation.view.customerui.customerui;
 
-import java.util.Map;
-
 import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
@@ -13,29 +11,28 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import message.OrderStateMessage;
-import presentation.view.customerui.customerui.UnexecutedOrderPageController.CheckOrderButtonCell;
 import vo.OrderVO;
 
 public class ExecutedOrderUIController {
-	@FXML private TableView list;
+	@FXML private TableView<OrderVO> list;
 	
-	@FXML private TableColumn idColumn;
-	@FXML private TableColumn hotelNameColumn;
-	@FXML private TableColumn generateTimeColumn;
-	@FXML private TableColumn	 executeTimeColumn;
-	@FXML private TableColumn creditColumn;
-	@FXML private TableColumn checkOrderButtonColumn;
+	@FXML private TableColumn<OrderVO, Boolean> idColumn;
+	@FXML private TableColumn<OrderVO, Boolean> hotelNameColumn;
+	@FXML private TableColumn<OrderVO, Boolean> generateTimeColumn;
+	@FXML private TableColumn<OrderVO, Boolean>	 executeTimeColumn;
+	@FXML private TableColumn<OrderVO, Boolean> creditColumn;
+	@FXML private TableColumn<OrderVO, Boolean> checkOrderButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> executedOrderData;
 	private OrderCustomerService service;
 	
-	private Map<Integer, OrderVO> orderList;
 	private int userID;
 	private Stage stage;
-//	private OrderBLService service;
+	private OrderVO selectedOrder;
 	
 	public void init(Stage stage,int userID)
 	{
@@ -55,9 +52,9 @@ public class ExecutedOrderUIController {
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
-				return new CheckOrderButtonCell();
+				return new CheckInfoButtonCell();
 			}
 		});
 		
@@ -72,17 +69,24 @@ public class ExecutedOrderUIController {
 		list.setItems(executedOrderData);
 	}
 	
-	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
+	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button checkOrderButton = new Button("查看");
-		public CheckOrderButtonCell()
-		{
-			checkOrderButton.setOnAction((ActionEvent e)->{
-			int selectedIndex = getTableRow().getIndex();
-			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
-			new OrderInfoPage(orderVO).show();
-			});
-		}
+		private Button checkButton = new Button();
+		 public CheckInfoButtonCell()
+		 {
+			 checkButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 imageView.setImage(image);
+			 checkButton.setGraphic(imageView);
+			 checkButton.setOnAction((ActionEvent e)->{
+				 int seletedIndex=getTableRow().getIndex();
+				 selectedOrder = (OrderVO) list.getItems().get(seletedIndex);
+				 new OrderInfoPage(selectedOrder);
+			 });
+		 }
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -92,7 +96,7 @@ public class ExecutedOrderUIController {
 				setText(null);
 			}else
 			{
-				setGraphic(checkOrderButton);
+				setGraphic(checkButton);
 				setText(null);
 			}
 		}

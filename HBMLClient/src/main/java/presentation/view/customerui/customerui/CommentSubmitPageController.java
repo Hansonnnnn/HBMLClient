@@ -1,15 +1,10 @@
 package presentation.view.customerui.customerui;
 
-import java.awt.Desktop;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 import businesslogic.hotelInfobl.HotelCustomerImpl;
-import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogicservice.hotelinfoblservice.HotelCustomerService;
-import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -47,7 +42,6 @@ public class CommentSubmitPageController
 		private Stage stage;
 		private Scene preScene;
 		
-		private Desktop desktop;
 		private FileChooser fileChooser;
 		private OrderVO orderVO;
 		private File choiceFile;
@@ -72,7 +66,6 @@ public class CommentSubmitPageController
 		@FXML
 		private void submitImage()
 		{
-			desktop = Desktop.getDesktop();
 			fileChooser = new FileChooser();
 			choiceFile = fileChooser.showOpenDialog(stage);
 			fileChooser.setTitle("选择头像");
@@ -82,33 +75,8 @@ public class CommentSubmitPageController
 					);
 			if (choiceFile!=null) 
 			{
-				 try{
-		                String path="/Users/xiezhenyu/Desktop/Pic";
-		                String fileName=path+choiceFile.getName().toString();
-		                System.out.println(choiceFile.getName().toString());
-		                File file=new File(fileName);
-		                if(!file.exists()){
-		                    File newfile=new File(path);
-		                    newfile.mkdirs();
-		                    FileInputStream input=new FileInputStream(choiceFile);
-		                    FileOutputStream output=new FileOutputStream(fileName);
-
-		                    byte[] b=new byte[1824*5];
-		                    int length;
-		                    while((length=input.read(b))!=-1){
-		                        output.write(b,0,length);
-		                    }
-
-		                    output.flush();
-		                    output.close();
-		                    input.close();
-		                }
-		                Image image=new Image("file:///"+fileName);
+		                Image image=new Image("file:///"+choiceFile.getPath());
 		                imageView.setImage(image);
-
-		            }catch (Exception e){
-		                e.printStackTrace();
-		            }
 			}
 
 		}
@@ -122,7 +90,8 @@ public class CommentSubmitPageController
 				content = commentArea.getText();
 			}
 			
-			CommentInfoVO commentInfoVO = new CommentInfoVO(0, orderVO.getCheckinTime(), orderVO.getHotelID(),star, content, choiceFile, null, null,orderVO.getOrderID());
+			CommentInfoVO commentInfoVO = new CommentInfoVO(0, orderVO.getCheckinTime(),
+					orderVO.getHotelID(),star, content, choiceFile, null, null,orderVO.getOrderID());
 			customerService.addComment(commentInfoVO);
 		}
 		
