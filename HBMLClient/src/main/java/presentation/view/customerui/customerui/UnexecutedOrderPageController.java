@@ -11,6 +11,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import presentation.view.application.MyDialog;
@@ -32,6 +34,7 @@ public class UnexecutedOrderPageController
 	private OrderCustomerService service;
 	private int userID;
 	private Stage stage;
+	private OrderVO selectedOrder;
 	
 	public void init(Stage stage,int userID)
 	{
@@ -52,7 +55,7 @@ public class UnexecutedOrderPageController
 			@Override
 			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
-				return new CheckOrderButtonCell();
+				return new CheckInfoButtonCell();
 			}
 		});
 		cancelOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
@@ -60,7 +63,7 @@ public class UnexecutedOrderPageController
 			@Override
 			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
-				return new UnexecutedOrderButtonCell(stage);
+				return new UnexecutedOrderButtonCell();
 			}
 		});
 		
@@ -76,17 +79,25 @@ public class UnexecutedOrderPageController
 		list.setItems(unexecuteOrderData);
 	}
 	
-	public class CheckOrderButtonCell extends TableCell<OrderVO, Boolean>
+	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button checkOrderButton = new Button("查看");
-		public CheckOrderButtonCell()
-		{
-			checkOrderButton.setOnAction((ActionEvent e)->{
-			int selectedIndex = getTableRow().getIndex();
-			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
-			new OrderInfoPage(orderVO).show();
-			});
-		}
+		private Button checkButton = new Button();
+		 public CheckInfoButtonCell()
+		 {
+			 checkButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 imageView.setImage(image);
+			 checkButton.setGraphic(imageView);
+		
+			 checkButton.setOnAction((ActionEvent e)->{
+				 int seletedIndex=getTableRow().getIndex();
+				 selectedOrder = (OrderVO) list.getItems().get(seletedIndex);
+				 new OrderInfoPage(selectedOrder);
+			 });
+		 }
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -96,7 +107,7 @@ public class UnexecutedOrderPageController
 				setText(null);
 			}else
 			{
-				setGraphic(checkOrderButton);
+				setGraphic(checkButton);
 				setText(null);
 			}
 		}
@@ -105,9 +116,17 @@ public class UnexecutedOrderPageController
 	{
 		private Button cancelOrderButton = new Button("撤销");
 		
-		public UnexecutedOrderButtonCell(Stage stage)
+		public UnexecutedOrderButtonCell()
 		{
-			cancelOrderButton.setOnAction((ActionEvent e)->{
+			cancelOrderButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/CancelButtonImage.png"));
+			 imageView.setImage(image);
+			 cancelOrderButton.setGraphic(imageView);
+			 
+			 cancelOrderButton.setOnAction((ActionEvent e)->{
 				int selectedIndex = getTableRow().getIndex();
 				OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
 				

@@ -47,6 +47,18 @@
                         <String fx:value="titleLabel" />
                         <String fx:value="backButtonColor" />
                      </styleClass></Label>
+                  <Label text="会员等级">
+                     <styleClass>
+                        <String fx:value="titleLabel" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass>
+                  </Label>
+                  <Label text="信用值">
+                     <styleClass>
+                        <String fx:value="titleLabel" />
+                        <String fx:value="backButtonColor" />
+                     </styleClass>
+                  </Label>
                   <Label text="联系方式">
                      <styleClass>
                         <String fx:value="titleLabel" />
@@ -68,12 +80,38 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="49.0" prefWidth="354.0">
                      <children>
-                        <DatePicker fx:id="yearPicker" prefHeight="38.0" prefWidth="504.0" promptText="年-月-日" />
+                        <DatePicker fx:id="birthDatePicker" prefHeight="38.0" prefWidth="504.0" promptText="年-月-日" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="606.0">
+                     <padding>
+                        <Insets left="55.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="rankLabel" text="Label">
+                           <styleClass>
+                              <String fx:value="titleLabel" />
+                              <String fx:value="backButtonColor" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="55.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="creditValueLabel" text="Label">
+                           <styleClass>
+                              <String fx:value="titleLabel" />
+                              <String fx:value="backButtonColor" />
+                           </styleClass>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="49.0" prefWidth="371.0">
                      <children>
-                        <TextField fx:id="number" prefHeight="38.0" prefWidth="504.0" />
+                        <TextField fx:id="numberField" prefHeight="38.0" prefWidth="504.0" />
                      </children>
                   </HBox>
                </children>

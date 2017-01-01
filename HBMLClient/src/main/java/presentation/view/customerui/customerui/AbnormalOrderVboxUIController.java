@@ -9,32 +9,32 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import message.OrderStateMessage;
-import presentation.view.application.MyDialog;
 import vo.OrderVO;
 
 public class AbnormalOrderVboxUIController {
-	@FXML private TableView list;
-	@FXML private TableColumn idColumn;
-	@FXML private TableColumn hotelNameColumn;
-	@FXML private TableColumn generateTimeColumn;
-	@FXML private TableColumn creditColumn;
-	@FXML private TableColumn priceColumn;
-	@FXML private TableColumn checkOrderButtonColumn;
-	@FXML private TableColumn appealButtonColumn;
+	@FXML private TableView<OrderVO> list;
+	@FXML private TableColumn<OrderVO, Boolean> idColumn;
+	@FXML private TableColumn<OrderVO, Boolean> hotelNameColumn;
+	@FXML private TableColumn<OrderVO, Boolean> generateTimeColumn;
+	@FXML private TableColumn<OrderVO, Boolean> creditColumn;
+	@FXML private TableColumn<OrderVO, Boolean> priceColumn;
+	@FXML private TableColumn<OrderVO, Boolean> checkOrderButtonColumn;
+	@FXML private TableColumn<OrderVO, Boolean> appealButtonColumn;
 	
 	@FXML private ObservableList<OrderVO> abnormalOrderData;
 	private int userID;
 	private OrderCustomerService customerService;
 	private Stage stage;
 	private Scene preScene;
+	private OrderVO selectedOrder;
 	
 	public void init(Stage stage,Scene preScene,int userID)
 	{
@@ -55,15 +55,15 @@ public class AbnormalOrderVboxUIController {
 		checkOrderButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
-				return new CheckButtonCell();
+				return new CheckInfoButtonCell();
 			}
 		});
 		appealButtonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() 
 		{
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
 				return new AppealButtonCell(stage,preScene);
 			}
@@ -81,17 +81,25 @@ public class AbnormalOrderVboxUIController {
 		list.setItems(abnormalOrderData);
 	}
 	
-	public class CheckButtonCell extends TableCell<OrderVO, Boolean>
+	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button checkOrderButton = new Button("查看");
-		public CheckButtonCell()
-		{
-			checkOrderButton.setOnAction((ActionEvent e)->{
-			int selectedIndex = getTableRow().getIndex();
-			OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);
-			new OrderInfoPage(orderVO).show();
-			});
-		}
+		 private Button checkButton = new Button();
+		 public CheckInfoButtonCell()
+		 {
+			 checkButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 imageView.setImage(image);
+			 checkButton.setGraphic(imageView);
+		
+			 checkButton.setOnAction((ActionEvent e)->{
+				 int seletedIndex=getTableRow().getIndex();
+				 selectedOrder = (OrderVO) list.getItems().get(seletedIndex);
+				 new OrderInfoPage(selectedOrder);
+			 });
+		 }
 		protected void updateItem(Boolean t, boolean empty)
 		{
 			super.updateItem(t, empty);
@@ -101,7 +109,7 @@ public class AbnormalOrderVboxUIController {
 				setText(null);
 			}else
 			{
-				setGraphic(checkOrderButton);
+				setGraphic(checkButton);
 				setText(null);
 			}
 		}
@@ -109,10 +117,17 @@ public class AbnormalOrderVboxUIController {
 	
 	public class AppealButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button appealButton = new Button("申诉");
-		
+		private Button appealButton = new Button();
 		public AppealButtonCell(Stage stage,Scene preScene)
 		{
+			appealButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/AppealButtonImage.png"));
+			 imageView.setImage(image);
+			 appealButton.setGraphic(imageView);
+		
 			appealButton.setOnAction((ActionEvent e)->{
 				int selectedIndex = getTableRow().getIndex();
 				OrderVO orderVO = (OrderVO)list.getItems().get(selectedIndex);

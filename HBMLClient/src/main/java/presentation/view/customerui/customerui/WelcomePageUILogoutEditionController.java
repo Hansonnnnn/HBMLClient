@@ -1,10 +1,8 @@
 package presentation.view.customerui.customerui;
 
-import businesslogic.userbl.UserCustomerImpl;
 import businesslogic.userbl.UserLogImpl;
 import businesslogic.utility.UserInfoImpl;
 import businesslogicservice.UserInfoService;
-import businesslogicservice.userblservice.UserCustomerService;
 import businesslogicservice.userblservice.UserLogService;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -21,14 +19,14 @@ public class WelcomePageUILogoutEditionController
 		@FXML private Button backFirstPageButton;
 		@FXML private Button logoutButton;
 		@FXML private Label nameLabel;
-		
+		@FXML private ImageView imageView;
 		private Stage stage;
 		private Scene preScene;
 		private FirstPageUIController controller;
 		private UserVO userVO;
 		private UserInfoService cUserInfoService;
 		private UserLogService cLogService;
-		private ImageView imageView;
+		
 	
 		public void init(Stage stage, Scene preScene, FirstPageUIController controller, UserVO userVO)
 		{

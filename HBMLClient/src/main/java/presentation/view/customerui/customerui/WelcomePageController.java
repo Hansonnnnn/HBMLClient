@@ -52,7 +52,7 @@ public class WelcomePageController
 				passwordField.setPromptText("请输入密码继续");
 				UserVO tempUser = userLogService.getUserData(userInfoService.getLocalUser());
 				System.out.println(tempUser.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
-			     Image  headImage=new Image("file:///"+tempUser.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer2/HBMSServer"));
+			     Image  headImage=new Image("file:///"+tempUser.getPortrait().getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer/HBMSServer"));
 				imageView.setImage(headImage);
 			}
 		}

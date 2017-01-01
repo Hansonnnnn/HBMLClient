@@ -17,13 +17,13 @@
                   <Button fx:id="hotelPromotionButton" layoutY="12.0" mnemonicParsing="false" onAction="#hotelPromotion" prefHeight="27.0" prefWidth="140.0" styleClass="transButton" text="酒店促销优惠" />
                </children>
             </Pane>
-            <TableView fx:id="webPromotionTableView" maxWidth="798.0" prefHeight="580.0" prefWidth="798.0">
+            <TableView fx:id="promotionList" maxWidth="798.0" prefHeight="580.0" prefWidth="798.0">
                <columns>
                   <TableColumn fx:id="nameColumn" prefWidth="124.6433835029602" sortable="false" text="优惠名称" />
-                  <TableColumn fx:id="startTimeColumn" prefWidth="92.35662841796875" text="开始时间" />
-                  <TableColumn fx:id="endTimeColumn" prefWidth="100.0" sortable="false" text="结束时间" />
-                  <TableColumn fx:id="conditionsColumn" prefWidth="97.40872192382812" text="条件" />
-                  <TableColumn fx:id="contentColumn" prefWidth="381.5913391113281" sortable="false" text="详细信息" />
+                  <TableColumn fx:id="startTimeColumn" prefWidth="190.0" text="开始时间" />
+                  <TableColumn fx:id="endTimeColumn" prefWidth="190.0" sortable="false" text="结束时间" />
+                  <TableColumn fx:id="conditionsColumn" prefWidth="84.0" text="条件" />
+                  <TableColumn fx:id="contentColumn" prefWidth="288.0" sortable="false" text="详细信息" />
                </columns>
                <styleClass>
                   <String fx:value="table-column" />

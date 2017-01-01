@@ -2,7 +2,6 @@ package presentation.view.customerui.customerui;
 
 import java.io.File;
 import java.util.Date;
-import java.util.Map;
 
 import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
 import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
@@ -30,11 +29,12 @@ import vo.UserVO;
 
 public class HotelInfoUIController 
 {
-		@FXML private TableView list;
+		@FXML private TableView<RoomInfoVO> list;
 		@FXML private Button backButton;
-		@FXML private TableColumn typeColumn;
-		@FXML private TableColumn priceColumn;
-		@FXML private TableColumn buttonColumn;
+		@FXML private TableColumn<RoomInfoVO, Boolean> typeColumn;
+		@FXML private TableColumn<RoomInfoVO, Boolean> priceColumn;
+		@FXML private TableColumn<RoomInfoVO, Boolean> buttonColumn;
+		@FXML private Button historyOrderButton; 
 		
 		@FXML private ImageView hotelImageView;
 		@FXML private Label addressLabel;
@@ -48,7 +48,6 @@ public class HotelInfoUIController
 		private ObservableList<RoomInfoVO> roomdata;
 		
 		private RoomInfoCustomerService service = new RoomInfoCustomerServiceImpl();
-		private Map<String, RoomInfoVO> roomlist;
 		private HotelVO hotelVO;
 		private RoomInfoVO selectedRoom;
 		private UserVO userVO;
@@ -101,7 +100,7 @@ public class HotelInfoUIController
 			buttonColumn.setCellFactory(new Callback<TableColumn<RoomInfoVO, Boolean>, TableCell<RoomInfoVO, Boolean>>()
 			{
 				@Override
-				public TableCell call(TableColumn param)
+				public TableCell<RoomInfoVO, Boolean> call(TableColumn<RoomInfoVO, Boolean> param)
 				{
 					return new MakeOrderButtonCell(stage);
 				}
@@ -130,6 +129,13 @@ public class HotelInfoUIController
 			 
 			 public MakeOrderButtonCell(Stage stage)
 			 {
+				 makeOrderButton.setStyle("-fx-background-color:transparent;");
+				 ImageView imageView = new ImageView();
+				 imageView.setFitHeight(30);
+				 imageView.setFitWidth(30);
+				 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/GouWuChe.png"));
+				 imageView.setImage(image);
+				 makeOrderButton.setGraphic(imageView);
 				 makeOrderButton.setOnAction((ActionEvent e)->{
 					 if(logined)
 					 {
@@ -164,4 +170,10 @@ public class HotelInfoUIController
 				}
 			 }
 		 }
+		
+		@FXML 
+		private void historyOrder()
+		{
+			new HistoryOrderPage(hotelVO.getId(), userVO.getUserID()).showAndWait();
+		}
 }

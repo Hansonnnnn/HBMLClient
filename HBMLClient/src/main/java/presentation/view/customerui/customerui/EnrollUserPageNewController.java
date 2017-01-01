@@ -71,6 +71,7 @@ public class EnrollUserPageNewController {
 			try {
 				userLogService.signup(new UserVO(UserType.Customer, name, password));
 				new MyDialog(stage, "恭喜您注册成功！", 2);
+				userInfoService.saveLocalUserInfo(name);
 				userVO = customerService.getUserData(name);
 				//切换个人信息中心界面
 //				controller.setState(true, name,userVO.getUserID());

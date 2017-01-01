@@ -15,6 +15,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import vo.HotelVO;
@@ -22,12 +24,12 @@ import vo.OrderVO;
 
 public class UnCommentedHotelListPageController 
 {
-	@FXML private TableView list;
-	@FXML private TableColumn nameColumn;
-	@FXML private TableColumn starColumn;
-	@FXML private TableColumn scoreColumn;
-	@FXML private TableColumn priceColumn;
-	@FXML private TableColumn buttonColumn;
+	@FXML private TableView<OrderVO> list;
+	@FXML private TableColumn<OrderVO, Boolean> nameColumn;
+	@FXML private TableColumn<OrderVO, Boolean> starColumn;
+	@FXML private TableColumn<OrderVO, Boolean> scoreColumn;
+	@FXML private TableColumn<OrderVO, Boolean> priceColumn;
+	@FXML private TableColumn<OrderVO, Boolean> buttonColumn;
 	
 	private Stage stage;
 	private Scene commentFirstPageScene;
@@ -51,7 +53,7 @@ public class UnCommentedHotelListPageController
 		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 		buttonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() {
 			@Override
-			public TableCell call(TableColumn param)
+			public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 			{
 				return new CommentButtonCell(stage);
 			}
@@ -59,7 +61,7 @@ public class UnCommentedHotelListPageController
 		orderData = FXCollections.observableArrayList();
 		if(customerService.getExecutedOrderList(userID)!=null)
 		{
-			for (OrderVO orderVO : orderData) 
+			for (OrderVO orderVO : customerService.getExecutedOrderList(userID).values()) 
 			{
 				orderData.add(orderVO);
 			}
@@ -69,11 +71,19 @@ public class UnCommentedHotelListPageController
 	
 	public class CommentButtonCell extends TableCell<OrderVO, Boolean>
 	{
-		private Button commentButton = new Button("立即评价");
+		private Button commentButton = new Button();
 		
 		public CommentButtonCell(Stage stage)
 		{
-			commentButton.setOnAction((ActionEvent e)->{
+			 commentButton.setStyle("-fx-background-color:transparent;");
+			 ImageView imageView = new ImageView();
+			 imageView.setFitHeight(30);
+			 imageView.setFitWidth(30);
+			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/CommentButtonImage.png"));
+			 imageView.setImage(image);
+			 commentButton.setGraphic(imageView);
+		
+			 commentButton.setOnAction((ActionEvent e)->{
 				 int seletedIndex=getTableRow().getIndex();
 				 OrderVO selectedOrder = (OrderVO) list.getItems().get(seletedIndex);
 				stage.setScene(new CommentSubmitPage(new Group(), stage, commentFirstPageScene, selectedOrder));

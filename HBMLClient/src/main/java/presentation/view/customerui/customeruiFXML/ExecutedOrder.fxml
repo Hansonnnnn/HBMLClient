@@ -11,11 +11,10 @@
          <columns>
             <TableColumn fx:id="idColumn" prefWidth="120.0" text="订单编号" />
             <TableColumn fx:id="hotelNameColumn" prefWidth="120.0" text="酒店名称" />
-            <TableColumn fx:id="generateTimeColumn" prefWidth="120.0" text="生成时间" />
-            <TableColumn fx:id="executeTimeColumn" prefWidth="120.0" text="执行时间" />
-            <TableColumn fx:id="creditColumn" prefWidth="120.0" text="信用值变化" />
-            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="118.0" />
-            <TableColumn prefWidth="128.155029296875" />
+            <TableColumn fx:id="generateTimeColumn" prefWidth="190.0" text="生成时间" />
+            <TableColumn fx:id="executeTimeColumn" prefWidth="190.0" text="执行时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="139.07647705078125" text="信用值变化" />
+            <TableColumn fx:id="checkOrderButtonColumn" prefWidth="85.92352294921875" />
          </columns>
       </TableView>
    </children>

@@ -6,6 +6,7 @@ import businesslogicservice.promotionblservice.PromotionCustomerService;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -41,6 +42,7 @@ public class PromotionPageUIController
 				conditionsColumn.setCellValueFactory(new PropertyValueFactory<>("requirement"));
 				contentColumn.setCellValueFactory(new PropertyValueFactory<>("content"));
 				customerService = new PromotionCustomerImpl();
+				promotionData = FXCollections.observableArrayList();
 				filter = new PromotionFilter();
 				if(type.equals("酒店促销优惠"))
 				{
@@ -71,6 +73,8 @@ public class PromotionPageUIController
 						e.printStackTrace();
 					}
 				}
+				
+				promotionList.setItems(promotionData);
 		}
 		
 		@FXML

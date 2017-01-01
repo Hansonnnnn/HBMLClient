@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox prefHeight="616.0" prefWidth="848.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.HistoryOrderPageController">
+   <children>
+      <TableView fx:id="list" prefHeight="624.0" prefWidth="848.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="179.4267839193344" text="订单编号" />
+            <TableColumn fx:id="timeColumn" prefWidth="292.5731887817383" text="生成时间" />
+            <TableColumn fx:id="orderStateColumn" prefWidth="245.55142211914062" text="当前订单状态" />
+            <TableColumn fx:id="priceColumn" prefWidth="132.5919189453125" text="价格" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

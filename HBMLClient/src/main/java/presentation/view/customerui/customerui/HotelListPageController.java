@@ -124,7 +124,7 @@ public class HotelListPageController {
 		 checkButtonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>()
 		 {
 			 @Override
-			 public TableCell<HotelVO, Boolean> call(TableColumn param)
+			 public TableCell<HotelVO, Boolean> call(TableColumn<HotelVO, Boolean> param)
 			 {
 				 return new CheckInfoButtonCell(stage);
 			 }
@@ -195,7 +195,7 @@ public class HotelListPageController {
 		 ObservableList<String> optionsTwo = FXCollections.observableArrayList(
 				 "五星级","四星级","三星级","二星级","一星级","默认星级");
 		 ObservableList<String> optionsThree = FXCollections.observableArrayList(
-				 "酒店促销策略","网站促销策略");
+				 "酒店促销优惠","网站促销优惠");
 		 
 //		 first.setItems(optionsOne);
 //		 second.setItems(optionsTwo);
@@ -384,19 +384,14 @@ public class HotelListPageController {
 				filter.del("name");
 				filter.add("name", "like", "'%"+ searchInfo+"%'");
 			}
-			
 			 if(service.getHotelList(filter, "star", checkinTime) != null)
 			 {
 				 for (HotelVO hotelVO : service.getHotelList(filter, "star", checkinTime).values()) 
 				 {
-					hotelData.clear();
 					hotelData.add(hotelVO);
-					
-//					nameMapID.put(hotelVO.getName(), hotelVO.getId());
 				} 
 			 }
 			 list.setItems(hotelData);
-//			stage.setScene(new HotelListPageUI(new Group(), stage, firstPage, searchInfo,checkinTime,state));
 		}
 
 //	 	public class OrderStateMark extends TableCell<HotelVO, Boolean>

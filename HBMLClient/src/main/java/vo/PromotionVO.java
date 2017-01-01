@@ -11,7 +11,71 @@ import java.util.Date;
  * Created by alex on 16-11-17.
  */
 public class PromotionVO{
-    DateHelper dateHelper=new DateHelper();
+    public DateHelper getDateHelper() {
+		return dateHelper;
+	}
+
+	public void setDateHelper(DateHelper dateHelper) {
+		this.dateHelper = dateHelper;
+	}
+
+	public void setPromotionID(int promotionID) {
+		this.promotionID = promotionID;
+	}
+
+	public void setPromotionType(PromotionType promotionType) {
+		this.promotionType = promotionType;
+	}
+
+	public void setRegion(int region) {
+		this.region = region;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public void setStartDateString(String startDateString) {
+		this.startDateString = startDateString;
+	}
+
+	public void setEndDateString(String endDateString) {
+		this.endDateString = endDateString;
+	}
+
+	public void setMinRankAvailable(int minRankAvailable) {
+		this.minRankAvailable = minRankAvailable;
+	}
+
+	public void setMaxRankAvailable(int maxRankAvailable) {
+		this.maxRankAvailable = maxRankAvailable;
+	}
+
+	public void setType(DiscountType type) {
+		this.type = type;
+	}
+
+	public void setRequirement(int requirement) {
+		this.requirement = requirement;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	DateHelper dateHelper=new DateHelper();
 
     int promotionID;
     PromotionType promotionType;
