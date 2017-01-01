@@ -46,7 +46,7 @@ public class test_Alex_Credit_BL {
 
     static long getCreditValue()throws Exception{
         CreditCustomerService creditCustomerService=new CreditCustomerImpl();
-        long number=creditCustomerService.getCreditValue(1);
+        long number=creditCustomerService.getCreditValue(8);
         System.out.println("the credit value is: "+number);
         return number;
     }

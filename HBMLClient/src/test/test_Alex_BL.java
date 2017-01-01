@@ -24,7 +24,7 @@ public class test_Alex_BL {
 
     static void test_Credit_BL()throws Exception{
         //test_Alex_Credit_BL.popup(1,10000);
-        //test_Alex_Credit_BL.getCreditValue();
+        test_Alex_Credit_BL.getCreditValue();
     }
 
     static void test_Promotion_BL()throws Exception{
@@ -50,7 +50,7 @@ public class test_Alex_BL {
             test_User_BL();
             test_Credit_BL();
             test_Promotion_BL();
-            test_in_test();
+            //test_in_test();
         }catch(Exception ex){
             ex.printStackTrace();
         }

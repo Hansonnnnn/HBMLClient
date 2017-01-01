@@ -194,6 +194,33 @@ public class PromotionVO{
 
     }
 
+    /**
+     * 这是为了修改已有特殊酒店促销策略
+     * @param region     这里填酒店ID
+     * @param discount   这里填折扣力度
+     * @param type       如果是生日特惠，填０；如果是合作企业特惠，填１
+     * @param promotionID   这个promotionID根据已有promotion的promotionID填，必须写
+     * @param dummy1     冗余参数，只是为了和商圈特惠相区分
+     */
+    public PromotionVO(int region,int discount,int type,int promotionID,int dummy1){
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        this.promotionType = PromotionType.HotelPromotion;
+        this.region = region;
+        if(type==0) this.name = "00";
+        else if(type==1) this.name="01";
+        this.type = DiscountType.DaZhe;
+        this.promotionID=promotionID;
+        this.requirement = 0;
+        this.discount = discount;
+        try {
+            this.startDate=simpleDateFormat.parse("2000-1-1");
+            this.endDate=simpleDateFormat.parse("2030-1-1");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     //这是普通web promotion(就不包含商圈信息咯，全国通用)
 
     /**
