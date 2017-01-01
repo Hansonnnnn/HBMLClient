@@ -14,6 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import vo.UserVO;
 
+/**
+ * 登出界面的controller
+ * @author xiezhenyu
+ *
+ */
 public class WelcomePageUILogoutEditionController 
 {
 		@FXML private Button backFirstPageButton;
@@ -27,7 +32,13 @@ public class WelcomePageUILogoutEditionController
 		private UserInfoService cUserInfoService;
 		private UserLogService cLogService;
 		
-	
+		/**
+		 * 初始化配置信息，设置头像，初始化BL层服务的对象的实例
+		 * @param stage
+		 * @param preScene
+		 * @param controller
+		 * @param userVO
+		 */
 		public void init(Stage stage, Scene preScene, FirstPageUIController controller, UserVO userVO)
 		{
 			this.stage = stage;
@@ -41,6 +52,7 @@ public class WelcomePageUILogoutEditionController
 			cLogService = new UserLogImpl();
 		}
 		
+		//登出事件的事件响应
 		@FXML 
 		private void logout()
 		{
@@ -50,6 +62,7 @@ public class WelcomePageUILogoutEditionController
 			stage.setScene(new WelcomePageUI(new Group(), stage));
 		}
 		
+		//返回事件的事件响应
 		@FXML
 		private void back()
 		{

@@ -45,6 +45,7 @@ public class PersonInfoPageController {
 	private String birthday;
 	private String contact;
 	
+	//初始化关于个人信息界面的配置信息、固定标签内容、初始化头像
 	public void init(Stage stage, Scene preScene, Scene presentScene, UserVO userVO)
 	{
 		this.stage = stage;
@@ -82,6 +83,7 @@ public class PersonInfoPageController {
 		stage.setScene(new EnrollVIPPage(new Group(), stage, presentScene, userVO));
 	}
 	
+	//编辑上传头像
 	@FXML
 	private void editImage()
 	{

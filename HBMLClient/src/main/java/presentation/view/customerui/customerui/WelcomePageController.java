@@ -18,6 +18,11 @@ import message.ResultMessage;
 import presentation.view.application.MyDialog;
 import vo.UserVO;
 
+/**
+ * 系统开始的首个欢迎界面的controller
+ * @author xiezhenyu
+ *
+ */
 public class WelcomePageController 
 {
 		@FXML private Button exitButton;
@@ -39,6 +44,11 @@ public class WelcomePageController
 		private UserLogService userLogService;
 		private UserInfoService userInfoService;
 		
+		/**
+		 * 初始化配置信息
+		 * @param stage
+		 * @param loginPageScene
+		 */
 		public void init(Stage stage, Scene loginPageScene)
 		{
 			this.stage = stage;
@@ -57,6 +67,9 @@ public class WelcomePageController
 			}
 		}
 		
+		/**
+		 * 登录事件的事件响应
+		 */
 		@FXML
 		private void login()
 		{
@@ -147,24 +160,30 @@ public class WelcomePageController
 			
 		}
 		
+		/**
+		 * 注册事件的事件响应
+		 */
 		@FXML
 		private void enroll()
 		{
 			stage.setScene(new EnrollUserPageNew(new Group(),stage, loginPageScene));
 		}
 		
+		//以访客身份登录的事件响应
 		@FXML
 		private void secondLogin()
 		{
 			stage.setScene(new FirstPageUI(new Group(), stage,null, false));
 		}
 		
+		//找回密码的事件响应
 		@FXML
 		private void findPassword()
 		{
 			stage.setScene(new FindPasswordPageUINew(new Group(),stage,loginPageScene));
 		}
 		
+		//退出的事件响应
 		@FXML
 		private void exit()
 		{

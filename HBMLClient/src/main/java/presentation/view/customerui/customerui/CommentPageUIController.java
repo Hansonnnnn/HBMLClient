@@ -32,17 +32,4 @@ public class CommentPageUIController {
 			stage.setScene(preScene);
 		}
 		
-//		@FXML
-//		private void firstAction()
-//		{
-//			contentBox.getChildren().remove(0);
-//			contentBox.getChildren().add(new CommentedHotelListPage(stage,thisPage,userID));
-//		}
-//		
-//		@FXML 
-//		private void secondAction()
-//		{
-//			contentBox.getChildren().remove(0);
-//			contentBox.getChildren().add(new UnCommentedHotelListPage(stage,thisPage,userID));
-//		}
 }

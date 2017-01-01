@@ -15,18 +15,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import vo.CommentInfoVO;
-import vo.HotelVO;
 import vo.OrderVO;
 
 public class CommentedHotelListPageController 
 {
-		@FXML private TableView list;
-		@FXML private TableColumn nameColumn;
-		@FXML private TableColumn starColumn;
-		@FXML private TableColumn scoreColumn;
-		@FXML private TableColumn priceColumn;
-		@FXML private TableColumn buttonColumn;
+		@FXML private TableView<OrderVO> list;
+		@FXML private TableColumn<OrderVO, Boolean> nameColumn;
+		@FXML private TableColumn<OrderVO, Boolean> priceColumn;
+		@FXML private TableColumn<OrderVO, Boolean> buttonColumn;
 		
 		private Stage stage;
 		private Scene commentFirstPageScene;
@@ -50,7 +46,7 @@ public class CommentedHotelListPageController
 			priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 			buttonColumn.setCellFactory(new Callback<TableColumn<OrderVO, Boolean>, TableCell<OrderVO, Boolean>>() {
 				@Override
-				public TableCell call(TableColumn param)
+				public TableCell<OrderVO, Boolean> call(TableColumn<OrderVO, Boolean> param)
 				{
 					return new CommentButtonCell(stage);
 				}
@@ -67,9 +63,10 @@ public class CommentedHotelListPageController
 			list.setItems(orderData);
 		}
 		
+		//为表格的最后一项添加一个按钮
 		public class CommentButtonCell extends TableCell<OrderVO, Boolean>
 		{
-			private Button commentButton = new Button("追加评价");
+			private Button commentButton = new Button("评价");
 			
 			public CommentButtonCell(Stage stage)
 			{
@@ -81,5 +78,19 @@ public class CommentedHotelListPageController
 //					CommentInfoVO commentInfoVO = new CommentInfoVO(commentID, time, hotelID, score, comment, picture1, picture2, picture3)
 				});
 			}
+			
+			 protected void updateItem(Boolean t, boolean empty) 
+			 {
+				super.updateItem(t, empty);
+				if(empty)
+				{
+					setGraphic(null);
+					setText(null);
+				}else
+				{
+					setGraphic(commentButton);
+					setText(null);
+				}
+			 }
 		}
 }

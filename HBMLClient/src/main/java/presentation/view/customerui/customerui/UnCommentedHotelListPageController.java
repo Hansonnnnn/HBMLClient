@@ -1,8 +1,6 @@
 package presentation.view.customerui.customerui;
 
-import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.orderbl.OrderCustomerServiceImpl;
-import businesslogicservice.hotelinfoblservice.HotelCustomerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,7 +17,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import vo.HotelVO;
 import vo.OrderVO;
 
 public class UnCommentedHotelListPageController 
@@ -47,6 +44,9 @@ public class UnCommentedHotelListPageController
 		initTable();
 	}
 	
+	/**
+	 * 初始化未评价酒店的表格内容
+	 */
 	private void initTable()
 	{
 		nameColumn.setCellValueFactory(new PropertyValueFactory<>("hotelName"));
@@ -69,6 +69,11 @@ public class UnCommentedHotelListPageController
 		list.setItems(orderData);
 	}
 	
+	/**
+	 * 为表格最后的列添加按钮的内部类
+	 * @author xiezhenyu
+	 *
+	 */
 	public class CommentButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button commentButton = new Button();

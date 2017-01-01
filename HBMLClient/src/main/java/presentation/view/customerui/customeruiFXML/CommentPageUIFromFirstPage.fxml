@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="618.0" prefWidth="1000.0" stylesheets="@../customer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.view.customerui.customerui.CommentPageUIController">
    <children>
-      <VBox fx:id="contentBox" layoutX="23.0" layoutY="89.0" prefHeight="502.0" prefWidth="952.0" />
+      <VBox fx:id="contentBox" layoutX="329.0" layoutY="19.0" prefHeight="584.0" prefWidth="494.0" />
       <Button fx:id="backButton" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="91.0">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">

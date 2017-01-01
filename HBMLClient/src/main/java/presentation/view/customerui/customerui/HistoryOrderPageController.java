@@ -30,6 +30,8 @@ public class HistoryOrderPageController
 			initTable();
 		}
 		
+		
+		//初始化表格内容，并调用BL层的方法来获得数据
 		private void initTable()
 		{
 			ObservableList<OrderVO> orderData = FXCollections.observableArrayList();

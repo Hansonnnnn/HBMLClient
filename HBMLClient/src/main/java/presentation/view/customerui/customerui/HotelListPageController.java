@@ -25,6 +25,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import message.OrderStateMessage;
 import model.HotelFilter;
 import presentation.view.application.MyDialog;
 import vo.HotelVO;
@@ -105,6 +106,7 @@ public class HotelListPageController {
 	 }
 	 
 	 @SuppressWarnings("unchecked")
+	 //初始化酒店列表表格，并初始化表格上方的筛选逻辑选择框
 	private void initTable()
 	 {
 		
@@ -113,14 +115,7 @@ public class HotelListPageController {
 		 scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
 		 priceColumn.setCellValueFactory(new PropertyValueFactory<>("lowestPrice"));
 		 addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
-//		 addressColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() 
-//		 {
-//			 @Override
-//			 public TableCell call(TableColumn param)
-//			 {
-//				 return new OrderStateMark();
-//			 }
-//		});
+
 		 checkButtonColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>()
 		 {
 			 @Override
@@ -169,23 +164,129 @@ public class HotelListPageController {
 		 if(service.getHotelList(filter, order, checkinTime) != null)
 		 {	
 			 hotelData.clear();
+			 //添加标记的过程中，会用“（”、“空”、“||”关键字进行分割
 			 for (HotelVO hotelVO : service.getHotelList(filter, order, checkinTime).values()) 
 			 {
+				 if(hotelVO.getLowestPrice() == 0)
+				 {
+					 //判断是否已经在名字上加过无空房，加过就不加
+					 if(hotelVO.getName().indexOf("空") == -1)
+					 {
+					 hotelVO.setName(hotelVO.getName() + " (无空房) ");
+					 }
+				 }else
+				 {
+					 //酒店价格不为0，所以要将添加的字段无空房删掉
+					 if(hotelVO.getName().indexOf("空") != -1)
+					 {
+						 String[] hotelNameArr = hotelVO.getName().split("(");
+						 hotelVO.setName(hotelNameArr[0]);
+					 }
+				 }
+				 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Executed)!=null)
+				 {
+					 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Executed).contains(hotelVO.getId()))
+					 {
+						 hotelVO.setName(hotelVO.getName() + "@已");
+					 }
+				 }else
+				 {
+					 //如果该酒店没有已执行订单，就要将名字里的字段删掉
+					 if(hotelVO.getName().indexOf("@已") != -1)
+					 {
+						 String[] hotelNameArr = hotelVO.getName().split("@已");
+						 for(int i = 0;i < hotelName.length();i++)
+						 {
+							 if(i==0)
+							 {
+								 hotelVO.setName(hotelNameArr[0]);
+							 }else
+							 {
+								 hotelVO.setName(hotelVO.getName() + hotelNameArr[i]);
+							 }
+						 }
+					 }
+				 }
+				 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Unexecuted)!=null)
+				 {
+					 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Unexecuted).contains(hotelVO.getId()))
+					 {
+						 hotelVO.setName(hotelVO.getName() + "@未");
+					 }
+				 }else
+				 {
+					 //如果该酒店没有已执行订单，就要将名字里的字段删掉
+					 if(hotelVO.getName().indexOf("@未") != -1)
+					 {
+						 String[] hotelNameArr = hotelVO.getName().split("@未");
+						 for(int i = 0;i < hotelName.length();i++)
+						 {
+							 if(i==0)
+							 {
+								 hotelVO.setName(hotelNameArr[0]);
+							 }else
+							 {
+								 hotelVO.setName(hotelVO.getName() + hotelNameArr[i]);
+							 }
+						 }
+					 }
+				 }
+				 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Cancelled)!=null)
+				 {
+					 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Cancelled).contains(hotelVO.getId()))
+					 {
+						 hotelVO.setName(hotelVO.getName() + "@撤");
+					 }
+				 }else
+				 {
+					 //如果该酒店没有已执行订单，就要将名字里的字段删掉
+					 if(hotelVO.getName().indexOf("@撤") != -1)
+					 {
+						 String[] hotelNameArr = hotelVO.getName().split("@撤");
+						 for(int i = 0;i < hotelName.length();i++)
+						 {
+							 if(i==0)
+							 {
+								 hotelVO.setName(hotelNameArr[0]);
+							 }else
+							 {
+								 hotelVO.setName(hotelVO.getName() + hotelNameArr[i]);
+							 }
+						 }
+					 }
+				 }
+				 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Abnormal)!=null)
+				 {
+					 if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Abnormal).contains(hotelVO.getId()))
+					 {
+						 hotelVO.setName(hotelVO.getName() + "@异");
+					 }
+				 }else
+				 {
+					 //如果该酒店没有已执行订单，就要将名字里的字段删掉
+					 if(hotelVO.getName().indexOf("@异") != -1)
+					 {
+						 String[] hotelNameArr = hotelVO.getName().split("@异");
+						 for(int i = 0;i < hotelName.length();i++)
+						 {
+							 if(i==0)
+							 {
+								 hotelVO.setName(hotelNameArr[0]);
+							 }else
+							 {
+								 hotelVO.setName(hotelVO.getName() + hotelNameArr[i]);
+							 }
+						 }
+					 }
+				 }
 				hotelData.add(hotelVO);
-//				 addressColumn.setCellFactory(new Callback<TableColumn<HotelVO, Boolean>, TableCell<HotelVO, Boolean>>() 
-//				 {
-//					 @Override
-//					 public TableCell call(TableColumn param)
-//					 {
-//						 return new OrderStateMark(hotelVO);
-//					 }
-//				});
 			} 
 		 }
 
 		 list.setItems(hotelData);
 	 }
 	 
+	 //初始化条件选择框
 	 private void initComboBox()
 	 {
 		 service = new HotelCustomerImpl();
@@ -197,9 +298,7 @@ public class HotelListPageController {
 		 ObservableList<String> optionsThree = FXCollections.observableArrayList(
 				 "酒店促销优惠","网站促销优惠");
 		 
-//		 first.setItems(optionsOne);
-//		 second.setItems(optionsTwo);
-//		 third.setItems(optionsThree);
+		 //为三个筛选逻辑的选择框添加内容
 		 if(first.getItems().isEmpty())
 		 {
 			 first.getItems().addAll(optionsOne);
@@ -217,6 +316,7 @@ public class HotelListPageController {
 		 second.setPromptText("星级筛选");
 		 promotionList.setPromptText("促销策略");
 		 
+		 //为三个筛选逻辑选择框添加事件响应
 		 first.valueProperty().addListener(new ChangeListener<String>() {
 			 @Override
 			 public void changed(ObservableValue ov, String oldValue, String newValue){
@@ -244,6 +344,7 @@ public class HotelListPageController {
 		});
 	 }
 
+	 //星级筛选策略方法，通过filter添加和删除条件来实现筛选功能
 	 private void choiceTwoStrategy()
 	 {
 		 if (choiceTwo.equals("默认星级")) {
@@ -281,6 +382,7 @@ public class HotelListPageController {
 		 }
 	 }
 
+	//内部类，为表格最后的列，添加按钮
 	 public class CheckInfoButtonCell extends TableCell<HotelVO, Boolean>
 	 {
 		 private Button checkButton = new Button();
@@ -316,6 +418,7 @@ public class HotelListPageController {
 		 }
 	 }
 	 
+	 //内部类，为表格最后的列，添加按钮
 	 public class MakeOrderButtonCell extends TableCell<HotelVO, Boolean>
 	 {
 		 private Button makeOrderButton = new Button();
@@ -373,6 +476,7 @@ public class HotelListPageController {
 		 
 	 }
 	 
+	 //搜索事件响应
 	 @FXML
 	private void search()
 		{
@@ -394,59 +498,4 @@ public class HotelListPageController {
 			 list.setItems(hotelData);
 		}
 
-//	 	public class OrderStateMark extends TableCell<HotelVO, Boolean>
-//	 	{
-//	 		BorderPane borderPane=new BorderPane();
-//	 		Label hotelNameLabel=new Label();
-//	 		HBox hBox=new HBox();
-//	 		ImageView imageView1=new ImageView();
-//	 		Image unexecutedMark = new Image(getClass().getResourceAsStream("../CustomerImage/UnExecuted.png"));
-//	 		ImageView imageView2=new ImageView();
-//	 		Image executedMark = new Image(getClass().getResourceAsStream("../CustomerImage/Executed2.png"));
-//	 		ImageView imageView3=new ImageView();
-//	 		Image abnormalMark = new Image(getClass().getResourceAsStream("../CustomerImage/Abnormal.png"));
-//	 		ImageView imageView4=new ImageView();
-//	 		Image cancelledMark = new Image(getClass().getResourceAsStream("../CustomerImage/cancelled.png"));
-//	 		public OrderStateMark(HotelVO hotelVO)
-//	 		{
-//	 			hotelNameLabel.setText(hotelVO.getName());
-//	 			borderPane.setLeft(hotelNameLabel);
-//	 			borderPane.setRight(hBox);
-//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Unexecuted).contains(hotelVO.getAddress()))
-//	 			{
-//	 				imageView1.setImage(unexecutedMark);
-//	 				hBox.getChildren().add(imageView1);
-//	 			}
-//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Executed).contains(hotelVO.getAddress()))
-//	 			{
-//	 				imageView2.setImage(executedMark);
-//	 				hBox.getChildren().add(imageView2);
-//	 			}
-//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Abnormal).contains(hotelVO.getAddress()))
-//	 			{
-//	 				imageView2.setImage(abnormalMark);
-//	 				hBox.getChildren().add(imageView3);
-//	 			}
-//	 			if(service.hotelRecord(userVO.getUserID(), OrderStateMessage.Cancelled).contains(hotelVO.getAddress()))
-//	 			{
-//	 				imageView2.setImage(cancelledMark);
-//	 				hBox.getChildren().add(imageView4);
-//	 			}
-//	 		}
-//	 		@Override
-//	 		 protected void updateItem(Boolean t, boolean empty) 
-//			 {
-//				super.updateItem(t, empty);
-//				if(empty)
-//				{
-//					setGraphic(null);
-//					setText(null);
-//				}else
-//				{
-//					setGraphic(borderPane);
-//					setText(null);
-//				}
-//			 }
-//	 	}
-//	 	
 }

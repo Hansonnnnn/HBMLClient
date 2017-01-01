@@ -23,6 +23,6 @@ public class MyHotelListPage extends Scene
 			}
 			
 			MyHotelListPageController controller = fxmlLoader.getController();
-			controller.init(stage, preScene,userVO);
+			controller.init(stage, preScene,userVO,this);
 		}
 }

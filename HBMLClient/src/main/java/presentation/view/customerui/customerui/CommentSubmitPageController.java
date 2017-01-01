@@ -63,6 +63,7 @@ public class CommentSubmitPageController
 			stage.setScene(preScene);
 		}
 		
+		//上传图片
 		@FXML
 		private void submitImage()
 		{
@@ -95,6 +96,7 @@ public class CommentSubmitPageController
 			customerService.addComment(commentInfoVO);
 		}
 		
+		//初始化选择评价星级功能
 		private void initstar() {
 	        imageViews = new ArrayList<>();
 	        imageViews.add(starImageView1);

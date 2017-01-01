@@ -87,8 +87,11 @@ public class FirstPageUIController {
 		helper = new RegionHelper();
 		this.userVO = userVO;
 		this.logined  = logined;
+		//初始化日期选择框
 		initDatePicker();
+		//初始化省市商圈选择框
 		initProvinceBox();
+		//初始化星级选择功能
 		initstar();
 	}
 	
@@ -146,6 +149,7 @@ public class FirstPageUIController {
 		stage.setScene(new HotelListPageUI(new Group(), stage, firstPageUI,userVO, regionID,hotelName, checkinTime, star, logined));
 	}
 	
+	//初始化星级选择功能
 	private void initstar() {
         imageViews = new ArrayList<>();
         imageViews.add(starImageView1);
@@ -200,6 +204,8 @@ public class FirstPageUIController {
             }
         });
     }
+	
+	//初始化日期选择框
 	private void initDatePicker()
 	{
 		checkinTimePicker.setPromptText(LocalDate.now().toString());
@@ -229,6 +235,7 @@ public class FirstPageUIController {
 		checkoutTimePicker.setValue(LocalDate.now().plusDays(1));
 	}
 	
+	//初始化省的选择框，同时为市、商圈的选择框添加事件响应
 	private void initProvinceBox()
 	{
 		List<String> provinceMap = helper.getProvinces();
@@ -276,6 +283,7 @@ public class FirstPageUIController {
 		
 	}
 	
+	//初始化市的选择框
 	private void initCityBox()
 	{
 		List<String> cityNameList = helper.getCities(provinceName);
@@ -287,6 +295,7 @@ public class FirstPageUIController {
 	
 	}
 	
+	//初始化商区的选择框
 	private void initRegionBox()
 	{
 		Map<Integer, RegionVO> regionMap = helper.getRegions(cityName);
@@ -313,16 +322,21 @@ public class FirstPageUIController {
 			stage.setScene(new WelcomePageUI(new Group(), stage));
 		}
 	}
+	//获得当前该系统是否处于登录状态的方法
 	public boolean getState()
 	{
 		return logined;
 	}
+	
+	//为当前界面设定状态，初始化用户名及用户id
 	public void setState(boolean logined, String userName, int userID)
 	{
 		this.logined = logined;
 //		this.userName = userName;
 //		this.userID = userID;
 	}
+	
+	//为当前界面设定状态
 	public void setState(boolean logined)
 	{
 		this.logined = logined;

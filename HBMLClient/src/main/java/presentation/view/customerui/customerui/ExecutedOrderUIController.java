@@ -69,6 +69,7 @@ public class ExecutedOrderUIController {
 		list.setItems(executedOrderData);
 	}
 	
+	//为表格的最后一项添加一个按钮
 	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkButton = new Button();

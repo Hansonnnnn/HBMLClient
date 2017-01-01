@@ -41,6 +41,7 @@ public class CancelledOrderPageUIController {
 		initTable();
 	}
 	
+	//初始化表格内容
 	private void initTable()
 	{
 		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
@@ -69,6 +70,7 @@ public class CancelledOrderPageUIController {
 		list.setItems(cancelledOrderData);
 	}
 	
+	//为表格的最后一项添加一个按钮
 	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		 private Button checkButton = new Button();

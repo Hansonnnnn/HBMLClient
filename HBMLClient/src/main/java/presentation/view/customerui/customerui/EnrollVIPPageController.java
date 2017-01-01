@@ -43,6 +43,7 @@ public class EnrollVIPPageController {
 	private String contact;
 	private UserCustomerService customerService;
 	
+	//初始化整个界面的主要部分，包括设定该界面的前一个界面、初始化所要用到的BL层的服务
 	public void init(Stage stage, Scene preScene, UserVO userVO)
 	{
 		this.stage = stage;
@@ -83,6 +84,7 @@ public class EnrollVIPPageController {
 		stage.setScene(preScene);
 	}
 	
+	//注册会员事件响应
 	@FXML 
 	private void enroll()
 	{

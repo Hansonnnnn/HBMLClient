@@ -18,6 +18,11 @@ import javafx.util.Callback;
 import presentation.view.application.MyDialog;
 import vo.OrderVO;
 
+/**
+ * 显示未执行订单的界面的controller
+ * @author xiezhenyu
+ *
+ */
 public class UnexecutedOrderPageController 
 {
 	@FXML private TableView<OrderVO> list;
@@ -44,6 +49,9 @@ public class UnexecutedOrderPageController
 		initTable();
 	}
 	
+	/**
+	 * 初始化未执行订单的表格的内容
+	 */
 	private void initTable()
 	{
 		idColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
@@ -79,6 +87,11 @@ public class UnexecutedOrderPageController
 		list.setItems(unexecuteOrderData);
 	}
 	
+	/**
+	 * 为表格的最后列添加按钮的内部类
+	 * @author xiezhenyu
+	 *
+	 */
 	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button checkButton = new Button();

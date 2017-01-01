@@ -48,6 +48,7 @@ public class EnrollUserPageNewController {
 		stage.setScene(preScene);
 	}
 	
+	//注册方法
 	@FXML
 	private void enroll()
 	{

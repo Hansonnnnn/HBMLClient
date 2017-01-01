@@ -81,6 +81,7 @@ public class AbnormalOrderVboxUIController {
 		list.setItems(abnormalOrderData);
 	}
 	
+	//为表格的最后一项添加一个按钮
 	public class CheckInfoButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		 private Button checkButton = new Button();
@@ -115,6 +116,7 @@ public class AbnormalOrderVboxUIController {
 		}
 	}
 	
+	//为表格的最后一项添加一个按钮
 	public class AppealButtonCell extends TableCell<OrderVO, Boolean>
 	{
 		private Button appealButton = new Button();

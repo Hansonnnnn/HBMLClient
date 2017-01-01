@@ -37,6 +37,7 @@ public class EnrollUserPageController
 			userLogService=new UserLogImpl();
 		}
 		
+		//注册方法
 		@FXML
 		private void enroll()
 		{

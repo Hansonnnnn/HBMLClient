@@ -233,13 +233,16 @@ public class PromotionHelper {
             promotionConditionHelper.del("discountType");
             promotionConditionHelper.del("requirement");
             promotionConditionHelper.add(tempPromotion.getType(),"=",DiscountType.DaZhe,"discountType");
+            if(promotionConditionHelper.decodeConditions())tempPrice = currentPrice * tempPromotion.getDiscount() / 100.0f;
             //end of case 2
             tempSelectedPromotion = new SelectedPromotionVO(tempPromotion, tempPrice);
             selectedPromotionVOMap.put(key, tempSelectedPromotion);
         }
-
         //get the selected web promotion
+        SelectedPromotionVO promotionVO;
         for(int key:selectedPromotionVOMap.keySet()){
+        		promotionVO=selectedPromotionVOMap.get(key);
+        		
             if(selectedPromotionVOMap.get(key).getPrice()<minPrice){
                 minSeletedPromotionVO=selectedPromotionVOMap.get(key);
                 minPrice=minSeletedPromotionVO.getPrice();

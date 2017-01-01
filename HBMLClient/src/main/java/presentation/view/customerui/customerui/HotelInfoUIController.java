@@ -77,6 +77,7 @@ public class HotelInfoUIController
 			stage.setScene(preScene);
 		}
 		
+		//初始化该界面的标签项
 		private void initLabel()
 		{
 			Image defaultImage = null;
@@ -93,6 +94,8 @@ public class HotelInfoUIController
 			facilityLabel.setText(hotelVO.getFacility());
 			facilityLabel.setWrapText(true);
 		}
+		
+		//初始化房间列表内容表格，并调用BL层的方法来获得数据
 		private void initTable()
 		{
 			typeColumn.setCellValueFactory(new PropertyValueFactory<>("roomType"));
@@ -123,6 +126,7 @@ public class HotelInfoUIController
 			list.setItems(roomdata);
 		}
 		
+		//为表格最后的列添加按钮
 		public class MakeOrderButtonCell extends TableCell<RoomInfoVO, Boolean>
 		 {
 			 private Button makeOrderButton = new Button("预订");
@@ -171,6 +175,7 @@ public class HotelInfoUIController
 			 }
 		 }
 		
+		//历史订单事件响应
 		@FXML 
 		private void historyOrder()
 		{

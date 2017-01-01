@@ -34,6 +34,7 @@ public class PromotionPageUIController
 	    private PromotionFilter filter;
 	    private ObservableList<PromotionVO> promotionData;
 	    
+	    //初始化关于促销策略的表格内容，并通过filter进行筛选，调用BL层的方法传递数据
 		public void initTable(String type)
 		{
 				nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -77,6 +78,7 @@ public class PromotionPageUIController
 				promotionList.setItems(promotionData);
 		}
 		
+		//酒店促销策略的事件响应
 		@FXML
 		private void hotelPromotion()
 		{
@@ -84,6 +86,7 @@ public class PromotionPageUIController
 			initTable(hotelPromotionButton.getText());
 		}
 		
+		//网站促销策略的事件响应
 		@FXML
 		private void webPromotion()
 		{
