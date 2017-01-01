@@ -12,7 +12,7 @@ public class WelcomePageUI extends Scene
 		public WelcomePageUI(Parent root, Stage stage)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/WelcomePage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/presentation/view/customerui/customeruiFXML/WelcomePage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

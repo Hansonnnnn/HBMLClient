@@ -1,2 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<storage-settings staging-layout="plain" base-layout="schema-zip" language="MySQL"/>
+<storage-settings staging-layout="plain" base-layout="schema-zip"
+	language="MySQL" />

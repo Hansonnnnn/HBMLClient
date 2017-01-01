@@ -14,7 +14,7 @@ import java.io.IOException;
 public class UserLoginUI extends Scene{
     public UserLoginUI(Parent root, Stage stage) {
         super(root);
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("loginfxml/UserLogin.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/presentation/view/application/loginfxml/UserLogin.fxml"));
         try{
             this.setRoot(fxmlLoader.load());
         }catch (IOException e) {

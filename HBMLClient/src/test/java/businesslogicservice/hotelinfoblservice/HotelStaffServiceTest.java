@@ -7,8 +7,6 @@ import java.util.Map;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import businesslogic.hotelInfobl.HotelCustomerImpl;
 import businesslogic.hotelInfobl.HotelStaffImpl;
 import message.ResultMessage;
@@ -27,14 +25,14 @@ public class HotelStaffServiceTest {
 
 	@Test
 	public void testModifyHotel() {
-		HotelVO hotelVO = hotelCustomerService.getHotelInfo(111);
+		HotelVO hotelVO = hotelCustomerService.getHotelInfo(1);
 		ResultMessage resultMessage = hotelStaffService.modifyHotel(hotelVO);
 		assertEquals(ResultMessage.success, resultMessage);
 	}
 
 	@Test
 	public void testGetComments() {
-		Map<Integer, CommentInfoVO> map = hotelStaffService.getComments(120);
+		Map<Integer, CommentInfoVO> map = hotelStaffService.getComments(1);
 		assertNotNull(map);
 	}
 

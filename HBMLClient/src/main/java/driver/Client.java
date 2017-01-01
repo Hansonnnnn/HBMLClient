@@ -3,7 +3,6 @@ package driver;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.stage.Stage;
-import presentation.view.customerui.customerui.FirstPageUI;
 import presentation.view.customerui.customerui.WelcomePageUI;
 import rmi.ClientRunner;
 /**
