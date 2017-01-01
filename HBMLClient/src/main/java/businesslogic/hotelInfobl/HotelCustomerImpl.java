@@ -30,6 +30,9 @@ public class HotelCustomerImpl implements HotelCustomerService{
 	@Override
 	public Map<Integer, HotelVO> getHotelList(HotelFilter filter, String order, Date date) {
 		
+		if (filter==null&&order==null&&date==null) {
+			return null;
+		}
 		return hotelHelper.getHotelList(filter, order, date);
 	}
 

@@ -27,8 +27,8 @@ public class HotelCustomerServiceTest {
 
 	@Test
 	public void testGetHotelList() {
-		Map<Integer, HotelVO	> map = hotelCustomerService.getHotelList(null, null, new Date());
-		assertNotNull(map);
+		Map<Integer, HotelVO	> map = hotelCustomerService.getHotelList(null, null,null);
+		assertNull(map);
 	}
 
 	@Test
