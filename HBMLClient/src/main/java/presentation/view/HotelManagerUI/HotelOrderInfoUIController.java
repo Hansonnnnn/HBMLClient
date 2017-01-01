@@ -18,6 +18,7 @@ import vo.UserVO;
  */
 public class HotelOrderInfoUIController {
 
+    //用于显示订单信息的界面组件
     @FXML private Label customerIdLabel;
     @FXML private Label customerNameLabel;
     @FXML private Label phoneLabel;
@@ -61,7 +62,7 @@ public class HotelOrderInfoUIController {
     }
 
     /**
-     * 将订单信息写入
+     * 显示订单信息
      */
     private void init(){
         UserVO userVO = userWebManagerService.getUserData(orderVO.getUserID());
@@ -79,6 +80,7 @@ public class HotelOrderInfoUIController {
         if(orderVO.getCancelTime()!=null){
             orderRevokeLabel.setText(dateHelper.dateToString(orderVO.getCancelTime()));
         }
+        //显示订单的类型
         if(orderVO.getOrderState()== OrderStateMessage.Unexecuted){
             orderStateLabel.setText("未执行");
         }else if(orderVO.getOrderState()==OrderStateMessage.Executed){

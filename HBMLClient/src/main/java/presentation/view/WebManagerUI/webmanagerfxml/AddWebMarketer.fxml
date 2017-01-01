@@ -12,7 +12,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="658.0">
          <children>
-            <Label styleClass="infoLabel" text="酒店营销人员基本信息" />
+            <Label styleClass="infoLabel" text="网站营销人员基本信息" />
          </children>
       </HBox>
       <VBox prefWidth="658.0" styleClass="infoVBox">

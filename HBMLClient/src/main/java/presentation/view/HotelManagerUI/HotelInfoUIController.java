@@ -115,7 +115,7 @@ public class HotelInfoUIController {
         hotelAddressTextField.setDisable(true);
         hotelIntroTextArea.setDisable(true);
         addImageButton.setDisable(true);
-        System.out.println(regionBox.getValue());
+        //根据商圈的名称获得商圈的id
         int regionID=regionNameMap.get(regionBox.getValue());
         HotelVO hotelVO=hotelStaffService.getHotelInfo(userVO.getHotelid());
         fileList.add(file);
@@ -140,29 +140,9 @@ public class HotelInfoUIController {
         );
         if(choicefile!=null){
             try{
-               // String path="C:/Users/LENOVO/Desktop/picture/";
-             /*   //String fileName=path+choicefile.getName().toString();
-                //file=new File(fileName);
-                if(!file.exists()){
-                  //  File newfile=new File(path);
-                   File newfile = choicefile;
-                	newfile.mkdirs();
-                    FileInputStream input=new FileInputStream(choicefile);
-                    FileOutputStream output=new FileOutputStream(choicefile);
-
-                    byte[] b=new byte[1824*5];
-                    int length;
-                    while((length=input.read(b))!=-1){
-                        output.write(b,0,length);
-                    }
-                    output.flush();
-                    output.close();
-                    input.close();
-                }*/
             	file = choicefile;
                 Image image=new Image("file:///"+choicefile.getPath());
                 hotelImageView.setImage(image);
-
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -170,7 +150,7 @@ public class HotelInfoUIController {
     }
 
     /**
-     * 初始化数据
+     * 初始化商圈列表中省的名称
      */
     private void initProvinceBox(){
         List<String> provinceMap = helper.getProvinces();
@@ -208,6 +188,9 @@ public class HotelInfoUIController {
         });
     }
 
+    /**
+     * 根据商圈中省的名称，获得对应省的市区名称，并显示在cityBox中
+     */
     private void initCityBox(){
         List<String> cityNameList = helper.getCities(provinceName);
         cityShowList = FXCollections.observableArrayList();
@@ -217,6 +200,9 @@ public class HotelInfoUIController {
         cityBox.setItems(cityShowList);
     }
 
+    /**
+     * 根据已选中的商圈市区的名称，获得对应市区中的商圈名称，并显示在regionBox中
+     */
     private void initRegionBox() {
         Map<Integer, RegionVO> regionMap = helper.getRegions(cityName);
         regionNameMap = new LinkedHashMap<>();
@@ -241,7 +227,7 @@ public class HotelInfoUIController {
         regionBox.setValue(regionVO.getRegionName());
         hotelAddressTextField.setText(hotelVO.getAddress());
         hotelIntroTextArea.setText(hotelVO.getIntroduction());
- 
+        //实现酒店图片显示
         if(hotelVO.getEnvironment().size()>0){
            Image image=new Image("file:///"+hotelVO.getEnvironment().get(0).getAbsolutePath().replace('\\', '/').replaceAll("HBMLClient/HBMLClient", "Final_HBMSServer2/HBMSServer"));
             hotelImageView.setImage(image); 
