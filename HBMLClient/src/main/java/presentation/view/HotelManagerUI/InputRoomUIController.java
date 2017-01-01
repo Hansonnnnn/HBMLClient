@@ -48,6 +48,9 @@ public class InputRoomUIController {
         addTableView();
     }
 
+    /**
+     * 初始化列表中的内容
+     */
     private void addTableView(){
         roomIdColumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
         roomTypeColumn.setCellValueFactory(new PropertyValueFactory<>("roomType"));
@@ -102,12 +105,21 @@ public class InputRoomUIController {
             viewButton.setGraphic(viewImageView);
             deleteButton.setStyle("-fx-background-color: transparent");
             deleteButton.setGraphic(deleteImageView);
+            buttonAction();
+        }
+
+        /**
+         * 为查看和删除按钮添加监听事件
+         */
+        public void buttonAction(){
+            //点击查看详细信息按钮，跳转至酒店房间详细信息界面
             viewButton.setOnAction((ActionEvent e)->{
                 int seletedIndex=getTableRow().getIndex();
                 RoomInfoVO roomInfoVO=(RoomInfoVO)roomTypeTableView.getItems().get(seletedIndex);
                 infoVBox.getChildren().remove(0);
                 infoVBox.getChildren().add(new RoomInfoUI(infoVBox,thisVBox,roomInfoVO,stage));
             });
+            //点击删除房间按钮，删除对应房间
             deleteButton.setOnAction((ActionEvent e)->{
                 int seletedIndex=getTableRow().getIndex();
                 RoomInfoVO roomInfoVO=(RoomInfoVO)roomTypeTableView.getItems().get(seletedIndex);
