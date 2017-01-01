@@ -44,6 +44,7 @@ public class PersonalCenterPageController {
 		this.userVO = userVO;
 		nameLabel.setText(userVO.getName());
 //		Image image = new Image("file///:"+userVO.getP)
+	 
 	}
 	
 	@FXML

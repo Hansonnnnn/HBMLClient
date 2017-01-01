@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import vo.UserVO;
 
 public class WelcomePageUILogoutEdition extends Scene
 {
-		public WelcomePageUILogoutEdition(Parent root, Stage stage, Scene preScene, FirstPageUIController fcontroller,String userName)
+		public WelcomePageUILogoutEdition(Parent root, Stage stage, Scene preScene, FirstPageUIController fcontroller,UserVO userVO)
 		{
 			super(root);
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/WelcomePageUILogoutEdition.fxml"));
@@ -22,6 +23,6 @@ public class WelcomePageUILogoutEdition extends Scene
 			}
 			
 			WelcomePageUILogoutEditionController controller = fxmlLoader.getController();
-			controller.init(stage, preScene, fcontroller,userName);
+			controller.init(stage, preScene, fcontroller,userVO);
 		}
 }
