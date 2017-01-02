@@ -1,6 +1,4 @@
-import businesslogic.hotelInfobl.HotelStaffImpl;
-import businesslogicservice.hotelinfoblservice.HotelStaffService;
-import rmi.ClientRunner;
+
 
 public class testHotel {
 

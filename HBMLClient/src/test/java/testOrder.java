@@ -1,33 +1,13 @@
-import static org.junit.Assert.assertNotNull;
 
-import java.util.Date;
+
 import java.util.Map;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import businesslogic.creditbl.CreditWebMarketerImpl;
 import businesslogic.orderbl.OrderCustomerServiceImpl;
 import businesslogic.orderbl.OrderStaffServiceImpl;
-import businesslogic.orderbl.OrderWebMarketerServiceImpl;
-import businesslogic.roomInfobl.RoomInfoCustomerServiceImpl;
-import businesslogic.userbl.UserCustomerImpl;
-import businesslogic.userbl.UserStaffImpl;
-import businesslogicservice.creditblservice.CreditWebMarketerService;
 import businesslogicservice.orderblservice.OrderCustomerService;
 import businesslogicservice.orderblservice.OrderStaffService;
-import businesslogicservice.orderblservice.OrderWebMarketerService;
-import businesslogicservice.roominfoblservice.RoomInfoCustomerService;
-import businesslogicservice.userblservice.UserCustomerService;
-import businesslogicservice.userblservice.UserStaffService;
-import dao.CreditDao;
 import rmi.ClientRunner;
-import vo.AppealVO;
-import vo.HotelVO;
 import vo.OrderVO;
-import vo.RankVO;
-import vo.RoomInfoVO;
-
 public class testOrder {
 
 	public static void main(String[] args) {

@@ -80,7 +80,7 @@ public class WelcomePageController
 				name = nameField.getText();
 				if(userInfoService.getLocalUser()==null)
 				{
-					userInfoService.saveLocalUserInfo(name);
+					
 					try {
 						if(userLogService.getUserData(name)!=null)
 						{
@@ -102,6 +102,7 @@ public class WelcomePageController
 						if(resultMessage == ResultMessage.success)
 						{
 							new MyDialog(stage, "登录成功", 2);
+							userInfoService.saveLocalUserInfo(name);
 							stage.setScene(new FirstPageUI(new Group(), stage, userVO, true));
 						}else if(resultMessage == ResultMessage.notexist)
 						{
