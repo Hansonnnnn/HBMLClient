@@ -13,7 +13,7 @@ public class MyHotelListPage extends Scene
 		public MyHotelListPage(Parent root, Stage stage, Scene preScene, UserVO userVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/MyHotelList.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/MyHotelList.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

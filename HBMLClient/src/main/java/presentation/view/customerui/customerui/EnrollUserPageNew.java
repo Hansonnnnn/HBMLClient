@@ -12,7 +12,7 @@ public class EnrollUserPageNew extends Scene
 	public EnrollUserPageNew(Parent root, Stage stage, Scene preScene)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/EnrollUserPageNew.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/EnrollUserPageNew.fxml"));
 		try
 		{
 			this.setRoot(fxmlLoader.load());

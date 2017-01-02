@@ -11,7 +11,7 @@ public class LoginPageUI extends Stage
 {
 	public LoginPageUI(Stage mainStage, Scene mainScene, FirstPageUIController fcontroller) 
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/LoginPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/LoginPage.fxml"));
 		Parent root = null;
 		Scene scene = null;
 		try {

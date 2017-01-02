@@ -13,7 +13,7 @@ public class WelcomePageUILogoutEdition extends Scene
 		public WelcomePageUILogoutEdition(Parent root, Stage stage, Scene preScene, FirstPageUIController fcontroller,UserVO userVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/WelcomePageUILogoutEdition.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/WelcomePageUILogoutEdition.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

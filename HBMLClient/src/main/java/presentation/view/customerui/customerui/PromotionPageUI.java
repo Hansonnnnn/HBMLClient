@@ -11,7 +11,7 @@ public class PromotionPageUI extends Stage
 {
 		public PromotionPageUI(String type)
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PromotionPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/PromotionPage.fxml"));
 			Parent root = null;
 			Scene scene = null;
 			try {

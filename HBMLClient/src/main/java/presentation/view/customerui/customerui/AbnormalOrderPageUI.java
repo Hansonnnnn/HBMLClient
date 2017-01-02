@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class AbnormalOrderPageUI extends VBox{
 	public AbnormalOrderPageUI(Stage stage,Scene preScene,int userID)
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/AbnormalOrderPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/AbnormalOrderPage.fxml"));
 		try{
 			this.getChildren().add(fxmlLoader.load());
 		}catch(IOException e)

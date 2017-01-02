@@ -12,7 +12,7 @@ public class FindPasswordPageUI extends Scene
 		public FindPasswordPageUI(Parent root,Stage stage, Scene preScene)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/FindPasswordPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/FindPasswordPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

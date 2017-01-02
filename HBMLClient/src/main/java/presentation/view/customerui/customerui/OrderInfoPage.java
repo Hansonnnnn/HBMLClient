@@ -12,7 +12,7 @@ public class OrderInfoPage extends Stage
 {
 	public OrderInfoPage(OrderVO orderVO) 
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/OrderInfoPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/OrderInfoPage.fxml"));
 		Parent root = null;
 		try {
 			root = fxmlLoader.load();

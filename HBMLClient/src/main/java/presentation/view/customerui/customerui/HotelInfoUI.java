@@ -15,7 +15,7 @@ public class HotelInfoUI extends Scene
 	public HotelInfoUI(Parent root, Stage stage, Scene preScene,HotelVO hotelVO,UserVO userVO, Date checkinTime,boolean logined)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelInfo.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/HotelInfo.fxml"));
 		try
 		{
 			this.setRoot(fxmlLoader.load());

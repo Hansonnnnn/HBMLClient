@@ -14,7 +14,7 @@ public class FirstPageUI extends Scene
 	public FirstPageUI(Parent root, Stage stage, UserVO userVO, boolean logined)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/FirstPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/FirstPage.fxml"));
 		try
 		{
 			this.setRoot(fxmlLoader.load());

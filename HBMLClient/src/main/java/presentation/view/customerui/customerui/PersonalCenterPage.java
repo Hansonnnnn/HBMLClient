@@ -13,7 +13,7 @@ public class PersonalCenterPage extends Scene
 	public PersonalCenterPage(Parent root, Stage stage, Scene preScene, UserVO userVO)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PersonalCenter.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/PersonalCenter.fxml"));
 		try
 		{
 			this.setRoot(fxmlLoader.load());

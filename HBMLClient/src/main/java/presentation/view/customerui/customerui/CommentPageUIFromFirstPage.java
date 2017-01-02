@@ -12,7 +12,7 @@ public class CommentPageUIFromFirstPage extends Scene
 		public CommentPageUIFromFirstPage(Parent root, Stage stage, Scene preScene,int userID)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CommentPageUIFromFirstPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/CommentPageUIFromFirstPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

@@ -99,7 +99,7 @@ public class MyHotelListPageController
 				 ImageView imageView = new ImageView();
 				 imageView.setFitHeight(30);
 				 imageView.setFitWidth(30);
-				 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+				 Image image = new Image(getClass().getResourceAsStream("CustomerImage/HotelListPageCheckButton.png"));
 				 imageView.setImage(image);
 				 checkButton.setGraphic(imageView);
 			
