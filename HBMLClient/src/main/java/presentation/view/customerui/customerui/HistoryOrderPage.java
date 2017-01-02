@@ -11,7 +11,7 @@ public class HistoryOrderPage extends Stage
 {
 		public HistoryOrderPage(int hotelID, int userID) 
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HistoryOrderPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/HistoryOrderPage.fxml"));
 			Parent root = null;
 			try
 			{

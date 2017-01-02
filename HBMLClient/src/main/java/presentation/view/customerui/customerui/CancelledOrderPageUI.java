@@ -10,7 +10,7 @@ public class CancelledOrderPageUI extends VBox
 {
 		public CancelledOrderPageUI(Stage stage,int userID)
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CancelledOrderPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/CancelledOrderPage.fxml"));
 			try
 			{
 				this.getChildren().add(fxmlLoader.load());

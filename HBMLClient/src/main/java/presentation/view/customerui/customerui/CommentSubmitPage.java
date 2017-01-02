@@ -13,7 +13,7 @@ public class CommentSubmitPage extends Scene
 		public CommentSubmitPage(Parent root,Stage stage, Scene preScene, OrderVO orderVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CommentPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/CommentPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

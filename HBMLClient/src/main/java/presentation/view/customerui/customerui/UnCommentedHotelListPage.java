@@ -11,7 +11,7 @@ public class UnCommentedHotelListPage extends VBox
 {
 		public UnCommentedHotelListPage(Stage stage, Scene commentFirstPageScene,int userID)
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnCommentedHotelList.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/UnCommentedHotelList.fxml"));
 			try
 			{
 				this.getChildren().add(fxmlLoader.load());

@@ -16,7 +16,7 @@ public class MakeOrderPage extends Scene
 		public MakeOrderPage(Parent root, Stage stage, Scene preScene, HotelVO hotelVO, RoomInfoVO roomInfoVO,UserVO userVO, Date checkinTime)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/MakeOrderPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/MakeOrderPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

@@ -37,8 +37,8 @@ public class CommentSubmitPageController
 	    
 	    private ArrayList<ImageView> imageViews;
 		
-		private Image starImage = new Image(getClass().getResourceAsStream("../CustomerImage/star.png"));
-		private Image blueStarImage = new Image(getClass().getResourceAsStream("../CustomerImage/bluestar.png"));
+		private Image starImage = new Image(getClass().getResourceAsStream("CustomerImage/star.png"));
+		private Image blueStarImage = new Image(getClass().getResourceAsStream("CustomerImage/bluestar.png"));
 		private Stage stage;
 		private Scene preScene;
 		

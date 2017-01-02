@@ -10,7 +10,7 @@ public class ExecutedOrderPageUI extends VBox
 {
 	public ExecutedOrderPageUI(Stage stage,int userID)
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/ExecutedOrder.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/ExecutedOrder.fxml"));
 		try
 		{
 			this.getChildren().add(fxmlLoader.load());

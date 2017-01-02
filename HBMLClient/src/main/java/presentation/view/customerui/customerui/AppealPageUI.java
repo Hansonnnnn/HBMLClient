@@ -14,7 +14,7 @@ public class AppealPageUI extends Scene
 		public AppealPageUI(Parent root, Stage stage, Scene preScene,int userID, OrderVO orderVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/Appeal.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/Appeal.fxml"));
 			try{
 				this.setRoot(fxmlLoader.load());
 			}catch(IOException e)

@@ -12,7 +12,7 @@ public class OrderFirstPageUIFromFirstPage extends Scene
 	public OrderFirstPageUIFromFirstPage(Parent root, Stage stage, Scene preScene,int userID)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/OrderFirstPageFromFirstPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/OrderFirstPageFromFirstPage.fxml"));
 		try
 		{
 			this.setRoot(fxmlLoader.load());

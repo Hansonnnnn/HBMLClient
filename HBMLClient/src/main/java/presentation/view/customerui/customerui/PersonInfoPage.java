@@ -13,7 +13,7 @@ public class PersonInfoPage extends Scene
 		public PersonInfoPage(Parent root, Stage stage, Scene preScene,UserVO userVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/PersonalInfoManagePage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/PersonalInfoManagePage.fxml"));
 			try{
 				this.setRoot(fxmlLoader.load());
 			}catch(IOException e)

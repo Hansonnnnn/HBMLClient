@@ -84,7 +84,7 @@ public class UnCommentedHotelListPageController
 			 ImageView imageView = new ImageView();
 			 imageView.setFitHeight(30);
 			 imageView.setFitWidth(30);
-			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/CommentButtonImage.png"));
+			 Image image = new Image(getClass().getResourceAsStream("CustomerImage/CommentButtonImage.png"));
 			 imageView.setImage(image);
 			 commentButton.setGraphic(imageView);
 		

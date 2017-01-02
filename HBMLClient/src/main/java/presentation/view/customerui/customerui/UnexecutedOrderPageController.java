@@ -101,7 +101,7 @@ public class UnexecutedOrderPageController
 			 ImageView imageView = new ImageView();
 			 imageView.setFitHeight(30);
 			 imageView.setFitWidth(30);
-			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 Image image = new Image(getClass().getResourceAsStream("CustomerImage/HotelListPageCheckButton.png"));
 			 imageView.setImage(image);
 			 checkButton.setGraphic(imageView);
 		
@@ -135,7 +135,7 @@ public class UnexecutedOrderPageController
 			 ImageView imageView = new ImageView();
 			 imageView.setFitHeight(30);
 			 imageView.setFitWidth(30);
-			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/CancelButtonImage.png"));
+			 Image image = new Image(getClass().getResourceAsStream("CustomerImage/CancelButtonImage.png"));
 			 imageView.setImage(image);
 			 cancelOrderButton.setGraphic(imageView);
 			 

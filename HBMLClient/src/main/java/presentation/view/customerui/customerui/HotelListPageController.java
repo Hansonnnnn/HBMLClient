@@ -392,7 +392,7 @@ public class HotelListPageController {
 			 ImageView imageView = new ImageView();
 			 imageView.setFitHeight(30);
 			 imageView.setFitWidth(30);
-			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/HotelListPageCheckButton.png"));
+			 Image image = new Image(getClass().getResourceAsStream("CustomerImage/HotelListPageCheckButton.png"));
 			 imageView.setImage(image);
 			 checkButton.setGraphic(imageView);
 		
@@ -429,7 +429,7 @@ public class HotelListPageController {
 			 ImageView imageView = new ImageView();
 			 imageView.setFitHeight(30);
 			 imageView.setFitWidth(30);
-			 Image image = new Image(getClass().getResourceAsStream("../CustomerImage/GouWuChe.png"));
+			 Image image = new Image(getClass().getResourceAsStream("CustomerImage/GouWuChe.png"));
 			 imageView.setImage(image);
 			 makeOrderButton.setGraphic(imageView);
 			 makeOrderButton.setOnAction((ActionEvent e)->{

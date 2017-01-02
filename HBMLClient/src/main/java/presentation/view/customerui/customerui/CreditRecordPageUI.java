@@ -14,7 +14,7 @@ public class CreditRecordPageUI extends Scene
 		public CreditRecordPageUI(Parent root,Stage stage, Scene preScene, UserVO userVO)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/CreditRecordPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/CreditRecordPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());

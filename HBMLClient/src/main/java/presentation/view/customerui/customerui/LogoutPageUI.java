@@ -11,7 +11,7 @@ public class LogoutPageUI extends Stage
 {
 	public LogoutPageUI(Stage mainStage, Scene mainScene, FirstPageUIController fcontroller) 
 	{
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/LogoutPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/LogoutPage.fxml"));
 		Parent root = null;
 		Scene scene = null;
 		try {

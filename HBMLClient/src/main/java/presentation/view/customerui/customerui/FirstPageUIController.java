@@ -60,8 +60,8 @@ public class FirstPageUIController {
     
     private ArrayList<ImageView> imageViews;
 	
-	private Image starImage = new Image(getClass().getResourceAsStream("../CustomerImage/star.png"));
-	private Image blueStarImage = new Image(getClass().getResourceAsStream("../CustomerImage/bluestar.png"));
+	private Image starImage = new Image(getClass().getResourceAsStream("CustomerImage/star.png"));
+	private Image blueStarImage = new Image(getClass().getResourceAsStream("CustomerImage/bluestar.png"));
 	private Scene firstPageUI;
 	private Stage stage;
 	

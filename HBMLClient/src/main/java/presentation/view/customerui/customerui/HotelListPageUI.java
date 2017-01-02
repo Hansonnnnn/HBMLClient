@@ -31,7 +31,7 @@ public class HotelListPageUI extends Scene
 	public HotelListPageUI(Parent root, Stage stage, Scene preScene,UserVO userVO, int region,String hotelName, Date checkinTime, int star,boolean state)
 	{
 		super(root);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/HotelListPage.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/HotelListPage.fxml"));
 		try{
 			this.setRoot(fxmlLoader.load());
 		}catch(IOException e)

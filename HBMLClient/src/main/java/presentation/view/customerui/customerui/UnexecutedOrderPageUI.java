@@ -11,7 +11,7 @@ public class UnexecutedOrderPageUI extends VBox
 {
 		public UnexecutedOrderPageUI(Stage stage,int userID)
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/UnexecutedOrderPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/UnexecutedOrderPage.fxml"));
 			try
 			{
 				this.getChildren().add(fxmlLoader.load());

@@ -12,7 +12,7 @@ public class NullUserPage extends Scene
 		public NullUserPage(Parent root, Stage stage, Scene preScene)
 		{
 			super(root);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customeruiFXML/NullUserPage.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customeruiFXML/NullUserPage.fxml"));
 			try
 			{
 				this.setRoot(fxmlLoader.load());
